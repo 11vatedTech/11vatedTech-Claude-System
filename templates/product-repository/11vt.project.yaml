@@ -1,0 +1,48 @@
+schema_version: 1
+product:
+  name: "TODO"
+  type: "unknown" # web | native | game | ai-ml | library | cli | research | mixed
+  maturity: "concept" # concept | foundation | functional | integrated | hardened | release-candidate | released
+  supported_platforms: []
+stack:
+  languages: []
+  package_managers: []
+  build_systems: []
+  toolchains: []
+  runtime_targets: []
+requirements:
+  gpu: null
+  external_tools: []
+commands:
+  bootstrap: null
+  format: null
+  lint: null
+  typecheck: null
+  build: null
+  unit_test: null
+  integration_test: null
+  e2e: null
+  runtime: null
+  benchmark: null
+  audit: null
+  verify_changed: "python tools/11vt/verify.py changed"
+  verify_full: "python tools/11vt/verify.py full"
+  release_gate: "python tools/11vt/release_gate.py"
+artifacts:
+  build_outputs: []
+  release_outputs: []
+policies:
+  generated_files: []
+  vendor_dirs: []
+  protected_paths: [".env", ".env.*", "secrets/**"]
+quality_gates:
+  changed: []
+  full: []
+  release: []
+canon:
+  current_state: "CURRENT_STATE.md"
+  product: "PRODUCT.md"
+  architecture: "ARCHITECTURE.md"
+  validation: "VALIDATION_SPECIFICATION.md"
+  release: "RELEASE.md"
+  evidence_dir: "docs/evidence"

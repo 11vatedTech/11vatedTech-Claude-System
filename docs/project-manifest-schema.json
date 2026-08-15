@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "11vatedTech Project Manifest",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "product",
+    "commands",
+    "canon"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "product": {
+      "type": "object",
+      "required": [
+        "name",
+        "type",
+        "maturity"
+      ]
+    },
+    "commands": {
+      "type": "object"
+    },
+    "canon": {
+      "type": "object",
+      "required": [
+        "current_state"
+      ]
+    }
+  }
+}

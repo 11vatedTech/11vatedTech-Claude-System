@@ -1,0 +1,56 @@
+{
+  "suite_version": "0.2.0",
+  "date": "2026-08-15",
+  "no_paid_spend": true,
+  "results": [
+    {
+      "model": "11",
+      "task": "code_comprehension",
+      "ok": true,
+      "latency_ms": 2622,
+      "chars": 60,
+      "sample": "Function missing. Paste code. Then get behavior + edge case."
+    },
+    {
+      "model": "11",
+      "task": "bug_diagnosis",
+      "ok": true,
+      "latency_ms": 2525,
+      "chars": 203,
+      "sample": "Need failing assertion, function code, inputs, expected value, actual value.\n\nSend:\n```text\nassertion:\nexpected:\nactual:"
+    },
+    {
+      "model": "kr/auto-thinking",
+      "task": "code_comprehension",
+      "ok": false,
+      "error": "HTTPError: HTTP Error 400: Bad Request"
+    },
+    {
+      "model": "kr/auto-thinking",
+      "task": "bug_diagnosis",
+      "ok": false,
+      "error": "HTTPError: HTTP Error 400: Bad Request"
+    },
+    {
+      "model": "kr/claude-sonnet-4.5-thinking-agentic",
+      "task": "code_comprehension",
+      "ok": false,
+      "error": "HTTPError: HTTP Error 400: Bad Request"
+    },
+    {
+      "model": "kr/claude-sonnet-4.5-thinking-agentic",
+      "task": "bug_diagnosis",
+      "ok": false,
+      "error": "HTTPError: HTTP Error 400: Bad Request"
+    }
+  ],
+  "preferred": {
+    "general": "11",
+    "reasoning": "kr/auto-thinking if available and successful, else 11"
+  },
+  "limitations": [
+    "Tiny smoke benchmark only; requires real project calibration",
+    "No paid-model spend authorized",
+    "Correctness manually sampled, not fully graded"
+  ]
+}

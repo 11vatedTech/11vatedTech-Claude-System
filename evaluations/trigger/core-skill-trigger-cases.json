@@ -1,0 +1,38 @@
+{
+  "suite": "core-skill-trigger-cases",
+  "version": "0.2.0",
+  "cases": [
+    {
+      "prompt": "Continue development in this 11vatedTech repo and determine next work.",
+      "expect": [
+        "11vt-product-lifecycle",
+        "11vt-project-bootstrap"
+      ]
+    },
+    {
+      "prompt": "Bootstrap this existing repo without overwriting CLAUDE.md.",
+      "expect": [
+        "11vt-project-bootstrap"
+      ]
+    },
+    {
+      "prompt": "Prepare release candidate and verify artifacts.",
+      "expect": [
+        "11vt-release-engineering"
+      ]
+    },
+    {
+      "prompt": "Review this diff independently before merge.",
+      "expect": [
+        "11vt-independent-reviewer"
+      ]
+    },
+    {
+      "prompt": "Generate a tiny regex for email validation.",
+      "expect_not": [
+        "11vt-product-lifecycle",
+        "11vt-release-engineering"
+      ]
+    }
+  ]
+}

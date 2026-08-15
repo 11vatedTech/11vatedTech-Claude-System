@@ -1,0 +1,30 @@
+{
+  "suite": "9router-routing-benchmark",
+  "version": "0.2.0",
+  "no_paid_spend": true,
+  "tasks": [
+    {
+      "id": "code_comprehension",
+      "prompt": "Explain what this small function does and identify one edge case."
+    },
+    {
+      "id": "bug_diagnosis",
+      "prompt": "Given a failing assertion and function, identify likely root cause."
+    },
+    {
+      "id": "architecture_critique",
+      "prompt": "Critique this module boundary for state ownership and testing seams."
+    },
+    {
+      "id": "code_review",
+      "prompt": "Review this tiny diff for correctness/security/performance risks."
+    }
+  ],
+  "metrics": [
+    "correctness",
+    "instruction_compliance",
+    "latency_ms",
+    "failure",
+    "notes"
+  ]
+}
