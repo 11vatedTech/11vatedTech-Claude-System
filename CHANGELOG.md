@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.1 — 2026-08-15
+
+- Added `11vt-capability-entrypoint` as universal Founder-intent routing skill.
+- Added user-level `~/.claude/CLAUDE.md` pointer so new chats can find 11vatedTech canonical capabilities.
+- Registered capability entrypoint in canonical capability registry.
+
 ## 0.2.0 — 2026-08-15
 
 - Created canonical version-controlled 11vatedTech Claude System repository.

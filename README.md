@@ -35,6 +35,12 @@ claude --plugin-dir ./plugin
 python scripts/install/sync_to_claude.py
 ```
 
+## Capability access
+
+- `11vt-capability-entrypoint` is the universal Founder-intent entrypoint for new chats and normal work.
+- The Founder should not need to remember skill names; Claude routes to minimum sufficient 11vatedTech capabilities.
+- User-level pointer: `C:/Users/11vat/.claude/CLAUDE.md`.
+
 ## Phase II Deliverables
 
 - Internal plugin manifest validated with `claude plugin validate --strict`.

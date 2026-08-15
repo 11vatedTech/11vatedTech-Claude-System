@@ -49,6 +49,7 @@ Scope: user/global Claude Code capabilities unless noted.
 
 | Capability | Scope | Purpose | Location | Evaluation status |
 |---|---|---|---|---|
+| 11vt-capability-entrypoint | global/plugin | Universal access point that routes Founder intent to minimum sufficient 11vatedTech skills, agents, tools, research, and validation without requiring manual skill names | `plugin/skills/11vt-capability-entrypoint`, `~/.claude/skills/11vt-capability-entrypoint` | installed/accessibility validated |
 | 11vt-status | global/plugin | Fast project state reconstruction and continuation entrypoint | `plugin/skills/11vt-status` | trigger/static validated |
 | 11vt-project-bootstrap | global/plugin | Bootstrap/retrofit repos with manifest, canon, project skills, validation tooling | `plugin/skills/11vt-project-bootstrap` | fixture regression passed |
 | 11vt-product-lifecycle | global/plugin | Discover-to-canonize governing workflow and Definition of Done | `plugin/skills/11vt-product-lifecycle` | trigger/static validated |
