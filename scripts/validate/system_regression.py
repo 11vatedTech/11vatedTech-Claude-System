@@ -74,6 +74,20 @@ def check_9router():
     except Exception as e:
         print('9router_health_error', e); return False
 
+def check_routing():
+    code,out,err=run(f'python "{ROOT / "scripts/validate/routing_eval.py"}"')
+    ok=code==0
+    print('routing_eval', 'ok' if ok else (err or out)[-400:])
+    return ok
+
+def check_ontology():
+    code,out,err=run(f'python "{ROOT / "scripts/validate/ontology_check.py"}"')
+    ok=code==0
+    tail=(out or err).strip().splitlines()[-4:]
+    print('ontology_check', 'ok' if ok else tail)
+    if ok: print('  ' + ' | '.join(tail[:3]))
+    return ok
+
 def check_media():
     """Media toolchain is a first-class regression gate: image/vector/video/audio."""
     cli=str(ROOT/'scripts/media/11vt_media.py')
@@ -90,7 +104,7 @@ def check_media():
     return not failures
 
 def main():
-    checks=[check_plugin,check_skills,check_agents,check_manifest_template,check_hooks,check_bootstrap,check_media,check_9router]
+    checks=[check_plugin,check_skills,check_agents,check_manifest_template,check_hooks,check_bootstrap,check_media,check_routing,check_ontology,check_9router]
     results=[c() for c in checks]
     print('system_regression_ok', all(results))
     return 0 if all(results) else 1

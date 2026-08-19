@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "ontology_id": "11vt-foundry-ontology",
+  "baseline_date": "2026-08-18",
+  "baseline_version": "0.4.0",
+  "maturity_scale": {
+    "L0": "UNAVAILABLE: no provider or tooling present",
+    "L1": "DETECTED: provider/tooling present but unverified",
+    "L2": "OPERATIONAL: pipeline executes end-to-end on real artifacts",
+    "L3": "VERIFIED: automated tests exercise the pipeline",
+    "L4": "INTEGRATED: regression-gated and/or cross-capability evidence/provenance",
+    "L5": "GOVERNED: release-gated, versioned, rollback-capable, evaluation-covered"
+  },
+  "domains": [
+    {
+      "id": "intelligence-routing",
+      "name": "Intelligence routing",
+      "capabilities": [
+        {
+          "id": "founder-intent-routing",
+          "providers": [{"kind": "skill", "name": "11vt-capability-entrypoint"}],
+          "maturity": "L4",
+          "evidence": ["scripts/validate/routing_eval.py", "evaluations/trigger/core-skill-trigger-cases.json"]
+        },
+        {
+          "id": "model-routing",
+          "providers": [{"kind": "skill", "name": "11vt-9router-orchestrator"}, {"kind": "9router-endpoint", "name": "/v1/models", "expected_min": 100}],
+          "maturity": "L3",
+          "evidence": ["scripts/validate/9router_routing_benchmark.py", "evaluations/model-routing/routing-suite.json", "evaluations/model-routing/routing-profile.json"]
+        }
+      ]
+    },
+    {
+      "id": "research-evidence",
+      "name": "Research and evidence",
+      "capabilities": [
+        {
+          "id": "web-research",
+          "providers": [{"kind": "skill", "name": "11vt-research-intelligence"}, {"kind": "9router-endpoint", "name": "/v1/models/web", "expected_min": 0}],
+          "maturity": "L2",
+          "evidence": ["docs/evidence-system.md", "docs/pinned-external-sources.md"]
+        },
+        {
+          "id": "evidence-ledger",
+          "providers": [{"kind": "script", "name": "scripts/validate/manifest_validator.py"}, {"kind": "template", "name": "templates/product-repository/tools/11vt/evidence.py"}],
+          "maturity": "L3",
+          "evidence": ["docs/evidence-system.md"]
+        }
+      ]
+    },
+    {
+      "id": "architecture-engineering",
+      "name": "Architecture and engineering",
+      "capabilities": [
+        {"id": "architecture-adr", "providers": [{"kind": "skill", "name": "11vt-architecture-engineering"}], "maturity": "L3", "evidence": ["docs/product-development-protocol.md"]},
+        {"id": "production-engineering", "providers": [{"kind": "skill", "name": "11vt-production-engineering"}, {"kind": "skill", "name": "11vt-language-workflows"}], "maturity": "L3", "evidence": ["docs/product-development-protocol.md"]},
+        {"id": "game-development", "providers": [{"kind": "skill", "name": "11vt-game-development"}], "maturity": "L3", "evidence": []}
+      ]
+    },
+    {
+      "id": "creative-production",
+      "name": "Creative production",
+      "capabilities": [
+        {"id": "creative-direction", "providers": [{"kind": "skill", "name": "11vt-creative-production"}, {"kind": "agent", "name": "11vt-creative-director"}], "maturity": "L4", "evidence": ["evaluations/regression/2026-08-15-creative-production-expansion.md"]},
+        {"id": "art-direction", "providers": [{"kind": "agent", "name": "11vt-art-director"}], "maturity": "L3", "evidence": ["docs/creative-production-architecture.md"]},
+        {"id": "experience-design", "providers": [{"kind": "agent", "name": "11vt-experience-designer"}], "maturity": "L3", "evidence": ["docs/creative-production-architecture.md"]},
+        {"id": "motion-direction", "providers": [{"kind": "agent", "name": "11vt-motion-director"}], "maturity": "L3", "evidence": ["docs/creative-production-architecture.md"]},
+        {"id": "technical-art", "providers": [{"kind": "agent", "name": "11vt-technical-artist"}], "maturity": "L3", "evidence": ["docs/creative-production-architecture.md"]},
+        {"id": "design-direction", "providers": [{"kind": "skill", "name": "11vt-design-director"}], "maturity": "L4", "evidence": ["plugin/skills/11vt-design-director/references/visual-qa-checklist.md"]}
+      ]
+    },
+    {
+      "id": "visual-production-tooling",
+      "name": "Visual production tooling",
+      "capabilities": [
+        {"id": "raster-processing", "providers": [{"kind": "tool", "name": "magick", "degraded": false}, {"kind": "tool", "name": "ffmpeg", "degraded": false}], "maturity": "L4", "evidence": ["scripts/validate/system_regression.py", "artifacts/creative-stack-validation/image/image-validation.json"]},
+        {"id": "vector-authoring", "providers": [{"kind": "tool", "name": "inkscape", "degraded": false}, {"kind": "tool", "name": "magick", "degraded": false}], "maturity": "L4", "evidence": ["artifacts/creative-stack-validation/vector/vector-validation.json"]},
+        {"id": "video-processing", "providers": [{"kind": "tool", "name": "ffmpeg", "degraded": false}, {"kind": "tool", "name": "ffprobe", "degraded": false}], "maturity": "L4", "evidence": ["artifacts/creative-stack-validation/video/video-validation.json"]},
+        {"id": "audio-processing", "providers": [{"kind": "tool", "name": "ffmpeg", "degraded": false}], "maturity": "L4", "evidence": ["artifacts/creative-stack-validation/audio/audio-validation.json"]},
+        {"id": "speech-to-text", "providers": [{"kind": "9router-endpoint", "name": "/v1/models/stt", "expected_min": 0}, {"kind": "tool-degraded", "name": "whisper"}], "maturity": "L0", "evidence": ["docs/GAP_REGISTER.md"]},
+        {"id": "text-to-speech", "providers": [{"kind": "9router-endpoint", "name": "/v1/models/tts", "expected_min": 0}], "maturity": "L2", "evidence": ["artifacts/creative-stack-validation/audio/audio-validation.json"]},
+        {"id": "image-generation", "providers": [{"kind": "9router-endpoint", "name": "/v1/models/image", "expected_min": 0}], "maturity": "L2", "evidence": ["docs/GAP_REGISTER.md"]}
+      ]
+    },
+    {
+      "id": "three-d-pipeline",
+      "name": "Structured 3D / Blender pipeline",
+      "capabilities": [
+        {"id": "blender-bridge", "providers": [{"kind": "tool", "name": "blender", "degraded": false}], "maturity": "L3", "evidence": ["artifacts/creative-stack-validation/blender/blender-test-result.json", "artifacts/creative-stack-validation/blender/render.png"]},
+        {"id": "scene-authoring", "providers": [{"kind": "script", "name": "scripts/media/vtmedia/blender_scripts/render_scene.py"}], "maturity": "L3", "evidence": ["artifacts/creative-stack-validation/blender/scene.json", "artifacts/creative-stack-validation/blender/render-stats.json"]},
+        {"id": "asset-export", "providers": [{"kind": "script", "name": "scripts/media/vtmedia/blender_scripts/export_gltf.py"}], "maturity": "L2", "evidence": []}
+      ]
+    },
+    {
+      "id": "asset-intelligence",
+      "name": "Asset intelligence",
+      "capabilities": [
+        {"id": "asset-direction", "providers": [{"kind": "agent", "name": "11vt-asset-director"}], "maturity": "L3", "evidence": ["plugin/skills/11vt-creative-production/references/asset-production-protocol.md"]},
+        {"id": "provenance", "providers": [{"kind": "script", "name": "scripts/media/vtmedia/provenance.py"}], "maturity": "L3", "evidence": ["artifacts/creative-stack-validation/image/provenance.json"]}
+      ]
+    },
+    {
+      "id": "visual-qa",
+      "name": "Visual QA and verification",
+      "capabilities": [
+        {"id": "pixel-diff", "providers": [{"kind": "tool", "name": "magick", "degraded": false}], "maturity": "L4", "evidence": ["scripts/media/vtmedia/image_tools.py", "artifacts/creative-stack-validation/image/image-validation.json"]},
+        {"id": "psnr", "providers": [{"kind": "tool", "name": "ffmpeg", "degraded": false}], "maturity": "L4", "evidence": ["scripts/media/vtmedia/image_tools.py"]},
+        {"id": "visual-qa-direction", "providers": [{"kind": "agent", "name": "11vt-visual-qa-director"}], "maturity": "L3", "evidence": ["plugin/skills/11vt-design-director/references/visual-qa-checklist.md"]},
+        {"id": "independent-review", "providers": [{"kind": "agent", "name": "11vt-independent-reviewer"}], "maturity": "L4", "evidence": ["evaluations/regression/2026-08-15-creative-production-expansion.md"]}
+      ]
+    },
+    {
+      "id": "repo-runtime-intelligence",
+      "name": "Repository and runtime intelligence",
+      "capabilities": [
+        {"id": "repository-audit", "providers": [{"kind": "skill", "name": "11vt-repository-auditor"}], "maturity": "L3", "evidence": []},
+        {"id": "status-reconstruction", "providers": [{"kind": "skill", "name": "11vt-status"}], "maturity": "L3", "evidence": []},
+        {"id": "environment-doctor", "providers": [{"kind": "script", "name": "scripts/media/11vt_media.py"}], "maturity": "L4", "evidence": ["artifacts/creative-stack-validation/environment-report.json", "artifacts/creative-stack-validation/capability-registry.json"]},
+        {"id": "gpu-intelligence", "providers": [{"kind": "tool", "name": "nvidia-smi", "degraded": false}], "maturity": "L4", "evidence": ["artifacts/creative-stack-validation/environment-report.json"]}
+      ]
+    },
+    {
+      "id": "deployment-governance",
+      "name": "Global deployment and rollback",
+      "capabilities": [
+        {"id": "global-sync", "providers": [{"kind": "script", "name": "scripts/install/sync_to_claude.py"}], "maturity": "L4", "evidence": ["docs/rollback-procedure.md"]},
+        {"id": "global-validation", "providers": [{"kind": "script", "name": "scripts/install/validate_capability_installation.py"}], "maturity": "L4", "evidence": []},
+        {"id": "rollback", "providers": [{"kind": "script", "name": "scripts/install/sync_to_claude.py"}], "maturity": "L4", "evidence": ["docs/rollback-procedure.md"]}
+      ]
+    },
+    {
+      "id": "evaluation-lab",
+      "name": "Evaluation lab",
+      "capabilities": [
+        {"id": "routing-evaluation", "providers": [{"kind": "script", "name": "scripts/validate/routing_eval.py"}], "maturity": "L4", "evidence": ["evaluations/trigger/core-skill-trigger-cases.json"]},
+        {"id": "behavioral-evaluation", "providers": [{"kind": "script", "name": "evaluations/behavioral/core-behavioral-cases.md"}], "maturity": "L3", "evidence": []},
+        {"id": "regression-gate", "providers": [{"kind": "script", "name": "scripts/validate/system_regression.py"}], "maturity": "L4", "evidence": []},
+        {"id": "bootstrap-tests", "providers": [{"kind": "script", "name": "scripts/validate/bootstrap_fixture_tests.py"}], "maturity": "L4", "evidence": []},
+        {"id": "manifest-validation", "providers": [{"kind": "script", "name": "scripts/validate/manifest_validator.py"}], "maturity": "L4", "evidence": []},
+        {"id": "model-benchmark", "providers": [{"kind": "script", "name": "scripts/validate/9router_routing_benchmark.py"}], "maturity": "L3", "evidence": ["evaluations/model-routing/routing-suite.json"]}
+      ]
+    },
+    {
+      "id": "product-lifecycle",
+      "name": "Product lifecycle",
+      "capabilities": [
+        {"id": "project-bootstrap", "providers": [{"kind": "skill", "name": "11vt-project-bootstrap"}, {"kind": "script", "name": "scripts/bootstrap/bootstrap_project.py"}], "maturity": "L4", "evidence": ["scripts/validate/bootstrap_fixture_tests.py"]},
+        {"id": "product-lifecycle", "providers": [{"kind": "skill", "name": "11vt-product-lifecycle"}], "maturity": "L3", "evidence": ["docs/product-development-protocol.md"]},
+        {"id": "release-engineering", "providers": [{"kind": "skill", "name": "11vt-release-engineering"}], "maturity": "L3", "evidence": ["docs/release-engineering.md"]},
+        {"id": "deterministic-hooks", "providers": [{"kind": "script", "name": "scripts/hooks/guards.py"}, {"kind": "script", "name": "scripts/hooks/session_status.py"}], "maturity": "L4", "evidence": ["docs/hook-policy.md"]}
+      ]
+    },
+    {
+      "id": "foundry-maintenance",
+      "name": "Foundry maintenance",
+      "capabilities": [
+        {"id": "skill-foundry", "providers": [{"kind": "skill", "name": "11vt-skill-foundry"}], "maturity": "L3", "evidence": ["docs/capability-registry.md"]},
+        {"id": "documentation-canon", "providers": [{"kind": "skill", "name": "11vt-documentation-canon"}], "maturity": "L3", "evidence": []},
+        {"id": "core-operating-system", "providers": [{"kind": "skill", "name": "11vt-core-operating-system"}], "maturity": "L3", "evidence": []}
+      ]
+    }
+  ]
+}

@@ -27,7 +27,7 @@ Do not list selected capabilities unless asked.
 
 ## Default routing
 
-- New or resumed repo work: `11vt-status`, then `11vt-product-lifecycle` if substantial.
+- New or resumed repo work: `11vt-status`, then `11vt-product-lifecycle` if substantial; `11vt-project-bootstrap` when the repo is not yet governed.
 - New product/product idea: `11vt-core-operating-system`, `11vt-research-intelligence`, `11vt-architecture-engineering`, then domain skills as relevant.
 - Code implementation/fix: `11vt-production-engineering`, `11vt-language-workflows`, `11vt-testing-verification`.
 - Audit: `11vt-repository-auditor`, `11vt-testing-verification`, `11vt-performance-security` if relevant.
