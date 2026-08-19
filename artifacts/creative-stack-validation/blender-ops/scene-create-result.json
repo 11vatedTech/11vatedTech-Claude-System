@@ -3,7 +3,7 @@
     "name": "Scene",
     "frame_current": 0,
     "frame_start": 1,
-    "frame_end": 24
+    "frame_end": 48
   },
   "camera": "Cam",
   "objects": [

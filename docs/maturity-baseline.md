@@ -1,6 +1,7 @@
 # Foundry Maturity Baseline
 
-Baseline date: 2026-08-18 · System version: 0.4.0
+Baseline date: 2026-08-18 (updated after Capability Ascension milestone 1)
+System version: 0.4.0
 Source of truth: `config/capability-ontology.json` (regenerate the report with
 `python scripts/validate/ontology_check.py`).
 
@@ -10,14 +11,16 @@ Source of truth: `config/capability-ontology.json` (regenerate the report with
 |---|---|---|
 | L0 | 1 | speech-to-text (no STT provider installed) |
 | L1 | 0 | — |
-| L2 | 4 | web research, TTS, image generation, GLB asset export |
-| L3 | 23 | verified by automated tests |
-| L4 | 21 | regression-gated / integrated with provenance |
-| L5 | 0 | no capability is release-gated end-to-end yet |
+| L2 | 3 | web research, TTS, image generation |
+| L3 | 19 | verified by automated tests |
+| L4 | 25 | regression-gated / integrated with provenance |
+| L5 | 5 | governed: implementation + real use + failure test + regression + independent review + documented limitations |
 
-The system is a **L3/L4 baseline**: the majority of capabilities are verified
-(L3) or regression-gated (L4). No capability has reached L5 (governed) — the
-release-gate + versioned + evaluation-covered bar is the next frontier.
+First L5 capabilities (enforced by `scripts/validate/l5_evidence.py`):
+`pixel-diff`, `blender-bridge`, `animation-qa`, `global-sync`, `rollback`.
+L5 is kept scarce by design; the review record (`docs/l5-review-record-2026-08-18.md`)
+documents the evidence chain and limitations of each. No creative capability
+(design/VFX/cinematic/audio) is L5 yet — that is the next frontier.
 
 ## Evidence anchors (this session)
 

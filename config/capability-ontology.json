@@ -86,10 +86,10 @@
       "id": "three-d-pipeline",
       "name": "Structured 3D / Blender pipeline",
       "capabilities": [
-        {"id": "blender-bridge", "providers": [{"kind": "tool", "name": "blender", "degraded": false}], "maturity": "L4", "evidence": ["scripts/media/vtmedia/blender_ops.py", "scripts/validate/system_regression.py", "artifacts/creative-stack-validation/blender-ops/blender-op-suite.json"]},
+        {"id": "blender-bridge", "providers": [{"kind": "tool", "name": "blender", "degraded": false}], "maturity": "L5", "evidence": ["scripts/media/vtmedia/blender_ops.py", "scripts/validate/system_regression.py", "artifacts/creative-stack-validation/blender-ops/blender-op-suite.json", "scripts/validate/failure_tests.py", "docs/l5-review-record-2026-08-18.md"]},
         {"id": "scene-authoring", "providers": [{"kind": "script", "name": "scripts/media/vtmedia/blender_ops.py"}], "maturity": "L4", "evidence": ["scripts/media/vtmedia/blender_scripts/op_runner.py", "scripts/validate/system_regression.py"]},
         {"id": "asset-export", "providers": [{"kind": "script", "name": "scripts/media/vtmedia/blender_ops.py"}], "maturity": "L4", "evidence": ["scripts/media/vtmedia/blender_ops.py", "artifacts/creative-stack-validation/blender-ops/hero-scene.glb"]},
-        {"id": "animation-qa", "providers": [{"kind": "script", "name": "scripts/media/vtmedia/blender_ops.py"}], "maturity": "L4", "evidence": ["scripts/media/vtmedia/blender_scripts/op_runner.py", "artifacts/creative-stack-validation/blender-ops/blender-op-suite.json", "artifacts/creative-stack-validation/blender-ops/turntable.mp4"]}
+        {"id": "animation-qa", "providers": [{"kind": "script", "name": "scripts/media/vtmedia/blender_ops.py"}], "maturity": "L5", "evidence": ["scripts/media/vtmedia/blender_scripts/op_runner.py", "artifacts/creative-stack-validation/blender-ops/blender-op-suite.json", "artifacts/creative-stack-validation/blender-ops/turntable.mp4", "docs/l5-review-record-2026-08-18.md"]}
       ]
     },
     {
@@ -106,7 +106,7 @@
       "id": "visual-qa",
       "name": "Visual QA and verification",
       "capabilities": [
-        {"id": "pixel-diff", "providers": [{"kind": "tool", "name": "magick", "degraded": false}], "maturity": "L4", "evidence": ["scripts/media/vtmedia/image_tools.py", "artifacts/creative-stack-validation/image/image-validation.json"]},
+        {"id": "pixel-diff", "providers": [{"kind": "tool", "name": "magick", "degraded": false}], "maturity": "L5", "evidence": ["scripts/media/vtmedia/image_tools.py", "artifacts/creative-stack-validation/image/image-validation.json", "scripts/validate/failure_tests.py", "docs/l5-review-record-2026-08-18.md"]},
         {"id": "psnr", "providers": [{"kind": "tool", "name": "ffmpeg", "degraded": false}], "maturity": "L4", "evidence": ["scripts/media/vtmedia/image_tools.py"]},
         {"id": "visual-qa-direction", "providers": [{"kind": "agent", "name": "11vt-visual-qa-director"}], "maturity": "L3", "evidence": ["plugin/skills/11vt-design-director/references/visual-qa-checklist.md"]},
         {"id": "independent-review", "providers": [{"kind": "agent", "name": "11vt-independent-reviewer"}], "maturity": "L4", "evidence": ["evaluations/regression/2026-08-15-creative-production-expansion.md"]}
@@ -126,9 +126,9 @@
       "id": "deployment-governance",
       "name": "Global deployment and rollback",
       "capabilities": [
-        {"id": "global-sync", "providers": [{"kind": "script", "name": "scripts/install/sync_to_claude.py"}], "maturity": "L4", "evidence": ["docs/rollback-procedure.md"]},
+        {"id": "global-sync", "providers": [{"kind": "script", "name": "scripts/install/sync_to_claude.py"}], "maturity": "L5", "evidence": ["docs/rollback-procedure.md", "scripts/validate/failure_tests.py", "docs/l5-review-record-2026-08-18.md"]},
         {"id": "global-validation", "providers": [{"kind": "script", "name": "scripts/install/validate_capability_installation.py"}], "maturity": "L4", "evidence": []},
-        {"id": "rollback", "providers": [{"kind": "script", "name": "scripts/install/sync_to_claude.py"}], "maturity": "L4", "evidence": ["docs/rollback-procedure.md"]}
+        {"id": "rollback", "providers": [{"kind": "script", "name": "scripts/install/sync_to_claude.py"}], "maturity": "L5", "evidence": ["docs/rollback-procedure.md", "scripts/validate/failure_tests.py", "docs/l5-review-record-2026-08-18.md"]}
       ]
     },
     {

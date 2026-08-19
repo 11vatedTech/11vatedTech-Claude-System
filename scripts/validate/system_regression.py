@@ -139,6 +139,20 @@ def check_assets():
         ok=False; print('quality_models', 'FAILED', e)
     return ok
 
+def check_failure_tests():
+    code,out,err=run(f'python "{ROOT / "scripts/validate/failure_tests.py"}"')
+    ok=code==0
+    print('failure_tests', 'ok' if ok else (err or out)[-400:])
+    return ok
+
+def check_l5_evidence():
+    code,out,err=run(f'python "{ROOT / "scripts/validate/l5_evidence.py"}"')
+    ok=code==0
+    tail=(out or err).strip().splitlines()[:2]
+    print('l5_evidence', 'ok' if ok else tail)
+    if ok: print('  ' + ' | '.join(tail[:2]))
+    return ok
+
 def check_routing():
     code,out,err=run(f'python "{ROOT / "scripts/validate/routing_eval.py"}"')
     ok=code==0
@@ -169,7 +183,7 @@ def check_media():
     return not failures
 
 def main():
-    checks=[check_plugin,check_skills,check_agents,check_manifest_template,check_hooks,check_bootstrap,check_media,check_blender_ops,check_assets,check_routing,check_ontology,check_9router]
+    checks=[check_plugin,check_skills,check_agents,check_manifest_template,check_hooks,check_bootstrap,check_media,check_blender_ops,check_assets,check_failure_tests,check_l5_evidence,check_routing,check_ontology,check_9router]
     results=[c() for c in checks]
     print('system_regression_ok', all(results))
     return 0 if all(results) else 1

@@ -194,6 +194,25 @@ def run_op(op: str, params: dict, out_dir: Path, timeout: int = 600,
     return result
 
 
+def _broken_loop_probe(out_dir: Path, chain_blend: Path) -> dict[str, Any]:
+    """Failure-path probe: a half-rotation loop is NOT seamless; the QA must
+    flag it. Returns ok=True only when the QA correctly detects the break."""
+    create = run_op("animation.create_loop", {
+        "name": "hero_block", "frame_start": 1, "frame_end": 48, "turns": 0.5, "axis": "Z",
+    }, out_dir, chain_blend=chain_blend)
+    if not create.get("ok"):
+        return {**create, "note": "broken-loop probe setup failed"}
+    check = run_op("animation.loop_check", {
+        "frame_start": 1, "frame_end": 48, "resolution": [320, 180], "samples": 16,
+    }, out_dir / "broken-loop", chain_blend=chain_blend)
+    cont = check.get("loop_continuity", {})
+    detected = cont.get("seamless") is False and (cont.get("absolute_error") or 0) > 0
+    check["broken_loop_detected"] = detected
+    check["ok"] = bool(detected)
+    check["health"] = "PASS" if detected else "FAILED"
+    return check
+
+
 def op_suite(out_dir: Path, skip_render: bool = False) -> dict[str, Any]:
     """Real end-to-end production exercise: scene -> mesh -> material ->
     render -> turntable -> loop QA -> GLB export -> GLB validate -> ingest.
@@ -243,6 +262,7 @@ def op_suite(out_dir: Path, skip_render: bool = False) -> dict[str, Any]:
         "frame_start": 1, "frame_end": 24, "resolution": [160, 90], "samples": 8,
         "contact_bone": "orb",  # now drifting: expect foot-slide flag True
     }, out_dir / "slide-probe", chain_blend=chain_blend))
+    rec("animation.broken_loop", lambda: _broken_loop_probe(out_dir, chain_blend))
     rec("animation.inspect", lambda: run_op("animation.inspect", {}, out_dir, chain_blend=chain_blend))
     if not skip_render:
         rec("render.preview", lambda: run_op("render.preview", {

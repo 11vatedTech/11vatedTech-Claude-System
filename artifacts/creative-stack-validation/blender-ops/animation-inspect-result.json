@@ -12,7 +12,7 @@
       }
     },
     {
-      "name": "11vt_loop_hero_block",
+      "name": "11vt_loop_hero_block.001",
       "frame_range": [
         1.0,
         48.0
@@ -25,9 +25,9 @@
   ],
   "scene_frame_range": [
     1,
-    24
+    48
   ],
-  "scene_frame_current": 24,
+  "scene_frame_current": 48,
   "op_runner_version": "0.4.0",
   "blender_version": "5.2.0 LTS",
   "ok": true,

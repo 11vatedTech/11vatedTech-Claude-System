@@ -1,5 +1,35 @@
 # Changelog
 
+## 0.4.1 — 2026-08-18
+
+Capability Ascension milestone 1 — the Foundry moves from infrastructure to
+creation capability (FOUNDATION GENESIS COMPLETE / CAPABILITY ASCENSION
+ACTIVE):
+
+- **Structured Blender intelligence**: 15 schema-validated high-level ops
+  (scene/mesh/material/rig/animation/camera/render/asset) with validation,
+  error handling, session .blend chaining, and structured output; Blender
+  5.x layered-action API compatibility; structural GLB validator.
+- **Animation observability**: loop-continuity QA (pixel diff + PSNR over
+  rendered endpoints), foot-slide velocity heuristic, turntable -> H.264
+  motion preview videos.
+- **Asset Resolver**: 13 resolution modes x 9 factors with flag-driven
+  policy and hard rules (unknown-license external is blocking).
+- **Asset Vault**: content-addressed immutable IDs, lineage, provenance,
+  duplicate detection, previews, search, license guards.
+- **Requirement discovery**: production dependency graphs for 7 product
+  kinds (creature entity expands to 19 nodes / 27 edges / 12 disciplines).
+- **Quality models + ladder**: 6 disciplines with checkable dimensions;
+  BLOCKOUT -> SIGNATURE transition gates.
+- **Capability Ascension Register**: all 53 capabilities audited with
+  missing-executable/observation/evaluation/verification and next actions.
+- **Failure-path tests**: pixel-diff, GLB validator, rollback guard,
+  resolver license block, vault license guard, routing mutation, broken-loop
+  probe — every gate proven to catch its failure path.
+- **First L5 capabilities (5)**: pixel-diff, blender-bridge, animation-qa,
+  global-sync, rollback — enforced by l5_evidence.py with independent review
+  record and documented limitations. Baseline now L0:1 L2:3 L3:19 L4:25 L5:5.
+
 ## 0.4.0 — 2026-08-18
 
 Media-toolchain migration (from the reference workspace, verified in place):

@@ -516,7 +516,7 @@
     {
       "id": "blender-bridge",
       "domain": "three-d-pipeline",
-      "current_maturity": "L4",
+      "current_maturity": "L5",
       "providers": [
         {
           "kind": "tool",
@@ -527,7 +527,9 @@
       "evidence": [
         "scripts/media/vtmedia/blender_ops.py",
         "scripts/validate/system_regression.py",
-        "artifacts/creative-stack-validation/blender-ops/blender-op-suite.json"
+        "artifacts/creative-stack-validation/blender-ops/blender-op-suite.json",
+        "scripts/validate/failure_tests.py",
+        "docs/l5-review-record-2026-08-18.md"
       ],
       "missing_executable": "14 schema-validated structured ops implemented and regression-gated",
       "missing_observation": "no GPU utilization observation during renders",
@@ -593,7 +595,7 @@
     {
       "id": "animation-qa",
       "domain": "three-d-pipeline",
-      "current_maturity": "L4",
+      "current_maturity": "L5",
       "providers": [
         {
           "kind": "script",
@@ -603,7 +605,8 @@
       "evidence": [
         "scripts/media/vtmedia/blender_scripts/op_runner.py",
         "artifacts/creative-stack-validation/blender-ops/blender-op-suite.json",
-        "artifacts/creative-stack-validation/blender-ops/turntable.mp4"
+        "artifacts/creative-stack-validation/blender-ops/turntable.mp4",
+        "docs/l5-review-record-2026-08-18.md"
       ],
       "missing_executable": "loop-continuity pixel diff + foot-slide heuristic + turntable video evidence",
       "missing_observation": "no pose/silhouette/timing artistic review layer",
@@ -718,7 +721,7 @@
     {
       "id": "pixel-diff",
       "domain": "visual-qa",
-      "current_maturity": "L4",
+      "current_maturity": "L5",
       "providers": [
         {
           "kind": "tool",
@@ -728,7 +731,9 @@
       ],
       "evidence": [
         "scripts/media/vtmedia/image_tools.py",
-        "artifacts/creative-stack-validation/image/image-validation.json"
+        "artifacts/creative-stack-validation/image/image-validation.json",
+        "scripts/validate/failure_tests.py",
+        "docs/l5-review-record-2026-08-18.md"
       ],
       "missing_executable": "real magick AE + PSNR verified",
       "missing_observation": "no automated threshold policy",
@@ -895,7 +900,7 @@
     {
       "id": "global-sync",
       "domain": "deployment-governance",
-      "current_maturity": "L4",
+      "current_maturity": "L5",
       "providers": [
         {
           "kind": "script",
@@ -903,7 +908,9 @@
         }
       ],
       "evidence": [
-        "docs/rollback-procedure.md"
+        "docs/rollback-procedure.md",
+        "scripts/validate/failure_tests.py",
+        "docs/l5-review-record-2026-08-18.md"
       ],
       "missing_executable": "sync with backup/manifest/rollback verified + deployed",
       "missing_observation": "no drift alerting",
@@ -937,7 +944,7 @@
     {
       "id": "rollback",
       "domain": "deployment-governance",
-      "current_maturity": "L4",
+      "current_maturity": "L5",
       "providers": [
         {
           "kind": "script",
@@ -945,7 +952,9 @@
         }
       ],
       "evidence": [
-        "docs/rollback-procedure.md"
+        "docs/rollback-procedure.md",
+        "scripts/validate/failure_tests.py",
+        "docs/l5-review-record-2026-08-18.md"
       ],
       "missing_executable": "rollback round-trip proven (42 files restored)",
       "missing_observation": "no automated post-rollback verification",
@@ -1269,8 +1278,8 @@
     "l0": 1,
     "l2": 3,
     "l3": 19,
-    "l4": 30,
-    "l5": 0,
+    "l4": 25,
+    "l5": 5,
     "priority_p0": 11,
     "priority_p1": 15
   }

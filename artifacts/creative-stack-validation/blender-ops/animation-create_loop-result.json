@@ -1,9 +1,9 @@
 {
   "object": "hero_block",
-  "action": "11vt_loop_hero_block",
+  "action": "11vt_loop_hero_block.001",
   "frame_start": 1,
   "frame_end": 48,
-  "turns": 1.0,
+  "turns": 0.5,
   "axis": "Z",
   "note": "loop endpoints identical mod 2*pi",
   "op_runner_version": "0.4.0",
