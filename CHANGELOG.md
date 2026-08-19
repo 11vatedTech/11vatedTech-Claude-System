@@ -2,6 +2,8 @@
 
 ## 0.4.0 — 2026-08-18
 
+Media-toolchain migration (from the reference workspace, verified in place):
+
 - Fixed tool detection for installer-path ImageMagick/Inkscape/Blender
   (`resolve_tool` falls back to known `Program Files` locations when PATH
   misses them); enabled real `magick compare -metric AE` pixel diff with
@@ -10,6 +12,27 @@
 - Wired the media toolchain (image/vector/video/audio) into
   `scripts/validate/system_regression.py` as a first-class regression gate.
 - Replaced dead root `tools/` shells with a pointer to `scripts/media/vtmedia/`.
+
+Genesis deployment (corrected global architecture):
+
+- Strengthened the global deployment mechanism: `sync_to_claude.py` now takes
+  a timestamped pre-sync backup, records a deployment manifest (version +
+  sha256 inventory), supports `--dry-run`, `--rollback`, `--list`, and stale
+  `11vt-*` detection; syncs skills, agents, and the capability-system docs.
+- Added `validate_capability_installation.py` (repo-owned) for the global
+  `~/.claude` install: repo-derived expectations, CLAUDE.md pointer, secret
+  scan, 9Router discovery + chat smoke.
+- Replaced the shallow name-existence trigger check with a real routing
+  evaluation (`routing_eval.py`): coverage, overtrigger, and dangling-route
+  checks, mutation-tested.
+- Added the capability ontology (`config/capability-ontology.json`, 13 domains
+  / 49 capabilities) with L0-L5 maturity and an evidence-gated validator
+  (`ontology_check.py`); baseline L0:1 L2:4 L3:23 L4:21.
+- Ported the Foundry gap register into the canonical repo with statuses.
+- Deployed globally (deployments `20260818-203656` / `20260818-203830`):
+  verified from a clean unrelated project that Claude auto-discovers 20 global
+  skills + 8 agents and the entrypoint, through a healthy 9Router; rollback
+  round-trip proven.
 
 ## 0.3.0 — 2026-08-15
 

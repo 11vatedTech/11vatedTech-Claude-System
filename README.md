@@ -29,11 +29,31 @@ python scripts/validate/system_regression.py
 claude --plugin-dir ./plugin
 ```
 
-## Sync plugin skills and agents to standalone user install
+## Deploy to the global ~/.claude installation
+
+The Foundry is global: it is developed here and deployed to
+`C:/Users/11vat/.claude`, where every project discovers it automatically.
 
 ```bash
-python scripts/install/sync_to_claude.py
+python scripts/install/sync_to_claude.py --dry-run   # report drift, write nothing
+python scripts/install/sync_to_claude.py             # sync with backup + manifest
+python scripts/install/sync_to_claude.py --list      # recorded deployments
+python scripts/install/sync_to_claude.py --rollback <id>   # restore a deployment
+python scripts/install/validate_capability_installation.py # verify the global install
 ```
+
+Every sync writes a timestamped backup and a deployment manifest under
+`~/.claude/11vatedtech/deployments/` before changing anything, so any
+installation can be rolled back.
+
+## Capability ontology & maturity
+
+- `config/capability-ontology.json` — machine-readable ontology (13 domains,
+  49 capabilities) with L0-L5 maturity and resolvable providers.
+- `scripts/validate/ontology_check.py` — evidence gate: every provider
+  resolves, every evidence pointer exists.
+- `docs/capability-ontology.md`, `docs/maturity-baseline.md` — scale and
+  scored baseline.
 
 ## Capability access
 
