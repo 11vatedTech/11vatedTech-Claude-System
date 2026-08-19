@@ -1,0 +1,25 @@
+{
+  "op": "material.construct",
+  "params": {
+    "name": "11vt_sigil_brass",
+    "base_color": [
+      0.85,
+      0.55,
+      0.1
+    ],
+    "metallic": 0.9,
+    "roughness": 0.35,
+    "emission": [
+      0.9,
+      0.4,
+      0.05
+    ],
+    "emission_strength": 0.15,
+    "assign_to": [
+      "hero_block"
+    ],
+    "out_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\blender-ops",
+    "load_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\blender-ops\\session.blend",
+    "save_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\blender-ops\\session.blend"
+  }
+}

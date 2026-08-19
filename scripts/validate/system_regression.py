@@ -92,6 +92,53 @@ def check_blender_ops():
         print('blender_ops', 'FAILED', type(e).__name__, str(e)[:200])
     return ok
 
+def check_assets():
+    """Asset pipeline gate: requirement discovery -> resolver -> vault smoke
+    (hermetic temp vault). Quality models must parse and have dimensions."""
+    ok=True
+    code,out,err=run(f'python "{ROOT / "scripts/assets/requirement_discovery.py"}" creature_entity "Regression Probe"')
+    import json
+    try:
+        d=json.loads(out)
+        ok &= bool(d.get('ok') and d.get('node_count',0)>=10)
+        print('asset_discovery', 'ok' if ok else (out or err)[-200:])
+    except Exception as e:
+        ok=False; print('asset_discovery', 'FAILED', e)
+    # resolver: fixture with one originality-critical and one utility requirement
+    import tempfile
+    fixture={"name":"hero_model","category":"3d-model","quality_target":"PRODUCTION","flags":{"needs_originality":True,"can_create":True,"license_known":False}}
+    with tempfile.TemporaryDirectory() as td:
+        reqf=Path(td)/'reqs.json'; reqf.write_text(json.dumps([fixture]),encoding='utf-8')
+        code,out,err=run(f'python "{ROOT / "scripts/assets/asset_resolver.py"}" "{reqf}"')
+        try:
+            d=json.loads(out)
+            ok &= d.get('decision',{}).get('mode') is not None
+            print('asset_resolver', 'ok' if d.get('decision',{}).get('mode') else out[:200])
+        except Exception as e:
+            ok=False; print('asset_resolver', 'FAILED', e)
+        # vault smoke (hermetic index)
+        idx=Path(td)/'vault.json'
+        src=ROOT/'artifacts/creative-stack-validation/image/generated.png'
+        code,out,err=run(f'python "{ROOT / "scripts/assets/asset_vault.py"}" --index "{idx}" add "{src}" --kind raster --license generated-local --source procedural --creator regression')
+        try:
+            d=json.loads(out); ok &= bool(d.get('ok')); vid=d.get('id','')
+            code,out,err=run(f'python "{ROOT / "scripts/assets/asset_vault.py"}" --index "{idx}" add "{src}" --kind raster --license generated-local --source procedural --project p2')
+            d2=json.loads(out); ok &= bool(d2.get('duplicate'))
+            code,out,err=run(f'python "{ROOT / "scripts/assets/asset_vault.py"}" --index "{idx}" lineage "{vid}"')
+            ok &= bool(json.loads(out).get('asset'))
+            print('asset_vault_smoke', 'ok' if ok else (out or err)[-200:])
+        except Exception as e:
+            ok=False; print('asset_vault_smoke', 'FAILED', e)
+    # quality models parse + dimensions
+    try:
+        qm=json.loads((ROOT/'config/quality-models.json').read_text(encoding='utf-8'))
+        models=qm.get('models',{}); ok &= len(models)>=6
+        ok &= all(m.get('dimensions') for m in models.values())
+        print('quality_models', f'ok ({len(models)} models)' if ok else 'FAILED')
+    except Exception as e:
+        ok=False; print('quality_models', 'FAILED', e)
+    return ok
+
 def check_routing():
     code,out,err=run(f'python "{ROOT / "scripts/validate/routing_eval.py"}"')
     ok=code==0
@@ -122,7 +169,7 @@ def check_media():
     return not failures
 
 def main():
-    checks=[check_plugin,check_skills,check_agents,check_manifest_template,check_hooks,check_bootstrap,check_media,check_blender_ops,check_routing,check_ontology,check_9router]
+    checks=[check_plugin,check_skills,check_agents,check_manifest_template,check_hooks,check_bootstrap,check_media,check_blender_ops,check_assets,check_routing,check_ontology,check_9router]
     results=[c() for c in checks]
     print('system_regression_ok', all(results))
     return 0 if all(results) else 1

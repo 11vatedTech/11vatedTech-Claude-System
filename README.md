@@ -2,7 +2,15 @@
 
 Versioned product-development and creative-production operating system for 11vatedTech Claude Code work.
 
-**Status:** SYSTEM-READY / CREATIVE-PRODUCTION EXPANDED / REQUIRES PRODUCT CALIBRATION
+**Status:** FOUNDATION GENESIS COMPLETE / CAPABILITY ASCENSION ACTIVE
+
+Three states are tracked separately and never conflated:
+
+- **Foundation status** — global deployment, routing, regression, rollback (COMPLETE).
+- **Capability maturity** — per-capability L0-L5 in `config/capability-ontology.json` (ascension register: `config/capability-ascension-register.json`).
+- **Frontier gaps** — `docs/GAP_REGISTER.md`.
+
+Infrastructure being green does NOT mean creation capabilities are production-proven. Ascension is complete only when substantial capabilities reach L5 (production-proven + evaluated + independently verified).
 
 ## Purpose
 

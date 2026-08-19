@@ -1,0 +1,20 @@
+{
+  "frame_start": 1,
+  "frame_end": 48,
+  "first_frame_png": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\blender-ops\\loop-qa\\loop-first.png",
+  "last_frame_png": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\blender-ops\\loop-qa\\loop-last.png",
+  "note": "pixel diff + PSNR between endpoints computed host-side",
+  "foot_slide": {
+    "bone": "orb",
+    "samples": 48,
+    "max_horizontal_speed_per_frame": 0.0,
+    "flag": false,
+    "threshold": 0.01,
+    "note": "foot-slide heuristic: max horizontal speed of contact element between consecutive frames"
+  },
+  "op_runner_version": "0.4.0",
+  "blender_version": "5.2.0 LTS",
+  "ok": true,
+  "health": "PASS",
+  "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\blender-ops\\session.blend"
+}

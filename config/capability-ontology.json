@@ -86,17 +86,20 @@
       "id": "three-d-pipeline",
       "name": "Structured 3D / Blender pipeline",
       "capabilities": [
-        {"id": "blender-bridge", "providers": [{"kind": "tool", "name": "blender", "degraded": false}], "maturity": "L3", "evidence": ["artifacts/creative-stack-validation/blender/blender-test-result.json", "artifacts/creative-stack-validation/blender/render.png"]},
-        {"id": "scene-authoring", "providers": [{"kind": "script", "name": "scripts/media/vtmedia/blender_scripts/render_scene.py"}], "maturity": "L3", "evidence": ["artifacts/creative-stack-validation/blender/scene.json", "artifacts/creative-stack-validation/blender/render-stats.json"]},
-        {"id": "asset-export", "providers": [{"kind": "script", "name": "scripts/media/vtmedia/blender_scripts/export_gltf.py"}], "maturity": "L2", "evidence": []}
+        {"id": "blender-bridge", "providers": [{"kind": "tool", "name": "blender", "degraded": false}], "maturity": "L4", "evidence": ["scripts/media/vtmedia/blender_ops.py", "scripts/validate/system_regression.py", "artifacts/creative-stack-validation/blender-ops/blender-op-suite.json"]},
+        {"id": "scene-authoring", "providers": [{"kind": "script", "name": "scripts/media/vtmedia/blender_ops.py"}], "maturity": "L4", "evidence": ["scripts/media/vtmedia/blender_scripts/op_runner.py", "scripts/validate/system_regression.py"]},
+        {"id": "asset-export", "providers": [{"kind": "script", "name": "scripts/media/vtmedia/blender_ops.py"}], "maturity": "L4", "evidence": ["scripts/media/vtmedia/blender_ops.py", "artifacts/creative-stack-validation/blender-ops/hero-scene.glb"]},
+        {"id": "animation-qa", "providers": [{"kind": "script", "name": "scripts/media/vtmedia/blender_ops.py"}], "maturity": "L4", "evidence": ["scripts/media/vtmedia/blender_scripts/op_runner.py", "artifacts/creative-stack-validation/blender-ops/blender-op-suite.json", "artifacts/creative-stack-validation/blender-ops/turntable.mp4"]}
       ]
     },
     {
       "id": "asset-intelligence",
       "name": "Asset intelligence",
       "capabilities": [
-        {"id": "asset-direction", "providers": [{"kind": "agent", "name": "11vt-asset-director"}], "maturity": "L3", "evidence": ["plugin/skills/11vt-creative-production/references/asset-production-protocol.md"]},
-        {"id": "provenance", "providers": [{"kind": "script", "name": "scripts/media/vtmedia/provenance.py"}], "maturity": "L3", "evidence": ["artifacts/creative-stack-validation/image/provenance.json"]}
+        {"id": "asset-direction", "providers": [{"kind": "agent", "name": "11vt-asset-director"}, {"kind": "script", "name": "scripts/assets/asset_resolver.py"}], "maturity": "L4", "evidence": ["scripts/assets/asset_resolver.py", "scripts/validate/system_regression.py"]},
+        {"id": "provenance", "providers": [{"kind": "script", "name": "scripts/media/vtmedia/provenance.py"}, {"kind": "script", "name": "scripts/assets/asset_vault.py"}], "maturity": "L4", "evidence": ["scripts/assets/asset_vault.py", "artifacts/asset-vault/index.json"]},
+        {"id": "asset-vault", "providers": [{"kind": "script", "name": "scripts/assets/asset_vault.py"}], "maturity": "L4", "evidence": ["scripts/assets/asset_vault.py", "artifacts/asset-vault/index.json", "scripts/validate/system_regression.py"]},
+        {"id": "requirement-discovery", "providers": [{"kind": "script", "name": "scripts/assets/requirement_discovery.py"}], "maturity": "L4", "evidence": ["scripts/assets/requirement_discovery.py", "scripts/validate/system_regression.py"]}
       ]
     },
     {
@@ -137,7 +140,8 @@
         {"id": "regression-gate", "providers": [{"kind": "script", "name": "scripts/validate/system_regression.py"}], "maturity": "L4", "evidence": []},
         {"id": "bootstrap-tests", "providers": [{"kind": "script", "name": "scripts/validate/bootstrap_fixture_tests.py"}], "maturity": "L4", "evidence": []},
         {"id": "manifest-validation", "providers": [{"kind": "script", "name": "scripts/validate/manifest_validator.py"}], "maturity": "L4", "evidence": []},
-        {"id": "model-benchmark", "providers": [{"kind": "script", "name": "scripts/validate/9router_routing_benchmark.py"}], "maturity": "L3", "evidence": ["evaluations/model-routing/routing-suite.json"]}
+        {"id": "model-benchmark", "providers": [{"kind": "script", "name": "scripts/validate/9router_routing_benchmark.py"}], "maturity": "L3", "evidence": ["evaluations/model-routing/routing-suite.json"]},
+        {"id": "quality-models", "providers": [{"kind": "script", "name": "config/quality-models.json"}], "maturity": "L4", "evidence": ["config/quality-models.json", "docs/quality-ladder.md", "scripts/validate/system_regression.py"]}
       ]
     },
     {

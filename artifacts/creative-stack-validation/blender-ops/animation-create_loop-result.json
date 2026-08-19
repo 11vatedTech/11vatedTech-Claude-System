@@ -1,0 +1,14 @@
+{
+  "object": "hero_block",
+  "action": "11vt_loop_hero_block",
+  "frame_start": 1,
+  "frame_end": 48,
+  "turns": 1.0,
+  "axis": "Z",
+  "note": "loop endpoints identical mod 2*pi",
+  "op_runner_version": "0.4.0",
+  "blender_version": "5.2.0 LTS",
+  "ok": true,
+  "health": "PASS",
+  "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\blender-ops\\session.blend"
+}

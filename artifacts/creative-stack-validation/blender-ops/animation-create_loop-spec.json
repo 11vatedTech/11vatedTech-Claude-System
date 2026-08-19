@@ -1,0 +1,13 @@
+{
+  "op": "animation.create_loop",
+  "params": {
+    "name": "hero_block",
+    "frame_start": 1,
+    "frame_end": 48,
+    "turns": 1.0,
+    "axis": "Z",
+    "out_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\blender-ops",
+    "load_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\blender-ops\\session.blend",
+    "save_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\blender-ops\\session.blend"
+  }
+}

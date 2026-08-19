@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "assets": {
+    "11vt-af1b56bc8ef7d413": {
+      "id": "11vt-af1b56bc8ef7d413",
+      "sha256": "af1b56bc8ef7d41329d741c4499ba1d7caaa2d278fc3cdaa9177457c53895544",
+      "path_original": "artifacts\\creative-stack-validation\\blender-ops\\hero-scene.glb",
+      "blob": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\asset-vault\\blobs\\11vt-af1b56bc8ef7d413.glb",
+      "tags": [
+        "hero block orb scene glb"
+      ],
+      "source": "procedural",
+      "creator": "11vt-blender-ops",
+      "license": "generated-local",
+      "acquired": "2026-08-18T21:41:06",
+      "master_id": null,
+      "derived_from_lineage": [],
+      "derived_assets": [
+        "11vt-a0a5f57f33529c72"
+      ],
+      "kind": "glb-model",
+      "quality_state": "raw",
+      "inspection": {
+        "bytes": 75312,
+        "suffix": ".glb"
+      },
+      "projects": [
+        "hero-scene"
+      ],
+      "previews": [],
+      "used_by": [
+        "hero-scene-2"
+      ]
+    },
+    "11vt-a0a5f57f33529c72": {
+      "id": "11vt-a0a5f57f33529c72",
+      "sha256": "a0a5f57f33529c7204ca5faf46976f7e0666350de0bf80204c831527a3061650",
+      "path_original": "artifacts\\creative-stack-validation\\blender-ops\\preview\\preview-frame-0024.png",
+      "blob": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\asset-vault\\blobs\\11vt-a0a5f57f33529c72.png",
+      "tags": [
+        "render preview"
+      ],
+      "source": "procedural",
+      "creator": "11vt-blender-ops",
+      "license": "generated-local",
+      "acquired": "2026-08-18T21:41:07",
+      "master_id": "11vt-af1b56bc8ef7d413",
+      "derived_from_lineage": [
+        "11vt-af1b56bc8ef7d413"
+      ],
+      "derived_assets": [],
+      "kind": "render",
+      "quality_state": "raw",
+      "inspection": {
+        "bytes": 124889,
+        "suffix": ".png",
+        "width": 480,
+        "height": 270
+      },
+      "projects": [
+        "hero-scene"
+      ],
+      "previews": [
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\asset-vault\\previews\\11vt-a0a5f57f33529c72-thumb.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\asset-vault\\previews\\11vt-a0a5f57f33529c72-thumb.png"
+      ]
+    }
+  }
+}

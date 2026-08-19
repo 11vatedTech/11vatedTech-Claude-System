@@ -1,0 +1,36 @@
+{
+  "actions": [
+    {
+      "name": "11vt_drift_orb",
+      "frame_range": [
+        1.0,
+        24.0
+      ],
+      "fcurves": 3,
+      "channels_per_bone": {
+        "location": 3
+      }
+    },
+    {
+      "name": "11vt_loop_hero_block",
+      "frame_range": [
+        1.0,
+        48.0
+      ],
+      "fcurves": 3,
+      "channels_per_bone": {
+        "rotation_euler": 3
+      }
+    }
+  ],
+  "scene_frame_range": [
+    1,
+    24
+  ],
+  "scene_frame_current": 24,
+  "op_runner_version": "0.4.0",
+  "blender_version": "5.2.0 LTS",
+  "ok": true,
+  "health": "PASS",
+  "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\blender-ops\\session.blend"
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "quality_models_id": "11vt-quality-models",
+  "baseline_version": "0.4.0",
+  "principle": "high fidelity is an evaluable state, not a claim. Each dimension lists checkable criteria; mechanical checks should be automated, artistic checks require rendered/video evidence and independent review.",
+  "ladder": {
+    "BLOCKOUT": "proves layout/scale/flow; placeholder quality acceptable",
+    "FUNCTIONAL": "works end-to-end; no placeholder blocking the experience",
+    "COHERENT": "reads as one product: shared canon, consistent hierarchy and motion",
+    "POLISHED": "details, edges, transitions, and states handled; no visible rough edges",
+    "PRODUCTION": "release-grade: performance, robustness, provenance, and QA evidence recorded",
+    "SIGNATURE": "recognizable product-specific identity beyond generic AI aesthetics; flagship-caliber"
+  },
+  "models": {
+    "3d": {
+      "dimensions": {
+        "silhouette": ["readable at small size", "distinct from generic primitives"],
+        "form": ["proportions intentional", "mass/weight consistent"],
+        "topology": ["clean loops", "no ngons in deformation zones", "edge flow supports function"],
+        "uv": ["texel density consistent", "no stretching on hero surfaces"],
+        "materials": ["PBR values within physical ranges", "texture scale coherent with world"],
+        "deformation": ["no collapse at extreme poses", "joints hold volume"],
+        "scale": ["world scale consistent", "hero vs prop scale correct"],
+        "optimization": ["triangle budget met", "LODs present for runtime"],
+        "lighting_response": ["reads under key light", "no blown-out or crushed zones"]
+      }
+    },
+    "animation": {
+      "dimensions": {
+        "pose": ["silhouette readable", "weight distribution believable"],
+        "timing": ["reads intent at 2x and 0.5x speed"],
+        "spacing": ["easing matches mass", "no linear default everywhere"],
+        "arcs": ["no straight-line pops", "appendages follow arcs"],
+        "continuity": ["loop endpoints match (mechanical: pixel diff)", "transitions blend"],
+        "acting": ["emotion/intent readable in pose sequence"],
+        "foot_slide": ["no foot sliding (mechanical: contact-bone velocity)", "feet plant on contact"],
+        "anticipation": ["motion reads before action", "follow-through present"],
+        "secondary": ["overlap present", "no robotic simultaneity"],
+        "runtime_responsiveness": ["no hitch when blended", "no pops on retarget"]
+      }
+    },
+    "vfx": {
+      "dimensions": {
+        "timing": ["impact sync with event", "duration proportional to energy"],
+        "shape": ["readable silhouette", "no mush"],
+        "layering": ["foreground/mid/back separate", "no flat single-layer look"],
+        "energy": ["sell the force", "scale of motion matches event"],
+        "light_interaction": ["lights the scene", "casts believable shadows"],
+        "performance": ["frame budget met", "no overdraw spikes"]
+      }
+    },
+    "frontend": {
+      "dimensions": {
+        "concept": ["visual thesis present", "not a generic template"],
+        "hierarchy": ["primary action dominant", "information density intentional"],
+        "typography": ["scale/weight system", "readable at all sizes", "pairing intentional"],
+        "composition": ["alignment system", "whitespace intentional"],
+        "custom_visuals": ["custom assets, not stock-only", "identity visible without logo"],
+        "motion": ["motion grammar consistent", "reduced-motion respected"],
+        "interaction": ["states complete", "feedback within 100ms"],
+        "responsive": ["no breakage at breakpoints", "touch targets adequate"],
+        "accessibility": ["contrast passes", "keyboard operable"],
+        "performance": ["no jank", "bundle budget met"],
+        "originality": ["distinct from AI-generic aesthetics"]
+      }
+    },
+    "cinematic": {
+      "dimensions": {
+        "story": ["beat lands", "emotion readable"],
+        "composition": ["framing intentional", "rule of thirds used with purpose"],
+        "camera": ["motivated moves", "no dead camera"],
+        "lighting": ["directs the eye", "mood supports story"],
+        "performance": ["acting/motion readable"],
+        "vfx": ["invisible when practical", "hero when called for"],
+        "sound": ["sync correct", "mix supports clarity"],
+        "editing": ["pacing serves story", "no dead frames"],
+        "color": ["grade supports mood", "skin tones hold"],
+        "delivery": ["target format/spec met", "no artifacts"]
+      }
+    },
+    "audio": {
+      "dimensions": {
+        "asset_quality": ["source provenance known", "no watermarks/artifacts"],
+        "mix": ["levels balanced", "no clipping"],
+        "loudness": ["target loudness met (mechanical: loudnorm)"],
+        "sync": ["events align (mechanical: offset check)"],
+        "spatial": ["position/pan supports scene"],
+        "interactivity": ["stingers/states behave in runtime"]
+      }
+    }
+  }
+}

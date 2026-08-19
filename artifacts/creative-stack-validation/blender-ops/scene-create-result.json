@@ -1,0 +1,120 @@
+{
+  "scene": {
+    "name": "Scene",
+    "frame_current": 0,
+    "frame_start": 1,
+    "frame_end": 24
+  },
+  "camera": "Cam",
+  "objects": [
+    {
+      "name": "Cam",
+      "type": "CAMERA",
+      "location": [
+        5.5,
+        -6.5,
+        3.2
+      ],
+      "rotation": [
+        74.26,
+        -0.0,
+        40.24
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": []
+    },
+    {
+      "name": "ground",
+      "type": "MESH",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": []
+    },
+    {
+      "name": "hero_block",
+      "type": "MESH",
+      "location": [
+        0.0,
+        0.0,
+        0.8
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": []
+    },
+    {
+      "name": "Key",
+      "type": "LIGHT",
+      "location": [
+        4.0,
+        -6.0,
+        9.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": []
+    },
+    {
+      "name": "orb",
+      "type": "MESH",
+      "location": [
+        1.8,
+        0.4,
+        0.6
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": []
+    }
+  ],
+  "object_count": 5,
+  "lights": [
+    "Key"
+  ],
+  "op_runner_version": "0.4.0",
+  "blender_version": "5.2.0 LTS",
+  "ok": true,
+  "health": "PASS",
+  "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\blender-ops\\session.blend"
+}

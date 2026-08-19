@@ -1,0 +1,1277 @@
+{
+  "schema_version": 1,
+  "register_id": "11vt-capability-ascension-register",
+  "generated": "2026-08-18",
+  "baseline_version": "0.4.0",
+  "maturity_scale": {
+    "L0": "UNAVAILABLE: no provider or tooling present",
+    "L1": "DETECTED: provider/tooling present but unverified",
+    "L2": "OPERATIONAL: pipeline executes end-to-end on real artifacts",
+    "L3": "VERIFIED: automated tests exercise the pipeline",
+    "L4": "INTEGRATED: regression-gated and/or cross-capability evidence/provenance",
+    "L5": "GOVERNED: release-gated, versioned, rollback-capable, evaluation-covered"
+  },
+  "principle": "maturity is never inflated; L5 requires real implementation + real use + failure test + regression test + independent review + documented limitations",
+  "capabilities": [
+    {
+      "id": "founder-intent-routing",
+      "domain": "intelligence-routing",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "skill",
+          "name": "11vt-capability-entrypoint"
+        }
+      ],
+      "evidence": [
+        "scripts/validate/routing_eval.py",
+        "evaluations/trigger/core-skill-trigger-cases.json"
+      ],
+      "missing_executable": "routing is declarative prose + static eval; no live routing decision log",
+      "missing_observation": "no record of which routes actually fire in real sessions",
+      "missing_evaluation": "static rubric eval only; no end-to-end routing behavior test with a real model",
+      "missing_verification": "no independent check that the live entrypoint matches the repo",
+      "dependencies": [
+        "routing-evaluation",
+        "global-sync"
+      ],
+      "target_maturity": "L5",
+      "priority": "P1",
+      "next_action": "add live routing decision capture to the entrypoint and an end-to-end routing smoke that records actual selections"
+    },
+    {
+      "id": "model-routing",
+      "domain": "intelligence-routing",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "skill",
+          "name": "11vt-9router-orchestrator"
+        },
+        {
+          "kind": "9router-endpoint",
+          "name": "/v1/models",
+          "expected_min": 100
+        }
+      ],
+      "evidence": [
+        "scripts/validate/9router_routing_benchmark.py",
+        "evaluations/model-routing/routing-suite.json",
+        "evaluations/model-routing/routing-profile.json"
+      ],
+      "missing_executable": "benchmark suite exists but no live model-capability registry",
+      "missing_observation": "no per-model capability profile from real Golden Tasks",
+      "missing_evaluation": "routing-suite.json is a task list, not executed evidence",
+      "missing_verification": "no independent review of model capability claims",
+      "dependencies": [
+        "9router-endpoint"
+      ],
+      "target_maturity": "L4",
+      "priority": "P1",
+      "next_action": "execute Golden Tasks through the router and emit an evidence-based model capability registry"
+    },
+    {
+      "id": "web-research",
+      "domain": "research-evidence",
+      "current_maturity": "L2",
+      "providers": [
+        {
+          "kind": "skill",
+          "name": "11vt-research-intelligence"
+        },
+        {
+          "kind": "9router-endpoint",
+          "name": "/v1/models/web",
+          "expected_min": 0
+        }
+      ],
+      "evidence": [
+        "docs/evidence-system.md",
+        "docs/pinned-external-sources.md"
+      ],
+      "missing_executable": "web endpoints return 0 models; research is procedural prompting",
+      "missing_observation": "no structured claim extraction",
+      "missing_evaluation": "no research quality evaluation",
+      "missing_verification": "none",
+      "dependencies": [
+        "9router-web-search"
+      ],
+      "target_maturity": "L2",
+      "priority": "P2",
+      "next_action": "build structured claim/source/confidence extraction tooling"
+    },
+    {
+      "id": "evidence-ledger",
+      "domain": "research-evidence",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "scripts/validate/manifest_validator.py"
+        },
+        {
+          "kind": "template",
+          "name": "templates/product-repository/tools/11vt/evidence.py"
+        }
+      ],
+      "evidence": [
+        "docs/evidence-system.md"
+      ],
+      "missing_executable": "evidence.py exists in template but no central ledger tool",
+      "missing_observation": "no automated evidence capture from test runs",
+      "missing_evaluation": "no check that claims carry evidence",
+      "missing_verification": "none",
+      "dependencies": [
+        "regression-gate"
+      ],
+      "target_maturity": "L4",
+      "priority": "P1",
+      "next_action": "wire evidence capture into regression and media suites"
+    },
+    {
+      "id": "architecture-adr",
+      "domain": "architecture-engineering",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "skill",
+          "name": "11vt-architecture-engineering"
+        }
+      ],
+      "evidence": [
+        "docs/product-development-protocol.md"
+      ],
+      "missing_executable": "ADR workflow is skill prose",
+      "missing_observation": "none",
+      "missing_evaluation": "no ADR quality check",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L3",
+      "priority": "P3",
+      "next_action": "define ADR schema + validator"
+    },
+    {
+      "id": "production-engineering",
+      "domain": "architecture-engineering",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "skill",
+          "name": "11vt-production-engineering"
+        },
+        {
+          "kind": "skill",
+          "name": "11vt-language-workflows"
+        }
+      ],
+      "evidence": [
+        "docs/product-development-protocol.md"
+      ],
+      "missing_executable": "skill prose only",
+      "missing_observation": "none",
+      "missing_evaluation": "none",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L3",
+      "priority": "P3",
+      "next_action": "create implementation QA checklist tied to regression"
+    },
+    {
+      "id": "game-development",
+      "domain": "architecture-engineering",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "skill",
+          "name": "11vt-game-development"
+        }
+      ],
+      "evidence": [],
+      "missing_executable": "skill prose only",
+      "missing_observation": "none",
+      "missing_evaluation": "none",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L3",
+      "priority": "P2",
+      "next_action": "define game-loop verification harness"
+    },
+    {
+      "id": "creative-direction",
+      "domain": "creative-production",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "skill",
+          "name": "11vt-creative-production"
+        },
+        {
+          "kind": "agent",
+          "name": "11vt-creative-director"
+        }
+      ],
+      "evidence": [
+        "evaluations/regression/2026-08-15-creative-production-expansion.md"
+      ],
+      "missing_executable": "agents + skill exist; no executable concept pipeline",
+      "missing_observation": "no concept artifact review tooling",
+      "missing_evaluation": "no anti-generic evaluation",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L4",
+      "priority": "P1",
+      "next_action": "wire visual canon template into asset resolver as a constraint"
+    },
+    {
+      "id": "art-direction",
+      "domain": "creative-production",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "agent",
+          "name": "11vt-art-director"
+        }
+      ],
+      "evidence": [
+        "docs/creative-production-architecture.md"
+      ],
+      "missing_executable": "agent only",
+      "missing_observation": "no color/typography/material grammar artifact",
+      "missing_evaluation": "none",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L3",
+      "priority": "P2",
+      "next_action": "produce machine-readable art-direction tokens consumed by quality models"
+    },
+    {
+      "id": "experience-design",
+      "domain": "creative-production",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "agent",
+          "name": "11vt-experience-designer"
+        }
+      ],
+      "evidence": [
+        "docs/creative-production-architecture.md"
+      ],
+      "missing_executable": "agent only",
+      "missing_observation": "none",
+      "missing_evaluation": "none",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L3",
+      "priority": "P3",
+      "next_action": "define interaction grammar artifact"
+    },
+    {
+      "id": "motion-direction",
+      "domain": "creative-production",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "agent",
+          "name": "11vt-motion-director"
+        }
+      ],
+      "evidence": [
+        "docs/creative-production-architecture.md"
+      ],
+      "missing_executable": "agent only",
+      "missing_observation": "no motion grammar artifact",
+      "missing_evaluation": "none",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L3",
+      "priority": "P2",
+      "next_action": "connect to animation QA metrics"
+    },
+    {
+      "id": "technical-art",
+      "domain": "creative-production",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "agent",
+          "name": "11vt-technical-artist"
+        }
+      ],
+      "evidence": [
+        "docs/creative-production-architecture.md"
+      ],
+      "missing_executable": "agent only",
+      "missing_observation": "no pipeline strategy artifact",
+      "missing_evaluation": "none",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L3",
+      "priority": "P2",
+      "next_action": "bind to blender ops + runtime performance checks"
+    },
+    {
+      "id": "design-direction",
+      "domain": "creative-production",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "skill",
+          "name": "11vt-design-director"
+        }
+      ],
+      "evidence": [
+        "plugin/skills/11vt-design-director/references/visual-qa-checklist.md"
+      ],
+      "missing_executable": "skill + checklist; no executable cohesion check",
+      "missing_observation": "no automated visual drift detection",
+      "missing_evaluation": "visual QA checklist is manual",
+      "missing_verification": "no independent cohesion audit",
+      "dependencies": [],
+      "target_maturity": "L4",
+      "priority": "P1",
+      "next_action": "build cohesion auditor over rendered evidence"
+    },
+    {
+      "id": "raster-processing",
+      "domain": "visual-production-tooling",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "tool",
+          "name": "magick",
+          "degraded": false
+        },
+        {
+          "kind": "tool",
+          "name": "ffmpeg",
+          "degraded": false
+        }
+      ],
+      "evidence": [
+        "scripts/validate/system_regression.py",
+        "artifacts/creative-stack-validation/image/image-validation.json"
+      ],
+      "missing_executable": "real tooling (magick/ffmpeg) + media gate",
+      "missing_observation": "no automated visual inspection of outputs",
+      "missing_evaluation": "media smoke tests only; no quality evaluation",
+      "missing_verification": "no independent review of raster outputs",
+      "dependencies": [],
+      "target_maturity": "L5",
+      "priority": "P0",
+      "next_action": "add failure test + independent review + documented limitations to reach L5"
+    },
+    {
+      "id": "vector-authoring",
+      "domain": "visual-production-tooling",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "tool",
+          "name": "inkscape",
+          "degraded": false
+        },
+        {
+          "kind": "tool",
+          "name": "magick",
+          "degraded": false
+        }
+      ],
+      "evidence": [
+        "artifacts/creative-stack-validation/vector/vector-validation.json"
+      ],
+      "missing_executable": "inkscape + magick fallback verified",
+      "missing_observation": "no vector geometry QA",
+      "missing_evaluation": "vector-test only",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L4",
+      "priority": "P2",
+      "next_action": "add vector inspect/validate ops"
+    },
+    {
+      "id": "video-processing",
+      "domain": "visual-production-tooling",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "tool",
+          "name": "ffmpeg",
+          "degraded": false
+        },
+        {
+          "kind": "tool",
+          "name": "ffprobe",
+          "degraded": false
+        }
+      ],
+      "evidence": [
+        "artifacts/creative-stack-validation/video/video-validation.json"
+      ],
+      "missing_executable": "ffmpeg + media gate",
+      "missing_observation": "no frame-level inspection pipeline",
+      "missing_evaluation": "video-test only",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L4",
+      "priority": "P1",
+      "next_action": "add frame extraction + diff QA for animation evidence"
+    },
+    {
+      "id": "audio-processing",
+      "domain": "visual-production-tooling",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "tool",
+          "name": "ffmpeg",
+          "degraded": false
+        }
+      ],
+      "evidence": [
+        "artifacts/creative-stack-validation/audio/audio-validation.json"
+      ],
+      "missing_executable": "ffmpeg audio ops verified",
+      "missing_observation": "no loudness/spectrum QA",
+      "missing_evaluation": "audio-test only",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L4",
+      "priority": "P2",
+      "next_action": "add loudness + waveform QA metrics"
+    },
+    {
+      "id": "speech-to-text",
+      "domain": "visual-production-tooling",
+      "current_maturity": "L0",
+      "providers": [
+        {
+          "kind": "9router-endpoint",
+          "name": "/v1/models/stt",
+          "expected_min": 0
+        },
+        {
+          "kind": "tool-degraded",
+          "name": "whisper"
+        }
+      ],
+      "evidence": [
+        "docs/GAP_REGISTER.md"
+      ],
+      "missing_executable": "no STT provider installed; 9router-stt 0 models",
+      "missing_observation": "none",
+      "missing_evaluation": "none",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L0",
+      "priority": "P3",
+      "next_action": "document degraded; revisit when a local STT model is installed"
+    },
+    {
+      "id": "text-to-speech",
+      "domain": "visual-production-tooling",
+      "current_maturity": "L2",
+      "providers": [
+        {
+          "kind": "9router-endpoint",
+          "name": "/v1/models/tts",
+          "expected_min": 0
+        }
+      ],
+      "evidence": [
+        "artifacts/creative-stack-validation/audio/audio-validation.json"
+      ],
+      "missing_executable": "9router-tts live (5 models) but no local voice pipeline",
+      "missing_observation": "no voice QA",
+      "missing_evaluation": "placeholder only",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L2",
+      "priority": "P3",
+      "next_action": "exercise a TTS model through the router and QA the output"
+    },
+    {
+      "id": "image-generation",
+      "domain": "visual-production-tooling",
+      "current_maturity": "L2",
+      "providers": [
+        {
+          "kind": "9router-endpoint",
+          "name": "/v1/models/image",
+          "expected_min": 0
+        }
+      ],
+      "evidence": [
+        "docs/GAP_REGISTER.md"
+      ],
+      "missing_executable": "9router-image live (4 models), optional-not-default",
+      "missing_observation": "no generated-image QA",
+      "missing_evaluation": "none",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L2",
+      "priority": "P3",
+      "next_action": "define generation policy + image QA gates"
+    },
+    {
+      "id": "blender-bridge",
+      "domain": "three-d-pipeline",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "tool",
+          "name": "blender",
+          "degraded": false
+        }
+      ],
+      "evidence": [
+        "scripts/media/vtmedia/blender_ops.py",
+        "scripts/validate/system_regression.py",
+        "artifacts/creative-stack-validation/blender-ops/blender-op-suite.json"
+      ],
+      "missing_executable": "14 schema-validated structured ops implemented and regression-gated",
+      "missing_observation": "no GPU utilization observation during renders",
+      "missing_evaluation": "op suite in regression; no failure-path evaluation of each op",
+      "missing_verification": "no independent review of op outputs",
+      "dependencies": [
+        "blender"
+      ],
+      "target_maturity": "L5",
+      "priority": "P0",
+      "next_action": "add per-op failure tests + independent review of rendered artifacts + documented limitations"
+    },
+    {
+      "id": "scene-authoring",
+      "domain": "three-d-pipeline",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "scripts/media/vtmedia/blender_ops.py"
+        }
+      ],
+      "evidence": [
+        "scripts/media/vtmedia/blender_scripts/op_runner.py",
+        "scripts/validate/system_regression.py"
+      ],
+      "missing_executable": "scene.create/inspect ops with schema validation, chained via session .blend",
+      "missing_observation": "no scene package op (zip scene + assets + manifest)",
+      "missing_evaluation": "in regression op suite",
+      "missing_verification": "none",
+      "dependencies": [
+        "blender-bridge"
+      ],
+      "target_maturity": "L5",
+      "priority": "P1",
+      "next_action": "add scene.package + validation failure tests"
+    },
+    {
+      "id": "asset-export",
+      "domain": "three-d-pipeline",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "scripts/media/vtmedia/blender_ops.py"
+        }
+      ],
+      "evidence": [
+        "scripts/media/vtmedia/blender_ops.py",
+        "artifacts/creative-stack-validation/blender-ops/hero-scene.glb"
+      ],
+      "missing_executable": "GLB export exercised end-to-end + structural GLB validator",
+      "missing_observation": "no runtime glTF validation tool (Khronos validator not installed)",
+      "missing_evaluation": "in regression op suite",
+      "missing_verification": "none",
+      "dependencies": [
+        "blender-bridge"
+      ],
+      "target_maturity": "L5",
+      "priority": "P1",
+      "next_action": "add failure tests (corrupt GLB rejected) + document structural-validator limitations vs Khronos"
+    },
+    {
+      "id": "animation-qa",
+      "domain": "three-d-pipeline",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "scripts/media/vtmedia/blender_ops.py"
+        }
+      ],
+      "evidence": [
+        "scripts/media/vtmedia/blender_scripts/op_runner.py",
+        "artifacts/creative-stack-validation/blender-ops/blender-op-suite.json",
+        "artifacts/creative-stack-validation/blender-ops/turntable.mp4"
+      ],
+      "missing_executable": "loop-continuity pixel diff + foot-slide heuristic + turntable video evidence",
+      "missing_observation": "no pose/silhouette/timing artistic review layer",
+      "missing_evaluation": "loop/slide probes in regression",
+      "missing_verification": "no independent review of motion evidence",
+      "dependencies": [],
+      "target_maturity": "L5",
+      "priority": "P0",
+      "next_action": "add broken-loop failure test + review workflow over turntable video evidence"
+    },
+    {
+      "id": "asset-direction",
+      "domain": "asset-intelligence",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "agent",
+          "name": "11vt-asset-director"
+        },
+        {
+          "kind": "script",
+          "name": "scripts/assets/asset_resolver.py"
+        }
+      ],
+      "evidence": [
+        "scripts/assets/asset_resolver.py",
+        "scripts/validate/system_regression.py"
+      ],
+      "missing_executable": "asset resolver with 13 modes, 9 factors, hard rules, provenance plan",
+      "missing_observation": "no link from resolutions to vault records",
+      "missing_evaluation": "resolver cases in regression",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L5",
+      "priority": "P0",
+      "next_action": "connect resolution decisions to executed vault records; failure test for license-unknown blocking"
+    },
+    {
+      "id": "provenance",
+      "domain": "asset-intelligence",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "scripts/media/vtmedia/provenance.py"
+        },
+        {
+          "kind": "script",
+          "name": "scripts/assets/asset_vault.py"
+        }
+      ],
+      "evidence": [
+        "scripts/assets/asset_vault.py",
+        "artifacts/asset-vault/index.json"
+      ],
+      "missing_executable": "vault lineage/dupes/provenance/previews verified",
+      "missing_observation": "no automated license audit of shipping builds",
+      "missing_evaluation": "vault smoke in regression",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L5",
+      "priority": "P0",
+      "next_action": "add unlicensed-asset blocking gate for release + independent audit"
+    },
+    {
+      "id": "asset-vault",
+      "domain": "asset-intelligence",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "scripts/assets/asset_vault.py"
+        }
+      ],
+      "evidence": [
+        "scripts/assets/asset_vault.py",
+        "artifacts/asset-vault/index.json",
+        "scripts/validate/system_regression.py"
+      ],
+      "missing_executable": "vault index: immutable IDs, tags, source/license, lineage, dupes, previews, search",
+      "missing_observation": "no texture/geometry/rig/animation metadata extraction on add",
+      "missing_evaluation": "vault smoke in regression",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L5",
+      "priority": "P1",
+      "next_action": "auto-extract media metadata (dims/geometry/rig/animation) on vault add"
+    },
+    {
+      "id": "requirement-discovery",
+      "domain": "asset-intelligence",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "scripts/assets/requirement_discovery.py"
+        }
+      ],
+      "evidence": [
+        "scripts/assets/requirement_discovery.py",
+        "scripts/validate/system_regression.py"
+      ],
+      "missing_executable": "production graph expansion for 7 product kinds (creature/character/env/ui/cinematic/vfx/audio)",
+      "missing_observation": "no link from graph nodes to resolver executions",
+      "missing_evaluation": "discovery in regression",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L5",
+      "priority": "P1",
+      "next_action": "add product kinds + graph-to-resolution pipeline"
+    },
+    {
+      "id": "pixel-diff",
+      "domain": "visual-qa",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "tool",
+          "name": "magick",
+          "degraded": false
+        }
+      ],
+      "evidence": [
+        "scripts/media/vtmedia/image_tools.py",
+        "artifacts/creative-stack-validation/image/image-validation.json"
+      ],
+      "missing_executable": "real magick AE + PSNR verified",
+      "missing_observation": "no automated threshold policy",
+      "missing_evaluation": "media gate only",
+      "missing_verification": "no independent review",
+      "dependencies": [],
+      "target_maturity": "L5",
+      "priority": "P0",
+      "next_action": "add failure test + policy thresholds + independent review to reach L5"
+    },
+    {
+      "id": "psnr",
+      "domain": "visual-qa",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "tool",
+          "name": "ffmpeg",
+          "degraded": false
+        }
+      ],
+      "evidence": [
+        "scripts/media/vtmedia/image_tools.py"
+      ],
+      "missing_executable": "ffmpeg PSNR fallback verified",
+      "missing_observation": "none",
+      "missing_evaluation": "media gate only",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L5",
+      "priority": "P0",
+      "next_action": "fold into visual QA policy with thresholds"
+    },
+    {
+      "id": "visual-qa-direction",
+      "domain": "visual-qa",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "agent",
+          "name": "11vt-visual-qa-director"
+        }
+      ],
+      "evidence": [
+        "plugin/skills/11vt-design-director/references/visual-qa-checklist.md"
+      ],
+      "missing_executable": "agent + rubric",
+      "missing_observation": "no automated frame QA",
+      "missing_evaluation": "rubric manual",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L4",
+      "priority": "P1",
+      "next_action": "wire pixel-diff/PSNR into an automated frame QA command"
+    },
+    {
+      "id": "independent-review",
+      "domain": "visual-qa",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "agent",
+          "name": "11vt-independent-reviewer"
+        }
+      ],
+      "evidence": [
+        "evaluations/regression/2026-08-15-creative-production-expansion.md"
+      ],
+      "missing_executable": "agent requires rendered evidence",
+      "missing_observation": "no review evidence store",
+      "missing_evaluation": "none",
+      "missing_verification": "reviewer IS the verification, but no audit trail",
+      "dependencies": [],
+      "target_maturity": "L4",
+      "priority": "P1",
+      "next_action": "record independent review decisions with evidence pointers"
+    },
+    {
+      "id": "repository-audit",
+      "domain": "repo-runtime-intelligence",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "skill",
+          "name": "11vt-repository-auditor"
+        }
+      ],
+      "evidence": [],
+      "missing_executable": "skill prose + grep-level search",
+      "missing_observation": "no AST/LSP/dependency analysis",
+      "missing_evaluation": "none",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L3",
+      "priority": "P2",
+      "next_action": "add lightweight AST/dependency scan tooling"
+    },
+    {
+      "id": "status-reconstruction",
+      "domain": "repo-runtime-intelligence",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "skill",
+          "name": "11vt-status"
+        }
+      ],
+      "evidence": [],
+      "missing_executable": "skill prose",
+      "missing_observation": "none",
+      "missing_evaluation": "none",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L3",
+      "priority": "P3",
+      "next_action": "define CURRENT_STATE schema + generator"
+    },
+    {
+      "id": "environment-doctor",
+      "domain": "repo-runtime-intelligence",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "scripts/media/11vt_media.py"
+        }
+      ],
+      "evidence": [
+        "artifacts/creative-stack-validation/environment-report.json",
+        "artifacts/creative-stack-validation/capability-registry.json"
+      ],
+      "missing_executable": "doctor + registry generator verified",
+      "missing_observation": "no drift detection over time",
+      "missing_evaluation": "none",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L4",
+      "priority": "P2",
+      "next_action": "store doctor snapshots and diff for drift"
+    },
+    {
+      "id": "gpu-intelligence",
+      "domain": "repo-runtime-intelligence",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "tool",
+          "name": "nvidia-smi",
+          "degraded": false
+        }
+      ],
+      "evidence": [
+        "artifacts/creative-stack-validation/environment-report.json"
+      ],
+      "missing_executable": "nvidia-smi/nvcc detection verified",
+      "missing_observation": "no GPU utilization observation during renders",
+      "missing_evaluation": "none",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L4",
+      "priority": "P2",
+      "next_action": "capture GPU utilization alongside blender renders"
+    },
+    {
+      "id": "global-sync",
+      "domain": "deployment-governance",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "scripts/install/sync_to_claude.py"
+        }
+      ],
+      "evidence": [
+        "docs/rollback-procedure.md"
+      ],
+      "missing_executable": "sync with backup/manifest/rollback verified + deployed",
+      "missing_observation": "no drift alerting",
+      "missing_evaluation": "dry-run + validator",
+      "missing_verification": "verified from unrelated project",
+      "dependencies": [],
+      "target_maturity": "L5",
+      "priority": "P0",
+      "next_action": "add failure test + independent review + documented limitations to reach L5"
+    },
+    {
+      "id": "global-validation",
+      "domain": "deployment-governance",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "scripts/install/validate_capability_installation.py"
+        }
+      ],
+      "evidence": [],
+      "missing_executable": "validator verified (29 skills/8 agents/pointer/secrets/9router)",
+      "missing_observation": "none",
+      "missing_evaluation": "deploy-time only",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L5",
+      "priority": "P0",
+      "next_action": "fold into regression as a deployment gate"
+    },
+    {
+      "id": "rollback",
+      "domain": "deployment-governance",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "scripts/install/sync_to_claude.py"
+        }
+      ],
+      "evidence": [
+        "docs/rollback-procedure.md"
+      ],
+      "missing_executable": "rollback round-trip proven (42 files restored)",
+      "missing_observation": "no automated post-rollback verification",
+      "missing_evaluation": "manual round-trip test",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L5",
+      "priority": "P0",
+      "next_action": "automate rollback round-trip as a regression test"
+    },
+    {
+      "id": "routing-evaluation",
+      "domain": "evaluation-lab",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "scripts/validate/routing_eval.py"
+        }
+      ],
+      "evidence": [
+        "evaluations/trigger/core-skill-trigger-cases.json"
+      ],
+      "missing_executable": "routing_eval.py verified + mutation-tested",
+      "missing_observation": "no live routing decision log",
+      "missing_evaluation": "static rubric",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L4",
+      "priority": "P1",
+      "next_action": "add live routing capture"
+    },
+    {
+      "id": "behavioral-evaluation",
+      "domain": "evaluation-lab",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "evaluations/behavioral/core-behavioral-cases.md"
+        }
+      ],
+      "evidence": [],
+      "missing_executable": "cases documented only",
+      "missing_observation": "none",
+      "missing_evaluation": "not executed",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L3",
+      "priority": "P2",
+      "next_action": "execute behavioral cases with recorded evidence"
+    },
+    {
+      "id": "regression-gate",
+      "domain": "evaluation-lab",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "scripts/validate/system_regression.py"
+        }
+      ],
+      "evidence": [],
+      "missing_executable": "system_regression.py green incl. media/routing/ontology",
+      "missing_observation": "no trend capture",
+      "missing_evaluation": "runs on demand",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L5",
+      "priority": "P0",
+      "next_action": "add failure test + independent review + documented limitations to reach L5"
+    },
+    {
+      "id": "bootstrap-tests",
+      "domain": "evaluation-lab",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "scripts/validate/bootstrap_fixture_tests.py"
+        }
+      ],
+      "evidence": [],
+      "missing_executable": "fixture tests verified",
+      "missing_observation": "none",
+      "missing_evaluation": "in regression",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L4",
+      "priority": "P2",
+      "next_action": "none critical"
+    },
+    {
+      "id": "manifest-validation",
+      "domain": "evaluation-lab",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "scripts/validate/manifest_validator.py"
+        }
+      ],
+      "evidence": [],
+      "missing_executable": "validator verified",
+      "missing_observation": "none",
+      "missing_evaluation": "in regression",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L4",
+      "priority": "P2",
+      "next_action": "extend schema with asset/quality fields"
+    },
+    {
+      "id": "model-benchmark",
+      "domain": "evaluation-lab",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "scripts/validate/9router_routing_benchmark.py"
+        }
+      ],
+      "evidence": [
+        "evaluations/model-routing/routing-suite.json"
+      ],
+      "missing_executable": "suite defined; profile cached; not executed live",
+      "missing_observation": "no live per-model results",
+      "missing_evaluation": "none executed",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L3",
+      "priority": "P1",
+      "next_action": "execute Golden Tasks through the router"
+    },
+    {
+      "id": "quality-models",
+      "domain": "evaluation-lab",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "config/quality-models.json"
+        }
+      ],
+      "evidence": [
+        "config/quality-models.json",
+        "docs/quality-ladder.md",
+        "scripts/validate/system_regression.py"
+      ],
+      "missing_executable": "6 discipline quality models with checkable dimensions + ladder gates",
+      "missing_observation": "no automated scoring against dimensions",
+      "missing_evaluation": "parse check in regression",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L5",
+      "priority": "P1",
+      "next_action": "build dimension scoring tooling for mechanical dimensions"
+    },
+    {
+      "id": "project-bootstrap",
+      "domain": "product-lifecycle",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "skill",
+          "name": "11vt-project-bootstrap"
+        },
+        {
+          "kind": "script",
+          "name": "scripts/bootstrap/bootstrap_project.py"
+        }
+      ],
+      "evidence": [
+        "scripts/validate/bootstrap_fixture_tests.py"
+      ],
+      "missing_executable": "bootstrap verified (blank/idempotent/preserve)",
+      "missing_observation": "none",
+      "missing_evaluation": "in regression",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L4",
+      "priority": "P2",
+      "next_action": "none critical"
+    },
+    {
+      "id": "product-lifecycle",
+      "domain": "product-lifecycle",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "skill",
+          "name": "11vt-product-lifecycle"
+        }
+      ],
+      "evidence": [
+        "docs/product-development-protocol.md"
+      ],
+      "missing_executable": "skill prose",
+      "missing_observation": "none",
+      "missing_evaluation": "none",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L3",
+      "priority": "P3",
+      "next_action": "define lifecycle state machine + gates"
+    },
+    {
+      "id": "release-engineering",
+      "domain": "product-lifecycle",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "skill",
+          "name": "11vt-release-engineering"
+        }
+      ],
+      "evidence": [
+        "docs/release-engineering.md"
+      ],
+      "missing_executable": "skill prose",
+      "missing_observation": "no release evidence store",
+      "missing_evaluation": "none",
+      "missing_verification": "independent reviewer exists",
+      "dependencies": [],
+      "target_maturity": "L4",
+      "priority": "P2",
+      "next_action": "add release evidence manifest + gate"
+    },
+    {
+      "id": "deterministic-hooks",
+      "domain": "product-lifecycle",
+      "current_maturity": "L4",
+      "providers": [
+        {
+          "kind": "script",
+          "name": "scripts/hooks/guards.py"
+        },
+        {
+          "kind": "script",
+          "name": "scripts/hooks/session_status.py"
+        }
+      ],
+      "evidence": [
+        "docs/hook-policy.md"
+      ],
+      "missing_executable": "guards verified",
+      "missing_observation": "no hook coverage over new tools",
+      "missing_evaluation": "in regression",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L4",
+      "priority": "P2",
+      "next_action": "none critical"
+    },
+    {
+      "id": "skill-foundry",
+      "domain": "foundry-maintenance",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "skill",
+          "name": "11vt-skill-foundry"
+        }
+      ],
+      "evidence": [
+        "docs/capability-registry.md"
+      ],
+      "missing_executable": "skill prose",
+      "missing_observation": "no skill quality evaluation",
+      "missing_evaluation": "none",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L3",
+      "priority": "P3",
+      "next_action": "define skill quality rubric"
+    },
+    {
+      "id": "documentation-canon",
+      "domain": "foundry-maintenance",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "skill",
+          "name": "11vt-documentation-canon"
+        }
+      ],
+      "evidence": [],
+      "missing_executable": "skill prose",
+      "missing_observation": "no docs freshness check",
+      "missing_evaluation": "none",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L3",
+      "priority": "P3",
+      "next_action": "add docs-to-code drift check"
+    },
+    {
+      "id": "core-operating-system",
+      "domain": "foundry-maintenance",
+      "current_maturity": "L3",
+      "providers": [
+        {
+          "kind": "skill",
+          "name": "11vt-core-operating-system"
+        }
+      ],
+      "evidence": [],
+      "missing_executable": "skill prose",
+      "missing_observation": "none",
+      "missing_evaluation": "none",
+      "missing_verification": "none",
+      "dependencies": [],
+      "target_maturity": "L3",
+      "priority": "P3",
+      "next_action": "none critical"
+    }
+  ],
+  "totals": {
+    "capabilities": 53,
+    "assessed_explicitly": 53,
+    "l0": 1,
+    "l2": 3,
+    "l3": 19,
+    "l4": 30,
+    "l5": 0,
+    "priority_p0": 11,
+    "priority_p1": 15
+  }
+}

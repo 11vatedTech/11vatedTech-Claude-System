@@ -1,0 +1,16 @@
+{
+  "op": "animation.loop_check",
+  "params": {
+    "frame_start": 1,
+    "frame_end": 48,
+    "resolution": [
+      320,
+      180
+    ],
+    "samples": 16,
+    "contact_bone": "orb",
+    "out_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\blender-ops\\loop-qa",
+    "load_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\blender-ops\\session.blend",
+    "save_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\blender-ops\\session.blend"
+  }
+}

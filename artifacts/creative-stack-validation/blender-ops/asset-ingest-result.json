@@ -1,0 +1,19 @@
+{
+  "imported": [
+    "Cam",
+    "ground",
+    "ground.001",
+    "hero_block",
+    "hero_block.001",
+    "Key",
+    "orb",
+    "orb.001",
+    "TurntableCamera"
+  ],
+  "object_count": 9,
+  "source": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\blender-ops\\hero-scene.glb",
+  "op_runner_version": "0.4.0",
+  "blender_version": "5.2.0 LTS",
+  "ok": true,
+  "health": "PASS"
+}
