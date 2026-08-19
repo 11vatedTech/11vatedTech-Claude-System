@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 
+# Blender session backups
+*.blend1
+*.blend2
+
 # Freebuff client metadata (not project content)
 .freebuff/
 
