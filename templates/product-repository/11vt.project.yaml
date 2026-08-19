@@ -45,4 +45,7 @@ canon:
   architecture: "ARCHITECTURE.md"
   validation: "VALIDATION_SPECIFICATION.md"
   release: "RELEASE.md"
+  design_system: "DESIGN_SYSTEM.md"
+  asset_pipeline: "ASSET_PIPELINE.md"
+  visual_canon_dir: "docs/design"
   evidence_dir: "docs/evidence"

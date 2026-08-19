@@ -23,6 +23,16 @@ def check_skills():
     print('plugin_skills', 'ok' if not bad else bad)
     return not bad
 
+def check_agents():
+    bad=[]
+    for p in (ROOT/'plugin/agents').glob('*.md'):
+        t=p.read_text(encoding='utf-8')
+        if not t.startswith('---\n'): bad.append(str(p))
+        if 'description:' not in t: bad.append(str(p)+':no-description')
+        if 'tools:' not in t: bad.append(str(p)+':no-tools')
+    print('plugin_agents', 'ok' if not bad else bad)
+    return not bad
+
 def check_manifest_template():
     code,out,err=run(f'python "{ROOT / "scripts/validate/manifest_validator.py"}" "{ROOT / "templates/product-repository/11vt.project.yaml"}"')
     # template intentionally has TODO name; validator should fail for real product but schema keys should exist
@@ -65,7 +75,7 @@ def check_9router():
         print('9router_health_error', e); return False
 
 def main():
-    checks=[check_plugin,check_skills,check_manifest_template,check_hooks,check_bootstrap,check_9router]
+    checks=[check_plugin,check_skills,check_agents,check_manifest_template,check_hooks,check_bootstrap,check_9router]
     results=[c() for c in checks]
     print('system_regression_ok', all(results))
     return 0 if all(results) else 1

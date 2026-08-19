@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 TEMPLATE = ROOT/'templates'/'product-repository'
 
-MERGE_FILES=['11vt.project.yaml','CLAUDE.md','PRODUCT.md','CURRENT_STATE.md','ENGINEERING_CONSTITUTION.md','ARCHITECTURE.md','ROADMAP.md','VALIDATION_SPECIFICATION.md','TESTING_STRATEGY.md','SECURITY_MODEL.md','RELEASE.md']
+MERGE_FILES=['11vt.project.yaml','CLAUDE.md','PRODUCT.md','CURRENT_STATE.md','ENGINEERING_CONSTITUTION.md','ARCHITECTURE.md','ROADMAP.md','VALIDATION_SPECIFICATION.md','TESTING_STRATEGY.md','SECURITY_MODEL.md','RELEASE.md','DESIGN_SYSTEM.md','ASSET_PIPELINE.md']
 
 def git_dirty(repo: Path) -> str:
     try:
@@ -31,7 +31,7 @@ def bootstrap(repo: Path, dry=False) -> int:
     if dirty: actions.append('dirty_git_tree_detected')
     for name in MERGE_FILES:
         copy_missing(TEMPLATE/name, repo/name, dry, actions)
-    for sub in ['docs/adr','docs/research','docs/audits','docs/benchmarks','docs/validation','docs/evidence','.claude/rules','tools/11vt']:
+    for sub in ['docs/adr','docs/research','docs/audits','docs/benchmarks','docs/validation','docs/evidence','docs/design','.claude/rules','tools/11vt']:
         p=repo/sub; actions.append(f'ensure_dir {p}');
         if not dry: p.mkdir(parents=True, exist_ok=True)
     for skill in ['project-build','project-run','project-verify','project-release']:

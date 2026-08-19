@@ -1,0 +1,881 @@
+{
+  "system": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.14.6",
+    "machine": "AMD64",
+    "processor": "Intel64 Family 6 Model 198 Stepping 2, GenuineIntel",
+    "cwd": "C:\\Users\\11vat\\OneDrive\\Desktop\\claude-9router-workspace",
+    "powershell_inventory": {
+      "command": "powershell -NoProfile -Command \"Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors | ConvertTo-Json -Compress; Get-CimInstance Win32_ComputerSystem | Select-Object TotalPhysicalMemory | ConvertTo-Json -Compress; Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version,BuildNumber | ConvertTo-Json -Compress; Get-PSDrive -PSProvider FileSystem | Select-Object Name,Free,Used | ConvertTo-Json -Compress\"",
+      "returncode": 0,
+      "stdout": "{\"Name\":\"Intel(R) Core(TM) Ultra 9 275HX\",\"NumberOfCores\":24,\"NumberOfLogicalProcessors\":24}\n{\"TotalPhysicalMemory\":33736089600}\n{\"Caption\":\"Microsoft Windows 11 Home\",\"Version\":\"10.0.26200\",\"BuildNumber\":\"26200\"}\n{\"Name\":\"C\",\"Free\":486517702656,\"Used\":499746664448}\n",
+      "stderr": "",
+      "elapsed_seconds": 10.941
+    }
+  },
+  "tools": {
+    "git": {
+      "tool": "git",
+      "availability": "available",
+      "path": "C:\\Program Files\\Git\\mingw64\\bin\\git.EXE",
+      "version": "git version 2.55.0.windows.3",
+      "health": "PASS",
+      "check": {
+        "argv": [
+          "git",
+          "--version"
+        ],
+        "returncode": 0,
+        "stdout": "git version 2.55.0.windows.3\n",
+        "stderr": "",
+        "elapsed_seconds": 0.835
+      }
+    },
+    "node": {
+      "tool": "node",
+      "availability": "available",
+      "path": "C:\\Program Files\\nodejs\\node.EXE",
+      "version": "v24.18.0",
+      "health": "PASS",
+      "check": {
+        "argv": [
+          "node",
+          "--version"
+        ],
+        "returncode": 0,
+        "stdout": "v24.18.0\n",
+        "stderr": "",
+        "elapsed_seconds": 1.551
+      }
+    },
+    "npm": {
+      "tool": "npm",
+      "availability": "failed",
+      "path": "C:\\Program Files\\nodejs\\npm.CMD",
+      "version": "",
+      "health": "FAILED",
+      "check": {
+        "argv": [
+          "npm",
+          "--version"
+        ],
+        "error": "FileNotFoundError: [WinError 2] The system cannot find the file specified",
+        "elapsed_seconds": 0.02
+      }
+    },
+    "python": {
+      "tool": "python",
+      "availability": "available",
+      "path": "C:\\Users\\11vat\\AppData\\Local\\Programs\\Python\\Python314\\python.EXE",
+      "version": "Python 3.14.6",
+      "health": "PASS",
+      "check": {
+        "argv": [
+          "python",
+          "--version"
+        ],
+        "returncode": 0,
+        "stdout": "Python 3.14.6\n",
+        "stderr": "",
+        "elapsed_seconds": 0.44
+      }
+    },
+    "ffmpeg": {
+      "tool": "ffmpeg",
+      "availability": "available",
+      "path": "C:\\Users\\11vat\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.EXE",
+      "version": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+      "health": "PASS",
+      "check": {
+        "argv": [
+          "ffmpeg",
+          "-version"
+        ],
+        "returncode": 0,
+        "stdout": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers\nbuilt with gcc 16.1.0 (Rev2, Built by MSYS2 project)\nconfiguration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrenco...[truncated]",
+        "stderr": "",
+        "elapsed_seconds": 0.854
+      }
+    },
+    "ffprobe": {
+      "tool": "ffprobe",
+      "availability": "available",
+      "path": "C:\\Users\\11vat\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffprobe.EXE",
+      "version": "ffprobe version 8.1.2-full_build-www.gyan.dev Copyright (c) 2007-2026 the FFmpeg developers",
+      "health": "PASS",
+      "check": {
+        "argv": [
+          "ffprobe",
+          "-version"
+        ],
+        "returncode": 0,
+        "stdout": "ffprobe version 8.1.2-full_build-www.gyan.dev Copyright (c) 2007-2026 the FFmpeg developers\nbuilt with gcc 16.1.0 (Rev2, Built by MSYS2 project)\nconfiguration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrenc...[truncated]",
+        "stderr": "",
+        "elapsed_seconds": 1.307
+      }
+    },
+    "magick": {
+      "tool": "magick",
+      "availability": "missing",
+      "path": null,
+      "version": null,
+      "health": "MISSING"
+    },
+    "identify": {
+      "tool": "identify",
+      "availability": "missing",
+      "path": null,
+      "version": null,
+      "health": "MISSING"
+    },
+    "compare": {
+      "tool": "compare",
+      "availability": "missing",
+      "path": null,
+      "version": null,
+      "health": "MISSING"
+    },
+    "composite": {
+      "tool": "composite",
+      "availability": "missing",
+      "path": null,
+      "version": null,
+      "health": "MISSING"
+    },
+    "blender": {
+      "tool": "blender",
+      "availability": "missing",
+      "path": null,
+      "version": null,
+      "health": "MISSING"
+    },
+    "inkscape": {
+      "tool": "inkscape",
+      "availability": "missing",
+      "path": null,
+      "version": null,
+      "health": "MISSING"
+    },
+    "krita": {
+      "tool": "krita",
+      "availability": "missing",
+      "path": null,
+      "version": null,
+      "health": "MISSING"
+    },
+    "gimp": {
+      "tool": "gimp",
+      "availability": "missing",
+      "path": null,
+      "version": null,
+      "health": "MISSING"
+    },
+    "kdenlive": {
+      "tool": "kdenlive",
+      "availability": "missing",
+      "path": null,
+      "version": null,
+      "health": "MISSING"
+    },
+    "audacity": {
+      "tool": "audacity",
+      "availability": "missing",
+      "path": null,
+      "version": null,
+      "health": "MISSING"
+    },
+    "nvidia-smi": {
+      "tool": "nvidia-smi",
+      "availability": "available",
+      "path": "C:\\Windows\\system32\\nvidia-smi.EXE",
+      "version": "Sun Aug 16 00:18:50 2026",
+      "health": "PASS",
+      "check": {
+        "argv": [
+          "nvidia-smi"
+        ],
+        "returncode": 0,
+        "stdout": "Sun Aug 16 00:18:50 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 591.44                 Driver Version: 591.44         CUDA Version: 13.1     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5070 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |\n| N/A   49C    P8              8...[truncated]",
+        "stderr": "",
+        "elapsed_seconds": 0.927
+      }
+    },
+    "nvcc": {
+      "tool": "nvcc",
+      "availability": "available",
+      "path": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.3\\bin\\nvcc.EXE",
+      "version": "nvcc: NVIDIA (R) Cuda compiler driver",
+      "health": "PASS",
+      "check": {
+        "argv": [
+          "nvcc",
+          "--version"
+        ],
+        "returncode": 0,
+        "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2026 NVIDIA Corporation\nBuilt on Tue_Jun__9_14:30:19_Pacific_Daylight_Time_2026\nCuda compilation tools, release 13.3, V13.3.73\nBuild cuda_13.3.r13.3/compiler.38244171_0\n",
+        "stderr": "",
+        "elapsed_seconds": 0.723
+      }
+    }
+  },
+  "gpu": {
+    "availability": "available",
+    "health": "PASS",
+    "query": {
+      "argv": [
+        "nvidia-smi",
+        "--query-gpu=name,memory.total,driver_version",
+        "--format=csv,noheader,nounits"
+      ],
+      "returncode": 0,
+      "stdout": "NVIDIA GeForce RTX 5070 Ti Laptop GPU, 12227, 591.44\n",
+      "stderr": "",
+      "elapsed_seconds": 1.389
+    },
+    "smi": {
+      "argv": [
+        "nvidia-smi"
+      ],
+      "returncode": 0,
+      "stdout": "Sun Aug 16 00:18:42 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 591.44                 Driver Version: 591.44         CUDA Version: 13.1     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5070 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |\n| N/A   49C    P8              8W /   64W |      45MiB /  12227MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A           15760    C+G   ...s\\Win64\\EpicGamesLauncher.exe      N/A      |\n|  ...[truncated]",
+      "stderr": "",
+      "elapsed_seconds": 1.506
+    },
+    "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+    "vram_mb": 12227,
+    "driver": "591.44"
+  },
+  "9router": {
+    "base": "http://127.0.0.1:20128",
+    "health": "PASS",
+    "categories": {
+      "/v1/models": 329,
+      "/v1/models/image": 4,
+      "/v1/models/tts": 5,
+      "/v1/models/embedding": 8,
+      "/v1/models/web": 0,
+      "/v1/models/stt": 0,
+      "/v1/models/image-to-text": 2
+    }
+  },
+  "registry": {
+    "schema_version": 1,
+    "registry_id": "11vt-creative-toolchain",
+    "updated_at_note": "generated by 11vt_media doctor",
+    "capabilities": {
+      "raster_processing": {
+        "availability": "available",
+        "providers": [
+          {
+            "provider": "ffmpeg",
+            "executable": "C:\\Users\\11vat\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.EXE",
+            "version": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+            "availability": "available"
+          },
+          {
+            "provider": "python",
+            "executable": "C:\\Users\\11vat\\AppData\\Local\\Programs\\Python\\Python314\\python.EXE",
+            "version": "Python 3.14.6",
+            "availability": "available"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "PASS"
+      },
+      "raster_painting": {
+        "availability": "missing",
+        "providers": [],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "MISSING"
+      },
+      "vector_authoring": {
+        "availability": "missing",
+        "providers": [],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "MISSING"
+      },
+      "three_d_modeling": {
+        "availability": "missing",
+        "providers": [],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "MISSING"
+      },
+      "three_d_rendering": {
+        "availability": "missing",
+        "providers": [],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "MISSING"
+      },
+      "shader_authoring": {
+        "availability": "available",
+        "providers": [
+          {
+            "provider": "node",
+            "executable": "C:\\Program Files\\nodejs\\node.EXE",
+            "version": "v24.18.0",
+            "availability": "available"
+          },
+          {
+            "provider": "python",
+            "executable": "C:\\Users\\11vat\\AppData\\Local\\Programs\\Python\\Python314\\python.EXE",
+            "version": "Python 3.14.6",
+            "availability": "available"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "PASS"
+      },
+      "image_generation": {
+        "availability": "available",
+        "providers": [
+          {
+            "provider": "comfyui",
+            "availability": "not_installed",
+            "cost_policy": "local_free_required"
+          },
+          {
+            "provider": "9router_image",
+            "automation_method": "9Router API",
+            "availability": "available",
+            "cost_policy": "optional_not_default"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "PASS"
+      },
+      "image_editing": {
+        "availability": "missing",
+        "providers": [
+          {
+            "provider": "comfyui",
+            "availability": "not_installed",
+            "cost_policy": "local_free_required"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "MISSING"
+      },
+      "image_upscaling": {
+        "availability": "missing",
+        "providers": [
+          {
+            "provider": "comfyui",
+            "availability": "not_installed",
+            "cost_policy": "local_free_required"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "MISSING"
+      },
+      "background_removal": {
+        "availability": "missing",
+        "providers": [
+          {
+            "provider": "comfyui",
+            "availability": "not_installed",
+            "cost_policy": "local_free_required"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "MISSING"
+      },
+      "video_generation": {
+        "availability": "missing",
+        "providers": [
+          {
+            "provider": "comfyui",
+            "availability": "not_installed",
+            "cost_policy": "local_free_required"
+          },
+          {
+            "provider": "9router_video",
+            "automation_method": "9Router API",
+            "availability": "missing_or_untested",
+            "cost_policy": "optional_not_default"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "MISSING"
+      },
+      "video_editing": {
+        "availability": "available",
+        "providers": [
+          {
+            "provider": "ffmpeg",
+            "executable": "C:\\Users\\11vat\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.EXE",
+            "version": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+            "availability": "available"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "PASS"
+      },
+      "video_encoding": {
+        "availability": "available",
+        "providers": [
+          {
+            "provider": "ffmpeg",
+            "executable": "C:\\Users\\11vat\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.EXE",
+            "version": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+            "availability": "available"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "PASS"
+      },
+      "video_upscaling": {
+        "availability": "available",
+        "providers": [
+          {
+            "provider": "ffmpeg",
+            "executable": "C:\\Users\\11vat\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.EXE",
+            "version": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+            "availability": "available"
+          },
+          {
+            "provider": "comfyui",
+            "availability": "not_installed",
+            "cost_policy": "local_free_required"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "PASS"
+      },
+      "audio_editing": {
+        "availability": "available",
+        "providers": [
+          {
+            "provider": "ffmpeg",
+            "executable": "C:\\Users\\11vat\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.EXE",
+            "version": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+            "availability": "available"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "PASS"
+      },
+      "speech_to_text": {
+        "availability": "available",
+        "providers": [
+          {
+            "provider": "whisper",
+            "availability": "not_installed",
+            "cost_policy": "local_free_required"
+          },
+          {
+            "provider": "ffmpeg",
+            "executable": "C:\\Users\\11vat\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.EXE",
+            "version": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+            "availability": "available"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "PASS"
+      },
+      "text_to_speech": {
+        "availability": "available",
+        "providers": [
+          {
+            "provider": "piper",
+            "availability": "not_installed",
+            "cost_policy": "local_free_required"
+          },
+          {
+            "provider": "9router_tts",
+            "automation_method": "9Router API",
+            "availability": "available",
+            "cost_policy": "optional_not_default"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "PASS"
+      },
+      "browser_rendering": {
+        "availability": "available",
+        "providers": [
+          {
+            "provider": "claude_preview",
+            "automation_method": "Claude Browser preview tools",
+            "availability": "available_in_session"
+          },
+          {
+            "provider": "node",
+            "executable": "C:\\Program Files\\nodejs\\node.EXE",
+            "version": "v24.18.0",
+            "availability": "available"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "PASS"
+      },
+      "browser_capture": {
+        "availability": "available",
+        "providers": [
+          {
+            "provider": "claude_preview",
+            "automation_method": "Claude Browser preview tools",
+            "availability": "available_in_session"
+          },
+          {
+            "provider": "node",
+            "executable": "C:\\Program Files\\nodejs\\node.EXE",
+            "version": "v24.18.0",
+            "availability": "available"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "PASS"
+      },
+      "visual_diff": {
+        "availability": "available",
+        "providers": [
+          {
+            "provider": "ffmpeg",
+            "executable": "C:\\Users\\11vat\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.EXE",
+            "version": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+            "availability": "available"
+          },
+          {
+            "provider": "python",
+            "executable": "C:\\Users\\11vat\\AppData\\Local\\Programs\\Python\\Python314\\python.EXE",
+            "version": "Python 3.14.6",
+            "availability": "available"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "PASS"
+      },
+      "web_research": {
+        "availability": "available",
+        "providers": [
+          {
+            "provider": "claude_websearch",
+            "automation_method": "Claude web tools",
+            "availability": "available_in_session"
+          },
+          {
+            "provider": "claude_webfetch",
+            "automation_method": "Claude web tools",
+            "availability": "available_in_session"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "PASS"
+      },
+      "asset_conversion": {
+        "availability": "available",
+        "providers": [
+          {
+            "provider": "ffmpeg",
+            "executable": "C:\\Users\\11vat\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.EXE",
+            "version": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+            "availability": "available"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "PASS"
+      },
+      "font_inspection": {
+        "availability": "available",
+        "providers": [
+          {
+            "provider": "python",
+            "executable": "C:\\Users\\11vat\\AppData\\Local\\Programs\\Python\\Python314\\python.EXE",
+            "version": "Python 3.14.6",
+            "availability": "available"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "PASS"
+      },
+      "color_management": {
+        "availability": "available",
+        "providers": [
+          {
+            "provider": "ffmpeg",
+            "executable": "C:\\Users\\11vat\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.EXE",
+            "version": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+            "availability": "available"
+          }
+        ],
+        "cost_policy": "free_local_default",
+        "license": "varies_by_provider",
+        "health": "PASS"
+      }
+    },
+    "tools": {
+      "git": {
+        "tool": "git",
+        "availability": "available",
+        "path": "C:\\Program Files\\Git\\mingw64\\bin\\git.EXE",
+        "version": "git version 2.55.0.windows.3",
+        "health": "PASS",
+        "check": {
+          "argv": [
+            "git",
+            "--version"
+          ],
+          "returncode": 0,
+          "stdout": "git version 2.55.0.windows.3\n",
+          "stderr": "",
+          "elapsed_seconds": 0.835
+        }
+      },
+      "node": {
+        "tool": "node",
+        "availability": "available",
+        "path": "C:\\Program Files\\nodejs\\node.EXE",
+        "version": "v24.18.0",
+        "health": "PASS",
+        "check": {
+          "argv": [
+            "node",
+            "--version"
+          ],
+          "returncode": 0,
+          "stdout": "v24.18.0\n",
+          "stderr": "",
+          "elapsed_seconds": 1.551
+        }
+      },
+      "npm": {
+        "tool": "npm",
+        "availability": "failed",
+        "path": "C:\\Program Files\\nodejs\\npm.CMD",
+        "version": "",
+        "health": "FAILED",
+        "check": {
+          "argv": [
+            "npm",
+            "--version"
+          ],
+          "error": "FileNotFoundError: [WinError 2] The system cannot find the file specified",
+          "elapsed_seconds": 0.02
+        }
+      },
+      "python": {
+        "tool": "python",
+        "availability": "available",
+        "path": "C:\\Users\\11vat\\AppData\\Local\\Programs\\Python\\Python314\\python.EXE",
+        "version": "Python 3.14.6",
+        "health": "PASS",
+        "check": {
+          "argv": [
+            "python",
+            "--version"
+          ],
+          "returncode": 0,
+          "stdout": "Python 3.14.6\n",
+          "stderr": "",
+          "elapsed_seconds": 0.44
+        }
+      },
+      "ffmpeg": {
+        "tool": "ffmpeg",
+        "availability": "available",
+        "path": "C:\\Users\\11vat\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.EXE",
+        "version": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+        "health": "PASS",
+        "check": {
+          "argv": [
+            "ffmpeg",
+            "-version"
+          ],
+          "returncode": 0,
+          "stdout": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers\nbuilt with gcc 16.1.0 (Rev2, Built by MSYS2 project)\nconfiguration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrenco...[truncated]",
+          "stderr": "",
+          "elapsed_seconds": 0.854
+        }
+      },
+      "ffprobe": {
+        "tool": "ffprobe",
+        "availability": "available",
+        "path": "C:\\Users\\11vat\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffprobe.EXE",
+        "version": "ffprobe version 8.1.2-full_build-www.gyan.dev Copyright (c) 2007-2026 the FFmpeg developers",
+        "health": "PASS",
+        "check": {
+          "argv": [
+            "ffprobe",
+            "-version"
+          ],
+          "returncode": 0,
+          "stdout": "ffprobe version 8.1.2-full_build-www.gyan.dev Copyright (c) 2007-2026 the FFmpeg developers\nbuilt with gcc 16.1.0 (Rev2, Built by MSYS2 project)\nconfiguration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrenc...[truncated]",
+          "stderr": "",
+          "elapsed_seconds": 1.307
+        }
+      },
+      "magick": {
+        "tool": "magick",
+        "availability": "missing",
+        "path": null,
+        "version": null,
+        "health": "MISSING"
+      },
+      "identify": {
+        "tool": "identify",
+        "availability": "missing",
+        "path": null,
+        "version": null,
+        "health": "MISSING"
+      },
+      "compare": {
+        "tool": "compare",
+        "availability": "missing",
+        "path": null,
+        "version": null,
+        "health": "MISSING"
+      },
+      "composite": {
+        "tool": "composite",
+        "availability": "missing",
+        "path": null,
+        "version": null,
+        "health": "MISSING"
+      },
+      "blender": {
+        "tool": "blender",
+        "availability": "missing",
+        "path": null,
+        "version": null,
+        "health": "MISSING"
+      },
+      "inkscape": {
+        "tool": "inkscape",
+        "availability": "missing",
+        "path": null,
+        "version": null,
+        "health": "MISSING"
+      },
+      "krita": {
+        "tool": "krita",
+        "availability": "missing",
+        "path": null,
+        "version": null,
+        "health": "MISSING"
+      },
+      "gimp": {
+        "tool": "gimp",
+        "availability": "missing",
+        "path": null,
+        "version": null,
+        "health": "MISSING"
+      },
+      "kdenlive": {
+        "tool": "kdenlive",
+        "availability": "missing",
+        "path": null,
+        "version": null,
+        "health": "MISSING"
+      },
+      "audacity": {
+        "tool": "audacity",
+        "availability": "missing",
+        "path": null,
+        "version": null,
+        "health": "MISSING"
+      },
+      "nvidia-smi": {
+        "tool": "nvidia-smi",
+        "availability": "available",
+        "path": "C:\\Windows\\system32\\nvidia-smi.EXE",
+        "version": "Sun Aug 16 00:18:50 2026",
+        "health": "PASS",
+        "check": {
+          "argv": [
+            "nvidia-smi"
+          ],
+          "returncode": 0,
+          "stdout": "Sun Aug 16 00:18:50 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 591.44                 Driver Version: 591.44         CUDA Version: 13.1     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5070 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |\n| N/A   49C    P8              8...[truncated]",
+          "stderr": "",
+          "elapsed_seconds": 0.927
+        }
+      },
+      "nvcc": {
+        "tool": "nvcc",
+        "availability": "available",
+        "path": "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v13.3\\bin\\nvcc.EXE",
+        "version": "nvcc: NVIDIA (R) Cuda compiler driver",
+        "health": "PASS",
+        "check": {
+          "argv": [
+            "nvcc",
+            "--version"
+          ],
+          "returncode": 0,
+          "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2026 NVIDIA Corporation\nBuilt on Tue_Jun__9_14:30:19_Pacific_Daylight_Time_2026\nCuda compilation tools, release 13.3, V13.3.73\nBuild cuda_13.3.r13.3/compiler.38244171_0\n",
+          "stderr": "",
+          "elapsed_seconds": 0.723
+        }
+      }
+    },
+    "gpu": {
+      "availability": "available",
+      "health": "PASS",
+      "query": {
+        "argv": [
+          "nvidia-smi",
+          "--query-gpu=name,memory.total,driver_version",
+          "--format=csv,noheader,nounits"
+        ],
+        "returncode": 0,
+        "stdout": "NVIDIA GeForce RTX 5070 Ti Laptop GPU, 12227, 591.44\n",
+        "stderr": "",
+        "elapsed_seconds": 1.389
+      },
+      "smi": {
+        "argv": [
+          "nvidia-smi"
+        ],
+        "returncode": 0,
+        "stdout": "Sun Aug 16 00:18:42 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 591.44                 Driver Version: 591.44         CUDA Version: 13.1     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5070 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |\n| N/A   49C    P8              8W /   64W |      45MiB /  12227MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A           15760    C+G   ...s\\Win64\\EpicGamesLauncher.exe      N/A      |\n|  ...[truncated]",
+        "stderr": "",
+        "elapsed_seconds": 1.506
+      },
+      "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+      "vram_mb": 12227,
+      "driver": "591.44"
+    },
+    "9router": {
+      "base": "http://127.0.0.1:20128",
+      "health": "PASS",
+      "categories": {
+        "/v1/models": 329,
+        "/v1/models/image": 4,
+        "/v1/models/tts": 5,
+        "/v1/models/embedding": 8,
+        "/v1/models/web": 0,
+        "/v1/models/stt": 0,
+        "/v1/models/image-to-text": 2
+      }
+    },
+    "policies": {
+      "paid_generation_default": "forbidden",
+      "public_services_default": "localhost_only",
+      "license_manifest_required": true,
+      "provenance_required": true
+    }
+  }
+}

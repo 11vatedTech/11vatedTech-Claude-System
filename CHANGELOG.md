@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.3.0 — 2026-08-15
+
+- Added `11vt-creative-production` as modular creative-production operating skill.
+- Added specialist agents: Creative Director, Art Director, Experience Designer, Motion Director, Technical Artist, Asset Director, Visual QA Director.
+- Expanded `11vt-design-director` with anti-generic aesthetic gates, visual evidence discipline, escalation ladder, and stronger visual QA checklist.
+- Expanded `11vt-independent-reviewer` to require rendered visual evidence for UI-facing work.
+- Expanded `11vt-capability-entrypoint` routing for high-fidelity creative, game presentation, 3D/rendering, audiovisual, typography, and visual QA tasks.
+- Added creative-production architecture doc, visual evidence requirements, project visual canon template, asset protocol, and visual QA rubric.
+- Expanded project template with design system, asset pipeline, visual canon directory, and manifest canon pointers.
+- Expanded trigger and behavioral evaluations for creative-production activation and non-overtriggering.
+- Updated sync tooling to sync both skills and agents.
+
 ## 0.2.1 — 2026-08-15
 
 - Added `11vt-capability-entrypoint` as universal Founder-intent routing skill.

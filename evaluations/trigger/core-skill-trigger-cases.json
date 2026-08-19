@@ -1,6 +1,6 @@
 {
   "suite": "core-skill-trigger-cases",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "cases": [
     {
       "prompt": "Continue development in this 11vatedTech repo and determine next work.",
@@ -28,10 +28,49 @@
       ]
     },
     {
+      "prompt": "Make this app look premium and high-fidelity, not like a generic AI dashboard.",
+      "expect": [
+        "11vt-creative-production",
+        "11vt-design-director"
+      ]
+    },
+    {
+      "prompt": "Create a cinematic WebGL landing page with custom motion, assets, and visual QA.",
+      "expect": [
+        "11vt-creative-production",
+        "11vt-design-director"
+      ]
+    },
+    {
+      "prompt": "Build a high-fidelity game prototype with art direction, animation, VFX, and browser validation.",
+      "expect": [
+        "11vt-creative-production",
+        "11vt-game-development",
+        "11vt-design-director"
+      ]
+    },
+    {
+      "prompt": "Review visual polish and screenshot evidence before handoff.",
+      "expect": [
+        "11vt-creative-production",
+        "11vt-design-director",
+        "11vt-independent-reviewer"
+      ]
+    },
+    {
       "prompt": "Generate a tiny regex for email validation.",
       "expect_not": [
         "11vt-product-lifecycle",
-        "11vt-release-engineering"
+        "11vt-release-engineering",
+        "11vt-creative-production",
+        "11vt-design-director"
+      ]
+    },
+    {
+      "prompt": "Fix backend auth token expiry edge case.",
+      "expect_not": [
+        "11vt-creative-production",
+        "11vt-design-director"
       ]
     }
   ]
