@@ -58,6 +58,15 @@ def waveform(input_path: Path, out_path: Path, size: str = "1280x240") -> dict[s
     return run(["ffmpeg", "-y", "-i", str(input_path), "-filter_complex", f"showwavespic=s={size}:colors=#67d9ff", "-frames:v", "1", str(out_path)], timeout=60)
 
 
+def image_sequence_to_video(pattern: str, out_path: Path, fps: int = 24) -> dict[str, Any]:
+    """Assemble a numbered image sequence (e.g. turntable-%03d.png) into an
+    H.264 motion-preview video. This is how animation/VFX evidence becomes
+    observable motion instead of screenshots."""
+    ensure_dir(out_path.parent)
+    return run(["ffmpeg", "-y", "-framerate", str(fps), "-i", pattern,
+                "-c:v", "libx264", "-pix_fmt", "yuv420p", str(out_path)], timeout=180)
+
+
 def resize_image(input_path: Path, out_path: Path, width: int) -> dict[str, Any]:
     ensure_dir(out_path.parent)
     return run(["ffmpeg", "-y", "-i", str(input_path), "-vf", f"scale={width}:-1:flags=lanczos", str(out_path)], timeout=60)

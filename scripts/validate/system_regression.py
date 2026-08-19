@@ -74,6 +74,24 @@ def check_9router():
     except Exception as e:
         print('9router_health_error', e); return False
 
+def check_blender_ops():
+    """Structured Blender ops are a first-class gate when Blender is present;
+    a clear SKIP report (not a silent pass) when it is missing."""
+    sys.path.insert(0, str(ROOT/'scripts/media'))
+    from vtmedia.blender_bridge import available
+    if not available():
+        print('blender_ops SKIP blender_not_detected')
+        return True
+    out_dir=ROOT/'artifacts/creative-stack-validation/blender-ops'
+    try:
+        code,out,err=run(f'cd "{ROOT / "scripts/media"}" && python -m vtmedia.blender_ops --suite --out "{out_dir}"', timeout=420)
+        ok=code==0
+        print('blender_ops', 'ok' if ok else (err or out)[-500:])
+    except Exception as e:
+        ok=False
+        print('blender_ops', 'FAILED', type(e).__name__, str(e)[:200])
+    return ok
+
 def check_routing():
     code,out,err=run(f'python "{ROOT / "scripts/validate/routing_eval.py"}"')
     ok=code==0
@@ -104,7 +122,7 @@ def check_media():
     return not failures
 
 def main():
-    checks=[check_plugin,check_skills,check_agents,check_manifest_template,check_hooks,check_bootstrap,check_media,check_routing,check_ontology,check_9router]
+    checks=[check_plugin,check_skills,check_agents,check_manifest_template,check_hooks,check_bootstrap,check_media,check_blender_ops,check_routing,check_ontology,check_9router]
     results=[c() for c in checks]
     print('system_regression_ok', all(results))
     return 0 if all(results) else 1
