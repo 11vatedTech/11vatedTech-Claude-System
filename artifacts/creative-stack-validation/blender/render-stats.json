@@ -1,0 +1,34 @@
+{
+  "scene_id": "11vt-crystal-atelier",
+  "elapsed_seconds": 29.947,
+  "engine": "CYCLES",
+  "cycles_device": "GPU",
+  "samples": 64,
+  "resolution": [
+    1280,
+    720
+  ],
+  "objects": [
+    "faceted aurora monolith - authored validation asset",
+    "supporting cut crystal shard 1",
+    "supporting cut crystal shard 2",
+    "supporting cut crystal shard 3",
+    "supporting cut crystal shard 4",
+    "obsidian display plinth",
+    "thin gold calibration ring",
+    "large warm softbox key",
+    "cyan rim strip",
+    "tiny white sparkle kicker",
+    "hero three-quarter product camera",
+    "matte studio floor"
+  ],
+  "materials": [
+    "aurora glass - cyan gold dispersion",
+    "brushed warm gold bevels",
+    "Dots Stroke",
+    "Material",
+    "obsidian satin base"
+  ],
+  "art_direction": "Faceted glass monolith with physical material response, not primitive placeholder cube.",
+  "final_blockers": []
+}

@@ -1,24 +1,29 @@
 from __future__ import annotations
 
 from pathlib import Path
-from shutil import which
 from typing import Any
-from .common import ensure_dir, run, write_json
+from .common import ensure_dir, resolve_tool, run, write_json
 
 ROOT = Path(__file__).resolve().parents[3]
 SCRIPT_DIR = Path(__file__).resolve().parent / "blender_scripts"
 
 
+def _blender() -> str | None:
+    """Resolved Blender executable (PATH or known Program Files install)."""
+    return resolve_tool("blender")
+
+
 def available() -> bool:
-    return which("blender") is not None
+    return _blender() is not None
 
 
 def doctor() -> dict[str, Any]:
-    if not available():
+    blender = _blender()
+    if not blender:
         return {"availability": "missing", "health": "MISSING"}
-    version = run(["blender", "--version"], timeout=30)
-    py = run(["blender", "--background", "--python-expr", "import bpy, json; print('BLENDER_PY_OK', bpy.app.version_string)"], timeout=60)
-    gpu = run(["blender", "--background", "--python", str(SCRIPT_DIR / "gpu_report.py")], timeout=90)
+    version = run([blender, "--version"], timeout=30)
+    py = run([blender, "--background", "--python-expr", "import bpy, json; print('BLENDER_PY_OK', bpy.app.version_string)"], timeout=60)
+    gpu = run([blender, "--background", "--python", str(SCRIPT_DIR / "gpu_report.py")], timeout=90)
     return {"availability": "available", "health": "PASS" if py.get("returncode") == 0 else "FAILED", "version": version, "python": py, "gpu_report": gpu}
 
 
@@ -41,12 +46,14 @@ def render_test(out_dir: Path, quality: str = "preview") -> dict[str, Any]:
     blend = out_dir / "test-scene.blend"
     png = out_dir / "render.png"
     stats = out_dir / "render-stats.json"
-    r = run(["blender", "--background", "--python", str(SCRIPT_DIR / "render_scene.py"), "--", str(scene_json), str(blend), str(png), str(stats)], timeout=600)
+    blender = _blender()
+    r = run([blender, "--background", "--python", str(SCRIPT_DIR / "render_scene.py"), "--", str(scene_json), str(blend), str(png), str(stats)], timeout=600)
     return {"command": r, "scene": str(scene_json), "blend": str(blend), "render": str(png), "stats": str(stats), "health": "PASS" if Path(png).exists() else "FAILED"}
 
 
 def export_glb(blend: Path, out_glb: Path) -> dict[str, Any]:
     ensure_dir(out_glb.parent)
-    if not available():
+    blender = _blender()
+    if not blender:
         return {"availability": "missing", "health": "MISSING"}
-    return run(["blender", "--background", str(blend), "--python", str(SCRIPT_DIR / "export_gltf.py"), "--", str(out_glb)], timeout=180)
+    return run([blender, "--background", str(blend), "--python", str(SCRIPT_DIR / "export_gltf.py"), "--", str(out_glb)], timeout=180)

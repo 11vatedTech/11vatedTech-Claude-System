@@ -74,8 +74,23 @@ def check_9router():
     except Exception as e:
         print('9router_health_error', e); return False
 
+def check_media():
+    """Media toolchain is a first-class regression gate: image/vector/video/audio."""
+    cli=str(ROOT/'scripts/media/11vt_media.py')
+    failures=[]
+    for sub in ['image-test','vector-test','video-test','audio-test']:
+        code,out,err=run(f'python "{cli}" {sub}', timeout=300)
+        ok=code==0
+        if not ok:
+            failures.append(sub)
+            print(f'media_{sub}', 'FAIL', (err or out)[-500:])
+        else:
+            print(f'media_{sub}', 'ok')
+    print('media_gate', 'ok' if not failures else failures)
+    return not failures
+
 def main():
-    checks=[check_plugin,check_skills,check_agents,check_manifest_template,check_hooks,check_bootstrap,check_9router]
+    checks=[check_plugin,check_skills,check_agents,check_manifest_template,check_hooks,check_bootstrap,check_media,check_9router]
     results=[c() for c in checks]
     print('system_regression_ok', all(results))
     return 0 if all(results) else 1

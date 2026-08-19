@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "scene_id": "11vt-crystal-atelier",
+  "quality": "preview",
+  "resolution": [
+    1280,
+    720
+  ],
+  "render": {
+    "engine": "CYCLES",
+    "device": "AUTO",
+    "samples": 64
+  },
+  "camera": {
+    "lens_mm": 55,
+    "position": [
+      4.5,
+      -6.5,
+      3.4
+    ],
+    "look_at": [
+      0,
+      0,
+      0.7
+    ]
+  },
+  "lighting": {
+    "strategy": "warm_key_cyan_rim",
+    "color_management": "Filmic"
+  },
+  "art_direction": "Faceted glass monolith with physical material response, not primitive placeholder cube."
+}

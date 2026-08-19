@@ -3,8 +3,7 @@ from __future__ import annotations
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
-from shutil import which
-from .common import ensure_dir, run, sha256_file
+from .common import ensure_dir, resolve_tool, run, sha256_file
 
 
 def inspect_svg(path: Path) -> dict[str, Any]:
@@ -43,7 +42,14 @@ def make_svg(path: Path) -> dict[str, Any]:
 
 
 def rasterize(svg: Path, out_png: Path, width: int = 1600) -> dict[str, Any]:
+    """Rasterize SVG -> PNG using Inkscape, falling back to ImageMagick."""
     ensure_dir(out_png.parent)
-    if which("inkscape"):
-        return run(["inkscape", str(svg), "--export-type=png", f"--export-filename={out_png}", f"--export-width={width}"], timeout=90)
-    return {"error": "inkscape_missing", "availability": "MISSING"}
+    inkscape = resolve_tool("inkscape")
+    if inkscape:
+        r = run([inkscape, str(svg), "--export-type=png", f"--export-filename={out_png}", f"--export-width={width}"], timeout=90)
+        return {"provider": "inkscape", "command": r, "output": str(out_png), "ok": out_png.exists(), "health": "PASS" if out_png.exists() else "FAILED"}
+    magick = resolve_tool("magick")
+    if magick:
+        r = run([magick, "-background", "white", str(svg), "-resize", f"{width}x", str(out_png)], timeout=90)
+        return {"provider": "imagemagick", "command": r, "output": str(out_png), "ok": out_png.exists(), "health": "PASS" if out_png.exists() else "FAILED"}
+    return {"provider": None, "availability": "MISSING", "error": "no_rasterizer", "ok": False}

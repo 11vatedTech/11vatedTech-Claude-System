@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "job_id": "audio-test",
+  "created_at_local": "2026-08-18T20:19:26-0400",
+  "intent": "process_audio_waveform",
+  "cost_policy": "free_local_default_no_paid_generation",
+  "inputs": [],
+  "outputs": [
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\audio\\source.wav",
+      "exists": true,
+      "bytes": 192078,
+      "sha256": "8c221775f245911f1e49ab6b03ced090501778352e728985df1a4044f022ca33",
+      "role": "output",
+      "license": "generated-local"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\audio\\normalized.wav",
+      "exists": true,
+      "bytes": 768102,
+      "sha256": "506d0f39286432d4095de137c40685f617afddaf8d298d247b4da6c7e6f335a3",
+      "role": "output",
+      "license": "generated-local"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\audio\\waveform.png",
+      "exists": true,
+      "bytes": 2292,
+      "sha256": "81ee6b633d3ec09eb100b7215eb76d9ee88fd343f68660fb67b307e9238c0584",
+      "role": "output",
+      "license": "generated-local"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\audio\\transcript.txt",
+      "exists": true,
+      "bytes": 88,
+      "sha256": "51ed73097a47b4b35d2f8abe39a7632731c2eff1a441dc3226eecbf7af0edd9e",
+      "role": "output",
+      "license": "generated-local"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\audio\\tts.wav",
+      "exists": true,
+      "bytes": 192078,
+      "sha256": "8c221775f245911f1e49ab6b03ced090501778352e728985df1a4044f022ca33",
+      "role": "output",
+      "license": "generated-local"
+    }
+  ],
+  "toolchain": [],
+  "generation": {
+    "used_ai": false
+  },
+  "validation": {
+    "passed": true,
+    "checks": []
+  }
+}

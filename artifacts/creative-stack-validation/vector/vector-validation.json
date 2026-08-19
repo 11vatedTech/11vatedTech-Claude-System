@@ -1,0 +1,52 @@
+{
+  "svg": {
+    "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\vector\\source.svg",
+    "exists": true,
+    "bytes": 632,
+    "sha256": "e950ba4352852d2b629f6a2d5325de600db17930aa626bab9d032c96bc3ad0a7",
+    "root": "{http://www.w3.org/2000/svg}svg",
+    "width": "1600",
+    "height": "900",
+    "viewBox": "0 0 1600 900",
+    "elements": 9,
+    "has_remote_refs": true,
+    "valid": true
+  },
+  "rasterize": {
+    "provider": "inkscape",
+    "command": {
+      "argv": [
+        "C:\\Program Files\\Inkscape\\bin\\inkscape.exe",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\vector\\source.svg",
+        "--export-type=png",
+        "--export-filename=C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\vector\\rasterized.png",
+        "--export-width=1600"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsed_seconds": 3.867
+    },
+    "output": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\vector\\rasterized.png",
+    "ok": true,
+    "health": "PASS"
+  },
+  "outputs": [
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\vector\\source.svg",
+      "exists": true,
+      "bytes": 632,
+      "sha256": "e950ba4352852d2b629f6a2d5325de600db17930aa626bab9d032c96bc3ad0a7",
+      "role": "artifact",
+      "license": "generated-local"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\vector\\rasterized.png",
+      "exists": true,
+      "bytes": 56086,
+      "sha256": "b9ab1bf4a22e032ac55f44d9454d7a5ff0357e2fa8e734cb6794ea4c01648081",
+      "role": "artifact",
+      "license": "generated-local"
+    }
+  ]
+}

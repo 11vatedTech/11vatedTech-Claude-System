@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import glob as _glob
 import hashlib
 import json
 import os
@@ -45,6 +46,40 @@ def read_json(path: Path) -> Any:
 
 def which(name: str) -> str | None:
     return shutil.which(name)
+
+
+# Installers frequently register GUI-only shims and omit tools from the
+# subprocess PATH. These are known per-user/installer locations to fall back
+# to when `which` misses an otherwise-installed executable.
+WINDOWS_TOOL_HINTS: dict[str, list[str]] = {
+    "magick": [
+        r"C:\Program Files\ImageMagick-*\magick.exe",
+        r"C:\Program Files\ImageMagick-*\magick",
+    ],
+    "inkscape": [
+        r"C:\Program Files\Inkscape\bin\inkscape.exe",
+        r"C:\Program Files\Inkscape\inkscape.exe",
+    ],
+    "blender": [
+        r"C:\Program Files\Blender Foundation\Blender *\blender.exe",
+        r"C:\Program Files\Blender Foundation\Blender *\blender-launcher.exe",
+    ],
+}
+
+
+def resolve_tool(name: str) -> str | None:
+    """Resolve an executable, falling back to known Windows install locations.
+
+    Returns an absolute path usable as argv[0], or None if not found.
+    """
+    exe = shutil.which(name)
+    if exe:
+        return exe
+    for pattern in WINDOWS_TOOL_HINTS.get(name, []):
+        hits = sorted(_glob.glob(pattern))
+        if hits:
+            return hits[0]
+    return None
 
 
 def run(argv: list[str], timeout: int = 60, cwd: Path | None = None) -> dict[str, Any]:

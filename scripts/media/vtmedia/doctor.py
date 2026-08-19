@@ -5,7 +5,7 @@ import os
 import re
 from pathlib import Path
 from typing import Any
-from .common import ARTIFACT_ROOT, command_summary, ensure_dir, run, run_shell, system_base, which, write_json
+from .common import ARTIFACT_ROOT, command_summary, ensure_dir, resolve_tool, run, run_shell, system_base, write_json
 
 TOOLS = {
     "git": ["git", "--version"],
@@ -61,20 +61,21 @@ def parse_first_line(text: str) -> str:
 
 
 def detect_tool(name: str, argv: list[str]) -> dict[str, Any]:
-    exe = which(argv[0])
+    exe = resolve_tool(argv[0])
     if not exe:
         return {"tool": name, "availability": "missing", "path": None, "version": None, "health": "MISSING"}
-    result = run(argv, timeout=20)
+    result = run([exe, *argv[1:]], timeout=20)
     version = parse_first_line((result.get("stdout") or result.get("stderr") or ""))
     health = "PASS" if result.get("returncode") == 0 else "FAILED"
     return {"tool": name, "availability": "available" if health == "PASS" else "failed", "path": exe, "version": version, "health": health, "check": command_summary(result, 800)}
 
 
 def detect_gpu() -> dict[str, Any]:
-    if not which("nvidia-smi"):
+    exe = resolve_tool("nvidia-smi")
+    if not exe:
         return {"availability": "missing", "health": "MISSING"}
-    query = run(["nvidia-smi", "--query-gpu=name,memory.total,driver_version", "--format=csv,noheader,nounits"], timeout=20)
-    full = run(["nvidia-smi"], timeout=20)
+    query = run([exe, "--query-gpu=name,memory.total,driver_version", "--format=csv,noheader,nounits"], timeout=20)
+    full = run([exe], timeout=20)
     gpu = {"availability": "available", "health": "PASS", "query": command_summary(query), "smi": command_summary(full, 1600)}
     if query.get("stdout"):
         parts = [p.strip() for p in query["stdout"].splitlines()[0].split(",")]

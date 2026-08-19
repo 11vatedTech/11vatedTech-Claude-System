@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "job_id": "video-test",
+  "created_at_local": "2026-08-18T20:19:25-0400",
+  "intent": "generate_encode_inspect",
+  "cost_policy": "free_local_default_no_paid_generation",
+  "inputs": [],
+  "outputs": [
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\video\\generated.mp4",
+      "exists": true,
+      "bytes": 687463,
+      "sha256": "89543e69a217a3534191072fb9ae5ac479f075bfe402e468e1159c7f52038572",
+      "role": "output",
+      "license": "generated-local"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\video\\final.mp4",
+      "exists": true,
+      "bytes": 659534,
+      "sha256": "99f9a59c6e30cb9c10b03f952c0d981fe1156bf432ef7e17d247e3299cb048d4",
+      "role": "output",
+      "license": "generated-local"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\video\\thumbnail.png",
+      "exists": true,
+      "bytes": 167244,
+      "sha256": "1c938365ab0dfcab1772407d2d025290fbae4a0b52477538a6e8b71c815afae3",
+      "role": "output",
+      "license": "generated-local"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\video\\contact-sheet.png",
+      "exists": true,
+      "bytes": 202902,
+      "sha256": "ef6747664690fddb0e74c206d29220f653778290db425fe8a61dec407aef3885",
+      "role": "output",
+      "license": "generated-local"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\video\\ffprobe.json",
+      "exists": true,
+      "bytes": 4319,
+      "sha256": "3405e564f4b6de8a1882263d51b6ba0413bcb3128516a1c41be499c0af6ec84c",
+      "role": "output",
+      "license": "generated-local"
+    }
+  ],
+  "toolchain": [],
+  "generation": {
+    "used_ai": false
+  },
+  "validation": {
+    "passed": true,
+    "checks": []
+  }
+}

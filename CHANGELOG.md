@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.0 — 2026-08-18
+
+- Fixed tool detection for installer-path ImageMagick/Inkscape/Blender
+  (`resolve_tool` falls back to known `Program Files` locations when PATH
+  misses them); enabled real `magick compare -metric AE` pixel diff with
+  ffmpeg PSNR fallback, ImageMagick SVG rasterization fallback, and the
+  Blender bridge.
+- Wired the media toolchain (image/vector/video/audio) into
+  `scripts/validate/system_regression.py` as a first-class regression gate.
+- Replaced dead root `tools/` shells with a pointer to `scripts/media/vtmedia/`.
+
 ## 0.3.0 — 2026-08-15
 
 - Added `11vt-creative-production` as modular creative-production operating skill.
