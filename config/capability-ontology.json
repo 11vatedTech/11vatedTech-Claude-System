@@ -1,8 +1,9 @@
 {
   "schema_version": 1,
   "ontology_id": "11vt-foundry-ontology",
-  "baseline_date": "2026-08-18",
-  "baseline_version": "0.4.0",
+  "baseline_date": "2026-08-22",
+  "baseline_version": "0.7.0",
+  "maturity_scope_note": "A capability may inherit INFRASTRUCTURE from an L5 dependency without inheriting its MATURITY. blender-bridge L5 does not make 3d-production L5; pixel-diff L5 does not make visual-design L5; animation-qa L5 does not make character-animation L5. Production-domain capabilities must earn L5 with their own real artifact + failure + review evidence (enforced by scripts/validate/l5_evidence.py, which rejects any L5 without its own evidence map).",
   "maturity_scale": {
     "L0": "UNAVAILABLE: no provider or tooling present",
     "L1": "DETECTED: provider/tooling present but unverified",
@@ -18,15 +19,38 @@
       "capabilities": [
         {
           "id": "founder-intent-routing",
-          "providers": [{"kind": "skill", "name": "11vt-capability-entrypoint"}],
+          "providers": [
+            {
+              "kind": "skill",
+              "name": "11vt-capability-entrypoint"
+            }
+          ],
           "maturity": "L4",
-          "evidence": ["scripts/validate/routing_eval.py", "evaluations/trigger/core-skill-trigger-cases.json"]
+          "evidence": [
+            "scripts/validate/routing_eval.py",
+            "evaluations/trigger/core-skill-trigger-cases.json"
+          ]
         },
         {
           "id": "model-routing",
-          "providers": [{"kind": "skill", "name": "11vt-9router-orchestrator"}, {"kind": "9router-endpoint", "name": "/v1/models", "expected_min": 100}],
+          "providers": [
+            {
+              "kind": "skill",
+              "name": "11vt-9router-orchestrator"
+            },
+            {
+              "kind": "script",
+              "name": "scripts/validate/router_health.py"
+            }
+          ],
           "maturity": "L3",
-          "evidence": ["scripts/validate/9router_routing_benchmark.py", "evaluations/model-routing/routing-suite.json", "evaluations/model-routing/routing-profile.json"]
+          "evidence": [
+            "scripts/validate/9router_routing_benchmark.py",
+            "scripts/validate/router_health.py",
+            "evaluations/model-routing/routing-suite.json",
+            "evaluations/model-routing/routing-profile.json",
+            "artifacts/unreal/health/9router-degraded-diagnostics.json"
+          ]
         }
       ]
     },
@@ -36,15 +60,39 @@
       "capabilities": [
         {
           "id": "web-research",
-          "providers": [{"kind": "skill", "name": "11vt-research-intelligence"}, {"kind": "9router-endpoint", "name": "/v1/models/web", "expected_min": 0}],
+          "providers": [
+            {
+              "kind": "skill",
+              "name": "11vt-research-intelligence"
+            },
+            {
+              "kind": "9router-endpoint",
+              "name": "/v1/models/web",
+              "expected_min": 0
+            }
+          ],
           "maturity": "L2",
-          "evidence": ["docs/evidence-system.md", "docs/pinned-external-sources.md"]
+          "evidence": [
+            "docs/evidence-system.md",
+            "docs/pinned-external-sources.md"
+          ]
         },
         {
           "id": "evidence-ledger",
-          "providers": [{"kind": "script", "name": "scripts/validate/manifest_validator.py"}, {"kind": "template", "name": "templates/product-repository/tools/11vt/evidence.py"}],
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/validate/manifest_validator.py"
+            },
+            {
+              "kind": "template",
+              "name": "templates/product-repository/tools/11vt/evidence.py"
+            }
+          ],
           "maturity": "L3",
-          "evidence": ["docs/evidence-system.md"]
+          "evidence": [
+            "docs/evidence-system.md"
+          ]
         }
       ]
     },
@@ -52,115 +100,1373 @@
       "id": "architecture-engineering",
       "name": "Architecture and engineering",
       "capabilities": [
-        {"id": "architecture-adr", "providers": [{"kind": "skill", "name": "11vt-architecture-engineering"}], "maturity": "L3", "evidence": ["docs/product-development-protocol.md"]},
-        {"id": "production-engineering", "providers": [{"kind": "skill", "name": "11vt-production-engineering"}, {"kind": "skill", "name": "11vt-language-workflows"}], "maturity": "L3", "evidence": ["docs/product-development-protocol.md"]},
-        {"id": "game-development", "providers": [{"kind": "skill", "name": "11vt-game-development"}], "maturity": "L3", "evidence": []}
+        {
+          "id": "architecture-adr",
+          "providers": [
+            {
+              "kind": "skill",
+              "name": "11vt-architecture-engineering"
+            }
+          ],
+          "maturity": "L3",
+          "evidence": [
+            "docs/product-development-protocol.md"
+          ]
+        },
+        {
+          "id": "production-engineering",
+          "providers": [
+            {
+              "kind": "skill",
+              "name": "11vt-production-engineering"
+            },
+            {
+              "kind": "skill",
+              "name": "11vt-language-workflows"
+            }
+          ],
+          "maturity": "L3",
+          "evidence": [
+            "docs/product-development-protocol.md"
+          ]
+        },
+        {
+          "id": "game-development",
+          "providers": [
+            {
+              "kind": "skill",
+              "name": "11vt-game-development"
+            }
+          ],
+          "maturity": "L3",
+          "evidence": []
+        }
       ]
     },
     {
       "id": "creative-production",
       "name": "Creative production",
       "capabilities": [
-        {"id": "creative-direction", "providers": [{"kind": "skill", "name": "11vt-creative-production"}, {"kind": "agent", "name": "11vt-creative-director"}], "maturity": "L4", "evidence": ["evaluations/regression/2026-08-15-creative-production-expansion.md"]},
-        {"id": "art-direction", "providers": [{"kind": "agent", "name": "11vt-art-director"}], "maturity": "L3", "evidence": ["docs/creative-production-architecture.md"]},
-        {"id": "experience-design", "providers": [{"kind": "agent", "name": "11vt-experience-designer"}], "maturity": "L3", "evidence": ["docs/creative-production-architecture.md"]},
-        {"id": "motion-direction", "providers": [{"kind": "agent", "name": "11vt-motion-director"}], "maturity": "L3", "evidence": ["docs/creative-production-architecture.md"]},
-        {"id": "technical-art", "providers": [{"kind": "agent", "name": "11vt-technical-artist"}], "maturity": "L3", "evidence": ["docs/creative-production-architecture.md"]},
-        {"id": "design-direction", "providers": [{"kind": "skill", "name": "11vt-design-director"}], "maturity": "L4", "evidence": ["plugin/skills/11vt-design-director/references/visual-qa-checklist.md"]}
+        {
+          "id": "creative-direction",
+          "providers": [
+            {
+              "kind": "skill",
+              "name": "11vt-creative-production"
+            },
+            {
+              "kind": "agent",
+              "name": "11vt-creative-director"
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "evaluations/regression/2026-08-15-creative-production-expansion.md"
+          ]
+        },
+        {
+          "id": "art-direction",
+          "providers": [
+            {
+              "kind": "agent",
+              "name": "11vt-art-director"
+            }
+          ],
+          "maturity": "L3",
+          "evidence": [
+            "docs/creative-production-architecture.md"
+          ]
+        },
+        {
+          "id": "experience-design",
+          "providers": [
+            {
+              "kind": "agent",
+              "name": "11vt-experience-designer"
+            }
+          ],
+          "maturity": "L3",
+          "evidence": [
+            "docs/creative-production-architecture.md"
+          ]
+        },
+        {
+          "id": "motion-direction",
+          "providers": [
+            {
+              "kind": "agent",
+              "name": "11vt-motion-director"
+            }
+          ],
+          "maturity": "L3",
+          "evidence": [
+            "docs/creative-production-architecture.md"
+          ]
+        },
+        {
+          "id": "technical-art",
+          "providers": [
+            {
+              "kind": "agent",
+              "name": "11vt-technical-artist"
+            }
+          ],
+          "maturity": "L3",
+          "evidence": [
+            "docs/creative-production-architecture.md"
+          ]
+        },
+        {
+          "id": "design-direction",
+          "providers": [
+            {
+              "kind": "skill",
+              "name": "11vt-design-director"
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "plugin/skills/11vt-design-director/references/visual-qa-checklist.md"
+          ]
+        }
       ]
     },
     {
       "id": "visual-production-tooling",
       "name": "Visual production tooling",
       "capabilities": [
-        {"id": "raster-processing", "providers": [{"kind": "tool", "name": "magick", "degraded": false}, {"kind": "tool", "name": "ffmpeg", "degraded": false}], "maturity": "L4", "evidence": ["scripts/validate/system_regression.py", "artifacts/creative-stack-validation/image/image-validation.json"]},
-        {"id": "vector-authoring", "providers": [{"kind": "tool", "name": "inkscape", "degraded": false}, {"kind": "tool", "name": "magick", "degraded": false}], "maturity": "L4", "evidence": ["artifacts/creative-stack-validation/vector/vector-validation.json"]},
-        {"id": "video-processing", "providers": [{"kind": "tool", "name": "ffmpeg", "degraded": false}, {"kind": "tool", "name": "ffprobe", "degraded": false}], "maturity": "L4", "evidence": ["artifacts/creative-stack-validation/video/video-validation.json"]},
-        {"id": "audio-processing", "providers": [{"kind": "tool", "name": "ffmpeg", "degraded": false}], "maturity": "L4", "evidence": ["artifacts/creative-stack-validation/audio/audio-validation.json"]},
-        {"id": "speech-to-text", "providers": [{"kind": "9router-endpoint", "name": "/v1/models/stt", "expected_min": 0}, {"kind": "tool-degraded", "name": "whisper"}], "maturity": "L0", "evidence": ["docs/GAP_REGISTER.md"]},
-        {"id": "text-to-speech", "providers": [{"kind": "9router-endpoint", "name": "/v1/models/tts", "expected_min": 0}], "maturity": "L2", "evidence": ["artifacts/creative-stack-validation/audio/audio-validation.json"]},
-        {"id": "image-generation", "providers": [{"kind": "9router-endpoint", "name": "/v1/models/image", "expected_min": 0}], "maturity": "L2", "evidence": ["docs/GAP_REGISTER.md"]}
+        {
+          "id": "raster-processing",
+          "providers": [
+            {
+              "kind": "tool",
+              "name": "magick",
+              "degraded": false
+            },
+            {
+              "kind": "tool",
+              "name": "ffmpeg",
+              "degraded": false
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "scripts/validate/system_regression.py",
+            "artifacts/creative-stack-validation/image/image-validation.json"
+          ]
+        },
+        {
+          "id": "vector-authoring",
+          "providers": [
+            {
+              "kind": "tool",
+              "name": "inkscape",
+              "degraded": false
+            },
+            {
+              "kind": "tool",
+              "name": "magick",
+              "degraded": false
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "artifacts/creative-stack-validation/vector/vector-validation.json"
+          ]
+        },
+        {
+          "id": "video-processing",
+          "providers": [
+            {
+              "kind": "tool",
+              "name": "ffmpeg",
+              "degraded": false
+            },
+            {
+              "kind": "tool",
+              "name": "ffprobe",
+              "degraded": false
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "artifacts/creative-stack-validation/video/video-validation.json"
+          ]
+        },
+        {
+          "id": "audio-processing",
+          "providers": [
+            {
+              "kind": "tool",
+              "name": "ffmpeg",
+              "degraded": false
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "artifacts/creative-stack-validation/audio/audio-validation.json"
+          ]
+        },
+        {
+          "id": "speech-to-text",
+          "providers": [
+            {
+              "kind": "9router-endpoint",
+              "name": "/v1/models/stt",
+              "expected_min": 0
+            },
+            {
+              "kind": "tool-degraded",
+              "name": "whisper"
+            }
+          ],
+          "maturity": "L0",
+          "evidence": [
+            "docs/GAP_REGISTER.md"
+          ]
+        },
+        {
+          "id": "text-to-speech",
+          "providers": [
+            {
+              "kind": "9router-endpoint",
+              "name": "/v1/models/tts",
+              "expected_min": 0
+            }
+          ],
+          "maturity": "L2",
+          "evidence": [
+            "artifacts/creative-stack-validation/audio/audio-validation.json"
+          ]
+        },
+        {
+          "id": "image-generation",
+          "providers": [
+            {
+              "kind": "9router-endpoint",
+              "name": "/v1/models/image",
+              "expected_min": 0
+            }
+          ],
+          "maturity": "L2",
+          "evidence": [
+            "docs/GAP_REGISTER.md"
+          ]
+        }
       ]
     },
     {
       "id": "three-d-pipeline",
       "name": "Structured 3D / Blender pipeline",
       "capabilities": [
-        {"id": "blender-bridge", "providers": [{"kind": "tool", "name": "blender", "degraded": false}], "maturity": "L5", "evidence": ["scripts/media/vtmedia/blender_ops.py", "scripts/validate/system_regression.py", "artifacts/creative-stack-validation/blender-ops/blender-op-suite.json", "scripts/validate/failure_tests.py", "docs/l5-review-record-2026-08-18.md"]},
-        {"id": "scene-authoring", "providers": [{"kind": "script", "name": "scripts/media/vtmedia/blender_ops.py"}], "maturity": "L4", "evidence": ["scripts/media/vtmedia/blender_scripts/op_runner.py", "scripts/validate/system_regression.py"]},
-        {"id": "asset-export", "providers": [{"kind": "script", "name": "scripts/media/vtmedia/blender_ops.py"}], "maturity": "L4", "evidence": ["scripts/media/vtmedia/blender_ops.py", "artifacts/creative-stack-validation/blender-ops/hero-scene.glb"]},
-        {"id": "animation-qa", "providers": [{"kind": "script", "name": "scripts/media/vtmedia/blender_ops.py"}], "maturity": "L5", "evidence": ["scripts/media/vtmedia/blender_scripts/op_runner.py", "artifacts/creative-stack-validation/blender-ops/blender-op-suite.json", "artifacts/creative-stack-validation/blender-ops/turntable.mp4", "docs/l5-review-record-2026-08-18.md"]}
+        {
+          "id": "blender-bridge",
+          "providers": [
+            {
+              "kind": "tool",
+              "name": "blender",
+              "degraded": false
+            }
+          ],
+          "maturity": "L5",
+          "maturity_scope": "production-infrastructure",
+          "evidence": [
+            "scripts/media/vtmedia/blender_ops.py",
+            "scripts/validate/system_regression.py",
+            "artifacts/creative-stack-validation/blender-ops/blender-op-suite.json",
+            "scripts/validate/failure_tests.py",
+            "docs/l5-review-record-2026-08-18.md"
+          ]
+        },
+        {
+          "id": "scene-authoring",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/media/vtmedia/blender_ops.py"
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "scripts/media/vtmedia/blender_scripts/op_runner.py",
+            "scripts/validate/system_regression.py"
+          ]
+        },
+        {
+          "id": "asset-export",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/media/vtmedia/blender_ops.py"
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "scripts/media/vtmedia/blender_ops.py",
+            "artifacts/creative-stack-validation/blender-ops/hero-scene.glb"
+          ]
+        },
+        {
+          "id": "animation-qa",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/media/vtmedia/blender_ops.py"
+            }
+          ],
+          "maturity": "L5",
+          "maturity_scope": "QA-infrastructure",
+          "evidence": [
+            "scripts/media/vtmedia/blender_scripts/op_runner.py",
+            "artifacts/creative-stack-validation/blender-ops/blender-op-suite.json",
+            "artifacts/creative-stack-validation/blender-ops/turntable.mp4",
+            "docs/l5-review-record-2026-08-18.md"
+          ]
+        }
       ]
     },
     {
       "id": "asset-intelligence",
       "name": "Asset intelligence",
       "capabilities": [
-        {"id": "asset-direction", "providers": [{"kind": "agent", "name": "11vt-asset-director"}, {"kind": "script", "name": "scripts/assets/asset_resolver.py"}], "maturity": "L4", "evidence": ["scripts/assets/asset_resolver.py", "scripts/validate/system_regression.py"]},
-        {"id": "provenance", "providers": [{"kind": "script", "name": "scripts/media/vtmedia/provenance.py"}, {"kind": "script", "name": "scripts/assets/asset_vault.py"}], "maturity": "L4", "evidence": ["scripts/assets/asset_vault.py", "artifacts/asset-vault/index.json"]},
-        {"id": "asset-vault", "providers": [{"kind": "script", "name": "scripts/assets/asset_vault.py"}], "maturity": "L4", "evidence": ["scripts/assets/asset_vault.py", "artifacts/asset-vault/index.json", "scripts/validate/system_regression.py"]},
-        {"id": "requirement-discovery", "providers": [{"kind": "script", "name": "scripts/assets/requirement_discovery.py"}], "maturity": "L4", "evidence": ["scripts/assets/requirement_discovery.py", "scripts/validate/system_regression.py"]}
+        {
+          "id": "asset-direction",
+          "providers": [
+            {
+              "kind": "agent",
+              "name": "11vt-asset-director"
+            },
+            {
+              "kind": "script",
+              "name": "scripts/assets/asset_resolver.py"
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "scripts/assets/asset_resolver.py",
+            "scripts/validate/system_regression.py"
+          ]
+        },
+        {
+          "id": "provenance",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/media/vtmedia/provenance.py"
+            },
+            {
+              "kind": "script",
+              "name": "scripts/assets/asset_vault.py"
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "scripts/assets/asset_vault.py",
+            "artifacts/asset-vault/index.json"
+          ]
+        },
+        {
+          "id": "asset-vault",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/assets/asset_vault.py"
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "scripts/assets/asset_vault.py",
+            "artifacts/asset-vault/index.json",
+            "scripts/validate/system_regression.py"
+          ]
+        },
+        {
+          "id": "requirement-discovery",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/assets/requirement_discovery.py"
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "scripts/assets/requirement_discovery.py",
+            "scripts/validate/system_regression.py"
+          ]
+        }
       ]
     },
     {
       "id": "visual-qa",
       "name": "Visual QA and verification",
       "capabilities": [
-        {"id": "pixel-diff", "providers": [{"kind": "tool", "name": "magick", "degraded": false}], "maturity": "L5", "evidence": ["scripts/media/vtmedia/image_tools.py", "artifacts/creative-stack-validation/image/image-validation.json", "scripts/validate/failure_tests.py", "docs/l5-review-record-2026-08-18.md"]},
-        {"id": "psnr", "providers": [{"kind": "tool", "name": "ffmpeg", "degraded": false}], "maturity": "L4", "evidence": ["scripts/media/vtmedia/image_tools.py"]},
-        {"id": "visual-qa-direction", "providers": [{"kind": "agent", "name": "11vt-visual-qa-director"}], "maturity": "L3", "evidence": ["plugin/skills/11vt-design-director/references/visual-qa-checklist.md"]},
-        {"id": "independent-review", "providers": [{"kind": "agent", "name": "11vt-independent-reviewer"}], "maturity": "L4", "evidence": ["evaluations/regression/2026-08-15-creative-production-expansion.md"]}
+        {
+          "id": "pixel-diff",
+          "providers": [
+            {
+              "kind": "tool",
+              "name": "magick",
+              "degraded": false
+            }
+          ],
+          "maturity": "L5",
+          "maturity_scope": "visual-QA-infrastructure",
+          "evidence": [
+            "scripts/media/vtmedia/image_tools.py",
+            "artifacts/creative-stack-validation/image/image-validation.json",
+            "scripts/validate/failure_tests.py",
+            "docs/l5-review-record-2026-08-18.md"
+          ]
+        },
+        {
+          "id": "psnr",
+          "providers": [
+            {
+              "kind": "tool",
+              "name": "ffmpeg",
+              "degraded": false
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "scripts/media/vtmedia/image_tools.py"
+          ]
+        },
+        {
+          "id": "visual-qa-direction",
+          "providers": [
+            {
+              "kind": "agent",
+              "name": "11vt-visual-qa-director"
+            }
+          ],
+          "maturity": "L3",
+          "evidence": [
+            "plugin/skills/11vt-design-director/references/visual-qa-checklist.md"
+          ]
+        },
+        {
+          "id": "independent-review",
+          "providers": [
+            {
+              "kind": "agent",
+              "name": "11vt-independent-reviewer"
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "evaluations/regression/2026-08-15-creative-production-expansion.md"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ascension-production-intelligence",
+      "name": "Flagship production intelligence",
+      "capabilities": [
+        {
+          "id": "perceptual-readability-qa",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/validate/perceptual_visual_qa.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "perceptual-QA",
+          "evidence": [
+            "scripts/validate/perceptual_visual_qa.py",
+            "artifacts/flagship/qa/perceptual-canonical.json"
+          ]
+        },
+        {
+          "id": "composition-qa",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/validate/perceptual_visual_qa.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "composition-diagnostics",
+          "evidence": [
+            "scripts/validate/perceptual_visual_qa.py",
+            "artifacts/flagship/qa/perceptual-canonical.json"
+          ]
+        },
+        {
+          "id": "lighting-intelligence",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/media/vtmedia/blender_ops.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "production-domain",
+          "evidence": [
+            "scripts/media/vtmedia/blender_ops.py",
+            "artifacts/flagship/emberveil-canonical/canonical-build-report.json"
+          ]
+        },
+        {
+          "id": "material-production",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/media/vtmedia/blender_ops.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "production-domain",
+          "evidence": [
+            "scripts/media/vtmedia/blender_scripts/op_runner.py",
+            "artifacts/flagship/emberveil-canonical/canonical-build-report.json"
+          ]
+        },
+        {
+          "id": "environment-production",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/flagship/build_emberveil_canonical.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "production-domain",
+          "evidence": [
+            "scripts/flagship/build_emberveil_canonical.py",
+            "artifacts/flagship/emberveil-canonical/emberveil-canonical.glb"
+          ]
+        },
+        {
+          "id": "mechanical-rigging",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/media/vtmedia/blender_ops.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "production-domain",
+          "evidence": [
+            "scripts/media/vtmedia/blender_scripts/op_runner.py",
+            "artifacts/flagship/emberveil-canonical/canonical-build-report.json"
+          ]
+        },
+        {
+          "id": "animation-production",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/media/vtmedia/blender_ops.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "production-domain",
+          "evidence": [
+            "scripts/media/vtmedia/blender_scripts/op_runner.py",
+            "artifacts/flagship/emberveil-canonical/emberveil-canonical.glb",
+            "artifacts/flagship/qa/runtime-canonical-final2/state.json"
+          ]
+        },
+        {
+          "id": "vfx-runtime",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "artifacts/flagship/runtime/index.html"
+            }
+          ],
+          "maturity": "L2",
+          "maturity_scope": "production-domain",
+          "evidence": [
+            "artifacts/flagship/runtime/index.html",
+            "artifacts/flagship/qa/runtime-canonical-final2/frame-04.png"
+          ]
+        },
+        {
+          "id": "cinematic-production",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/media/vtmedia/ffmpeg_tools.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "production-domain",
+          "evidence": [
+            "scripts/media/vtmedia/ffmpeg_tools.py",
+            "artifacts/flagship/emberveil-canonical/emberveil-canonical-cinematic.mp4"
+          ]
+        },
+        {
+          "id": "asset-variant-regression",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/validate/asset_variant_diff.py"
+            }
+          ],
+          "maturity": "L4",
+          "maturity_scope": "structural-QA",
+          "evidence": [
+            "scripts/validate/asset_variant_diff.py",
+            "artifacts/flagship/qa/variant-regression-before.json",
+            "artifacts/flagship/qa/variant-regression-canonical.json"
+          ]
+        },
+        {
+          "id": "cohesion-auditing",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/validate/cohesion_audit.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "cross-layer-cohesion",
+          "evidence": [
+            "scripts/validate/cohesion_audit.py",
+            "artifacts/flagship/qa/cohesion-current.json"
+          ]
+        }
       ]
     },
     {
       "id": "repo-runtime-intelligence",
       "name": "Repository and runtime intelligence",
       "capabilities": [
-        {"id": "repository-audit", "providers": [{"kind": "skill", "name": "11vt-repository-auditor"}], "maturity": "L3", "evidence": []},
-        {"id": "status-reconstruction", "providers": [{"kind": "skill", "name": "11vt-status"}], "maturity": "L3", "evidence": []},
-        {"id": "environment-doctor", "providers": [{"kind": "script", "name": "scripts/media/11vt_media.py"}], "maturity": "L4", "evidence": ["artifacts/creative-stack-validation/environment-report.json", "artifacts/creative-stack-validation/capability-registry.json"]},
-        {"id": "gpu-intelligence", "providers": [{"kind": "tool", "name": "nvidia-smi", "degraded": false}], "maturity": "L4", "evidence": ["artifacts/creative-stack-validation/environment-report.json"]}
+        {
+          "id": "repository-audit",
+          "providers": [
+            {
+              "kind": "skill",
+              "name": "11vt-repository-auditor"
+            }
+          ],
+          "maturity": "L3",
+          "evidence": []
+        },
+        {
+          "id": "status-reconstruction",
+          "providers": [
+            {
+              "kind": "skill",
+              "name": "11vt-status"
+            }
+          ],
+          "maturity": "L3",
+          "evidence": []
+        },
+        {
+          "id": "environment-doctor",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/media/11vt_media.py"
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "artifacts/creative-stack-validation/environment-report.json",
+            "artifacts/creative-stack-validation/capability-registry.json"
+          ]
+        },
+        {
+          "id": "gpu-intelligence",
+          "providers": [
+            {
+              "kind": "tool",
+              "name": "nvidia-smi",
+              "degraded": false
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "artifacts/creative-stack-validation/environment-report.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "semantic-repository-intelligence",
+      "name": "Semantic repository intelligence",
+      "capabilities": [
+        {
+          "id": "ast-repository-index",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/repo/semantic_intelligence.py"
+            },
+            {
+              "kind": "script",
+              "name": "scripts/repo/multilang_semantic_intelligence.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "Python AST plus lexical TypeScript/JavaScript/C++ baseline; not LSP/type-resolved",
+          "evidence": [
+            "scripts/repo/semantic_intelligence.py",
+            "scripts/repo/multilang_semantic_intelligence.py",
+            "artifacts/repository-intelligence/index.json",
+            "artifacts/repository-intelligence/semantic-golden-tasks.json"
+          ]
+        },
+        {
+          "id": "repository-golden-tasks",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/validate/repo_semantic_golden_tasks.py"
+            }
+          ],
+          "maturity": "L3",
+          "evidence": [
+            "scripts/validate/repo_semantic_golden_tasks.py",
+            "artifacts/repository-intelligence/semantic-golden-tasks.json"
+          ]
+        }
       ]
     },
     {
       "id": "deployment-governance",
       "name": "Global deployment and rollback",
       "capabilities": [
-        {"id": "global-sync", "providers": [{"kind": "script", "name": "scripts/install/sync_to_claude.py"}], "maturity": "L5", "evidence": ["docs/rollback-procedure.md", "scripts/validate/failure_tests.py", "docs/l5-review-record-2026-08-18.md"]},
-        {"id": "global-validation", "providers": [{"kind": "script", "name": "scripts/install/validate_capability_installation.py"}], "maturity": "L4", "evidence": []},
-        {"id": "rollback", "providers": [{"kind": "script", "name": "scripts/install/sync_to_claude.py"}], "maturity": "L5", "evidence": ["docs/rollback-procedure.md", "scripts/validate/failure_tests.py", "docs/l5-review-record-2026-08-18.md"]}
+        {
+          "id": "global-sync",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/install/sync_to_claude.py"
+            }
+          ],
+          "maturity": "L5",
+          "maturity_scope": "governance",
+          "evidence": [
+            "docs/rollback-procedure.md",
+            "scripts/validate/failure_tests.py",
+            "docs/l5-review-record-2026-08-18.md"
+          ]
+        },
+        {
+          "id": "global-validation",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/install/validate_capability_installation.py"
+            }
+          ],
+          "maturity": "L4",
+          "evidence": []
+        },
+        {
+          "id": "rollback",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/install/sync_to_claude.py"
+            }
+          ],
+          "maturity": "L5",
+          "maturity_scope": "governance",
+          "evidence": [
+            "docs/rollback-procedure.md",
+            "scripts/validate/failure_tests.py",
+            "docs/l5-review-record-2026-08-18.md"
+          ]
+        }
       ]
     },
     {
       "id": "evaluation-lab",
       "name": "Evaluation lab",
       "capabilities": [
-        {"id": "routing-evaluation", "providers": [{"kind": "script", "name": "scripts/validate/routing_eval.py"}], "maturity": "L4", "evidence": ["evaluations/trigger/core-skill-trigger-cases.json"]},
-        {"id": "behavioral-evaluation", "providers": [{"kind": "script", "name": "evaluations/behavioral/core-behavioral-cases.md"}], "maturity": "L3", "evidence": []},
-        {"id": "regression-gate", "providers": [{"kind": "script", "name": "scripts/validate/system_regression.py"}], "maturity": "L4", "evidence": []},
-        {"id": "bootstrap-tests", "providers": [{"kind": "script", "name": "scripts/validate/bootstrap_fixture_tests.py"}], "maturity": "L4", "evidence": []},
-        {"id": "manifest-validation", "providers": [{"kind": "script", "name": "scripts/validate/manifest_validator.py"}], "maturity": "L4", "evidence": []},
-        {"id": "model-benchmark", "providers": [{"kind": "script", "name": "scripts/validate/9router_routing_benchmark.py"}], "maturity": "L3", "evidence": ["evaluations/model-routing/routing-suite.json"]},
-        {"id": "quality-models", "providers": [{"kind": "script", "name": "config/quality-models.json"}], "maturity": "L4", "evidence": ["config/quality-models.json", "docs/quality-ladder.md", "scripts/validate/system_regression.py"]}
+        {
+          "id": "routing-evaluation",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/validate/routing_eval.py"
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "evaluations/trigger/core-skill-trigger-cases.json"
+          ]
+        },
+        {
+          "id": "behavioral-evaluation",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "evaluations/behavioral/core-behavioral-cases.md"
+            }
+          ],
+          "maturity": "L3",
+          "evidence": []
+        },
+        {
+          "id": "regression-gate",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/validate/system_regression.py"
+            }
+          ],
+          "maturity": "L4",
+          "evidence": []
+        },
+        {
+          "id": "bootstrap-tests",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/validate/bootstrap_fixture_tests.py"
+            }
+          ],
+          "maturity": "L4",
+          "evidence": []
+        },
+        {
+          "id": "manifest-validation",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/validate/manifest_validator.py"
+            }
+          ],
+          "maturity": "L4",
+          "evidence": []
+        },
+        {
+          "id": "model-benchmark",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/validate/9router_routing_benchmark.py"
+            }
+          ],
+          "maturity": "L3",
+          "evidence": [
+            "evaluations/model-routing/routing-suite.json"
+          ]
+        },
+        {
+          "id": "quality-models",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "config/quality-models.json"
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "config/quality-models.json",
+            "docs/quality-ladder.md",
+            "scripts/validate/system_regression.py"
+          ]
+        },
+        {
+          "id": "high-fidelity-reliability",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/validate/high_fidelity_reliability.py"
+            },
+            {
+              "kind": "script",
+              "name": "config/high-fidelity-reliability.json"
+            },
+            {
+              "kind": "script",
+              "name": "config/experience-foundry.json"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "creative-quality-reliability",
+          "evidence": [
+            "scripts/validate/high_fidelity_reliability.py",
+            "config/high-fidelity-reliability.json",
+            "config/experience-foundry.json",
+            "evaluations/high-fidelity-reliability/golden-tasks.json",
+            "docs/high-fidelity-reliability.md",
+            "docs/experience-foundry/professional-experience-capital.md",
+            "artifacts/unreal/calibration/evidence/human-playtest-001/human-playtest-evidence.json",
+            "artifacts/unreal/calibration/evidence/human-playtest-001/visual-failure-analysis.json",
+            "artifacts/unreal/calibration/evidence/human-playtest-001/quality-debt-register.json",
+            "artifacts/unreal/calibration/evidence/human-playtest-001/ashwake-quality-contract.json"
+          ]
+        }
       ]
     },
     {
       "id": "product-lifecycle",
       "name": "Product lifecycle",
       "capabilities": [
-        {"id": "project-bootstrap", "providers": [{"kind": "skill", "name": "11vt-project-bootstrap"}, {"kind": "script", "name": "scripts/bootstrap/bootstrap_project.py"}], "maturity": "L4", "evidence": ["scripts/validate/bootstrap_fixture_tests.py"]},
-        {"id": "product-lifecycle", "providers": [{"kind": "skill", "name": "11vt-product-lifecycle"}], "maturity": "L3", "evidence": ["docs/product-development-protocol.md"]},
-        {"id": "release-engineering", "providers": [{"kind": "skill", "name": "11vt-release-engineering"}], "maturity": "L3", "evidence": ["docs/release-engineering.md"]},
-        {"id": "deterministic-hooks", "providers": [{"kind": "script", "name": "scripts/hooks/guards.py"}, {"kind": "script", "name": "scripts/hooks/session_status.py"}], "maturity": "L4", "evidence": ["docs/hook-policy.md"]}
+        {
+          "id": "project-bootstrap",
+          "providers": [
+            {
+              "kind": "skill",
+              "name": "11vt-project-bootstrap"
+            },
+            {
+              "kind": "script",
+              "name": "scripts/bootstrap/bootstrap_project.py"
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "scripts/validate/bootstrap_fixture_tests.py"
+          ]
+        },
+        {
+          "id": "product-lifecycle",
+          "providers": [
+            {
+              "kind": "skill",
+              "name": "11vt-product-lifecycle"
+            }
+          ],
+          "maturity": "L3",
+          "evidence": [
+            "docs/product-development-protocol.md"
+          ]
+        },
+        {
+          "id": "release-engineering",
+          "providers": [
+            {
+              "kind": "skill",
+              "name": "11vt-release-engineering"
+            }
+          ],
+          "maturity": "L3",
+          "evidence": [
+            "docs/release-engineering.md"
+          ]
+        },
+        {
+          "id": "deterministic-hooks",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/hooks/guards.py"
+            },
+            {
+              "kind": "script",
+              "name": "scripts/hooks/session_status.py"
+            }
+          ],
+          "maturity": "L4",
+          "evidence": [
+            "docs/hook-policy.md"
+          ]
+        }
       ]
     },
     {
       "id": "foundry-maintenance",
       "name": "Foundry maintenance",
       "capabilities": [
-        {"id": "skill-foundry", "providers": [{"kind": "skill", "name": "11vt-skill-foundry"}], "maturity": "L3", "evidence": ["docs/capability-registry.md"]},
-        {"id": "documentation-canon", "providers": [{"kind": "skill", "name": "11vt-documentation-canon"}], "maturity": "L3", "evidence": []},
-        {"id": "core-operating-system", "providers": [{"kind": "skill", "name": "11vt-core-operating-system"}], "maturity": "L3", "evidence": []}
+        {
+          "id": "skill-foundry",
+          "providers": [
+            {
+              "kind": "skill",
+              "name": "11vt-skill-foundry"
+            }
+          ],
+          "maturity": "L3",
+          "evidence": [
+            "docs/capability-registry.md"
+          ]
+        },
+        {
+          "id": "documentation-canon",
+          "providers": [
+            {
+              "kind": "skill",
+              "name": "11vt-documentation-canon"
+            }
+          ],
+          "maturity": "L3",
+          "evidence": []
+        },
+        {
+          "id": "core-operating-system",
+          "providers": [
+            {
+              "kind": "skill",
+              "name": "11vt-core-operating-system"
+            }
+          ],
+          "maturity": "L3",
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "foundry-ascension-control",
+      "name": "Foundry Ascension Control",
+      "capabilities": [
+        {
+          "id": "capability-truth-audit",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/validate/capability_truth_audit.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "capability-state-audit-not-domain-mastery",
+          "evidence": [
+            "scripts/validate/capability_truth_audit.py",
+            "config/capability-truth-audit.json",
+            "artifacts/flagship/ASHWAKE-LESSON-EXTRACTION.json"
+          ]
+        },
+        {
+          "id": "mission-value-gate",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/validate/mission_value_gate.py"
+            }
+          ],
+          "maturity": "L2",
+          "maturity_scope": "planning-drift-control",
+          "evidence": [
+            "scripts/validate/mission_value_gate.py",
+            "scripts/validate/foundry_ascension_tests.py",
+            "config/creative-intelligence-institute.json"
+          ]
+        },
+        {
+          "id": "visual-evidence-evaluator",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/validate/visual_evidence_evaluator.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "perceptual-diagnostics-and-known-failure-rejection",
+          "evidence": [
+            "scripts/validate/visual_evidence_evaluator.py",
+            "scripts/validate/foundry_ascension_tests.py",
+            "evaluations/high-fidelity-reliability/golden-tasks.json",
+            "artifacts/ascension/foundry-ascension-golden-tasks.json"
+          ]
+        },
+        {
+          "id": "evidence-based-model-selection",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/validate/model_router.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "role-selection-from-measured-golden-task-results",
+          "evidence": [
+            "scripts/validate/model_router.py",
+            "scripts/validate/model_golden_tasks.py",
+            "config/model-capability-registry.json",
+            "artifacts/ascension/model-selection-matrix.json"
+          ]
+        },
+        {
+          "id": "capability-gap-discovery",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/ascension/build_capability_truth_audit.py"
+            }
+          ],
+          "maturity": "L2",
+          "maturity_scope": "ranked-global-gap-discovery",
+          "evidence": [
+            "scripts/ascension/build_capability_truth_audit.py",
+            "config/capability-gap-register.json",
+            "config/capability-truth-audit.json"
+          ]
+        },
+        {
+          "id": "creative-intelligence-institute",
+          "providers": [
+            {
+              "kind": "config",
+              "name": "config/creative-intelligence-institute.json"
+            }
+          ],
+          "maturity": "L2",
+          "maturity_scope": "knowledge-practice-evaluation-policy",
+          "evidence": [
+            "config/creative-intelligence-institute.json",
+            "artifacts/flagship/ASHWAKE-FREEZE.md",
+            "artifacts/flagship/ASHWAKE-LESSON-EXTRACTION.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unreal-game-studio",
+      "name": "Unreal Game Studio",
+      "capabilities": [
+        {
+          "id": "unreal-installation-health",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/unreal/unreal_intelligence.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "installation-observation",
+          "evidence": [
+            "scripts/unreal/unreal_intelligence.py",
+            "artifacts/unreal/health/ue-5.8-health.json",
+            "artifacts/unreal/health/ue-5.8-health-toolchain.json",
+            "artifacts/unreal/health/toolchain-and-build-status.json",
+            "artifacts/unreal/research/official-automation-research.md"
+          ]
+        },
+        {
+          "id": "unreal-project-intelligence",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/unreal/unreal_intelligence.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "static-project-inspection",
+          "evidence": [
+            "scripts/unreal/unreal_intelligence.py",
+            "artifacts/unreal/health/nemesis-inspection.json"
+          ]
+        },
+        {
+          "id": "blender-unreal-asset-handoff",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/unreal/blender_unreal_bridge.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "governed-handoff-contract",
+          "evidence": [
+            "scripts/unreal/blender_unreal_bridge.py",
+            "artifacts/unreal/bridge/emberveil-handoff.json"
+          ]
+        },
+        {
+          "id": "unreal-editor-asset-import",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/unreal/unreal_intelligence.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "Editor-Python-GLB-import",
+          "evidence": [
+            "scripts/unreal/unreal_intelligence.py",
+            "scripts/unreal/editor_import_probe.py",
+            "scripts/validate/unreal_foundry_tests.py",
+            "artifacts/unreal/bridge/emberveil-unreal-import-cli.stdout.json"
+          ]
+        },
+        {
+          "id": "unreal-content-contract-validation",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/unreal/blender_unreal_bridge.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "pre-import-contract-validation",
+          "evidence": [
+            "scripts/unreal/blender_unreal_bridge.py",
+            "artifacts/unreal/bridge/emberveil-handoff.json",
+            "artifacts/unreal/research/official-automation-research.md"
+          ]
+        },
+        {
+          "id": "unreal-editor-commandline",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/unreal/unreal_intelligence.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "bounded-commandlet-runner",
+          "evidence": [
+            "scripts/unreal/unreal_intelligence.py",
+            "scripts/validate/unreal_foundry_tests.py",
+            "artifacts/unreal/health/ue-5.8-health.json",
+            "artifacts/unreal/health/foundry-calibration-datavalidation.json",
+            "artifacts/unreal/health/myproject-datavalidation.json",
+            "artifacts/unreal/research/official-automation-research.md"
+          ]
+        },
+        {
+          "id": "unreal-game-design",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/unreal/game_design.py"
+            }
+          ],
+          "maturity": "L3",
+          "maturity_scope": "design-traceability-schema",
+          "evidence": [
+            "scripts/unreal/game_design.py",
+            "scripts/validate/unreal_foundry_tests.py",
+            "artifacts/unreal/calibration/emberveil-game-design.json"
+          ]
+        },
+        {
+          "id": "unreal-cpp-compile",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/unreal/build_pipeline.py"
+            }
+          ],
+          "maturity": "L2",
+          "maturity_scope": "game-target-compile-only",
+          "evidence": [
+            "scripts/unreal/build_pipeline.py",
+            "artifacts/unreal/health/toolchain-and-build-status.json",
+            "artifacts/unreal/health/foundry-compile-evidence.json",
+            "artifacts/unreal/calibration/Source/FoundryCalibration/FoundryGameStateTests.cpp"
+          ]
+        },
+        {
+          "id": "unreal-gameplay-architecture",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/unreal/vertical_slice_graph.py"
+            }
+          ],
+          "maturity": "L2",
+          "maturity_scope": "compiled-design-to-code-slice-not-runtime-proven",
+          "evidence": [
+            "scripts/unreal/vertical_slice_graph.py",
+            "artifacts/unreal/calibration/vertical-slice-production-graph.json",
+            "artifacts/unreal/calibration/Source/FoundryCalibration/FoundryGameMode.cpp",
+            "artifacts/unreal/health/foundry-compile-evidence.json"
+          ]
+        },
+        {
+          "id": "unreal-runtime-observation",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/unreal/unreal_intelligence.py"
+            }
+          ],
+          "maturity": "L2",
+          "maturity_scope": "bounded-game-target-launch-and-failure-classification-not-playable-proof",
+          "evidence": [
+            "scripts/unreal/unreal_intelligence.py",
+            "artifacts/unreal/health/foundry-runtime-observation-trace.json"
+          ]
+        },
+        {
+          "id": "unreal-native-test-discovery",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/unreal/unreal_intelligence.py"
+            }
+          ],
+          "maturity": "L1",
+          "maturity_scope": "source-level-test-discovery-only",
+          "evidence": [
+            "scripts/unreal/unreal_intelligence.py",
+            "artifacts/unreal/calibration/Source/FoundryCalibration/FoundryGameStateTests.cpp"
+          ]
+        },
+        {
+          "id": "unreal-packaging-preflight",
+          "providers": [
+            {
+              "kind": "script",
+              "name": "scripts/unreal/build_pipeline.py"
+            }
+          ],
+          "maturity": "L2",
+          "maturity_scope": "bounded-buildcookrun-preflight-with-real-blocker-diagnostic",
+          "evidence": [
+            "scripts/unreal/build_pipeline.py",
+            "artifacts/unreal/health/foundry-package-preflight.json",
+            "artifacts/unreal/health/toolchain-and-build-status.json"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "creative-experience-frontend-intelligence",
+      "name": "Creative, experience, and frontend intelligence",
+      "capabilities": [
+        {
+          "id": "maturity-axes-contract",
+          "providers": [{"kind": "config", "name": "config/maturity-and-knowledge-contract.json"}],
+          "maturity": "L3",
+          "maturity_scope": "independent-axis-semantics",
+          "evidence": ["config/maturity-and-knowledge-contract.json"]
+        },
+        {
+          "id": "frontend-ui-ux-institute",
+          "providers": [{"kind": "config", "name": "config/frontend-ui-ux-institute.json"}],
+          "maturity": "L2",
+          "maturity_scope": "professional-workflow-and-evidence-policy",
+          "evidence": ["config/frontend-ui-ux-institute.json", "config/resource-packs/frontend-ui-ux-core.json"]
+        },
+        {
+          "id": "experience-game-design-institute",
+          "providers": [{"kind": "config", "name": "config/experience-game-design-institute.json"}],
+          "maturity": "L2",
+          "maturity_scope": "professional-workflow-and-evidence-policy",
+          "evidence": ["config/experience-game-design-institute.json"]
+        },
+        {
+          "id": "professional-resource-packs",
+          "providers": [{"kind": "config", "name": "config/resource-packs/frontend-ui-ux-core.json"}, {"kind": "config", "name": "config/resource-packs/art-direction-lookdev-core.json"}, {"kind": "config", "name": "config/resource-packs/semantic-engineering-core.json"}],
+          "maturity": "L2",
+          "maturity_scope": "source-grounded-knowledge-packs",
+          "evidence": ["config/resource-packs/frontend-ui-ux-core.json", "config/resource-packs/art-direction-lookdev-core.json", "config/resource-packs/semantic-engineering-core.json"]
+        },
+        {
+          "id": "mission-compiler",
+          "providers": [{"kind": "script", "name": "scripts/ascension/mission_compiler.py"}],
+          "maturity": "L2",
+          "maturity_scope": "deterministic-intent-to-capability-plan",
+          "evidence": ["scripts/ascension/mission_compiler.py"]
+        },
+        {
+          "id": "creative-apprenticeship",
+          "providers": [{"kind": "script", "name": "scripts/validate/creative_micro_lab.py"}],
+          "maturity": "L2",
+          "maturity_scope": "evidence-shape-and-transfer-gate-not-artistic-mastery",
+          "evidence": ["scripts/validate/creative_micro_lab.py", "artifacts/ascension/micro-labs/creative-lab-fixture.json"]
+        },
+        {
+          "id": "frontend-quality-contract",
+          "providers": [{"kind": "script", "name": "scripts/validate/frontend_quality_contract.py"}],
+          "maturity": "L2",
+          "maturity_scope": "evidence-contract-not-visual-or-ux-certification",
+          "evidence": ["scripts/validate/frontend_quality_contract.py", "artifacts/ascension/micro-labs/frontend-quality-contract.json"]
+        }
       ]
     }
   ]

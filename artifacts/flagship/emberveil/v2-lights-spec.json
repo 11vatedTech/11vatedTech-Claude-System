@@ -1,0 +1,26 @@
+{
+  "op": "scene.create",
+  "params": {
+    "lights": [
+      {
+        "type": "point",
+        "name": "EmberCoreLight",
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.85,
+        "energy": 150
+      },
+      {
+        "type": "point",
+        "name": "FillLight",
+        "x": 1.5,
+        "y": -2.0,
+        "z": -0.3,
+        "energy": 30
+      }
+    ],
+    "out_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil",
+    "load_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend",
+    "save_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+  }
+}

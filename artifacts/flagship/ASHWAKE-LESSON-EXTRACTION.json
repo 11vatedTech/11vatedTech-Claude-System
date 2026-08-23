@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "kind": "foundry-lesson-extraction",
+  "fixture": "CALIBRATION_FIXTURE_001",
+  "source": "Ashwake — The Last Reliquary",
+  "date": "2026-08-22",
+  "stop_reason": "The calibration exposed systemic gaps; additional product polish would have low global capability value.",
+  "lessons": [
+    {
+      "artifact_failure": "BLACK_VOID_PRESENTATION",
+      "foundry_gap": "perceptual_visual_critique",
+      "reusable_capability": "visual-evidence-evaluator",
+      "regression": "evaluations/high-fidelity-reliability/golden-tasks.json:HFR-GT-001",
+      "current_maturity": "L3",
+      "remaining_gap": "metrics need calibrated semantic masks and independent multimodal review"
+    },
+    {
+      "artifact_failure": "TEST_CHAMBER_WORLD",
+      "foundry_gap": "environment_and_level_design_judgment",
+      "reusable_capability": "creative-quality-gates",
+      "regression": "evaluations/high-fidelity-reliability/golden-tasks.json:HFR-GT-002",
+      "current_maturity": "L3",
+      "remaining_gap": "automated signals cannot establish authored place, spatial storytelling, or good flow"
+    },
+    {
+      "artifact_failure": "PRIMITIVE_STATE_FEEDBACK",
+      "foundry_gap": "cross-modal_game-feel_evaluation",
+      "reusable_capability": "creative-quality-gates",
+      "regression": "evaluations/high-fidelity-reliability/golden-tasks.json:HFR-GT-003",
+      "current_maturity": "L3",
+      "remaining_gap": "requires temporal audio/video evidence and human feel review"
+    },
+    {
+      "artifact_failure": "TECHNICALLY_VALID_BUT_VISUALLY_WEAK",
+      "foundry_gap": "engineering_creative_maturity_separation",
+      "reusable_capability": "capability-truth-audit",
+      "regression": "evaluations/high-fidelity-reliability/golden-tasks.json",
+      "current_maturity": "L4",
+      "remaining_gap": "truth states must be maintained for every deployed capability and evidence type"
+    },
+    {
+      "artifact_failure": "PACKAGED_LOG_CAPTURE_FAILURE",
+      "foundry_gap": "runtime-evidence_reliability",
+      "reusable_capability": "runtime-observation",
+      "regression": "scripts/validate/unreal_foundry_reliability_tests.py",
+      "current_maturity": "L4",
+      "remaining_gap": "visual/audio/game-feel evidence still needs stable cross-platform capture"
+    },
+    {
+      "artifact_failure": "SMART_APP_CONTROL_EXECUTION_BLOCK",
+      "foundry_gap": "windows_execution_environment_awareness",
+      "reusable_capability": "environment-doctor",
+      "regression": "scripts/unreal/runtime_observation.py and Unreal health evidence",
+      "current_maturity": "L4",
+      "remaining_gap": "preflight should detect policy blockers before expensive runtime attempts"
+    },
+    {
+      "artifact_failure": "CALIBRATION_DRIFT",
+      "foundry_gap": "long-horizon mission control",
+      "reusable_capability": "mission-value-gate",
+      "regression": "scripts/validate/mission_value_gate.py",
+      "current_maturity": "L2",
+      "remaining_gap": "value estimates require historical calibration and live session telemetry"
+    }
+  ],
+  "global_delta": [
+    "The Foundry now has an explicit fixture freeze boundary.",
+    "Ashwake failures are mapped to reusable capabilities instead of product polish tasks.",
+    "Structural, functional, perceptual, artistic, and cohesion states remain separate."
+  ]
+}

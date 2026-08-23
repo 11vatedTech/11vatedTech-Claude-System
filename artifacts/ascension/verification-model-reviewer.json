@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "kind": "evidence-based-model-selection",
+  "role": "reviewer",
+  "selection": {
+    "model": "kr/qwen3-coder-next",
+    "score": 1.0,
+    "passed_tasks": 3,
+    "observed_tasks": 3,
+    "required_tasks": [
+      "debug",
+      "repo",
+      "visual-critique"
+    ],
+    "median_latency_s": 1.63
+  },
+  "candidates": [
+    {
+      "model": "kr/qwen3-coder-next",
+      "score": 1.0,
+      "passed_tasks": 3,
+      "observed_tasks": 3,
+      "required_tasks": [
+        "debug",
+        "repo",
+        "visual-critique"
+      ],
+      "median_latency_s": 1.63
+    },
+    {
+      "model": "kr/glm-5",
+      "score": 1.0,
+      "passed_tasks": 3,
+      "observed_tasks": 3,
+      "required_tasks": [
+        "debug",
+        "repo",
+        "visual-critique"
+      ],
+      "median_latency_s": 3.64
+    },
+    {
+      "model": "ag/gemini-3.7-flash-medium",
+      "score": 1.0,
+      "passed_tasks": 3,
+      "observed_tasks": 3,
+      "required_tasks": [
+        "debug",
+        "repo",
+        "visual-critique"
+      ],
+      "median_latency_s": 4.5
+    },
+    {
+      "model": "kr/deepseek-3.2",
+      "score": 1.0,
+      "passed_tasks": 3,
+      "observed_tasks": 3,
+      "required_tasks": [
+        "debug",
+        "repo",
+        "visual-critique"
+      ],
+      "median_latency_s": 5.89
+    },
+    {
+      "model": "gcli/grok-4.6",
+      "score": 0.3,
+      "passed_tasks": 0,
+      "observed_tasks": 3,
+      "required_tasks": [
+        "debug",
+        "repo",
+        "visual-critique"
+      ],
+      "median_latency_s": null
+    }
+  ],
+  "fallback_policy": "no evidence-based selection; caller must use configured fallback or stop"
+}

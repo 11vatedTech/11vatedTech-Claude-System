@@ -1,0 +1,26 @@
+{
+  "op": "material.subsurface",
+  "params": {
+    "name": "Emberveil_Glass_v2",
+    "base_color": [
+      1.0,
+      0.702,
+      0.278
+    ],
+    "roughness": 0.05,
+    "transmission": 0.95,
+    "ior": 1.5,
+    "subsurface": 0.3,
+    "subsurface_color": [
+      1.0,
+      0.7,
+      0.3
+    ],
+    "assign_to": [
+      "glass_bell"
+    ],
+    "out_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\v2-ops",
+    "load_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend",
+    "save_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+  }
+}

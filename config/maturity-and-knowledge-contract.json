@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "contract_id": "11VT_MATURITY_AND_KNOWLEDGE_CONTRACT",
+  "date": "2026-08-22",
+  "principle": "No maturity axis promotes another axis; evidence must be appropriate to the discipline.",
+  "axes": {
+    "engineering": {
+      "prefix": "E",
+      "levels": {
+        "E0": "absent",
+        "E1": "conceptual",
+        "E2": "scripted",
+        "E3": "operational",
+        "E4": "verified",
+        "E5": "production-proven"
+      }
+    },
+    "creative_art": {
+      "prefix": "C",
+      "levels": {
+        "C0": "unresolved",
+        "C1": "blockout",
+        "C2": "functional",
+        "C3": "coherent",
+        "C4": "polished",
+        "C5": "production",
+        "C6": "signature"
+      }
+    },
+    "experience_ux": {
+      "prefix": "X",
+      "levels": {
+        "X0": "unknown",
+        "X1": "interaction exists",
+        "X2": "usable",
+        "X3": "comprehensible",
+        "X4": "refined",
+        "X5": "validated with users",
+        "X6": "exceptional / distinctive"
+      }
+    },
+    "tool_mastery": {
+      "prefix": "T",
+      "levels": {
+        "T0": "unavailable",
+        "T1": "discovered",
+        "T2": "understood",
+        "T3": "operable",
+        "T4": "exercised",
+        "T5": "production-used",
+        "T6": "failure-repaired",
+        "T7": "repeatably professional"
+      }
+    },
+    "professional_experience": {
+      "prefix": "P",
+      "levels": {
+        "P0": "none",
+        "P1": "theory studied",
+        "P2": "references studied",
+        "P3": "controlled exercises",
+        "P4": "independently critiqued exercises",
+        "P5": "real product use",
+        "P6": "success across materially different contexts",
+        "P7": "consistently strong external / human validation"
+      }
+    },
+    "reliability": {
+      "prefix": "R",
+      "levels": {
+        "R0": "subjective",
+        "R1": "rubric",
+        "R2": "evidence captured",
+        "R3": "executable QA",
+        "R4": "regression protected",
+        "R5": "repeatably converges toward quality"
+      }
+    }
+  },
+  "knowledge_policy": {
+    "evergreen": [
+      "composition", "value", "color", "typography", "interaction principles",
+      "animation principles", "PBR fundamentals", "accessibility fundamentals",
+      "game design principles", "information architecture", "research methods"
+    ],
+    "just_in_time": [
+      "engine and library APIs", "browser behavior", "tool licensing", "model capability",
+      "performance guidance", "beta or experimental feature behavior"
+    ],
+    "versioned_lesson_fields": ["source", "retrieved", "version", "confidence", "revalidation_condition"],
+    "evidence_rule": "Research changes planning only when it records implementation consequences and source provenance."
+  },
+  "evidence_by_discipline": {
+    "frontend": ["running browser", "responsive screenshots", "interaction states", "keyboard review", "automated accessibility", "performance evidence"],
+    "visual_art": ["controlled renders", "before-after comparison", "independent critique", "human review where stakes justify it"],
+    "motion": ["video", "timing/state evidence", "slow-motion or frame inspection", "independent critique"],
+    "engineering": ["tests", "runtime", "profiling", "security and release evidence"]
+  },
+  "non_inheritance_examples": [
+    "PLAYWRIGHT_PASS does not imply UI_DESIGN_GOOD",
+    "LIGHTHOUSE_PASS does not imply UX_GOOD",
+    "VALID_GLB does not imply 3D_ART_GOOD",
+    "NIAGARA_ACTIVE does not imply VFX_GOOD",
+    "ANIMATION_PLAYING does not imply ANIMATION_QUALITY_GOOD"
+  ]
+}

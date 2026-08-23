@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "kind": "tiered-regression",
+  "timestamp": "2026-08-23T03:50:02Z",
+  "tiers": [
+    {
+      "tier": "FAST",
+      "elapsed_s": 2.2,
+      "total": 6,
+      "passed": 6,
+      "verdict": "PASS",
+      "results": [
+        {
+          "command": "python -m py_compile scripts/repo/lsp_client.py",
+          "exit_code": 0,
+          "verdict": "PASS",
+          "elapsed_s": 0.11,
+          "stderr_tail": ""
+        },
+        {
+          "command": "python -m py_compile scripts/repo/semantic_code_bus.py",
+          "exit_code": 0,
+          "verdict": "PASS",
+          "elapsed_s": 0.11,
+          "stderr_tail": ""
+        },
+        {
+          "command": "python -m py_compile scripts/frontend/runtime_harness.py",
+          "exit_code": 0,
+          "verdict": "PASS",
+          "elapsed_s": 0.11,
+          "stderr_tail": ""
+        },
+        {
+          "command": "python -m json.tool config/capability-ontology.json",
+          "exit_code": 0,
+          "verdict": "PASS",
+          "elapsed_s": 0.1,
+          "stderr_tail": ""
+        },
+        {
+          "command": "python scripts/validate/ontology_check.py",
+          "exit_code": 0,
+          "verdict": "PASS",
+          "elapsed_s": 0.25,
+          "stderr_tail": ""
+        },
+        {
+          "command": "python scripts/validate/foundry_ascension_tests.py",
+          "exit_code": 0,
+          "verdict": "PASS",
+          "elapsed_s": 1.54,
+          "stderr_tail": ""
+        }
+      ]
+    },
+    {
+      "tier": "STANDARD",
+      "elapsed_s": 38.4,
+      "total": 3,
+      "passed": 3,
+      "verdict": "PASS",
+      "results": [
+        {
+          "command": "python scripts/validate/lexical_vs_semantic_benchmark.py",
+          "exit_code": 0,
+          "verdict": "PASS",
+          "elapsed_s": 38.07,
+          "stderr_tail": ""
+        },
+        {
+          "command": "python scripts/validate/frontend_quality_contract.py artifacts/ascension/micro-labs/frontend-quality-contract.json",
+          "exit_code": 0,
+          "verdict": "PASS",
+          "elapsed_s": 0.15,
+          "stderr_tail": ""
+        },
+        {
+          "command": "python scripts/validate/creative_micro_lab.py artifacts/ascension/micro-labs/creative-lab-fixture.json",
+          "exit_code": 0,
+          "verdict": "PASS",
+          "elapsed_s": 0.18,
+          "stderr_tail": ""
+        }
+      ]
+    }
+  ],
+  "overall": "PASS"
+}

@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "kind": "unreal-specialist-coverage",
+  "agents": [
+    "11vt-art-director",
+    "11vt-asset-director",
+    "11vt-creative-director",
+    "11vt-experience-designer",
+    "11vt-independent-reviewer",
+    "11vt-motion-director",
+    "11vt-technical-artist",
+    "11vt-visual-qa-director"
+  ],
+  "skills": [
+    "11vt-9router-orchestrator",
+    "11vt-ai-ml-local-inference",
+    "11vt-architecture-engineering",
+    "11vt-capability-entrypoint",
+    "11vt-core-operating-system",
+    "11vt-creative-production",
+    "11vt-design-director",
+    "11vt-documentation-canon",
+    "11vt-game-development",
+    "11vt-language-workflows",
+    "11vt-performance-security",
+    "11vt-product-lifecycle",
+    "11vt-production-engineering",
+    "11vt-project-bootstrap",
+    "11vt-release-engineering",
+    "11vt-repository-auditor",
+    "11vt-research-intelligence",
+    "11vt-skill-foundry",
+    "11vt-status",
+    "11vt-testing-verification",
+    "9router",
+    "9router-chat",
+    "9router-embeddings",
+    "9router-image",
+    "9router-stt",
+    "9router-tts",
+    "9router-video",
+    "9router-web-fetch",
+    "9router-web-search",
+    "openspec-apply-change",
+    "openspec-archive-change",
+    "openspec-explore",
+    "openspec-propose",
+    "openspec-sync-specs",
+    "openspec-update-change"
+  ],
+  "roles": {
+    "game_director": {
+      "providers": [
+        "11vt-creative-director",
+        "11vt-game-development"
+      ],
+      "status": "covered-by-existing-specialist"
+    },
+    "systems_designer": {
+      "providers": [
+        "11vt-experience-designer",
+        "11vt-game-development"
+      ],
+      "status": "covered-by-existing-specialist"
+    },
+    "level_designer": {
+      "providers": [
+        "11vt-experience-designer",
+        "11vt-game-development"
+      ],
+      "status": "covered-by-existing-specialist"
+    },
+    "unreal_technical_director": {
+      "providers": [
+        "11vt-technical-artist",
+        "11vt-game-development"
+      ],
+      "status": "covered-by-existing-specialist"
+    },
+    "gameplay_engineer": {
+      "providers": [
+        "11vt-production-engineering",
+        "11vt-language-workflows"
+      ],
+      "status": "covered-by-existing-specialist"
+    },
+    "technical_artist": {
+      "providers": [
+        "11vt-technical-artist"
+      ],
+      "status": "covered-by-existing-specialist"
+    },
+    "character_animation": {
+      "providers": [
+        "11vt-motion-director",
+        "11vt-technical-artist"
+      ],
+      "status": "covered-by-existing-specialist"
+    },
+    "niagara_vfx": {
+      "providers": [
+        "11vt-technical-artist",
+        "11vt-motion-director"
+      ],
+      "status": "covered-by-existing-specialist"
+    },
+    "rendering": {
+      "providers": [
+        "11vt-technical-artist",
+        "11vt-performance-security"
+      ],
+      "status": "covered-by-existing-specialist"
+    },
+    "audio": {
+      "providers": [
+        "11vt-creative-production",
+        "11vt-game-development"
+      ],
+      "status": "covered-by-existing-specialist"
+    },
+    "cinematics": {
+      "providers": [
+        "11vt-motion-director",
+        "11vt-creative-director"
+      ],
+      "status": "covered-by-existing-specialist"
+    },
+    "performance": {
+      "providers": [
+        "11vt-performance-security"
+      ],
+      "status": "covered-by-existing-specialist"
+    },
+    "unreal_qa": {
+      "providers": [
+        "11vt-testing-verification",
+        "11vt-visual-qa-director"
+      ],
+      "status": "covered-by-existing-specialist"
+    },
+    "independent_game_review": {
+      "providers": [
+        "11vt-independent-reviewer"
+      ],
+      "status": "covered-by-existing-specialist"
+    }
+  },
+  "principle": "reuse existing specialists until a distinct Unreal evidence-backed responsibility justifies a new agent"
+}

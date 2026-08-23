@@ -1,0 +1,181 @@
+{
+  "url": "http://127.0.0.1:8142/runtime/index.html",
+  "frames": [
+    {
+      "t_ms": 1500,
+      "file": "frame-01.png",
+      "state": {
+        "loading": "kindling ·",
+        "loadingHidden": true,
+        "status": "calibration artifact",
+        "canvas": true,
+        "canvasWH": "1280x800",
+        "title": "EMBERVEIL — a warden of dying fires",
+        "foundryState": {
+          "t": 0.41769999998807905,
+          "mixerTime": 0.3133000000119209,
+          "playing": true,
+          "rootY": 0.08334858568835876,
+          "rootPos": [
+            0,
+            0.08334858568835876,
+            0
+          ],
+          "cameraPos": [
+            5.093594682028328,
+            1.9249455586562405,
+            0.2555253709766049
+          ],
+          "emberCount": 420,
+          "fps": 0,
+          "heroLoaded": true,
+          "animationClips": [
+            "11vt_float_Emberveil_root",
+            "11vt_rotate_brass_band",
+            "11vt_pulse_ember_core",
+            "11vt_rotate_filigree_arc"
+          ],
+          "activeAnimationCount": 4
+        }
+      }
+    },
+    {
+      "t_ms": 3500,
+      "file": "frame-02.png",
+      "state": {
+        "loading": "kindling ·",
+        "loadingHidden": true,
+        "status": "calibration artifact",
+        "canvas": true,
+        "canvasWH": "1280x800",
+        "title": "EMBERVEIL — a warden of dying fires",
+        "foundryState": {
+          "t": 0.8676999999880793,
+          "mixerTime": 0.7633000000119211,
+          "playing": true,
+          "rootY": 0.08253313795921902,
+          "rootPos": [
+            0,
+            0.08253313795921902,
+            0
+          ],
+          "cameraPos": [
+            5.072378360433995,
+            1.9510230071779746,
+            0.5300733615273736
+          ],
+          "emberCount": 420,
+          "fps": 0,
+          "heroLoaded": true,
+          "animationClips": [
+            "11vt_float_Emberveil_root",
+            "11vt_rotate_brass_band",
+            "11vt_pulse_ember_core",
+            "11vt_rotate_filigree_arc"
+          ],
+          "activeAnimationCount": 4
+        }
+      }
+    },
+    {
+      "t_ms": 5500,
+      "file": "frame-03.png",
+      "state": {
+        "loading": "kindling ·",
+        "loadingHidden": true,
+        "status": "calibration artifact",
+        "canvas": true,
+        "canvasWH": "1280x800",
+        "title": "EMBERVEIL — a warden of dying fires",
+        "foundryState": {
+          "t": 1.3176999999880796,
+          "mixerTime": 1.2133000000119214,
+          "playing": true,
+          "rootY": -0.060035637216685984,
+          "rootPos": [
+            0,
+            -0.060035637216685984,
+            0
+          ],
+          "cameraPos": [
+            5.036374577417734,
+            1.9754517689420263,
+            0.8030760337230448
+          ],
+          "emberCount": 420,
+          "fps": 0,
+          "heroLoaded": true,
+          "animationClips": [
+            "11vt_float_Emberveil_root",
+            "11vt_rotate_brass_band",
+            "11vt_pulse_ember_core",
+            "11vt_rotate_filigree_arc"
+          ],
+          "activeAnimationCount": 4
+        }
+      }
+    },
+    {
+      "t_ms": 7500,
+      "file": "frame-04.png",
+      "state": {
+        "loading": "kindling ·",
+        "loadingHidden": true,
+        "status": "calibration artifact",
+        "canvas": true,
+        "canvasWH": "1280x800",
+        "title": "EMBERVEIL — a warden of dying fires",
+        "foundryState": {
+          "t": 1.76769999998808,
+          "mixerTime": 1.6633000000119218,
+          "playing": true,
+          "rootY": -0.09965511950233738,
+          "rootPos": [
+            0,
+            -0.09965511950233738,
+            0
+          ],
+          "cameraPos": [
+            4.985688294501451,
+            1.997442486788664,
+            1.0737375051991116
+          ],
+          "emberCount": 420,
+          "fps": 0,
+          "heroLoaded": true,
+          "animationClips": [
+            "11vt_float_Emberveil_root",
+            "11vt_rotate_brass_band",
+            "11vt_pulse_ember_core",
+            "11vt_rotate_filigree_arc"
+          ],
+          "activeAnimationCount": 4
+        }
+      }
+    }
+  ],
+  "perf": {
+    "timing": {
+      "nav": 1787140789940,
+      "load": 1787140791572
+    },
+    "resources": [
+      {
+        "name": "three.module.js",
+        "dur": 720
+      },
+      {
+        "name": "GLTFLoader.js",
+        "dur": 315
+      },
+      {
+        "name": "BufferGeometryUtils.js",
+        "dur": 403
+      },
+      {
+        "name": "emberveil-canonical.glb",
+        "dur": 15
+      }
+    ]
+  }
+}

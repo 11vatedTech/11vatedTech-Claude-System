@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "tool": "perceptual_visual_qa",
+  "records": [
+    {
+      "path": "artifacts\\flagship\\qa\\runtime-canonical-final2\\frame-02.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "luminance": {
+        "mean": 0.102537,
+        "central_mean": 0.095486,
+        "corner_mean": 0.036818,
+        "subject_background_separation": 0.058667,
+        "black_crush_fraction_below_8_percent": 0.670352,
+        "highlight_clip_fraction_above_95_percent": 2.1e-05
+      },
+      "composition": {
+        "threshold": "65% luminance (bright subject diagnostic)",
+        "subject_bbox": {
+          "x": 43,
+          "y": 1,
+          "width": 1181,
+          "height": 762
+        },
+        "subject_occupancy": 0.87883
+      },
+      "failures": [],
+      "warnings": [],
+      "status": "PASS",
+      "interpretation": "diagnostic metrics require human/professional visual review; they do not prove artistic quality"
+    },
+    {
+      "path": "artifacts\\flagship\\qa\\runtime-canonical-final2\\frame-04.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "luminance": {
+        "mean": 0.103445,
+        "central_mean": 0.090038,
+        "corner_mean": 0.036818,
+        "subject_background_separation": 0.05322,
+        "black_crush_fraction_below_8_percent": 0.665931,
+        "highlight_clip_fraction_above_95_percent": 3.5e-05
+      },
+      "composition": {
+        "threshold": "65% luminance (bright subject diagnostic)",
+        "subject_bbox": {
+          "x": 43,
+          "y": 37,
+          "width": 1180,
+          "height": 726
+        },
+        "subject_occupancy": 0.836602
+      },
+      "failures": [],
+      "warnings": [],
+      "status": "PASS",
+      "interpretation": "diagnostic metrics require human/professional visual review; they do not prove artistic quality"
+    }
+  ],
+  "ok": true
+}

@@ -1,0 +1,33 @@
+{
+  "op": "mesh.lathe",
+  "params": {
+    "name": "plinth",
+    "segments": 96,
+    "profile": [
+      [
+        3.4,
+        0.0
+      ],
+      [
+        3.6,
+        0.0
+      ],
+      [
+        3.6,
+        0.12
+      ],
+      [
+        3.4,
+        0.12
+      ]
+    ],
+    "location": [
+      0,
+      0,
+      0.0
+    ],
+    "out_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil",
+    "load_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend",
+    "save_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+  }
+}

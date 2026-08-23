@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "kind": "ashwake-human-screenshot-visual-failure-analysis",
+  "date": "2026-08-21",
+  "input_evidence": [
+    "founder-runtime-screenshot-001",
+    "founder-runtime-screenshot-002",
+    "founder-runtime-screenshot-003"
+  ],
+  "note": "Metrics are human-observed estimates from Founder screenshots embedded in session. Exact pixel metrics require preserved image files or deterministic runtime recaptures.",
+  "perceptual_estimates": {
+    "black_crush_fraction": {"estimated_range": [0.78, 0.92], "assessment": "critical"},
+    "midtone_occupancy": {"estimated_range": [0.04, 0.14], "assessment": "critical"},
+    "highlight_clipping_or_near_clipping": {"estimated_range": [0.02, 0.08], "assessment": "localized emissive hotspots"},
+    "subject_occupancy": {"assessment": "unstable; large clipped overhead subject and small distant relics both present"},
+    "subject_background_separation": {"assessment": "poor except emissive discs"},
+    "ui_legibility": {"assessment": "readable but visually primitive and weakly integrated"}
+  },
+  "artistic_diagnosis": {
+    "lighting": "Emissive cores and colored floor wash carry most readability; scene lacks motivated fill, rim/separation, midtone environment, and controlled value script.",
+    "composition": "Primary object clips top frame; important forms sit high/left while center/lower frame is mostly empty black or flat floor. Depth cues weak.",
+    "environment": "Space reads as test chamber with checker floor, not dying reliquary location. No architecture, history, scale, pathing, or landmarks.",
+    "materials": "Relics read as black silhouettes with orange discs. Surface roughness, edge highlights, patina, soot, heat discoloration, glass/metal response not visible.",
+    "state_feedback": "States read mostly as yellow/gold vs red illumination; pulse timing and safe window are not self-teaching from screenshots.",
+    "vfx": "Runtime plumbing works, but visual effect language lacks shape, timing, layering, and energy sophistication in human evidence.",
+    "hud": "Functional debug-like text lacks Ashwake canon, ritual/progression language, state-responsive design, and objective teaching hierarchy."
+  },
+  "failure_classes": [
+    "QUALITY_MODEL_GAP",
+    "VISUAL_QA_GAP",
+    "THRESHOLD_GAP",
+    "EVIDENCE_SELECTION_GAP",
+    "ART_DIRECTION_GAP",
+    "LEVEL_DESIGN_GAP",
+    "LIGHTING_INTELLIGENCE_GAP",
+    "MATERIAL_INTELLIGENCE_GAP"
+  ],
+  "root_cause_summary": "Automation verified assets, packaged execution, and structured runtime markers, but lacked independent creative maturity gates and human-screenshot perceptual/artistic review before quality promotion.",
+  "required_foundry_changes": [
+    "separate engineering maturity from creative maturity and fidelity reliability",
+    "require human/specialist visual evidence before creative quality promotion",
+    "add hard blockers for severe black crush, primitive environments, clipped primary subject, and generic HUD",
+    "add before/after visual regression captures for Ashwake repair",
+    "add discipline-specific review gates for lighting, environment, material, state feedback, VFX, animation, audio, UI, and game feel"
+  ]
+}

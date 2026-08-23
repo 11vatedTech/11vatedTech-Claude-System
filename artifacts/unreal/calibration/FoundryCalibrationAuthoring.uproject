@@ -1,0 +1,13 @@
+{
+  "FileVersion": 3,
+  "EngineAssociation": "5.8",
+  "Category": "11vatedTech Foundry",
+  "Description": "Temporary editor-only authoring descriptor for the FoundryCalibration map.",
+  "Plugins": [
+    {"Name": "DataValidation", "Enabled": true},
+    {"Name": "PythonScriptPlugin", "Enabled": true},
+    {"Name": "EnhancedInput", "Enabled": true},
+    {"Name": "Niagara", "Enabled": true},
+    {"Name": "Fab", "Enabled": false}
+  ]
+}

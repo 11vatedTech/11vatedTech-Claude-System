@@ -1,0 +1,30 @@
+{
+  "discipline": "COMPOSITION",
+  "lab": "001 — Hierarchy & Eye Path",
+  "date": "2026-08-23",
+  "exercise": "5 materially different compositions from identical content (headline, body text, measurement value). Tested centered, asymmetric left-heavy, newspaper-column, measurement-first, and margin-led layouts.",
+  "failure_found": "Composition C rated weakest by blind multimodal review — two-column split on a single short paragraph broke reading flow, forced erratic eye movement, and weakened visual hierarchy.",
+  "cause": "Column-splitting was applied as a visual device without considering content length. The paragraph (~40 words) is too short for multi-column layout — the reader must jump between columns mid-thought instead of completing a continuous scan.",
+  "discipline_owner": "Typography / Grid Systems / Information Design",
+  "repair": "Removed column-split. Reverted to single-column full-width text. Added meta-row beneath for secondary data (transparency, instrument, window), grouped by proximity instead of split by columns.",
+  "repair_verified": "Independent A/B review confirmed Interface B (single-column) as superior — 'fix reading flow, eyes scan top to bottom.'",
+  "transfer": {
+    "content": "Museum exhibit label — a 3-sentence artifact description with specifications",
+    "lesson": "Splitting short prose into columns forces the reader to jump between visual columns mid-paragraph. For content under ~80 words, proximity grouping (single column with inline data groupings) produces clearer hierarchy than forced multi-column layout.",
+    "verified": "Independent A/B review confirmed single-column exhibit label as easier to read — 'remove eye jump, fix flow.'"
+  },
+  "model_reviewer": "ag/gemini-2.5-flash",
+  "model_performance": "Accurate diagnosis. Identified column-split as the specific weakness. Recommended the correct repair. Transfer evaluation also confirmed.",
+  "maturity_change": {
+    "composition_theory": "STAGE 1 → STAGE 3",
+    "composition_practice": "STAGE 0 → STAGE 4",
+    "note": "One lab does not establish professional composition skill, but the ability to produce structurally different layouts, receive blind critique, repair a causal weakness, and transfer the lesson is evidence of stages 3-4."
+  },
+  "lesson_retained": "Column-splitting short content (under ~80 words) disrupts eye path and weakens hierarchy. Proximity grouping within a single column is superior for short-form content. The device (columns) must serve the content length, not the other way around.",
+  "confidence": "MEDIUM",
+  "limitations": [
+    "Single reviewer (ag/gemini-2.5-flash) — no human validation of the hierarchy ranking",
+    "Only tested one content length and genre (scientific observation + museum label)",
+    "5 compositions is a small sample for generalization"
+  ]
+}

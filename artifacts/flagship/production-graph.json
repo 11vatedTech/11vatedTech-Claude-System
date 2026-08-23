@@ -1,0 +1,273 @@
+{
+  "ok": true,
+  "product": "Emberveil",
+  "product_kind": "signature_entity",
+  "node_count": 16,
+  "edge_count": 21,
+  "nodes": [
+    {
+      "id": "emberveil-00",
+      "name": "concept_thesis",
+      "category": "2d-concept",
+      "discipline": "creative-direction",
+      "depends_on": [],
+      "quality_sensitive": true
+    },
+    {
+      "id": "emberveil-01",
+      "name": "hero_mesh",
+      "category": "3d-model",
+      "discipline": "modeling",
+      "depends_on": [
+        "concept_thesis"
+      ],
+      "quality_sensitive": true
+    },
+    {
+      "id": "emberveil-02",
+      "name": "uv_layout",
+      "category": "3d-uv",
+      "discipline": "technical-art",
+      "depends_on": [
+        "hero_mesh"
+      ],
+      "quality_sensitive": false
+    },
+    {
+      "id": "emberveil-03",
+      "name": "material_set",
+      "category": "3d-material",
+      "discipline": "technical-art",
+      "depends_on": [
+        "hero_mesh"
+      ],
+      "quality_sensitive": false
+    },
+    {
+      "id": "emberveil-04",
+      "name": "purposeful_rig",
+      "category": "3d-rig",
+      "discipline": "rigging",
+      "depends_on": [
+        "hero_mesh"
+      ],
+      "quality_sensitive": false
+    },
+    {
+      "id": "emberveil-05",
+      "name": "presence_animation",
+      "category": "animation",
+      "discipline": "animation",
+      "depends_on": [
+        "purposeful_rig"
+      ],
+      "quality_sensitive": true
+    },
+    {
+      "id": "emberveil-06",
+      "name": "signature_performance",
+      "category": "animation",
+      "discipline": "animation",
+      "depends_on": [
+        "purposeful_rig"
+      ],
+      "quality_sensitive": true
+    },
+    {
+      "id": "emberveil-07",
+      "name": "secondary_motion",
+      "category": "animation",
+      "discipline": "animation",
+      "depends_on": [
+        "purposeful_rig"
+      ],
+      "quality_sensitive": true
+    },
+    {
+      "id": "emberveil-08",
+      "name": "signature_vfx",
+      "category": "vfx",
+      "discipline": "vfx",
+      "depends_on": [
+        "signature_performance"
+      ],
+      "quality_sensitive": true
+    },
+    {
+      "id": "emberveil-09",
+      "name": "motivated_lighting",
+      "category": "lighting",
+      "discipline": "lighting",
+      "depends_on": [
+        "material_set"
+      ],
+      "quality_sensitive": false
+    },
+    {
+      "id": "emberveil-10",
+      "name": "presentation_environment",
+      "category": "3d-environment",
+      "discipline": "environment",
+      "depends_on": [
+        "hero_mesh"
+      ],
+      "quality_sensitive": false
+    },
+    {
+      "id": "emberveil-11",
+      "name": "camera_sequence",
+      "category": "camera",
+      "discipline": "cinematography",
+      "depends_on": [
+        "presence_animation",
+        "signature_performance"
+      ],
+      "quality_sensitive": false
+    },
+    {
+      "id": "emberveil-12",
+      "name": "ui_identity",
+      "category": "2d-ui",
+      "discipline": "design-direction",
+      "depends_on": [
+        "concept_thesis"
+      ],
+      "quality_sensitive": false
+    },
+    {
+      "id": "emberveil-13",
+      "name": "runtime_export",
+      "category": "runtime",
+      "discipline": "technical-art",
+      "depends_on": [
+        "hero_mesh",
+        "material_set",
+        "presence_animation",
+        "signature_performance"
+      ],
+      "quality_sensitive": false
+    },
+    {
+      "id": "emberveil-14",
+      "name": "audio_bed",
+      "category": "audio",
+      "discipline": "audio",
+      "depends_on": [
+        "signature_performance"
+      ],
+      "quality_sensitive": false
+    },
+    {
+      "id": "emberveil-15",
+      "name": "marketing_render",
+      "category": "render",
+      "discipline": "cinematics",
+      "depends_on": [
+        "hero_mesh",
+        "material_set",
+        "motivated_lighting"
+      ],
+      "quality_sensitive": false
+    }
+  ],
+  "edges": [
+    {
+      "from": "concept_thesis",
+      "to": "hero_mesh"
+    },
+    {
+      "from": "hero_mesh",
+      "to": "uv_layout"
+    },
+    {
+      "from": "hero_mesh",
+      "to": "material_set"
+    },
+    {
+      "from": "hero_mesh",
+      "to": "purposeful_rig"
+    },
+    {
+      "from": "purposeful_rig",
+      "to": "presence_animation"
+    },
+    {
+      "from": "purposeful_rig",
+      "to": "signature_performance"
+    },
+    {
+      "from": "purposeful_rig",
+      "to": "secondary_motion"
+    },
+    {
+      "from": "signature_performance",
+      "to": "signature_vfx"
+    },
+    {
+      "from": "material_set",
+      "to": "motivated_lighting"
+    },
+    {
+      "from": "hero_mesh",
+      "to": "presentation_environment"
+    },
+    {
+      "from": "presence_animation",
+      "to": "camera_sequence"
+    },
+    {
+      "from": "signature_performance",
+      "to": "camera_sequence"
+    },
+    {
+      "from": "concept_thesis",
+      "to": "ui_identity"
+    },
+    {
+      "from": "hero_mesh",
+      "to": "runtime_export"
+    },
+    {
+      "from": "material_set",
+      "to": "runtime_export"
+    },
+    {
+      "from": "presence_animation",
+      "to": "runtime_export"
+    },
+    {
+      "from": "signature_performance",
+      "to": "runtime_export"
+    },
+    {
+      "from": "signature_performance",
+      "to": "audio_bed"
+    },
+    {
+      "from": "hero_mesh",
+      "to": "marketing_render"
+    },
+    {
+      "from": "material_set",
+      "to": "marketing_render"
+    },
+    {
+      "from": "motivated_lighting",
+      "to": "marketing_render"
+    }
+  ],
+  "disciplines_required": [
+    "animation",
+    "audio",
+    "cinematics",
+    "cinematography",
+    "creative-direction",
+    "design-direction",
+    "environment",
+    "lighting",
+    "modeling",
+    "rigging",
+    "technical-art",
+    "vfx"
+  ]
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "directory": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp",
+    "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\callback.cpp",
+    "arguments": [
+      "clang++",
+      "-std=c++17",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\include",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\generated",
+      "-c",
+      "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\callback.cpp"
+    ]
+  },
+  {
+    "directory": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp",
+    "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\legacy\\track.cpp",
+    "arguments": [
+      "clang++",
+      "-std=c++17",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\include",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\generated",
+      "-c",
+      "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\legacy\\track.cpp"
+    ]
+  },
+  {
+    "directory": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp",
+    "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\macro_generated.cpp",
+    "arguments": [
+      "clang++",
+      "-std=c++17",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\include",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\generated",
+      "-c",
+      "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\macro_generated.cpp"
+    ]
+  },
+  {
+    "directory": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp",
+    "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\obsolete.cpp",
+    "arguments": [
+      "clang++",
+      "-std=c++17",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\include",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\generated",
+      "-c",
+      "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\obsolete.cpp"
+    ]
+  },
+  {
+    "directory": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp",
+    "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\overloads.cpp",
+    "arguments": [
+      "clang++",
+      "-std=c++17",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\include",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\generated",
+      "-c",
+      "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\overloads.cpp"
+    ]
+  },
+  {
+    "directory": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp",
+    "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\player.cpp",
+    "arguments": [
+      "clang++",
+      "-std=c++17",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\include",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\generated",
+      "-c",
+      "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\player.cpp"
+    ]
+  },
+  {
+    "directory": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp",
+    "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\shapes.cpp",
+    "arguments": [
+      "clang++",
+      "-std=c++17",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\include",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\generated",
+      "-c",
+      "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\shapes.cpp"
+    ]
+  },
+  {
+    "directory": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp",
+    "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\templates.cpp",
+    "arguments": [
+      "clang++",
+      "-std=c++17",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\include",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\generated",
+      "-c",
+      "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\templates.cpp"
+    ]
+  },
+  {
+    "directory": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp",
+    "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\uses_generated.cpp",
+    "arguments": [
+      "clang++",
+      "-std=c++17",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\include",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\generated",
+      "-c",
+      "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\uses_generated.cpp"
+    ]
+  },
+  {
+    "directory": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp",
+    "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\vector_math.cpp",
+    "arguments": [
+      "clang++",
+      "-std=c++17",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\include",
+      "-IC:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\generated",
+      "-c",
+      "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp\\src\\vector_math.cpp"
+    ]
+  }
+]

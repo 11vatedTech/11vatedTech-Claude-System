@@ -1,0 +1,10 @@
+{
+  "lab": "VFX Lab",
+  "blender": "5.2.0 LTS",
+  "variants": [
+    "physical",
+    "magical",
+    "technological"
+  ],
+  "frames": 96
+}

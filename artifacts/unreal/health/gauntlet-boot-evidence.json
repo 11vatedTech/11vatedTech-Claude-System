@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "kind": "gauntlet-boot-test",
+  "status": "PASS",
+  "test": "UE.BootTest",
+  "markers": {
+    "map_load_complete": true,
+    "asset_registry_loaded": true,
+    "exit_code_zero": true,
+    "result_passed": true
+  },
+  "log": "artifacts\\unreal\\health\\gauntlet-boot.txt",
+  "artifact_dir": "artifacts/unreal/health/gauntlet/UE.BootTest_(Win64_Development_Client)"
+}

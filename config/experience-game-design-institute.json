@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "institute_id": "11VT_EXPERIENCE_GAME_DESIGN_INSTITUTE",
+  "date": "2026-08-22",
+  "status": "ACTIVE",
+  "purpose": "Turn player intent into mechanics, feedback, pacing, challenge, and validated experience without equating a running system with a good game.",
+  "disciplines": ["game-design", "game-feel", "level-design", "player-research", "runtime-experience"],
+  "workflow": ["player-fantasy", "verbs", "core-loop", "feedback", "challenge", "pacing", "blockout", "playtest", "independent-review", "repair", "transfer"],
+  "traceability": "PLAYER EXPERIENCE -> MECHANIC -> SYSTEM -> IMPLEMENTATION -> PLAYTEST EVIDENCE",
+  "quality_axes": ["clarity", "responsiveness", "feedback", "challenge", "mastery", "pacing", "failure-recovery", "accessibility", "replayability"],
+  "evidence": ["design trace", "runtime interaction", "scenario test", "input/state evidence", "profile", "human or independent game-design review"],
+  "failure_patterns": ["mechanic without meaningful decision", "beautiful space without player purpose", "color-only state feedback", "input works but feels weightless", "tutorial explains instead of teaching through play"],
+  "known_limits": ["No current global fixture proves exceptional game design or game feel.", "Human playtesting remains required for enjoyment, confusion, and desire."]
+}

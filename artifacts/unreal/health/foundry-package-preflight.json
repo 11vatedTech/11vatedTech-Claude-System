@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "kind": "unreal-package",
+  "status": "BLOCKED",
+  "error": "editor_target_prerequisite_missing",
+  "missing_component": "Microsoft.Net.Component.4.8.SDK",
+  "reason": "UnrealBuildTool SwarmInterface requires a .NET Framework SDK (4.6+); install the component in the existing Visual Studio Build Tools instance",
+  "project": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\FoundryCalibration.uproject",
+  "archive": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Packaged\\Ashwake",
+  "configuration": "Development",
+  "engine_root": "C:\\Program Files\\Epic Games\\UE_5.8"
+}

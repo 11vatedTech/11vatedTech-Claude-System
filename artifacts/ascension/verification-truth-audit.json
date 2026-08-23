@@ -1,0 +1,2145 @@
+{
+  "schema_version": 1,
+  "kind": "capability-truth-audit",
+  "ontology": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\config\\capability-ontology.json",
+  "principle": "tool access and documentation do not imply mastery",
+  "truth_states": [
+    "ABSENT",
+    "THEORETICAL",
+    "SCRIPTED",
+    "OPERATIONAL",
+    "VERIFIED",
+    "PRODUCTION-PROVEN"
+  ],
+  "counts": {
+    "ABSENT": 0,
+    "THEORETICAL": 24,
+    "SCRIPTED": 6,
+    "OPERATIONAL": 45,
+    "VERIFIED": 10,
+    "PRODUCTION-PROVEN": 0
+  },
+  "capabilities": [
+    {
+      "id": "founder-intent-routing",
+      "domain": "intelligence-routing",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [
+          "scripts/validate/routing_eval.py",
+          "evaluations/trigger/core-skill-trigger-cases.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "model-routing",
+      "domain": "intelligence-routing",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 2,
+        "executable_providers": [
+          "scripts/validate/router_health.py"
+        ],
+        "evidence_present": [
+          "scripts/validate/9router_routing_benchmark.py",
+          "scripts/validate/router_health.py",
+          "evaluations/model-routing/routing-suite.json",
+          "evaluations/model-routing/routing-profile.json",
+          "artifacts/unreal/health/9router-degraded-diagnostics.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "web-research",
+      "domain": "research-evidence",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 2,
+        "executable_providers": [],
+        "evidence_present": [
+          "docs/evidence-system.md",
+          "docs/pinned-external-sources.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L2",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "evidence-ledger",
+      "domain": "research-evidence",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 2,
+        "executable_providers": [
+          "scripts/validate/manifest_validator.py"
+        ],
+        "evidence_present": [
+          "docs/evidence-system.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "architecture-adr",
+      "domain": "architecture-engineering",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [
+          "docs/product-development-protocol.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "production-engineering",
+      "domain": "architecture-engineering",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 2,
+        "executable_providers": [],
+        "evidence_present": [
+          "docs/product-development-protocol.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "game-development",
+      "domain": "architecture-engineering",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "creative-direction",
+      "domain": "creative-production",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 2,
+        "executable_providers": [],
+        "evidence_present": [
+          "evaluations/regression/2026-08-15-creative-production-expansion.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [
+          "evaluations/regression/2026-08-15-creative-production-expansion.md"
+        ],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "art-direction",
+      "domain": "creative-production",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [
+          "docs/creative-production-architecture.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [
+          "docs/creative-production-architecture.md"
+        ],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "experience-design",
+      "domain": "creative-production",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [
+          "docs/creative-production-architecture.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [
+          "docs/creative-production-architecture.md"
+        ],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "motion-direction",
+      "domain": "creative-production",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [
+          "docs/creative-production-architecture.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [
+          "docs/creative-production-architecture.md"
+        ],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "technical-art",
+      "domain": "creative-production",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [
+          "docs/creative-production-architecture.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [
+          "docs/creative-production-architecture.md"
+        ],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "design-direction",
+      "domain": "creative-production",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [
+          "plugin/skills/11vt-design-director/references/visual-qa-checklist.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "raster-processing",
+      "domain": "visual-production-tooling",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 2,
+        "executable_providers": [
+          "C:\\Program Files\\ImageMagick-7.1.2-Q16-HDRI\\magick.EXE",
+          "C:\\Users\\11vat\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.EXE"
+        ],
+        "evidence_present": [
+          "scripts/validate/system_regression.py",
+          "artifacts/creative-stack-validation/image/image-validation.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "vector-authoring",
+      "domain": "visual-production-tooling",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 2,
+        "executable_providers": [
+          "C:\\Program Files\\Inkscape\\bin\\inkscape.exe",
+          "C:\\Program Files\\ImageMagick-7.1.2-Q16-HDRI\\magick.EXE"
+        ],
+        "evidence_present": [
+          "artifacts/creative-stack-validation/vector/vector-validation.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "video-processing",
+      "domain": "visual-production-tooling",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 2,
+        "executable_providers": [
+          "C:\\Users\\11vat\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.EXE",
+          "C:\\Users\\11vat\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffprobe.EXE"
+        ],
+        "evidence_present": [
+          "artifacts/creative-stack-validation/video/video-validation.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "audio-processing",
+      "domain": "visual-production-tooling",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "C:\\Users\\11vat\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.EXE"
+        ],
+        "evidence_present": [
+          "artifacts/creative-stack-validation/audio/audio-validation.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "speech-to-text",
+      "domain": "visual-production-tooling",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 2,
+        "executable_providers": [],
+        "evidence_present": [
+          "docs/GAP_REGISTER.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L0",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "text-to-speech",
+      "domain": "visual-production-tooling",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [
+          "artifacts/creative-stack-validation/audio/audio-validation.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L2",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "image-generation",
+      "domain": "visual-production-tooling",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [
+          "docs/GAP_REGISTER.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L2",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "blender-bridge",
+      "domain": "three-d-pipeline",
+      "truth_state": "VERIFIED",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe"
+        ],
+        "evidence_present": [
+          "scripts/media/vtmedia/blender_ops.py",
+          "scripts/validate/system_regression.py",
+          "artifacts/creative-stack-validation/blender-ops/blender-op-suite.json",
+          "scripts/validate/failure_tests.py",
+          "docs/l5-review-record-2026-08-18.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [
+          "docs/l5-review-record-2026-08-18.md"
+        ],
+        "production_evidence": [],
+        "ontology_maturity": "L5",
+        "maturity_scope": "production-infrastructure",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "scene-authoring",
+      "domain": "three-d-pipeline",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/media/vtmedia/blender_ops.py"
+        ],
+        "evidence_present": [
+          "scripts/media/vtmedia/blender_scripts/op_runner.py",
+          "scripts/validate/system_regression.py"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "asset-export",
+      "domain": "three-d-pipeline",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/media/vtmedia/blender_ops.py"
+        ],
+        "evidence_present": [
+          "scripts/media/vtmedia/blender_ops.py",
+          "artifacts/creative-stack-validation/blender-ops/hero-scene.glb"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "animation-qa",
+      "domain": "three-d-pipeline",
+      "truth_state": "VERIFIED",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/media/vtmedia/blender_ops.py"
+        ],
+        "evidence_present": [
+          "scripts/media/vtmedia/blender_scripts/op_runner.py",
+          "artifacts/creative-stack-validation/blender-ops/blender-op-suite.json",
+          "artifacts/creative-stack-validation/blender-ops/turntable.mp4",
+          "docs/l5-review-record-2026-08-18.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [
+          "docs/l5-review-record-2026-08-18.md"
+        ],
+        "production_evidence": [],
+        "ontology_maturity": "L5",
+        "maturity_scope": "QA-infrastructure",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "asset-direction",
+      "domain": "asset-intelligence",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 2,
+        "executable_providers": [
+          "scripts/assets/asset_resolver.py"
+        ],
+        "evidence_present": [
+          "scripts/assets/asset_resolver.py",
+          "scripts/validate/system_regression.py"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "provenance",
+      "domain": "asset-intelligence",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 2,
+        "executable_providers": [
+          "scripts/media/vtmedia/provenance.py",
+          "scripts/assets/asset_vault.py"
+        ],
+        "evidence_present": [
+          "scripts/assets/asset_vault.py",
+          "artifacts/asset-vault/index.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "asset-vault",
+      "domain": "asset-intelligence",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/assets/asset_vault.py"
+        ],
+        "evidence_present": [
+          "scripts/assets/asset_vault.py",
+          "artifacts/asset-vault/index.json",
+          "scripts/validate/system_regression.py"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "requirement-discovery",
+      "domain": "asset-intelligence",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/assets/requirement_discovery.py"
+        ],
+        "evidence_present": [
+          "scripts/assets/requirement_discovery.py",
+          "scripts/validate/system_regression.py"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "pixel-diff",
+      "domain": "visual-qa",
+      "truth_state": "VERIFIED",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "C:\\Program Files\\ImageMagick-7.1.2-Q16-HDRI\\magick.EXE"
+        ],
+        "evidence_present": [
+          "scripts/media/vtmedia/image_tools.py",
+          "artifacts/creative-stack-validation/image/image-validation.json",
+          "scripts/validate/failure_tests.py",
+          "docs/l5-review-record-2026-08-18.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [
+          "docs/l5-review-record-2026-08-18.md"
+        ],
+        "production_evidence": [],
+        "ontology_maturity": "L5",
+        "maturity_scope": "visual-QA-infrastructure",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "psnr",
+      "domain": "visual-qa",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "C:\\Users\\11vat\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.2-full_build\\bin\\ffmpeg.EXE"
+        ],
+        "evidence_present": [
+          "scripts/media/vtmedia/image_tools.py"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "visual-qa-direction",
+      "domain": "visual-qa",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [
+          "plugin/skills/11vt-design-director/references/visual-qa-checklist.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "independent-review",
+      "domain": "visual-qa",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [
+          "evaluations/regression/2026-08-15-creative-production-expansion.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [
+          "evaluations/regression/2026-08-15-creative-production-expansion.md"
+        ],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "perceptual-readability-qa",
+      "domain": "ascension-production-intelligence",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/validate/perceptual_visual_qa.py"
+        ],
+        "evidence_present": [
+          "scripts/validate/perceptual_visual_qa.py",
+          "artifacts/flagship/qa/perceptual-canonical.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "perceptual-QA",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "composition-qa",
+      "domain": "ascension-production-intelligence",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/validate/perceptual_visual_qa.py"
+        ],
+        "evidence_present": [
+          "scripts/validate/perceptual_visual_qa.py",
+          "artifacts/flagship/qa/perceptual-canonical.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "composition-diagnostics",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "lighting-intelligence",
+      "domain": "ascension-production-intelligence",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/media/vtmedia/blender_ops.py"
+        ],
+        "evidence_present": [
+          "scripts/media/vtmedia/blender_ops.py",
+          "artifacts/flagship/emberveil-canonical/canonical-build-report.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "production-domain",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "material-production",
+      "domain": "ascension-production-intelligence",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/media/vtmedia/blender_ops.py"
+        ],
+        "evidence_present": [
+          "scripts/media/vtmedia/blender_scripts/op_runner.py",
+          "artifacts/flagship/emberveil-canonical/canonical-build-report.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "production-domain",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "environment-production",
+      "domain": "ascension-production-intelligence",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/flagship/build_emberveil_canonical.py"
+        ],
+        "evidence_present": [
+          "scripts/flagship/build_emberveil_canonical.py",
+          "artifacts/flagship/emberveil-canonical/emberveil-canonical.glb"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "production-domain",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "mechanical-rigging",
+      "domain": "ascension-production-intelligence",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/media/vtmedia/blender_ops.py"
+        ],
+        "evidence_present": [
+          "scripts/media/vtmedia/blender_scripts/op_runner.py",
+          "artifacts/flagship/emberveil-canonical/canonical-build-report.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "production-domain",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "animation-production",
+      "domain": "ascension-production-intelligence",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/media/vtmedia/blender_ops.py"
+        ],
+        "evidence_present": [
+          "scripts/media/vtmedia/blender_scripts/op_runner.py",
+          "artifacts/flagship/emberveil-canonical/emberveil-canonical.glb",
+          "artifacts/flagship/qa/runtime-canonical-final2/state.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "production-domain",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "vfx-runtime",
+      "domain": "ascension-production-intelligence",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "artifacts/flagship/runtime/index.html"
+        ],
+        "evidence_present": [
+          "artifacts/flagship/runtime/index.html",
+          "artifacts/flagship/qa/runtime-canonical-final2/frame-04.png"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L2",
+        "maturity_scope": "production-domain",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "cinematic-production",
+      "domain": "ascension-production-intelligence",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/media/vtmedia/ffmpeg_tools.py"
+        ],
+        "evidence_present": [
+          "scripts/media/vtmedia/ffmpeg_tools.py",
+          "artifacts/flagship/emberveil-canonical/emberveil-canonical-cinematic.mp4"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "production-domain",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "asset-variant-regression",
+      "domain": "ascension-production-intelligence",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/validate/asset_variant_diff.py"
+        ],
+        "evidence_present": [
+          "scripts/validate/asset_variant_diff.py",
+          "artifacts/flagship/qa/variant-regression-before.json",
+          "artifacts/flagship/qa/variant-regression-canonical.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "structural-QA",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "cohesion-auditing",
+      "domain": "ascension-production-intelligence",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/validate/cohesion_audit.py"
+        ],
+        "evidence_present": [
+          "scripts/validate/cohesion_audit.py",
+          "artifacts/flagship/qa/cohesion-current.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "cross-layer-cohesion",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "repository-audit",
+      "domain": "repo-runtime-intelligence",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "status-reconstruction",
+      "domain": "repo-runtime-intelligence",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "environment-doctor",
+      "domain": "repo-runtime-intelligence",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/media/11vt_media.py"
+        ],
+        "evidence_present": [
+          "artifacts/creative-stack-validation/environment-report.json",
+          "artifacts/creative-stack-validation/capability-registry.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "gpu-intelligence",
+      "domain": "repo-runtime-intelligence",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "C:\\Windows\\system32\\nvidia-smi.EXE"
+        ],
+        "evidence_present": [
+          "artifacts/creative-stack-validation/environment-report.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "ast-repository-index",
+      "domain": "semantic-repository-intelligence",
+      "truth_state": "VERIFIED",
+      "evidence": {
+        "provider_count": 2,
+        "executable_providers": [
+          "scripts/repo/semantic_intelligence.py",
+          "scripts/repo/multilang_semantic_intelligence.py"
+        ],
+        "evidence_present": [
+          "scripts/repo/semantic_intelligence.py",
+          "scripts/repo/multilang_semantic_intelligence.py",
+          "artifacts/repository-intelligence/index.json",
+          "artifacts/repository-intelligence/semantic-golden-tasks.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [
+          "artifacts/repository-intelligence/semantic-golden-tasks.json"
+        ],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "Python AST plus lexical TypeScript/JavaScript/C++ baseline; not LSP/type-resolved",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "repository-golden-tasks",
+      "domain": "semantic-repository-intelligence",
+      "truth_state": "VERIFIED",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/validate/repo_semantic_golden_tasks.py"
+        ],
+        "evidence_present": [
+          "scripts/validate/repo_semantic_golden_tasks.py",
+          "artifacts/repository-intelligence/semantic-golden-tasks.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [
+          "scripts/validate/repo_semantic_golden_tasks.py",
+          "artifacts/repository-intelligence/semantic-golden-tasks.json"
+        ],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "global-sync",
+      "domain": "deployment-governance",
+      "truth_state": "VERIFIED",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/install/sync_to_claude.py"
+        ],
+        "evidence_present": [
+          "docs/rollback-procedure.md",
+          "scripts/validate/failure_tests.py",
+          "docs/l5-review-record-2026-08-18.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [
+          "docs/l5-review-record-2026-08-18.md"
+        ],
+        "production_evidence": [],
+        "ontology_maturity": "L5",
+        "maturity_scope": "governance",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "global-validation",
+      "domain": "deployment-governance",
+      "truth_state": "SCRIPTED",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/install/validate_capability_installation.py"
+        ],
+        "evidence_present": [],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "rollback",
+      "domain": "deployment-governance",
+      "truth_state": "VERIFIED",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/install/sync_to_claude.py"
+        ],
+        "evidence_present": [
+          "docs/rollback-procedure.md",
+          "scripts/validate/failure_tests.py",
+          "docs/l5-review-record-2026-08-18.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [
+          "docs/l5-review-record-2026-08-18.md"
+        ],
+        "production_evidence": [],
+        "ontology_maturity": "L5",
+        "maturity_scope": "governance",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "routing-evaluation",
+      "domain": "evaluation-lab",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/validate/routing_eval.py"
+        ],
+        "evidence_present": [
+          "evaluations/trigger/core-skill-trigger-cases.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "behavioral-evaluation",
+      "domain": "evaluation-lab",
+      "truth_state": "SCRIPTED",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "evaluations/behavioral/core-behavioral-cases.md"
+        ],
+        "evidence_present": [],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "regression-gate",
+      "domain": "evaluation-lab",
+      "truth_state": "SCRIPTED",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/validate/system_regression.py"
+        ],
+        "evidence_present": [],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "bootstrap-tests",
+      "domain": "evaluation-lab",
+      "truth_state": "SCRIPTED",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/validate/bootstrap_fixture_tests.py"
+        ],
+        "evidence_present": [],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "manifest-validation",
+      "domain": "evaluation-lab",
+      "truth_state": "SCRIPTED",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/validate/manifest_validator.py"
+        ],
+        "evidence_present": [],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "model-benchmark",
+      "domain": "evaluation-lab",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/validate/9router_routing_benchmark.py"
+        ],
+        "evidence_present": [
+          "evaluations/model-routing/routing-suite.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "quality-models",
+      "domain": "evaluation-lab",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "config/quality-models.json"
+        ],
+        "evidence_present": [
+          "config/quality-models.json",
+          "docs/quality-ladder.md",
+          "scripts/validate/system_regression.py"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "high-fidelity-reliability",
+      "domain": "evaluation-lab",
+      "truth_state": "VERIFIED",
+      "evidence": {
+        "provider_count": 3,
+        "executable_providers": [
+          "scripts/validate/high_fidelity_reliability.py",
+          "config/high-fidelity-reliability.json",
+          "config/experience-foundry.json"
+        ],
+        "evidence_present": [
+          "scripts/validate/high_fidelity_reliability.py",
+          "config/high-fidelity-reliability.json",
+          "config/experience-foundry.json",
+          "evaluations/high-fidelity-reliability/golden-tasks.json",
+          "docs/high-fidelity-reliability.md",
+          "docs/experience-foundry/professional-experience-capital.md",
+          "artifacts/unreal/calibration/evidence/human-playtest-001/human-playtest-evidence.json",
+          "artifacts/unreal/calibration/evidence/human-playtest-001/visual-failure-analysis.json",
+          "artifacts/unreal/calibration/evidence/human-playtest-001/quality-debt-register.json",
+          "artifacts/unreal/calibration/evidence/human-playtest-001/ashwake-quality-contract.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [
+          "evaluations/high-fidelity-reliability/golden-tasks.json",
+          "artifacts/unreal/calibration/evidence/human-playtest-001/human-playtest-evidence.json",
+          "artifacts/unreal/calibration/evidence/human-playtest-001/visual-failure-analysis.json",
+          "artifacts/unreal/calibration/evidence/human-playtest-001/quality-debt-register.json",
+          "artifacts/unreal/calibration/evidence/human-playtest-001/ashwake-quality-contract.json"
+        ],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "creative-quality-reliability",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "project-bootstrap",
+      "domain": "product-lifecycle",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 2,
+        "executable_providers": [
+          "scripts/bootstrap/bootstrap_project.py"
+        ],
+        "evidence_present": [
+          "scripts/validate/bootstrap_fixture_tests.py"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "product-lifecycle",
+      "domain": "product-lifecycle",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [
+          "docs/product-development-protocol.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "release-engineering",
+      "domain": "product-lifecycle",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [
+          "docs/release-engineering.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [
+          "docs/release-engineering.md"
+        ],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "deterministic-hooks",
+      "domain": "product-lifecycle",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 2,
+        "executable_providers": [
+          "scripts/hooks/guards.py",
+          "scripts/hooks/session_status.py"
+        ],
+        "evidence_present": [
+          "docs/hook-policy.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L4",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "skill-foundry",
+      "domain": "foundry-maintenance",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [
+          "docs/capability-registry.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "documentation-canon",
+      "domain": "foundry-maintenance",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "core-operating-system",
+      "domain": "foundry-maintenance",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "unspecified",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "capability-truth-audit",
+      "domain": "foundry-ascension-control",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/validate/capability_truth_audit.py"
+        ],
+        "evidence_present": [
+          "scripts/validate/capability_truth_audit.py",
+          "config/capability-truth-audit.json",
+          "artifacts/flagship/ASHWAKE-LESSON-EXTRACTION.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "capability-state-audit-not-domain-mastery",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "mission-value-gate",
+      "domain": "foundry-ascension-control",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/validate/mission_value_gate.py"
+        ],
+        "evidence_present": [
+          "scripts/validate/mission_value_gate.py",
+          "scripts/validate/foundry_ascension_tests.py",
+          "config/creative-intelligence-institute.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L2",
+        "maturity_scope": "planning-drift-control",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "visual-evidence-evaluator",
+      "domain": "foundry-ascension-control",
+      "truth_state": "VERIFIED",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/validate/visual_evidence_evaluator.py"
+        ],
+        "evidence_present": [
+          "scripts/validate/visual_evidence_evaluator.py",
+          "scripts/validate/foundry_ascension_tests.py",
+          "evaluations/high-fidelity-reliability/golden-tasks.json",
+          "artifacts/ascension/foundry-ascension-golden-tasks.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [
+          "evaluations/high-fidelity-reliability/golden-tasks.json",
+          "artifacts/ascension/foundry-ascension-golden-tasks.json"
+        ],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "perceptual-diagnostics-and-known-failure-rejection",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "evidence-based-model-selection",
+      "domain": "foundry-ascension-control",
+      "truth_state": "VERIFIED",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/validate/model_router.py"
+        ],
+        "evidence_present": [
+          "scripts/validate/model_router.py",
+          "scripts/validate/model_golden_tasks.py",
+          "config/model-capability-registry.json",
+          "artifacts/ascension/model-selection-matrix.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [
+          "scripts/validate/model_golden_tasks.py"
+        ],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "role-selection-from-measured-golden-task-results",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "capability-gap-discovery",
+      "domain": "foundry-ascension-control",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/ascension/build_capability_truth_audit.py"
+        ],
+        "evidence_present": [
+          "scripts/ascension/build_capability_truth_audit.py",
+          "config/capability-gap-register.json",
+          "config/capability-truth-audit.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L2",
+        "maturity_scope": "ranked-global-gap-discovery",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "creative-intelligence-institute",
+      "domain": "foundry-ascension-control",
+      "truth_state": "THEORETICAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [],
+        "evidence_present": [
+          "config/creative-intelligence-institute.json",
+          "artifacts/flagship/ASHWAKE-FREEZE.md",
+          "artifacts/flagship/ASHWAKE-LESSON-EXTRACTION.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L2",
+        "maturity_scope": "knowledge-practice-evaluation-policy",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "unreal-installation-health",
+      "domain": "unreal-game-studio",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/unreal/unreal_intelligence.py"
+        ],
+        "evidence_present": [
+          "scripts/unreal/unreal_intelligence.py",
+          "artifacts/unreal/health/ue-5.8-health.json",
+          "artifacts/unreal/health/ue-5.8-health-toolchain.json",
+          "artifacts/unreal/health/toolchain-and-build-status.json",
+          "artifacts/unreal/research/official-automation-research.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "installation-observation",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "unreal-project-intelligence",
+      "domain": "unreal-game-studio",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/unreal/unreal_intelligence.py"
+        ],
+        "evidence_present": [
+          "scripts/unreal/unreal_intelligence.py",
+          "artifacts/unreal/health/nemesis-inspection.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "static-project-inspection",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "blender-unreal-asset-handoff",
+      "domain": "unreal-game-studio",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/unreal/blender_unreal_bridge.py"
+        ],
+        "evidence_present": [
+          "scripts/unreal/blender_unreal_bridge.py",
+          "artifacts/unreal/bridge/emberveil-handoff.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "governed-handoff-contract",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "unreal-editor-asset-import",
+      "domain": "unreal-game-studio",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/unreal/unreal_intelligence.py"
+        ],
+        "evidence_present": [
+          "scripts/unreal/unreal_intelligence.py",
+          "scripts/unreal/editor_import_probe.py",
+          "scripts/validate/unreal_foundry_tests.py",
+          "artifacts/unreal/bridge/emberveil-unreal-import-cli.stdout.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "Editor-Python-GLB-import",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "unreal-content-contract-validation",
+      "domain": "unreal-game-studio",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/unreal/blender_unreal_bridge.py"
+        ],
+        "evidence_present": [
+          "scripts/unreal/blender_unreal_bridge.py",
+          "artifacts/unreal/bridge/emberveil-handoff.json",
+          "artifacts/unreal/research/official-automation-research.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "pre-import-contract-validation",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "unreal-editor-commandline",
+      "domain": "unreal-game-studio",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/unreal/unreal_intelligence.py"
+        ],
+        "evidence_present": [
+          "scripts/unreal/unreal_intelligence.py",
+          "scripts/validate/unreal_foundry_tests.py",
+          "artifacts/unreal/health/ue-5.8-health.json",
+          "artifacts/unreal/health/foundry-calibration-datavalidation.json",
+          "artifacts/unreal/health/myproject-datavalidation.json",
+          "artifacts/unreal/research/official-automation-research.md"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "bounded-commandlet-runner",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "unreal-game-design",
+      "domain": "unreal-game-studio",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/unreal/game_design.py"
+        ],
+        "evidence_present": [
+          "scripts/unreal/game_design.py",
+          "scripts/validate/unreal_foundry_tests.py",
+          "artifacts/unreal/calibration/emberveil-game-design.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L3",
+        "maturity_scope": "design-traceability-schema",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "unreal-cpp-compile",
+      "domain": "unreal-game-studio",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/unreal/build_pipeline.py"
+        ],
+        "evidence_present": [
+          "scripts/unreal/build_pipeline.py",
+          "artifacts/unreal/health/toolchain-and-build-status.json",
+          "artifacts/unreal/health/foundry-compile-evidence.json",
+          "artifacts/unreal/calibration/Source/FoundryCalibration/FoundryGameStateTests.cpp"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L2",
+        "maturity_scope": "game-target-compile-only",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "unreal-gameplay-architecture",
+      "domain": "unreal-game-studio",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/unreal/vertical_slice_graph.py"
+        ],
+        "evidence_present": [
+          "scripts/unreal/vertical_slice_graph.py",
+          "artifacts/unreal/calibration/vertical-slice-production-graph.json",
+          "artifacts/unreal/calibration/Source/FoundryCalibration/FoundryGameMode.cpp",
+          "artifacts/unreal/health/foundry-compile-evidence.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [
+          "artifacts/unreal/calibration/vertical-slice-production-graph.json"
+        ],
+        "ontology_maturity": "L2",
+        "maturity_scope": "compiled-design-to-code-slice-not-runtime-proven",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "unreal-runtime-observation",
+      "domain": "unreal-game-studio",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/unreal/unreal_intelligence.py"
+        ],
+        "evidence_present": [
+          "scripts/unreal/unreal_intelligence.py",
+          "artifacts/unreal/health/foundry-runtime-observation-trace.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L2",
+        "maturity_scope": "bounded-game-target-launch-and-failure-classification-not-playable-proof",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "unreal-native-test-discovery",
+      "domain": "unreal-game-studio",
+      "truth_state": "SCRIPTED",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/unreal/unreal_intelligence.py"
+        ],
+        "evidence_present": [
+          "scripts/unreal/unreal_intelligence.py",
+          "artifacts/unreal/calibration/Source/FoundryCalibration/FoundryGameStateTests.cpp"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L1",
+        "maturity_scope": "source-level-test-discovery-only",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    },
+    {
+      "id": "unreal-packaging-preflight",
+      "domain": "unreal-game-studio",
+      "truth_state": "OPERATIONAL",
+      "evidence": {
+        "provider_count": 1,
+        "executable_providers": [
+          "scripts/unreal/build_pipeline.py"
+        ],
+        "evidence_present": [
+          "scripts/unreal/build_pipeline.py",
+          "artifacts/unreal/health/foundry-package-preflight.json",
+          "artifacts/unreal/health/toolchain-and-build-status.json"
+        ],
+        "missing_evidence": [],
+        "review_evidence": [],
+        "production_evidence": [],
+        "ontology_maturity": "L2",
+        "maturity_scope": "bounded-buildcookrun-preflight-with-real-blocker-diagnostic",
+        "limitations": [
+          "path existence does not prove artifact quality",
+          "agent/skill prose is not operational evidence",
+          "PRODUCTION-PROVEN requires explicit artifact, evaluation, and independent review evidence"
+        ]
+      }
+    }
+  ]
+}

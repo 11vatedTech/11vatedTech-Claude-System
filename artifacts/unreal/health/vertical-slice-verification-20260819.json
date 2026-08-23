@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "timestamp": "2026-08-19",
+  "engine": "C:/Program Files/Epic Games/UE_5.8",
+  "verification": {
+    "netfx_component": {
+      "requested_component": "Microsoft.Net.Component.4.8.SDK",
+      "vswhere_requires_result": [],
+      "registry_key_present": false,
+      "netfx_sdk_files_found": [],
+      "status": "NOT_DISCOVERABLE",
+      "evidence": "Visual Studio Build Tools 17.14.37411.7 remains installed, but the NetFxSDK registry key, NETFXSDKDir payload, and component requirement query are absent."
+    },
+    "package_preflight": {
+      "status": "BLOCKED",
+      "missing_component": "Microsoft.Net.Component.4.8.SDK",
+      "evidence": "scripts/unreal/build_pipeline.py package"
+    },
+    "editor_target_compile": {
+      "status": "FAIL",
+      "exit_code": 8,
+      "failure": "UnrealBuildTool could not find NetFxSDK install dir while instantiating SwarmInterface"
+    },
+    "game_target_compile": {
+      "status": "PASS",
+      "target": "FoundryCalibration",
+      "configuration": "Development",
+      "binary": "artifacts/unreal/calibration/Binaries/Win64/FoundryCalibration.exe",
+      "notable_repair": "Added Niagara to FoundryCalibration.Build.cs dependencies after the first post-install compile exposed a missing Niagara module include."
+    },
+    "native_test": {
+      "name": "FoundryCalibration.Gameplay.GameStateTransitions",
+      "discovered": true,
+      "execution_status": "BLOCKED_MODULE",
+      "evidence": "UnrealEditor-Cmd execution attempted; FoundryCalibrationEditor/module is unavailable because the Editor target still cannot compile."
+    },
+    "editor_authoring_map_load": {
+      "status": "MAP_LOADED_NO_GAMEPLAY",
+      "project": "artifacts/unreal/calibration/FoundryCalibrationAuthoring.uproject",
+      "map": "/Game/Calibration/Maps/EmberveilCalibration",
+      "asset_registry_loaded": true,
+      "crashed": false,
+      "evidence": "artifacts/unreal/health/foundry-editor-map-runtime-current.log",
+      "limitation": "Authoring project has no FoundryCalibration C++ gameplay module; this is not a playable-slice pass."
+    },
+    "game_target_loose_content": {
+      "status": "LOOSE_CONTENT_ASSET_REGISTRY_FAILURE",
+      "asset_registry_premade_failure": true,
+      "assertion": "ReaderPos + Num <= ReaderSize",
+      "thread": "IOThreadPool #2",
+      "map_loaded": false,
+      "evidence": "artifacts/unreal/health/foundry-game-nullrhi-current.log",
+      "diagnosis": "A Development game target launched without cooked/staged asset-registry and shader data. -NoAssetRegistryCache does not bypass the required premade registry path. The correct paths are Editor -game for loose-content play or BuildCookRun for packaged play."
+    }
+  },
+  "maturity_decision": "Do not claim playable runtime, native-test execution, Gauntlet, Insights, package, or outside-Editor gameplay until the NetFxSDK prerequisite is genuinely discoverable and BuildCookRun produces a cooked package."
+}

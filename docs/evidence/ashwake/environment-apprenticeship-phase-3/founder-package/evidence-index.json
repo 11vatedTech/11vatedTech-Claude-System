@@ -1,0 +1,963 @@
+{
+  "schema_version": 1,
+  "kind": "ashwake-phase3-founder-blind-package-index",
+  "date": "2026-08-21",
+  "status": "READY_FOR_FOUNDER_REVIEW",
+  "selection_status": "NO_FINAL_PRODUCTION_DIRECTION_SELECTED",
+  "identity_rule": "OPTION identities hidden until Founder blind review completes.",
+  "aliases": [
+    "OPTION_A",
+    "OPTION_B",
+    "OPTION_C"
+  ],
+  "package_root": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package",
+  "questions": [
+    "Which world makes you most curious to explore?",
+    "Which feels most original?",
+    "Which feels most like a real place rather than a test level?",
+    "Which relic interaction is easiest to understand?",
+    "Which SAFE state is clearest?",
+    "Which HOSTILE state is clearest?",
+    "Which restoration event feels most meaningful?",
+    "Which world has the strongest emotional identity?",
+    "Which looks closest to professional game quality?",
+    "Which feels like it could become a larger universe?",
+    "Which one would you personally want to keep playing?",
+    "What looks primitive in each?",
+    "What confuses you in each?",
+    "What would you combine, if anything?"
+  ],
+  "no_hud_protocol": {
+    "status": "READY_FOR_HUMAN",
+    "rule": "Do not redesign after first blind human run until observations are recorded.",
+    "metrics_to_record": [
+      "time_to_first_landmark",
+      "time_to_first_relic",
+      "time_to_first_attempted_interaction",
+      "correct_vs_incorrect_assumptions",
+      "hesitation",
+      "navigation_failures",
+      "state_misunderstandings"
+    ]
+  },
+  "public_runs": [
+    {
+      "alias": "OPTION_A",
+      "state": "SPAWN",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\spawn",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\spawn\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 103113,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_A",
+      "state": "FIRST_LANDMARK",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\first_landmark",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\first_landmark\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 711382,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_A",
+      "state": "APPROACH",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\approach",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\approach\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 419869,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_A",
+      "state": "READING",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\reading",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\reading\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 328890,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_A",
+      "state": "SAFE_WINDOW",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\safe_window",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\safe_window\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 554333,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_A",
+      "state": "HOSTILE",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\hostile",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\hostile\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 574683,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_A",
+      "state": "REJECTED_INTERACTION",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\rejected_interaction",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\rejected_interaction\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 991419,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_A",
+      "state": "ACCEPTED_INTERACTION",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\accepted_interaction",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\accepted_interaction\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 992072,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_A",
+      "state": "ONE_COAL_RESTORED",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\one_coal_restored",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\one_coal_restored\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 157909,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_A",
+      "state": "FINAL_CLIMAX_DIRECTION",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\final_climax_direction",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\final_climax_direction\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 455754,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_A",
+      "state": "ENVIRONMENT_OVERVIEW",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\environment_overview",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_a\\environment_overview\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 478468,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 40,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_B",
+      "state": "SPAWN",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\spawn",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\spawn\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 439481,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_B",
+      "state": "FIRST_LANDMARK",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\first_landmark",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\first_landmark\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 490798,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_B",
+      "state": "APPROACH",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\approach",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\approach\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 613225,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_B",
+      "state": "READING",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\reading",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\reading\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 653469,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_B",
+      "state": "SAFE_WINDOW",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\safe_window",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\safe_window\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 924033,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_B",
+      "state": "HOSTILE",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\hostile",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\hostile\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 904461,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_B",
+      "state": "REJECTED_INTERACTION",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\rejected_interaction",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\rejected_interaction\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 898461,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_B",
+      "state": "ACCEPTED_INTERACTION",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\accepted_interaction",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\accepted_interaction\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 859804,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_B",
+      "state": "ONE_COAL_RESTORED",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\one_coal_restored",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\one_coal_restored\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 831832,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_B",
+      "state": "FINAL_CLIMAX_DIRECTION",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\final_climax_direction",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\final_climax_direction\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 908318,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_B",
+      "state": "ENVIRONMENT_OVERVIEW",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\environment_overview",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_b\\environment_overview\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 591232,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 40,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_C",
+      "state": "SPAWN",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\spawn",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\spawn\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 938016,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_C",
+      "state": "FIRST_LANDMARK",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\first_landmark",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\first_landmark\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 957691,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_C",
+      "state": "APPROACH",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\approach",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\approach\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 987100,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_C",
+      "state": "READING",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\reading",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\reading\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 1034173,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_C",
+      "state": "SAFE_WINDOW",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\safe_window",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\safe_window\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 1042291,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_C",
+      "state": "HOSTILE",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\hostile",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\hostile\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 1087238,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_C",
+      "state": "REJECTED_INTERACTION",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\rejected_interaction",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\rejected_interaction\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 1107621,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_C",
+      "state": "ACCEPTED_INTERACTION",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\accepted_interaction",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\accepted_interaction\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 1037781,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_C",
+      "state": "ONE_COAL_RESTORED",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\one_coal_restored",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\one_coal_restored\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 957288,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_C",
+      "state": "FINAL_CLIMAX_DIRECTION",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\final_climax_direction",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\final_climax_direction\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 1055812,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 20,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    },
+    {
+      "alias": "OPTION_C",
+      "state": "ENVIRONMENT_OVERVIEW",
+      "no_hud": true,
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\environment_overview",
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\option_c\\environment_overview\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 753420,
+          "format": "png",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "screenshot_ok": true,
+      "counts": {
+        "screenshots_requested": 4,
+        "reliquaries": 6,
+        "lights": 40,
+        "material_studies": 20,
+        "state_studies": 20
+      }
+    }
+  ],
+  "videos": [
+    {
+      "status": "PASS",
+      "command": [
+        "ffmpeg",
+        "-y",
+        "-f",
+        "concat",
+        "-safe",
+        "0",
+        "-i",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\walkthrough-silent-sample.txt",
+        "-vf",
+        "format=yuv420p",
+        "-c:v",
+        "libx264",
+        "-pix_fmt",
+        "yuv420p",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\walkthrough-silent-sample.mp4"
+      ],
+      "returncode": 0,
+      "stdout_tail": "",
+      "stderr_tail": "-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper\n  libavutil      60. 26.102 / 60. 26.102\n  libavcodec     62. 28.102 / 62. 28.102\n  libavformat    62. 12.102 / 62. 12.102\n  libavdevice    62.  3.102 / 62.  3.102\n  libavfilter    11. 14.102 / 11. 14.102\n  libswscale      9.  5.102 /  9.  5.102\n  libswresample   6.  3.102 /  6.  3.102\nInput #0, concat, from 'C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\walkthrough-silent-sample.txt':\n  Duration: N/A, start: 0.000000, bitrate: N/A\n  Stream #0:0: Video: png, rgba(pc, gbr/unknown/unknown), 1280x720, 25 fps, 25 tbr, 25 tbn\nStream mapping:\n  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))\nPress [q] to stop, [?] for help\n[libx264 @ 000001c61719e740] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2\n[libx264 @ 000001c61719e740] profile High, level 3.1, 4:2:0, 8-bit\n[libx264 @ 000001c61719e740] 264 - core 165 r3223 0480cb0 - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=22 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00\nOutput #0, mp4, to 'C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\walkthrough-silent-sample.mp4':\n  Metadata:\n    encoder         : Lavf62.12.102\n  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1280x720, q=2-31, 25 fps, 12800 tbn\n    Metadata:\n      encoder         : Lavc62.28.102 libx264\n    Side data:\n      CPB properties: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A\n[out#0/mp4 @ 000001c617111c40] video:326KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.302899%\nframe=   12 fps=0.0 q=-1.0 Lsize=     327KiB time=00:00:05.88 bitrate= 455.9kbits/s speed=12.7x elapsed=0:00:00.46    \n[libx264 @ 000001c61719e740] frame I:1     Avg QP:11.59  size:  9731\n[libx264 @ 000001c61719e740] frame P:10    Avg QP:13.02  size: 32276\n[libx264 @ 000001c61719e740] frame B:1     Avg QP:13.34  size:   925\n[libx264 @ 000001c61719e740] consecutive B-frames: 83.3% 16.7%  0.0%  0.0%\n[libx264 @ 000001c61719e740] mb I  I16..4: 18.3% 76.9%  4.8%\n[libx264 @ 000001c61719e740] mb P  I16..4: 11.4% 37.1% 11.0%  P16..4:  6.5%  3.2%  1.3%  0.0%  0.0%    skip:29.6%\n[libx264 @ 000001c61719e740] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8: 11.8%  0.7%  0.0%  direct: 0.3%  skip:87.2%  L0: 4.8% L1:95.1% BI: 0.1%\n[libx264 @ 000001c61719e740] 8x8 transform intra:64.4% inter:67.1%\n[libx264 @ 000001c61719e740] coded y,uvDC,uvAC intra: 42.6% 49.4% 35.5% inter: 9.7% 12.1% 4.2%\n[libx264 @ 000001c61719e740] i16 v,h,dc,p: 61% 12%  4% 23%\n[libx264 @ 000001c61719e740] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 36% 19% 25%  3%  3%  2%  5%  3%  4%\n[libx264 @ 000001c61719e740] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 26% 33% 14%  4%  6%  3%  8%  3%  4%\n[libx264 @ 000001c61719e740] i8c dc,h,v,p: 62% 20% 11%  6%\n[libx264 @ 000001c61719e740] Weighted P-Frames: Y:0.0% UV:0.0%\n[libx264 @ 000001c61719e740] ref P L0: 63.6% 10.3% 18.0%  8.0%\n[libx264 @ 000001c61719e740] ref B L0: 67.0% 33.0%\n[libx264 @ 000001c61719e740] kb/s:341.96\n",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\walkthrough-silent-sample.mp4",
+      "exists": true,
+      "bytes": 335117,
+      "alias": "OPTION_A"
+    },
+    {
+      "status": "PASS",
+      "command": [
+        "ffmpeg",
+        "-y",
+        "-f",
+        "concat",
+        "-safe",
+        "0",
+        "-i",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\walkthrough-silent-sample.txt",
+        "-vf",
+        "format=yuv420p",
+        "-c:v",
+        "libx264",
+        "-pix_fmt",
+        "yuv420p",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\walkthrough-silent-sample.mp4"
+      ],
+      "returncode": 0,
+      "stdout_tail": "",
+      "stderr_tail": "e --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper\n  libavutil      60. 26.102 / 60. 26.102\n  libavcodec     62. 28.102 / 62. 28.102\n  libavformat    62. 12.102 / 62. 12.102\n  libavdevice    62.  3.102 / 62.  3.102\n  libavfilter    11. 14.102 / 11. 14.102\n  libswscale      9.  5.102 /  9.  5.102\n  libswresample   6.  3.102 /  6.  3.102\nInput #0, concat, from 'C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\walkthrough-silent-sample.txt':\n  Duration: N/A, start: 0.000000, bitrate: N/A\n  Stream #0:0: Video: png, rgba(pc, gbr/unknown/unknown), 1280x720, 25 fps, 25 tbr, 25 tbn\nStream mapping:\n  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))\nPress [q] to stop, [?] for help\n[libx264 @ 000001d89415d7c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2\n[libx264 @ 000001d89415d7c0] profile High, level 3.1, 4:2:0, 8-bit\n[libx264 @ 000001d89415d7c0] 264 - core 165 r3223 0480cb0 - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=22 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00\nOutput #0, mp4, to 'C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\walkthrough-silent-sample.mp4':\n  Metadata:\n    encoder         : Lavf62.12.102\n  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1280x720, q=2-31, 25 fps, 12800 tbn\n    Metadata:\n      encoder         : Lavc62.28.102 libx264\n    Side data:\n      CPB properties: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A\n[out#0/mp4 @ 000001d8940d2440] video:524KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.191559%\nframe=   12 fps=0.0 q=-1.0 Lsize=     525KiB time=00:00:05.88 bitrate= 731.5kbits/s speed=12.2x elapsed=0:00:00.48    \n[libx264 @ 000001d89415d7c0] frame I:1     Avg QP:11.38  size: 39515\n[libx264 @ 000001d89415d7c0] frame P:8     Avg QP:16.03  size: 51566\n[libx264 @ 000001d89415d7c0] frame B:3     Avg QP:15.55  size: 27972\n[libx264 @ 000001d89415d7c0] consecutive B-frames: 58.3% 16.7% 25.0%  0.0%\n[libx264 @ 000001d89415d7c0] mb I  I16..4: 44.0% 33.1% 22.9%\n[libx264 @ 000001d89415d7c0] mb P  I16..4:  9.0% 39.1% 20.9%  P16..4:  3.8%  2.8%  1.3%  0.0%  0.0%    skip:23.1%\n[libx264 @ 000001d89415d7c0] mb B  I16..4:  5.5% 10.2%  2.9%  B16..8: 13.7%  8.0%  2.0%  direct:14.5%  skip:43.2%  L0:43.5% L1:52.0% BI: 4.5%\n[libx264 @ 000001d89415d7c0] 8x8 transform intra:53.2% inter:66.2%\n[libx264 @ 000001d89415d7c0] coded y,uvDC,uvAC intra: 56.0% 68.7% 50.5% inter: 20.9% 26.2% 10.8%\n[libx264 @ 000001d89415d7c0] i16 v,h,dc,p: 41% 17%  3% 39%\n[libx264 @ 000001d89415d7c0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 23% 24% 26%  4%  5%  3%  6%  3%  7%\n[libx264 @ 000001d89415d7c0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 29% 32% 10%  4%  6%  5%  6%  3%  6%\n[libx264 @ 000001d89415d7c0] i8c dc,h,v,p: 45% 28% 16% 11%\n[libx264 @ 000001d89415d7c0] Weighted P-Frames: Y:0.0% UV:0.0%\n[libx264 @ 000001d89415d7c0] ref P L0: 65.5%  8.2% 20.5%  5.8%\n[libx264 @ 000001d89415d7c0] ref B L0: 88.7% 10.5%  0.8%\n[libx264 @ 000001d89415d7c0] kb/s:549.70\n",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\walkthrough-silent-sample.mp4",
+      "exists": true,
+      "bytes": 537678,
+      "alias": "OPTION_B"
+    },
+    {
+      "status": "PASS",
+      "command": [
+        "ffmpeg",
+        "-y",
+        "-f",
+        "concat",
+        "-safe",
+        "0",
+        "-i",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\walkthrough-silent-sample.txt",
+        "-vf",
+        "format=yuv420p",
+        "-c:v",
+        "libx264",
+        "-pix_fmt",
+        "yuv420p",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\walkthrough-silent-sample.mp4"
+      ],
+      "returncode": 0,
+      "stdout_tail": "",
+      "stderr_tail": "nable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper\n  libavutil      60. 26.102 / 60. 26.102\n  libavcodec     62. 28.102 / 62. 28.102\n  libavformat    62. 12.102 / 62. 12.102\n  libavdevice    62.  3.102 / 62.  3.102\n  libavfilter    11. 14.102 / 11. 14.102\n  libswscale      9.  5.102 /  9.  5.102\n  libswresample   6.  3.102 /  6.  3.102\nInput #0, concat, from 'C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\walkthrough-silent-sample.txt':\n  Duration: N/A, start: 0.000000, bitrate: N/A\n  Stream #0:0: Video: png, rgba(pc, gbr/unknown/unknown), 1280x720, 25 fps, 25 tbr, 25 tbn\nStream mapping:\n  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))\nPress [q] to stop, [?] for help\n[libx264 @ 000001ea4c3d6140] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2\n[libx264 @ 000001ea4c3d6140] profile High, level 3.1, 4:2:0, 8-bit\n[libx264 @ 000001ea4c3d6140] 264 - core 165 r3223 0480cb0 - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=22 lookahead_threads=3 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00\nOutput #0, mp4, to 'C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\walkthrough-silent-sample.mp4':\n  Metadata:\n    encoder         : Lavf62.12.102\n  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1280x720, q=2-31, 25 fps, 12800 tbn\n    Metadata:\n      encoder         : Lavc62.28.102 libx264\n    Side data:\n      CPB properties: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A\nframe=    3 fps=0.0 q=-1.0 size=       0KiB time=00:00:00.04 bitrate=   9.6kbits/s speed=0.0775x elapsed=0:00:00.51    \n[out#0/mp4 @ 000001ea4c352100] video:645KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.155551%\nframe=   12 fps=0.0 q=-1.0 Lsize=     646KiB time=00:00:05.88 bitrate= 900.5kbits/s speed=8.34x elapsed=0:00:00.70    \n[libx264 @ 000001ea4c3d6140] frame I:1     Avg QP:15.55  size: 63056\n[libx264 @ 000001ea4c3d6140] frame P:8     Avg QP:15.86  size: 61342\n[libx264 @ 000001ea4c3d6140] frame B:3     Avg QP:15.42  size: 35465\n[libx264 @ 000001ea4c3d6140] consecutive B-frames: 58.3% 16.7% 25.0%  0.0%\n[libx264 @ 000001ea4c3d6140] mb I  I16..4: 13.3% 52.7% 33.9%\n[libx264 @ 000001ea4c3d6140] mb P  I16..4: 10.2% 42.7% 22.2%  P16..4:  8.8%  9.5%  3.9%  0.0%  0.0%    skip: 2.7%\n[libx264 @ 000001ea4c3d6140] mb B  I16..4:  4.3% 10.9%  3.8%  B16..8: 17.7% 14.9%  3.9%  direct:11.2%  skip:33.3%  L0:59.5% L1:33.5% BI: 7.0%\n[libx264 @ 000001ea4c3d6140] 8x8 transform intra:56.3% inter:64.2%\n[libx264 @ 000001ea4c3d6140] coded y,uvDC,uvAC intra: 65.2% 72.9% 51.1% inter: 44.5% 47.6% 15.3%\n[libx264 @ 000001ea4c3d6140] i16 v,h,dc,p:  8% 18%  3% 71%\n[libx264 @ 000001ea4c3d6140] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 27% 20% 19%  4%  7%  6%  7%  5%  5%\n[libx264 @ 000001ea4c3d6140] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 31% 25% 10%  4%  8%  5%  9%  4%  4%\n[libx264 @ 000001ea4c3d6140] i8c dc,h,v,p: 44% 24% 20% 12%\n[libx264 @ 000001ea4c3d6140] Weighted P-Frames: Y:0.0% UV:0.0%\n[libx264 @ 000001ea4c3d6140] ref P L0: 58.1% 13.0% 20.6%  8.3%\n[libx264 @ 000001ea4c3d6140] ref B L0: 76.7% 21.6%  1.7%\n[libx264 @ 000001ea4c3d6140] kb/s:677.11\n",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\walkthrough-silent-sample.mp4",
+      "exists": true,
+      "bytes": 661903,
+      "alias": "OPTION_C"
+    }
+  ],
+  "path_diagrams": [
+    "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\player-path-diagram.md",
+    "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\player-path-diagram.md",
+    "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\player-path-diagram.md"
+  ],
+  "claim_limits": [
+    "Evidence package is for Founder blind review; it does not select production direction.",
+    "No-HUD captures are prepared for human comprehension testing; human behavior must be recorded during review.",
+    "Material/light/performance proxies expose risk only; final art remains unproven."
+  ]
+}

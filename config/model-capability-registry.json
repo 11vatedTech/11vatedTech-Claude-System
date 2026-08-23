@@ -1,0 +1,445 @@
+{
+  "kr/glm-5": {
+    "code": {
+      "passed": false,
+      "rubric": [
+        {
+          "criterion": "function defined",
+          "ok": true
+        },
+        {
+          "criterion": "docstring present",
+          "ok": true
+        },
+        {
+          "criterion": "no analysis prose",
+          "ok": false
+        }
+      ],
+      "latency_s": 3.52,
+      "failure_mode": [
+        "no analysis prose"
+      ],
+      "run": "2026-08-18T23:24:27"
+    },
+    "debug": {
+      "passed": true,
+      "rubric": [
+        {
+          "criterion": "identifies off-by-one",
+          "ok": true
+        },
+        {
+          "criterion": "names the bug",
+          "ok": true
+        },
+        {
+          "criterion": "fix shown",
+          "ok": true
+        }
+      ],
+      "latency_s": 3.64,
+      "failure_mode": null,
+      "run": "2026-08-18T23:24:27"
+    },
+    "repo": {
+      "passed": true,
+      "rubric": [
+        {
+          "criterion": "names a search strategy",
+          "ok": true
+        },
+        {
+          "criterion": "names candidate location",
+          "ok": true
+        }
+      ],
+      "latency_s": 1.95,
+      "failure_mode": null,
+      "run": "2026-08-18T23:24:27"
+    },
+    "visual-critique": {
+      "passed": true,
+      "rubric": [
+        {
+          "criterion": "three weaknesses",
+          "ok": true
+        },
+        {
+          "criterion": "actionable fixes",
+          "ok": true
+        },
+        {
+          "criterion": "not only praise",
+          "ok": true
+        }
+      ],
+      "latency_s": 8.17,
+      "failure_mode": null,
+      "run": "2026-08-18T23:24:27"
+    },
+    "research": {
+      "passed": true,
+      "rubric": [
+        {
+          "criterion": "mechanical method",
+          "ok": true
+        },
+        {
+          "criterion": "alternative given",
+          "ok": true
+        },
+        {
+          "criterion": "confidence stated",
+          "ok": true
+        }
+      ],
+      "latency_s": 2.9,
+      "failure_mode": null,
+      "run": "2026-08-18T23:24:27"
+    }
+  },
+  "kr/deepseek-3.2": {
+    "code": {
+      "passed": true,
+      "rubric": [
+        {
+          "criterion": "function defined",
+          "ok": true
+        },
+        {
+          "criterion": "docstring present",
+          "ok": true
+        },
+        {
+          "criterion": "no analysis prose",
+          "ok": true
+        }
+      ],
+      "latency_s": 3.69,
+      "failure_mode": null,
+      "run": "2026-08-19T08:27:52"
+    },
+    "debug": {
+      "passed": true,
+      "rubric": [
+        {
+          "criterion": "identifies off-by-one",
+          "ok": true
+        },
+        {
+          "criterion": "names the bug",
+          "ok": true
+        },
+        {
+          "criterion": "fix shown",
+          "ok": true
+        }
+      ],
+      "latency_s": 5.89,
+      "failure_mode": null,
+      "run": "2026-08-19T08:27:52"
+    },
+    "repo": {
+      "passed": true,
+      "rubric": [
+        {
+          "criterion": "names a search strategy",
+          "ok": true
+        },
+        {
+          "criterion": "names candidate location",
+          "ok": true
+        }
+      ],
+      "latency_s": 1.98,
+      "failure_mode": null,
+      "run": "2026-08-19T08:27:52"
+    },
+    "visual-critique": {
+      "passed": true,
+      "rubric": [
+        {
+          "criterion": "three weaknesses",
+          "ok": true
+        },
+        {
+          "criterion": "actionable fixes",
+          "ok": true
+        },
+        {
+          "criterion": "not only praise",
+          "ok": true
+        }
+      ],
+      "latency_s": 6.71,
+      "failure_mode": null,
+      "run": "2026-08-19T08:27:52"
+    },
+    "research": {
+      "passed": true,
+      "rubric": [
+        {
+          "criterion": "mechanical method",
+          "ok": true
+        },
+        {
+          "criterion": "alternative given",
+          "ok": true
+        },
+        {
+          "criterion": "confidence stated",
+          "ok": true
+        }
+      ],
+      "latency_s": 8.11,
+      "failure_mode": null,
+      "run": "2026-08-19T08:27:52"
+    }
+  },
+  "kr/qwen3-coder-next": {
+    "code": {
+      "passed": false,
+      "rubric": [
+        {
+          "criterion": "function defined",
+          "ok": true
+        },
+        {
+          "criterion": "docstring present",
+          "ok": true
+        },
+        {
+          "criterion": "no analysis prose",
+          "ok": false
+        }
+      ],
+      "latency_s": 2.41,
+      "failure_mode": [
+        "no analysis prose"
+      ],
+      "run": "2026-08-18T23:24:27"
+    },
+    "debug": {
+      "passed": true,
+      "rubric": [
+        {
+          "criterion": "identifies off-by-one",
+          "ok": true
+        },
+        {
+          "criterion": "names the bug",
+          "ok": true
+        },
+        {
+          "criterion": "fix shown",
+          "ok": true
+        }
+      ],
+      "latency_s": 9.61,
+      "failure_mode": null,
+      "run": "2026-08-18T23:24:27"
+    },
+    "repo": {
+      "passed": true,
+      "rubric": [
+        {
+          "criterion": "names a search strategy",
+          "ok": true
+        },
+        {
+          "criterion": "names candidate location",
+          "ok": true
+        }
+      ],
+      "latency_s": 1.25,
+      "failure_mode": null,
+      "run": "2026-08-18T23:24:27"
+    },
+    "visual-critique": {
+      "passed": true,
+      "rubric": [
+        {
+          "criterion": "three weaknesses",
+          "ok": true
+        },
+        {
+          "criterion": "actionable fixes",
+          "ok": true
+        },
+        {
+          "criterion": "not only praise",
+          "ok": true
+        }
+      ],
+      "latency_s": 1.63,
+      "failure_mode": null,
+      "run": "2026-08-18T23:24:27"
+    },
+    "research": {
+      "passed": true,
+      "rubric": [
+        {
+          "criterion": "mechanical method",
+          "ok": true
+        },
+        {
+          "criterion": "alternative given",
+          "ok": true
+        },
+        {
+          "criterion": "confidence stated",
+          "ok": true
+        }
+      ],
+      "latency_s": 3.15,
+      "failure_mode": null,
+      "run": "2026-08-18T23:24:27"
+    }
+  },
+  "ag/gemini-3.7-flash-medium": {
+    "code": {
+      "passed": true,
+      "rubric": [
+        {
+          "criterion": "function defined",
+          "ok": true
+        },
+        {
+          "criterion": "docstring present",
+          "ok": true
+        },
+        {
+          "criterion": "no analysis prose",
+          "ok": true
+        }
+      ],
+      "latency_s": 4.89,
+      "failure_mode": null,
+      "run": "2026-08-19T08:31:59"
+    },
+    "debug": {
+      "passed": true,
+      "rubric": [
+        {
+          "criterion": "identifies off-by-one",
+          "ok": true
+        },
+        {
+          "criterion": "names the bug",
+          "ok": true
+        },
+        {
+          "criterion": "fix shown",
+          "ok": true
+        }
+      ],
+      "latency_s": 4.4,
+      "failure_mode": null,
+      "run": "2026-08-19T08:27:52"
+    },
+    "repo": {
+      "passed": true,
+      "rubric": [
+        {
+          "criterion": "names a search strategy",
+          "ok": true
+        },
+        {
+          "criterion": "names candidate location",
+          "ok": true
+        }
+      ],
+      "latency_s": 4.5,
+      "failure_mode": null,
+      "run": "2026-08-19T08:27:52"
+    },
+    "visual-critique": {
+      "passed": true,
+      "rubric": [
+        {
+          "criterion": "three weaknesses",
+          "ok": true
+        },
+        {
+          "criterion": "actionable fixes",
+          "ok": true
+        },
+        {
+          "criterion": "not only praise",
+          "ok": true
+        }
+      ],
+      "latency_s": 4.81,
+      "failure_mode": null,
+      "run": "2026-08-19T08:27:52"
+    },
+    "research": {
+      "passed": true,
+      "rubric": [
+        {
+          "criterion": "mechanical method",
+          "ok": true
+        },
+        {
+          "criterion": "alternative given",
+          "ok": true
+        },
+        {
+          "criterion": "confidence stated",
+          "ok": true
+        }
+      ],
+      "latency_s": 5.03,
+      "failure_mode": null,
+      "run": "2026-08-19T08:27:52"
+    }
+  },
+  "gcli/grok-4.6": {
+    "code": {
+      "passed": false,
+      "rubric": [],
+      "latency_s": null,
+      "failure_mode": [
+        "http_429"
+      ],
+      "run": "2026-08-18T23:24:27"
+    },
+    "debug": {
+      "passed": false,
+      "rubric": [],
+      "latency_s": null,
+      "failure_mode": [
+        "http_429"
+      ],
+      "run": "2026-08-18T23:24:27"
+    },
+    "repo": {
+      "passed": false,
+      "rubric": [],
+      "latency_s": null,
+      "failure_mode": [
+        "http_429"
+      ],
+      "run": "2026-08-18T23:24:27"
+    },
+    "visual-critique": {
+      "passed": false,
+      "rubric": [],
+      "latency_s": null,
+      "failure_mode": [
+        "http_429"
+      ],
+      "run": "2026-08-18T23:24:27"
+    },
+    "research": {
+      "passed": false,
+      "rubric": [],
+      "latency_s": null,
+      "failure_mode": [
+        "http_429"
+      ],
+      "run": "2026-08-18T23:24:27"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "kind": "ashwake-phase3-private-blind-alias-map",
+  "date": "2026-08-21",
+  "status": "FROZEN",
+  "confidential_until": "Founder blind review complete",
+  "rule": "Do not reveal original concept names, prior specialist preferences, or leading-hypothesis status in Founder-facing package.",
+  "aliases": {
+    "OPTION_A": "EMBER_HOSPICE",
+    "OPTION_B": "FALLEN_SUN_ORCHARD",
+    "OPTION_C": "CINDERWORKS_ABBEY"
+  },
+  "founder_facing_aliases": [
+    "OPTION_A",
+    "OPTION_B",
+    "OPTION_C"
+  ],
+  "claim_limits": [
+    "Mapping is private evidence scaffolding, not a selection signal.",
+    "No final production direction selected."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "lab_id": "CREATIVE-TRANSFER-001",
+  "capability": "art-direction-lookdev",
+  "question": "Does a value-and-material lesson transfer from a teaching render to an unseen prop?",
+  "before": {"artifact": "teaching prop", "state": "emissive focal source with crushed surrounding form"},
+  "after": {"artifact": "teaching prop", "state": "motivated key/fill, preserved midtones, differentiated roughness"},
+  "critique": {"symptom": "hero surface read as a black blob around a bright core", "discipline": "lighting and material lookdev", "cause": "insufficient midtone separation and emission used as primary illumination", "evidence": "controlled before/after renders and grayscale comparison"},
+  "repair": {"action": "lower emission, add motivated fill and roughness separation, then re-render neutral and production keys"},
+  "transfer": {"artifact": "unseen brass instrument prop", "observed": true, "result": "same causal repair improved form readability without copying the teaching layout"},
+  "review": {"independent": true, "human": false, "finding": "causal diagnosis transferred; artistic approval still requires specialist or human review"},
+  "tool_version": "Blender 5.2 / evidence captured 2026-08-22"
+}

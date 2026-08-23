@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "kind": "ashwake-phase3-founder-performance-proxy-index",
+  "date": "2026-08-21",
+  "status": "PASS",
+  "selection_status": "NO_FINAL_PRODUCTION_DIRECTION_SELECTED",
+  "identity_rule": "Founder-facing records use aliases only.",
+  "runs": [
+    {
+      "alias": "OPTION_A",
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_a",
+      "trace": {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_a\\runtime.utrace",
+        "exists": true,
+        "bytes": 12081621
+      },
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_a\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 476479
+        },
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_a\\screenshots\\ashwake-gameplay-01.png",
+          "exists": true,
+          "bytes": 507209
+        },
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_a\\screenshots\\ashwake-gameplay-02.png",
+          "exists": true,
+          "bytes": 530648
+        },
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_a\\screenshots\\ashwake-gameplay-03.png",
+          "exists": true,
+          "bytes": 525182
+        },
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_a\\screenshots\\ashwake-gameplay-04.png",
+          "exists": true,
+          "bytes": 521130
+        },
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_a\\screenshots\\ashwake-gameplay-05.png",
+          "exists": true,
+          "bytes": 513852
+        }
+      ],
+      "counts": {
+        "performance_proxy": 2,
+        "reliquaries": 6,
+        "lights": 40,
+        "material_studies": 20,
+        "state_studies": 20,
+        "audio_playing": 24,
+        "vfx_state": 48,
+        "screenshots_requested": 24
+      },
+      "timer_export_status": "PASS",
+      "timer_csv": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_a\\game-thread-timers.csv",
+      "timer_summary": {
+        "rows": 0,
+        "top_game_thread_timers": []
+      },
+      "csv_profiler_stats": {
+        "status": "PASS",
+        "rows": 82,
+        "frame_samples": 80,
+        "frame_ms_median": 38.425,
+        "frame_ms_p95": 342.862,
+        "frame_ms_max": 31509.303
+      },
+      "risk_classification": "EASY TO OPTIMIZE"
+    },
+    {
+      "alias": "OPTION_B",
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_b",
+      "trace": {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_b\\runtime.utrace",
+        "exists": true,
+        "bytes": 12822273
+      },
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_b\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 591057
+        },
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_b\\screenshots\\ashwake-gameplay-01.png",
+          "exists": true,
+          "bytes": 607612
+        },
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_b\\screenshots\\ashwake-gameplay-02.png",
+          "exists": true,
+          "bytes": 636932
+        },
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_b\\screenshots\\ashwake-gameplay-03.png",
+          "exists": true,
+          "bytes": 636008
+        },
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_b\\screenshots\\ashwake-gameplay-04.png",
+          "exists": true,
+          "bytes": 630355
+        },
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_b\\screenshots\\ashwake-gameplay-05.png",
+          "exists": true,
+          "bytes": 624575
+        }
+      ],
+      "counts": {
+        "performance_proxy": 2,
+        "reliquaries": 6,
+        "lights": 40,
+        "material_studies": 20,
+        "state_studies": 20,
+        "audio_playing": 24,
+        "vfx_state": 48,
+        "screenshots_requested": 24
+      },
+      "timer_export_status": "PASS",
+      "timer_csv": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_b\\game-thread-timers.csv",
+      "timer_summary": {
+        "rows": 0,
+        "top_game_thread_timers": []
+      },
+      "csv_profiler_stats": {
+        "status": "PASS",
+        "rows": 82,
+        "frame_samples": 80,
+        "frame_ms_median": 37.53,
+        "frame_ms_p95": 374.778,
+        "frame_ms_max": 29539.971
+      },
+      "risk_classification": "EASY TO OPTIMIZE"
+    },
+    {
+      "alias": "OPTION_C",
+      "status": "PASS",
+      "run_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_c",
+      "trace": {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_c\\runtime.utrace",
+        "exists": true,
+        "bytes": 13290866
+      },
+      "screenshots": [
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_c\\screenshots\\ashwake-gameplay-00.png",
+          "exists": true,
+          "bytes": 754188
+        },
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_c\\screenshots\\ashwake-gameplay-01.png",
+          "exists": true,
+          "bytes": 750024
+        },
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_c\\screenshots\\ashwake-gameplay-02.png",
+          "exists": true,
+          "bytes": 778193
+        },
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_c\\screenshots\\ashwake-gameplay-03.png",
+          "exists": true,
+          "bytes": 782419
+        },
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_c\\screenshots\\ashwake-gameplay-04.png",
+          "exists": true,
+          "bytes": 770455
+        },
+        {
+          "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_c\\screenshots\\ashwake-gameplay-05.png",
+          "exists": true,
+          "bytes": 762367
+        }
+      ],
+      "counts": {
+        "performance_proxy": 2,
+        "reliquaries": 6,
+        "lights": 40,
+        "material_studies": 20,
+        "state_studies": 20,
+        "audio_playing": 24,
+        "vfx_state": 48,
+        "screenshots_requested": 24
+      },
+      "timer_export_status": "PASS",
+      "timer_csv": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-environment-apprenticeship-phase3\\performance-proxy\\option_c\\game-thread-timers.csv",
+      "timer_summary": {
+        "rows": 0,
+        "top_game_thread_timers": []
+      },
+      "csv_profiler_stats": {
+        "status": "PASS",
+        "rows": 82,
+        "frame_samples": 80,
+        "frame_ms_median": 42.935,
+        "frame_ms_p95": 568.643,
+        "frame_ms_max": 26409.156
+      },
+      "risk_classification": "EASY TO OPTIMIZE"
+    }
+  ],
+  "claim_limits": [
+    "Performance proxy exposes architectural risk only; it is not final optimization proof.",
+    "Do not reject a creatively superior option solely because an unoptimized proxy is heavier."
+  ]
+}

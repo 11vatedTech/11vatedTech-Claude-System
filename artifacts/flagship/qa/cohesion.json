@@ -1,0 +1,88 @@
+{
+  "artifact": "emberveil",
+  "ok": true,
+  "checks": [
+    {
+      "id": "palette",
+      "ok": true,
+      "detail": "material hues within 3\u00b0 of nearest UI hue (threshold 45\u00b0)",
+      "ui_hues": [
+        22,
+        25,
+        42,
+        35,
+        26,
+        36,
+        33
+      ],
+      "material_hues": [
+        30,
+        22
+      ]
+    },
+    {
+      "id": "typography",
+      "ok": true,
+      "detail": "serif identity=True, letterspaced display=True"
+    },
+    {
+      "id": "motion",
+      "ok": true,
+      "detail": "organic motion (sin-based float/flicker/drift) present"
+    },
+    {
+      "id": "vfx",
+      "ok": true,
+      "detail": "additive blending=True, warm ember palette=True"
+    },
+    {
+      "id": "lighting",
+      "ok": true,
+      "detail": "warm key=True, cool rim accent=True"
+    }
+  ],
+  "problems": [],
+  "palette": {
+    "bg": "#0d0805",
+    "ember": "#ff7a1a",
+    "gold": "#ffd166",
+    "amber": "#ffb347",
+    "warm-shadow": "#1a0e05",
+    "text": "#f6e7d0",
+    "text-dim": "#b89a76"
+  },
+  "materials": [
+    {
+      "name": "Emberveil_Brass",
+      "base": [
+        0.42,
+        0.28,
+        0.14,
+        1
+      ],
+      "emissive": [
+        0,
+        0,
+        0
+      ],
+      "metallic": null,
+      "roughness": 0.3199999928474426
+    },
+    {
+      "name": "Emberveil_Plinth",
+      "base": [
+        0.12,
+        0.1,
+        0.09,
+        1
+      ],
+      "emissive": [
+        0,
+        0,
+        0
+      ],
+      "metallic": 0.4000000059604645,
+      "roughness": 0.550000011920929
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "baseline": "artifacts\\flagship\\emberveil\\emberveil-v2.glb",
+  "candidate": "artifacts\\flagship\\runtime\\emberveil.glb",
+  "counts": {
+    "nodes": {
+      "baseline": 8,
+      "candidate": 8
+    },
+    "meshes": {
+      "baseline": 7,
+      "candidate": 7
+    },
+    "materials": {
+      "baseline": 3,
+      "candidate": 2
+    },
+    "animations": {
+      "baseline": 1,
+      "candidate": 1
+    },
+    "textures": {
+      "baseline": 0,
+      "candidate": 0
+    },
+    "images": {
+      "baseline": 0,
+      "candidate": 0
+    }
+  },
+  "missing_names": {
+    "nodes": [],
+    "meshes": [],
+    "materials": [
+      "Emberveil_Brass_v2.001",
+      "Emberveil_Core_v2",
+      "Emberveil_Plinth_v2"
+    ],
+    "animations": [],
+    "textures": [],
+    "images": []
+  },
+  "added_names": {
+    "nodes": [],
+    "meshes": [],
+    "materials": [
+      "Emberveil_Brass",
+      "Emberveil_Plinth"
+    ],
+    "animations": [],
+    "textures": [],
+    "images": []
+  },
+  "regressions": [
+    "materials_count_decreased",
+    "materials_lost:Emberveil_Brass_v2.001,Emberveil_Core_v2,Emberveil_Plinth_v2"
+  ],
+  "ok": false,
+  "interpretation": "structural regression result; material and animation presence do not prove perceptual quality"
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Composition Lab — Repair + Transfer</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#f0ede8;font-family:Georgia,'Times New Roman',serif;color:#1a1817;padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap:48px}
+
+.panel{width:100%;max-width:720px;background:#fff;border:1px solid #d8d4cc;border-radius:6px;overflow:hidden}
+.panel-label{font-family:monospace;font-size:0.7rem;color:#9c9488;text-transform:uppercase;letter-spacing:0.08em;padding:8px 16px;background:#f8f6f2;border-bottom:1px solid #e8e4dc}
+.panel-body{padding:clamp(20px,4vw,40px)}
+
+/* === REPAIRED COMPOSITION C === */
+.repaired-c{display:flex;flex-direction:column;gap:16px}
+.repaired-c .top-bar{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.repaired-c .headline{font-size:clamp(20px,3vw,28px);line-height:1.2}
+.repaired-c .measure{font-family:'Courier New',monospace;font-size:28px;font-weight:700;color:#7a3b3b;white-space:nowrap}
+.repaired-c .rule{width:100%;height:1px;background:#e8e4dc}
+.repaired-c .body-text{font-size:0.95rem;line-height:1.65;color:#4a4440;max-width:60ch}
+.repaired-c .meta-row{display:flex;gap:32px;font-family:'Courier New',monospace;font-size:0.72rem;color:#9c9488;padding-top:4px}
+
+/* === TRANSFER: Museum exhibit label (unrelated content) === */
+.transfer{display:flex;flex-direction:column;gap:16px}
+.transfer .artifact-name{font-size:clamp(18px,2.5vw,24px);line-height:1.2;font-style:italic}
+.transfer .material-line{font-family:'Courier New',monospace;font-size:0.78rem;color:#6e6558}
+.transfer .rule{width:100%;height:1px;background:#e8e4dc}
+.transfer .desc{font-size:0.92rem;line-height:1.6;color:#4a4440;max-width:54ch}
+.transfer .specs{display:flex;gap:20px;padding:12px 16px;background:#faf9f6;border-left:3px solid #5c7a64;margin-top:4px}
+.transfer .spec-item{display:flex;flex-direction:column;gap:2px}
+.transfer .spec-value{font-family:'Courier New',monospace;font-size:0.85rem;color:#1a1817}
+.transfer .spec-label{font-family:'Courier New',monospace;font-size:0.65rem;color:#9c9488;text-transform:uppercase}
+
+/* === TRANSFER WRONG: Column-split version === */
+.transfer-wrong .desc{column-count:2;column-gap:20px;font-size:0.88rem}
+</style>
+</head>
+<body>
+
+<div class="panel">
+  <div class="panel-label">Repaired Composition C — Single-Column Flow</div>
+  <div class="panel-body repaired-c">
+    <div class="top-bar">
+      <h1 class="headline">Observation Conditions Favorable for N45 Filament Study</h1>
+      <span class="measure">0.72″</span>
+    </div>
+    <div class="rule"></div>
+    <p class="body-text">The approaching window offers exceptional atmospheric stability. Transparency remains above the 0.90 threshold, and instrument calibration completed ahead of schedule. The filament's magnetic topology suggests continued activation through the cycle.</p>
+    <div class="meta-row">
+      <span>Transparency 0.91</span>
+      <span>Instrument H-alpha Lyot</span>
+      <span>Window 75 min</span>
+    </div>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-label">Transfer — Museum Exhibit Label: WRONG (Column-Split)</div>
+  <div class="panel-body transfer transfer-wrong">
+    <h2 class="artifact-name">Celestial Globe</h2>
+    <span class="material-line">Brass, engraved paper gores, mahogany stand · c. 1860</span>
+    <div class="rule"></div>
+    <p class="desc">This terrestrial globe was commissioned by the Royal Astronomical Society for the 1860 transit observation campaign. The brass meridian ring bears the maker's mark of John Senex, and the paper gores show remarkably preserved hand-coloring. The mahogany stand features a compass rose inlay at the base.</p>
+    <div class="specs">
+      <div class="spec-item"><span class="spec-value">94 cm</span><span class="spec-label">Height</span></div>
+      <div class="spec-item"><span class="spec-value">42 cm</span><span class="spec-label">Diameter</span></div>
+      <div class="spec-item"><span class="spec-value">~14 kg</span><span class="spec-label">Mass</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-label">Transfer — Museum Exhibit Label: REPAIRED (Proximity Grouped)</div>
+  <div class="panel-body transfer">
+    <h2 class="artifact-name">Celestial Globe</h2>
+    <span class="material-line">Brass, engraved paper gores, mahogany stand · c. 1860</span>
+    <div class="rule"></div>
+    <p class="desc">This terrestrial globe was commissioned by the Royal Astronomical Society for the 1860 transit observation campaign. The brass meridian ring bears the maker's mark of John Senex, and the paper gores show remarkably preserved hand-coloring. The mahogany stand features a compass rose inlay at the base.</p>
+    <div class="specs">
+      <div class="spec-item"><span class="spec-value">94 cm</span><span class="spec-label">Height</span></div>
+      <div class="spec-item"><span class="spec-value">42 cm</span><span class="spec-label">Diameter</span></div>
+      <div class="spec-item"><span class="spec-value">~14 kg</span><span class="spec-label">Mass</span></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

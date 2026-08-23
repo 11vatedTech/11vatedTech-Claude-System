@@ -1,0 +1,67 @@
+LogCore: Display: UTS: The Unreal Trace Server binary is not available ('../../../Engine/Binaries/Win64/UnrealTraceServer.exe')
+LogCsvProfiler: Display: Metadata set : platform="Windows"
+LogCsvProfiler: Display: Metadata set : config="Development"
+LogCsvProfiler: Display: Metadata set : buildversion="++UE5+Release-5.8-CL-55116800"
+LogCsvProfiler: Display: Metadata set : engineversion="5.8.0-55116800+++UE5+Release-5.8"
+LogCsvProfiler: Display: Metadata set : enginereleaseversion="5.8.0"
+LogCsvProfiler: Display: Metadata set : os="Windows 11 (25H2) [10.0.26200.9168] "
+LogCsvProfiler: Display: Metadata set : cpu="GenuineIntel|Intel(R) Core(TM) Ultra 9 275HX"
+LogCsvProfiler: Display: Metadata set : pgoenabled="0"
+LogCsvProfiler: Display: Metadata set : pgoprofilingenabled="0"
+LogCsvProfiler: Display: Metadata set : ltoenabled="0"
+LogCsvProfiler: Display: Metadata set : asan="0"
+LogCsvProfiler: Display: Metadata set : mergedmodules="0"
+LogCsvProfiler: Display: Metadata set : compacttset="0"
+LogCsvProfiler: Display: Metadata set : commandline="" FoundryCalibration /Game/Calibration/Maps/EmberveilCalibration -NullRHI -NoSound -Unattended -NoSplash -log -stdout""
+LogCsvProfiler: Display: Metadata set : loginid="9d319a3cc0734ec39cf8b78ec59b4c52"
+LogCsvProfiler: Display: Metadata set : llm="0"
+LogIoDispatcher: Display: Mounted container '../../../FoundryCalibration/Content/Paks/global.utoc', Id='ffffffffffffffff', Order=0, Slot=0, Options=(None), Flags=(), HasSoftRefs=False
+LogPakFile: Display: Initialized I/O dispatcher file backend. Mounted the global container: ../../../FoundryCalibration/Content/Paks/global.utoc
+LogPakFile: Display: Found Pak file ../../../FoundryCalibration/Content/Paks/FoundryCalibration-Windows.pak attempting to mount.
+LogPakFile: Display: Mounting pak file ../../../FoundryCalibration/Content/Paks/FoundryCalibration-Windows.pak.
+LogIoDispatcher: Display: Mounted container '../../../FoundryCalibration/Content/Paks/FoundryCalibration-Windows.utoc', Id='ade0a02fec81837e', Order=4, Slot=0, Options=(None), Flags=(Compressed|Indexed), HasSoftRefs=False
+LogPakFile: Display: Mounted IoStore container "../../../FoundryCalibration/Content/Paks/FoundryCalibration-Windows.utoc"
+LogPakFile: Display: Mounted Pak file '../../../FoundryCalibration/Content/Paks/FoundryCalibration-Windows.pak', mount point: '../../../'
+LogCsvProfiler: Display: Metadata set : zenstreaming="0"
+LogCsvProfiler: Display: Metadata set : systemresolution.resx="1280"
+LogCsvProfiler: Display: Metadata set : systemresolution.resy="720"
+LogAudio: Display: Audio Device Manager not initializing due to all audio being disabled. If this is not intentional, please check command line arguments for "-nosound".
+RenderDocPlugin: Display: RenderDoc plugin will not be loaded. Use '-AttachRenderDoc' on the cmd line or enable 'renderdoc.AutoAttach' in the plugin settings.
+LogAnalytics: Display: Provider StudioTelemetry.Provider.Log is disabled for this application
+LogAnalytics: Display: Provider StudioTelemetry.Provider.CSV is disabled for this application
+LogAnalytics: Display: Provider StudioTelemetry.Provider.Horde is disabled for this application
+LogStreaming: Display: AsyncLoading2 - Created: Async Loading Thread: true, Async Post Load: true, Multithreaded: false
+[2026.08.20-14.51.08:554][  0]LogCsvProfiler: Display: Metadata set : systemresolution.resx="1707"
+[2026.08.20-14.51.08:554][  0]LogCsvProfiler: Display: Metadata set : systemresolution.resy="1067"
+[2026.08.20-14.51.08:601][  0]LogHAL: Display: Platform has ~ 32 GB [33736089600 / 34359738368 / 32], which maps to Largest [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+[2026.08.20-14.51.08:707][  0]LogCsvProfiler: Display: Metadata set : extradevelopmentmemorymb="0"
+[2026.08.20-14.51.09:845][  0]LogWindowsTouchpad: Display: CacheForceMaxTouchpadSensitivityMode SetMaxTouchpadSensitivity
+[2026.08.20-14.51.09:863][  0]LogObj: Display: Attempting to load config data for Default__SlateThemeManager before the Class has been constructed/registered/linked (likely during module loading or early startup). This will result in the load silently failing and should be fixed.
+[2026.08.20-14.51.10:116][  0]LogCsvProfiler: Display: Metadata set : verbatimrhiname="Null"
+[2026.08.20-14.51.10:117][  0]LogCsvProfiler: Display: Metadata set : rhiname="Null"
+[2026.08.20-14.51.10:117][  0]LogCsvProfiler: Display: Metadata set : rhifeaturelevel="SM6"
+[2026.08.20-14.51.10:118][  0]LogCsvProfiler: Display: Metadata set : shaderplatform="PCD3D_SM6"
+[2026.08.20-14.51.10:118][  0]LogCsvProfiler: Display: Metadata set : gpu=""
+[2026.08.20-14.51.10:119][  0]LogCsvProfiler: Display: Metadata set : gpudriver=""
+[2026.08.20-14.51.10:815][  0]LogDeviceProfileManager: Display: Deviceprofile LinuxArm64Editor not found.
+[2026.08.20-14.51.10:825][  0]LogDeviceProfileManager: Display: Deviceprofile LinuxArm64 not found.
+[2026.08.20-14.51.10:846][  0]LogCsvProfiler: Display: Metadata set : deviceprofile="Windows"
+[2026.08.20-14.51.10:872][  0]LogStreaming: Display: FlushAsyncLoading(8): 8 QueuedPackages, 0 AsyncPackages
+[2026.08.20-14.51.10:930][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/WorldGridMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).
+[2026.08.20-14.51.10:940][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/DefaultDeferredDecalMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).
+[2026.08.20-14.51.10:949][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/DefaultLightFunctionMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).
+[2026.08.20-14.51.10:956][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/DefaultPostProcessMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).
+[2026.08.20-14.51.11:018][  0]LogStreaming: Warning: LoadPackage: SkipPackage: /Game/Calibration/VFX/NS_Emberveil_Attune (0x3385196A64A10E1F) - The package to load does not exist on disk or in the loader
+[2026.08.20-14.51.11:020][  0]LogUObjectGlobals: Warning: Failed to find object 'NiagaraSystem /Game/Calibration/VFX/NS_Emberveil_Attune.NS_Emberveil_Attune'
+[2026.08.20-14.51.11:021][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2026.08.20-14.51.11:034][  0]LogMetaSound: Display: MetaSound Page Target Initialized to 'Default'
+[2026.08.20-14.51.11:056][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2026.08.20-14.51.11:119][  0]LogAudio: Display: Registering Engine Module Parameter Interfaces...
+[2026.08.20-14.51.11:200][  0]LogCsvProfiler: Display: Metadata set : largeworldcoordinates="1"
+[2026.08.20-14.51.11:220][  0]LogInit: Display: Game Engine Initialized.
+[2026.08.20-14.51.11:227][  0]LogCsvProfiler: Display: Metadata set : raytracing="0"
+[2026.08.20-14.51.11:253][  0]LogInit: Display: Starting Game.
+[2026.08.20-14.51.11:263][  0]LogStreaming: Warning: LoadPackage: SkipPackage: /Game/Calibration/Maps/EmberveilCalibration (0xE0C101E3AE2F033F) - The package to load does not exist on disk or in the loader
+[2026.08.20-14.51.11:263][  0]LogLoad: Error: Failed to enter /Game/Calibration/Maps/EmberveilCalibration: Failed to load package '/Game/Calibration/Maps/EmberveilCalibration'. Please check the log for errors.
+[2026.08.20-14.51.11:268][  0]LogInit: Display: Engine is initialized. Leaving FEngineLoop::Init()
+[2026.08.20-14.51.11:268][  0]LogInit: Display: PreExit Game.

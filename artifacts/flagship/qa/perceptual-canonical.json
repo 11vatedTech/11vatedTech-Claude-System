@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "tool": "perceptual_visual_qa",
+  "records": [
+    {
+      "path": "artifacts\\flagship\\emberveil-canonical\\preview\\preview-frame-0048.png",
+      "dimensions": [
+        960,
+        540
+      ],
+      "luminance": {
+        "mean": 0.596485,
+        "central_mean": 0.631499,
+        "corner_mean": 0.508067,
+        "subject_background_separation": 0.123432,
+        "black_crush_fraction_below_8_percent": 0.508515,
+        "highlight_clip_fraction_above_95_percent": 0.001269
+      },
+      "composition": {
+        "threshold": "65% luminance (bright subject diagnostic)",
+        "subject_bbox": {
+          "x": 76,
+          "y": 0,
+          "width": 569,
+          "height": 540
+        },
+        "subject_occupancy": 0.592708
+      },
+      "failures": [],
+      "warnings": [],
+      "status": "PASS",
+      "interpretation": "diagnostic metrics require human/professional visual review; they do not prove artistic quality"
+    },
+    {
+      "path": "artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-000.png",
+      "dimensions": [
+        640,
+        360
+      ],
+      "luminance": {
+        "mean": 0.575503,
+        "central_mean": 0.627767,
+        "corner_mean": 0.508074,
+        "subject_background_separation": 0.119693,
+        "black_crush_fraction_below_8_percent": 0.576471,
+        "highlight_clip_fraction_above_95_percent": 0.0
+      },
+      "composition": {
+        "threshold": "65% luminance (bright subject diagnostic)",
+        "subject_bbox": {
+          "x": 122,
+          "y": 0,
+          "width": 518,
+          "height": 360
+        },
+        "subject_occupancy": 0.809375
+      },
+      "failures": [],
+      "warnings": [],
+      "status": "PASS",
+      "interpretation": "diagnostic metrics require human/professional visual review; they do not prove artistic quality"
+    },
+    {
+      "path": "artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-012.png",
+      "dimensions": [
+        640,
+        360
+      ],
+      "luminance": {
+        "mean": 0.578153,
+        "central_mean": 0.599376,
+        "corner_mean": 0.508073,
+        "subject_background_separation": 0.091303,
+        "black_crush_fraction_below_8_percent": 0.479688,
+        "highlight_clip_fraction_above_95_percent": 0.0
+      },
+      "composition": {
+        "threshold": "65% luminance (bright subject diagnostic)",
+        "subject_bbox": {
+          "x": 223,
+          "y": 0,
+          "width": 400,
+          "height": 258
+        },
+        "subject_occupancy": 0.447917
+      },
+      "failures": [],
+      "warnings": [],
+      "status": "PASS",
+      "interpretation": "diagnostic metrics require human/professional visual review; they do not prove artistic quality"
+    },
+    {
+      "path": "artifacts\\flagship\\emberveil-canonical\\cinematic-frames\\seq-0001.png",
+      "dimensions": [
+        640,
+        360
+      ],
+      "luminance": {
+        "mean": 0.584888,
+        "central_mean": 0.631755,
+        "corner_mean": 0.508073,
+        "subject_background_separation": 0.123682,
+        "black_crush_fraction_below_8_percent": 0.489214,
+        "highlight_clip_fraction_above_95_percent": 0.0
+      },
+      "composition": {
+        "threshold": "65% luminance (bright subject diagnostic)",
+        "subject_bbox": {
+          "x": 0,
+          "y": 33,
+          "width": 328,
+          "height": 326
+        },
+        "subject_occupancy": 0.464097
+      },
+      "failures": [],
+      "warnings": [],
+      "status": "PASS",
+      "interpretation": "diagnostic metrics require human/professional visual review; they do not prove artistic quality"
+    },
+    {
+      "path": "artifacts\\flagship\\emberveil-canonical\\cinematic-frames\\seq-0036.png",
+      "dimensions": [
+        640,
+        360
+      ],
+      "luminance": {
+        "mean": 0.585054,
+        "central_mean": 0.625232,
+        "corner_mean": 0.508073,
+        "subject_background_separation": 0.117159,
+        "black_crush_fraction_below_8_percent": 0.563958,
+        "highlight_clip_fraction_above_95_percent": 0.0
+      },
+      "composition": {
+        "threshold": "65% luminance (bright subject diagnostic)",
+        "subject_bbox": {
+          "x": 142,
+          "y": 0,
+          "width": 479,
+          "height": 360
+        },
+        "subject_occupancy": 0.748437
+      },
+      "failures": [],
+      "warnings": [],
+      "status": "PASS",
+      "interpretation": "diagnostic metrics require human/professional visual review; they do not prove artistic quality"
+    },
+    {
+      "path": "artifacts\\flagship\\emberveil-canonical\\cinematic-frames\\seq-0072.png",
+      "dimensions": [
+        640,
+        360
+      ],
+      "luminance": {
+        "mean": 0.576642,
+        "central_mean": 0.595157,
+        "corner_mean": 0.508074,
+        "subject_background_separation": 0.087083,
+        "black_crush_fraction_below_8_percent": 0.609253,
+        "highlight_clip_fraction_above_95_percent": 0.0
+      },
+      "composition": {
+        "threshold": "65% luminance (bright subject diagnostic)",
+        "subject_bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 640,
+          "height": 297
+        },
+        "subject_occupancy": 0.825
+      },
+      "failures": [],
+      "warnings": [],
+      "status": "PASS",
+      "interpretation": "diagnostic metrics require human/professional visual review; they do not prove artistic quality"
+    }
+  ],
+  "ok": true
+}

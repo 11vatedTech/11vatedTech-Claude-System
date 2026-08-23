@@ -1,0 +1,58 @@
+[
+  {
+    "id": "FR-0001",
+    "timestamp": "2026-08-19T10:16:09.169943+00:00",
+    "phase": "production",
+    "component": "op_runner",
+    "failure_type": "session_chaining_corruption",
+    "description": "Individual material ops using open_mainfile in background mode destroy mesh objects. Scene loses all MESH-type objects, retaining only CAMERA and LIGHT. Root cause: Blender 5.2 background open_mainfile does not fully restore scene state.",
+    "severity": "critical",
+    "evidence": [
+      "v2-glass-result.json: ok=True but scene lost meshes",
+      "debug-inspect: 3 objects (Cam, EmberCoreLight, FillLight), 0 meshes",
+      "emberveil.glb dropped from 231KB to 132 bytes"
+    ],
+    "resolution": "fixed"
+  },
+  {
+    "id": "FR-0002",
+    "timestamp": "2026-08-19T10:16:09.181600+00:00",
+    "phase": "production",
+    "component": "op_runner",
+    "failure_type": "function_ordering",
+    "description": "v2-batch-upgrade.py called _lathe() before its def statement. Python requires function definitions before calls in the same scope.",
+    "severity": "critical",
+    "evidence": [
+      "v2-upgrade.log: NameError: name '_lathe' is not defined (line 84)"
+    ],
+    "resolution": "fixed"
+  },
+  {
+    "id": "FR-0003",
+    "timestamp": "2026-08-19T10:16:09.183138+00:00",
+    "phase": "production",
+    "component": "material_ops",
+    "failure_type": "object_naming_mismatch",
+    "description": "Brass material spec used filigree_arc.001/002 (Blender dotted names) but actual objects were named filigree_arc_01/002 (underscored). Radial array naming convention mismatch.",
+    "severity": "warning",
+    "evidence": [
+      "v2-brass-result.json: ValueError: object_not_found filigree_arc.001",
+      "build-report.rig.parent.children: filigree_arc_01, filigree_arc_02"
+    ],
+    "resolution": "fixed"
+  },
+  {
+    "id": "FR-0004",
+    "timestamp": "2026-08-19T10:16:09.186912+00:00",
+    "phase": "runtime",
+    "component": "presentation",
+    "failure_type": "launch_json_deleted",
+    "description": "Three.js runtime agent deleted .claude/launch.json after validation, breaking preview server for subsequent sessions.",
+    "severity": "warning",
+    "evidence": [
+      "preview_start failed: No .claude/launch.json found",
+      "Agent removed temporary preview config during cleanup"
+    ],
+    "resolution": "fixed"
+  }
+]

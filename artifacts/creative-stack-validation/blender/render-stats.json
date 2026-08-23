@@ -1,6 +1,6 @@
 {
   "scene_id": "11vt-crystal-atelier",
-  "elapsed_seconds": 29.947,
+  "elapsed_seconds": 19.692,
   "engine": "CYCLES",
   "cycles_device": "GPU",
   "samples": 64,

@@ -1,0 +1,59 @@
+{
+  "url": "http://127.0.0.1:8140/runtime/index.html",
+  "frames": [
+    {
+      "t_ms": 1500,
+      "file": "frame-01.png",
+      "state": {
+        "loading": "kindling ·",
+        "loadingHidden": false,
+        "status": "calibration artifact",
+        "canvas": false,
+        "canvasWH": null,
+        "title": "EMBERVEIL — a warden of dying fires",
+        "foundryState": null
+      }
+    },
+    {
+      "t_ms": 2500,
+      "file": "frame-02.png",
+      "state": {
+        "loading": "kindling ·",
+        "loadingHidden": false,
+        "status": "calibration artifact",
+        "canvas": false,
+        "canvasWH": null,
+        "title": "EMBERVEIL — a warden of dying fires",
+        "foundryState": null
+      }
+    }
+  ],
+  "perf": {
+    "timing": {
+      "nav": 1787140036496,
+      "load": 1787140040111
+    },
+    "resources": [
+      {
+        "name": "three.module.js",
+        "dur": 2697
+      },
+      {
+        "name": "GLTFLoader.js",
+        "dur": 2296
+      },
+      {
+        "name": "BufferGeometryUtils.js",
+        "dur": 816
+      },
+      {
+        "name": "emberveil-canonical.glb",
+        "dur": 24
+      },
+      {
+        "name": "favicon.ico",
+        "dur": 9
+      }
+    ]
+  }
+}

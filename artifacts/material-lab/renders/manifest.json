@@ -1,0 +1,58 @@
+{
+  "lab": "Material LookDev",
+  "blender": "5.2.0 LTS",
+  "renders": 10,
+  "samples": 32,
+  "results": [
+    {
+      "material": "aged_steel",
+      "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\material-lab\\renders\\mat_aged_steel.png"
+    },
+    {
+      "material": "ceramic",
+      "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\material-lab\\renders\\mat_ceramic.png"
+    },
+    {
+      "material": "painted_wood",
+      "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\material-lab\\renders\\mat_painted_wood.png"
+    },
+    {
+      "material": "dirty_glass",
+      "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\material-lab\\renders\\mat_dirty_glass.png"
+    },
+    {
+      "material": "rubber_polymer",
+      "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\material-lab\\renders\\mat_rubber_polymer.png"
+    },
+    {
+      "material": "diag_ceramic_too_metallic",
+      "adversarial": true,
+      "description": "Ceramic with metallic too high",
+      "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\material-lab\\renders\\diag_ceramic_too_metallic.png"
+    },
+    {
+      "material": "diag_metal_too_diffuse",
+      "adversarial": true,
+      "description": "Metal rendered as dielectric",
+      "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\material-lab\\renders\\diag_metal_too_diffuse.png"
+    },
+    {
+      "material": "diag_rubber_too_glossy",
+      "adversarial": true,
+      "description": "Rubber with too-low roughness",
+      "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\material-lab\\renders\\diag_rubber_too_glossy.png"
+    },
+    {
+      "material": "diag_glass_no_transmission",
+      "adversarial": true,
+      "description": "Glass without transmission",
+      "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\material-lab\\renders\\diag_glass_no_transmission.png"
+    },
+    {
+      "material": "diag_wrong_scale_bump",
+      "adversarial": true,
+      "description": "Bump scale 10x too large",
+      "file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\material-lab\\renders\\diag_wrong_scale_bump.png"
+    }
+  ]
+}

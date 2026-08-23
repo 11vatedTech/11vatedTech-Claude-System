@@ -63,6 +63,16 @@ L5_REQUIREMENTS: dict[str, dict[str, list[str]]] = {
 
 REVIEW_RECORD_PATTERN = re.compile(r"docs/l5-review-record-2026-08-18\.md")
 
+# Production-domain capabilities must earn L5 with their own evidence — an L5
+# dependency (e.g. blender-bridge) does NOT confer production maturity.
+# These are the domains where "infrastructure L5" must never be mistaken for
+# "production L5".
+PRODUCTION_DOMAINS = {
+    "3d-production", "character-animation", "visual-design", "vfx-production",
+    "cinematic-production", "audio-production", "frontend-production",
+    "creative-direction", "motion-design", "texturing", "rigging", "lighting",
+}
+
 
 def check(cap: str, reqs: dict[str, list[str]]) -> list[str]:
     failures: list[str] = []
@@ -97,8 +107,16 @@ def main() -> int:
     for cap in l5_caps:
         reqs = L5_REQUIREMENTS.get(cap)
         if not reqs:
-            failures.append(f"L5_without_evidence_map {cap}")
+            failures.append(f"L5_without_evidence_map {cap} (L5 requires its OWN evidence; an L5 dependency does not confer maturity)")
             continue
+        # production-domain L5 must carry a production-domain scope label
+        cap_scope = None
+        for domain in ontology["domains"]:
+            for c in domain["capabilities"]:
+                if c["id"] == cap:
+                    cap_scope = c.get("maturity_scope") or domain["id"]
+        if cap_scope in PRODUCTION_DOMAINS or cap in PRODUCTION_DOMAINS:
+            failures.append(f"production_domain_L5_not_supported {cap} (scope={cap_scope}) — infrastructure maturity cannot be inherited")
         # regression requirement: the named gate function must exist and be wired
         reg_text = REGRESSION.read_text(encoding="utf-8")
         for gate in reqs.get("regression", []):

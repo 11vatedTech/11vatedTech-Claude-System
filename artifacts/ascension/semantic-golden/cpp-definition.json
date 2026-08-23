@@ -1,0 +1,73 @@
+{
+  "schema_version": 2,
+  "kind": "semantic-code-query",
+  "root": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp",
+  "language": "cpp",
+  "symbol": "VectorMath::normalize",
+  "verb": "definition",
+  "provider": "clangd",
+  "semantic": true,
+  "session": {
+    "provider": "clangd",
+    "version": "22.1.6",
+    "source": "github.com/clangd/clangd release build",
+    "note": "Unreal UHT/Blueprint semantics beyond plain clangd",
+    "compile_commands_source": "compile_commands.json",
+    "compile_commands_entries": 10,
+    "platform": "windows-win64",
+    "unreal_tracking": "Target.cs/Build.cs/UHT/engine includes not modeled without a UE compile database",
+    "root": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\tools\\fixtures\\semantic-golden\\cpp",
+    "position_encoding": "UTF-16 code units per LSP"
+  },
+  "facts": [
+    {
+      "verb": "definition",
+      "symbol": "VectorMath::normalize",
+      "file": "include\\vector_math.h",
+      "start_line": 6,
+      "start_character": 17,
+      "evidence_kind": "TYPE_RESOLVED",
+      "certainty": "PROVEN",
+      "provider": "clangd",
+      "semantic": true,
+      "build_context": {
+        "evidence_kind": "STRUCTURAL",
+        "build_context": "compile_commands_present_but_file_uncovered",
+        "confidence": "semantic_limited_context",
+        "file_covered": false
+      },
+      "value": {
+        "definition_locations": [
+          {
+            "file": "src\\vector_math.cpp",
+            "line": 4,
+            "character": 18
+          }
+        ]
+      }
+    }
+  ],
+  "uncertainties": [
+    "runtime call graph not observed; RUNTIME_OBSERVED_EDGE facts require runtime evidence"
+  ],
+  "overclaim_guards": [],
+  "provider_extensions": {
+    "common_api_used": "definition",
+    "extensions": {
+      "pyright": [
+        "hover type extraction (TSP unavailable)",
+        "typeDefinition"
+      ],
+      "typescript": [
+        "textDocument/implementation",
+        "tsserver-backed references"
+      ],
+      "clangd": [
+        "textDocument/implementation",
+        "compile-command context",
+        "include path capture"
+      ]
+    }
+  },
+  "elapsed_s": 2.24
+}

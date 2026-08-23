@@ -1,0 +1,12 @@
+{
+  "lab_id": "FRONTEND-TRANSFER-001",
+  "capability": "frontend-ui-ux",
+  "question": "Can a quality contract prevent accessibility, state, responsive, and performance claims from being inferred from a screenshot or Lighthouse score?",
+  "before": {"artifact": "unseen operations panel", "evidence": "desktop screenshot only", "known_issue": "mobile, focus, error, and keyboard behavior unknown"},
+  "after": {"artifact": "unseen operations panel", "evidence": "state inventory, mobile/desktop captures, keyboard path, accessibility scan, performance metrics"},
+  "critique": {"symptom": "desktop screenshot looked coherent but did not establish task completion on mobile", "discipline": "responsive UX and accessibility", "cause": "position-driven layout and missing interaction-state evidence", "evidence": "missing mobile/focus/error/keyboard records"},
+  "repair": {"action": "recompose layout by content priority, add focus/error states, and capture a keyboard path"},
+  "transfer": {"artifact": "unseen compact data-review flow", "observed": true, "result": "contract catches missing keyboard and error evidence before visual approval"},
+  "review": {"independent": true, "human": false, "finding": "evidence contract prevents false completion but does not judge taste"},
+  "tool_version": "standards retrieved 2026-08-22"
+}

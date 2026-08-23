@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "task": "python_ast_repository_intelligence",
+  "checks": {
+    "definition_trace": true,
+    "reference_trace": true,
+    "architecture_edge": true,
+    "impact_trace": true,
+    "requirement_trace": true,
+    "parse_errors_explicit": true
+  },
+  "ok": true,
+  "limitations": [
+    "Python only",
+    "name references are lexical AST references, not type-resolved LSP references",
+    "dynamic imports and generated code remain unknown"
+  ]
+}

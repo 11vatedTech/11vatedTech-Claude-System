@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game-Feel Lab + Synthesis — Apprenticeship Wave 001</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#1a1817;color:#ede4d8;font-family:system-ui,-apple-system,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:60px;padding:40px 20px;overflow-x:hidden}
+
+.panel{width:100%;max-width:700px;background:#242220;border-radius:8px;overflow:hidden;border:1px solid #3a3632}
+.panel-header{font-family:monospace;font-size:0.7rem;color:#9c9488;text-transform:uppercase;letter-spacing:0.08em;padding:10px 16px;background:#2c2927;border-bottom:1px solid #3a3632}
+.panel-body{display:flex;flex-direction:column;align-items:center;gap:20px;padding:clamp(20px,4vw,32px)}
+
+.profile-tabs{display:flex;gap:2px}
+.tab{font-family:monospace;font-size:0.75rem;padding:8px 16px;border:1px solid #3a3632;background:transparent;color:#9c9488;cursor:pointer;border-radius:4px 4px 0 0;transition:all 0.15s}
+.tab.active{background:#d4a843;color:#1a1817;border-color:#d4a843}
+.tab:hover:not(.active){color:#ede4d8}
+
+.charge-area{width:100%;max-width:320px;height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;cursor:pointer;border-radius:8px;background:#2c2927;border:2px dashed #3a3632;position:relative;user-select:none;transition:border-color 0.15s}
+.charge-area:hover{border-color:#d4a843}
+.charge-area.charging{border-color:#d4a843;background:#322e2a}
+.charge-area.releasing{border-color:#c4785c}
+
+.charge-ring{width:80px;height:80px;border-radius:50%;border:3px solid #3a3632;display:flex;align-items:center;justify-content:center;transition:all 0.05s linear;position:relative}
+.charge-ring .core{width:40px;height:40px;border-radius:50%;background:#3a3632;transition:all 0.05s linear}
+.charge-label{font-family:monospace;font-size:0.72rem;color:#9c9488;text-transform:uppercase;letter-spacing:0.05em}
+
+.impact-fx{position:fixed;pointer-events:none;top:0;left:0;width:100%;height:100%;z-index:100}
+
+.profile-info{display:flex;gap:16px;margin-top:8px}
+.metric{display:flex;flex-direction:column;align-items:center;gap:2px}
+.metric-value{font-family:monospace;font-size:1.1rem;color:#d4a843}
+.metric-label{font-family:monospace;font-size:0.62rem;color:#9c9488;text-transform:uppercase}
+
+/* Synthesis section */
+.synth-object{position:relative;width:120px;height:120px;border-radius:50%;cursor:pointer;transition:transform 0.05s linear,box-shadow 0.1s ease-out}
+.synth-object.idle{background:radial-gradient(circle at 40% 35%, #ede4d8 0%, #9c9488 40%, #4a4440 70%, #2c2927 100%);box-shadow:0 8px 32px rgba(0,0,0,0.5),inset 0 -4px 12px rgba(0,0,0,0.3)}
+.synth-object.hovering{transform:scale(1.05);box-shadow:0 12px 40px rgba(212,168,67,0.3),0 8px 32px rgba(0,0,0,0.5),inset 0 -4px 12px rgba(0,0,0,0.3)}
+.synth-object.pressed{transform:scale(0.92);transition:transform 0.04s linear}
+.synth-object.released{transform:scale(1.12);transition:transform 0.15s cubic-bezier(0.34,1.56,0.64,1)}
+
+.synth-light{position:absolute;border-radius:50%;pointer-events:none;opacity:0;transition:opacity 0.15s}
+.synth-light.active{opacity:0.6}
+.particle{position:fixed;pointer-events:none;border-radius:50%;z-index:101}
+</style>
+</head>
+<body>
+
+<!-- GAME-FEEL LAB -->
+<div class="panel" id="gamefeel">
+  <div class="panel-header">Game-Feel Lab — Charge → Release → Impact</div>
+  <div class="panel-body">
+    <div class="profile-tabs">
+      <button class="tab active" data-profile="snappy">SNAPPY</button>
+      <button class="tab" data-profile="heavy">HEAVY</button>
+      <button class="tab" data-profile="mechanical">MECHANICAL</button>
+    </div>
+    <div class="charge-area" id="charge-area">
+      <div class="charge-ring" id="charge-ring"><div class="core" id="charge-core"></div></div>
+      <span class="charge-label" id="charge-label">HOLD TO CHARGE</span>
+    </div>
+    <div class="profile-info" id="profile-info">
+      <div class="metric"><span class="metric-value" id="m-response">—</span><span class="metric-label">Response</span></div>
+      <div class="metric"><span class="metric-value" id="m-weight">—</span><span class="metric-label">Weight</span></div>
+      <div class="metric"><span class="metric-value" id="m-impact">—</span><span class="metric-label">Impact</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CROSS-DISCIPLINE SYNTHESIS -->
+<div class="panel" id="synthesis">
+  <div class="panel-header">Cross-Discipline Synthesis — Interactive Object</div>
+  <div class="panel-body">
+    <div class="synth-object idle" id="synth-obj"></div>
+    <span style="font-family:monospace;font-size:0.7rem;color:#9c9488">FORM + MATERIAL + LIGHT + MOTION + VFX + FEEDBACK</span>
+  </div>
+</div>
+
+<div class="impact-fx" id="fx-layer"></div>
+
+<script>
+// ── Profiles ──
+const PROFILES = {
+  snappy: {
+    label: 'snappy',
+    chargeRate: 0.025, chargeMax: 80, releaseSpeed: 0.06, particleCount: 12,
+    particleSpeed: 8, particleLife: 600, particleColor: '#d4a843',
+    shakeIntensity: 4, shakeFrames: 6, flashColor: 'rgba(255,220,140,0.3)',
+    settleTime: 300
+  },
+  heavy: {
+    label: 'heavy',
+    chargeRate: 0.012, chargeMax: 120, releaseSpeed: 0.025, particleCount: 6,
+    particleSpeed: 3, particleLife: 1200, particleColor: '#c4785c',
+    shakeIntensity: 12, shakeFrames: 16, flashColor: 'rgba(180,100,60,0.4)',
+    settleTime: 800
+  },
+  mechanical: {
+    label: 'mechanical',
+    chargeRate: 0.04, chargeMax: 60, releaseSpeed: 0.08, particleCount: 3,
+    particleSpeed: 10, particleLife: 200, particleColor: '#7a9e8f',
+    shakeIntensity: 1, shakeFrames: 2, flashColor: 'rgba(100,200,150,0.15)',
+    settleTime: 100
+  }
+};
+
+let currentProfile = 'snappy';
+let chargeValue = 0;
+let isCharging = false;
+let chargeInterval = null;
+
+const chargeArea = document.getElementById('charge-area');
+const chargeRing = document.getElementById('charge-ring');
+const chargeCore = document.getElementById('charge-core');
+const chargeLabel = document.getElementById('charge-label');
+const fxLayer = document.getElementById('fx-layer');
+const synthObj = document.getElementById('synth-obj');
+
+// ── Profile switching ──
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    currentProfile = tab.dataset.profile;
+    updateProfileInfo();
+  });
+});
+
+function updateProfileInfo() {
+  const p = PROFILES[currentProfile];
+  document.getElementById('m-response').textContent = (p.chargeRate * 1000).toFixed(0) + 'ms';
+  document.getElementById('m-weight').textContent = (p.settleTime) + 'ms';
+  document.getElementById('m-impact').textContent = p.particleCount + '⨯' + p.particleSpeed;
+}
+updateProfileInfo();
+
+// ── Charge / Release ──
+function startCharge() {
+  if (isCharging) return;
+  isCharging = true;
+  chargeValue = 0;
+  chargeArea.classList.add('charging');
+  chargeInterval = setInterval(() => {
+    const p = PROFILES[currentProfile];
+    chargeValue = Math.min(chargeValue + p.chargeRate, 1);
+    const scale = 1 + chargeValue * 1.5;
+    chargeRing.style.transform = `scale(${scale})`;
+    chargeRing.style.borderColor = `color-mix(in srgb, #3a3632 ${(1-chargeValue)*100}%, #d4a843 ${chargeValue*100}%)`;
+    chargeCore.style.transform = `scale(${1 - chargeValue * 0.6})`;
+    chargeCore.style.background = `color-mix(in srgb, #3a3632 ${(1-chargeValue)*100}%, #d4a843 ${chargeValue*100}%)`;
+    chargeLabel.textContent = chargeValue >= 0.9 ? 'RELEASE!' : 'CHARGING...';
+  }, 16);
+}
+
+function release() {
+  if (!isCharging) return;
+  clearInterval(chargeInterval);
+  isCharging = false;
+  const p = PROFILES[currentProfile];
+  chargeArea.classList.remove('charging');
+  chargeArea.classList.add('releasing');
+
+  // Impact: flash + screen shake + particles
+  fxLayer.style.background = p.flashColor;
+  setTimeout(() => { fxLayer.style.background = 'transparent'; }, 80);
+
+  // Screen shake
+  const origTransform = document.body.style.transform;
+  for (let i = 0; i < p.shakeFrames; i++) {
+    setTimeout(() => {
+      const dx = (Math.random() - 0.5) * p.shakeIntensity * (1 - i / p.shakeFrames);
+      const dy = (Math.random() - 0.5) * p.shakeIntensity * (1 - i / p.shakeFrames);
+      document.body.style.transform = `translate(${dx}px,${dy}px)`;
+    }, i * 16);
+  }
+  setTimeout(() => { document.body.style.transform = origTransform || ''; }, p.shakeFrames * 16 + 50);
+
+  // Particles
+  const rect = chargeArea.getBoundingClientRect();
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+  for (let i = 0; i < p.particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    const angle = Math.random() * Math.PI * 2;
+    const dist = p.particleSpeed * (30 + Math.random() * 40);
+    const size = 2 + Math.random() * 6;
+    particle.style.cssText = `
+      width:${size}px;height:${size}px;background:${p.particleColor};
+      left:${cx}px;top:${cy}px;opacity:1;
+      transition:all ${p.particleLife}ms cubic-bezier(0,0.5,0.5,1);
+    `;
+    fxLayer.appendChild(particle);
+    requestAnimationFrame(() => {
+      particle.style.transform = `translate(${Math.cos(angle)*dist}px,${Math.sin(angle)*dist - 20}px)`;
+      particle.style.opacity = '0';
+    });
+    setTimeout(() => particle.remove(), p.particleLife + 50);
+  }
+
+  // Reset ring
+  setTimeout(() => {
+    chargeRing.style.transform = 'scale(1)';
+    chargeRing.style.borderColor = '#3a3632';
+    chargeCore.style.transform = 'scale(1)';
+    chargeCore.style.background = '#3a3632';
+    chargeLabel.textContent = 'HOLD TO CHARGE';
+    chargeArea.classList.remove('releasing');
+  }, p.settleTime);
+}
+
+chargeArea.addEventListener('mousedown', startCharge);
+chargeArea.addEventListener('mouseup', release);
+chargeArea.addEventListener('mouseleave', release);
+chargeArea.addEventListener('touchstart', e => { e.preventDefault(); startCharge(); });
+chargeArea.addEventListener('touchend', e => { e.preventDefault(); release(); });
+
+// ── Synthesis Object ──
+let synthPressed = false;
+synthObj.addEventListener('mousedown', () => {
+  synthPressed = true;
+  synthObj.classList.remove('hovering');
+  synthObj.classList.add('pressed');
+  // Spawn subtle impact particles
+  const rect = synthObj.getBoundingClientRect();
+  for (let i = 0; i < 8; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const angle = Math.random() * Math.PI * 2;
+    p.style.cssText = `width:3px;height:3px;background:#d4a843;left:${rect.left+60}px;top:${rect.top+60}px;opacity:0.8;transition:all 400ms ease-out;`;
+    fxLayer.appendChild(p);
+    requestAnimationFrame(() => { p.style.transform = `translate(${Math.cos(angle)*40}px,${Math.sin(angle)*40}px)`; p.style.opacity='0'; });
+    setTimeout(() => p.remove(), 450);
+  }
+});
+synthObj.addEventListener('mouseup', () => {
+  synthPressed = false;
+  synthObj.classList.add('released');
+  synthObj.classList.remove('pressed');
+  setTimeout(() => { synthObj.classList.remove('released'); synthObj.classList.add('idle'); }, 200);
+});
+synthObj.addEventListener('mouseenter', () => { if (!synthPressed) synthObj.classList.add('hovering'); });
+synthObj.addEventListener('mouseleave', () => { synthObj.classList.remove('hovering'); });
+</script>
+</body>
+</html>

@@ -99,6 +99,40 @@ def test_vault_rejects_unknown_license() -> bool:
         return ok
 
 
+def test_asset_variant_gate_catches_material_loss() -> bool:
+    """Exercise the real v2 -> runtime Emberveil regression captured during
+    recovery: the candidate lost materials while retaining animation."""
+    baseline = ROOT / "artifacts/flagship/emberveil/emberveil-v2.glb"
+    candidate = ROOT / "artifacts/flagship/runtime/emberveil.glb"
+    if not baseline.exists() or not candidate.exists():
+        print("  asset_variant_gate SKIP no historical variants")
+        return True
+    code, out, err = run([sys.executable, str(ROOT / "scripts/validate/asset_variant_diff.py"), str(baseline), str(candidate), "--strict"])
+    ok = code == 1 and "materials_count_decreased" in out
+    print("  asset_variant_gate", "ok" if ok else f"FAIL rc={code} {out[-240:]}")
+    return ok
+
+
+def test_perceptual_qa_catches_blank_frame() -> bool:
+    from perceptual_visual_qa import analyze
+    blank = ROOT / "artifacts/flagship/qa/live/frame-01.png"
+    if not blank.exists():
+        print("  perceptual_blank SKIP no historical blank frame")
+        return True
+    result = analyze(blank)
+    ok = "severe_underexposure_or_blank_frame" in result.get("failures", [])
+    print("  perceptual_blank", "ok" if ok else f"FAIL {result}")
+    return ok
+
+
+def test_router_degraded_classification() -> bool:
+    from router_health import classify_registry_failure
+    timeout_ok = classify_registry_failure(TimeoutError("timed out")) == "UPSTREAM_PROVIDER_FAILURE"
+    dns_ok = classify_registry_failure(OSError("DNS resolve failed")) == "DNS_FAILURE"
+    print("  router_degraded_classification", "ok" if timeout_ok and dns_ok else "FAIL")
+    return timeout_ok and dns_ok
+
+
 def test_routing_mutation() -> bool:
     """A routing coverage gap must fail the routing eval."""
     import importlib.util
@@ -119,6 +153,9 @@ def main() -> int:
         ("rollback_guard", test_rollback_guard),
         ("resolver_license_block", test_resolver_blocks_unknown_license_external),
         ("vault_license_guard", test_vault_rejects_unknown_license),
+        ("asset_variant_gate", test_asset_variant_gate_catches_material_loss),
+        ("perceptual_blank", test_perceptual_qa_catches_blank_frame),
+        ("router_degraded_classification", test_router_degraded_classification),
         ("routing_mutation", test_routing_mutation),
     ]
     failures = []

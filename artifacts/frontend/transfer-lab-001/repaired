@@ -1,0 +1,803 @@
+{
+  "schema_version": 2,
+  "kind": "frontend-runtime-evidence",
+  "captured_at": "2026-08-23T04:44:17Z",
+  "page_url": "file:///C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/tools/fixtures/frontend-transfer/heliograph/index.html",
+  "state_matrix": [
+    {
+      "viewport": "desktop",
+      "state": "default",
+      "screenshot": "desktop_default.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "desktop",
+      "state": "focus",
+      "screenshot": "desktop_focus.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "desktop",
+      "state": "dark",
+      "screenshot": "desktop_dark.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "desktop",
+      "state": "reduced_motion",
+      "screenshot": "desktop_reduced_motion.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "tablet",
+      "state": "default",
+      "screenshot": "tablet_default.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "tablet",
+      "state": "focus",
+      "screenshot": "tablet_focus.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "tablet",
+      "state": "dark",
+      "screenshot": "tablet_dark.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "tablet",
+      "state": "reduced_motion",
+      "screenshot": "tablet_reduced_motion.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "default",
+      "screenshot": "mobile_default.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "focus",
+      "screenshot": "mobile_focus.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "dark",
+      "screenshot": "mobile_dark.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "reduced_motion",
+      "screenshot": "mobile_reduced_motion.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    }
+  ],
+  "accessibility": {
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axeAPI",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#8c8478",
+                  "bgColor": "#242220",
+                  "contrastRatio": 4.29,
+                  "fontSize": "8.9pt (11.9px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1",
+                  "shadowColor": null,
+                  "colorParse": null
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"obs-row\" role=\"listitem\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"Observation window AR 13354, confidence 87%\">",
+                    "target": [
+                      ".obs-row[role=\"listitem\"]:nth-child(1)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.9pt (11.9px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"duration\">90 min</span>",
+            "target": [
+              ".obs-row[role=\"listitem\"]:nth-child(1) > .obs-main > .col-time > .duration"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.9pt (11.9px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#8c8478",
+                  "bgColor": "#242220",
+                  "contrastRatio": 4.29,
+                  "fontSize": "8.7pt (11.56px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1",
+                  "shadowColor": null,
+                  "colorParse": null
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"obs-row\" role=\"listitem\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"Observation window AR 13354, confidence 87%\">",
+                    "target": [
+                      ".obs-row[role=\"listitem\"]:nth-child(1)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.7pt (11.56px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span style=\"font-size:0.68rem;display:block;color:var(--text-muted)\">N18° W42°</span>",
+            "target": [
+              ".obs-row[role=\"listitem\"]:nth-child(1) > .obs-main > .col-target > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.7pt (11.56px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#8c8478",
+                  "bgColor": "#242220",
+                  "contrastRatio": 4.29,
+                  "fontSize": "8.9pt (11.9px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1",
+                  "shadowColor": null,
+                  "colorParse": null
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"obs-row\" role=\"listitem\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"Observation window AR 13352, confidence 72%\">",
+                    "target": [
+                      ".obs-row[role=\"listitem\"]:nth-child(2)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.9pt (11.9px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"duration\">90 min</span>",
+            "target": [
+              ".obs-row[role=\"listitem\"]:nth-child(2) > .obs-main > .col-time > .duration"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.9pt (11.9px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#8c8478",
+                  "bgColor": "#242220",
+                  "contrastRatio": 4.29,
+                  "fontSize": "8.7pt (11.56px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1",
+                  "shadowColor": null,
+                  "colorParse": null
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"obs-row\" role=\"listitem\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"Observation window AR 13352, confidence 72%\">",
+                    "target": [
+                      ".obs-row[role=\"listitem\"]:nth-child(2)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.7pt (11.56px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span style=\"font-size:0.68rem;display:block;color:var(--text-muted)\">S12° E08°</span>",
+            "target": [
+              ".obs-row[role=\"listitem\"]:nth-child(2) > .obs-main > .col-target > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.7pt (11.56px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#8c8478",
+                  "bgColor": "#242220",
+                  "contrastRatio": 4.29,
+                  "fontSize": "8.9pt (11.9px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1",
+                  "shadowColor": null,
+                  "colorParse": null
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"obs-row\" role=\"listitem\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"Observation window Filament N45, confidence 91%\">",
+                    "target": [
+                      ".obs-row[role=\"listitem\"]:nth-child(3)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.9pt (11.9px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"duration\">75 min</span>",
+            "target": [
+              ".obs-row[role=\"listitem\"]:nth-child(3) > .obs-main > .col-time > .duration"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.9pt (11.9px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#8c8478",
+                  "bgColor": "#242220",
+                  "contrastRatio": 4.29,
+                  "fontSize": "8.7pt (11.56px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1",
+                  "shadowColor": null,
+                  "colorParse": null
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"obs-row\" role=\"listitem\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"Observation window Filament N45, confidence 91%\">",
+                    "target": [
+                      ".obs-row[role=\"listitem\"]:nth-child(3)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.7pt (11.56px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span style=\"font-size:0.68rem;display:block;color:var(--text-muted)\">N45° W60°</span>",
+            "target": [
+              ".obs-row[role=\"listitem\"]:nth-child(3) > .obs-main > .col-target > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.7pt (11.56px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#8c8478",
+                  "bgColor": "#242220",
+                  "contrastRatio": 4.29,
+                  "fontSize": "8.9pt (11.9px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1",
+                  "shadowColor": null,
+                  "colorParse": null
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"obs-row\" role=\"listitem\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"Observation window CH 892, confidence 58%\">",
+                    "target": [
+                      ".obs-row[role=\"listitem\"]:nth-child(4)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.9pt (11.9px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"duration\">90 min</span>",
+            "target": [
+              ".obs-row[role=\"listitem\"]:nth-child(4) > .obs-main > .col-time > .duration"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.9pt (11.9px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#8c8478",
+                  "bgColor": "#242220",
+                  "contrastRatio": 4.29,
+                  "fontSize": "8.7pt (11.56px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1",
+                  "shadowColor": null,
+                  "colorParse": null
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"obs-row\" role=\"listitem\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"Observation window CH 892, confidence 58%\">",
+                    "target": [
+                      ".obs-row[role=\"listitem\"]:nth-child(4)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.7pt (11.56px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span style=\"font-size:0.68rem;display:block;color:var(--text-muted)\">S30° W25°</span>",
+            "target": [
+              ".obs-row[role=\"listitem\"]:nth-child(4) > .obs-main > .col-target > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.7pt (11.56px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#8c8478",
+                  "bgColor": "#242220",
+                  "contrastRatio": 4.29,
+                  "fontSize": "8.9pt (11.9px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1",
+                  "shadowColor": null,
+                  "colorParse": null
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"obs-row\" role=\"listitem\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"Observation window AR 13354, confidence 78%\">",
+                    "target": [
+                      ".obs-row[role=\"listitem\"]:nth-child(5)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.9pt (11.9px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"duration\">90 min</span>",
+            "target": [
+              ".obs-row[role=\"listitem\"]:nth-child(5) > .obs-main > .col-time > .duration"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.9pt (11.9px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#8c8478",
+                  "bgColor": "#242220",
+                  "contrastRatio": 4.29,
+                  "fontSize": "8.7pt (11.56px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1",
+                  "shadowColor": null,
+                  "colorParse": null
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"obs-row\" role=\"listitem\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"Observation window AR 13354, confidence 78%\">",
+                    "target": [
+                      ".obs-row[role=\"listitem\"]:nth-child(5)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.7pt (11.56px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span style=\"font-size:0.68rem;display:block;color:var(--text-muted)\">N18° W50°</span>",
+            "target": [
+              ".obs-row[role=\"listitem\"]:nth-child(5) > .obs-main > .col-target > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.7pt (11.56px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#8c8478",
+                  "bgColor": "#242220",
+                  "contrastRatio": 4.29,
+                  "fontSize": "8.9pt (11.9px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1",
+                  "shadowColor": null,
+                  "colorParse": null
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"obs-row\" role=\"listitem\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"Observation window Limb N85, confidence 34%\">",
+                    "target": [
+                      ".obs-row[role=\"listitem\"]:nth-child(6)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.9pt (11.9px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"duration\">45 min</span>",
+            "target": [
+              ".obs-row[role=\"listitem\"]:nth-child(6) > .obs-main > .col-time > .duration"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.9pt (11.9px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#8c8478",
+                  "bgColor": "#242220",
+                  "contrastRatio": 4.29,
+                  "fontSize": "8.7pt (11.56px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1",
+                  "shadowColor": null,
+                  "colorParse": null
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"obs-row\" role=\"listitem\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"Observation window Limb N85, confidence 34%\">",
+                    "target": [
+                      ".obs-row[role=\"listitem\"]:nth-child(6)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.7pt (11.56px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span style=\"font-size:0.68rem;display:block;color:var(--text-muted)\">N85° E90°</span>",
+            "target": [
+              ".obs-row[role=\"listitem\"]:nth-child(6) > .obs-main > .col-target > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.29 (foreground color: #8c8478, background color: #242220, font size: 8.7pt (11.56px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "passes_count": 33,
+    "timestamp": "2026-08-23T04:44:26Z"
+  },
+  "console_errors": [],
+  "network_failures": [],
+  "keyboard_traversal": {
+    "initial_focus": "DIV",
+    "tab_sequence_available": true,
+    "note": "basic focus check only; full keyboard audit requires manual verification"
+  },
+  "lighthouse": [],
+  "blockers": [],
+  "environment_fingerprints": [
+    {
+      "os": "Windows",
+      "os_release": "11",
+      "browser": "chromium",
+      "browser_version": "151.0.7922.170",
+      "playwright_version": "1.62.1",
+      "headless": true,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "device_scale_factor": 1,
+      "locale": "en-US",
+      "timezone": "America/Los_Angeles",
+      "color_scheme": "light",
+      "reduced_motion": "no-preference"
+    },
+    {
+      "os": "Windows",
+      "os_release": "11",
+      "browser": "chromium",
+      "browser_version": "151.0.7922.170",
+      "playwright_version": "1.62.1",
+      "headless": true,
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "device_scale_factor": 1,
+      "locale": "en-US",
+      "timezone": "America/Los_Angeles",
+      "color_scheme": "light",
+      "reduced_motion": "no-preference"
+    },
+    {
+      "os": "Windows",
+      "os_release": "11",
+      "browser": "chromium",
+      "browser_version": "151.0.7922.170",
+      "playwright_version": "1.62.1",
+      "headless": true,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "device_scale_factor": 1,
+      "locale": "en-US",
+      "timezone": "America/Los_Angeles",
+      "color_scheme": "light",
+      "reduced_motion": "no-preference"
+    }
+  ],
+  "summary": {
+    "states_tested": 12,
+    "viewports_tested": 3,
+    "screenshots_captured": 12,
+    "console_errors": 0,
+    "network_failures": 0,
+    "axe_violations": 1,
+    "lighthouse_runs": 0,
+    "keyboard_baseline": true
+  }
+}

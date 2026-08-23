@@ -114,17 +114,34 @@ def op_scene_create(spec: dict) -> dict:
             cam.rotation_euler = direction.to_track_quat("-Z", "Y").to_euler()
 
     for light_spec in spec.get("lights", []):
-        if light_spec.get("type") == "sun":
-            bpy.ops.object.light_add(type="SUN", location=(light_spec.get("x", 5), light_spec.get("y", -5), light_spec.get("z", 10)))
-        else:
-            bpy.ops.object.light_add(type="POINT", location=(light_spec.get("x", 3), light_spec.get("y", -3), light_spec.get("z", 6)))
+        light_type = light_spec.get("type", "point").upper()
+        if light_type not in {"SUN", "POINT", "AREA", "SPOT"}:
+            raise ValueError(f"unsupported_light_type {light_type}")
+        bpy.ops.object.light_add(type=light_type, location=(light_spec.get("x", 3), light_spec.get("y", -3), light_spec.get("z", 6)))
         light = bpy.context.active_object
         light.name = light_spec.get("name", "Light")
-        light.data.energy = light_spec.get("energy", 1000.0 if light.type == "POINT" else 3.0)
-        if light.type == "SUN":
-            light.data.energy = light_spec.get("energy", 3.0)
+        light.data.energy = light_spec.get("energy", 1000.0 if light_type != "SUN" else 3.0)
+        color = light_spec.get("color")
+        if color:
+            light.data.color = tuple(color[:3])
+        if light_type == "AREA":
+            light.data.shape = light_spec.get("shape", "DISK")
+            light.data.size = float(light_spec.get("size", 3.0))
+        if light_spec.get("look_at"):
+            direction = Vector(light_spec["look_at"]) - light.location
+            light.rotation_euler = direction.to_track_quat("-Z", "Y").to_euler()
 
     return op_scene_inspect({"names": None})
+
+
+def op_scene_parent(spec: dict) -> dict:
+    """Parent a list of objects to a root (for coherent group transforms)."""
+    root = _obj(spec["root"])
+    for child_name in spec.get("children", []):
+        child = _obj(child_name)
+        child.parent = root
+    return _out({"root": root.name, "children": spec.get("children", []),
+                 "parented": len(spec.get("children", []))}, True)
 
 
 def op_scene_inspect(spec: dict) -> dict:
@@ -147,6 +164,48 @@ def op_scene_inspect(spec: dict) -> dict:
         "lights": [o.name for o in bpy.data.objects if o.type == "LIGHT"],
     }
     return _out(result, True)
+
+
+def op_lighting_construct(spec: dict) -> dict:
+    """Construct a motivated, inspectable lighting rig in one structured op."""
+    scene = bpy.context.scene
+    for obj in list(bpy.data.objects):
+        if obj.type == "LIGHT":
+            bpy.data.objects.remove(obj, do_unlink=True)
+    world = scene.world or bpy.data.worlds.new("World")
+    scene.world = world
+    world.use_nodes = True
+    background = world.node_tree.nodes.get("Background")
+    if background:
+        background.inputs[1].default_value = float(spec.get("world_strength", 0.12))
+    if "exposure" in spec:
+        scene.view_settings.exposure = float(spec["exposure"])
+    created = []
+    for light_spec in spec.get("lights", []):
+        light_type = light_spec.get("type", "POINT").upper()
+        if light_type not in {"SUN", "POINT", "AREA", "SPOT"}:
+            raise ValueError(f"unsupported_light_type {light_type}")
+        loc = light_spec.get("location", [light_spec.get("x", 0), light_spec.get("y", -2), light_spec.get("z", 3)])
+        bpy.ops.object.light_add(type=light_type, location=tuple(loc))
+        light = bpy.context.active_object
+        light.name = light_spec.get("name", f"Light_{len(created)}")
+        light.data.energy = float(light_spec.get("energy", 500.0 if light_type != "SUN" else 2.0))
+        if light_spec.get("color"):
+            light.data.color = tuple(light_spec["color"][:3])
+        if light_type == "AREA":
+            light.data.shape = light_spec.get("shape", "DISK")
+            light.data.size = float(light_spec.get("size", 3.0))
+        if light_spec.get("radius") is not None and hasattr(light.data, "shadow_soft_size"):
+            light.data.shadow_soft_size = float(light_spec["radius"])
+        if light_spec.get("look_at"):
+            direction = Vector(light_spec["look_at"]) - light.location
+            light.rotation_euler = direction.to_track_quat("-Z", "Y").to_euler()
+        created.append({"name": light.name, "type": light_type, "energy": light.data.energy,
+                        "color": [round(v, 4) for v in light.data.color],
+                        "location": [round(v, 4) for v in light.location]})
+    return _out({"lights": created, "world_strength": background.inputs[1].default_value if background else None,
+                 "exposure": scene.view_settings.exposure, "motivation": {
+                     "key": "EmberCoreLight", "fill": "WarmBounce", "rim": "CoolSeparation"}}, True)
 
 
 # ---------------------------------------------------------------- mesh ops
@@ -194,6 +253,28 @@ def op_mesh_analyze(spec: dict) -> dict:
         })
         analyzed.append({"name": name, **stats})
     return _out({"meshes": analyzed}, True)
+
+
+def op_mesh_surface_finish(spec: dict) -> dict:
+    """Finish authored meshes for production readability: smooth normals and
+    optional controlled beveling, never a replacement for topology review."""
+    name = spec["name"]
+    obj = _obj(name)
+    if obj.type != "MESH":
+        raise ValueError(f"not_a_mesh {name}")
+    if spec.get("smooth", True):
+        for polygon in obj.data.polygons:
+            polygon.use_smooth = True
+    bevel_width = float(spec.get("bevel_width", 0.0))
+    if bevel_width > 0:
+        modifier = obj.modifiers.new(name="11vt_surface_bevel", type="BEVEL")
+        modifier.width = bevel_width
+        modifier.segments = int(spec.get("bevel_segments", 2))
+        modifier.limit_method = "ANGLE"
+        bpy.context.view_layer.objects.active = obj
+        bpy.ops.object.modifier_apply(modifier=modifier.name)
+    return _out({"name": name, "smooth_normals": bool(spec.get("smooth", True)),
+                 "bevel_width": bevel_width, "bevel_segments": int(spec.get("bevel_segments", 2))}, True)
 
 
 def op_mesh_optimize(spec: dict) -> dict:
@@ -267,7 +348,126 @@ def op_material_inspect(spec: dict) -> dict:
     return _out({"materials": materials, "texture_dependency_count": sum(len(m["textures"]) for m in materials)}, True)
 
 
+def op_material_noise_emission(spec: dict) -> dict:
+    """Add a Noise Texture driving Emission Strength variation on an existing
+    material, for flicker/pulse effects. Creates: Noise Texture -> Math(add)
+    -> Emission Strength. The noise output [0,1] is scaled to [strength_min, strength_max]."""
+    mat_name = spec["name"]
+    if mat_name not in bpy.data.materials:
+        raise ValueError(f"material_not_found {mat_name}")
+    mat = bpy.data.materials[mat_name]
+    mat.use_nodes = True
+    nodes = mat.node_tree.nodes
+    links = mat.node_tree.links
+    bsdf = nodes.get("Principled BSDF")
+    if not bsdf:
+        raise ValueError(f"no_principled_bsdf on {mat_name}")
+    scale = float(spec.get("scale", 5.0))
+    detail = float(spec.get("detail", 3.0))
+    s_min = float(spec.get("strength_min", 15.0))
+    s_max = float(spec.get("strength_max", 25.0))
+    # Noise Texture
+    noise = nodes.new("ShaderNodeTexNoise")
+    noise.name = "11vt_flicker_noise"
+    noise.location = (-600, -200)
+    noise.inputs["Scale"].default_value = scale
+    noise.inputs["Detail"].default_value = detail
+    # Map Range: map [0,1] -> [s_min, s_max]
+    mr = nodes.new("ShaderNodeMapRange")
+    mr.name = "11vt_flicker_maprange"
+    mr.location = (-350, -200)
+    mr.inputs["From Min"].default_value = 0.0
+    mr.inputs["From Max"].default_value = 1.0
+    mr.inputs["To Min"].default_value = s_min
+    mr.inputs["To Max"].default_value = s_max
+    # Connect: Noise.Fac -> MapRange.Value -> Emission Strength
+    links.new(noise.outputs["Fac"], mr.inputs["Value"])
+    links.new(mr.outputs["Result"], bsdf.inputs["Emission Strength"])
+    assigned_to = []
+    for obj_name in spec.get("assign_to", []):
+        obj = _obj(obj_name)
+        if obj.data.materials:
+            obj.data.materials[0] = mat
+        else:
+            obj.data.materials.append(mat)
+        assigned_to.append(obj_name)
+    return _out({"material": mat_name, "noise_scale": scale, "noise_detail": detail,
+                 "strength_range": [s_min, s_max], "assigned_to": assigned_to,
+                 "node_count": len(nodes)}, True)
+
+
+def op_material_surface_variation(spec: dict) -> dict:
+    """Build reusable procedural material variation: noise -> colour ramp,
+    roughness range, and micro-normal bump. This is deliberately art-directed
+    rather than an unbounded texture generator."""
+    mat_name = spec["name"]
+    mat = bpy.data.materials.get(mat_name)
+    if not mat:
+        raise ValueError(f"material_not_found {mat_name}")
+    mat.use_nodes = True
+    nodes, links = mat.node_tree.nodes, mat.node_tree.links
+    bsdf = nodes.get("Principled BSDF")
+    if not bsdf:
+        raise ValueError(f"no_principled_bsdf_on {mat_name}")
+    noise = nodes.new("ShaderNodeTexNoise")
+    noise.name = "11vt_surface_noise"
+    noise.inputs["Scale"].default_value = float(spec.get("scale", 5.0))
+    noise.inputs["Detail"].default_value = float(spec.get("detail", 3.0))
+    ramp = nodes.new("ShaderNodeValToRGB")
+    ramp.name = "11vt_surface_color_ramp"
+    dark = spec.get("dark_color", [0.04, 0.025, 0.015])
+    light = spec.get("light_color", [0.35, 0.18, 0.05])
+    ramp.color_ramp.elements[0].color = (*dark[:3], 1.0)
+    ramp.color_ramp.elements[1].color = (*light[:3], 1.0)
+    bump = nodes.new("ShaderNodeBump")
+    bump.name = "11vt_micro_normal"
+    bump.inputs["Strength"].default_value = float(spec.get("bump_strength", 0.12))
+    bump.inputs["Distance"].default_value = 0.08
+    rough = nodes.new("ShaderNodeMapRange")
+    rough.name = "11vt_roughness_variation"
+    rough.inputs["From Min"].default_value = 0.0
+    rough.inputs["From Max"].default_value = 1.0
+    rough.inputs["To Min"].default_value = float(spec.get("roughness_min", 0.22))
+    rough.inputs["To Max"].default_value = float(spec.get("roughness_max", 0.48))
+    links.new(noise.outputs["Fac"], ramp.inputs["Fac"])
+    links.new(ramp.outputs["Color"], bsdf.inputs["Base Color"])
+    links.new(noise.outputs["Fac"], bump.inputs["Height"])
+    links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+    links.new(noise.outputs["Fac"], rough.inputs["Value"])
+    links.new(rough.outputs["Result"], bsdf.inputs["Roughness"])
+    return _out({"material": mat_name, "variation": "noise_color_roughness_bump",
+                 "scale": noise.inputs["Scale"].default_value, "detail": noise.inputs["Detail"].default_value,
+                 "node_count": len(nodes), "assigned_to": spec.get("assign_to", [])}, True)
+
+
 # ---------------------------------------------------------------- rig ops
+
+def op_rig_mechanical(spec: dict) -> dict:
+    """Create a morphology-appropriate control armature for articulated
+    mechanical/organic parts. It is an explicit rig, not a humanoid preset."""
+    name = spec["name"]
+    bpy.ops.object.armature_add( location=(0, 0, 0) )
+    armature = bpy.context.active_object
+    armature.name = name
+    armature.data.name = f"{name}_data"
+    bpy.ops.object.mode_set(mode="EDIT")
+    for bone in list(armature.data.edit_bones):
+        armature.data.edit_bones.remove(bone)
+    created = {}
+    for item in spec.get("bones", []):
+        bone = armature.data.edit_bones.new(item["name"])
+        bone.head = tuple(item.get("head", [0, 0, 0]))
+        bone.tail = tuple(item.get("tail", [0, 0, 1]))
+        created[bone.name] = bone
+    for item in spec.get("bones", []):
+        parent = item.get("parent")
+        if parent and parent in created:
+            created[item["name"]].parent = created[parent]
+    bpy.ops.object.mode_set(mode="OBJECT")
+    return _out({"armature": name, "bone_count": len(created),
+                 "bones": [{"name": item["name"], "parent": item.get("parent")} for item in spec.get("bones", [])],
+                 "purpose": "Emberveil mechanical vessel controls"}, True)
+
 
 def op_rig_inspect(spec: dict) -> dict:
     armature = None
@@ -477,6 +677,239 @@ def op_animation_loop_check(spec: dict) -> dict:
     return _out(loop, True)
 
 
+# ------------------------------------------------------------- production ops
+
+def op_mesh_lathe(spec: dict) -> dict:
+    """Lathe a 2D profile (list of [x, y], y up) around the Z axis into a mesh.
+    Reusable for bells, vases, capsules, rims, bases."""
+    name = spec["name"]
+    profile = spec["profile"]
+    if len(profile) < 2:
+        raise ValueError("profile needs >= 2 points")
+    segments = int(spec.get("segments", 64))
+    import bmesh
+    mesh = bpy.data.meshes.new(name)
+    bm = bmesh.new()
+    verts = []
+    for i in range(segments):
+        theta = 2 * math.pi * i / segments
+        for (x, y) in profile:
+            verts.append(bm.verts.new((x * math.cos(theta), x * math.sin(theta), y)))
+    n = len(profile)
+    for i in range(segments):
+        i2 = (i + 1) % segments
+        for j in range(n - 1):
+            a, b = i * n + j, i * n + j + 1
+            c, d = i2 * n + j + 1, i2 * n + j
+            bm.faces.new((verts[a], verts[b], verts[c], verts[d]))
+    bm.normal_update()
+    bm.to_mesh(mesh)
+    bm.free()
+    obj = bpy.data.objects.new(name, mesh)
+    bpy.context.collection.objects.link(obj)
+    loc = spec.get("location", [0, 0, 0])
+    obj.location = (loc[0], loc[1], loc[2])
+    return _out({"name": name, "vertices": len(mesh.vertices), "faces": len(mesh.polygons),
+                 "profile_points": len(profile), "segments": segments}, True)
+
+
+def op_mesh_radial_array(spec: dict) -> dict:
+    """Duplicate an object radially around the Z axis (position + orientation),
+    for filigree, antennae, petals, fins."""
+    name = spec["name"]
+    obj = _obj(name)
+    count = int(spec.get("count", 6))
+    dupes = [name]
+    for i in range(1, count):
+        angle = 2 * math.pi * i / count
+        new_obj = obj.copy()
+        new_obj.data = obj.data.copy()
+        bpy.context.collection.objects.link(new_obj)
+        new_obj.name = f"{name}_{i:02d}"
+        x, y, z = obj.location
+        new_obj.location = (x * math.cos(angle) - y * math.sin(angle),
+                            x * math.sin(angle) + y * math.cos(angle), z)
+        e = list(obj.rotation_euler)
+        e[2] += angle
+        new_obj.rotation_euler = e
+        dupes.append(new_obj.name)
+    return _out({"source": name, "count": count, "objects": dupes}, True)
+
+
+def op_material_subsurface(spec: dict) -> dict:
+    """Principled subsurface/transmission material (glass, skin, wax, ember)."""
+    mat = bpy.data.materials.new(spec["name"])
+    mat.use_nodes = True
+    bsdf = mat.node_tree.nodes["Principled BSDF"]
+    inputs = bsdf.inputs
+    bc = spec.get("base_color", [1, 1, 1])
+    inputs["Base Color"].default_value = (bc[0], bc[1], bc[2], 1.0)
+    if "roughness" in spec:
+        inputs["Roughness"].default_value = float(spec["roughness"])
+    if "transmission" in spec:
+        inputs["Transmission Weight"].default_value = float(spec["transmission"])
+    if "ior" in spec:
+        inputs["IOR"].default_value = float(spec["ior"])
+    if "subsurface" in spec:
+        inputs["Subsurface Weight"].default_value = float(spec["subsurface"])
+    if "subsurface_color" in spec:
+        # Blender 5.x: subsurface color is expressed as per-channel scatter
+        # radius (no separate Subsurface Color input).
+        sc = spec["subsurface_color"]
+        inputs["Subsurface Radius"].default_value = (max(sc[0], 0.001), max(sc[1], 0.001), max(sc[2], 0.001))
+    if "emission" in spec:
+        em = spec["emission"]
+        inputs["Emission Color"].default_value = (em[0], em[1], em[2], 1.0)
+        inputs["Emission Strength"].default_value = float(spec.get("emission_strength", 1.0))
+    if "clearcoat" in spec:
+        inputs["Coat Weight"].default_value = float(spec["clearcoat"])
+    assigned_to = []
+    for obj_name in spec.get("assign_to", []):
+        obj = _obj(obj_name)
+        if obj.data.materials:
+            obj.data.materials[0] = mat
+        else:
+            obj.data.materials.append(mat)
+        assigned_to.append(obj_name)
+    return _out({"material": mat.name, "node_count": len(mat.node_tree.nodes),
+                 "assigned_to": assigned_to}, True)
+
+
+def op_animation_pulse(spec: dict) -> dict:
+    """Purposeful breathing/heat pulse on a component, loop-safe."""
+    name = spec["name"]
+    obj = _obj(name)
+    start, end = int(spec.get("frame_start", 1)), int(spec.get("frame_end", 96))
+    amplitude, cycles = float(spec.get("amplitude", 0.08)), int(spec.get("cycles", 2))
+    base = list(obj.scale)
+    if obj.animation_data is None:
+        obj.animation_data_create()
+    action = bpy.data.actions.new(f"11vt_pulse_{name}")
+    obj.animation_data.action = action
+    for f in range(start, end + 1):
+        t = (f - start) / max(end - start, 1)
+        s = 1.0 + amplitude * (0.5 + 0.5 * math.sin(2 * math.pi * cycles * t))
+        bpy.context.scene.frame_set(f)
+        obj.scale = tuple(v * s for v in base)
+        obj.keyframe_insert(data_path="scale", frame=f)
+    return _out({"object": name, "action": action.name, "frames": [start, end],
+                 "amplitude": amplitude, "cycles": cycles, "purpose": "contained-fire breathing pulse"}, True)
+
+
+def op_animation_rotate(spec: dict) -> dict:
+    """Purposeful secondary rotation for an articulated ring/filigree part."""
+    name = spec["name"]
+    obj = _obj(name)
+    start, end = int(spec.get("frame_start", 1)), int(spec.get("frame_end", 96))
+    turns = float(spec.get("turns", 0.25))
+    axis = spec.get("axis", "Z").upper()
+    if obj.animation_data is None:
+        obj.animation_data_create()
+    action = bpy.data.actions.new(f"11vt_rotate_{name}")
+    obj.animation_data.action = action
+    base = list(obj.rotation_euler)
+    idx = {"X": 0, "Y": 1, "Z": 2}.get(axis, 2)
+    for f in range(start, end + 1):
+        t = (f - start) / max(end - start, 1)
+        bpy.context.scene.frame_set(f)
+        rot = list(base)
+        rot[idx] += 2 * math.pi * turns * t
+        obj.rotation_euler = rot
+        obj.keyframe_insert(data_path="rotation_euler", frame=f)
+    return _out({"object": name, "action": action.name, "frames": [start, end],
+                 "turns": turns, "axis": axis, "purpose": "secondary mechanical drift"}, True)
+
+
+def op_animation_float(spec: dict) -> dict:
+    """Weightless floating bob + gentle sway (loop-safe: integer cycles)."""
+    name = spec["name"]
+    obj = _obj(name)
+    start = int(spec.get("frame_start", 1))
+    end = int(spec.get("frame_end", 96))
+    amplitude = float(spec.get("amplitude", 0.15))
+    cycles = int(spec.get("cycles", 2))
+    sway = float(spec.get("sway_degrees", 2.0))
+    base_z = obj.location.z
+    base_rot = list(obj.rotation_euler)
+    if obj.animation_data is None:
+        obj.animation_data_create()
+    action = bpy.data.actions.new(f"11vt_float_{name}")
+    obj.animation_data.action = action
+    for f in range(start, end + 1):
+        t = (f - start) / max(end - start, 1)
+        bpy.context.scene.frame_set(f)
+        obj.location.z = base_z + amplitude * math.sin(2 * math.pi * cycles * t)
+        obj.keyframe_insert(data_path="location", frame=f)
+        obj.rotation_euler = (base_rot[0], base_rot[1],
+                              base_rot[2] + math.radians(sway) * math.sin(2 * math.pi * cycles * t))
+        obj.keyframe_insert(data_path="rotation_euler", frame=f)
+    scene = bpy.context.scene
+    scene.frame_start = start
+    scene.frame_end = end
+    return _out({"object": name, "action": action.name, "frames": [start, end],
+                 "amplitude": amplitude, "cycles": cycles, "loop_safe": True}, True)
+
+
+def op_camera_path(spec: dict) -> dict:
+    """Animated dolly camera along an arc — for cinematic presentation moves."""
+    name = spec.get("name", "CinematicCam")
+    start = int(spec.get("frame_start", 1))
+    end = int(spec.get("frame_end", 120))
+    radius = float(spec.get("radius", 8.0))
+    height = float(spec.get("height", 2.2))
+    target = Vector(spec.get("target", [0, 0, 0.8]))
+    sweep_deg = float(spec.get("sweep_degrees", 70.0))
+    start_angle_deg = float(spec.get("start_angle", -35.0))
+    lens = float(spec.get("lens_mm", 50.0))
+    bpy.ops.object.camera_add(location=(target.x + radius, target.y, target.z + height))
+    cam = bpy.context.active_object
+    cam.name = name
+    cam.data.lens = lens
+    bpy.context.scene.camera = cam
+    if cam.animation_data is None:
+        cam.animation_data_create()
+    action = bpy.data.actions.new(f"11vt_campath_{name}")
+    cam.animation_data.action = action
+    for f in range(start, end + 1):
+        t = (f - start) / max(end - start, 1)
+        angle = math.radians(start_angle_deg + sweep_deg * t)
+        cam.location = (target.x + radius * math.cos(angle),
+                        target.y + radius * math.sin(angle), target.z + height)
+        direction = target - cam.location
+        cam.rotation_euler = direction.to_track_quat("-Z", "Y").to_euler()
+        cam.keyframe_insert(data_path="location", frame=f)
+        cam.keyframe_insert(data_path="rotation_euler", frame=f)
+    scene = bpy.context.scene
+    scene.frame_start = start
+    scene.frame_end = end
+    return _out({"camera": name, "frames": [start, end], "radius": radius,
+                 "sweep_degrees": sweep_deg, "lens_mm": lens}, True)
+
+
+def op_render_sequence(spec: dict) -> dict:
+    """Render every frame in [start, end] to a PNG sequence (cinematic/VFX
+    evidence source; host-side ffmpeg assembles the video)."""
+    scene = bpy.context.scene
+    start = int(spec.get("frame_start", scene.frame_start))
+    end = int(spec.get("frame_end", scene.frame_end))
+    out_dir = Path(spec["out_dir"])
+    out_dir.mkdir(parents=True, exist_ok=True)
+    scene.render.resolution_x, scene.render.resolution_y = spec.get("resolution", [640, 360])
+    scene.render.engine = spec.get("engine", "CYCLES")
+    if scene.render.engine == "CYCLES":
+        scene.cycles.samples = int(spec.get("samples", 24))
+        scene.cycles.use_denoising = bool(spec.get("denoising", False))
+    scene.render.image_settings.file_format = "PNG"
+    rendered = []
+    for f in range(start, end + 1):
+        scene.frame_set(f)
+        png = out_dir / f"seq-{f:04d}.png"
+        scene.render.filepath = str(png)
+        bpy.ops.render.render(write_still=True)
+        rendered.append(str(png))
+    return _out({"frames": len(rendered), "first": str(rendered[0]), "last": str(rendered[-1])}, True)
+
+
 # ------------------------------------------------------------- camera ops
 
 def op_camera_setup(spec: dict) -> dict:
@@ -496,11 +929,13 @@ def op_camera_setup(spec: dict) -> dict:
 
 # ------------------------------------------------------------ render ops
 
-def _render_frame(scene, filepath: str, resolution, engine: str, samples: int) -> None:
+def _render_frame(scene, filepath: str, resolution, engine: str, samples: int,
+                   denoising: bool = False) -> None:
     scene.render.resolution_x, scene.render.resolution_y = resolution
     scene.render.engine = engine
     if engine == "CYCLES":
         scene.cycles.samples = samples
+        scene.cycles.use_denoising = denoising
     scene.render.image_settings.file_format = "PNG"
     scene.render.filepath = str(filepath)
     bpy.ops.render.render(write_still=True)
@@ -513,7 +948,8 @@ def op_render_preview(spec: dict) -> dict:
     frame = int(spec.get("frame", scene.frame_current))
     scene.frame_set(frame)
     png = out_dir / f"preview-frame-{frame:04d}.png"
-    _render_frame(scene, png, spec.get("resolution", [640, 360]), spec.get("engine", "CYCLES"), int(spec.get("samples", 32)))
+    _render_frame(scene, png, spec.get("resolution", [640, 360]), spec.get("engine", "CYCLES"),
+                  int(spec.get("samples", 32)), denoising=bool(spec.get("denoising", False)))
     return _out({"frame": frame, "render": str(png),
                  "resolution": [scene.render.resolution_x, scene.render.resolution_y]}, True)
 
@@ -542,7 +978,8 @@ def op_render_turntable(spec: dict) -> dict:
         cam.rotation_euler = direction.to_track_quat("-Z", "Y").to_euler()
         scene.frame_set(0)
         png = out_dir / f"turntable-{i:03d}.png"
-        _render_frame(scene, png, spec.get("resolution", [320, 180]), spec.get("engine", "CYCLES"), int(spec.get("samples", 16)))
+        _render_frame(scene, png, spec.get("resolution", [320, 180]), spec.get("engine", "CYCLES"),
+                      int(spec.get("samples", 16)), denoising=bool(spec.get("denoising", False)))
         rendered.append(str(png))
     return _out({"frames": frames, "rendered": rendered, "radius": radius, "height": height}, True)
 
@@ -579,23 +1016,64 @@ def op_asset_ingest(spec: dict) -> dict:
     return _out({"imported": imported, "object_count": len(imported), "source": str(path)}, True)
 
 
+# ------------------------------------------------------------- pipeline batch + dispatch
+
+def op_pipeline_batch(spec: dict) -> dict:
+    """Run registered structured operations in one persistent Blender process."""
+    results = {}
+    root_out = Path(spec.get("out_dir", ".")).resolve()
+    for index, item in enumerate(spec.get("operations", [])):
+        op_name = item.get("op")
+        params = dict(item.get("params", {}))
+        if op_name in {"render.preview", "render.turntable", "render.sequence", "animation.loop_check"}:
+            params.setdefault("out_dir", str(root_out / f"{index:02d}-{op_name.replace('.', '-') }"))
+        fn = OPS.get(op_name)
+        if not fn:
+            results[item.get("name", f"op-{index}")] = _out({"error": f"unknown_op {op_name}"}, False)
+            continue
+        key = item.get("name", f"{index:02d}-{op_name}")
+        try:
+            result = fn(params)
+            result["op"] = op_name
+        except Exception as exc:
+            result = _out({"op": op_name, "error": f"{type(exc).__name__}: {exc}"}, False)
+        results[key] = result
+    failed = [key for key, result in results.items() if not result.get("ok")]
+    return _out({"results": results, "op_count": len(results), "failed": failed}, not failed)
+
+
 # ------------------------------------------------------------- dispatch
 
 OPS = {
     "scene.create": op_scene_create,
+    "scene.parent": op_scene_parent,
     "scene.inspect": op_scene_inspect,
+    "lighting.construct": op_lighting_construct,
+    "pipeline.batch": op_pipeline_batch,
     "mesh.analyze": op_mesh_analyze,
     "mesh.optimize": op_mesh_optimize,
+    "mesh.surface_finish": op_mesh_surface_finish,
+    "mesh.lathe": op_mesh_lathe,
+    "mesh.radial_array": op_mesh_radial_array,
     "material.construct": op_material_construct,
+    "material.subsurface": op_material_subsurface,
+    "material.surface_variation": op_material_surface_variation,
     "material.inspect": op_material_inspect,
+    "material.noise_emission": op_material_noise_emission,
+    "rig.mechanical": op_rig_mechanical,
     "rig.inspect": op_rig_inspect,
     "animation.create_loop": op_animation_create_loop,
     "animation.create_translation": op_animation_create_translation,
+    "animation.float": op_animation_float,
+    "animation.pulse": op_animation_pulse,
+    "animation.rotate": op_animation_rotate,
     "animation.inspect": op_animation_inspect,
     "animation.loop_check": op_animation_loop_check,
     "camera.setup": op_camera_setup,
+    "camera.path": op_camera_path,
     "render.preview": op_render_preview,
     "render.turntable": op_render_turntable,
+    "render.sequence": op_render_sequence,
     "asset.export_glb": op_asset_export_glb,
     "asset.ingest": op_asset_ingest,
 }
@@ -611,6 +1089,9 @@ def main(argv: list[str]) -> int:
     # session chaining: load a prior .blend when provided, save when requested
     load_blend = params.get("load_blend")
     if load_blend and Path(load_blend).exists():
+        # NOTE: open_mainfile in Blender background mode may not fully restore
+        # mesh objects. For reliable session chaining, batch multiple ops in a
+        # single Blender invocation (see v2-batch-upgrade.py pattern).
         bpy.ops.wm.open_mainfile(filepath=load_blend)
     op_name = spec.get("op")
     try:

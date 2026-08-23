@@ -64,6 +64,86 @@
         "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\asset-vault\\previews\\11vt-a0a5f57f33529c72-thumb.png",
         "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\asset-vault\\previews\\11vt-a0a5f57f33529c72-thumb.png"
       ]
+    },
+    "11vt-3e60ea663ecc6cac": {
+      "id": "11vt-3e60ea663ecc6cac",
+      "sha256": "3e60ea663ecc6cac5dd7e87d386a10327a5ee10427801ef9317a9b60aaaf564b",
+      "path_original": "artifacts\\flagship\\emberveil\\emberveil.glb",
+      "blob": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\asset-vault\\blobs\\11vt-3e60ea663ecc6cac.glb",
+      "tags": [
+        "hero glass bell ember brass filigree animated"
+      ],
+      "source": "procedural",
+      "creator": "11vt-blender-ops",
+      "license": "generated-local",
+      "acquired": "2026-08-18T22:49:52",
+      "master_id": null,
+      "derived_from_lineage": [],
+      "derived_assets": [],
+      "kind": "glb-model",
+      "quality_state": "raw",
+      "inspection": {
+        "bytes": 231272,
+        "suffix": ".glb"
+      },
+      "projects": [
+        "emberveil"
+      ],
+      "previews": []
+    },
+    "11vt-9547bdcd730334bb": {
+      "id": "11vt-9547bdcd730334bb",
+      "sha256": "9547bdcd730334bbfac6e3197908625b80a1801fee1d49412a806c0b3fa172d9",
+      "path_original": "artifacts\\flagship\\emberveil\\emberveil-cinematic.mp4",
+      "blob": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\asset-vault\\blobs\\11vt-9547bdcd730334bb.mp4",
+      "tags": [
+        "cinematic camera move"
+      ],
+      "source": "procedural",
+      "creator": "11vt-blender-ops",
+      "license": "generated-local",
+      "acquired": "2026-08-18T22:49:52",
+      "master_id": null,
+      "derived_from_lineage": [],
+      "derived_assets": [],
+      "kind": "video",
+      "quality_state": "raw",
+      "inspection": {
+        "bytes": 74637,
+        "suffix": ".mp4"
+      },
+      "projects": [
+        "emberveil"
+      ],
+      "previews": []
+    },
+    "11vt-d14d9f01dc647e75": {
+      "id": "11vt-d14d9f01dc647e75",
+      "sha256": "d14d9f01dc647e75c8f1d7346480386f1a9bacd98599729117ec0cb77558793c",
+      "path_original": "artifacts\\flagship\\emberveil\\preview\\preview-frame-0024.png",
+      "blob": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\asset-vault\\blobs\\11vt-d14d9f01dc647e75.png",
+      "tags": [
+        "hero render preview"
+      ],
+      "source": "procedural",
+      "creator": "11vt-blender-ops",
+      "license": "generated-local",
+      "acquired": "2026-08-18T22:49:53",
+      "master_id": null,
+      "derived_from_lineage": [],
+      "derived_assets": [],
+      "kind": "render",
+      "quality_state": "raw",
+      "inspection": {
+        "bytes": 445905,
+        "suffix": ".png",
+        "width": 960,
+        "height": 540
+      },
+      "projects": [
+        "emberveil"
+      ],
+      "previews": []
     }
   }
 }

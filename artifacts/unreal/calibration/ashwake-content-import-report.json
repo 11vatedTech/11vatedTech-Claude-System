@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "assets": [
+    {
+      "kind": "NiagaraEmitter",
+      "path": "/Game/Calibration/VFX/NE_Emberveil_Attune.NE_Emberveil_Attune",
+      "status": "PASS"
+    },
+    {
+      "kind": "NiagaraSystem",
+      "path": "/Game/Calibration/VFX/NS_Emberveil_Attune.NS_Emberveil_Attune",
+      "status": "PASS"
+    },
+    {
+      "kind": "SoundWave",
+      "path": "/Game/Calibration/Audio/S_Ashwake_SafeWindow.S_Ashwake_SafeWindow",
+      "status": "PASS"
+    },
+    {
+      "kind": "SoundWave",
+      "path": "/Game/Calibration/Audio/S_Ashwake_Hostile.S_Ashwake_Hostile",
+      "status": "PASS"
+    },
+    {
+      "kind": "SoundWave",
+      "path": "/Game/Calibration/Audio/S_Ashwake_AttuneSuccess.S_Ashwake_AttuneSuccess",
+      "status": "PASS"
+    },
+    {
+      "kind": "SoundWave",
+      "path": "/Game/Calibration/Audio/S_Ashwake_AttuneReject.S_Ashwake_AttuneReject",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "vfx_design": {
+    "purpose": "Reliquary aura communicates current gameplay read: ember breathing in Reading, gold alignment in SafeWindow, red pressure in Hostile, blue cooling in Success.",
+    "shape_language": "Concentric ember orbit, vertical ash lift, ring-alignment pulse, hostile compression flare.",
+    "spawn_behavior": "CPU sprite system with state-driven user parameters consumed by runtime component; low bounded density for calibration scene.",
+    "motion": "Slow lift and orbit for Reading; synchronized ring pulse for SafeWindow; sharp strobing/pressure for Hostile; low drift for Cooled.",
+    "energy": "StateColor, State, SpawnRate, Energy, and Pulse driven by AFoundryRelicActor.",
+    "timing": "2s read, 3s safe window, 1.5s hostile loop; instant attune success/failure feedback.",
+    "color": "Reading ember umber, SafeWindow gold, Hostile hot red, Success cooled cyan.",
+    "dissipation": "Small upward fade, no screen-filling bursts.",
+    "lighting_interaction": "Point light mirrors Niagara state for gameplay-readable glow.",
+    "screen_space_density": "Three relics remain readable at third-person camera distance without hiding HUD or player.",
+    "performance_budget": "CPU Niagara, <=3 active systems, <=100 nominal spawned particles per relic per second."
+  },
+  "audio_design": {
+    "architecture": "Imported generated SoundWave cues, played spatially at reliquary location on state transition and interaction outcome.",
+    "ambient_world_sound": "Deferred to later slice pass; not claimed yet.",
+    "idle_state": "Visual pulse only for now, avoids repetitive audio fatigue.",
+    "state_transition_feedback": "SafeWindow and Hostile cues play once per transition.",
+    "danger_feedback": "Hostile cue plus red light/VFX state.",
+    "success_feedback": "AttuneSuccess cue on accepted interaction.",
+    "player_action_feedback": "AttuneReject cue on unsafe interaction."
+  },
+  "animation_design": {
+    "idle": "emberveil-canonical11vt_float_Emberveil_root",
+    "state_change": "emberveil-canonical11vt_rotate_brass_band",
+    "hostile": "emberveil-canonical11vt_pulse_ember_core",
+    "success_signature": "emberveil-canonical11vt_rotate_filigree_arc"
+  },
+  "runtime_expected_assets": [
+    "/Game/Calibration/VFX/NS_Emberveil_Attune.NS_Emberveil_Attune",
+    "/Game/Calibration/Audio/S_Ashwake_SafeWindow.S_Ashwake_SafeWindow",
+    "/Game/Calibration/Audio/S_Ashwake_Hostile.S_Ashwake_Hostile",
+    "/Game/Calibration/Audio/S_Ashwake_AttuneSuccess.S_Ashwake_AttuneSuccess",
+    "/Game/Calibration/Audio/S_Ashwake_AttuneReject.S_Ashwake_AttuneReject"
+  ],
+  "missing_after_create": []
+}

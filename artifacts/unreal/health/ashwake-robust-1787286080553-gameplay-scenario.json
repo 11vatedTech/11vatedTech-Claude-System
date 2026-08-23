@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "kind": "ashwake-packaged-gameplay-scenario",
+  "status": "PASS",
+  "executable": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Packaged\\ashwake-robust-1787286080553\\Windows\\FoundryCalibration\\Binaries\\Win64\\FoundryCalibration.exe",
+  "scenarios": [
+    {
+      "name": "success",
+      "status": "PASS",
+      "run_id": "ashwake-success-3639a97943be",
+      "run_dir": "artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-success-3639a97943be",
+      "log": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-success-3639a97943be\\unreal.log",
+      "log_status": "CREATED",
+      "exit_code": 0,
+      "exit_classification": {
+        "classification": "NORMAL_EXIT",
+        "exit_code": 0,
+        "timed_out": false,
+        "expected_controlled_shutdown": true,
+        "has_controlled_shutdown_evidence": true,
+        "has_normal_exit_evidence": true,
+        "has_fatal_engine_error": false,
+        "has_crash_evidence": false
+      },
+      "execution_state": "TOOL_TRANSIENT_FAILURE",
+      "duration_seconds": 47.204,
+      "command": [
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Packaged\\ashwake-robust-1787286080553\\Windows\\FoundryCalibration\\Binaries\\Win64\\FoundryCalibration.exe",
+        "-unattended",
+        "-nop4",
+        "-nosplash",
+        "-stdout",
+        "-FullStdOutLogOutput",
+        "-windowed",
+        "-ResX=1280",
+        "-ResY=720",
+        "-AshwakeInputProof",
+        "-AshwakeInputProofExit",
+        "-FoundryRunId=ashwake-success-3639a97943be",
+        "-FoundryScenario=success",
+        "-abslog=C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/artifacts/unreal/health/ashwake-gameplay-scenario-runs/ashwake-success-3639a97943be/unreal.log"
+      ],
+      "markers": {
+        "event=INPUT_PROOF_BEGIN": true,
+        "event=PLAYER_INPUT": true,
+        "event=INPUT_ACTION_TRIGGERED": true,
+        "action=Attune": true,
+        "event=INTERACTION_QUERY": true,
+        "event=GAMEPLAY_RULE": true,
+        "event=INTERACTION_ACCEPTED": true,
+        "event=SUCCESS": true,
+        "event=RESTART": true,
+        "INPUT_PROOF_COMPLETE Result=SuccessAndRestart": true,
+        "event=VFX_STATE": true,
+        "event=AUDIO_PLAYING": true,
+        "event=ANIMATION_PLAYING": true
+      },
+      "forbidden_markers": {
+        "event=INTERACTION_REJECTED": false,
+        "event=FAILURE": false
+      },
+      "marker_contract_passed": true,
+      "counts": {
+        "input_events": 10,
+        "gameplay_commands": 6,
+        "accepted_interactions": 6,
+        "rejected_interactions": 0,
+        "state_changes": 14,
+        "vfx_state": 18,
+        "audio_playing": 12,
+        "animation_playing": 18,
+        "structured_events": 84
+      },
+      "runtime_reference_warnings": [],
+      "stdout_path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-success-3639a97943be\\stdout.log",
+      "stderr_path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-success-3639a97943be\\stderr.log",
+      "complete_log_path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-success-3639a97943be\\complete-runtime.log",
+      "stdout_tail": "ccess-3639a97943be scenario=success sequence=75 event=ANIMATION_PLAYING frame=132 time_seconds=2.522 world=EmberveilCalibration map=EmberveilCalibration clip=emberveil-canonical11vt_rotate_filigree_arc target=EmberveilRelic state=Cooled playing=true looping=false\n[2026.08.21-04.27.05:273][132]LogTemp: Display: LogFoundry: VFX_STATE system=NS_Emberveil_Attune state=Cooled component=AttuneVFX active=false spawn_rate=18.0 energy=0.38 color=(0.18,0.74,1.00,1.00)\n[2026.08.21-04.27.05:274][132]LogTemp: Display: LogFoundryEvent: schema_version=1 run_id=ashwake-success-3639a97943be scenario=success sequence=76 event=VFX_STATE frame=132 time_seconds=2.522 world=EmberveilCalibration map=EmberveilCalibration system=NS_Emberveil_Attune state=Cooled component=AttuneVFX active=false spawn_rate=18.0 energy=0.38 color=(0.18,0.74,1.00,1.00)\n[2026.08.21-04.27.05:274][132]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482376 State=4\n[2026.08.21-04.27.05:274][132]LogTemp: Display: LogFoundry: SUCCESS lit_coals=3 required_coals=3\n[2026.08.21-04.27.05:274][132]LogTemp: Display: LogFoundry: PLAYER_SUCCESS LitCoals=3 RequiredCoals=3\n[2026.08.21-04.27.05:274][132]LogTemp: Display: LogFoundryEvent: schema_version=1 run_id=ashwake-success-3639a97943be scenario=success sequence=77 event=SUCCESS frame=132 time_seconds=2.522 world=EmberveilCalibration map=EmberveilCalibration lit_coals=3 required_coals=3\n[2026.08.21-04.27.05:507][147]LogTemp: Display: LogFoundry: INPUT_PROOF_SEND_KEY Key=R\n[2026.08.21-04.27.05:507][147]LogTemp: Display: LogFoundryEvent: schema_version=1 run_id=ashwake-success-3639a97943be scenario=success sequence=78 event=PLAYER_INPUT frame=147 time_seconds=2.754 world=EmberveilCalibration map=EmberveilCalibration key=R route=PlayerControllerInputKey\n[2026.08.21-04.27.05:516][148]LogTemp: Display: LogFoundry: INPUT_RECEIVED action=Restart pawn=FoundryPlayerCharacter_2147482385 route=EnhancedInput\n[2026.08.21-04.27.05:516][148]LogTemp: Display: LogFoundryEvent: schema_version=1 run_id=ashwake-success-3639a97943be scenario=success sequence=79 event=INPUT_ACTION_TRIGGERED frame=148 time_seconds=2.765 world=EmberveilCalibration map=EmberveilCalibration action=Restart pawn=FoundryPlayerCharacter_2147482385 route=EnhancedInput\n[2026.08.21-04.27.05:516][148]LogTemp: Display: LogFoundry: STATE_CHANGED run_state=Restart run_state_value=4 lit_coals=3 required_coals=3\n[2026.08.21-04.27.05:516][148]LogTemp: Display: LogFoundryEvent: schema_version=1 run_id=ashwake-success-3639a97943be scenario=success sequence=80 event=STATE_CONSEQUENCE frame=148 time_seconds=2.765 world=EmberveilCalibration map=EmberveilCalibration run_state=Restart run_state_value=4 lit_coals=3 required_coals=3\n[2026.08.21-04.27.05:516][148]LogTemp: Display: LogFoundry: STATE_CHANGED run_state=Playing run_state_value=1 lit_coals=0 required_coals=3\n[2026.08.21-04.27.05:517][148]LogTemp: Display: LogFoundryEvent: schema_version=1 run_id=ashwake-success-3639a97943be scenario=success sequence=81 event=STATE_CONSEQUENCE frame=148 time_seconds=2.765 world=EmberveilCalibration map=EmberveilCalibration run_state=Playing run_state_value=1 lit_coals=0 required_coals=3\n[2026.08.21-04.27.05:517][148]LogTemp: Display: LogFoundry: RESTART run_state=1 lit_coals=0 playable=true\n[2026.08.21-04.27.05:517][148]LogTemp: Display: LogFoundry: RECOVERY_RESTART RunState=1 LitCoals=0\n[2026.08.21-04.27.05:517][148]LogTemp: Display: LogFoundryEvent: schema_version=1 run_id=ashwake-success-3639a97943be scenario=success sequence=82 event=RESTART frame=148 time_seconds=2.765 world=EmberveilCalibration map=EmberveilCalibration run_state=1 lit_coals=0 playable=true\n[2026.08.21-04.27.05:764][169]LogTemp: Display: LogFoundry: INPUT_PROOF_COMPLETE Result=SuccessAndRestart LitCoals=0 RequiredCoals=3\n[2026.08.21-04.27.05:764][169]LogTemp: Display: LogFoundryEvent: schema_version=1 run_id=ashwake-success-3639a97943be scenario=success sequence=83 event=RESTART frame=169 time_seconds=3.011 world=EmberveilCalibration map=EmberveilCalibration result=SuccessAndRestart lit_coals=0 required_coals=3 playable=true\n[2026.08.21-04.27.05:764][169]LogTemp: Display: LogFoundry: EXIT_REQUESTED reason=InputProofComplete status=0\n[2026.08.21-04.27.05:764][169]LogTemp: Display: LogFoundryEvent: schema_version=1 run_id=ashwake-success-3639a97943be scenario=success sequence=84 event=EXIT_REQUESTED frame=169 time_seconds=3.011 world=EmberveilCalibration map=EmberveilCalibration reason=InputProofComplete status=0\n[2026.08.21-04.27.05:764][169]LogWindows: FPlatformMisc::RequestExitWithStatus(0, 0, AshwakeInputProofExit)\n[2026.08.21-04.27.05:764][169]LogCore: Engine exit requested (reason: Win RequestExit)\n[2026.08.21-04.27.05:770][170]LogCore: Engine exit requested (reason: EngineExit() was called; note: exit was already requested)\n[2026.08.21-04.27.05:794][170]LogInit: Display: PreExit Game.\n[2026.08.21-04.27.05:799][170]LogWorld: BeginTearingDown for /Game/Calibration/Maps/EmberveilCalibration\n[2026.08.21-04.27.05:800][170]LogWorld: UWorld::CleanupWorld for EmberveilCalibration, bSessionEnded=true, bCleanupResources=true\n[2026.08.21-04.27.05:802][170]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated\n[2026.08.21-04.27.05:812][170]LogRuntimeTelemetry: Recording EnginePreExit events\n[2026.08.21-04.27.06:637][170]LogAudio: Display: Beginning Audio Device Manager Shutdown (Module: AudioMixerWasapi)...\n[2026.08.21-04.27.06:637][170]LogAudio: Display: Destroying 1 Remaining Audio Device(s)...\n[2026.08.21-04.27.06:637][170]LogAudio: Display: Audio Device unregistered from world 'EmberveilCalibration'.\n[2026.08.21-04.27.06:637][170]LogAudio: Display: Shutting down audio device while 1 references to it are still alive. For more information, compile with INSTRUMENT_AUDIODEVICE_HANDLES.\n[2026.08.21-04.27.06:672][170]LogAudioMixer: Display: FAudioMixerWasapi::StopAudioStream() InstanceID=1, StreamState=4\n[2026.08.21-04.27.06:679][170]LogAudioMixerWasapi: Display: FWasapiServiceWatcher stopped.\n[2026.08.21-04.27.06:855][170]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID -1\n[2026.08.21-04.27.06:855][170]LogAudio: Display: Audio Device Manager Shutdown\n[2026.08.21-04.27.06:856][170]LogSlate: Request Window 'FoundryCalibration (64-bit Development PCD3D_SM5) ' being destroyed\n[2026.08.21-04.27.06:863][170]LogSlate: Window 'FoundryCalibration (64-bit Development PCD3D_SM5) ' being destroyed\n[2026.08.21-04.27.06:879][170]LogWindowsTextInputMethodSystem: Activated input method: English (United States) - (Keyboard).\n[2026.08.21-04.27.06:913][170]LogSlate: Slate User Destroyed.  User Index 0, Is Virtual User: 0\n[2026.08.21-04.27.10:476][170]LogD3D12RHI: Waited for PSO creation for 100.000000ms\n[2026.08.21-04.27.10:575][170]LogD3D12RHI: Waited for PSO creation for 200.000000ms\n[2026.08.21-04.27.10:761][170]LogExit: Preparing to exit.\n[2026.08.21-04.27.10:761][170]LogMoviePlayer: Shutting down movie player\n[2026.08.21-04.27.10:813][170]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden\n[2026.08.21-04.27.10:816][170]LogDemo: Cleaned up 0 splitscreen connections, owner deletion: enabled\n[2026.08.21-04.27.10:828][170]LogExit: Game engine shut down\n[2026.08.21-04.27.10:965][170]LogExit: Object subsystem successfully closed.\n[2026.08.21-04.27.11:054][170]LogShaderLibrary: Display: Closing logical shader library 'Global' with 1 components\n[2026.08.21-04.27.11:084][170]LogShaderLibrary: Display: Closing logical shader library 'FoundryCalibration' with 1 components\n[2026.08.21-04.27.11:116][170]LogChaosDD: Chaos Debug Draw Shutdown\n[2026.08.21-04.27.11:139][170]LogNFORDenoise: NFORDenoise function shutting down\n[2026.08.21-04.27.11:139][170]RenderDocPlugin: plugin has been unloaded.\n[2026.08.21-04.27.11:145][170]LogPakFile: Destroying PakPlatformFile\n[2026.08.21-04.27.11:373][170]LogD3D12RHI: ~FD3D12DynamicRHI\n[2026.08.21-04.27.11:401][170]LogExit: Exiting.\n",
+      "stderr_tail": "",
+      "timed_out": false,
+      "process_tree_state": {
+        "pid": 27968,
+        "running_after_capture": false
+      }
+    },
+    {
+      "name": "failure",
+      "status": "PASS",
+      "run_id": "ashwake-failure-6214aeb6fa01",
+      "run_dir": "artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-failure-6214aeb6fa01",
+      "log": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-failure-6214aeb6fa01\\unreal.log",
+      "log_status": "CREATED",
+      "exit_code": 0,
+      "exit_classification": {
+        "classification": "NORMAL_EXIT",
+        "exit_code": 0,
+        "timed_out": false,
+        "expected_controlled_shutdown": true,
+        "has_controlled_shutdown_evidence": true,
+        "has_normal_exit_evidence": true,
+        "has_fatal_engine_error": false,
+        "has_crash_evidence": false
+      },
+      "execution_state": "TOOL_TRANSIENT_FAILURE",
+      "duration_seconds": 10.615,
+      "command": [
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Packaged\\ashwake-robust-1787286080553\\Windows\\FoundryCalibration\\Binaries\\Win64\\FoundryCalibration.exe",
+        "-unattended",
+        "-nop4",
+        "-nosplash",
+        "-stdout",
+        "-FullStdOutLogOutput",
+        "-windowed",
+        "-ResX=1280",
+        "-ResY=720",
+        "-AshwakeInputProof",
+        "-AshwakeInputProofExit",
+        "-FoundryRunId=ashwake-failure-6214aeb6fa01",
+        "-FoundryScenario=failure",
+        "-AshwakeInputProofFailure",
+        "-abslog=C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/artifacts/unreal/health/ashwake-gameplay-scenario-runs/ashwake-failure-6214aeb6fa01/unreal.log"
+      ],
+      "markers": {
+        "event=INPUT_PROOF_BEGIN": true,
+        "event=PLAYER_INPUT": true,
+        "event=INPUT_ACTION_TRIGGERED": true,
+        "action=Attune": true,
+        "event=INTERACTION_QUERY": true,
+        "event=GAMEPLAY_RULE": true,
+        "event=INTERACTION_REJECTED": true,
+        "event=FAILURE": true,
+        "event=RESTART": true,
+        "INPUT_PROOF_COMPLETE Result=FailureAndRestart": true,
+        "event=VFX_STATE": true,
+        "event=AUDIO_PLAYING": true,
+        "event=ANIMATION_PLAYING": true
+      },
+      "forbidden_markers": {
+        "event=INTERACTION_ACCEPTED": false,
+        "event=SUCCESS": false
+      },
+      "marker_contract_passed": true,
+      "counts": {
+        "input_events": 6,
+        "gameplay_commands": 2,
+        "accepted_interactions": 0,
+        "rejected_interactions": 2,
+        "state_changes": 8,
+        "vfx_state": 8,
+        "audio_playing": 4,
+        "animation_playing": 8,
+        "structured_events": 57
+      },
+      "runtime_reference_warnings": [],
+      "stdout_path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-failure-6214aeb6fa01\\stdout.log",
+      "stderr_path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-failure-6214aeb6fa01\\stderr.log",
+      "complete_log_path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-failure-6214aeb6fa01\\complete-runtime.log",
+      "stdout_tail": "y: LogFoundry: PLAYER_FAILURE LitCoals=0 RequiredCoals=3\n[2026.08.21-04.27.20:425][  3]LogTemp: Display: LogFoundryEvent: schema_version=1 run_id=ashwake-failure-6214aeb6fa01 scenario=failure sequence=50 event=FAILURE frame=2 time_seconds=0.423 world=EmberveilCalibration map=EmberveilCalibration lit_coals=0 required_coals=3\n[2026.08.21-04.27.20:425][  3]LogRHI: Display: Encountered a new graphics PSO: 234792378 (PSOPrecacheState: Missed)\n[2026.08.21-04.27.20:425][  3]LogRHI: Display: Encountered a new graphics PSO: 83002203 (PSOPrecacheState: Missed)\n[2026.08.21-04.27.20:425][  3]LogRHI: Display: Encountered a new graphics PSO: 757572267 (PSOPrecacheState: Missed)\n[2026.08.21-04.27.20:426][  3]LogRHI: Display: Encountered a new graphics PSO: 1702714762 (PSOPrecacheState: Missed)\n[2026.08.21-04.27.20:426][  3]LogRHI: Display: Encountered a new graphics PSO: 42123991 (PSOPrecacheState: Missed)\n[2026.08.21-04.27.20:426][  3]LogRHI: Display: Encountered a new graphics PSO: 3946204628 (PSOPrecacheState: Missed)\n[2026.08.21-04.27.20:426][  3]LogRHI: Display: Encountered a new graphics PSO: 1492198247 (PSOPrecacheState: Missed)\n[2026.08.21-04.27.20:426][  3]LogRHI: Display: Encountered a new graphics PSO: 1521076177 (PSOPrecacheState: Missed)\n[2026.08.21-04.27.20:426][  3]LogRHI: Display: Encountered a new graphics PSO: 516924308 (PSOPrecacheState: Missed)\n[2026.08.21-04.27.20:426][  3]LogRHI: Display: Encountered a new graphics PSO: 2695989141 (PSOPrecacheState: Missed)\n[2026.08.21-04.27.20:432][  3]LogRHI: Display: Encountered a new graphics PSO: 912779085 (PSOPrecacheState: Missed)\n[2026.08.21-04.27.20:509][  6]LogTemp: Display: LogFoundry: INPUT_PROOF_SEND_KEY Key=R\n[2026.08.21-04.27.20:509][  6]LogTemp: Display: LogFoundryEvent: schema_version=1 run_id=ashwake-failure-6214aeb6fa01 scenario=failure sequence=51 event=PLAYER_INPUT frame=6 time_seconds=0.522 world=EmberveilCalibration map=EmberveilCalibration key=R route=PlayerControllerInputKey\n[2026.08.21-04.27.20:525][  7]LogTemp: Display: LogFoundry: INPUT_RECEIVED action=Restart pawn=FoundryPlayerCharacter_2147482385 route=EnhancedInput\n[2026.08.21-04.27.20:527][  7]LogTemp: Display: LogFoundryEvent: schema_version=1 run_id=ashwake-failure-6214aeb6fa01 scenario=failure sequence=52 event=INPUT_ACTION_TRIGGERED frame=7 time_seconds=0.541 world=EmberveilCalibration map=EmberveilCalibration action=Restart pawn=FoundryPlayerCharacter_2147482385 route=EnhancedInput\n[2026.08.21-04.27.20:527][  7]LogTemp: Display: LogFoundry: STATE_CHANGED run_state=Restart run_state_value=4 lit_coals=0 required_coals=3\n[2026.08.21-04.27.20:527][  7]LogTemp: Display: LogFoundryEvent: schema_version=1 run_id=ashwake-failure-6214aeb6fa01 scenario=failure sequence=53 event=STATE_CONSEQUENCE frame=7 time_seconds=0.541 world=EmberveilCalibration map=EmberveilCalibration run_state=Restart run_state_value=4 lit_coals=0 required_coals=3\n[2026.08.21-04.27.20:527][  7]LogTemp: Display: LogFoundry: STATE_CHANGED run_state=Playing run_state_value=1 lit_coals=0 required_coals=3\n[2026.08.21-04.27.20:527][  7]LogTemp: Display: LogFoundryEvent: schema_version=1 run_id=ashwake-failure-6214aeb6fa01 scenario=failure sequence=54 event=STATE_CONSEQUENCE frame=7 time_seconds=0.541 world=EmberveilCalibration map=EmberveilCalibration run_state=Playing run_state_value=1 lit_coals=0 required_coals=3\n[2026.08.21-04.27.20:527][  7]LogTemp: Display: LogFoundry: RESTART run_state=1 lit_coals=0 playable=true\n[2026.08.21-04.27.20:527][  7]LogTemp: Display: LogFoundry: RECOVERY_RESTART RunState=1 LitCoals=0\n[2026.08.21-04.27.20:527][  7]LogTemp: Display: LogFoundryEvent: schema_version=1 run_id=ashwake-failure-6214aeb6fa01 scenario=failure sequence=55 event=RESTART frame=7 time_seconds=0.541 world=EmberveilCalibration map=EmberveilCalibration run_state=1 lit_coals=0 playable=true\n[2026.08.21-04.27.20:738][ 20]LogTemp: Display: LogFoundry: INPUT_PROOF_COMPLETE Result=FailureAndRestart LitCoals=0 RequiredCoals=3\n[2026.08.21-04.27.20:738][ 20]LogTemp: Display: LogFoundryEvent: schema_version=1 run_id=ashwake-failure-6214aeb6fa01 scenario=failure sequence=56 event=RESTART frame=20 time_seconds=0.751 world=EmberveilCalibration map=EmberveilCalibration result=FailureAndRestart lit_coals=0 required_coals=3 playable=true\n[2026.08.21-04.27.20:738][ 20]LogTemp: Display: LogFoundry: EXIT_REQUESTED reason=InputProofComplete status=0\n[2026.08.21-04.27.20:738][ 20]LogTemp: Display: LogFoundryEvent: schema_version=1 run_id=ashwake-failure-6214aeb6fa01 scenario=failure sequence=57 event=EXIT_REQUESTED frame=20 time_seconds=0.751 world=EmberveilCalibration map=EmberveilCalibration reason=InputProofComplete status=0\n[2026.08.21-04.27.20:738][ 20]LogWindows: FPlatformMisc::RequestExitWithStatus(0, 0, AshwakeInputProofExit)\n[2026.08.21-04.27.20:738][ 20]LogCore: Engine exit requested (reason: Win RequestExit)\n[2026.08.21-04.27.20:745][ 21]LogCore: Engine exit requested (reason: EngineExit() was called; note: exit was already requested)\n[2026.08.21-04.27.20:767][ 21]LogInit: Display: PreExit Game.\n[2026.08.21-04.27.20:769][ 21]LogWorld: BeginTearingDown for /Game/Calibration/Maps/EmberveilCalibration\n[2026.08.21-04.27.20:771][ 21]LogWorld: UWorld::CleanupWorld for EmberveilCalibration, bSessionEnded=true, bCleanupResources=true\n[2026.08.21-04.27.20:772][ 21]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated\n[2026.08.21-04.27.20:779][ 21]LogRuntimeTelemetry: Recording EnginePreExit events\n[2026.08.21-04.27.21:735][ 21]LogAudio: Display: Beginning Audio Device Manager Shutdown (Module: AudioMixerWasapi)...\n[2026.08.21-04.27.21:736][ 21]LogAudio: Display: Destroying 1 Remaining Audio Device(s)...\n[2026.08.21-04.27.21:736][ 21]LogAudio: Display: Audio Device unregistered from world 'EmberveilCalibration'.\n[2026.08.21-04.27.21:736][ 21]LogAudio: Display: Shutting down audio device while 1 references to it are still alive. For more information, compile with INSTRUMENT_AUDIODEVICE_HANDLES.\n[2026.08.21-04.27.21:776][ 21]LogAudioMixer: Display: FAudioMixerWasapi::StopAudioStream() InstanceID=1, StreamState=4\n[2026.08.21-04.27.21:779][ 21]LogAudioMixerWasapi: Display: FWasapiServiceWatcher stopped.\n[2026.08.21-04.27.21:910][ 21]LogAudioMixer: Deinitializing Audio Bus Subsystem for audio device with ID -1\n[2026.08.21-04.27.21:910][ 21]LogAudio: Display: Audio Device Manager Shutdown\n[2026.08.21-04.27.21:910][ 21]LogSlate: Request Window 'FoundryCalibration (64-bit Development PCD3D_SM5) ' being destroyed\n[2026.08.21-04.27.21:912][ 21]LogSlate: Window 'FoundryCalibration (64-bit Development PCD3D_SM5) ' being destroyed\n[2026.08.21-04.27.21:915][ 21]LogWindowsTextInputMethodSystem: Activated input method: English (United States) - (Keyboard).\n[2026.08.21-04.27.21:931][ 21]LogSlate: Slate User Destroyed.  User Index 0, Is Virtual User: 0\n[2026.08.21-04.27.21:934][ 21]LogExit: Preparing to exit.\n[2026.08.21-04.27.21:935][ 21]LogMoviePlayer: Shutting down movie player\n[2026.08.21-04.27.21:948][ 21]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden\n[2026.08.21-04.27.21:949][ 21]LogDemo: Cleaned up 0 splitscreen connections, owner deletion: enabled\n[2026.08.21-04.27.21:952][ 21]LogExit: Game engine shut down\n[2026.08.21-04.27.22:010][ 21]LogExit: Object subsystem successfully closed.\n[2026.08.21-04.27.22:022][ 21]LogShaderLibrary: Display: Closing logical shader library 'Global' with 1 components\n[2026.08.21-04.27.22:035][ 21]LogShaderLibrary: Display: Closing logical shader library 'FoundryCalibration' with 1 components\n[2026.08.21-04.27.22:057][ 21]LogChaosDD: Chaos Debug Draw Shutdown\n[2026.08.21-04.27.22:060][ 21]LogNFORDenoise: NFORDenoise function shutting down\n[2026.08.21-04.27.22:060][ 21]RenderDocPlugin: plugin has been unloaded.\n[2026.08.21-04.27.22:062][ 21]LogPakFile: Destroying PakPlatformFile\n[2026.08.21-04.27.22:195][ 21]LogD3D12RHI: ~FD3D12DynamicRHI\n[2026.08.21-04.27.22:216][ 21]LogExit: Exiting.\n",
+      "stderr_tail": "",
+      "timed_out": false,
+      "process_tree_state": {
+        "pid": 32776,
+        "running_after_capture": false
+      }
+    }
+  ]
+}

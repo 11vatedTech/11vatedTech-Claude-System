@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "kind": "ashwake-vfx-upgrade",
+  "status": "PASS",
+  "dest_path": "/Game/Calibration/VFX/NS_Emberveil_Attune",
+  "strategy": "cook_safe_factory_asset",
+  "actions": [
+    {
+      "delete_existing": "/Game/Calibration/VFX/NS_Emberveil_Attune",
+      "deleted": true
+    }
+  ],
+  "created_path": "/Game/Calibration/VFX/NS_Emberveil_Attune.NS_Emberveil_Attune",
+  "saved": true,
+  "loaded_after_create": true,
+  "loaded_class": "NiagaraSystem",
+  "note": "Template Niagara systems were not duplicated because packaged runtime hit UNiagaraStatelessEmitter::Serialize assertion in UE 5.8."
+}

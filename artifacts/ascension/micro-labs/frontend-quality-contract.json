@@ -1,0 +1,14 @@
+{
+  "product_character": "dense field operations console",
+  "user_type": "returning operations analyst",
+  "visual_thesis": "quiet, high-contrast instrument panel with restrained motion and strong scan hierarchy",
+  "states": ["loading", "empty", "error", "success", "focus"],
+  "viewports": ["mobile", "tablet", "desktop"],
+  "evidence": {
+    "screenshots": ["home-desktop.png", "home-mobile.png", "error-focus.png"],
+    "keyboard_review": {"tab_order": "recorded", "focus_visible": true, "escape_recovery": true},
+    "accessibility_scan": {"axe_pass": true, "scope": "automated subset", "manual_required": true},
+    "performance_metrics": {"lcp_ms": 1800, "inp_ms": 120, "cls": 0.04, "source": "representative lab capture"},
+    "visual_review": {"independent": true, "status": "reviewed-not-certified"}
+  }
+}

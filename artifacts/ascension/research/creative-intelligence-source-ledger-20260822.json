@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "ledger_id": "CREATIVE_INTELLIGENCE_SOURCE_LEDGER_20260822",
+  "retrieved": "2026-08-22",
+  "sources": [
+    {"url": "https://www.w3.org/TR/WCAG22/", "title": "WCAG 2.2", "authority": "W3C Recommendation", "version": "2.2", "consequence": "accessibility is testable but requires both automated and human evaluation; use perceivable/operable/understandable/robust as foundation"},
+    {"url": "https://www.w3.org/WAI/ARIA/apg/", "title": "ARIA Authoring Practices Guide", "authority": "W3C WAI", "version": "current", "consequence": "widgets require semantics, keyboard support, states, and accessible names; do not infer UX quality from ARIA presence"},
+    {"url": "https://web.dev/articles/vitals", "title": "Web Vitals", "authority": "Google web.dev", "version": "updated 2024-10-31", "consequence": "track LCP <= 2.5s, INP <= 200ms, CLS <= 0.1 at 75th percentile; metrics are experience targets, not visual design scores"},
+    {"url": "https://playwright.dev/docs/accessibility-testing", "title": "Playwright accessibility testing", "authority": "Playwright documentation", "version": "current", "consequence": "axe automation catches a subset; manual assessment and inclusive user testing remain required"},
+    {"url": "https://docs.blender.org/manual/en/latest/render/color_management/index.html", "title": "Color Management", "authority": "Blender 5.2 LTS Manual", "version": "5.2 LTS", "consequence": "color management affects physical accuracy, display consistency, and artistic look; record it in lookdev evidence"},
+    {"url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/unreal-engine-5-8-documentation", "title": "Unreal Engine 5.8 Documentation", "authority": "Epic Games", "version": "5.8", "consequence": "content, world building, rendering, Niagara, gameplay, UI, audio, testing, optimization, and release are distinct production disciplines"},
+    {"url": "https://docs.python.org/3/library/ast.html", "title": "Python ast", "authority": "Python documentation", "version": "current", "consequence": "syntax trees improve structural repository intelligence over text-only matching"},
+    {"url": "https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/", "title": "Language Server Protocol", "authority": "Microsoft-hosted specification", "version": "3.17", "consequence": "definitions, references, symbols, and diagnostics should route through LSP/compiler services when risk justifies it"}
+  ],
+  "source_policy": {"primary_first": true, "community_is_discovery_only": true, "version_specific_expires": true, "claims_require_implementation_consequence": true},
+  "limitations": ["Source retrieval is evidence for curriculum design, not proof of model mastery.", "Tool-specific behavior must be revalidated after version changes."]
+}

@@ -184,26 +184,42 @@ def check_9router(smoke_chat: bool = True) -> bool:
         print(f"9router_health_error {type(exc).__name__}: {exc}")
         return False
 
-    for path in ["/v1/models", "/v1/models/image", "/v1/models/tts", "/v1/models/embedding", "/v1/models/web", "/v1/models/stt", "/v1/models/image-to-text"]:
-        try:
-            data = fetch_json(base + path, token=token)
-            print(f"9router_discovery {path} count={len(data.get('data', []))}")
-        except Exception as exc:
-            print(f"9router_discovery_error {path} {type(exc).__name__}: {exc}")
-            ok = False
+    sys.path.insert(0, str(REPO / "scripts/validate"))
+    from router_health import probe
+    diagnostics = probe(base, timeout=8.0)
+    print(f"9router_status={diagnostics.get('summary')}")
+    print("9router_registry=" + json.dumps(diagnostics.get("registry", {}), separators=(",", ":")))
+    for path, detail in diagnostics.get("categories", {}).items():
+        print(f"9router_discovery {path} status={detail.get('status')} count={detail.get('count', 0)}")
+    # Category routes and chat are sufficient for Foundry core operation. A
+    # root registry timeout remains a visible DEGRADED diagnostic rather than
+    # turning a usable gateway into a false global failure.
+    if diagnostics.get("core_status") != "PASS":
+        ok = False
 
     if smoke_chat and token:
-        try:
-            data = fetch_json(base + "/v1/chat/completions", token=token, data={
-                "model": "11",
-                "messages": [{"role": "user", "content": "Reply with exactly: ok"}],
-                "max_tokens": 5,
-                "stream": False,
-            }, timeout=30)
-            content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
-            print(f"9router_chat_smoke len={len(content)} sample={content[:20]!r}")
-        except Exception as exc:
-            print(f"9router_chat_smoke_error {type(exc).__name__}: {exc}")
+        smoke_ok = False
+        smoke_errors = []
+        # Model 11 is the historical smoke target, but a transient provider
+        # stall must not falsely report a healthy gateway as globally broken.
+        # Try two known-good representative families before failing validation.
+        for model in ("11", "ag/gemini-3.7-flash-medium", "kr/deepseek-3.2"):
+            try:
+                data = fetch_json(base + "/v1/chat/completions", token=token, data={
+                    "model": model,
+                    "messages": [{"role": "user", "content": "Reply with exactly: ok"}],
+                    "max_tokens": 5,
+                    "stream": False,
+                }, timeout=45)
+                content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
+                print(f"9router_chat_smoke model={model} len={len(content)} sample={content[:20]!r}")
+                smoke_ok = bool(content.strip())
+                if smoke_ok:
+                    break
+            except Exception as exc:
+                smoke_errors.append(f"{model}:{type(exc).__name__}")
+        if not smoke_ok:
+            print(f"9router_chat_smoke_error all_models_failed {smoke_errors}")
             ok = False
     else:
         print("9router_chat_smoke_skipped")

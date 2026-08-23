@@ -1,0 +1,8 @@
+{
+  "date": "2026-08-19",
+  "health": {"ok": true},
+  "chat_smoke": {"status": "PASS", "model": "kr/deepseek-3.2"},
+  "category_discovery": {"image": 4, "tts": 5, "embedding": 8, "web": 0, "stt": 0, "image_to_text": 2},
+  "root_model_discovery": {"status": "DEGRADED", "endpoint": "/v1/models", "failure": "request timed out while 9Router attempted provider discovery; server log reports DNS timeout for q.us-east-1.amazonaws.com / KIRO_MODELS"},
+  "interpretation": "The global gateway is reachable and chat remains functional, but the complete model registry route is not currently healthy. This is preserved as an infrastructure/provider discovery gap; no model-routing maturity is promoted from this observation."
+}

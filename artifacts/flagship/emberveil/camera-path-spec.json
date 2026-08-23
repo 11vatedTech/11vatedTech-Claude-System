@@ -1,0 +1,21 @@
+{
+  "op": "camera.path",
+  "params": {
+    "name": "CinematicCam",
+    "frame_start": 1,
+    "frame_end": 72,
+    "radius": 6.2,
+    "height": 2.0,
+    "target": [
+      0,
+      0,
+      1.2
+    ],
+    "sweep_degrees": 80,
+    "start_angle": -40,
+    "lens_mm": 45,
+    "out_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil",
+    "load_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend",
+    "save_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+  }
+}

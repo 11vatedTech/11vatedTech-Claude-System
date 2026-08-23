@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "exit_code": 0,
+  "duration_seconds": 33.716,
+  "stdout_tail": "Using bundled DotNet SDK version: 10.0 win-x64\nRunning UnrealBuildTool: dotnet \"..\\..\\Engine\\Binaries\\DotNET\\UnrealBuildTool\\UnrealBuildTool.dll\" FoundryCalibration Win64 Development C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\FoundryCalibration.uproject -WaitMutex -NoHotReloadFromIDE\nLog file: C:\\Users\\11vat\\AppData\\Local\\UnrealBuildTool\\Log.txt\nDetermining max actions to execute in parallel (24 physical cores, 24 logical cores)\n  Executing up to 24 processes, one per physical core\n  Requested 1.5 GB memory per action, 31.42 GB available: limiting max parallel actions to 20\nUbaServer - Listening on 0.0.0.0:1345\nBuilding FoundryCalibration...\n===== Toolchain Information =====\nUsing ISPC compiler (C:\\Program Files\\Epic Games\\UE_5.8\\Engine\\Source\\ThirdParty\\Intel\\ISPC\\bin\\Windows\\ispc.exe)\n  Intel(r) Implicit SPMD Program Compiler (Intel(r) ISPC), 1.24.0 (build commit  @ 20250404, LLVM 18.1.2) \nUsing Visual Studio 14.44.35228 toolchain (C:\\Program Files\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207) and Windows 10.0.26100.0 SDK (C:\\Program Files (x86)\\Windows Kits\\10).\n=================================\nUsing Unreal Build Accelerator local executor to run 3 action(s)\n  CPU 24 physical cores, 24 logical cores\n  Memory 31.42 GB physical, 33.21 GB/61.42 GB committed\n  UBA Storage capacity 40 GB\n[1/3] Compile [x64] FoundryPlayerCharacter.cpp\n[2/3] Link [x64] FoundryCalibration.exe\n[3/3] WriteMetadata FoundryCalibration.target [NoUba]\n\nTotal time in Unreal Build Accelerator local executor: 30.22 seconds\nOutput binary: C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Binaries\\Win64\\FoundryCalibration.exe\n\nResult: Succeeded\nTotal execution time: 32.88 seconds\nTrace written to file C:\\Users\\11vat\\AppData\\Local\\UnrealBuildTool\\Trace.uba with size 7.4kb\n",
+  "stderr_tail": "",
+  "schema_version": 1,
+  "kind": "unreal-compile",
+  "project": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\FoundryCalibration.uproject",
+  "target": "FoundryCalibration",
+  "configuration": "Development",
+  "engine_root": "C:\\Program Files\\Epic Games\\UE_5.8"
+}

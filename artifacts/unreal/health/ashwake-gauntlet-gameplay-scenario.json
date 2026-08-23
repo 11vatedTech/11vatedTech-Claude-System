@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "kind": "ashwake-gauntlet-gameplay-scenario",
+  "status": "PASS",
+  "engine_root": "C:\\Program Files\\Epic Games\\UE_5.8",
+  "project": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\FoundryCalibration.uproject",
+  "build": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Packaged\\Ashwake\\Windows",
+  "configuration": "Development",
+  "scenarios": [
+    {
+      "name": "success",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 21.603,
+      "log_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\gauntlet-ashwake-gameplay\\success-1787244692497",
+      "logs": [
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\gauntlet-ashwake-gameplay\\success-1787244692497\\UnrealGame.DefaultTest_(Win64_Development_Client)\\Client\\ClientOutput.log",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\gauntlet-ashwake-gameplay\\success-1787244692497\\UnrealGame.DefaultTest_(Win64_Development_Client)\\Client\\Logs\\FoundryCalibration_Client.log"
+      ],
+      "command": [
+        "C:\\Program Files\\Epic Games\\UE_5.8\\Engine\\Build\\BatchFiles\\RunUAT.bat",
+        "RunUnreal",
+        "-test=UnrealGame.DefaultTest",
+        "-project=C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\FoundryCalibration.uproject",
+        "-Build=C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Packaged\\Ashwake\\Windows",
+        "-Platform=Win64",
+        "-Configuration=Development",
+        "-Packaged",
+        "-Unattended",
+        "-MaxDuration=90",
+        "-ResX=1280",
+        "-ResY=720",
+        "-LogDir=C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\gauntlet-ashwake-gameplay\\success-1787244692497",
+        "-ClientArgs=/Game/Calibration/Maps/EmberveilCalibration -AshwakeInputProof -AshwakeInputProofExit -NoSplash"
+      ],
+      "gauntlet_passed": true,
+      "markers": {
+        "ASHWAKE_MAP_BEGINPLAY": true,
+        "ASHWAKE_GAMEPLAY_BEGIN": true,
+        "INPUT_PROOF_BEGIN": true,
+        "INPUT_PROOF_SEND_KEY Key=E": true,
+        "INPUT_RECEIVED Action=Attune": true,
+        "GAMEPLAY_COMMAND Action=Attune": true,
+        "INTERACTION_ACCEPTED": true,
+        "PLAYER_SUCCESS": true,
+        "INPUT_PROOF_SEND_KEY Key=R": true,
+        "INPUT_RECEIVED Action=Restart": true,
+        "RECOVERY_RESTART": true,
+        "INPUT_PROOF_COMPLETE Result=SuccessAndRestart": true,
+        "VFX_STATE": true,
+        "AUDIO_PLAYING": true,
+        "ANIMATION_PLAYING": true
+      },
+      "counts": {
+        "input_events": 5,
+        "gameplay_commands": 3,
+        "accepted_interactions": 3,
+        "rejected_interactions": 0,
+        "state_changes": 7,
+        "vfx_state": 9,
+        "audio_playing": 3,
+        "animation_playing": 9
+      },
+      "runtime_reference_warnings": [],
+      "stdout_tail": "iceCache\\Win64\\LocalDevice0\\UserDir\\Saved. Searching recursively through all subdirectories.\nCould not find complete relevant path. One or more path nodes could not be found among: C:\\Program Files\\Epic Games\\UE_5.8\\GauntletTemp\\DeviceCache\\Win64\\LocalDevice0\\UserDir\\Saved \\ Screenshots\nPartially found relevant path: C:\\Program Files\\Epic Games\\UE_5.8\\GauntletTemp\\DeviceCache\\Win64\\LocalDevice0\\UserDir\\Saved\nWrote Client Log to C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\gauntlet-ashwake-gameplay\\success-1787244692497\\UnrealGame.DefaultTest_(Win64_Development_Client)\\Client\\ClientOutput.log\nShutting down LocalDevice0\nUnrealGame.DefaultTest (Win64 Development Client) result=Passed\n****************************************************************\n*\nTest UnrealGame.DefaultTest (Win64 Development Client) Passed\nTest Time: 00:16 (Waited:00:00, Setup:00:00)\n --------------------------------------------------------------------------------\n # Test Summary: UnrealGame.DefaultTest\n --------------------------------------------------------------------------------\n ### UnrealGame.DefaultTest Passed ***\n\n Client Role: Tests exited with error code 0 (ExitOk, ExitCode=0)\n\n * Main Context: Win64 Development Client\n * Log Warnings: 1\n * Result: Passed\n\n See 'Role Report' below for more details on each role\n\n --------------------------------------------------------------------------------\n # Role(s): UnrealGame.DefaultTest\n --------------------------------------------------------------------------------\n #### Role: Client (Win64 Development)\n #### Client completed: Tests exited with error code 0 (ExitOk, ExitCode=0)\n * CommandLine:  -AshwakeInputProof  -AshwakeInputProofExit  -NoSplash  -gauntlet  -ResX=1280  -ResY=720  -windowed  -log  -unattended  -stdout  -FullStdOutLogOutput  -gauntlet.heartbeatperiod=30  -DeviceTag=LocalDevice0  -userdir=\"C:\\Program Files\\Epic Games\\UE_5.8\\GauntletTemp\\DeviceCache\\Win64\\LocalDevice0\\UserDir\" -abslog=\"C:\\Program Files\\Epic Games\\UE_5.8\\GauntletTemp\\DeviceCache\\Win64\\LocalDevice0\\UserDir\\Saved\\Logs\\FoundryCalibration_Client.log\"\n * Log: C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\gauntlet-ashwake-gameplay\\success-1787244692497\\UnrealGame.DefaultTest_(Win64_Development_Client)\\Client\\ClientOutput.log\n * SavedDir: C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\gauntlet-ashwake-gameplay\\success-1787244692497\\UnrealGame.DefaultTest_(Win64_Development_Client)\\Client\n * Log Warnings: 1\n\n --------------------------------------------------------------------------------\n\n # Gauntlet summary events:\n\n --------------------------------------------------------------------------------\n\n ##### No Gauntlet Events were fired during this test!\nUnrealGame.DefaultTest (Win64 Development Client) result=Passed\nHow to run locally: (RunUAT RunUnreal -Test=\"UnrealGame.DefaultTest\" -project=C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\FoundryCalibration.uproject -Build=C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Packaged\\Ashwake\\Windows -Configuration=Development -Packaged -Unattended -MaxDuration=90 -ResX=1280 -ResY=720 -ClientArgs=\"/Game/Calibration/Maps/EmberveilCalibration -AshwakeInputProof -AshwakeInputProofExit -NoSplash\")\nArguments used:\n\tRunUAT\n\tRunUnreal\n\t-Test=\"UnrealGame.DefaultTest\"\n\t-project=C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\FoundryCalibration.uproject\n\t-Build=C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Packaged\\Ashwake\\Windows\n\t-Configuration=Development\n\t-Packaged\n\t-Unattended\n\t-MaxDuration=90\n\t-ResX=1280\n\t-ResY=720\n\t-ClientArgs=\"/Game/Calibration/Maps/EmberveilCalibration\n\t-AshwakeInputProof\n\t-AshwakeInputProofExit\n\t-NoSplash\"\n  \nBUILD SUCCESSFUL\nAutomationTool executed for 0h 0m 21s\nAutomationTool exiting with ExitCode=0 (Success)\n",
+      "stderr_tail": "",
+      "timed_out": false
+    },
+    {
+      "name": "failure",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration_seconds": 20.803,
+      "log_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\gauntlet-ashwake-gameplay\\failure-1787244714100",
+      "logs": [
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\gauntlet-ashwake-gameplay\\failure-1787244714100\\UnrealGame.DefaultTest_(Win64_Development_Client)\\Client\\ClientOutput.log",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\gauntlet-ashwake-gameplay\\failure-1787244714100\\UnrealGame.DefaultTest_(Win64_Development_Client)\\Client\\Logs\\FoundryCalibration_Client.log"
+      ],
+      "command": [
+        "C:\\Program Files\\Epic Games\\UE_5.8\\Engine\\Build\\BatchFiles\\RunUAT.bat",
+        "RunUnreal",
+        "-test=UnrealGame.DefaultTest",
+        "-project=C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\FoundryCalibration.uproject",
+        "-Build=C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Packaged\\Ashwake\\Windows",
+        "-Platform=Win64",
+        "-Configuration=Development",
+        "-Packaged",
+        "-Unattended",
+        "-MaxDuration=90",
+        "-ResX=1280",
+        "-ResY=720",
+        "-LogDir=C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\gauntlet-ashwake-gameplay\\failure-1787244714100",
+        "-ClientArgs=/Game/Calibration/Maps/EmberveilCalibration -AshwakeInputProof -AshwakeInputProofExit -NoSplash -AshwakeInputProofFailure"
+      ],
+      "gauntlet_passed": true,
+      "markers": {
+        "ASHWAKE_MAP_BEGINPLAY": true,
+        "ASHWAKE_GAMEPLAY_BEGIN": true,
+        "INPUT_PROOF_BEGIN": true,
+        "INPUT_PROOF_SEND_KEY Key=E": true,
+        "INPUT_RECEIVED Action=Attune": true,
+        "GAMEPLAY_COMMAND Action=Attune": true,
+        "INTERACTION_REJECTED": true,
+        "PLAYER_FAILURE": true,
+        "INPUT_PROOF_SEND_KEY Key=R": true,
+        "INPUT_RECEIVED Action=Restart": true,
+        "RECOVERY_RESTART": true,
+        "INPUT_PROOF_COMPLETE Result=FailureAndRestart": true,
+        "VFX_STATE": true,
+        "AUDIO_PLAYING": true,
+        "ANIMATION_PLAYING": true
+      },
+      "counts": {
+        "input_events": 3,
+        "gameplay_commands": 1,
+        "accepted_interactions": 0,
+        "rejected_interactions": 1,
+        "state_changes": 4,
+        "vfx_state": 4,
+        "audio_playing": 1,
+        "animation_playing": 4
+      },
+      "runtime_reference_warnings": [],
+      "stdout_tail": "directories.\nCould not find complete relevant path. One or more path nodes could not be found among: C:\\Program Files\\Epic Games\\UE_5.8\\GauntletTemp\\DeviceCache\\Win64\\LocalDevice0\\UserDir\\Saved \\ Screenshots\nPartially found relevant path: C:\\Program Files\\Epic Games\\UE_5.8\\GauntletTemp\\DeviceCache\\Win64\\LocalDevice0\\UserDir\\Saved\nWrote Client Log to C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\gauntlet-ashwake-gameplay\\failure-1787244714100\\UnrealGame.DefaultTest_(Win64_Development_Client)\\Client\\ClientOutput.log\nShutting down LocalDevice0\nUnrealGame.DefaultTest (Win64 Development Client) result=Passed\n****************************************************************\n*\nTest UnrealGame.DefaultTest (Win64 Development Client) Passed\nTest Time: 00:15 (Waited:00:00, Setup:00:00)\n --------------------------------------------------------------------------------\n # Test Summary: UnrealGame.DefaultTest\n --------------------------------------------------------------------------------\n ### UnrealGame.DefaultTest Passed ***\n\n Client Role: Tests exited with error code 0 (ExitOk, ExitCode=0)\n\n * Main Context: Win64 Development Client\n * Log Warnings: 1\n * Result: Passed\n\n See 'Role Report' below for more details on each role\n\n --------------------------------------------------------------------------------\n # Role(s): UnrealGame.DefaultTest\n --------------------------------------------------------------------------------\n #### Role: Client (Win64 Development)\n #### Client completed: Tests exited with error code 0 (ExitOk, ExitCode=0)\n * CommandLine:  -AshwakeInputProof  -AshwakeInputProofExit  -NoSplash  -AshwakeInputProofFailure  -gauntlet  -ResX=1280  -ResY=720  -windowed  -log  -unattended  -stdout  -FullStdOutLogOutput  -gauntlet.heartbeatperiod=30  -DeviceTag=LocalDevice0  -userdir=\"C:\\Program Files\\Epic Games\\UE_5.8\\GauntletTemp\\DeviceCache\\Win64\\LocalDevice0\\UserDir\" -abslog=\"C:\\Program Files\\Epic Games\\UE_5.8\\GauntletTemp\\DeviceCache\\Win64\\LocalDevice0\\UserDir\\Saved\\Logs\\FoundryCalibration_Client.log\"\n * Log: C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\gauntlet-ashwake-gameplay\\failure-1787244714100\\UnrealGame.DefaultTest_(Win64_Development_Client)\\Client\\ClientOutput.log\n * SavedDir: C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\gauntlet-ashwake-gameplay\\failure-1787244714100\\UnrealGame.DefaultTest_(Win64_Development_Client)\\Client\n * Log Warnings: 1\n\n --------------------------------------------------------------------------------\n\n # Gauntlet summary events:\n\n --------------------------------------------------------------------------------\n\n ##### No Gauntlet Events were fired during this test!\nUnrealGame.DefaultTest (Win64 Development Client) result=Passed\nHow to run locally: (RunUAT RunUnreal -Test=\"UnrealGame.DefaultTest\" -project=C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\FoundryCalibration.uproject -Build=C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Packaged\\Ashwake\\Windows -Configuration=Development -Packaged -Unattended -MaxDuration=90 -ResX=1280 -ResY=720 -ClientArgs=\"/Game/Calibration/Maps/EmberveilCalibration -AshwakeInputProof -AshwakeInputProofExit -NoSplash -AshwakeInputProofFailure\")\nArguments used:\n\tRunUAT\n\tRunUnreal\n\t-Test=\"UnrealGame.DefaultTest\"\n\t-project=C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\FoundryCalibration.uproject\n\t-Build=C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Packaged\\Ashwake\\Windows\n\t-Configuration=Development\n\t-Packaged\n\t-Unattended\n\t-MaxDuration=90\n\t-ResX=1280\n\t-ResY=720\n\t-ClientArgs=\"/Game/Calibration/Maps/EmberveilCalibration\n\t-AshwakeInputProof\n\t-AshwakeInputProofExit\n\t-NoSplash\n\t-AshwakeInputProofFailure\"\n  \nBUILD SUCCESSFUL\nAutomationTool executed for 0h 0m 20s\nAutomationTool exiting with ExitCode=0 (Success)\n",
+      "stderr_tail": "",
+      "timed_out": false
+    }
+  ]
+}

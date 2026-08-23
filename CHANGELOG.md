@@ -1,5 +1,58 @@
 # Changelog
 
+## 0.7.0 — 2026-08-22
+
+Creative, Experience, and Frontend Intelligence Ascension.
+
+- Added independent engineering, creative/art, experience/UX, tool mastery, professional experience, and reliability axes.
+- Added source-grounded resource packs for frontend/UI/UX, art direction/lookdev, and semantic engineering, with versioned-source limits.
+- Added frontend and game-design institute contracts, deterministic mission compilation, and bounded apprenticeship/transfer evaluation.
+- Added frontend quality evidence gates that reject score-only certification and preserve visual, UX, accessibility, and performance as separate axes.
+- Extended model Golden Task roles for frontend design, UX critique, game design, and art direction without claiming live model superiority before real results exist.
+- Expanded the ontology to 92 scoped capabilities; ontology and 12 focused ascension Golden Tasks pass.
+- Deployed only reusable global capability changes; Ashwake remains frozen as `CALIBRATION_FIXTURE_001`.
+
+## 0.6.0 — 2026-08-22
+
+Capability Ascension course correction: Ashwake is frozen as `CALIBRATION_FIXTURE_001`; reusable global intelligence is now the active product.
+
+- Added the Creative Intelligence Institute policy with separate knowledge, tool mastery, practice, artistic judgment, and production orchestration layers.
+- Added a machine-readable capability truth audit; the current audit records 24 theoretical, 6 scripted, 45 operational, 10 verified, and 0 production-proven capabilities.
+- Added a ranked top-ten global capability-gap register and a mission value/drift gate that stops unbounded work on frozen calibration fixtures.
+- Added a reusable visual evidence evaluator that keeps structural, functional, perceptual, artistic, and cohesion states separate and rejects known Ashwake failure patterns.
+- Added evidence-based 9Router role selection from the measured model registry, with explicit multimodal limitations.
+- Added dependency-free multi-language repository indexing for Python, TypeScript/JavaScript, and C++ with explicit lexical limitations; LSP/type-resolved maturity is not claimed.
+- Added focused ascension Golden Tasks and wired them into canonical regression; ontology now contains 85 scoped capabilities with zero unresolved providers/evidence pointers.
+- Deployed reusable capability-system changes globally only after focused checks; Ashwake content was not modified.
+
+## 0.5.0 — 2026-08-19
+
+Unreal Game Studio Genesis — first executable platform and gameplay-slice foundation:
+
+- Discovered and recorded Unreal Engine 5.8.0, the existing MSVC 14.44 /
+  Windows SDK toolchain, Editor/Cmd/UAT/Build surfaces, SDK state, and plugin
+  families through structured health output.
+- Added bounded package preflight that reports the exact missing
+  `Microsoft.Net.Component.4.8.SDK` prerequisite instead of masking UAT failure.
+- Added three original concept evaluation, traceable Ashwake game design, and
+  an 18-node / 21-edge production graph with evidence semantics that separate
+  implementation evidence from runtime quality.
+- Added a compiled C++ player/game-state/reliquary/HUD slice, real authored map,
+  Emberveil import, Niagara calibration, audio import, and native test source.
+- Added bounded runtime observation and native automation-test discovery;
+  runtime failure is recorded honestly before map load rather than promoted to
+  playable status.
+- Expanded Unreal regression coverage from six to nine tests and extended the
+  ontology to 78 scoped capabilities with honest L0-L5 reassessment.
+- Hardened 9Router diagnostics: chat/core PASS and root model registry DEGRADED
+  are reported separately with a bounded timeout and provider-failure class.
+- Updated global deployment mappings for reusable Unreal intelligence.
+
+The game target compiles, but Editor target, native automation execution,
+Gauntlet, Insights analysis, packaged build, and outside-Editor play remain
+unproven because the exact existing Build Tools .NET SDK modification was
+administratively denied. No broad Unreal game-development L5 claim is made.
+
 ## 0.4.1 — 2026-08-18
 
 Capability Ascension milestone 1 — the Foundry moves from infrastructure to

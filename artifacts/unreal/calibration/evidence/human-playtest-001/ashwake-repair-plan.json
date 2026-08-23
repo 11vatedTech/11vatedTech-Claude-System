@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "kind": "ashwake-repair-plan",
+  "date": "2026-08-21",
+  "baseline": "HIGH_FIDELITY_FAILURE_BASELINE_001",
+  "target_quality_state": {
+    "engineering": "E4_or_better",
+    "visual_experience": "C4_POLISHED_FIRST_TARGET",
+    "environment": "C3_to_C4",
+    "fidelity_reliability": "R3_minimum_before_human_playtest_2"
+  },
+  "selected_direction": "CINDERWORKS_ABBEY",
+  "creative_thesis": "A collapsed monastic heat-engine where abbey, crematorium, coal refinery, and reliquary sanctuary became one dying sacred machine.",
+  "phase_order": [
+    {
+      "id": "PHASE_1_BLOCKOUT_COMPOSITION",
+      "goal": "Replace empty test chamber with readable Cinderworks Abbey spatial route.",
+      "deliverables": ["55m x 45m abbey court blockout", "entrance balcony start", "three embedded reliquary landmarks", "furnace apse sightline", "no top-frame clipping golden start/interact views"],
+      "gates": ["player sees whole 3-reliquary problem early", "first route readable without HUD text", "no primary subject clipping in golden captures"]
+    },
+    {
+      "id": "PHASE_2_LIGHTING_VALUE_SCRIPT",
+      "goal": "Fix black crush with motivated readable darkness, not uniform brighten.",
+      "deliverables": ["cold ash daylight shafts", "low furnace bounce", "gold seam pulse lighting", "rim/kicker separation", "bounded exposure QA"],
+      "gates": ["critical path has midtone band", "hero relic readable in grayscale thumbnail", "near-black only in non-critical negative space"]
+    },
+    {
+      "id": "PHASE_3_RELIQUARY_FORM_MATERIAL",
+      "goal": "Make relics read as crafted sacred heat machinery rather than black disc shapes.",
+      "deliverables": ["socketed/cradled relic design", "brass/gold/charred ceramic material breakup", "edge highlights", "patina/soot/heat discoloration", "non-emissive form readability"],
+      "gates": ["material family identifiable under intended lighting", "silhouette distinct from generic orb", "emissive off test still shows form"]
+    },
+    {
+      "id": "PHASE_4_STATE_LANGUAGE",
+      "goal": "Teach Read Pulse and Gold Window through whole-world feedback.",
+      "deliverables": ["reading pulse ash/gold seam rhythm", "safe window convergence/hush/opening", "hostile fracture/agitation without hue-only red", "success channel ignition", "failure ash-collapse reset"],
+      "gates": ["safe window readable in grayscale", "hostile readable without red", "3+ channels change per state", "success begins within 100ms"]
+    },
+    {
+      "id": "PHASE_5_HUD_UI",
+      "goal": "Replace debug-like HUD with Ashwake-specific but accessible interface.",
+      "deliverables": ["ritual coal progression", "state-reticle mirroring world", "minimal typography pass", "failure/success feedback", "accessibility contrast"],
+      "gates": ["HUD supports but does not replace world teaching", "reticle never adds state absent from world", "UI remains readable over darkest intended views"]
+    },
+    {
+      "id": "PHASE_6_PACKAGE_COMPARE_REVIEW",
+      "goal": "Prove repair through comparable runtime evidence and blind human playtest.",
+      "deliverables": ["packaged build", "content contract PASS", "golden before/after screenshots", "video/audio state clips", "specialist council review", "Founder Human Playtest #2 packet"],
+      "gates": ["all critical/high debt closed or explicitly waived by Founder", "independent review no critical/high unresolved", "Founder playtest materially improves without pre-coaching"]
+    }
+  ],
+  "do_not_do": [
+    "uniformly brighten background",
+    "add particle spam",
+    "use bloom as polish",
+    "add random props disconnected from heat-system logic",
+    "promote quality based only on package/content/runtime markers"
+  ]
+}

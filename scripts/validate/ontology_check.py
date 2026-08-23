@@ -49,6 +49,8 @@ def resolve(kind: str, name: str) -> tuple[bool, str]:
         return p.exists(), name
     if kind == "template":
         return (ROOT / name).exists(), name
+    if kind == "config":
+        return (ROOT / name).exists(), name
     if kind == "tool":
         if name in DEGRADED_OK:
             return True, f"tool {name} (degraded-ok)"

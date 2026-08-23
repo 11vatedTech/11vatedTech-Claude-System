@@ -1,0 +1,82 @@
+{
+  "vswhere_component": {
+    "vswhere_path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\Installer\\vswhere.exe",
+    "returncode": 0,
+    "stdout": "[]\n",
+    "stderr": "",
+    "instances": []
+  },
+  "registry": {
+    "HKLM SOFTWARE Microsoft SDKs NETFXSDK 4.8 WOW6432": {
+      "exists": true,
+      "values": {
+        "InstallationFolder": "C:\\Program Files (x86)\\Microsoft SDKs\\Windows\\v10.0A\\",
+        "ProductVersion": "4.8.03928",
+        "ProductName": "Microsoft .NET Framework 4.8 SDK",
+        "KitsInstallationFolder": "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\"
+      }
+    },
+    "HKLM SOFTWARE Microsoft SDKs NETFXSDK 4.8 WOW6464": {
+      "exists": false
+    },
+    "HKLM SOFTWARE WOW6432Node Microsoft SDKs NETFXSDK 4.8": {
+      "exists": true,
+      "values": {
+        "InstallationFolder": "C:\\Program Files (x86)\\Microsoft SDKs\\Windows\\v10.0A\\",
+        "ProductVersion": "4.8.03928",
+        "ProductName": "Microsoft .NET Framework 4.8 SDK",
+        "KitsInstallationFolder": "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\"
+      }
+    }
+  },
+  "filesystem": {
+    "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8": {
+      "exists": true,
+      "include_um": true,
+      "lib_um_x64": true,
+      "lib_um_x86": true,
+      "headers_sample": [
+        "alink.h",
+        "clrdata.h",
+        "cor.h",
+        "cordebug.h",
+        "CorError.h",
+        "CorHdr.h",
+        "corhlpr.h",
+        "corprof.h",
+        "corpub.h",
+        "corsym.h"
+      ],
+      "libs_sample_x64": [
+        "alink.lib",
+        "corguids.lib",
+        "format.lib",
+        "mscoree.lib",
+        "mscorsn.lib",
+        "tlbref.lib"
+      ],
+      "props_sample": []
+    },
+    "C:\\Program Files\\Windows Kits\\NETFXSDK\\4.8": {
+      "exists": false,
+      "include_um": false,
+      "lib_um_x64": false,
+      "lib_um_x86": false,
+      "headers_sample": [],
+      "libs_sample_x64": [],
+      "props_sample": []
+    }
+  },
+  "environment": {
+    "NETFXSDKDir": null,
+    "FrameworkSDKDir": null,
+    "WindowsSdkDir": null
+  },
+  "msbuild_discovery": {
+    "vsroot": "C:\\Program Files\\Microsoft Visual Studio\\2022\\BuildTools",
+    "vcvars64": "C:\\Program Files\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Auxiliary\\Build\\vcvars64.bat",
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "'\"C:\\Program Files\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Auxiliary\\Build\\vcvarsall.bat\"' is not recognized as an internal or external command,\noperable program or batch file.\n"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "kind": "unreal-insights-trace",
+  "status": "PASS",
+  "trace_file": "artifacts\\unreal\\health\\traces\\ashwake-packaged.utrace",
+  "trace_bytes": 39682126,
+  "markers": {
+    "logfoundry_present": true,
+    "fatal_error": false
+  },
+  "log": "artifacts\\unreal\\health\\packaged-insights-trace.txt"
+}

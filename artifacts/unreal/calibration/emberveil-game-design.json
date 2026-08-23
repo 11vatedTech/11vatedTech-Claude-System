@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "kind": "game-design-brief",
+  "title": "Emberveil: The Last Reliquary",
+  "player_fantasy": "Protect a dying fire-reliquary by reading a hostile shrine and choosing when to awaken its guardian.",
+  "player_verbs": [
+    "move",
+    "look",
+    "attune",
+    "ignite",
+    "retreat"
+  ],
+  "core_loop": [
+    "read the space",
+    "approach a signal",
+    "attune the reliquary",
+    "survive its response",
+    "restore a coal or fail"
+  ],
+  "secondary_loops": [
+    "learn shrine patterns",
+    "optimize risk/reward ember routes"
+  ],
+  "controls": {
+    "keyboard_mouse": [
+      "WASD move",
+      "mouse look",
+      "E attune"
+    ],
+    "controller": [
+      "left stick move",
+      "right stick look",
+      "south face attune"
+    ]
+  },
+  "feedback": {
+    "success": [
+      "warm pulse",
+      "rising hum",
+      "gold ember motes"
+    ],
+    "danger": [
+      "cracked tone",
+      "red heat bloom",
+      "camera recoil"
+    ]
+  },
+  "challenge": "The shrine changes its safe route after each attunement; the player must observe before committing.",
+  "failure_recovery": "A failed attunement returns the player to the last lit coal with reduced route certainty, never a dead-end state.",
+  "win_condition": "Light three reliquaries and reach the central ember before the chamber cools.",
+  "accessibility": [
+    "remappable actions",
+    "subtitle-ready events",
+    "reduced camera motion",
+    "high-contrast interaction cue",
+    "audio-independent danger cue"
+  ],
+  "mechanics": [
+    {
+      "id": "attunement",
+      "player_experience": "risk a close reading of the shrine",
+      "system": "timed interaction with stateful danger response",
+      "implementation": "Enhanced Input action + gameplay state component + feedback event bus",
+      "evidence": [
+        "planned: unreal gameplay test",
+        "planned: playtest capture"
+      ]
+    },
+    {
+      "id": "ember-routing",
+      "player_experience": "choose a safer or richer route",
+      "system": "branching shrine nodes with resource consequence",
+      "implementation": "data-driven route asset + level encounter markers",
+      "evidence": [
+        "planned: level-design review"
+      ]
+    }
+  ],
+  "camera": {
+    "mode": "close third-person",
+    "principle": "keep the reliquary readable while preserving spatial threat cues"
+  },
+  "audio_language": "resonant metal, dry ash, localized ember hum; no unproven stock assets",
+  "playtest_plan": {
+    "first_session_questions": [
+      "Can a new player explain the attunement goal?",
+      "Does danger read without audio?",
+      "Does retreat feel like a choice rather than punishment?"
+    ],
+    "evidence": "required before COHERENT promotion"
+  },
+  "quality_ladder": "BLOCKOUT",
+  "game_state": [
+    "START",
+    "PLAYING",
+    "SUCCESS",
+    "FAILURE",
+    "RESTART"
+  ],
+  "level_requirements": [
+    "safe entry chamber",
+    "pulse-reading lesson",
+    "escalated hostile attunement",
+    "three-coal climax",
+    "recoverable failure return"
+  ],
+  "ai_systemic_opposition": {
+    "type": "deterministic shrine-response state machine",
+    "states": [
+      "DORMANT",
+      "READING",
+      "SAFE_WINDOW",
+      "HOSTILE",
+      "COOLED"
+    ],
+    "player_counterplay": "observe pulse, retreat during HOSTILE, commit only during SAFE_WINDOW"
+  },
+  "animation_requirements": [
+    "player locomotion",
+    "attune action",
+    "reliquary pulse",
+    "hostile surge",
+    "success ignition",
+    "failure recoil"
+  ],
+  "vfx_requirements": [
+    {
+      "event": "SAFE_WINDOW",
+      "purpose": "communicate actionable timing",
+      "shape": "converging gold motes",
+      "budget": "one local emitter"
+    },
+    {
+      "event": "HOSTILE",
+      "purpose": "signal danger",
+      "shape": "red heat fracture and outward ash burst",
+      "budget": "one burst plus emissive pulse"
+    }
+  ],
+  "audio_requirements": [
+    "chamber ambience",
+    "pulse tick",
+    "attune confirmation",
+    "hostile warning",
+    "success ignition",
+    "failure recoil"
+  ],
+  "ui_requirements": [
+    "state label",
+    "coal progress",
+    "interaction prompt",
+    "failure/restart prompt",
+    "reduced-motion and high-contrast modes"
+  ],
+  "architecture_decisions": [
+    {
+      "subsystem": "movement",
+      "mode": "C++",
+      "rationale": "reusable tested input and movement behavior"
+    },
+    {
+      "subsystem": "reliquary state",
+      "mode": "C++",
+      "rationale": "deterministic state transitions and native tests"
+    },
+    {
+      "subsystem": "presentation",
+      "mode": "HYBRID",
+      "rationale": "C++ owns state; Blueprint/UMG/Niagara author presentation"
+    },
+    {
+      "subsystem": "encounter data",
+      "mode": "DATA",
+      "rationale": "tunable pulse windows without code edits"
+    }
+  ],
+  "failure_injection": [
+    "missing imported mesh",
+    "invalid input mapping",
+    "illegal HOSTILE\u2192SUCCESS transition",
+    "missing VFX asset",
+    "missing startup map"
+  ],
+  "validation": {
+    "ok": true,
+    "issues": []
+  }
+}

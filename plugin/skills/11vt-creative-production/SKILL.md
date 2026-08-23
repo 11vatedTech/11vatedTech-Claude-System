@@ -50,6 +50,8 @@ Activate only roles needed for scope. One person may execute several roles in sm
 
 ## Required sequence for significant visual work
 
+Before execution, declare the disciplines required, the professional knowledge/tool mastery available, the evidence needed, and the stop condition. Run the value-of-work gate for substantial work. `Ashwake — The Last Reliquary` is frozen as `CALIBRATION_FIXTURE_001`; do not use it as an open-ended art roadmap.
+
 1. Understand intended experience and constraints.
 2. Research references when current or non-obvious visual language matters. Study adjacent fields; extract principles, do not clone.
 3. Write or update project visual canon when identity matters.
@@ -59,7 +61,8 @@ Activate only roles needed for scope. One person may execute several roles in sm
 7. Run app, inspect rendered desktop/tablet/mobile when previewable.
 8. Interact with important states and transitions.
 9. Compare screenshots/snapshots against canon.
-10. Run Visual QA critique. If weak, escalate concept/layout/assets/motion, not only padding/colors/shadows.
+10. Run Visual QA critique. If weak, escalate concept/layout/assets/motion, not only padding/colors/shadows. Run `scripts/validate/visual_evidence_evaluator.py` over preserved image evidence; diagnostic pass is not artistic approval.
+
 11. Repeat until acceptance gates pass or report remaining limitation honestly.
 
 ## Project visual canon

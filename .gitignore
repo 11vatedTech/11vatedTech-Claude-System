@@ -2,10 +2,34 @@
 __pycache__/
 *.py[cod]
 *.egg-info/
+.venv/
+venv/
+.uv/
+uv.lock
 
 # Blender session backups
 *.blend1
 *.blend2
+
+# Unreal Engine build artifacts (generated, not source)
+**/Intermediate/
+**/Binaries/
+**/Saved/
+**/DerivedDataCache/
+**/Packaged/
+*.pdb
+*.utrace
+
+# Claude worktrees and backups
+.claude/worktrees/
+claude-backups/
+*.tar
+
+# Dependencies
+node_modules/
+
+# Playwright driver binaries
+tools/frontend/py-deps/playwright/driver/
 
 # Freebuff client metadata (not project content)
 .freebuff/

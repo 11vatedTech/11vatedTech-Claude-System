@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "kind": "foundry-ascension-golden-tasks",
+  "tests": 12,
+  "failures": [],
+  "ok": true
+}

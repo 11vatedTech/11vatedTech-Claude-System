@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "pack_id": "FRONTEND_UI_UX_CORE",
+  "date": "2026-08-22",
+  "status": "ACTIVE",
+  "knowledge_class": "evergreen_with_versioned_web_standards",
+  "disciplines": ["frontend-design", "ui-design", "ux", "accessibility", "web-performance"],
+  "professional_baseline": {
+    "beginner": ["semantic structure", "basic hierarchy", "usable controls", "responsive constraints"],
+    "working_professional": ["task and content models", "state completeness", "design tokens without flattening identity", "keyboard and screen-reader behavior", "responsive composition", "field performance measurement"],
+    "senior": ["tradeoffs across product identity, comprehension, accessibility, performance, and maintenance", "systemic failure diagnosis", "evidence-led prioritization"],
+    "lead_director": ["sets product language and quality bar", "aligns research, design, engineering, content, and validation", "protects user outcomes from local optimization"]
+  },
+  "workflow": [
+    "product_character_and_user_type",
+    "jobs_tasks_and_content_model",
+    "information_architecture_and_flow",
+    "three_visual_directions",
+    "selected_visual_typographic_motion_thesis",
+    "responsive_state_inventory",
+    "semantic_implementation",
+    "keyboard_and_accessibility_review",
+    "browser_screenshot_and_interaction_evidence",
+    "performance_measurement",
+    "independent_or_human_review",
+    "repair_and_transfer_test"
+  ],
+  "quality_dimensions": {
+    "visual_design": ["hierarchy", "composition", "typography", "color", "surface", "imagery", "identity"],
+    "information_architecture": ["findability", "grouping", "progressive disclosure", "content priority"],
+    "interaction": ["affordance", "feedback", "state transitions", "error recovery", "interruptibility"],
+    "responsive": ["content-driven layout", "navigation transformation", "touch sizing", "zoom and orientation"],
+    "accessibility": ["semantic HTML", "accessible names", "keyboard flow", "focus management", "reduced motion", "contrast"],
+    "performance": ["LCP", "INP", "CLS", "long tasks", "image/font delivery", "layout stability"]
+  },
+  "failure_patterns": [
+    {"id": "generic-template", "symptoms": ["gradient default", "glass cards", "uniform pills", "weak product identity"], "repair": "rederive visual thesis from user, content, and product character"},
+    {"id": "mobile-shrunk-desktop", "symptoms": ["clipped content", "desktop navigation squeezed", "position-driven layout"], "repair": "recompose around content and interaction constraints at each viewport"},
+    {"id": "accessibility-by-score", "symptoms": ["automated score used as certification", "keyboard/focus not reviewed"], "repair": "combine automated rules with manual keyboard, semantic, and user review"},
+    {"id": "motion-without-purpose", "symptoms": ["decorative animation", "unclear state change", "reduced motion ignored"], "repair": "map every transition to what changed, where it went, and the next action"}
+  ],
+  "evidence_requirements": ["viewport matrix", "deterministic state captures", "keyboard path", "accessibility scan with limitations", "performance sample", "causal review findings"],
+  "sources": [
+    {"title": "Web Content Accessibility Guidelines 2.2", "url": "https://www.w3.org/TR/WCAG22/", "authority": "W3C Recommendation", "retrieved": "2026-08-22", "transfers": ["testable accessibility criteria", "perceivable/operable/understandable/robust framing"]},
+    {"title": "ARIA Authoring Practices Guide", "url": "https://www.w3.org/WAI/ARIA/apg/", "authority": "W3C WAI", "retrieved": "2026-08-22", "transfers": ["widget semantics", "keyboard support", "accessible names"]},
+    {"title": "Web Vitals", "url": "https://web.dev/articles/vitals", "authority": "Google web.dev", "retrieved": "2026-08-22", "transfers": ["LCP <= 2.5s", "INP <= 200ms", "CLS <= 0.1 at 75th percentile"]},
+    {"title": "Playwright accessibility testing", "url": "https://playwright.dev/docs/accessibility-testing", "authority": "Playwright documentation", "retrieved": "2026-08-22", "transfers": ["automated axe coverage is partial", "manual and inclusive user testing remain required"]}
+  ],
+  "tool_mapping": {"browser": ["Playwright", "CDP"], "accessibility": ["axe-core where installed", "manual keyboard review"], "performance": ["browser DevTools", "Lighthouse when installed"], "implementation": ["semantic HTML", "project framework"]},
+  "known_limits": ["This pack does not certify visual taste, usability, or accessibility from static source alone.", "Framework-specific behavior must be researched just in time."]
+}

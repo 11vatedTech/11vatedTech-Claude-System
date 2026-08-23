@@ -1,0 +1,615 @@
+{
+  "schema_version": 1,
+  "kind": "ashwake-phase3-founder-material-audio-index",
+  "date": "2026-08-21",
+  "status": "PASS",
+  "selection_status": "NO_FINAL_PRODUCTION_DIRECTION_SELECTED",
+  "identity_rule": "Founder-facing records use aliases only.",
+  "materials": [
+    {
+      "alias": "OPTION_A",
+      "material_id": "MATERIAL_01",
+      "material_class": "metal",
+      "light": "NEUTRAL_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\materials\\neutral_light\\material_01.png",
+      "readability_gate": "PASS",
+      "value_mean": 158.99,
+      "value_stdev": 46.02
+    },
+    {
+      "alias": "OPTION_A",
+      "material_id": "MATERIAL_01",
+      "material_class": "metal",
+      "light": "GRAZING_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\materials\\grazing_light\\material_01.png",
+      "readability_gate": "PASS",
+      "value_mean": 76.99,
+      "value_stdev": 37.26
+    },
+    {
+      "alias": "OPTION_A",
+      "material_id": "MATERIAL_01",
+      "material_class": "metal",
+      "light": "PRODUCTION_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\materials\\production_light\\material_01.png",
+      "readability_gate": "PASS",
+      "value_mean": 65.5,
+      "value_stdev": 29.41
+    },
+    {
+      "alias": "OPTION_A",
+      "material_id": "MATERIAL_02",
+      "material_class": "glass",
+      "light": "NEUTRAL_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\materials\\neutral_light\\material_02.png",
+      "readability_gate": "PASS",
+      "value_mean": 162.25,
+      "value_stdev": 29.83
+    },
+    {
+      "alias": "OPTION_A",
+      "material_id": "MATERIAL_02",
+      "material_class": "glass",
+      "light": "GRAZING_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\materials\\grazing_light\\material_02.png",
+      "readability_gate": "PASS",
+      "value_mean": 63.81,
+      "value_stdev": 34.38
+    },
+    {
+      "alias": "OPTION_A",
+      "material_id": "MATERIAL_02",
+      "material_class": "glass",
+      "light": "PRODUCTION_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\materials\\production_light\\material_02.png",
+      "readability_gate": "PASS",
+      "value_mean": 86.6,
+      "value_stdev": 37.25
+    },
+    {
+      "alias": "OPTION_A",
+      "material_id": "MATERIAL_03",
+      "material_class": "ceramic",
+      "light": "NEUTRAL_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\materials\\neutral_light\\material_03.png",
+      "readability_gate": "PASS",
+      "value_mean": 201.99,
+      "value_stdev": 39.82
+    },
+    {
+      "alias": "OPTION_A",
+      "material_id": "MATERIAL_03",
+      "material_class": "ceramic",
+      "light": "GRAZING_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\materials\\grazing_light\\material_03.png",
+      "readability_gate": "PASS",
+      "value_mean": 121.6,
+      "value_stdev": 40.3
+    },
+    {
+      "alias": "OPTION_A",
+      "material_id": "MATERIAL_03",
+      "material_class": "ceramic",
+      "light": "PRODUCTION_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\materials\\production_light\\material_03.png",
+      "readability_gate": "PASS",
+      "value_mean": 155.84,
+      "value_stdev": 30.74
+    },
+    {
+      "alias": "OPTION_A",
+      "material_id": "MATERIAL_04",
+      "material_class": "textile",
+      "light": "NEUTRAL_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\materials\\neutral_light\\material_04.png",
+      "readability_gate": "PASS",
+      "value_mean": 104.69,
+      "value_stdev": 47.03
+    },
+    {
+      "alias": "OPTION_A",
+      "material_id": "MATERIAL_04",
+      "material_class": "textile",
+      "light": "GRAZING_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\materials\\grazing_light\\material_04.png",
+      "readability_gate": "PASS",
+      "value_mean": 85.36,
+      "value_stdev": 40.97
+    },
+    {
+      "alias": "OPTION_A",
+      "material_id": "MATERIAL_04",
+      "material_class": "textile",
+      "light": "PRODUCTION_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\materials\\production_light\\material_04.png",
+      "readability_gate": "PASS",
+      "value_mean": 97.03,
+      "value_stdev": 44.4
+    },
+    {
+      "alias": "OPTION_A",
+      "material_id": "MATERIAL_05",
+      "material_class": "ash-soot",
+      "light": "NEUTRAL_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\materials\\neutral_light\\material_05.png",
+      "readability_gate": "PASS",
+      "value_mean": 125.06,
+      "value_stdev": 45.93
+    },
+    {
+      "alias": "OPTION_A",
+      "material_id": "MATERIAL_05",
+      "material_class": "ash-soot",
+      "light": "GRAZING_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\materials\\grazing_light\\material_05.png",
+      "readability_gate": "PASS",
+      "value_mean": 93.6,
+      "value_stdev": 38.61
+    },
+    {
+      "alias": "OPTION_A",
+      "material_id": "MATERIAL_05",
+      "material_class": "ash-soot",
+      "light": "PRODUCTION_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\materials\\production_light\\material_05.png",
+      "readability_gate": "PASS",
+      "value_mean": 100.46,
+      "value_stdev": 41.47
+    },
+    {
+      "alias": "OPTION_B",
+      "material_id": "MATERIAL_01",
+      "material_class": "stone",
+      "light": "NEUTRAL_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\materials\\neutral_light\\material_01.png",
+      "readability_gate": "PASS",
+      "value_mean": 120.04,
+      "value_stdev": 46.36
+    },
+    {
+      "alias": "OPTION_B",
+      "material_id": "MATERIAL_01",
+      "material_class": "stone",
+      "light": "GRAZING_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\materials\\grazing_light\\material_01.png",
+      "readability_gate": "PASS",
+      "value_mean": 97.65,
+      "value_stdev": 39.46
+    },
+    {
+      "alias": "OPTION_B",
+      "material_id": "MATERIAL_01",
+      "material_class": "stone",
+      "light": "PRODUCTION_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\materials\\production_light\\material_01.png",
+      "readability_gate": "PASS",
+      "value_mean": 98.74,
+      "value_stdev": 39.73
+    },
+    {
+      "alias": "OPTION_B",
+      "material_id": "MATERIAL_02",
+      "material_class": "organic",
+      "light": "NEUTRAL_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\materials\\neutral_light\\material_02.png",
+      "readability_gate": "PASS",
+      "value_mean": 104.86,
+      "value_stdev": 49.43
+    },
+    {
+      "alias": "OPTION_B",
+      "material_id": "MATERIAL_02",
+      "material_class": "organic",
+      "light": "GRAZING_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\materials\\grazing_light\\material_02.png",
+      "readability_gate": "PASS",
+      "value_mean": 100.56,
+      "value_stdev": 45.47
+    },
+    {
+      "alias": "OPTION_B",
+      "material_id": "MATERIAL_02",
+      "material_class": "organic",
+      "light": "PRODUCTION_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\materials\\production_light\\material_02.png",
+      "readability_gate": "PASS",
+      "value_mean": 99.09,
+      "value_stdev": 44.4
+    },
+    {
+      "alias": "OPTION_B",
+      "material_id": "MATERIAL_03",
+      "material_class": "heated-emissive",
+      "light": "NEUTRAL_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\materials\\neutral_light\\material_03.png",
+      "readability_gate": "PASS",
+      "value_mean": 199.17,
+      "value_stdev": 36.17
+    },
+    {
+      "alias": "OPTION_B",
+      "material_id": "MATERIAL_03",
+      "material_class": "heated-emissive",
+      "light": "GRAZING_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\materials\\grazing_light\\material_03.png",
+      "readability_gate": "PASS",
+      "value_mean": 132.65,
+      "value_stdev": 45.21
+    },
+    {
+      "alias": "OPTION_B",
+      "material_id": "MATERIAL_03",
+      "material_class": "heated-emissive",
+      "light": "PRODUCTION_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\materials\\production_light\\material_03.png",
+      "readability_gate": "PASS",
+      "value_mean": 168.13,
+      "value_stdev": 43.39
+    },
+    {
+      "alias": "OPTION_B",
+      "material_id": "MATERIAL_04",
+      "material_class": "ash-soot",
+      "light": "NEUTRAL_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\materials\\neutral_light\\material_04.png",
+      "readability_gate": "PASS",
+      "value_mean": 114.29,
+      "value_stdev": 44.07
+    },
+    {
+      "alias": "OPTION_B",
+      "material_id": "MATERIAL_04",
+      "material_class": "ash-soot",
+      "light": "GRAZING_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\materials\\grazing_light\\material_04.png",
+      "readability_gate": "PASS",
+      "value_mean": 98.13,
+      "value_stdev": 38.87
+    },
+    {
+      "alias": "OPTION_B",
+      "material_id": "MATERIAL_04",
+      "material_class": "ash-soot",
+      "light": "PRODUCTION_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\materials\\production_light\\material_04.png",
+      "readability_gate": "PASS",
+      "value_mean": 111.66,
+      "value_stdev": 42.72
+    },
+    {
+      "alias": "OPTION_B",
+      "material_id": "MATERIAL_05",
+      "material_class": "organic",
+      "light": "NEUTRAL_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\materials\\neutral_light\\material_05.png",
+      "readability_gate": "PASS",
+      "value_mean": 140.04,
+      "value_stdev": 27.4
+    },
+    {
+      "alias": "OPTION_B",
+      "material_id": "MATERIAL_05",
+      "material_class": "organic",
+      "light": "GRAZING_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\materials\\grazing_light\\material_05.png",
+      "readability_gate": "PASS",
+      "value_mean": 72.79,
+      "value_stdev": 45.06
+    },
+    {
+      "alias": "OPTION_B",
+      "material_id": "MATERIAL_05",
+      "material_class": "organic",
+      "light": "PRODUCTION_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\materials\\production_light\\material_05.png",
+      "readability_gate": "PASS",
+      "value_mean": 83.9,
+      "value_stdev": 45.44
+    },
+    {
+      "alias": "OPTION_C",
+      "material_id": "MATERIAL_01",
+      "material_class": "metal",
+      "light": "NEUTRAL_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\materials\\neutral_light\\material_01.png",
+      "readability_gate": "PASS",
+      "value_mean": 143.67,
+      "value_stdev": 47.68
+    },
+    {
+      "alias": "OPTION_C",
+      "material_id": "MATERIAL_01",
+      "material_class": "metal",
+      "light": "GRAZING_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\materials\\grazing_light\\material_01.png",
+      "readability_gate": "PASS",
+      "value_mean": 79.04,
+      "value_stdev": 37.8
+    },
+    {
+      "alias": "OPTION_C",
+      "material_id": "MATERIAL_01",
+      "material_class": "metal",
+      "light": "PRODUCTION_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\materials\\production_light\\material_01.png",
+      "readability_gate": "PASS",
+      "value_mean": 51.5,
+      "value_stdev": 24.99
+    },
+    {
+      "alias": "OPTION_C",
+      "material_id": "MATERIAL_02",
+      "material_class": "metal",
+      "light": "NEUTRAL_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\materials\\neutral_light\\material_02.png",
+      "readability_gate": "PASS",
+      "value_mean": 125.51,
+      "value_stdev": 49.49
+    },
+    {
+      "alias": "OPTION_C",
+      "material_id": "MATERIAL_02",
+      "material_class": "metal",
+      "light": "GRAZING_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\materials\\grazing_light\\material_02.png",
+      "readability_gate": "PASS",
+      "value_mean": 112.3,
+      "value_stdev": 35.44
+    },
+    {
+      "alias": "OPTION_C",
+      "material_id": "MATERIAL_02",
+      "material_class": "metal",
+      "light": "PRODUCTION_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\materials\\production_light\\material_02.png",
+      "readability_gate": "PASS",
+      "value_mean": 88.62,
+      "value_stdev": 28.26
+    },
+    {
+      "alias": "OPTION_C",
+      "material_id": "MATERIAL_03",
+      "material_class": "stone",
+      "light": "NEUTRAL_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\materials\\neutral_light\\material_03.png",
+      "readability_gate": "PASS",
+      "value_mean": 110.05,
+      "value_stdev": 51.08
+    },
+    {
+      "alias": "OPTION_C",
+      "material_id": "MATERIAL_03",
+      "material_class": "stone",
+      "light": "GRAZING_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\materials\\grazing_light\\material_03.png",
+      "readability_gate": "PASS",
+      "value_mean": 99.76,
+      "value_stdev": 39.11
+    },
+    {
+      "alias": "OPTION_C",
+      "material_id": "MATERIAL_03",
+      "material_class": "stone",
+      "light": "PRODUCTION_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\materials\\production_light\\material_03.png",
+      "readability_gate": "PASS",
+      "value_mean": 89.76,
+      "value_stdev": 37.43
+    },
+    {
+      "alias": "OPTION_C",
+      "material_id": "MATERIAL_04",
+      "material_class": "ceramic",
+      "light": "NEUTRAL_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\materials\\neutral_light\\material_04.png",
+      "readability_gate": "PASS",
+      "value_mean": 163.17,
+      "value_stdev": 33.83
+    },
+    {
+      "alias": "OPTION_C",
+      "material_id": "MATERIAL_04",
+      "material_class": "ceramic",
+      "light": "GRAZING_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\materials\\grazing_light\\material_04.png",
+      "readability_gate": "PASS",
+      "value_mean": 125.68,
+      "value_stdev": 40.33
+    },
+    {
+      "alias": "OPTION_C",
+      "material_id": "MATERIAL_04",
+      "material_class": "ceramic",
+      "light": "PRODUCTION_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\materials\\production_light\\material_04.png",
+      "readability_gate": "PASS",
+      "value_mean": 136.55,
+      "value_stdev": 44.98
+    },
+    {
+      "alias": "OPTION_C",
+      "material_id": "MATERIAL_05",
+      "material_class": "glass",
+      "light": "NEUTRAL_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\materials\\neutral_light\\material_05.png",
+      "readability_gate": "PASS",
+      "value_mean": 78.27,
+      "value_stdev": 44.21
+    },
+    {
+      "alias": "OPTION_C",
+      "material_id": "MATERIAL_05",
+      "material_class": "glass",
+      "light": "GRAZING_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\materials\\grazing_light\\material_05.png",
+      "readability_gate": "PASS",
+      "value_mean": 64.81,
+      "value_stdev": 34.54
+    },
+    {
+      "alias": "OPTION_C",
+      "material_id": "MATERIAL_05",
+      "material_class": "glass",
+      "light": "PRODUCTION_LIGHT",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\materials\\production_light\\material_05.png",
+      "readability_gate": "PASS",
+      "value_mean": 86.44,
+      "value_stdev": 36.55
+    }
+  ],
+  "material_contact_sheets": [
+    {
+      "alias": "OPTION_A",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\material-contact-sheet.png",
+      "exists": true,
+      "bytes": 993909
+    },
+    {
+      "alias": "OPTION_B",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\material-contact-sheet.png",
+      "exists": true,
+      "bytes": 982242
+    },
+    {
+      "alias": "OPTION_C",
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\material-contact-sheet.png",
+      "exists": true,
+      "bytes": 975867
+    }
+  ],
+  "audio": [
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\audio\\ambience.wav",
+      "exists": true,
+      "bytes": 288044,
+      "seconds": 3.0,
+      "state": "AMBIENCE",
+      "alias": "OPTION_A"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\audio\\reading_pulse.wav",
+      "exists": true,
+      "bytes": 288044,
+      "seconds": 3.0,
+      "state": "READING_PULSE",
+      "alias": "OPTION_A"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\audio\\safe_signal.wav",
+      "exists": true,
+      "bytes": 288044,
+      "seconds": 3.0,
+      "state": "SAFE_SIGNAL",
+      "alias": "OPTION_A"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\audio\\hostile_signal.wav",
+      "exists": true,
+      "bytes": 288044,
+      "seconds": 3.0,
+      "state": "HOSTILE_SIGNAL",
+      "alias": "OPTION_A"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_A\\material-audio\\audio\\success_response.wav",
+      "exists": true,
+      "bytes": 288044,
+      "seconds": 3.0,
+      "state": "SUCCESS_RESPONSE",
+      "alias": "OPTION_A"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\audio\\ambience.wav",
+      "exists": true,
+      "bytes": 288044,
+      "seconds": 3.0,
+      "state": "AMBIENCE",
+      "alias": "OPTION_B"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\audio\\reading_pulse.wav",
+      "exists": true,
+      "bytes": 288044,
+      "seconds": 3.0,
+      "state": "READING_PULSE",
+      "alias": "OPTION_B"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\audio\\safe_signal.wav",
+      "exists": true,
+      "bytes": 288044,
+      "seconds": 3.0,
+      "state": "SAFE_SIGNAL",
+      "alias": "OPTION_B"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\audio\\hostile_signal.wav",
+      "exists": true,
+      "bytes": 288044,
+      "seconds": 3.0,
+      "state": "HOSTILE_SIGNAL",
+      "alias": "OPTION_B"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_B\\material-audio\\audio\\success_response.wav",
+      "exists": true,
+      "bytes": 288044,
+      "seconds": 3.0,
+      "state": "SUCCESS_RESPONSE",
+      "alias": "OPTION_B"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\audio\\ambience.wav",
+      "exists": true,
+      "bytes": 288044,
+      "seconds": 3.0,
+      "state": "AMBIENCE",
+      "alias": "OPTION_C"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\audio\\reading_pulse.wav",
+      "exists": true,
+      "bytes": 288044,
+      "seconds": 3.0,
+      "state": "READING_PULSE",
+      "alias": "OPTION_C"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\audio\\safe_signal.wav",
+      "exists": true,
+      "bytes": 288044,
+      "seconds": 3.0,
+      "state": "SAFE_SIGNAL",
+      "alias": "OPTION_C"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\audio\\hostile_signal.wav",
+      "exists": true,
+      "bytes": 288044,
+      "seconds": 3.0,
+      "state": "HOSTILE_SIGNAL",
+      "alias": "OPTION_C"
+    },
+    {
+      "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\docs\\evidence\\ashwake\\environment-apprenticeship-phase-3\\founder-package\\OPTION_C\\material-audio\\audio\\success_response.wav",
+      "exists": true,
+      "bytes": 288044,
+      "seconds": 3.0,
+      "state": "SUCCESS_RESPONSE",
+      "alias": "OPTION_C"
+    }
+  ],
+  "evaluation_prompts": {
+    "material_differentiation": [
+      "Can viewer distinguish metal, stone, glass, organic, heated/emissive, ash/soot without labels?",
+      "Do important materials collapse into same dark response under production light?"
+    ],
+    "audio_direction": [
+      "Is ambience distinct?",
+      "Does safe signal teach opportunity?",
+      "Does hostile signal warn before punishment?",
+      "Does success response feel aligned with world?",
+      "Is fatigue risk low?"
+    ]
+  }
+}

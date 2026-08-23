@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "project": "artifacts/unreal/calibration/FoundryCalibration.uproject",
+  "required_assets": [
+    {
+      "id": "emberveil_attune_vfx",
+      "kind": "NiagaraSystem",
+      "package_path": "/Game/Calibration/VFX/NS_Emberveil_Attune",
+      "object_path": "/Game/Calibration/VFX/NS_Emberveil_Attune.NS_Emberveil_Attune",
+      "purpose": "State-readable reliquary aura for Reading, SafeWindow, Hostile, and Cooled/Success gameplay states."
+    },
+    {
+      "id": "ashwake_attune_success_audio",
+      "kind": "SoundWave",
+      "package_path": "/Game/Calibration/Audio/S_Ashwake_AttuneSuccess",
+      "object_path": "/Game/Calibration/Audio/S_Ashwake_AttuneSuccess.S_Ashwake_AttuneSuccess",
+      "purpose": "Successful attunement confirmation."
+    },
+    {
+      "id": "ashwake_attune_reject_audio",
+      "kind": "SoundWave",
+      "package_path": "/Game/Calibration/Audio/S_Ashwake_AttuneReject",
+      "object_path": "/Game/Calibration/Audio/S_Ashwake_AttuneReject.S_Ashwake_AttuneReject",
+      "purpose": "Unsafe interaction rejection and failure feedback."
+    },
+    {
+      "id": "ashwake_safe_window_audio",
+      "kind": "SoundWave",
+      "package_path": "/Game/Calibration/Audio/S_Ashwake_SafeWindow",
+      "object_path": "/Game/Calibration/Audio/S_Ashwake_SafeWindow.S_Ashwake_SafeWindow",
+      "purpose": "Short cue when reliquary enters attunable safe window."
+    },
+    {
+      "id": "ashwake_hostile_audio",
+      "kind": "SoundWave",
+      "package_path": "/Game/Calibration/Audio/S_Ashwake_Hostile",
+      "object_path": "/Game/Calibration/Audio/S_Ashwake_Hostile.S_Ashwake_Hostile",
+      "purpose": "Danger cue when reliquary enters hostile state."
+    },
+    {
+      "id": "emberveil_idle_animation",
+      "kind": "AnimSequence",
+      "package_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root",
+      "object_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root.emberveil-canonical11vt_float_Emberveil_root",
+      "purpose": "Reading/idle hovering motion."
+    },
+    {
+      "id": "emberveil_safe_animation",
+      "kind": "AnimSequence",
+      "package_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_brass_band",
+      "object_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_brass_band.emberveil-canonical11vt_rotate_brass_band",
+      "purpose": "Safe-window ring alignment motion."
+    },
+    {
+      "id": "emberveil_hostile_animation",
+      "kind": "AnimSequence",
+      "package_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_pulse_ember_core",
+      "object_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_pulse_ember_core.emberveil-canonical11vt_pulse_ember_core",
+      "purpose": "Hostile ember pressure pulse."
+    },
+    {
+      "id": "emberveil_success_animation",
+      "kind": "AnimSequence",
+      "package_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_filigree_arc",
+      "object_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_filigree_arc.emberveil-canonical11vt_rotate_filigree_arc",
+      "purpose": "Success/signature reliquary restoration flourish."
+    }
+  ]
+}

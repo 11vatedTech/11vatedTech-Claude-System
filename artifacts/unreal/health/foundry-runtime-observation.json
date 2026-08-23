@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "kind": "unreal-runtime-observation",
+  "status": "STARTUP_ONLY",
+  "exit_code": 0,
+  "executable": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Binaries\\Win64\\FoundryCalibration.exe",
+  "project": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\FoundryCalibration.uproject",
+  "log": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\foundry-game-target-runtime-observed.log",
+  "duration_seconds": 6.645,
+  "markers": {
+    "project_loaded": true,
+    "asset_registry_loaded": true,
+    "game_module_loaded": true,
+    "map_loaded": false,
+    "gameplay_markers": false,
+    "crashed": false
+  },
+  "error_count": 0,
+  "errors": [],
+  "stdout_tail": ": Raster order views are supported\n[2026.08.19-15.29.33:121][  0]LogD3D12RHI: Wave Operations are supported (wave size: min=32 max=32).\n[2026.08.19-15.29.33:121][  0]LogD3D12RHI:      Legacy Barriers Present in Build: Yes\n[2026.08.19-15.29.33:121][  0]LogD3D12RHI:    Enhanced Barriers Present in Build: Yes\n[2026.08.19-15.29.33:121][  0]LogD3D12RHI:      Enhanced Barriers Driver Support: Yes\n[2026.08.19-15.29.33:121][  0]LogD3D12RHI: Preferred Barrier Implementation Type: Legacy\n[2026.08.19-15.29.33:121][  0]LogD3D12RHI:         Chosen Barrier Implementation: D3D12LegacyBarriers\n[2026.08.19-15.29.33:121][  0]LogD3D12RHI: Mesh shader tier 1.0 is supported\n[2026.08.19-15.29.33:121][  0]LogD3D12RHI: AtomicInt64OnTypedResource is supported\n[2026.08.19-15.29.33:121][  0]LogD3D12RHI: AtomicInt64OnGroupShared is supported\n[2026.08.19-15.29.33:121][  0]LogD3D12RHI: AtomicInt64OnDescriptorHeapResource is supported\n[2026.08.19-15.29.33:121][  0]LogD3D12RHI: Shader Model 6.6 atomic64 is supported\n[2026.08.19-15.29.33:121][  0]LogD3D12RHI: Work Graphs are supported\n[2026.08.19-15.29.33:198][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for DiagnosticBuffer (Queue: 0x00007FF286C2EC00)\n[2026.08.19-15.29.33:199][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for DiagnosticBuffer (Queue: 0x00007FF286C2EEC0)\n[2026.08.19-15.29.33:199][  0]LogD3D12RHI: [GPUBreadCrumb] Successfully setup breadcrumb resource for DiagnosticBuffer (Queue: 0x00007FF286C2F180)\n[2026.08.19-15.29.33:199][  0]LogD3D12RHI: Display: Not using pipeline state disk cache per r.D3D12.PSO.DiskCache=0\n[2026.08.19-15.29.33:199][  0]LogD3D12RHI: Display: Not using driver-optimized pipeline state disk cache per r.D3D12.PSO.DriverOptimizedDiskCache=0\n[2026.08.19-15.29.33:200][  0]LogD3D12RHI: Skipped NVAPI RT queries since we the feature level is below SM6\n[2026.08.19-15.29.33:200][  0]LogRHI: Texture pool is 7040 MB (70% of 10058 MB)\n[2026.08.19-15.29.33:200][  0]LogD3D12RHI: Async texture creation enabled\n[2026.08.19-15.29.33:200][  0]LogD3D12RHI: RHI has support for 64 bit atomics\n[2026.08.19-15.29.33:249][  0]LogVRS: Current RHI supports per-draw and screenspace Variable Rate Shading\n[2026.08.19-15.29.33:250][  0]LogRHI: Render tracing channels set: 'Submission' -> 0xf\n[2026.08.19-15.29.33:250][  0]LogCsvProfiler: Display: Metadata set : verbatimrhiname=\"D3D12\"\n[2026.08.19-15.29.33:250][  0]LogCsvProfiler: Display: Metadata set : rhiname=\"D3D12\"\n[2026.08.19-15.29.33:250][  0]LogCsvProfiler: Display: Metadata set : rhifeaturelevel=\"SM5\"\n[2026.08.19-15.29.33:250][  0]LogCsvProfiler: Display: Metadata set : shaderplatform=\"PCD3D_SM5\"\n[2026.08.19-15.29.33:250][  0]LogCsvProfiler: Display: Metadata set : gpu=\"NVIDIA GeForce RTX 5070 Ti Laptop GPU\"\n[2026.08.19-15.29.33:250][  0]LogCsvProfiler: Display: Metadata set : gpudriver=\"591.44\"\n[2026.08.19-15.29.33:250][  0]LogInit: Initializing FReadOnlyCVARCache\n[2026.08.19-15.29.33:257][  0]LogRendererCore: Ray tracing is disabled. Reason: disabled through project setting (r.RayTracing=0).\n[2026.08.19-15.29.33:257][  0]LogShaderLibrary: Display: Running without a pakfile/IoStore and did not find a monolithic library 'Global' - attempting disk search for its chunks\n[2026.08.19-15.29.33:257][  0]LogShaderLibrary: Display:    ....  not found\n[2026.08.19-15.29.33:257][  0]LogShaderLibrary: Error: Failed to initialize ShaderCodeLibrary required by the project because part of the Global shader library is missing from ../../Content/.\n[2026.08.19-15.29.33:257][  0]LogWindows: Error: Failed to create dialog. The specified resource type cannot be found in the image file. Error: 0x715 (1813)\n[2026.08.19-15.29.33:258][  0]LogWindows: FPlatformMisc::RequestExit(1, FShaderCodeLibrary::InitForRuntime)\n[2026.08.19-15.29.33:258][  0]LogWindows: FPlatformMisc::RequestExitWithStatus(1, 0, FShaderCodeLibrary::InitForRuntime)\n[2026.08.19-15.29.33:258][  0]LogCore: Engine exit requested (reason: Win RequestExit)\n",
+  "stderr_tail": "",
+  "trace_requested": false,
+  "command": [
+    "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Binaries\\Win64\\FoundryCalibration.exe",
+    "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\FoundryCalibration.uproject",
+    "-game",
+    "-unattended",
+    "-nop4",
+    "-nosplash",
+    "-stdout",
+    "-FullStdOutLogOutput",
+    "-NoSound",
+    "-log=C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\foundry-game-target-runtime-observed.log"
+  ]
+}

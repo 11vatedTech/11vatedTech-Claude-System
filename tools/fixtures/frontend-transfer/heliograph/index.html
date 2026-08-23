@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" data-color-scheme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HELIOGRAPH — Solar Observation Planning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── Reset & Foundations ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ground:#1a1817;
+  --surface:#242220;
+  --surface-raised:#2c2927;
+  --surface-selected:#322e2a;
+  --text-primary:#ede4d8;
+  --text-secondary:#9c9488;
+  --text-muted:#a0988a;
+  --signal-amber:#d4a843;
+  --signal-coral:#c4785c;
+  --signal-green:#7a9e8f;
+  --divider:#3a3632;
+  --focus-ring:rgba(212,168,67,0.5);
+  --font-ui:'Crimson Text',Georgia,serif;
+  --font-mono:'JetBrains Mono','Cascadia Code',Consolas,monospace;
+  --radius:4px;
+  --transition-expand:220ms cubic-bezier(0.2, 0, 0, 1);
+  --transition-fade:180ms ease-out;
+}
+html{background:var(--ground);color:var(--text-primary);font-family:var(--font-ui);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:clamp(12px,3vw,48px) clamp(12px,3vw,40px) clamp(16px,4vw,64px)}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
+}
+
+/* ── Container ── */
+.app-shell{width:100%;max-width:960px}
+.app-header{margin-bottom:clamp(16px,3vw,40px)}
+.app-header h1{font-family:var(--font-mono);font-weight:400;font-size:clamp(16px,3.5vw,24px);letter-spacing:0.08em;text-transform:uppercase;color:var(--text-primary)}
+.app-header .subtitle{font-family:var(--font-ui);font-size:0.88rem;color:var(--text-secondary);margin-top:2px;font-style:italic}
+.app-header .date-line{font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);margin-top:6px;display:flex;gap:16px;flex-wrap:wrap}
+.date-line span{display:inline-flex;align-items:center;gap:6px}
+.date-line .dot{width:6px;height:6px;border-radius:50%;background:var(--signal-green)}
+
+/* ── Observation List ── */
+.obs-list{display:flex;flex-direction:column;gap:1px;background:var(--divider);border-radius:var(--radius);overflow:hidden;border:1px solid var(--divider)}
+.obs-row{background:var(--surface);cursor:pointer;transition:background var(--transition-fade);position:relative;outline:none}
+.obs-row:hover{background:var(--surface-raised)}
+.obs-row:focus-visible{outline:2px solid var(--signal-amber);outline-offset:-2px;z-index:1}
+.obs-row.selected{background:var(--surface-selected)}
+.obs-row.confirmed .obs-main{opacity:0.6}
+
+/* Row main bar */
+.obs-main{display:grid;grid-template-columns:1fr 140px 120px 140px 100px 48px;align-items:center;padding:clamp(12px,2vw,18px) clamp(12px,2vw,20px);gap:8px;min-height:52px}
+@media(max-width:860px){.obs-main{grid-template-columns:1fr auto auto auto;}.col-priority{display:flex!important;}.col-instrument{display:none!important}}
+@media(max-width:600px){.obs-main{grid-template-columns:1fr auto auto;grid-template-rows:auto auto;row-gap:2px}.obs-main .col-time{grid-column:1;grid-row:1}.obs-main .col-confidence{grid-column:2/4;grid-row:1;justify-content:flex-end}.obs-main .col-target{display:block!important;grid-column:1;grid-row:2;font-size:0.75rem}.obs-main .col-target span{display:none!important}.obs-main .col-priority{display:flex!important;grid-column:2/4;grid-row:2;justify-content:flex-end;scale:0.85}.obs-main .col-chevron{grid-column:3;grid-row:1;align-self:start}}
+
+.col-time{font-family:var(--font-mono);font-size:0.88rem;font-weight:500;color:var(--text-primary);letter-spacing:0.02em;white-space:nowrap}
+.col-time .duration{display:block;font-size:0.7rem;color:var(--text-muted);font-weight:400;margin-top:1px}
+.col-target{font-family:var(--font-mono);font-size:0.8rem;color:var(--text-secondary)}
+.col-confidence{display:flex;align-items:center;gap:8px}
+.conf-gauge{width:100%;max-width:80px;height:3px;background:var(--divider);border-radius:2px;overflow:hidden}
+.conf-gauge .fill{height:100%;border-radius:2px;transition:width var(--transition-expand)}
+.conf-gauge .fill.high{background:var(--signal-green)}
+.conf-gauge .fill.med{background:var(--signal-amber)}
+.conf-gauge .fill.low{background:var(--signal-coral)}
+.conf-value{font-family:var(--font-mono);font-size:0.75rem;color:var(--text-secondary);min-width:34px;text-align:right}
+.col-instrument{font-family:var(--font-mono);font-size:0.78rem;color:var(--text-secondary);white-space:nowrap}
+.col-priority{display:flex;align-items:center;gap:6px}
+.priority-dot{width:8px;height:8px;flex-shrink:0;border-radius:50%}
+.priority-dot.p1{background:var(--signal-amber);box-shadow:0 0 6px rgba(212,168,67,0.4);clip-path:polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);width:10px;height:10px}
+.priority-dot.p2{background:var(--signal-amber);opacity:0.7}
+.priority-dot.p3{border:1.5px solid var(--text-muted);background:transparent;opacity:0.6}
+.priority-label{font-family:var(--font-mono);font-size:0.72rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.05em}
+.col-chevron{text-align:right;color:var(--text-muted);font-family:var(--font-mono);font-size:0.8rem;transition:transform var(--transition-expand)}
+.obs-row.selected .col-chevron{transform:rotate(90deg);color:var(--signal-amber)}
+
+/* Confirmed indicator */
+.confirmed-badge{display:none;position:absolute;top:0;left:0;width:3px;height:100%;background:var(--signal-green);border-radius:var(--radius) 0 0 var(--radius)}
+.obs-row.confirmed .confirmed-badge{display:block;animation:confirmPulse 400ms cubic-bezier(0.2, 0, 0, 1)}
+@keyframes confirmPulse{0%{opacity:0;transform:scaleY(0.3)}50%{opacity:1;transform:scaleY(1.05)}100%{opacity:1;transform:scaleY(1)}}
+
+/* ── Detail Panel ── */
+.obs-detail{display:none;border-top:1px solid var(--divider);padding:clamp(16px,3vw,24px) clamp(16px,3vw,24px);background:var(--surface-raised)}
+.obs-row.selected .obs-detail{display:block;animation:detailExpand var(--transition-expand)}
+@keyframes detailExpand{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 32px}
+@media(max-width:600px){.detail-grid{grid-template-columns:1fr}}
+
+.detail-item{display:flex;flex-direction:column;gap:3px}
+.detail-label{font-family:var(--font-ui);font-size:0.78rem;color:var(--text-muted);font-style:italic}
+.detail-value{font-family:var(--font-mono);font-size:0.85rem;color:var(--text-primary)}
+.detail-value.highlight{color:var(--signal-amber);font-weight:500}
+
+.detail-rationale{margin-top:20px;padding-top:16px;border-top:1px solid var(--divider)}
+.detail-rationale h3{font-family:var(--font-ui);font-size:0.9rem;font-weight:600;color:var(--text-primary);margin-bottom:8px}
+.detail-rationale p{font-family:var(--font-ui);font-size:0.88rem;color:var(--text-secondary);line-height:1.6;max-width:56ch}
+.detail-rationale .factors{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.factor-tag{font-family:var(--font-mono);font-size:0.7rem;padding:3px 8px;border-radius:var(--radius);background:var(--surface);color:var(--text-secondary);border:1px solid var(--divider)}
+.factor-tag.positive{border-color:var(--signal-green);color:var(--signal-green)}
+.factor-tag.caution{border-color:var(--signal-coral);color:var(--signal-coral)}
+
+/* ── Action bar ── */
+.detail-actions{margin-top:20px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.btn-select{font-family:var(--font-mono);font-size:0.82rem;font-weight:500;padding:10px 24px;border:1px solid var(--signal-amber);border-radius:var(--radius);background:var(--signal-amber);color:var(--ground);cursor:pointer;letter-spacing:0.04em;text-transform:uppercase;transition:all var(--transition-fade);position:relative;overflow:hidden}
+.btn-select:hover{background:#deb760;border-color:#deb760}
+.btn-select:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+.btn-select:active{transform:scale(0.98)}
+.btn-select.confirming{pointer-events:none;background:transparent;color:var(--signal-amber);border-color:var(--signal-amber)}
+.btn-cancel{font-family:var(--font-ui);font-size:0.88rem;padding:8px 16px;border:none;background:transparent;color:var(--text-secondary);cursor:pointer;transition:color var(--transition-fade);border-radius:var(--radius)}
+.btn-cancel:hover{color:var(--text-primary)}
+.btn-cancel:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+
+/* ── Confirmation state ── */
+.confirmation-overlay{display:none;margin-top:16px;padding:16px 20px;background:var(--surface-raised);border:1px solid var(--signal-green);border-radius:var(--radius);animation:detailExpand var(--transition-expand)}
+.confirmation-overlay.active{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.conf-check{font-size:1.2rem;color:var(--signal-green)}
+.conf-text{font-family:var(--font-ui);font-size:0.92rem;color:var(--text-primary)}
+.conf-text strong{font-family:var(--font-mono);font-weight:500;color:var(--signal-amber)}
+.conf-sub{font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted)}
+
+/* ── A11y: screen-reader only ── */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+
+/* ── Footer ── */
+.app-footer{margin-top:clamp(24px,5vw,40px);padding-top:16px;border-top:1px solid var(--divider);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.app-footer span{font-family:var(--font-mono);font-size:0.68rem;color:var(--text-muted)}
+</style>
+</head>
+<body>
+<div class="app-shell">
+  <header class="app-header">
+    <h1>Heliograph</h1>
+    <p class="subtitle">Solar Observation Planning — Hale Observing Station</p>
+    <div class="date-line">
+      <span aria-hidden="true">☉</span>
+      <span id="current-utc">2026-08-23 14:32:10 UTC</span>
+      <span><span class="dot" aria-hidden="true"></span> System nominal</span>
+      <span>Seeing: 0.82″</span>
+      <span>Solar X-ray: C2.3</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="obs-list" role="list" aria-label="Observation windows">
+      <!-- Rows injected by JS -->
+    </div>
+    <div class="confirmation-overlay" id="confirmation" role="status" aria-live="polite"></div>
+  </main>
+
+  <footer class="app-footer">
+    <span>HELIOGRAPH v1.0 — Transfer Lab 001</span>
+    <span>UTC · Hale Observing Station · 2026-08-23</span>
+  </footer>
+</div>
+
+<script>
+// ── Observation Data ──
+const OBSERVATIONS = [
+  { id: "obs-001", utcStart: "2026-08-24T06:45", utcEnd: "2026-08-24T08:15", duration: "90 min",
+    target: "AR 13354", coords: "N18° W42°", regionType: "Active Region",
+    instrument: "HMI/SOT", instrumentFull: "Helioseismic & Magnetic Imager / Solar Optical Telescope",
+    seeing: 0.72, transparency: 0.91, confidence: 87,
+    priority: 1, priorityLabel: "URGENT",
+    rationale: "Outstanding seeing forecast (0.72″) combined with high magnetic shear in AR 13354. This region produced three M-class flares in the past 48 hours and is rotating into a favorable disk position. The HMI vector magnetogram cadence aligns with the predicted emergence of new flux. Recommend this window.",
+    factors: [
+      { label: "Exceptional seeing", kind: "positive" },
+      { label: "High flare probability", kind: "positive" },
+      { label: "Favorable disk position", kind: "positive" },
+      { label: "Instrument warm-up required", kind: "caution" }
+    ]
+  },
+  { id: "obs-002", utcStart: "2026-08-24T09:30", utcEnd: "2026-08-24T11:00", duration: "90 min",
+    target: "AR 13352", coords: "S12° E08°", regionType: "Active Region",
+    instrument: "AIA", instrumentFull: "Atmospheric Imaging Assembly",
+    seeing: 0.95, transparency: 0.84, confidence: 72,
+    priority: 2, priorityLabel: "HIGH",
+    rationale: "Good EUV imaging conditions for AR 13352, which shows a developing delta-configuration sunspot. Moderate seeing (0.95″) is acceptable for full-disk AIA observations. Slightly reduced transparency due to thin cirrus forecast, but within operational limits.",
+    factors: [
+      { label: "Developing delta spot", kind: "positive" },
+      { label: "Moderate seeing", kind: "caution" },
+      { label: "Thin cirrus forecast", kind: "caution" }
+    ]
+  },
+  { id: "obs-003", utcStart: "2026-08-24T12:00", utcEnd: "2026-08-24T13:15", duration: "75 min",
+    target: "Filament N45", coords: "N45° W60°", regionType: "Filament Channel",
+    instrument: "H-alpha Lyot", instrumentFull: "H-alpha Lyot Filter Imager",
+    seeing: 0.68, transparency: 0.94, confidence: 91,
+    priority: 1, priorityLabel: "URGENT",
+    rationale: "Best seeing of the day (0.68″). The N45 filament shows signs of activation in GONG H-alpha data. This is a priority target for filament eruption studies. The narrow window (75 min) requires efficient setup, but the Lyot imager is already configured from the previous cycle.",
+    factors: [
+      { label: "Best daily seeing", kind: "positive" },
+      { label: "Filament activation", kind: "positive" },
+      { label: "Narrow window", kind: "caution" },
+      { label: "Instrument pre-configured", kind: "positive" }
+    ]
+  },
+  { id: "obs-004", utcStart: "2026-08-24T14:30", utcEnd: "2026-08-24T16:00", duration: "90 min",
+    target: "CH 892", coords: "S30° W25°", regionType: "Coronal Hole",
+    instrument: "EIS", instrumentFull: "EUV Imaging Spectrometer",
+    seeing: 1.10, transparency: 0.78, confidence: 58,
+    priority: 3, priorityLabel: "ROUTINE",
+    rationale: "Coronal hole spectroscopy run. Marginal seeing (1.10″) will reduce spatial resolution. Transparency is below preferred threshold (0.78) due to afternoon convection forecast. EIS can still collect useful spectral data, but consider deferring to tomorrow if a better window appears.",
+    factors: [
+      { label: "Marginal seeing", kind: "caution" },
+      { label: "Below transparency threshold", kind: "caution" },
+      { label: "Routine observation", kind: "positive" }
+    ]
+  },
+  { id: "obs-005", utcStart: "2026-08-24T17:00", utcEnd: "2026-08-24T18:30", duration: "90 min",
+    target: "AR 13354", coords: "N18° W50°", regionType: "Active Region (follow-up)",
+    instrument: "IBIS", instrumentFull: "Interferometric Bidimensional Spectrometer",
+    seeing: 0.85, transparency: 0.88, confidence: 78,
+    priority: 2, priorityLabel: "HIGH",
+    rationale: "Follow-up on AR 13354 after the morning HMI run. IBIS provides high-cadence spectropolarimetry ideal for tracking magnetic evolution. Seeing forecast of 0.85″ is within IBIS operational envelope. Good complement to the morning observation.",
+    factors: [
+      { label: "Complementary to obs-001", kind: "positive" },
+      { label: "Good seeing for IBIS", kind: "positive" },
+      { label: "Late-day observer fatigue", kind: "caution" }
+    ]
+  },
+  { id: "obs-006", utcStart: "2026-08-24T19:15", utcEnd: "2026-08-24T20:00", duration: "45 min",
+    target: "Limb N85", coords: "N85° E90°", regionType: "Prominence / Limb",
+    instrument: "H-alpha Lyot", instrumentFull: "H-alpha Lyot Filter Imager",
+    seeing: 1.30, transparency: 0.65, confidence: 34,
+    priority: 3, priorityLabel: "ROUTINE",
+    rationale: "Limb prominence monitoring at sunset. Very poor seeing (1.30″) and low transparency (0.65) make this window marginal at best. Only recommended if the prominence shows dramatic activity in real-time monitoring. Otherwise, skip and reschedule.",
+    factors: [
+      { label: "Very poor seeing", kind: "caution" },
+      { label: "Low transparency", kind: "caution" },
+      { label: "Real-time monitoring possible", kind: "positive" }
+    ]
+  }
+];
+
+// ── State ──
+let selectedId = null;
+let confirmedId = null;
+
+// ── Render ──
+const list = document.querySelector('.obs-list');
+const confirmation = document.getElementById('confirmation');
+
+function formatUTC(iso) {
+  return new Date(iso).toISOString().replace('T', ' ').slice(0, 16) + ' UTC';
+}
+
+function confidenceClass(val) {
+  return val >= 80 ? 'high' : val >= 60 ? 'med' : 'low';
+}
+
+function priorityClass(p) {
+  return p === 1 ? 'p1' : p === 2 ? 'p2' : 'p3';
+}
+
+function render() {
+  list.innerHTML = '';
+  OBSERVATIONS.forEach(obs => {
+    const isSelected = selectedId === obs.id;
+    const isConfirmed = confirmedId === obs.id;
+    const row = document.createElement('div');
+    row.className = 'obs-row' + (isSelected ? ' selected' : '') + (isConfirmed ? ' confirmed' : '');
+    row.setAttribute('role', 'listitem');
+    row.setAttribute('tabindex', isSelected || isConfirmed ? '-1' : '0');
+    row.setAttribute('aria-expanded', String(isSelected));
+    row.setAttribute('aria-label', `Observation window ${obs.target}, confidence ${obs.confidence}%`);
+
+    row.innerHTML = `
+      <div class="confirmed-badge" aria-hidden="true"></div>
+      <div class="obs-main">
+        <div class="col-time">
+          ${formatUTC(obs.utcStart)}
+          <span class="duration">${obs.duration}</span>
+        </div>
+        <div class="col-target">${obs.target} <span style="font-size:0.68rem;display:block;color:var(--text-muted)">${obs.coords}</span></div>
+        <div class="col-confidence">
+          <div class="conf-gauge" aria-hidden="true"><div class="fill ${confidenceClass(obs.confidence)}" style="width:${obs.confidence}%"></div></div>
+          <span class="conf-value">${obs.confidence}%</span>
+        </div>
+        <div class="col-instrument">${obs.instrument}</div>
+        <div class="col-priority">
+          <span class="priority-dot ${priorityClass(obs.priority)}" aria-hidden="true"></span>
+          <span class="priority-label">${obs.priorityLabel}</span>
+        </div>
+        <div class="col-chevron" aria-hidden="true">▶</div>
+      </div>
+      <div class="obs-detail">
+        <div class="detail-grid">
+          <div class="detail-item"><span class="detail-label">Target</span><span class="detail-value">${obs.target} — ${obs.regionType}</span></div>
+          <div class="detail-item"><span class="detail-label">Coordinates</span><span class="detail-value">${obs.coords}</span></div>
+          <div class="detail-item"><span class="detail-label">Instrument</span><span class="detail-value">${obs.instrumentFull}</span></div>
+          <div class="detail-item"><span class="detail-label">Window</span><span class="detail-value">${formatUTC(obs.utcStart)} → ${formatUTC(obs.utcEnd)} (${obs.duration})</span></div>
+          <div class="detail-item"><span class="detail-label">Seeing forecast</span><span class="detail-value highlight">${obs.seeing.toFixed(2)}″</span></div>
+          <div class="detail-item"><span class="detail-label">Transparency</span><span class="detail-value">${(obs.transparency * 100).toFixed(0)}%</span></div>
+        </div>
+        <div class="detail-rationale">
+          <h2>Recommendation Rationale</h2>
+          <p>${obs.rationale}</p>
+          <div class="factors">
+            ${obs.factors.map(f => `<span class="factor-tag ${f.kind}">${f.label}</span>`).join('')}
+          </div>
+        </div>
+        <div class="detail-actions">
+          <button class="btn-select" ${isConfirmed ? 'disabled class="btn-select confirming"' : ''} data-id="${obs.id}">
+            ${isConfirmed ? 'Observation confirmed' : 'Select this observation'}
+          </button>
+          ${isSelected ? '<button class="btn-cancel" data-action="deselect">Close details</button>' : ''}
+        </div>
+      </div>
+    `;
+
+    // Click: select row
+    row.querySelector('.obs-main').addEventListener('click', () => selectRow(obs.id));
+    // Keyboard: Enter/Space on row
+    row.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        selectRow(obs.id);
+      }
+    });
+
+    list.appendChild(row);
+  });
+
+  // Attach select/close button handlers
+  document.querySelectorAll('.btn-select').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      confirmObservation(btn.dataset.id);
+    });
+  });
+  document.querySelectorAll('.btn-cancel').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      selectRow(null);
+    });
+  });
+
+  // Inline confirmation: attach to confirmed row's detail area
+  if (confirmedId) {
+    const confRow = list.querySelector('.obs-row.confirmed .obs-detail');
+    if (confRow && !confRow.querySelector('.confirmation-overlay')) {
+      const obs = OBSERVATIONS.find(o => o.id === confirmedId);
+      const confDiv = document.createElement('div');
+      confDiv.className = 'confirmation-overlay active';
+      confDiv.style.marginTop = '16px';
+      confDiv.innerHTML = `
+        <span class="conf-check" aria-hidden="true">✓</span>
+        <span class="conf-text">Observation <strong>${obs.target}</strong> confirmed for <strong>${formatUTC(obs.utcStart)}</strong></span>
+        <span class="conf-sub">Instrument: ${obs.instrumentFull} · Priority: ${obs.priorityLabel}</span>
+      `;
+      confRow.appendChild(confDiv);
+    }
+  }
+
+  // Empty state
+  if (OBSERVATIONS.length === 0) {
+    list.innerHTML = `<div style="padding:32px 20px;text-align:center;color:var(--text-muted)"><p style="font-family:var(--font-ui);font-size:1rem;margin-bottom:4px">No observation windows available</p><p style="font-family:var(--font-mono);font-size:0.78rem">Check back at 00:00 UTC for the next planning cycle</p></div>`;
+  }
+
+  // Move focus to selected row if needed
+  if (selectedId) {
+    const sel = list.querySelector('.obs-row.selected');
+    if (sel && document.activeElement !== sel && !document.activeElement?.closest('.obs-detail')) {
+      sel.focus();
+    }
+  }
+}
+
+function selectRow(id) {
+  if (confirmedId) return; // can't change after confirmation
+  selectedId = selectedId === id ? null : id;
+  render();
+}
+
+function confirmObservation(id) {
+  if (confirmedId) return;
+  confirmedId = id;
+  selectedId = null;
+  render();
+  // Focus moves to the confirmation message
+  confirmation.focus();
+}
+
+// ── Live UTC clock ──
+function updateClock() {
+  const el = document.getElementById('current-utc');
+  if (el) {
+    const now = new Date();
+    el.textContent = now.toISOString().replace('T', ' ').slice(0, 19) + ' UTC';
+  }
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+// ── Initial render ──
+render();
+
+// ── Keyboard: Arrow key navigation ──
+document.addEventListener('keydown', e => {
+  if (confirmedId) return;
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    e.preventDefault();
+    const rows = Array.from(list.querySelectorAll('.obs-row:not(.confirmed)'));
+    const idx = rows.findIndex(r => r.classList.contains('selected'));
+    const next = e.key === 'ArrowDown' ? idx + 1 : idx - 1;
+    if (next >= 0 && next < rows.length) {
+      selectRow(OBSERVATIONS[next].id);
+    }
+  }
+  if (e.key === 'Escape' && selectedId) {
+    e.preventDefault();
+    selectRow(null);
+  }
+});
+</script>
+</body>
+</html>

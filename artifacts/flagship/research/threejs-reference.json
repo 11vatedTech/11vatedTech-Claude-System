@@ -1,0 +1,175 @@
+{
+  "meta": {
+    "purpose": "Three.js creature/organic asset showcase reference",
+    "lastUpdated": "2026-08-19",
+    "latestStableVersion": "r170+",
+    "note": "Version numbers change frequently - always check https://threejs.org or https://cdn.jsdelivr.net/npm/three/"
+  },
+  "cdnUrls": {
+    "jsdelivr": {
+      "pattern": "https://cdn.jsdelivr.net/npm/three@{VERSION}/build/three.module.js",
+      "addonsPattern": "https://cdn.jsdelivr.net/npm/three@{VERSION}/examples/jsm/{PATH}",
+      "examples": {
+        "core": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "OrbitControls": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/controls/OrbitControls.js",
+        "GLTFLoader": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/loaders/GLTFLoader.js",
+        "RGBELoader": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/loaders/RGBELoader.js",
+        "EffectComposer": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+        "RenderPass": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/postprocessing/RenderPass.js",
+        "UnrealBloomPass": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+        "OutputPass": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/postprocessing/OutputPass.js"
+      }
+    },
+    "unpkg": {
+      "pattern": "https://unpkg.com/three@{VERSION}/build/three.module.js",
+      "addonsPattern": "https://unpkg.com/three@{VERSION}/examples/jsm/{PATH}",
+      "examples": {
+        "core": "https://unpkg.com/three@0.170.0/build/three.module.js",
+        "OrbitControls": "https://unpkg.com/three@0.170.0/examples/jsm/controls/OrbitControls.js",
+        "GLTFLoader": "https://unpkg.com/three@0.170.0/examples/jsm/loaders/GLTFLoader.js",
+        "RGBELoader": "https://unpkg.com/three@0.170.0/examples/jsm/loaders/RGBELoader.js",
+        "EffectComposer": "https://unpkg.com/three@0.170.0/examples/jsm/postprocessing/EffectComposer.js",
+        "RenderPass": "https://unpkg.com/three@0.170.0/examples/jsm/postprocessing/RenderPass.js",
+        "UnrealBloomPass": "https://unpkg.com/three@0.170.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+        "OutputPass": "https://unpkg.com/three@0.170.0/examples/jsm/postprocessing/OutputPass.js"
+      }
+    },
+    "esmSh": {
+      "pattern": "https://esm.sh/three@{VERSION}",
+      "note": "esm.sh auto-resolves dependencies, but may have version lag"
+    }
+  },
+  "importMapSetup": {
+    "recommended": "Use importmap for clean module resolution",
+    "htmlTemplate": "<script type=\"importmap\">\n{\n  \"imports\": {\n    \"three\": \"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js\",\n    \"three/addons/\": \"https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/\"\n  }\n}\n</script>",
+    "moduleScript": "<script type=\"module\">\nimport * as THREE from 'three';\nimport { OrbitControls } from 'three/addons/controls/OrbitControls.js';\nimport { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';\nimport { RGBELoader } from 'three/addons/loaders/RGBELoader.js';\nimport { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';\nimport { RenderPass } from 'three/addons/postprocessing/RenderPass.js';\nimport { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';\nimport { OutputPass } from 'three/addons/postprocessing/OutputPass.js';\n</script>"
+  },
+  "postProcessing": {
+    "effectComposerSetup": {
+      "imports": [
+        "EffectComposer from 'three/addons/postprocessing/EffectComposer.js'",
+        "RenderPass from 'three/addons/postprocessing/RenderPass.js'",
+        "UnrealBloomPass from 'three/addons/postprocessing/UnrealBloomPass.js'",
+        "OutputPass from 'three/addons/postprocessing/OutputPass.js'"
+      ],
+      "code": "const composer = new EffectComposer(renderer);\n\n// 1. Render scene\ncomposer.addPass(new RenderPass(scene, camera));\n\n// 2. Bloom (optional)\nconst bloomPass = new UnrealBloomPass(\n  new THREE.Vector2(window.innerWidth, window.innerHeight),\n  1.5,  // strength\n  0.4,  // radius\n  0.85  // threshold\n);\ncomposer.addPass(bloomPass);\n\n// 3. OutputPass MUST BE LAST - handles tone mapping + sRGB\ncomposer.addPass(new OutputPass());\n\n// Render loop uses composer.render() NOT renderer.render()\nfunction animate() {\n  requestAnimationFrame(animate);\n  composer.render();\n}",
+      "criticalRules": [
+        "OutputPass must be the LAST pass in the chain",
+        "Use composer.render() not renderer.render() in animation loop",
+        "UnrealBloomPass constructor: (resolution, strength, radius, threshold)"
+      ]
+    },
+    "toneMapping": {
+      "options": [
+        "NoToneMapping (default)",
+        "LinearToneMapping",
+        "ReinhardToneMapping",
+        "CineonToneMapping",
+        "ACESFilmicToneMapping (recommended for PBR)",
+        "AgXToneMapping",
+        "NeutralToneMapping"
+      ],
+      "setup": "renderer.toneMapping = THREE.ACESFilmicToneMapping;\nrenderer.toneMappingExposure = 1.0;",
+      "note": "Tone mapping is applied via OutputPass when using EffectComposer"
+    },
+    "colorManagement": {
+      "outputColorSpace": "renderer.outputColorSpace = THREE.SRGBColorSpace;",
+      "note": "SRGBColorSpace is the default in modern Three.js (r150+)"
+    }
+  },
+  "glbLoading": {
+    "basicSetup": {
+      "code": "import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';\n\nconst loader = new GLTFLoader();\nloader.load('model.glb', (gltf) => {\n  scene.add(gltf.scene);\n  \n  // Access animations\n  const clips = gltf.animations; // AnimationClip[]\n  \n  // Access cameras\n  const cameras = gltf.cameras;\n  \n  // Traverse and modify materials\n  gltf.scene.traverse((child) => {\n    if (child.isMesh) {\n      child.castShadow = true;\n      child.receiveShadow = true;\n    }\n  });\n}, (progress) => {\n  console.log((progress.loaded / progress.total * 100) + '%');\n}, (error) => console.error(error));"
+    },
+    "dracoCompression": {
+      "imports": "import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';",
+      "setup": "const dracoLoader = new DRACOLoader()\n  .setDecoderPath('https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/libs/draco/');\n\nconst loader = new GLTFLoader();\nloader.setDRACOLoader(dracoLoader);",
+      "benefit": "2-5x file size reduction"
+    },
+    "ktx2Textures": {
+      "imports": "import { KTX2Loader } from 'three/addons/loaders/KTX2Loader.js';",
+      "setup": "const ktx2Loader = new KTX2Loader()\n  .setTranscoderPath('https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/libs/basis/')\n  .detectSupport(renderer);\n\nconst loader = new GLTFLoader();\nloader.setKTX2Loader(ktx2Loader);",
+      "benefit": "GPU-compressed textures, massive memory savings"
+    },
+    "animationPlayback": {
+      "code": "import { AnimationMixer } from 'three';\n\nconst mixer = new AnimationMixer(gltf.scene);\n\n// Play first animation\nconst action = mixer.clipAction(gltf.animations[0]);\naction.play();\n\n// In render loop:\nconst delta = clock.getDelta();\nmixer.update(delta);",
+      "namingConvention": "Animation clip names come from Blender Action names, not NLA track names"
+    },
+    "materialHandling": {
+      "pbrWorkflow": "GLB uses metalness/roughness PBR workflow via MeshStandardMaterial",
+      "traversePattern": "gltf.scene.traverse((child) => {\n  if (child.isMesh) {\n    child.material.roughness = 0.5;\n    child.material.metalness = 0.0;\n  }\n});",
+      "environmentMap": "Set scene.environment for PBR materials to look correct"
+    }
+  },
+  "blenderExportGotchas": {
+    "transparencyIssues": {
+      "problem": "Alpha Hashed mode (EEVEE) has no glTF equivalent",
+      "solution": "Use Alpha Blend or Alpha Clip modes only",
+      "blendModeMapping": {
+        "Alpha Blend": "BLEND (glTF)",
+        "Alpha Clip": "MASK (glTF)",
+        "Alpha Hashed": "Not supported - will be lost"
+      }
+    },
+    "emissionProblems": {
+      "problem": "Emission may not appear if strength is zero or exporter is outdated",
+      "solution": "Set Emission Strength > 0, update Blender glTF exporter to latest version"
+    },
+    "animationClipNames": {
+      "problem": "NLA track names not exported as clip names by default",
+      "solution": "Name your Actions clearly in Blender - these become clip names in Three.js",
+      "accessInThree": "gltf.animations[0].name"
+    },
+    "doubleSidedMaterials": {
+      "problem": "Blender Backface Culling off does not auto-export as double-sided",
+      "solution": "Set side: THREE.DoubleSide in Three.js or check material settings in Blender"
+    },
+    "darkRendering": {
+      "problem": "Model appears too dark",
+      "solution": "Missing environment map or wrong color space. Set renderer.outputColorSpace = THREE.SRGBColorSpace and add scene.environment"
+    },
+    "flatMaterials": {
+      "problem": "Materials look flat/wrong",
+      "solution": "Ensure Principled BSDF values map correctly to PBR metalness/roughness"
+    },
+    "armatureModifier": {
+      "problem": "Bone/animation not working",
+      "solution": "Ensure Armature modifier is last in the modifier stack"
+    },
+    "recommendedBlenderExportSettings": {
+      "format": "glTF Binary (.glb)",
+      "include": ["Materials", "Animations", "Apply Modifiers"],
+      "imageFormat": "PNG (lossless) or KTX2 (compressed for web)"
+    }
+  },
+  "environmentMaps": {
+    "rgbLoaderSetup": {
+      "code": "import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';\n\nconst pmremGenerator = new THREE.PMREMGenerator(renderer);\npmremGenerator.compileEquirectangularShader();\n\nnew RGBELoader()\n  .load('environment.hdr', (texture) => {\n    const envMap = pmremGenerator.fromEquirectangular(texture).texture;\n    scene.environment = envMap; // PBR lighting\n    scene.background = envMap;  // visible background (optional)\n    texture.dispose();\n    pmremGenerator.dispose();\n  });"
+    },
+    "freeHDRSources": [
+      "https://polyhaven.com/hdris",
+      "https://hdrihaven.com/"
+    ],
+    "commonIssues": [
+      "Dark rendering: PMREMGenerator not applied",
+      "Memory leak: Dispose source texture + PMREMGenerator",
+      "Blurry reflections: Low-res HDR file"
+    ]
+  },
+  "performanceTips": {
+    "dracoCompression": "Use Draco for 2-5x size reduction on geometry",
+    "meshoptCompression": "Faster decoding than Draco, good for streaming",
+    "ktx2Textures": "GPU-compressed textures reduce memory by 4-8x",
+    "lods": "Load simplified geometry for distant objects",
+    "glbOverGltf": "GLB is single binary file, fewer HTTP requests",
+    "environmentMap": "Use PMREMGenerator for efficient PBR lighting"
+  },
+  "sources": [
+    "https://threejs.org/docs/#manual/en/introduction/Installation",
+    "https://threejs.org/docs/#examples/en/loaders/GLTFLoader",
+    "https://threejs.org/docs/#examples/en/postprocessing/EffectComposer",
+    "https://threejs.org/docs/#api/en/materials/MeshStandardMaterial",
+    "https://threejs.org/manual/#en/load-gltf",
+    "https://docs.blender.org/manual/en/latest/addons/import_export/scene_gltf2.html"
+  ]
+}

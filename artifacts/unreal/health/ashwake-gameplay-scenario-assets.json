@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "kind": "ashwake-required-asset-validation",
+  "project": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\FoundryCalibration.uproject",
+  "manifest": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\ashwake-required-assets.json",
+  "source_checks": [
+    {
+      "id": "emberveil_attune_vfx",
+      "kind": "NiagaraSystem",
+      "package_path": "/Game/Calibration/VFX/NS_Emberveil_Attune",
+      "object_path": "/Game/Calibration/VFX/NS_Emberveil_Attune.NS_Emberveil_Attune",
+      "source_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Content\\Calibration\\VFX\\NS_Emberveil_Attune.uasset",
+      "source_exists": true
+    },
+    {
+      "id": "ashwake_attune_success_audio",
+      "kind": "SoundWave",
+      "package_path": "/Game/Calibration/Audio/S_Ashwake_AttuneSuccess",
+      "object_path": "/Game/Calibration/Audio/S_Ashwake_AttuneSuccess.S_Ashwake_AttuneSuccess",
+      "source_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Content\\Calibration\\Audio\\S_Ashwake_AttuneSuccess.uasset",
+      "source_exists": true
+    },
+    {
+      "id": "ashwake_attune_reject_audio",
+      "kind": "SoundWave",
+      "package_path": "/Game/Calibration/Audio/S_Ashwake_AttuneReject",
+      "object_path": "/Game/Calibration/Audio/S_Ashwake_AttuneReject.S_Ashwake_AttuneReject",
+      "source_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Content\\Calibration\\Audio\\S_Ashwake_AttuneReject.uasset",
+      "source_exists": true
+    },
+    {
+      "id": "ashwake_safe_window_audio",
+      "kind": "SoundWave",
+      "package_path": "/Game/Calibration/Audio/S_Ashwake_SafeWindow",
+      "object_path": "/Game/Calibration/Audio/S_Ashwake_SafeWindow.S_Ashwake_SafeWindow",
+      "source_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Content\\Calibration\\Audio\\S_Ashwake_SafeWindow.uasset",
+      "source_exists": true
+    },
+    {
+      "id": "ashwake_hostile_audio",
+      "kind": "SoundWave",
+      "package_path": "/Game/Calibration/Audio/S_Ashwake_Hostile",
+      "object_path": "/Game/Calibration/Audio/S_Ashwake_Hostile.S_Ashwake_Hostile",
+      "source_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Content\\Calibration\\Audio\\S_Ashwake_Hostile.uasset",
+      "source_exists": true
+    },
+    {
+      "id": "emberveil_idle_animation",
+      "kind": "AnimSequence",
+      "package_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root",
+      "object_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root.emberveil-canonical11vt_float_Emberveil_root",
+      "source_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Content\\Calibration\\Emberveil\\emberveil-canonical\\SkeletalMeshes\\emberveil-canonical11vt_float_Emberveil_root.uasset",
+      "source_exists": true
+    },
+    {
+      "id": "emberveil_safe_animation",
+      "kind": "AnimSequence",
+      "package_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_brass_band",
+      "object_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_brass_band.emberveil-canonical11vt_rotate_brass_band",
+      "source_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Content\\Calibration\\Emberveil\\emberveil-canonical\\SkeletalMeshes\\emberveil-canonical11vt_rotate_brass_band.uasset",
+      "source_exists": true
+    },
+    {
+      "id": "emberveil_hostile_animation",
+      "kind": "AnimSequence",
+      "package_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_pulse_ember_core",
+      "object_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_pulse_ember_core.emberveil-canonical11vt_pulse_ember_core",
+      "source_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Content\\Calibration\\Emberveil\\emberveil-canonical\\SkeletalMeshes\\emberveil-canonical11vt_pulse_ember_core.uasset",
+      "source_exists": true
+    },
+    {
+      "id": "emberveil_success_animation",
+      "kind": "AnimSequence",
+      "package_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_filigree_arc",
+      "object_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_filigree_arc.emberveil-canonical11vt_rotate_filigree_arc",
+      "source_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Content\\Calibration\\Emberveil\\emberveil-canonical\\SkeletalMeshes\\emberveil-canonical11vt_rotate_filigree_arc.uasset",
+      "source_exists": true
+    }
+  ],
+  "cooked_checks": [
+    {
+      "id": "emberveil_attune_vfx",
+      "package_path": "/Game/Calibration/VFX/NS_Emberveil_Attune",
+      "package_entry": "FoundryCalibration/Content/Calibration/VFX/NS_Emberveil_Attune.uasset",
+      "loose_cooked_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Saved\\Cooked\\Windows\\FoundryCalibration\\Content\\Calibration\\VFX\\NS_Emberveil_Attune.uasset",
+      "loose_cooked_exists": false,
+      "ufs_manifest_exists": true,
+      "ufs_manifest_entries": [
+        {
+          "manifest": "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\FinalCopyWin64_UFSFiles.txt",
+          "line": "\"C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/artifacts/unreal/calibration/Saved/Cooked/Windows/FoundryCalibration/Content/Calibration/VFX/NS_Emberveil_Attune.uasset\" \"FoundryCalibration/Content/Calibration/VFX/NS_Emberveil_Attune.uasset\""
+        },
+        {
+          "manifest": "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\Manifest_UFSFiles_Win64.txt",
+          "line": "FoundryCalibration/Content/Calibration/VFX/NS_Emberveil_Attune.uasset\t1601-01-01T00:00:00.000Z"
+        }
+      ],
+      "cooked_exists": true
+    },
+    {
+      "id": "ashwake_attune_success_audio",
+      "package_path": "/Game/Calibration/Audio/S_Ashwake_AttuneSuccess",
+      "package_entry": "FoundryCalibration/Content/Calibration/Audio/S_Ashwake_AttuneSuccess.uasset",
+      "loose_cooked_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Saved\\Cooked\\Windows\\FoundryCalibration\\Content\\Calibration\\Audio\\S_Ashwake_AttuneSuccess.uasset",
+      "loose_cooked_exists": false,
+      "ufs_manifest_exists": true,
+      "ufs_manifest_entries": [
+        {
+          "manifest": "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\FinalCopyWin64_UFSFiles.txt",
+          "line": "\"C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/artifacts/unreal/calibration/Saved/Cooked/Windows/FoundryCalibration/Content/Calibration/Audio/S_Ashwake_AttuneSuccess.uasset\" \"FoundryCalibration/Content/Calibration/Audio/S_Ashwake_AttuneSuccess.uasset\""
+        },
+        {
+          "manifest": "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\Manifest_UFSFiles_Win64.txt",
+          "line": "FoundryCalibration/Content/Calibration/Audio/S_Ashwake_AttuneSuccess.uasset\t1601-01-01T00:00:00.000Z"
+        }
+      ],
+      "cooked_exists": true
+    },
+    {
+      "id": "ashwake_attune_reject_audio",
+      "package_path": "/Game/Calibration/Audio/S_Ashwake_AttuneReject",
+      "package_entry": "FoundryCalibration/Content/Calibration/Audio/S_Ashwake_AttuneReject.uasset",
+      "loose_cooked_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Saved\\Cooked\\Windows\\FoundryCalibration\\Content\\Calibration\\Audio\\S_Ashwake_AttuneReject.uasset",
+      "loose_cooked_exists": false,
+      "ufs_manifest_exists": true,
+      "ufs_manifest_entries": [
+        {
+          "manifest": "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\FinalCopyWin64_UFSFiles.txt",
+          "line": "\"C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/artifacts/unreal/calibration/Saved/Cooked/Windows/FoundryCalibration/Content/Calibration/Audio/S_Ashwake_AttuneReject.uasset\" \"FoundryCalibration/Content/Calibration/Audio/S_Ashwake_AttuneReject.uasset\""
+        },
+        {
+          "manifest": "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\Manifest_UFSFiles_Win64.txt",
+          "line": "FoundryCalibration/Content/Calibration/Audio/S_Ashwake_AttuneReject.uasset\t1601-01-01T00:00:00.000Z"
+        }
+      ],
+      "cooked_exists": true
+    },
+    {
+      "id": "ashwake_safe_window_audio",
+      "package_path": "/Game/Calibration/Audio/S_Ashwake_SafeWindow",
+      "package_entry": "FoundryCalibration/Content/Calibration/Audio/S_Ashwake_SafeWindow.uasset",
+      "loose_cooked_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Saved\\Cooked\\Windows\\FoundryCalibration\\Content\\Calibration\\Audio\\S_Ashwake_SafeWindow.uasset",
+      "loose_cooked_exists": false,
+      "ufs_manifest_exists": true,
+      "ufs_manifest_entries": [
+        {
+          "manifest": "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\FinalCopyWin64_UFSFiles.txt",
+          "line": "\"C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/artifacts/unreal/calibration/Saved/Cooked/Windows/FoundryCalibration/Content/Calibration/Audio/S_Ashwake_SafeWindow.uasset\" \"FoundryCalibration/Content/Calibration/Audio/S_Ashwake_SafeWindow.uasset\""
+        },
+        {
+          "manifest": "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\Manifest_UFSFiles_Win64.txt",
+          "line": "FoundryCalibration/Content/Calibration/Audio/S_Ashwake_SafeWindow.uasset\t1601-01-01T00:00:00.000Z"
+        }
+      ],
+      "cooked_exists": true
+    },
+    {
+      "id": "ashwake_hostile_audio",
+      "package_path": "/Game/Calibration/Audio/S_Ashwake_Hostile",
+      "package_entry": "FoundryCalibration/Content/Calibration/Audio/S_Ashwake_Hostile.uasset",
+      "loose_cooked_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Saved\\Cooked\\Windows\\FoundryCalibration\\Content\\Calibration\\Audio\\S_Ashwake_Hostile.uasset",
+      "loose_cooked_exists": false,
+      "ufs_manifest_exists": true,
+      "ufs_manifest_entries": [
+        {
+          "manifest": "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\FinalCopyWin64_UFSFiles.txt",
+          "line": "\"C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/artifacts/unreal/calibration/Saved/Cooked/Windows/FoundryCalibration/Content/Calibration/Audio/S_Ashwake_Hostile.uasset\" \"FoundryCalibration/Content/Calibration/Audio/S_Ashwake_Hostile.uasset\""
+        },
+        {
+          "manifest": "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\Manifest_UFSFiles_Win64.txt",
+          "line": "FoundryCalibration/Content/Calibration/Audio/S_Ashwake_Hostile.uasset\t1601-01-01T00:00:00.000Z"
+        }
+      ],
+      "cooked_exists": true
+    },
+    {
+      "id": "emberveil_idle_animation",
+      "package_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root",
+      "package_entry": "FoundryCalibration/Content/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root.uasset",
+      "loose_cooked_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Saved\\Cooked\\Windows\\FoundryCalibration\\Content\\Calibration\\Emberveil\\emberveil-canonical\\SkeletalMeshes\\emberveil-canonical11vt_float_Emberveil_root.uasset",
+      "loose_cooked_exists": false,
+      "ufs_manifest_exists": true,
+      "ufs_manifest_entries": [
+        {
+          "manifest": "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\FinalCopyWin64_UFSFiles.txt",
+          "line": "\"C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/artifacts/unreal/calibration/Saved/Cooked/Windows/FoundryCalibration/Content/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root.uasset\" \"FoundryCalibration/Content/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root.uasset\""
+        },
+        {
+          "manifest": "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\Manifest_UFSFiles_Win64.txt",
+          "line": "FoundryCalibration/Content/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root.uasset\t1601-01-01T00:00:00.000Z"
+        }
+      ],
+      "cooked_exists": true
+    },
+    {
+      "id": "emberveil_safe_animation",
+      "package_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_brass_band",
+      "package_entry": "FoundryCalibration/Content/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_brass_band.uasset",
+      "loose_cooked_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Saved\\Cooked\\Windows\\FoundryCalibration\\Content\\Calibration\\Emberveil\\emberveil-canonical\\SkeletalMeshes\\emberveil-canonical11vt_rotate_brass_band.uasset",
+      "loose_cooked_exists": false,
+      "ufs_manifest_exists": true,
+      "ufs_manifest_entries": [
+        {
+          "manifest": "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\FinalCopyWin64_UFSFiles.txt",
+          "line": "\"C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/artifacts/unreal/calibration/Saved/Cooked/Windows/FoundryCalibration/Content/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_brass_band.uasset\" \"FoundryCalibration/Content/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_brass_band.uasset\""
+        },
+        {
+          "manifest": "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\Manifest_UFSFiles_Win64.txt",
+          "line": "FoundryCalibration/Content/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_brass_band.uasset\t1601-01-01T00:00:00.000Z"
+        }
+      ],
+      "cooked_exists": true
+    },
+    {
+      "id": "emberveil_hostile_animation",
+      "package_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_pulse_ember_core",
+      "package_entry": "FoundryCalibration/Content/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_pulse_ember_core.uasset",
+      "loose_cooked_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Saved\\Cooked\\Windows\\FoundryCalibration\\Content\\Calibration\\Emberveil\\emberveil-canonical\\SkeletalMeshes\\emberveil-canonical11vt_pulse_ember_core.uasset",
+      "loose_cooked_exists": false,
+      "ufs_manifest_exists": true,
+      "ufs_manifest_entries": [
+        {
+          "manifest": "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\FinalCopyWin64_UFSFiles.txt",
+          "line": "\"C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/artifacts/unreal/calibration/Saved/Cooked/Windows/FoundryCalibration/Content/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_pulse_ember_core.uasset\" \"FoundryCalibration/Content/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_pulse_ember_core.uasset\""
+        },
+        {
+          "manifest": "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\Manifest_UFSFiles_Win64.txt",
+          "line": "FoundryCalibration/Content/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_pulse_ember_core.uasset\t1601-01-01T00:00:00.000Z"
+        }
+      ],
+      "cooked_exists": true
+    },
+    {
+      "id": "emberveil_success_animation",
+      "package_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_filigree_arc",
+      "package_entry": "FoundryCalibration/Content/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_filigree_arc.uasset",
+      "loose_cooked_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Saved\\Cooked\\Windows\\FoundryCalibration\\Content\\Calibration\\Emberveil\\emberveil-canonical\\SkeletalMeshes\\emberveil-canonical11vt_rotate_filigree_arc.uasset",
+      "loose_cooked_exists": false,
+      "ufs_manifest_exists": true,
+      "ufs_manifest_entries": [
+        {
+          "manifest": "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\FinalCopyWin64_UFSFiles.txt",
+          "line": "\"C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/artifacts/unreal/calibration/Saved/Cooked/Windows/FoundryCalibration/Content/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_filigree_arc.uasset\" \"FoundryCalibration/Content/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_filigree_arc.uasset\""
+        },
+        {
+          "manifest": "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\Manifest_UFSFiles_Win64.txt",
+          "line": "FoundryCalibration/Content/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_filigree_arc.uasset\t1601-01-01T00:00:00.000Z"
+        }
+      ],
+      "cooked_exists": true
+    }
+  ],
+  "ufs_manifests": [
+    "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\FinalCopyWin64_UFSFiles.txt",
+    "C:\\Users\\11vat\\AppData\\Roaming\\Unreal Engine\\AutomationTool\\Logs\\C+Program+Files+Epic+Games+UE_5.8\\Manifest_UFSFiles_Win64.txt"
+  ],
+  "runtime_reference_warnings": [],
+  "status": "PASS",
+  "failures": []
+}

@@ -1,0 +1,194 @@
+[
+  {
+    "name": "concept_thesis",
+    "category": "2d-concept",
+    "quality_target": "PRODUCTION",
+    "flags": {
+      "needs_originality": true,
+      "can_create": true,
+      "license_known": false,
+      "generative_available": false,
+      "capture_available": false
+    }
+  },
+  {
+    "name": "hero_mesh",
+    "category": "3d-model",
+    "quality_target": "PRODUCTION",
+    "flags": {
+      "needs_originality": true,
+      "can_create": true,
+      "license_known": false,
+      "generative_available": false,
+      "capture_available": false
+    }
+  },
+  {
+    "name": "uv_layout",
+    "category": "3d-uv",
+    "quality_target": "PRODUCTION",
+    "flags": {
+      "needs_originality": false,
+      "can_create": true,
+      "license_known": false,
+      "generative_available": false,
+      "capture_available": false
+    }
+  },
+  {
+    "name": "material_set",
+    "category": "3d-material",
+    "quality_target": "PRODUCTION",
+    "flags": {
+      "needs_originality": true,
+      "can_create": true,
+      "license_known": false,
+      "generative_available": false,
+      "capture_available": false
+    }
+  },
+  {
+    "name": "purposeful_rig",
+    "category": "3d-rig",
+    "quality_target": "PRODUCTION",
+    "flags": {
+      "needs_originality": true,
+      "can_create": true,
+      "license_known": false,
+      "generative_available": false,
+      "capture_available": false
+    }
+  },
+  {
+    "name": "presence_animation",
+    "category": "animation",
+    "quality_target": "PRODUCTION",
+    "flags": {
+      "needs_originality": true,
+      "can_create": true,
+      "license_known": false,
+      "generative_available": false,
+      "capture_available": false
+    }
+  },
+  {
+    "name": "signature_performance",
+    "category": "animation",
+    "quality_target": "PRODUCTION",
+    "flags": {
+      "needs_originality": true,
+      "can_create": true,
+      "license_known": false,
+      "generative_available": false,
+      "capture_available": false
+    }
+  },
+  {
+    "name": "secondary_motion",
+    "category": "animation",
+    "quality_target": "PRODUCTION",
+    "flags": {
+      "needs_originality": true,
+      "can_create": true,
+      "license_known": false,
+      "generative_available": false,
+      "capture_available": false
+    }
+  },
+  {
+    "name": "signature_vfx",
+    "category": "vfx",
+    "quality_target": "PRODUCTION",
+    "flags": {
+      "needs_originality": true,
+      "can_create": true,
+      "license_known": false,
+      "generative_available": false,
+      "capture_available": false
+    }
+  },
+  {
+    "name": "motivated_lighting",
+    "category": "lighting",
+    "quality_target": "PRODUCTION",
+    "flags": {
+      "needs_originality": true,
+      "can_create": true,
+      "license_known": false,
+      "generative_available": false,
+      "capture_available": false
+    }
+  },
+  {
+    "name": "presentation_environment",
+    "category": "3d-environment",
+    "quality_target": "PRODUCTION",
+    "flags": {
+      "needs_originality": true,
+      "can_create": true,
+      "license_known": false,
+      "generative_available": false,
+      "capture_available": false
+    }
+  },
+  {
+    "name": "camera_sequence",
+    "category": "camera",
+    "quality_target": "PRODUCTION",
+    "flags": {
+      "needs_originality": true,
+      "can_create": true,
+      "license_known": false,
+      "generative_available": false,
+      "capture_available": false
+    }
+  },
+  {
+    "name": "ui_identity",
+    "category": "2d-ui",
+    "quality_target": "PRODUCTION",
+    "flags": {
+      "needs_originality": true,
+      "can_create": true,
+      "license_known": false,
+      "generative_available": false,
+      "capture_available": false
+    }
+  },
+  {
+    "name": "runtime_export",
+    "category": "runtime",
+    "quality_target": "PRODUCTION",
+    "flags": {
+      "needs_originality": true,
+      "can_create": true,
+      "license_known": false,
+      "generative_available": false,
+      "capture_available": false
+    }
+  },
+  {
+    "name": "audio_bed",
+    "category": "audio",
+    "quality_target": "PRODUCTION",
+    "flags": {
+      "needs_originality": false,
+      "can_create": true,
+      "license_known": false,
+      "generative_available": false,
+      "capture_available": false
+    }
+  },
+  {
+    "name": "marketing_render",
+    "category": "render",
+    "quality_target": "PRODUCTION",
+    "flags": {
+      "needs_originality": true,
+      "can_create": true,
+      "license_known": false,
+      "generative_available": false,
+      "capture_available": false
+    }
+  }
+]

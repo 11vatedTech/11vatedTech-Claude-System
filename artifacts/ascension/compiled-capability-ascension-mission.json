@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "kind": "compiled-founder-mission",
+  "mission_id": "capability-ascension-20260822",
+  "intent": "Improve the global 11vatedTech Claude plus 9Router Foundry across unrelated projects.",
+  "success_condition": "Required evidence exists and the relevant independent or human review has no unresolved hard blocker.",
+  "non_goals": [
+    "polish a frozen calibration fixture",
+    "claim mastery from tool access or passing structural tests"
+  ],
+  "unknown_questions": [
+    "which user/player outcome makes the work valuable?",
+    "which requirements are version-specific and need current primary-source research?",
+    "what evidence can falsify quality rather than merely prove execution?"
+  ],
+  "required_disciplines": [
+    "semantic-repository-intelligence",
+    "architecture",
+    "testing",
+    "release-engineering"
+  ],
+  "required_capabilities": [
+    "semantic-repository-intelligence:research->practice->review->repair->transfer",
+    "architecture:research->practice->review->repair->transfer",
+    "testing:research->practice->review->repair->transfer",
+    "release-engineering:research->practice->review->repair->transfer"
+  ],
+  "knowledge_gaps": [
+    "current model capability for this role",
+    "version-specific tool behavior",
+    "discipline-specific quality ceiling"
+  ],
+  "research": [
+    "official standards and tool documentation",
+    "professional breakdowns",
+    "independent critique criteria"
+  ],
+  "tools": [
+    "AST/LSP/compiler tooling where available",
+    "test runner",
+    "runtime logs"
+  ],
+  "model_roles": [
+    "builder",
+    "specialist-reviewer",
+    "independent-reviewer"
+  ],
+  "production_stages": [
+    "intent",
+    "research",
+    "visual or interaction development",
+    "bounded implementation",
+    "evidence",
+    "review",
+    "repair",
+    "transfer"
+  ],
+  "evidence": [
+    "change-impact report",
+    "focused tests",
+    "regression tests",
+    "runtime evidence"
+  ],
+  "human_approval_points": [
+    "direction selection",
+    "quality-floor acceptance",
+    "final appeal/appealability or usability verdict"
+  ],
+  "stop_condition": "Stop when the declared capability question is answered, the transfer test is recorded, or the value gate returns STOP_AND_REPLAN.",
+  "routing_note": "Model selection must use the measured registry; multimodal roles require actual image/video/audio payload evidence."
+}

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "flagship-present",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["-y", "http-server", "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship", "-p", "8090", "--cors", "-c-1"],
+      "port": 8090
+    }
+  ]
+}

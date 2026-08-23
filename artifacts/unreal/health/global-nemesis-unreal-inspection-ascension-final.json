@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "kind": "unreal-project-inspection",
+  "project": "C:\\Users\\11vat\\OneDrive\\Desktop\\Nemesis\\Nemesis.uproject",
+  "root": "C:\\Users\\11vat\\OneDrive\\Desktop\\Nemesis",
+  "metadata": {
+    "FileVersion": 3,
+    "EngineAssociation": "5.6",
+    "Category": "",
+    "Description": "Nemesis - Open World Action-Adventure with Adaptive AI Antagonist"
+  },
+  "modules": [
+    {
+      "Name": "Nemesis",
+      "Type": "Runtime",
+      "LoadingPhase": "Default",
+      "AdditionalDependencies": [
+        "Engine",
+        "CoreUObject",
+        "GameplayAbilities",
+        "GameplayTags",
+        "GameplayTasks",
+        "AIModule"
+      ]
+    }
+  ],
+  "enabled_plugins": [
+    "GameplayAbilities",
+    "GameplayTags",
+    "GameplayTasks",
+    "AIModule",
+    "NavigationSystem"
+  ],
+  "content": {
+    "files_by_extension": {
+      ".cpp": 48,
+      ".cs": 1,
+      ".h": 9364,
+      ".ini": 29,
+      ".uasset": 869,
+      ".umap": 2
+    },
+    "maps": [
+      "MyProject/Content/DemoTemplate/Niagara/Lvl_Room_Niagara.umap",
+      "MyProject/Content/DemoTemplate/_Core/Lvl_IntroRoom.umap"
+    ],
+    "source_files": 19,
+    "classes": [
+      {
+        "macro": "UCLASS",
+        "kind": "class",
+        "name": "ANemesisCharacter",
+        "file": "Source/Nemesis/Public/Character/NemesisCharacter.h"
+      },
+      {
+        "macro": "UENUM",
+        "kind": "enum",
+        "name": "ECombatState",
+        "file": "Source/Nemesis/Public/Combat/CombatComponent.h"
+      },
+      {
+        "macro": "UCLASS",
+        "kind": "class",
+        "name": "UCombatComponent",
+        "file": "Source/Nemesis/Public/Combat/CombatComponent.h"
+      },
+      {
+        "macro": "UENUM",
+        "kind": "enum",
+        "name": "EExploitType",
+        "file": "Source/Nemesis/Public/Combat/ExploitComponent.h"
+      },
+      {
+        "macro": "USTRUCT",
+        "kind": "struct",
+        "name": "FExploitPattern",
+        "file": "Source/Nemesis/Public/Combat/ExploitComponent.h"
+      },
+      {
+        "macro": "UCLASS",
+        "kind": "class",
+        "name": "UExploitComponent",
+        "file": "Source/Nemesis/Public/Combat/ExploitComponent.h"
+      },
+      {
+        "macro": "UCLASS",
+        "kind": "class",
+        "name": "ANemesisGameMode",
+        "file": "Source/Nemesis/Public/Core/NemesisGameMode.h"
+      },
+      {
+        "macro": "UENUM",
+        "kind": "enum",
+        "name": "ENemesisMood",
+        "file": "Source/Nemesis/Public/NemesisAI/NemesisBrain.h"
+      },
+      {
+        "macro": "UENUM",
+        "kind": "enum",
+        "name": "ENemesisCounterStrategy",
+        "file": "Source/Nemesis/Public/NemesisAI/NemesisBrain.h"
+      },
+      {
+        "macro": "USTRUCT",
+        "kind": "struct",
+        "name": "FNemesisProfile",
+        "file": "Source/Nemesis/Public/NemesisAI/NemesisBrain.h"
+      },
+      {
+        "macro": "UCLASS",
+        "kind": "class",
+        "name": "UNemesisBrain",
+        "file": "Source/Nemesis/Public/NemesisAI/NemesisBrain.h"
+      },
+      {
+        "macro": "UENUM",
+        "kind": "enum",
+        "name": "EProgramType",
+        "file": "Source/Nemesis/Public/NemesisAI/NemesisProgram.h"
+      },
+      {
+        "macro": "UENUM",
+        "kind": "enum",
+        "name": "EProgramBehavior",
+        "file": "Source/Nemesis/Public/NemesisAI/NemesisProgram.h"
+      },
+      {
+        "macro": "USTRUCT",
+        "kind": "struct",
+        "name": "FWeaknessIndicator",
+        "file": "Source/Nemesis/Public/NemesisAI/NemesisProgram.h"
+      },
+      {
+        "macro": "UCLASS",
+        "kind": "class",
+        "name": "UNemesisProgram",
+        "file": "Source/Nemesis/Public/NemesisAI/NemesisProgram.h"
+      },
+      {
+        "macro": "UENUM",
+        "kind": "enum",
+        "name": "ENPCType",
+        "file": "Source/Nemesis/Public/NPC/TrustSystem.h"
+      },
+      {
+        "macro": "USTRUCT",
+        "kind": "struct",
+        "name": "FTrustData",
+        "file": "Source/Nemesis/Public/NPC/TrustSystem.h"
+      },
+      {
+        "macro": "UCLASS",
+        "kind": "class",
+        "name": "UTrustSystem",
+        "file": "Source/Nemesis/Public/NPC/TrustSystem.h"
+      }
+    ]
+  },
+  "startup_maps": [
+    "/Game/Maps/TestLevel"
+  ],
+  "warnings": [
+    "engine_association_differs: project=5.6 installed=5.8.0"
+  ],
+  "static_inspection_only": true
+}

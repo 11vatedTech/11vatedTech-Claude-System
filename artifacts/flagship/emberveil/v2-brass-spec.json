@@ -1,0 +1,28 @@
+{
+  "op": "material.construct",
+  "params": {
+    "name": "Emberveil_Brass_v2",
+    "base_color": [
+      0.722,
+      0.525,
+      0.043
+    ],
+    "metallic": 0.9,
+    "roughness": 0.25,
+    "emission": [
+      0.3,
+      0.2,
+      0.02
+    ],
+    "emission_strength": 0.1,
+    "assign_to": [
+      "brass_band",
+      "filigree_arc",
+      "filigree_arc_01",
+      "filigree_arc_02"
+    ],
+    "out_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil",
+    "load_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend",
+    "save_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+  }
+}

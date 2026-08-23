@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "model_id": "HIGH_FIDELITY_RELIABILITY",
+  "date": "2026-08-21",
+  "doctrine": "Engineering maturity, creative maturity, and fidelity reliability are independent. Functional output never implies excellent output.",
+  "axes": {
+    "engineering_maturity": {
+      "E0": "unavailable",
+      "E1": "conceptual",
+      "E2": "operational",
+      "E3": "verified",
+      "E4": "integrated",
+      "E5": "governed"
+    },
+    "creative_maturity": {
+      "C0": "primitive / unresolved",
+      "C1": "blockout",
+      "C2": "functional",
+      "C3": "coherent",
+      "C4": "polished",
+      "C5": "production",
+      "C6": "signature"
+    },
+    "fidelity_reliability": {
+      "R0": "subjective / unmanaged",
+      "R1": "rubric exists",
+      "R2": "evidence captured",
+      "R3": "automated diagnostics plus specialist review",
+      "R4": "regression protected",
+      "R5": "repeatably converges through independent and human evidence"
+    }
+  },
+  "non_inheritance_rules": [
+    "PACKAGED_BUILD_PASS does not imply GAME_QUALITY_PASS",
+    "VALID_GLB does not imply THREE_D_ART_QUALITY_PASS",
+    "NIAGARA_ACTIVE does not imply VFX_QUALITY_PASS",
+    "ANIMATION_PLAYING does not imply ANIMATION_QUALITY_PASS",
+    "AUDIO_PLAYING does not imply AUDIO_QUALITY_PASS",
+    "SCREENSHOT_CAPTURED does not imply ART_DIRECTION_PASS",
+    "HUMAN_CAN_COMPLETE_GAME does not imply GAME_DESIGN_PASS"
+  ],
+  "evidence_classes": {
+    "AUTOMATED": "mechanical correctness, metrics, contracts, reproducibility",
+    "SPECIALIST_AI": "discipline-specific critique from primary artifact evidence",
+    "INDEPENDENT_AI": "separate-context review, adversarial verification, no builder self-certification",
+    "FOUNDER": "authoritative product ambition and human runtime verdict",
+    "HUMAN_PLAYTESTER": "comprehension, feel, enjoyment, confusion, behavior"
+  },
+  "quality_contract_required_fields": [
+    "product_intent",
+    "player_or_user_experience",
+    "emotional_target",
+    "visual_thesis",
+    "art_direction",
+    "motion_language",
+    "audio_language",
+    "interaction_language",
+    "performance_target",
+    "accessibility_target",
+    "platform_target",
+    "signature_qualities",
+    "anti_qualities",
+    "quality_floor",
+    "acceptance_evidence"
+  ],
+  "visual_game_contract_dimensions": [
+    "subject_readability",
+    "environment_readability",
+    "lighting_range",
+    "material_readability",
+    "animation_quality",
+    "vfx_quality",
+    "audio_quality",
+    "ui_quality",
+    "camera_quality",
+    "level_design_quality",
+    "game_feel_quality",
+    "performance"
+  ],
+  "visual_canon_fields": [
+    "shape_language",
+    "proportion_language",
+    "material_language",
+    "surface_detail_language",
+    "color_script",
+    "value_contrast_script",
+    "lighting_philosophy",
+    "environment_language",
+    "architectural_language",
+    "vfx_language",
+    "motion_language",
+    "camera_language",
+    "ui_language",
+    "typography",
+    "audio_identity",
+    "negative_references",
+    "signature_motifs"
+  ],
+  "hard_blockers_to_polished": [
+    "major_black_crush_in_player_critical_regions",
+    "test_environment_presentation",
+    "primary_subject_clipping",
+    "generic_or_debug_hud",
+    "missing_or_unreadable_interaction_state",
+    "primitive_vfx_state_language",
+    "obvious_faceting_or_black_blob_form",
+    "broken_or_weightless_animation",
+    "missing_audio_or_audio_not_perceptually_verified",
+    "major_style_drift",
+    "no_human_or_independent_review_for_human-facing_flagship_build"
+  ],
+  "review_tiers": {
+    "FAST": ["structural checks", "basic perceptual checks", "known blocker scan"],
+    "STANDARD": ["golden captures", "perceptual metrics", "relevant specialist review", "quality debt update"],
+    "FLAGSHIP": ["full evidence packet", "independent specialist council", "before_after comparison", "human playtest evidence", "regression golden task update"]
+  },
+  "scorecard_dimensions": [
+    "engineering",
+    "visual_art",
+    "environment",
+    "lighting",
+    "materials",
+    "animation",
+    "vfx",
+    "audio",
+    "ui",
+    "game_design",
+    "level_design",
+    "game_feel",
+    "performance",
+    "accessibility",
+    "cohesion",
+    "signature_identity",
+    "reliability"
+  ],
+  "ashwake_baseline": {
+    "case_study": "HIGH_FIDELITY_FAILURE_BASELINE_001",
+    "human_evidence": "artifacts/unreal/calibration/evidence/human-playtest-001/human-playtest-evidence.json",
+    "quality_debt_register": "artifacts/unreal/calibration/evidence/human-playtest-001/quality-debt-register.json",
+    "current_assessment": {
+      "engineering": "E4",
+      "visual_experience": "C2",
+      "environment": "C1",
+      "fidelity_reliability": "R2"
+    }
+  }
+}

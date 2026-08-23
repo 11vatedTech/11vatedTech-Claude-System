@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "kind": "9router-health",
+  "base": "http://127.0.0.1:20128",
+  "timeout_seconds": 3.0,
+  "router": {
+    "status": "PASS",
+    "health": {
+      "ok": true
+    }
+  },
+  "registry": {
+    "status": "DEGRADED",
+    "classification": "UPSTREAM_PROVIDER_FAILURE",
+    "error": "TimeoutError: timed out"
+  },
+  "categories": {
+    "/v1/models/image": {
+      "status": "PASS",
+      "count": 4
+    },
+    "/v1/models/tts": {
+      "status": "PASS",
+      "count": 5
+    },
+    "/v1/models/embedding": {
+      "status": "PASS",
+      "count": 8
+    },
+    "/v1/models/web": {
+      "status": "PASS",
+      "count": 0
+    },
+    "/v1/models/stt": {
+      "status": "PASS",
+      "count": 0
+    },
+    "/v1/models/image-to-text": {
+      "status": "PASS",
+      "count": 2
+    }
+  },
+  "core_status": "PASS",
+  "summary": "FOUNDRY CORE: PASS; MODEL REGISTRY: DEGRADED"
+}

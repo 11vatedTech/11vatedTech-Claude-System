@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "kind": "unreal-native-test-discovery",
+  "count": 1,
+  "tests": [
+    {
+      "symbol": "FFoundryGameStateTransitions",
+      "name": "FoundryCalibration.Gameplay.GameStateTransitions",
+      "source": "artifacts/unreal/calibration/Source/FoundryCalibration/FoundryGameStateTests.cpp",
+      "execution": "not_proven_until_editor_or_game_automation_target_runs"
+    }
+  ],
+  "status": "DISCOVERED_NOT_EXECUTED"
+}

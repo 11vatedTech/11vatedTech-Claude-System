@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "kind": "packaged-runtime-map-load",
+  "status": "PASS_STARTUP_MAP_LOADED_OR_STABLE_RUNTIME",
+  "exit_code": 124,
+  "exit_meaning": "timeout killed stable running game after 90s; not crash",
+  "markers": {
+    "global_utoc_mounted": true,
+    "project_pak_mounted": true,
+    "game_engine_initialized": true,
+    "starting_game": true,
+    "failed_to_enter_map": false,
+    "map_skip_package": false,
+    "loose_content_serialize_crash": false,
+    "fatal_error": false
+  },
+  "remaining_warnings": [
+    "[2026.08.20-14.56.03:477][  0]LogStreaming: Warning: LoadPackage: SkipPackage: /Game/Calibration/VFX/NS_Emberveil_Attune (0x3385196A64A10E1F) - The package to load does not exist on disk or in the loader",
+    "[2026.08.20-14.56.03:479][  0]LogUObjectGlobals: Warning: Failed to find object 'NiagaraSystem /Game/Calibration/VFX/NS_Emberveil_Attune.NS_Emberveil_Attune'",
+    "[2026.08.20-14.56.04:146][  0]LogStreaming: Warning: LoadPackage: SkipPackage: /Game/Calibration/Audio/source (0x2CE0F2540751C694) - The package to load does not exist on disk or in the loader",
+    "[2026.08.20-14.56.04:146][  0]LogUObjectGlobals: Warning: Failed to find object 'SoundBase /Game/Calibration/Audio/source.source'",
+    "[2026.08.20-14.56.04:147][  0]LogStreaming: Warning: LoadPackage: SkipPackage: /Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root (0xA6D6E4689C70306B) - The package to load does not exist on disk or in the loader",
+    "[2026.08.20-14.56.04:147][  0]LogUObjectGlobals: Warning: Failed to find object 'AnimationAsset /Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root.emberveil-canonical11vt_float_Emberveil_root'"
+  ],
+  "log": "artifacts\\unreal\\health\\packaged-runtime-map-load-after-mapcook.txt",
+  "pass": true
+}

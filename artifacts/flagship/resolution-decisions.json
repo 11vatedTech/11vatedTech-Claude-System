@@ -1,0 +1,722 @@
+[
+  {
+    "requirement": "concept_thesis",
+    "category": "2d-concept",
+    "quality_target": "PRODUCTION",
+    "decision": {
+      "mode": "DIRECTED_ORIGINAL_CREATION",
+      "score": 2.696,
+      "blocked": false,
+      "reason": null
+    },
+    "ranked_alternatives": [
+      {
+        "mode": "DIRECTED_ORIGINAL_CREATION",
+        "score": 2.696,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "INVENT_NEW_PRODUCTION_METHOD",
+        "score": 2.565,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "PROCEDURAL_GENERATION",
+        "score": 2.478,
+        "blocked": false,
+        "reason": null
+      }
+    ],
+    "blocked_modes": [
+      "SOURCE_EXTERNAL",
+      "TRANSFORM_LICENSED_EXTERNAL",
+      "LOCAL_GENERATIVE_SYNTHESIS",
+      "CAPTURE",
+      "MOTION_CAPTURE",
+      "PHOTOGRAMMETRY_RECONSTRUCTION"
+    ],
+    "provenance_plan": {
+      "license_required": null,
+      "provenance_record_required": true,
+      "vault_required": true
+    },
+    "note": "resolution is a decision record; execution must produce a vault record with license and provenance"
+  },
+  {
+    "requirement": "hero_mesh",
+    "category": "3d-model",
+    "quality_target": "PRODUCTION",
+    "decision": {
+      "mode": "DIRECTED_ORIGINAL_CREATION",
+      "score": 2.696,
+      "blocked": false,
+      "reason": null
+    },
+    "ranked_alternatives": [
+      {
+        "mode": "DIRECTED_ORIGINAL_CREATION",
+        "score": 2.696,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "INVENT_NEW_PRODUCTION_METHOD",
+        "score": 2.565,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "PROCEDURAL_GENERATION",
+        "score": 2.478,
+        "blocked": false,
+        "reason": null
+      }
+    ],
+    "blocked_modes": [
+      "SOURCE_EXTERNAL",
+      "TRANSFORM_LICENSED_EXTERNAL",
+      "LOCAL_GENERATIVE_SYNTHESIS",
+      "CAPTURE",
+      "MOTION_CAPTURE",
+      "PHOTOGRAMMETRY_RECONSTRUCTION"
+    ],
+    "provenance_plan": {
+      "license_required": null,
+      "provenance_record_required": true,
+      "vault_required": true
+    },
+    "note": "resolution is a decision record; execution must produce a vault record with license and provenance"
+  },
+  {
+    "requirement": "uv_layout",
+    "category": "3d-uv",
+    "quality_target": "PRODUCTION",
+    "decision": {
+      "mode": "DIRECTED_ORIGINAL_CREATION",
+      "score": 2.632,
+      "blocked": false,
+      "reason": null
+    },
+    "ranked_alternatives": [
+      {
+        "mode": "DIRECTED_ORIGINAL_CREATION",
+        "score": 2.632,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "PROGRAMMATIC_CREATION",
+        "score": 2.526,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "PROCEDURAL_GENERATION",
+        "score": 2.474,
+        "blocked": false,
+        "reason": null
+      }
+    ],
+    "blocked_modes": [
+      "SOURCE_EXTERNAL",
+      "TRANSFORM_LICENSED_EXTERNAL",
+      "LOCAL_GENERATIVE_SYNTHESIS",
+      "CAPTURE",
+      "MOTION_CAPTURE",
+      "PHOTOGRAMMETRY_RECONSTRUCTION"
+    ],
+    "provenance_plan": {
+      "license_required": null,
+      "provenance_record_required": true,
+      "vault_required": true
+    },
+    "note": "resolution is a decision record; execution must produce a vault record with license and provenance"
+  },
+  {
+    "requirement": "material_set",
+    "category": "3d-material",
+    "quality_target": "PRODUCTION",
+    "decision": {
+      "mode": "DIRECTED_ORIGINAL_CREATION",
+      "score": 2.696,
+      "blocked": false,
+      "reason": null
+    },
+    "ranked_alternatives": [
+      {
+        "mode": "DIRECTED_ORIGINAL_CREATION",
+        "score": 2.696,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "INVENT_NEW_PRODUCTION_METHOD",
+        "score": 2.565,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "PROCEDURAL_GENERATION",
+        "score": 2.478,
+        "blocked": false,
+        "reason": null
+      }
+    ],
+    "blocked_modes": [
+      "SOURCE_EXTERNAL",
+      "TRANSFORM_LICENSED_EXTERNAL",
+      "LOCAL_GENERATIVE_SYNTHESIS",
+      "CAPTURE",
+      "MOTION_CAPTURE",
+      "PHOTOGRAMMETRY_RECONSTRUCTION"
+    ],
+    "provenance_plan": {
+      "license_required": null,
+      "provenance_record_required": true,
+      "vault_required": true
+    },
+    "note": "resolution is a decision record; execution must produce a vault record with license and provenance"
+  },
+  {
+    "requirement": "purposeful_rig",
+    "category": "3d-rig",
+    "quality_target": "PRODUCTION",
+    "decision": {
+      "mode": "DIRECTED_ORIGINAL_CREATION",
+      "score": 2.696,
+      "blocked": false,
+      "reason": null
+    },
+    "ranked_alternatives": [
+      {
+        "mode": "DIRECTED_ORIGINAL_CREATION",
+        "score": 2.696,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "INVENT_NEW_PRODUCTION_METHOD",
+        "score": 2.565,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "PROCEDURAL_GENERATION",
+        "score": 2.478,
+        "blocked": false,
+        "reason": null
+      }
+    ],
+    "blocked_modes": [
+      "SOURCE_EXTERNAL",
+      "TRANSFORM_LICENSED_EXTERNAL",
+      "LOCAL_GENERATIVE_SYNTHESIS",
+      "CAPTURE",
+      "MOTION_CAPTURE",
+      "PHOTOGRAMMETRY_RECONSTRUCTION"
+    ],
+    "provenance_plan": {
+      "license_required": null,
+      "provenance_record_required": true,
+      "vault_required": true
+    },
+    "note": "resolution is a decision record; execution must produce a vault record with license and provenance"
+  },
+  {
+    "requirement": "presence_animation",
+    "category": "animation",
+    "quality_target": "PRODUCTION",
+    "decision": {
+      "mode": "DIRECTED_ORIGINAL_CREATION",
+      "score": 2.696,
+      "blocked": false,
+      "reason": null
+    },
+    "ranked_alternatives": [
+      {
+        "mode": "DIRECTED_ORIGINAL_CREATION",
+        "score": 2.696,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "INVENT_NEW_PRODUCTION_METHOD",
+        "score": 2.565,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "PROCEDURAL_GENERATION",
+        "score": 2.478,
+        "blocked": false,
+        "reason": null
+      }
+    ],
+    "blocked_modes": [
+      "SOURCE_EXTERNAL",
+      "TRANSFORM_LICENSED_EXTERNAL",
+      "LOCAL_GENERATIVE_SYNTHESIS",
+      "CAPTURE",
+      "MOTION_CAPTURE",
+      "PHOTOGRAMMETRY_RECONSTRUCTION"
+    ],
+    "provenance_plan": {
+      "license_required": null,
+      "provenance_record_required": true,
+      "vault_required": true
+    },
+    "note": "resolution is a decision record; execution must produce a vault record with license and provenance"
+  },
+  {
+    "requirement": "signature_performance",
+    "category": "animation",
+    "quality_target": "PRODUCTION",
+    "decision": {
+      "mode": "DIRECTED_ORIGINAL_CREATION",
+      "score": 2.696,
+      "blocked": false,
+      "reason": null
+    },
+    "ranked_alternatives": [
+      {
+        "mode": "DIRECTED_ORIGINAL_CREATION",
+        "score": 2.696,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "INVENT_NEW_PRODUCTION_METHOD",
+        "score": 2.565,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "PROCEDURAL_GENERATION",
+        "score": 2.478,
+        "blocked": false,
+        "reason": null
+      }
+    ],
+    "blocked_modes": [
+      "SOURCE_EXTERNAL",
+      "TRANSFORM_LICENSED_EXTERNAL",
+      "LOCAL_GENERATIVE_SYNTHESIS",
+      "CAPTURE",
+      "MOTION_CAPTURE",
+      "PHOTOGRAMMETRY_RECONSTRUCTION"
+    ],
+    "provenance_plan": {
+      "license_required": null,
+      "provenance_record_required": true,
+      "vault_required": true
+    },
+    "note": "resolution is a decision record; execution must produce a vault record with license and provenance"
+  },
+  {
+    "requirement": "secondary_motion",
+    "category": "animation",
+    "quality_target": "PRODUCTION",
+    "decision": {
+      "mode": "DIRECTED_ORIGINAL_CREATION",
+      "score": 2.696,
+      "blocked": false,
+      "reason": null
+    },
+    "ranked_alternatives": [
+      {
+        "mode": "DIRECTED_ORIGINAL_CREATION",
+        "score": 2.696,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "INVENT_NEW_PRODUCTION_METHOD",
+        "score": 2.565,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "PROCEDURAL_GENERATION",
+        "score": 2.478,
+        "blocked": false,
+        "reason": null
+      }
+    ],
+    "blocked_modes": [
+      "SOURCE_EXTERNAL",
+      "TRANSFORM_LICENSED_EXTERNAL",
+      "LOCAL_GENERATIVE_SYNTHESIS",
+      "CAPTURE",
+      "MOTION_CAPTURE",
+      "PHOTOGRAMMETRY_RECONSTRUCTION"
+    ],
+    "provenance_plan": {
+      "license_required": null,
+      "provenance_record_required": true,
+      "vault_required": true
+    },
+    "note": "resolution is a decision record; execution must produce a vault record with license and provenance"
+  },
+  {
+    "requirement": "signature_vfx",
+    "category": "vfx",
+    "quality_target": "PRODUCTION",
+    "decision": {
+      "mode": "DIRECTED_ORIGINAL_CREATION",
+      "score": 2.696,
+      "blocked": false,
+      "reason": null
+    },
+    "ranked_alternatives": [
+      {
+        "mode": "DIRECTED_ORIGINAL_CREATION",
+        "score": 2.696,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "INVENT_NEW_PRODUCTION_METHOD",
+        "score": 2.565,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "PROCEDURAL_GENERATION",
+        "score": 2.478,
+        "blocked": false,
+        "reason": null
+      }
+    ],
+    "blocked_modes": [
+      "SOURCE_EXTERNAL",
+      "TRANSFORM_LICENSED_EXTERNAL",
+      "LOCAL_GENERATIVE_SYNTHESIS",
+      "CAPTURE",
+      "MOTION_CAPTURE",
+      "PHOTOGRAMMETRY_RECONSTRUCTION"
+    ],
+    "provenance_plan": {
+      "license_required": null,
+      "provenance_record_required": true,
+      "vault_required": true
+    },
+    "note": "resolution is a decision record; execution must produce a vault record with license and provenance"
+  },
+  {
+    "requirement": "motivated_lighting",
+    "category": "lighting",
+    "quality_target": "PRODUCTION",
+    "decision": {
+      "mode": "DIRECTED_ORIGINAL_CREATION",
+      "score": 2.696,
+      "blocked": false,
+      "reason": null
+    },
+    "ranked_alternatives": [
+      {
+        "mode": "DIRECTED_ORIGINAL_CREATION",
+        "score": 2.696,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "INVENT_NEW_PRODUCTION_METHOD",
+        "score": 2.565,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "PROCEDURAL_GENERATION",
+        "score": 2.478,
+        "blocked": false,
+        "reason": null
+      }
+    ],
+    "blocked_modes": [
+      "SOURCE_EXTERNAL",
+      "TRANSFORM_LICENSED_EXTERNAL",
+      "LOCAL_GENERATIVE_SYNTHESIS",
+      "CAPTURE",
+      "MOTION_CAPTURE",
+      "PHOTOGRAMMETRY_RECONSTRUCTION"
+    ],
+    "provenance_plan": {
+      "license_required": null,
+      "provenance_record_required": true,
+      "vault_required": true
+    },
+    "note": "resolution is a decision record; execution must produce a vault record with license and provenance"
+  },
+  {
+    "requirement": "presentation_environment",
+    "category": "3d-environment",
+    "quality_target": "PRODUCTION",
+    "decision": {
+      "mode": "DIRECTED_ORIGINAL_CREATION",
+      "score": 2.696,
+      "blocked": false,
+      "reason": null
+    },
+    "ranked_alternatives": [
+      {
+        "mode": "DIRECTED_ORIGINAL_CREATION",
+        "score": 2.696,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "INVENT_NEW_PRODUCTION_METHOD",
+        "score": 2.565,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "PROCEDURAL_GENERATION",
+        "score": 2.478,
+        "blocked": false,
+        "reason": null
+      }
+    ],
+    "blocked_modes": [
+      "SOURCE_EXTERNAL",
+      "TRANSFORM_LICENSED_EXTERNAL",
+      "LOCAL_GENERATIVE_SYNTHESIS",
+      "CAPTURE",
+      "MOTION_CAPTURE",
+      "PHOTOGRAMMETRY_RECONSTRUCTION"
+    ],
+    "provenance_plan": {
+      "license_required": null,
+      "provenance_record_required": true,
+      "vault_required": true
+    },
+    "note": "resolution is a decision record; execution must produce a vault record with license and provenance"
+  },
+  {
+    "requirement": "camera_sequence",
+    "category": "camera",
+    "quality_target": "PRODUCTION",
+    "decision": {
+      "mode": "DIRECTED_ORIGINAL_CREATION",
+      "score": 2.696,
+      "blocked": false,
+      "reason": null
+    },
+    "ranked_alternatives": [
+      {
+        "mode": "DIRECTED_ORIGINAL_CREATION",
+        "score": 2.696,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "INVENT_NEW_PRODUCTION_METHOD",
+        "score": 2.565,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "PROCEDURAL_GENERATION",
+        "score": 2.478,
+        "blocked": false,
+        "reason": null
+      }
+    ],
+    "blocked_modes": [
+      "SOURCE_EXTERNAL",
+      "TRANSFORM_LICENSED_EXTERNAL",
+      "LOCAL_GENERATIVE_SYNTHESIS",
+      "CAPTURE",
+      "MOTION_CAPTURE",
+      "PHOTOGRAMMETRY_RECONSTRUCTION"
+    ],
+    "provenance_plan": {
+      "license_required": null,
+      "provenance_record_required": true,
+      "vault_required": true
+    },
+    "note": "resolution is a decision record; execution must produce a vault record with license and provenance"
+  },
+  {
+    "requirement": "ui_identity",
+    "category": "2d-ui",
+    "quality_target": "PRODUCTION",
+    "decision": {
+      "mode": "DIRECTED_ORIGINAL_CREATION",
+      "score": 2.696,
+      "blocked": false,
+      "reason": null
+    },
+    "ranked_alternatives": [
+      {
+        "mode": "DIRECTED_ORIGINAL_CREATION",
+        "score": 2.696,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "INVENT_NEW_PRODUCTION_METHOD",
+        "score": 2.565,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "PROCEDURAL_GENERATION",
+        "score": 2.478,
+        "blocked": false,
+        "reason": null
+      }
+    ],
+    "blocked_modes": [
+      "SOURCE_EXTERNAL",
+      "TRANSFORM_LICENSED_EXTERNAL",
+      "LOCAL_GENERATIVE_SYNTHESIS",
+      "CAPTURE",
+      "MOTION_CAPTURE",
+      "PHOTOGRAMMETRY_RECONSTRUCTION"
+    ],
+    "provenance_plan": {
+      "license_required": null,
+      "provenance_record_required": true,
+      "vault_required": true
+    },
+    "note": "resolution is a decision record; execution must produce a vault record with license and provenance"
+  },
+  {
+    "requirement": "runtime_export",
+    "category": "runtime",
+    "quality_target": "PRODUCTION",
+    "decision": {
+      "mode": "DIRECTED_ORIGINAL_CREATION",
+      "score": 2.696,
+      "blocked": false,
+      "reason": null
+    },
+    "ranked_alternatives": [
+      {
+        "mode": "DIRECTED_ORIGINAL_CREATION",
+        "score": 2.696,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "INVENT_NEW_PRODUCTION_METHOD",
+        "score": 2.565,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "PROCEDURAL_GENERATION",
+        "score": 2.478,
+        "blocked": false,
+        "reason": null
+      }
+    ],
+    "blocked_modes": [
+      "SOURCE_EXTERNAL",
+      "TRANSFORM_LICENSED_EXTERNAL",
+      "LOCAL_GENERATIVE_SYNTHESIS",
+      "CAPTURE",
+      "MOTION_CAPTURE",
+      "PHOTOGRAMMETRY_RECONSTRUCTION"
+    ],
+    "provenance_plan": {
+      "license_required": null,
+      "provenance_record_required": true,
+      "vault_required": true
+    },
+    "note": "resolution is a decision record; execution must produce a vault record with license and provenance"
+  },
+  {
+    "requirement": "audio_bed",
+    "category": "audio",
+    "quality_target": "PRODUCTION",
+    "decision": {
+      "mode": "DIRECTED_ORIGINAL_CREATION",
+      "score": 2.632,
+      "blocked": false,
+      "reason": null
+    },
+    "ranked_alternatives": [
+      {
+        "mode": "DIRECTED_ORIGINAL_CREATION",
+        "score": 2.632,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "PROGRAMMATIC_CREATION",
+        "score": 2.526,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "PROCEDURAL_GENERATION",
+        "score": 2.474,
+        "blocked": false,
+        "reason": null
+      }
+    ],
+    "blocked_modes": [
+      "SOURCE_EXTERNAL",
+      "TRANSFORM_LICENSED_EXTERNAL",
+      "LOCAL_GENERATIVE_SYNTHESIS",
+      "CAPTURE",
+      "MOTION_CAPTURE",
+      "PHOTOGRAMMETRY_RECONSTRUCTION"
+    ],
+    "provenance_plan": {
+      "license_required": null,
+      "provenance_record_required": true,
+      "vault_required": true
+    },
+    "note": "resolution is a decision record; execution must produce a vault record with license and provenance"
+  },
+  {
+    "requirement": "marketing_render",
+    "category": "render",
+    "quality_target": "PRODUCTION",
+    "decision": {
+      "mode": "DIRECTED_ORIGINAL_CREATION",
+      "score": 2.696,
+      "blocked": false,
+      "reason": null
+    },
+    "ranked_alternatives": [
+      {
+        "mode": "DIRECTED_ORIGINAL_CREATION",
+        "score": 2.696,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "INVENT_NEW_PRODUCTION_METHOD",
+        "score": 2.565,
+        "blocked": false,
+        "reason": null
+      },
+      {
+        "mode": "PROCEDURAL_GENERATION",
+        "score": 2.478,
+        "blocked": false,
+        "reason": null
+      }
+    ],
+    "blocked_modes": [
+      "SOURCE_EXTERNAL",
+      "TRANSFORM_LICENSED_EXTERNAL",
+      "LOCAL_GENERATIVE_SYNTHESIS",
+      "CAPTURE",
+      "MOTION_CAPTURE",
+      "PHOTOGRAMMETRY_RECONSTRUCTION"
+    ],
+    "provenance_plan": {
+      "license_required": null,
+      "provenance_record_required": true,
+      "vault_required": true
+    },
+    "note": "resolution is a decision record; execution must produce a vault record with license and provenance"
+  }
+]

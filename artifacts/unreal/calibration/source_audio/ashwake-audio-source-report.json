@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "license": "generated-local",
+  "source": "python wave additive synthesis",
+  "files": [
+    "artifacts\\unreal\\calibration\\source_audio\\S_Ashwake_SafeWindow.wav",
+    "artifacts\\unreal\\calibration\\source_audio\\S_Ashwake_Hostile.wav",
+    "artifacts\\unreal\\calibration\\source_audio\\S_Ashwake_AttuneSuccess.wav",
+    "artifacts\\unreal\\calibration\\source_audio\\S_Ashwake_AttuneReject.wav"
+  ]
+}

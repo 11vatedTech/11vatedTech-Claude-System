@@ -1,0 +1,19 @@
+{
+  "op": "material.construct",
+  "params": {
+    "name": "Emberveil_Plinth_v2",
+    "base_color": [
+      0.102,
+      0.102,
+      0.102
+    ],
+    "metallic": 0.0,
+    "roughness": 0.4,
+    "assign_to": [
+      "plinth"
+    ],
+    "out_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\v2-ops",
+    "load_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend",
+    "save_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+  }
+}

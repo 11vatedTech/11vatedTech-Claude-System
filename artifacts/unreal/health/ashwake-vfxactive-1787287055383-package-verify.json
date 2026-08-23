@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "kind": "unreal-package-verification",
+  "status": "PASS",
+  "archive": "artifacts\\unreal\\calibration\\Packaged\\ashwake-vfxactive-1787287055383",
+  "file_count": 48,
+  "executables": [
+    {
+      "path": "artifacts\\unreal\\calibration\\Packaged\\ashwake-vfxactive-1787287055383\\Windows\\FoundryCalibration\\Binaries\\Win64\\FoundryCalibration.exe",
+      "sha256": "ee945b9736f17e0ff7b71219a0f69ef067e6e85e4a3904fb66adcd7ad0e898f9",
+      "bytes": 342852096
+    },
+    {
+      "path": "artifacts\\unreal\\calibration\\Packaged\\ashwake-vfxactive-1787287055383\\Windows\\FoundryCalibration.exe",
+      "sha256": "4a13e38d9cf1ac060835913601cf37dbdc71efa2bb857dfc277c65c46053d7ca",
+      "bytes": 171520
+    }
+  ]
+}

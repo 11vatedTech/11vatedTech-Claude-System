@@ -1,0 +1,80 @@
+{
+  "scene": {
+    "name": "Scene",
+    "frame_current": 1,
+    "frame_start": 1,
+    "frame_end": 250
+  },
+  "camera": "Cam",
+  "objects": [
+    {
+      "name": "Cam",
+      "type": "CAMERA",
+      "location": [
+        6.0,
+        -7.0,
+        3.0
+      ],
+      "rotation": [
+        77.76,
+        0.0,
+        40.6
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": []
+    },
+    {
+      "name": "Rim",
+      "type": "LIGHT",
+      "location": [
+        -6.0,
+        -4.0,
+        8.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": []
+    },
+    {
+      "name": "root",
+      "type": "EMPTY",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": []
+    }
+  ],
+  "object_count": 3,
+  "lights": [
+    "Rim"
+  ],
+  "op_runner_version": "0.4.0",
+  "blender_version": "5.2.0 LTS",
+  "ok": true,
+  "health": "PASS",
+  "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-smoke\\session.blend"
+}

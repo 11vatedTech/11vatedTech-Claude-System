@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "kind": "ashwake-state-feedback-language",
+  "date": "2026-08-21",
+  "core_rule": "Gold window equals convergence, hush, softening, and open body language. It is not yellow lamp.",
+  "hierarchy": [
+    "Primary cue: temporal rhythm tied to pulse cadence.",
+    "Secondary cue: material change from ash to gold alignment.",
+    "Tertiary cue: UI reticle mirrors world state and never explains information absent from world object."
+  ],
+  "states": {
+    "READING": {
+      "player_meaning": "Observe. Pattern forming.",
+      "light": "Low amber/copper edge glints, long soft shadows.",
+      "vfx": "Ash motes orbit slowly with breath-like expansion.",
+      "animation": "Relic core breathes; player/device steadies and tracks pulse.",
+      "audio": "Low sub pulse, granular ash hiss, two-beat loop.",
+      "material": "Matte ash with faint vein flicker under surface.",
+      "ui": "Reticle iris narrows/opens with pulse, no text.",
+      "environment": "Dust floats upward, cables/ash lean toward source."
+    },
+    "SAFE_WINDOW": {
+      "player_meaning": "Act now.",
+      "light": "Thin gold rim traces interactable edges; shadow pauses; bloom only on silhouettes.",
+      "vfx": "Motes snap inward into clean ring or spiral; sparks rise vertically.",
+      "animation": "Target opens and exposes core; shutters align; anticipation frame.",
+      "audio": "One-frame silence then soft chime and warm transient.",
+      "material": "Veins become molten; cracks align; surface smooths.",
+      "ui": "Reticle becomes complete ring; optional icon-only hint glows.",
+      "environment": "Wind stops, particles suspend, nearby cloth/cables relax."
+    },
+    "HOSTILE": {
+      "player_meaning": "Danger. Timing missed or threat active.",
+      "light": "Hard angled slashes; contrast spikes. Red can support but not carry meaning.",
+      "vfx": "Ash ejects outward; motes become jagged trails.",
+      "animation": "Target contracts/locks/agitated forward posture.",
+      "audio": "Pulse doubles, dissonant scrape, low growl layer.",
+      "material": "Surface chars, veins stutter, edges sharpen.",
+      "ui": "Reticle breaks into offset shards.",
+      "environment": "Wind gusts outward, dust falls, bells/cables snap."
+    },
+    "SUCCESS": {
+      "player_meaning": "Correct. Continue.",
+      "light": "Warm traveling highlight moves from action point into world path.",
+      "vfx": "Ring resolves into upward plume; sparks spiral cleanly.",
+      "animation": "Target releases/open path; expansion/awakening.",
+      "audio": "Clear consonant chord; pulse resolves downward.",
+      "material": "Gold fades into stable white-amber seam.",
+      "ui": "Reticle blooms then clears fast.",
+      "environment": "Furnace channel ignites; fog/ash opens next route."
+    },
+    "FAILURE": {
+      "player_meaning": "Wrong. Learn reset.",
+      "light": "Gold collapses into dull ember; brief desaturation.",
+      "vfx": "Motes drop like ash rain; ring buckles.",
+      "animation": "Target slams shut; recoil/collapse.",
+      "audio": "Muted thud plus swallowed chime; pulse restarts slower once.",
+      "material": "Veins crust over; crack network misaligns.",
+      "ui": "Reticle dims then rebuilds from first pulse.",
+      "environment": "Wind dies; dust settles; object returns to Reading."
+    }
+  },
+  "quality_gates": [
+    "SAFE_WINDOW readable in grayscale screenshot.",
+    "HOSTILE readable without red hue.",
+    "SUCCESS feedback starts within 100 ms of valid input.",
+    "Failure reset teaches next attempt; no full-state ambiguity longer than 500 ms.",
+    "At least three channels change per state across motion, material, audio, environment, UI.",
+    "Gold never used for non-actionable decoration within Ashwake encounters.",
+    "Reticle never introduces information missing from world object.",
+    "Blind playtest pass requires 75%+ correct state naming from no-text clips."
+  ],
+  "blind_playtest_observables": [
+    "80% of first-time players describe SAFE_WINDOW as when it opens, forms ring, gets quiet, or aligns, not when text says.",
+    "70% act closer to pulse peak by third attempt.",
+    "Players can identify READING vs SAFE_WINDOW vs HOSTILE from muted video at 5 seconds.",
+    "Players can identify SAFE_WINDOW vs FAILURE from audio-only clip.",
+    "Mis-timed players say too early or too late without prompting."
+  ]
+}

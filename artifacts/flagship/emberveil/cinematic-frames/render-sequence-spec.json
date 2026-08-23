@@ -1,0 +1,16 @@
+{
+  "op": "render.sequence",
+  "params": {
+    "frame_start": 1,
+    "frame_end": 72,
+    "resolution": [
+      640,
+      360
+    ],
+    "engine": "CYCLES",
+    "samples": 24,
+    "out_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\cinematic-frames",
+    "load_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend",
+    "save_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+  }
+}

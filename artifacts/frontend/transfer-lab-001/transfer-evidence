@@ -1,0 +1,615 @@
+{
+  "schema_version": 2,
+  "kind": "frontend-runtime-evidence",
+  "captured_at": "2026-08-23T04:48:02Z",
+  "page_url": "file:///C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/tools/fixtures/frontend-transfer/conservation-queue/index.html",
+  "state_matrix": [
+    {
+      "viewport": "desktop",
+      "state": "default",
+      "screenshot": "desktop_default.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "desktop",
+      "state": "focus",
+      "screenshot": "desktop_focus.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "desktop",
+      "state": "dark",
+      "screenshot": "desktop_dark.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "desktop",
+      "state": "reduced_motion",
+      "screenshot": "desktop_reduced_motion.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "tablet",
+      "state": "default",
+      "screenshot": "tablet_default.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "tablet",
+      "state": "focus",
+      "screenshot": "tablet_focus.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "tablet",
+      "state": "dark",
+      "screenshot": "tablet_dark.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "tablet",
+      "state": "reduced_motion",
+      "screenshot": "tablet_reduced_motion.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "default",
+      "screenshot": "mobile_default.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "focus",
+      "screenshot": "mobile_focus.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "dark",
+      "screenshot": "mobile_dark.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "reduced_motion",
+      "screenshot": "mobile_reduced_motion.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    }
+  ],
+  "accessibility": {
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=axeAPI",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#9c9488",
+                  "bgColor": "#f8f6f2",
+                  "contrastRatio": 2.77,
+                  "fontSize": "8.6pt (11.52px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1",
+                  "shadowColor": null,
+                  "colorParse": null
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<html lang=\"en\">",
+                    "target": [
+                      "html"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 2.77 (foreground color: #9c9488, background color: #f8f6f2, font size: 8.6pt (11.52px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>3 candidates pending</span>",
+            "target": [
+              ".meta > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.77 (foreground color: #9c9488, background color: #f8f6f2, font size: 8.6pt (11.52px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#9c9488",
+                  "bgColor": "#ffffff",
+                  "contrastRatio": 2.99,
+                  "fontSize": "8.2pt (10.88px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1",
+                  "shadowColor": null,
+                  "colorParse": null
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"card\" role=\"listitem\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"Portrait of a Lady, CRITICAL condition, CRITICAL urgency\">",
+                    "target": [
+                      ".card[role=\"listitem\"]:nth-child(1)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 2.99 (foreground color: #9c9488, background color: #ffffff, font size: 8.2pt (10.88px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"urgency-label\">CRITICAL</span>",
+            "target": [
+              ".card[role=\"listitem\"]:nth-child(1) > .card-main > .col-urgency > .urgency-label"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.99 (foreground color: #9c9488, background color: #ffffff, font size: 8.2pt (10.88px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#9c9488",
+                  "bgColor": "#ffffff",
+                  "contrastRatio": 2.99,
+                  "fontSize": "8.2pt (10.88px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1",
+                  "shadowColor": null,
+                  "colorParse": null
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"card\" role=\"listitem\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"Celestial Globe, POOR condition, HIGH urgency\">",
+                    "target": [
+                      ".card[role=\"listitem\"]:nth-child(2)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 2.99 (foreground color: #9c9488, background color: #ffffff, font size: 8.2pt (10.88px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"urgency-label\">HIGH</span>",
+            "target": [
+              ".card[role=\"listitem\"]:nth-child(2) > .card-main > .col-urgency > .urgency-label"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.99 (foreground color: #9c9488, background color: #ffffff, font size: 8.2pt (10.88px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#9c9488",
+                  "bgColor": "#ffffff",
+                  "contrastRatio": 2.99,
+                  "fontSize": "8.2pt (10.88px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1",
+                  "shadowColor": null,
+                  "colorParse": null
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"card\" role=\"listitem\" tabindex=\"0\" aria-expanded=\"false\" aria-label=\"Manuscript Fragment, FAIR condition, ROUTINE urgency\">",
+                    "target": [
+                      ".card[role=\"listitem\"]:nth-child(3)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 2.99 (foreground color: #9c9488, background color: #ffffff, font size: 8.2pt (10.88px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span class=\"urgency-label\">ROUTINE</span>",
+            "target": [
+              ".card[role=\"listitem\"]:nth-child(3) > .card-main > .col-urgency > .urgency-label"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.99 (foreground color: #9c9488, background color: #ffffff, font size: 8.2pt (10.88px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      },
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "description": "Ensure the document has a main landmark",
+        "help": "Document should have one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-one-main?application=axeAPI",
+        "nodes": [
+          {
+            "any": [],
+            "all": [
+              {
+                "id": "page-has-main",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "Document does not have a main landmark"
+              }
+            ],
+            "none": [],
+            "impact": "moderate",
+            "html": "<html lang=\"en\">",
+            "target": [
+              "html"
+            ],
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      },
+      {
+        "id": "page-has-heading-one",
+        "impact": "moderate",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+        "help": "Page should contain a level-one heading",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/page-has-heading-one?application=axeAPI",
+        "nodes": [
+          {
+            "any": [],
+            "all": [
+              {
+                "id": "page-has-heading-one",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "Page must have a level-one heading"
+              }
+            ],
+            "none": [],
+            "impact": "moderate",
+            "html": "<html lang=\"en\">",
+            "target": [
+              "html"
+            ],
+            "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "tags": [
+          "cat.keyboard",
+          "best-practice",
+          "RGAAv4",
+          "RGAA-9.2.1"
+        ],
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axeAPI",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "Some page content is not contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "moderate",
+            "html": "<div class=\"card-list\" role=\"list\" aria-label=\"Conservation candidates\">",
+            "target": [
+              ".card-list"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ],
+    "passes_count": 26,
+    "timestamp": "2026-08-23T04:48:09Z"
+  },
+  "console_errors": [],
+  "network_failures": [],
+  "keyboard_traversal": {
+    "initial_focus": "DIV",
+    "tab_sequence_available": true,
+    "note": "basic focus check only; full keyboard audit requires manual verification"
+  },
+  "lighthouse": [],
+  "blockers": [],
+  "environment_fingerprints": [
+    {
+      "os": "Windows",
+      "os_release": "11",
+      "browser": "chromium",
+      "browser_version": "151.0.7922.170",
+      "playwright_version": "1.62.1",
+      "headless": true,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "device_scale_factor": 1,
+      "locale": "en-US",
+      "timezone": "America/Los_Angeles",
+      "color_scheme": "light",
+      "reduced_motion": "no-preference"
+    },
+    {
+      "os": "Windows",
+      "os_release": "11",
+      "browser": "chromium",
+      "browser_version": "151.0.7922.170",
+      "playwright_version": "1.62.1",
+      "headless": true,
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "device_scale_factor": 1,
+      "locale": "en-US",
+      "timezone": "America/Los_Angeles",
+      "color_scheme": "light",
+      "reduced_motion": "no-preference"
+    },
+    {
+      "os": "Windows",
+      "os_release": "11",
+      "browser": "chromium",
+      "browser_version": "151.0.7922.170",
+      "playwright_version": "1.62.1",
+      "headless": true,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "device_scale_factor": 1,
+      "locale": "en-US",
+      "timezone": "America/Los_Angeles",
+      "color_scheme": "light",
+      "reduced_motion": "no-preference"
+    }
+  ],
+  "summary": {
+    "states_tested": 12,
+    "viewports_tested": 3,
+    "screenshots_captured": 12,
+    "console_errors": 0,
+    "network_failures": 0,
+    "axe_violations": 4,
+    "lighthouse_runs": 0,
+    "keyboard_baseline": true
+  }
+}

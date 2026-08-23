@@ -1,0 +1,832 @@
+{
+  "schema_version": 2,
+  "kind": "frontend-runtime-evidence",
+  "captured_at": "2026-08-23T03:36:39Z",
+  "page_url": "file:///C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/tools/fixtures/frontend-smoke/index.html",
+  "state_matrix": [
+    {
+      "viewport": "desktop",
+      "state": "default",
+      "screenshot": "desktop_default.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "desktop",
+      "state": "hover",
+      "screenshot": "desktop_hover.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "desktop",
+      "state": "focus",
+      "screenshot": "desktop_focus.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "desktop",
+      "state": "loading",
+      "screenshot": "desktop_loading.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "desktop",
+      "state": "empty",
+      "screenshot": "desktop_empty.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "desktop",
+      "state": "error",
+      "screenshot": "desktop_error.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "desktop",
+      "state": "success",
+      "screenshot": "desktop_success.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "desktop",
+      "state": "dark",
+      "screenshot": "desktop_dark.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "desktop",
+      "state": "reduced_motion",
+      "screenshot": "desktop_reduced_motion.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "tablet",
+      "state": "default",
+      "screenshot": "tablet_default.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "tablet",
+      "state": "hover",
+      "screenshot": "tablet_hover.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "tablet",
+      "state": "focus",
+      "screenshot": "tablet_focus.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "tablet",
+      "state": "loading",
+      "screenshot": "tablet_loading.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "tablet",
+      "state": "empty",
+      "screenshot": "tablet_empty.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "tablet",
+      "state": "error",
+      "screenshot": "tablet_error.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "tablet",
+      "state": "success",
+      "screenshot": "tablet_success.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "tablet",
+      "state": "dark",
+      "screenshot": "tablet_dark.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "tablet",
+      "state": "reduced_motion",
+      "screenshot": "tablet_reduced_motion.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "default",
+      "screenshot": "mobile_default.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "hover",
+      "screenshot": "mobile_hover.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "focus",
+      "screenshot": "mobile_focus.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "loading",
+      "screenshot": "mobile_loading.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "empty",
+      "screenshot": "mobile_empty.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "error",
+      "screenshot": "mobile_error.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "success",
+      "screenshot": "mobile_success.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "dark",
+      "screenshot": "mobile_dark.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    },
+    {
+      "viewport": "mobile",
+      "state": "reduced_motion",
+      "screenshot": "mobile_reduced_motion.png",
+      "environment_fingerprint": {
+        "os": "Windows",
+        "os_release": "11",
+        "browser": "chromium",
+        "browser_version": "151.0.7922.170",
+        "playwright_version": "1.62.1",
+        "headless": true,
+        "viewport": {
+          "width": 375,
+          "height": 812
+        },
+        "device_scale_factor": 1,
+        "locale": "en-US",
+        "timezone": "America/Los_Angeles",
+        "color_scheme": "light",
+        "reduced_motion": "no-preference"
+      }
+    }
+  ],
+  "accessibility": {
+    "violations": [
+      {
+        "id": "landmark-one-main",
+        "impact": "moderate",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ],
+        "description": "Ensure the document has a main landmark",
+        "help": "Document should have one main landmark",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/landmark-one-main?application=axeAPI",
+        "nodes": [
+          {
+            "any": [],
+            "all": [
+              {
+                "id": "page-has-main",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "Document does not have a main landmark"
+              }
+            ],
+            "none": [],
+            "impact": "moderate",
+            "html": "<html lang=\"en\">",
+            "target": [
+              "html"
+            ],
+            "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+          }
+        ]
+      },
+      {
+        "id": "region",
+        "impact": "moderate",
+        "tags": [
+          "cat.keyboard",
+          "best-practice",
+          "RGAAv4",
+          "RGAA-9.2.1"
+        ],
+        "description": "Ensure all page content is contained by landmarks",
+        "help": "All page content should be contained by landmarks",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/region?application=axeAPI",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "Some page content is not contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "moderate",
+            "html": "<h1>Frontend Smoke Test</h1>",
+            "target": [
+              "h1"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "Some page content is not contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "moderate",
+            "html": "<p>This page validates the Playwright runtime harness.</p>",
+            "target": [
+              "p"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "Some page content is not contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "moderate",
+            "html": "<a href=\"#main\">Skip to main</a>",
+            "target": [
+              "a"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "Some page content is not contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "moderate",
+            "html": "<label for=\"name\">Name</label>",
+            "target": [
+              "label"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          },
+          {
+            "any": [
+              {
+                "id": "region",
+                "data": {
+                  "isIframe": false
+                },
+                "relatedNodes": [],
+                "impact": "moderate",
+                "message": "Some page content is not contained by landmarks"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "moderate",
+            "html": "<input id=\"name\" type=\"text\" placeholder=\"Your name\" style=\"\">",
+            "target": [
+              "#name"
+            ],
+            "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+          }
+        ]
+      }
+    ],
+    "passes_count": 20,
+    "timestamp": "2026-08-23T03:36:51Z"
+  },
+  "console_errors": [],
+  "network_failures": [],
+  "keyboard_traversal": {
+    "initial_focus": "A",
+    "tab_sequence_available": true,
+    "note": "basic focus check only; full keyboard audit requires manual verification"
+  },
+  "lighthouse": [],
+  "blockers": [],
+  "environment_fingerprints": [
+    {
+      "os": "Windows",
+      "os_release": "11",
+      "browser": "chromium",
+      "browser_version": "151.0.7922.170",
+      "playwright_version": "1.62.1",
+      "headless": true,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "device_scale_factor": 1,
+      "locale": "en-US",
+      "timezone": "America/Los_Angeles",
+      "color_scheme": "light",
+      "reduced_motion": "no-preference"
+    },
+    {
+      "os": "Windows",
+      "os_release": "11",
+      "browser": "chromium",
+      "browser_version": "151.0.7922.170",
+      "playwright_version": "1.62.1",
+      "headless": true,
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "device_scale_factor": 1,
+      "locale": "en-US",
+      "timezone": "America/Los_Angeles",
+      "color_scheme": "light",
+      "reduced_motion": "no-preference"
+    },
+    {
+      "os": "Windows",
+      "os_release": "11",
+      "browser": "chromium",
+      "browser_version": "151.0.7922.170",
+      "playwright_version": "1.62.1",
+      "headless": true,
+      "viewport": {
+        "width": 375,
+        "height": 812
+      },
+      "device_scale_factor": 1,
+      "locale": "en-US",
+      "timezone": "America/Los_Angeles",
+      "color_scheme": "light",
+      "reduced_motion": "no-preference"
+    }
+  ],
+  "summary": {
+    "states_tested": 27,
+    "viewports_tested": 3,
+    "screenshots_captured": 27,
+    "console_errors": 0,
+    "network_failures": 0,
+    "axe_violations": 2,
+    "lighthouse_runs": 0,
+    "keyboard_baseline": true
+  }
+}

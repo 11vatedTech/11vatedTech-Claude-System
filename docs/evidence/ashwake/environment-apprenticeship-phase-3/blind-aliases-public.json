@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "kind": "ashwake-phase3-public-blind-aliases",
+  "date": "2026-08-21",
+  "status": "FROZEN",
+  "aliases": [
+    "OPTION_A",
+    "OPTION_B",
+    "OPTION_C"
+  ],
+  "founder_visible_rule": "Founder sees OPTION_A / OPTION_B / OPTION_C only until review completes.",
+  "hidden_until_review_complete": [
+    "original concept names",
+    "prior specialist preference",
+    "leading-hypothesis status",
+    "risk-reducer/emotional/world-image labels"
+  ],
+  "selection_status": "NO_FINAL_PRODUCTION_DIRECTION_SELECTED"
+}

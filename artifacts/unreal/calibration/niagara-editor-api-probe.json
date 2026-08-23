@@ -1,0 +1,547 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "classes": {
+    "AsyncNiagaraCaptureSimCache_OnCaptureComplete": [
+      "add_callable",
+      "add_callable_unique",
+      "add_function",
+      "add_function_unique"
+    ],
+    "FXSystemComponent": [
+      "add_angular_impulse_in_degrees",
+      "add_angular_impulse_in_radians",
+      "add_asset_user_data_of_class",
+      "add_force",
+      "add_force_at_location",
+      "add_force_at_location_local",
+      "add_force_at_position",
+      "add_impulse",
+      "add_impulse_at_location",
+      "add_impulse_at_position",
+      "add_local_offset",
+      "add_local_rotation",
+      "add_local_transform",
+      "add_radial_force",
+      "add_radial_impulse",
+      "add_relative_location",
+      "add_relative_rotation",
+      "add_tick_prerequisite_actor",
+      "add_tick_prerequisite_component",
+      "add_torque_in_degrees",
+      "add_torque_in_radians",
+      "add_velocity_change_impulse_at_location",
+      "add_world_offset",
+      "add_world_rotation",
+      "add_world_transform",
+      "add_world_transform_keep_scale",
+      "always_create_physics_state",
+      "create_and_set_material_instance_dynamic",
+      "create_and_set_material_instance_dynamic_from_material",
+      "create_dynamic_material_instance",
+      "get_custom_primitive_data_index_for_scalar_parameter",
+      "get_custom_primitive_data_index_for_vector_parameter",
+      "get_fx_system_asset",
+      "set_actor_parameter",
+      "set_auto_attachment_parameters",
+      "set_bool_parameter",
+      "set_color_parameter",
+      "set_emitter_enable",
+      "set_float_parameter",
+      "set_int_parameter",
+      "set_scalar_parameter_for_custom_primitive_data",
+      "set_scalar_parameter_for_default_custom_primitive_data",
+      "set_vector_parameter",
+      "set_vector_parameter_for_custom_primitive_data",
+      "set_vector_parameter_for_default_custom_primitive_data"
+    ],
+    "FXSystemSpawnParameters": [
+      "system_template"
+    ],
+    "MovieSceneNiagaraBoolParameterTrack": [
+      "add_section"
+    ],
+    "MovieSceneNiagaraCacheTrack": [
+      "add_section"
+    ],
+    "MovieSceneNiagaraColorParameterTrack": [
+      "add_section"
+    ],
+    "MovieSceneNiagaraEmitterTrack": [
+      "add_section"
+    ],
+    "MovieSceneNiagaraFloatParameterTrack": [
+      "add_section"
+    ],
+    "MovieSceneNiagaraIntegerParameterTrack": [
+      "add_section"
+    ],
+    "MovieSceneNiagaraParameterTrack": [
+      "add_section"
+    ],
+    "MovieSceneNiagaraSystemTrack": [
+      "add_section"
+    ],
+    "MovieSceneNiagaraTrack": [
+      "add_section"
+    ],
+    "MovieSceneNiagaraVectorParameterTrack": [
+      "add_section"
+    ],
+    "NiagaraActor": [
+      "add_actor_local_offset",
+      "add_actor_local_rotation",
+      "add_actor_local_transform",
+      "add_actor_world_offset",
+      "add_actor_world_rotation",
+      "add_actor_world_transform",
+      "add_actor_world_transform_keep_scale",
+      "add_tick_prerequisite_actor",
+      "add_tick_prerequisite_component",
+      "create_input_component",
+      "create_pcg_data_from_actor",
+      "get_destroy_on_system_finish",
+      "set_destroy_on_system_finish"
+    ],
+    "NiagaraBakerStaticMeshFactoryNew": [
+      "create_new",
+      "script_factory_can_import",
+      "script_factory_create_file"
+    ],
+    "NiagaraBaselineController": [
+      "get_system"
+    ],
+    "NiagaraBaselineController_Basic": [
+      "get_system"
+    ],
+    "NiagaraClipboardEditorScriptingUtilities": [
+      "create_bool_local_value_input",
+      "create_color_local_value_input",
+      "create_data_value_input",
+      "create_dynamic_value_input",
+      "create_enum_linked_value_input",
+      "create_enum_local_value_input",
+      "create_expression_value_input",
+      "create_float_local_value_input",
+      "create_int_local_value_input",
+      "create_linked_value_input",
+      "create_matrix_local_value_input",
+      "create_quat_local_value_input",
+      "create_struct_local_value_input",
+      "create_vec2_local_value_input",
+      "create_vec3_local_value_input",
+      "create_vec4_local_value_input"
+    ],
+    "NiagaraComponent": [
+      "add_angular_impulse_in_degrees",
+      "add_angular_impulse_in_radians",
+      "add_asset_user_data_of_class",
+      "add_force",
+      "add_force_at_location",
+      "add_force_at_location_local",
+      "add_force_at_position",
+      "add_impulse",
+      "add_impulse_at_location",
+      "add_impulse_at_position",
+      "add_local_offset",
+      "add_local_rotation",
+      "add_local_transform",
+      "add_radial_force",
+      "add_radial_impulse",
+      "add_relative_location",
+      "add_relative_rotation",
+      "add_tick_prerequisite_actor",
+      "add_tick_prerequisite_component",
+      "add_torque_in_degrees",
+      "add_torque_in_radians",
+      "add_velocity_change_impulse_at_location",
+      "add_world_offset",
+      "add_world_rotation",
+      "add_world_transform",
+      "add_world_transform_keep_scale",
+      "always_create_physics_state",
+      "clear_emitter_fixed_bounds",
+      "clear_parameter_collection_overrides",
+      "clear_system_fixed_bounds",
+      "create_and_set_material_instance_dynamic",
+      "create_and_set_material_instance_dynamic_from_material",
+      "create_dynamic_material_instance",
+      "get_custom_primitive_data_index_for_scalar_parameter",
+      "get_custom_primitive_data_index_for_vector_parameter",
+      "get_emitter_fixed_bounds",
+      "get_fx_system_asset",
+      "get_system_fixed_bounds",
+      "on_system_finished",
+      "reinitialize_system",
+      "remove_parameter_collection_override",
+      "reset_system",
+      "set_actor_parameter",
+      "set_auto_attachment_parameters",
+      "set_bool_parameter",
+      "set_color_parameter",
+      "set_emitter_enable",
+      "set_emitter_fixed_bounds",
+      "set_float_parameter",
+      "set_int_parameter",
+      "set_parameter_collection_override",
+      "set_scalar_parameter_for_custom_primitive_data",
+      "set_scalar_parameter_for_default_custom_primitive_data",
+      "set_system_fixed_bounds",
+      "set_vector_parameter",
+      "set_vector_parameter_for_custom_primitive_data",
+      "set_vector_parameter_for_default_custom_primitive_data"
+    ],
+    "NiagaraCullProxyComponent": [
+      "add_angular_impulse_in_degrees",
+      "add_angular_impulse_in_radians",
+      "add_asset_user_data_of_class",
+      "add_force",
+      "add_force_at_location",
+      "add_force_at_location_local",
+      "add_force_at_position",
+      "add_impulse",
+      "add_impulse_at_location",
+      "add_impulse_at_position",
+      "add_local_offset",
+      "add_local_rotation",
+      "add_local_transform",
+      "add_radial_force",
+      "add_radial_impulse",
+      "add_relative_location",
+      "add_relative_rotation",
+      "add_tick_prerequisite_actor",
+      "add_tick_prerequisite_component",
+      "add_torque_in_degrees",
+      "add_torque_in_radians",
+      "add_velocity_change_impulse_at_location",
+      "add_world_offset",
+      "add_world_rotation",
+      "add_world_transform",
+      "add_world_transform_keep_scale",
+      "always_create_physics_state",
+      "clear_emitter_fixed_bounds",
+      "clear_parameter_collection_overrides",
+      "clear_system_fixed_bounds",
+      "create_and_set_material_instance_dynamic",
+      "create_and_set_material_instance_dynamic_from_material",
+      "create_dynamic_material_instance",
+      "get_custom_primitive_data_index_for_scalar_parameter",
+      "get_custom_primitive_data_index_for_vector_parameter",
+      "get_emitter_fixed_bounds",
+      "get_fx_system_asset",
+      "get_system_fixed_bounds",
+      "on_system_finished",
+      "reinitialize_system",
+      "remove_parameter_collection_override",
+      "reset_system",
+      "set_actor_parameter",
+      "set_auto_attachment_parameters",
+      "set_bool_parameter",
+      "set_color_parameter",
+      "set_emitter_enable",
+      "set_emitter_fixed_bounds",
+      "set_float_parameter",
+      "set_int_parameter",
+      "set_parameter_collection_override",
+      "set_scalar_parameter_for_custom_primitive_data",
+      "set_scalar_parameter_for_default_custom_primitive_data",
+      "set_system_fixed_bounds",
+      "set_vector_parameter",
+      "set_vector_parameter_for_custom_primitive_data",
+      "set_vector_parameter_for_default_custom_primitive_data"
+    ],
+    "NiagaraDataChannelAssetFactoryNew": [
+      "create_new",
+      "script_factory_can_import",
+      "script_factory_create_file"
+    ],
+    "NiagaraDynamicInputScriptFactory": [
+      "create_new",
+      "script_factory_can_import",
+      "script_factory_create_file"
+    ],
+    "NiagaraEditorPreviewActor": [
+      "add_actor_local_offset",
+      "add_actor_local_rotation",
+      "add_actor_local_transform",
+      "add_actor_world_offset",
+      "add_actor_world_rotation",
+      "add_actor_world_transform",
+      "add_actor_world_transform_keep_scale",
+      "add_tick_prerequisite_actor",
+      "add_tick_prerequisite_component",
+      "create_input_component",
+      "create_pcg_data_from_actor"
+    ],
+    "NiagaraEffectTypeFactoryNew": [
+      "create_new",
+      "script_factory_can_import",
+      "script_factory_create_file"
+    ],
+    "NiagaraEmitter": [
+      "editor_parameters",
+      "emitter_spawn_script_props",
+      "emitter_update_script_props",
+      "event_handler_script_props",
+      "gpu_compute_script",
+      "parent_scratch_pad_scripts",
+      "renderer_bindings",
+      "renderer_properties",
+      "scratch_pad_scripts",
+      "spawn_script_props",
+      "update_script_props"
+    ],
+    "NiagaraEmitterFactoryNew": [
+      "create_new",
+      "script_factory_can_import",
+      "script_factory_create_file"
+    ],
+    "NiagaraEmitterProperties": [
+      "editor_parameters",
+      "emitter_spawn_script_props",
+      "emitter_update_script_props",
+      "event_handler_script_props",
+      "gpu_compute_script",
+      "parent_scratch_pad_scripts",
+      "renderer_bindings",
+      "renderer_properties",
+      "scratch_pad_scripts",
+      "spawn_script_props",
+      "update_script_props"
+    ],
+    "NiagaraExt_ScriptCompileStatus": [
+      "BEING_CREATED"
+    ],
+    "NiagaraFunctionLibrary": [
+      "create_niagara_parameter_collection_instance",
+      "get_all_emitters",
+      "get_all_user_parameters",
+      "get_niagara_parameter_collection",
+      "override_system_user_variable_skeletal_mesh_component",
+      "override_system_user_variable_static_mesh",
+      "override_system_user_variable_static_mesh_component",
+      "spawn_system_at_location",
+      "spawn_system_at_location_with_params",
+      "spawn_system_attached",
+      "spawn_system_attached_with_params"
+    ],
+    "NiagaraFunctionScriptFactory": [
+      "create_new",
+      "script_factory_can_import",
+      "script_factory_create_file"
+    ],
+    "NiagaraInputNodeUsage": [
+      "PARAMETER",
+      "RAPID_ITERATION_PARAMETER",
+      "SYSTEM_CONSTANT"
+    ],
+    "NiagaraInterpolatedSpawnMode": [
+      "RUN_UPDATE_SCRIPT"
+    ],
+    "NiagaraLensEffectBase": [
+      "add_actor_local_offset",
+      "add_actor_local_rotation",
+      "add_actor_local_transform",
+      "add_actor_world_offset",
+      "add_actor_world_rotation",
+      "add_actor_world_transform",
+      "add_actor_world_transform_keep_scale",
+      "add_tick_prerequisite_actor",
+      "add_tick_prerequisite_component",
+      "create_input_component",
+      "create_pcg_data_from_actor",
+      "get_destroy_on_system_finish",
+      "set_destroy_on_system_finish"
+    ],
+    "NiagaraMinimalEmitterInfo": [
+      "emitter_name",
+      "used_renderer_materials",
+      "used_renderer_meshes"
+    ],
+    "NiagaraModuleDependencyScriptConstraint": [
+      "ALL_SCRIPTS",
+      "SAME_SCRIPT"
+    ],
+    "NiagaraModuleScriptFactory": [
+      "create_new",
+      "script_factory_can_import",
+      "script_factory_create_file"
+    ],
+    "NiagaraParameterCollectionFactoryNew": [
+      "create_new",
+      "script_factory_can_import",
+      "script_factory_create_file"
+    ],
+    "NiagaraParameterCollectionInstance": [
+      "get_bool_parameter",
+      "get_color_parameter",
+      "get_float_parameter",
+      "get_int_parameter",
+      "get_quat_parameter",
+      "get_vector2d_parameter",
+      "get_vector4_parameter",
+      "get_vector_parameter",
+      "set_bool_parameter",
+      "set_color_parameter",
+      "set_float_parameter",
+      "set_int_parameter",
+      "set_quat_parameter",
+      "set_vector2d_parameter",
+      "set_vector4_parameter",
+      "set_vector_parameter"
+    ],
+    "NiagaraParameterCollectionInstanceFactoryNew": [
+      "create_new",
+      "script_factory_can_import",
+      "script_factory_create_file"
+    ],
+    "NiagaraParameterDefinitionsFactory": [
+      "create_new",
+      "script_factory_can_import",
+      "script_factory_create_file"
+    ],
+    "NiagaraParameterStore": [
+      "parameter_offsets"
+    ],
+    "NiagaraPerfBaselineActor": [
+      "add_actor_local_offset",
+      "add_actor_local_rotation",
+      "add_actor_local_transform",
+      "add_actor_world_offset",
+      "add_actor_world_rotation",
+      "add_actor_world_transform",
+      "add_actor_world_transform_keep_scale",
+      "add_tick_prerequisite_actor",
+      "add_tick_prerequisite_component",
+      "create_input_component",
+      "create_pcg_data_from_actor"
+    ],
+    "NiagaraPreviewBase": [
+      "add_actor_local_offset",
+      "add_actor_local_rotation",
+      "add_actor_local_transform",
+      "add_actor_world_offset",
+      "add_actor_world_rotation",
+      "add_actor_world_transform",
+      "add_actor_world_transform_keep_scale",
+      "add_tick_prerequisite_actor",
+      "add_tick_prerequisite_component",
+      "create_input_component",
+      "create_pcg_data_from_actor",
+      "set_system"
+    ],
+    "NiagaraPreviewGrid": [
+      "add_actor_local_offset",
+      "add_actor_local_rotation",
+      "add_actor_local_transform",
+      "add_actor_world_offset",
+      "add_actor_world_rotation",
+      "add_actor_world_transform",
+      "add_actor_world_transform_keep_scale",
+      "add_tick_prerequisite_actor",
+      "add_tick_prerequisite_component",
+      "create_input_component",
+      "create_pcg_data_from_actor"
+    ],
+    "NiagaraPythonEmitter": [
+      "get_module",
+      "get_modules",
+      "has_module"
+    ],
+    "NiagaraRendererReadbackAttribute": [
+      "DYNAMIC_PARAMETER0W",
+      "DYNAMIC_PARAMETER0X",
+      "DYNAMIC_PARAMETER0Y",
+      "DYNAMIC_PARAMETER0Z",
+      "DYNAMIC_PARAMETER1W",
+      "DYNAMIC_PARAMETER1X",
+      "DYNAMIC_PARAMETER1Y",
+      "DYNAMIC_PARAMETER1Z",
+      "DYNAMIC_PARAMETER2W",
+      "DYNAMIC_PARAMETER2X",
+      "DYNAMIC_PARAMETER2Y",
+      "DYNAMIC_PARAMETER2Z",
+      "DYNAMIC_PARAMETER3W",
+      "DYNAMIC_PARAMETER3X",
+      "DYNAMIC_PARAMETER3Y",
+      "DYNAMIC_PARAMETER3Z"
+    ],
+    "NiagaraRendererSourceDataMode": [
+      "EMITTER"
+    ],
+    "NiagaraScript": [
+      "description",
+      "module_usage_bitmask",
+      "script_meta_data"
+    ],
+    "NiagaraScriptFactoryNew": [
+      "create_new",
+      "script_factory_can_import",
+      "script_factory_create_file"
+    ],
+    "NiagaraSequence": [
+      "add_marked_frame",
+      "add_marked_frame_to_sequence",
+      "add_possessable",
+      "add_root_folder_to_sequence",
+      "add_spawnable_from_class",
+      "add_spawnable_from_instance",
+      "add_track"
+    ],
+    "NiagaraSimCache": [
+      "get_emitter_name",
+      "get_emitter_names",
+      "get_num_emitters"
+    ],
+    "NiagaraSimCacheFactoryNew": [
+      "create_new",
+      "script_factory_can_import",
+      "script_factory_create_file"
+    ],
+    "NiagaraSimCacheFunctionLibrary": [
+      "create_niagara_sim_cache"
+    ],
+    "NiagaraStatelessEmitterTemplateFactoryNew": [
+      "create_new",
+      "script_factory_can_import",
+      "script_factory_create_file"
+    ],
+    "NiagaraSystemCollection": [
+      "get_systems"
+    ],
+    "NiagaraSystemFactoryNew": [
+      "create_new",
+      "script_factory_can_import",
+      "script_factory_create_file"
+    ],
+    "NiagaraSystemSpawnSectionEndBehavior": [
+      "SET_SYSTEM_INACTIVE"
+    ],
+    "NiagaraUserParameterInfo": [
+      "parameter_name",
+      "parameter_size_bytes",
+      "parameter_type"
+    ],
+    "NiagaraValidationRuleSetFactoryNew": [
+      "create_new",
+      "script_factory_can_import",
+      "script_factory_create_file"
+    ],
+    "OnNiagaraScriptCompilationComplete": [
+      "add_callable",
+      "add_callable_unique",
+      "add_function",
+      "add_function_unique"
+    ],
+    "OnNiagaraSystemFinished": [
+      "add_callable",
+      "add_callable_unique",
+      "add_function",
+      "add_function_unique"
+    ],
+    "UpgradeNiagaraEmitterContext": [
+      "new_emitter",
+      "old_emitter"
+    ]
+  }
+}

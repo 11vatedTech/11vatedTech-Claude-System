@@ -1,0 +1,166 @@
+{
+  "metadata": {
+    "title": "Creature Animation, VFX & Lighting Research Report",
+    "date": "2026-08-19",
+    "scope": "Professional creature animation, VFX, and lighting for real-time and cinematic work (2024-2026)",
+    "methodology": "Web research across animation communities, GDC talks, engine documentation, academic sources, and industry tutorials"
+  },
+  "animation": [
+    {
+      "topic": "12 Principles Applied to Non-Humanoid Creatures",
+      "claim": "Overlap and follow-through are the most critical principles for creature believability; appendages (tails, ears, tentacles, manes) must continue moving after the main body stops",
+      "source_description": "Core principles from Disney's Illusion of Life (Thomas & Johnston); applied in modern creature animation at studios like Naughty Dog, Guerrilla Games",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Squash & stretch scales with creature size: bigger = more squash before jumps. Anticipation is essential for creature attacks (dinosaur crouch before stomp, bird tuck before takeoff). Slow in/slow out sells weight. Arcs govern natural limb/tail movement paths."
+    },
+    {
+      "topic": "Timing and Weight for Large Creatures",
+      "claim": "Larger creatures require fewer frames per movement phase; heavy creatures have slower ease-outs, more anticipation frames, and longer settle times to convey mass",
+      "source_description": "Disney animation principles; game animation industry standards (Monster Hunter, Dark Souls enemy design)",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Small creatures: snappy timing, quick anticipations. Medium creatures: balanced. Large creatures: long anticipations, slow ease-outs, heavy impact frames. Weight is sold through timing + arcs + gravity reaction, not just keyframe poses."
+    },
+    {
+      "topic": "Quadruped Locomotion Patterns",
+      "claim": "Quadruped gaits follow distinct phase patterns: walk (4-beat), trot (2-beat diagonal), canter (3-beat), gallop (4-beat with suspension). Motion capture data from dogs and cats provides reference for gait mechanics",
+      "source_description": "ResearchGate: 'Animation of quadruped locomotion' (2024) - motion capture analysis of dog/cat gait mechanics; MDPI 2024 gait classification research",
+      "date": "2024",
+      "confidence": "high",
+      "notes": "Walk: each foot lifts independently in sequence. Trot: diagonal pairs move together. Canter: 3-beat with lead leg. Gallop: full suspension phase. Spine flexion/extension critical for believable quadruped motion."
+    },
+    {
+      "topic": "Serpentine Locomotion",
+      "claim": "Serpentine locomotion is driven by sinusoidal wave patterns passing posteriorly along the body, with lateral muscular contractions generating propulsion through continuous undulation",
+      "source_description": "Biology LibreTexts (OpenStax Biology 2e); Frontiers in Robotics and AI snake robot research",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Wave propagation speed affects gait. Frequency and amplitude control: faster waves = more speed, larger amplitude = wider lateral displacement. For animation: procedural sine wave drives spine curve, IK handles ground contact points."
+    },
+    {
+      "topic": "Multi-Modal Locomotion Blending",
+      "claim": "Hybrid creatures supporting multiple locomotion types (walk/crawl/swim/glide) use blend trees and state machines with transition zones for seamless medium changes",
+      "source_description": "GameDev.com locomotion transition articles; UE5 adaptive locomotion documentation; arXiv 2024 multi-modal locomotion control research",
+      "date": "2024-2025",
+      "confidence": "medium",
+      "notes": "Key technique: define transition blend windows where locomotion morphs between modes. Physics-based approach: IK adapts to terrain/medium rather than hardcoded animations. Neural network approaches (2024) show promise for automatic gait generation."
+    },
+    {
+      "topic": "Aerial Locomotion Patterns",
+      "claim": "Flying creatures use wing cycle timing inversely proportional to size; small birds have fast wing beats while large creatures use thermal soaring with minimal flapping",
+      "source_description": "Bio-inspired animation techniques; GameDev creature animation system design articles",
+      "date": "2024-2025",
+      "confidence": "medium",
+      "notes": "Wing downstroke generates lift (power stroke), upstroke is recovery. Fantasy creatures: combine bat-wing, bird-wing, and insect-wing mechanics based on design. Hovering requires rapid, small-amplitude wing motion."
+    },
+    {
+      "topic": "Aquatic Locomotion",
+      "claim": "Aquatic creatures primarily use caudal (tail) propulsion with body undulation; limb-based aquatic creatures use paddling with drag-based thrust",
+      "source_description": "Wikipedia Aquatic Locomotion; GameDev creature animation system design articles",
+      "date": "2024-2025",
+      "confidence": "medium",
+      "notes": "Fish-style: body wave propagates tail-to-head for thrust. Cephalopod-style: jet propulsion with mantle expansion/contraction. Aquatic quadruped: forelimb paddling with hindlimb steering. Buoyancy affects idle pose (float-up tendency)."
+    },
+    {
+      "topic": "Idle Animation Design Philosophy",
+      "claim": "Idle animation is the 'negative space' of animation — it reveals character through how a creature behaves when nothing is happening. Subtlety over spectacle; silhouette should barely change",
+      "source_description": "GDC talks (Naughty Dog, Guerrilla Games); industry analysis of Monster Hunter, Dark Souls, Overwatch creature idle behaviors",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Core idle components: (1) breathing cycles (slower for larger creatures), (2) weight shifting (hip adjustments, foot-to-foot), (3) attention behaviors (eye darts, ear flicks, head turns), (4) micro-movements (blinking, nostril flares, feather ruffling). Species-accurate behavior: herbivores graze, predators stalk. Loop with variation to avoid obvious repeats."
+    },
+    {
+      "topic": "Secondary Motion Systems",
+      "claim": "Secondary motion systems (overlapping action on appendages, cloth, tendrils) operate as independent animation layers that react to primary body motion with varying delay",
+      "source_description": "Disney animation principles; game animation community (RealTimeVFX.com forums, GDC creature animation talks)",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Delay timing: tail tips lag behind body by 2-4 frames, cloth/tendrils lag by 4-8 frames. Stiffer appendages = less delay, more snap. Softer appendages = more delay, more drag. Physics-based simulation (spring chains, Verlet integration) can drive secondary motion procedurally."
+    },
+    {
+      "topic": "Blender NLA Workflow for Creatures",
+      "claim": "Blender NLA editor enables layered creature animation by mixing independent actions (locomotion, breathing, tail sway, facial) on separate tracks with Add/Replace blend modes and influence keyframing",
+      "source_description": "Blender Manual NLA section; Blender Studio creature animation workflows; Jonathan Lampel creature animation tutorials",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Workflow: (1) Create actions per body component (walk cycle, idle breathe, tail swing). (2) Assign to NLA tracks — one track per body function. (3) Set blend modes: Add for additive layering, Replace for overrides. (4) Use influence sliders for mix strength per strip. (5) Keyframe influence for behavior transitions. (6) Set Action Repeat for walk/run loops. Constraints (Copy Rotation, IK, Damped Track) handle procedural element positioning within actions."
+    }
+  ],
+  "vfx": [
+    {
+      "topic": "Particle System Design for Creature Effects",
+      "claim": "Bioluminescence and energy aura effects use billboard particles with additive blending, mesh particle systems along creature bodies, and noise-driven distortion on aura rings",
+      "source_description": "Unity VFX Graph documentation; Unreal Engine Niagara system documentation; RealTimeVFX.com community forums; Frostbite 'Rendering the Abyss' GDC talk",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Techniques: billboard particles for outer glow, mesh particles for emission points on creature surface, ribbon/trails for energy field trails, ramp textures for bioluminescent color gradients, curl/simplex noise for organic aura distortion. Post-process bloom combined with HDR particle emission for maximum impact."
+    },
+    {
+      "topic": "Shader-Based VFX Techniques",
+      "claim": "Dissolve shaders combine noise-texture threshold clipping with fresnel-based edge glow; the fresnel effect (pow(1.0 - dot(viewDir, normal), exponent)) creates luminous edges that intensify near dissolve boundaries",
+      "source_description": "WebGL/Three.js shader tutorials; ShaderToy GLSL examples; multiple game VFX breakdown articles",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Dissolve flow: sample noise texture, discard fragments below threshold, use smoothstep near threshold boundary to create edge width. Fresnel multiplied by edge factor produces glow only near dissolve boundary. Scrolling textures add directional flow. Noise-driven displacement (vertex shader) adds organic distortion."
+    },
+    {
+      "topic": "VFX Timing Principles",
+      "claim": "VFX timing follows anticipation-impact-settle energy curves: brief anticipation buildup (10-20% of total time), explosive impact (5-10%), gradual settle/decay (70-80%)",
+      "source_description": "Game VFX industry standards; GDC real-time VFX talks; animation timing principles applied to effects",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Energy curves: exponential decay for impact bursts, sine wave for ambient loops, stepped for mechanical effects. Creature VFX: bioluminescence pulses use slow sine, attack effects use fast attack/slow decay. Screen shake and particle bursts should peak simultaneously for maximum impact."
+    },
+    {
+      "topic": "Light-Emitting VFX and Scene Interaction",
+      "claim": "Emissive creature effects interact with scene through dynamic point lights colocated with emission points, reflection probe updates, and volumetric fog interaction",
+      "source_description": "UE5 Lumen global illumination documentation; Unity HDRP emissive-to-light pipeline; game VFX community discussions",
+      "date": "2024-2025",
+      "confidence": "medium",
+      "notes": "Approaches: (1) Place small dynamic point lights at creature emission points (expensive but accurate). (2) Emissive materials + bloom (cheaper, no scene illumination). (3) Hybrid: emissive material + 1-2 key dynamic lights for major glow points. Performance consideration: dynamic lights are expensive; limit to 2-4 per creature."
+    },
+    {
+      "topic": "Performance Budgets for Real-Time VFX in WebGL",
+      "claim": "Mobile WebGL VFX budget: 2-5ms per frame for effects; safe particle count 2,000-5,000 draw calls; instanced rendering critical to reduce draw calls from O(n) to O(1)",
+      "source_description": "WebGL performance documentation; GPU particle benchmarks (Unity, UE5 scaled to WebGL); mobile GPU fill rate specifications",
+      "date": "2024-2025",
+      "confidence": "medium",
+      "notes": "Budget breakdown: 16.6ms total frame time (60fps), VFX should consume <2-3ms (~15%). Desktop WebGL: 100k+ particles feasible. Mobile: 5-20k particles. Optimization: texture atlas over per-particle textures, GPU instancing, particle LOD (reduce count at distance), compute shader particle simulation where supported. Query device limits at runtime: gl.getParameter(gl.MAX_TEXTURE_IMAGE_UNITS)."
+    }
+  ],
+  "lighting": [
+    {
+      "topic": "Three-Point Lighting for Creature Showcase",
+      "claim": "Creature showcase lighting adapts classic three-point: motivated key light for primary form definition, fill light at 1-2 stops lower for shadow control, and rim/back light for silhouette separation from background",
+      "source_description": "Standard cinematography lighting principles; creature portfolio rendering practices (ArtStation, creature design community)",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Key light: position 30-45 degrees from camera, slightly above eye line. Rim light: behind creature, angled to catch silhouette edge — critical for creature readability. Fill: opposite side of key, soft/large source. For turntable: lock key and rim to camera-relative positions so lighting stays consistent as creature rotates."
+    },
+    {
+      "topic": "Color Temperature and Mood for Creature Presentation",
+      "claim": "Color temperature maps directly to creature mood: warm (2700K-4000K) for approachable creatures, cool (5000K-10000K+) for threatening/otherworldly creatures, mixed temperatures for ambiguous creatures",
+      "source_description": "Cinematography color temperature standards; film creature lighting analysis (Alien xenomorph cool lighting, E.T./Baby Yoda warm lighting, creature reveal techniques)",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Friendly/approachable: warm golden key, soft fill, low contrast. Threatening: cool blue/cyan rim, deep shadows, high contrast, desaturated. Ambiguous: mixed temps create visual tension. 'Reveal' technique: start cool/dark, shift warm when creature is humanized. For creature showcase: consider species nature — predators may use cooler palettes, herbivores warmer."
+    },
+    {
+      "topic": "Bioluminescent Creature Lighting Considerations",
+      "claim": "Bioluminescent creatures require emissive-aware lighting setups where creature self-illumination contributes to scene lighting; standard lighting must complement rather than compete with creature's own glow",
+      "source_description": "Frostbite 'Rendering the Abyss' GDC talk (bioluminescent underwater creatures); UE5 Lumen emissive lighting documentation",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Key considerations: (1) Reduce ambient/fill light intensity to let emissive glow read clearly. (2) Use dark backgrounds to maximize glow contrast. (3) Slight rim light to maintain silhouette without washing out bioluminescence. (4) Emissive light should cast subtle color on nearby surfaces. (5) Bloom post-process essential for glow perception. (6) HDR rendering required for proper emissive range."
+    },
+    {
+      "topic": "Blender Cycles Lighting for Creature Turntable",
+      "claim": "Creature turntable lighting in Cycles: use area lights for soft key/fill, a narrow rim light behind subject, and HDRI for ambient base; lock lights to camera-relative coordinates for consistent turntable illumination",
+      "source_description": "Blender Studio creature showcase workflows; community turntable rendering tutorials",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Setup: (1) HDRI world light at low intensity for base ambient. (2) Key area light: 30-45 deg from camera, color temp 4000-5000K, medium size for soft shadows. (3) Fill area light: opposite side, 1-2 stops dimmer, larger size for very soft shadows. (4) Rim spot/area light: behind creature, narrow beam to catch edge. (5) Parent lights to empty parented to camera for turntable consistency. (6) For bioluminescent creatures: reduce HDRI, add emissive shader to creature glow points, enable bloom in compositor."
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "updated": "2026-08-20",
+  "sdk_prerequisite": {
+    "status": "RESOLVED",
+    "vswhere_component_registered": false,
+    "standalone_developer_pack_registry": true,
+    "filesystem_payload": "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8",
+    "product_version": "4.8.03928",
+    "build_system_discovery": "PASS - FoundryCalibrationEditor target compiles"
+  },
+  "editor_target": {
+    "target": "FoundryCalibrationEditor",
+    "status": "PASS",
+    "evidence": "scripts/unreal/build_pipeline.py compile ... --target FoundryCalibrationEditor returned PASS"
+  },
+  "native_test": {
+    "test": "FoundryCalibration.Gameplay.GameStateTransitions",
+    "status": "PASS",
+    "evidence": "artifacts/unreal/health/gamestate-transitions-evidence.json"
+  },
+  "buildcookrun": {
+    "first_package_status": "PASS",
+    "duration_seconds": 262.824,
+    "cooked_packages": 582,
+    "chunks": 1251,
+    "archive": "artifacts/unreal/calibration/Packaged/Ashwake"
+  },
+  "loose_content_asset_registry_failure": {
+    "status": "RESOLVED_BY_COOK_STAGE",
+    "not_sdk_related": true,
+    "evidence": "Packaged runtime mounts premade AssetRegistry/IoStore/Pak and no longer crashes in FBufferReaderBase::Serialize"
+  },
+  "current_blocker": null,
+  "known_missing_content": {
+    "MISSING_NIAGARA_ASSET": "/Game/Calibration/VFX/NS_Emberveil_Attune",
+    "AUDIO_REFERENCE_WARNING": "/Game/Calibration/Audio/source.source",
+    "ANIMATION_REFERENCE_WARNING": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root"
+  },
+  "package": {
+    "status": "PASS",
+    "archive": "artifacts/unreal/calibration/Packaged/Ashwake",
+    "file_count": 60,
+    "executables": 2
+  },
+  "runtime_map_load": {
+    "status": "PASS",
+    "evidence": "artifacts/unreal/health/packaged-runtime-map-load-evidence.json"
+  },
+  "gameplay_smoke": {
+    "status": "PASS",
+    "evidence": "artifacts/unreal/health/packaged-gameplay-smoke-evidence.json"
+  },
+  "gauntlet": {
+    "status": "PASS",
+    "test": "UE.BootTest",
+    "evidence": "artifacts/unreal/health/gauntlet-boot-evidence.json"
+  },
+  "insights": {
+    "status": "PASS",
+    "trace": "artifacts/unreal/health/traces/ashwake-packaged.utrace",
+    "bytes": 39682126,
+    "evidence": "artifacts/unreal/health/insights-trace-evidence.json"
+  },
+  "outside_editor_playtest": {
+    "status": "PASS",
+    "evidence": "artifacts/unreal/health/outside-editor-playtest-evidence.json"
+  }
+}

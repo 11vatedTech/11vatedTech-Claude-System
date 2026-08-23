@@ -1,0 +1,26 @@
+{
+  "url": "http://127.0.0.1:8138/runtime/index.html",
+  "frames": [
+    {
+      "t_ms": 1500,
+      "file": "frame-01.png",
+      "state": {}
+    },
+    {
+      "t_ms": 3500,
+      "file": "frame-02.png",
+      "state": {}
+    },
+    {
+      "t_ms": 5500,
+      "file": "frame-03.png",
+      "state": {}
+    },
+    {
+      "t_ms": 7500,
+      "file": "frame-04.png",
+      "state": {}
+    }
+  ],
+  "perf": {}
+}

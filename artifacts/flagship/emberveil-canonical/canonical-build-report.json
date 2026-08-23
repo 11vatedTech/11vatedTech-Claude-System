@@ -1,0 +1,1332 @@
+{
+  "results": {
+    "scene": {
+      "scene": {
+        "name": "Scene",
+        "frame_current": 1,
+        "frame_start": 1,
+        "frame_end": 250
+      },
+      "camera": "PresentationCam",
+      "objects": [
+        {
+          "name": "Emberveil_root",
+          "type": "EMPTY",
+          "location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": []
+        },
+        {
+          "name": "PresentationCam",
+          "type": "CAMERA",
+          "location": [
+            5.3,
+            -7.0,
+            3.2
+          ],
+          "rotation": [
+            78.1,
+            -0.0,
+            37.13
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": []
+        }
+      ],
+      "object_count": 2,
+      "lights": [],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "scene.create"
+    },
+    "hero_bell": {
+      "name": "glass_bell",
+      "vertices": 1536,
+      "faces": 1408,
+      "profile_points": 12,
+      "segments": 128,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.lathe"
+    },
+    "ember_core": {
+      "name": "ember_core",
+      "vertices": 768,
+      "faces": 672,
+      "profile_points": 8,
+      "segments": 96,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.lathe"
+    },
+    "brass_band": {
+      "name": "brass_band",
+      "vertices": 512,
+      "faces": 384,
+      "profile_points": 4,
+      "segments": 128,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.lathe"
+    },
+    "filigree": {
+      "name": "filigree_arc",
+      "vertices": 384,
+      "faces": 320,
+      "profile_points": 6,
+      "segments": 64,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.lathe"
+    },
+    "filigree_array": {
+      "source": "filigree_arc",
+      "count": 4,
+      "objects": [
+        "filigree_arc",
+        "filigree_arc_01",
+        "filigree_arc_02",
+        "filigree_arc_03"
+      ],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.radial_array"
+    },
+    "basalt_shrine": {
+      "name": "basalt_shrine",
+      "vertices": 896,
+      "faces": 768,
+      "profile_points": 7,
+      "segments": 128,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.lathe"
+    },
+    "ash_ring": {
+      "name": "ash_ring",
+      "vertices": 640,
+      "faces": 512,
+      "profile_points": 5,
+      "segments": 128,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.lathe"
+    },
+    "shrine_pillar": {
+      "name": "shrine_pillar",
+      "vertices": 240,
+      "faces": 192,
+      "profile_points": 5,
+      "segments": 48,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.lathe"
+    },
+    "shrine_pillars": {
+      "source": "shrine_pillar",
+      "count": 4,
+      "objects": [
+        "shrine_pillar",
+        "shrine_pillar_01",
+        "shrine_pillar_02",
+        "shrine_pillar_03"
+      ],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.radial_array"
+    },
+    "finish_glass": {
+      "name": "glass_bell",
+      "smooth_normals": true,
+      "bevel_width": 0.012,
+      "bevel_segments": 2,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.surface_finish"
+    },
+    "finish_core": {
+      "name": "ember_core",
+      "smooth_normals": true,
+      "bevel_width": 0.008,
+      "bevel_segments": 2,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.surface_finish"
+    },
+    "finish_band": {
+      "name": "brass_band",
+      "smooth_normals": true,
+      "bevel_width": 0.018,
+      "bevel_segments": 2,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.surface_finish"
+    },
+    "finish_filigree": {
+      "name": "filigree_arc",
+      "smooth_normals": true,
+      "bevel_width": 0.008,
+      "bevel_segments": 2,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.surface_finish"
+    },
+    "finish_filigree_01": {
+      "name": "filigree_arc_01",
+      "smooth_normals": true,
+      "bevel_width": 0.008,
+      "bevel_segments": 2,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.surface_finish"
+    },
+    "finish_filigree_02": {
+      "name": "filigree_arc_02",
+      "smooth_normals": true,
+      "bevel_width": 0.008,
+      "bevel_segments": 2,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.surface_finish"
+    },
+    "finish_filigree_03": {
+      "name": "filigree_arc_03",
+      "smooth_normals": true,
+      "bevel_width": 0.008,
+      "bevel_segments": 2,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.surface_finish"
+    },
+    "finish_shrine": {
+      "name": "basalt_shrine",
+      "smooth_normals": true,
+      "bevel_width": 0.03,
+      "bevel_segments": 3,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.surface_finish"
+    },
+    "finish_ash": {
+      "name": "ash_ring",
+      "smooth_normals": true,
+      "bevel_width": 0.02,
+      "bevel_segments": 2,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.surface_finish"
+    },
+    "finish_pillar": {
+      "name": "shrine_pillar",
+      "smooth_normals": true,
+      "bevel_width": 0.018,
+      "bevel_segments": 2,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.surface_finish"
+    },
+    "finish_pillar_01": {
+      "name": "shrine_pillar_01",
+      "smooth_normals": true,
+      "bevel_width": 0.018,
+      "bevel_segments": 2,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.surface_finish"
+    },
+    "finish_pillar_02": {
+      "name": "shrine_pillar_02",
+      "smooth_normals": true,
+      "bevel_width": 0.018,
+      "bevel_segments": 2,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.surface_finish"
+    },
+    "finish_pillar_03": {
+      "name": "shrine_pillar_03",
+      "smooth_normals": true,
+      "bevel_width": 0.018,
+      "bevel_segments": 2,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.surface_finish"
+    },
+    "parent_hero": {
+      "root": "Emberveil_root",
+      "children": [
+        "glass_bell",
+        "ember_core",
+        "brass_band",
+        "filigree_arc",
+        "filigree_arc_01",
+        "filigree_arc_02",
+        "filigree_arc_03"
+      ],
+      "parented": 7,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "scene.parent"
+    },
+    "glass_material": {
+      "material": "Emberveil_Glass",
+      "node_count": 2,
+      "assigned_to": [
+        "glass_bell"
+      ],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "material.subsurface"
+    },
+    "core_material": {
+      "material": "Emberveil_Core",
+      "node_count": 2,
+      "assigned_to": [
+        "ember_core"
+      ],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "material.subsurface"
+    },
+    "core_noise": {
+      "material": "Emberveil_Core",
+      "noise_scale": 4.5,
+      "noise_detail": 4.0,
+      "strength_range": [
+        5.0,
+        12.0
+      ],
+      "assigned_to": [
+        "ember_core"
+      ],
+      "node_count": 4,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "material.noise_emission"
+    },
+    "brass_material": {
+      "material": "Emberveil_Brass",
+      "node_count": 2,
+      "textures": [],
+      "assigned_to": [
+        "brass_band",
+        "filigree_arc",
+        "filigree_arc_01",
+        "filigree_arc_02",
+        "filigree_arc_03"
+      ],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "material.construct"
+    },
+    "brass_variation": {
+      "material": "Emberveil_Brass",
+      "variation": "noise_color_roughness_bump",
+      "scale": 7.0,
+      "detail": 5.0,
+      "node_count": 6,
+      "assigned_to": [],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "material.surface_variation"
+    },
+    "basalt_material": {
+      "material": "Emberveil_Basalt",
+      "node_count": 2,
+      "textures": [],
+      "assigned_to": [
+        "basalt_shrine",
+        "ash_ring",
+        "shrine_pillar",
+        "shrine_pillar_01",
+        "shrine_pillar_02",
+        "shrine_pillar_03"
+      ],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "material.construct"
+    },
+    "basalt_variation": {
+      "material": "Emberveil_Basalt",
+      "variation": "noise_color_roughness_bump",
+      "scale": 3.200000047683716,
+      "detail": 6.0,
+      "node_count": 6,
+      "assigned_to": [],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "material.surface_variation"
+    },
+    "mechanical_rig": {
+      "armature": "Emberveil_ControlRig",
+      "bone_count": 3,
+      "bones": [
+        {
+          "name": "vessel_root",
+          "parent": null
+        },
+        {
+          "name": "core_suspension",
+          "parent": "vessel_root"
+        },
+        {
+          "name": "filigree_guard",
+          "parent": "vessel_root"
+        }
+      ],
+      "purpose": "Emberveil mechanical vessel controls",
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "rig.mechanical"
+    },
+    "rig_parent": {
+      "root": "Emberveil_root",
+      "children": [
+        "Emberveil_ControlRig"
+      ],
+      "parented": 1,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "scene.parent"
+    },
+    "idle_float": {
+      "object": "Emberveil_root",
+      "action": "11vt_float_Emberveil_root",
+      "frames": [
+        1,
+        96
+      ],
+      "amplitude": 0.11,
+      "cycles": 2,
+      "loop_safe": true,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "animation.float"
+    },
+    "core_pulse": {
+      "object": "ember_core",
+      "action": "11vt_pulse_ember_core",
+      "frames": [
+        1,
+        96
+      ],
+      "amplitude": 0.075,
+      "cycles": 4,
+      "purpose": "contained-fire breathing pulse",
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "animation.pulse"
+    },
+    "ring_motion": {
+      "object": "brass_band",
+      "action": "11vt_rotate_brass_band",
+      "frames": [
+        1,
+        96
+      ],
+      "turns": 0.2,
+      "axis": "Z",
+      "purpose": "secondary mechanical drift",
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "animation.rotate"
+    },
+    "filigree_motion": {
+      "object": "filigree_arc",
+      "action": "11vt_rotate_filigree_arc",
+      "frames": [
+        1,
+        96
+      ],
+      "turns": -0.08,
+      "axis": "Z",
+      "purpose": "secondary mechanical drift",
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "animation.rotate"
+    },
+    "lighting": {
+      "lights": [
+        {
+          "name": "EmberCoreLight",
+          "type": "POINT",
+          "energy": 260.0,
+          "color": [
+            1.0,
+            0.2,
+            0.035
+          ],
+          "location": [
+            0.0,
+            -0.2,
+            1.25
+          ]
+        },
+        {
+          "name": "WarmKey",
+          "type": "AREA",
+          "energy": 720.0,
+          "color": [
+            1.0,
+            0.42,
+            0.16
+          ],
+          "location": [
+            3.8,
+            -4.5,
+            4.5
+          ]
+        },
+        {
+          "name": "WarmBounce",
+          "type": "AREA",
+          "energy": 360.0,
+          "color": [
+            0.72,
+            0.22,
+            0.07
+          ],
+          "location": [
+            0.5,
+            -2.8,
+            0.8
+          ]
+        },
+        {
+          "name": "CoolSeparation",
+          "type": "AREA",
+          "energy": 900.0,
+          "color": [
+            0.18,
+            0.48,
+            0.95
+          ],
+          "location": [
+            -4.0,
+            1.8,
+            4.0
+          ]
+        },
+        {
+          "name": "TopAtmosphere",
+          "type": "AREA",
+          "energy": 500.0,
+          "color": [
+            0.55,
+            0.32,
+            0.18
+          ],
+          "location": [
+            0.0,
+            2.0,
+            6.0
+          ]
+        }
+      ],
+      "world_strength": 0.20000000298023224,
+      "exposure": 0.699999988079071,
+      "motivation": {
+        "key": "EmberCoreLight",
+        "fill": "WarmBounce",
+        "rim": "CoolSeparation"
+      },
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "lighting.construct"
+    },
+    "inspect": {
+      "scene": {
+        "name": "Scene",
+        "frame_current": 96,
+        "frame_start": 1,
+        "frame_end": 96
+      },
+      "camera": "PresentationCam",
+      "objects": [
+        {
+          "name": "ash_ring",
+          "type": "MESH",
+          "location": [
+            0.0,
+            0.0,
+            0.42
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": [
+            "Emberveil_Basalt"
+          ]
+        },
+        {
+          "name": "basalt_shrine",
+          "type": "MESH",
+          "location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": [
+            "Emberveil_Basalt"
+          ]
+        },
+        {
+          "name": "brass_band",
+          "type": "MESH",
+          "location": [
+            0.0,
+            0.0,
+            0.55
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            72.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": [
+            "Emberveil_Brass"
+          ]
+        },
+        {
+          "name": "CoolSeparation",
+          "type": "LIGHT",
+          "location": [
+            -4.0,
+            1.8,
+            4.0
+          ],
+          "rotation": [
+            59.34,
+            0.0,
+            -114.23
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": []
+        },
+        {
+          "name": "ember_core",
+          "type": "MESH",
+          "location": [
+            0.0,
+            0.0,
+            0.82
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0375,
+            1.0375,
+            1.0375
+          ],
+          "materials": [
+            "Emberveil_Core"
+          ]
+        },
+        {
+          "name": "EmberCoreLight",
+          "type": "LIGHT",
+          "location": [
+            0.0,
+            -0.2,
+            1.25
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": []
+        },
+        {
+          "name": "Emberveil_ControlRig",
+          "type": "ARMATURE",
+          "location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": []
+        },
+        {
+          "name": "Emberveil_root",
+          "type": "EMPTY",
+          "location": [
+            0.0,
+            0.0,
+            -0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            -0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": []
+        },
+        {
+          "name": "filigree_arc",
+          "type": "MESH",
+          "location": [
+            0.0,
+            0.0,
+            0.55
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            -28.8
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": [
+            "Emberveil_Brass"
+          ]
+        },
+        {
+          "name": "filigree_arc_01",
+          "type": "MESH",
+          "location": [
+            0.0,
+            0.0,
+            0.55
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            90.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": [
+            "Emberveil_Brass"
+          ]
+        },
+        {
+          "name": "filigree_arc_02",
+          "type": "MESH",
+          "location": [
+            -0.0,
+            0.0,
+            0.55
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            180.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": [
+            "Emberveil_Brass"
+          ]
+        },
+        {
+          "name": "filigree_arc_03",
+          "type": "MESH",
+          "location": [
+            0.0,
+            -0.0,
+            0.55
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            270.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": [
+            "Emberveil_Brass"
+          ]
+        },
+        {
+          "name": "glass_bell",
+          "type": "MESH",
+          "location": [
+            0.0,
+            0.0,
+            0.55
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": [
+            "Emberveil_Glass"
+          ]
+        },
+        {
+          "name": "PresentationCam",
+          "type": "CAMERA",
+          "location": [
+            5.3,
+            -7.0,
+            3.2
+          ],
+          "rotation": [
+            78.1,
+            -0.0,
+            37.13
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": []
+        },
+        {
+          "name": "shrine_pillar",
+          "type": "MESH",
+          "location": [
+            2.45,
+            0.0,
+            0.35
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": [
+            "Emberveil_Basalt"
+          ]
+        },
+        {
+          "name": "shrine_pillar_01",
+          "type": "MESH",
+          "location": [
+            0.0,
+            2.45,
+            0.35
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            90.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": [
+            "Emberveil_Basalt"
+          ]
+        },
+        {
+          "name": "shrine_pillar_02",
+          "type": "MESH",
+          "location": [
+            -2.45,
+            0.0,
+            0.35
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            180.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": [
+            "Emberveil_Basalt"
+          ]
+        },
+        {
+          "name": "shrine_pillar_03",
+          "type": "MESH",
+          "location": [
+            -0.0,
+            -2.45,
+            0.35
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            270.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": [
+            "Emberveil_Basalt"
+          ]
+        },
+        {
+          "name": "TopAtmosphere",
+          "type": "LIGHT",
+          "location": [
+            0.0,
+            2.0,
+            6.0
+          ],
+          "rotation": [
+            21.04,
+            0.0,
+            180.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": []
+        },
+        {
+          "name": "WarmBounce",
+          "type": "LIGHT",
+          "location": [
+            0.5,
+            -2.8,
+            0.8
+          ],
+          "rotation": [
+            94.02,
+            0.0,
+            10.12
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": []
+        },
+        {
+          "name": "WarmKey",
+          "type": "LIGHT",
+          "location": [
+            3.8,
+            -4.5,
+            4.5
+          ],
+          "rotation": [
+            60.74,
+            -0.0,
+            40.18
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": []
+        }
+      ],
+      "object_count": 21,
+      "lights": [
+        "CoolSeparation",
+        "EmberCoreLight",
+        "TopAtmosphere",
+        "WarmBounce",
+        "WarmKey"
+      ],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "scene.inspect"
+    },
+    "rig_inspect": {
+      "armature": "Emberveil_ControlRig",
+      "bone_count": 3,
+      "max_hierarchy_depth": 1,
+      "deform_bones": 3,
+      "constraints": [],
+      "skinned_meshes": [
+        {
+          "name": "ash_ring",
+          "vertex_groups": 0,
+          "groups_overlap_bones": 0
+        },
+        {
+          "name": "basalt_shrine",
+          "vertex_groups": 0,
+          "groups_overlap_bones": 0
+        },
+        {
+          "name": "brass_band",
+          "vertex_groups": 0,
+          "groups_overlap_bones": 0
+        },
+        {
+          "name": "ember_core",
+          "vertex_groups": 0,
+          "groups_overlap_bones": 0
+        },
+        {
+          "name": "filigree_arc",
+          "vertex_groups": 0,
+          "groups_overlap_bones": 0
+        },
+        {
+          "name": "filigree_arc_01",
+          "vertex_groups": 0,
+          "groups_overlap_bones": 0
+        },
+        {
+          "name": "filigree_arc_02",
+          "vertex_groups": 0,
+          "groups_overlap_bones": 0
+        },
+        {
+          "name": "filigree_arc_03",
+          "vertex_groups": 0,
+          "groups_overlap_bones": 0
+        },
+        {
+          "name": "glass_bell",
+          "vertex_groups": 0,
+          "groups_overlap_bones": 0
+        },
+        {
+          "name": "shrine_pillar",
+          "vertex_groups": 0,
+          "groups_overlap_bones": 0
+        },
+        {
+          "name": "shrine_pillar_01",
+          "vertex_groups": 0,
+          "groups_overlap_bones": 0
+        },
+        {
+          "name": "shrine_pillar_02",
+          "vertex_groups": 0,
+          "groups_overlap_bones": 0
+        },
+        {
+          "name": "shrine_pillar_03",
+          "vertex_groups": 0,
+          "groups_overlap_bones": 0
+        }
+      ],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "rig.inspect"
+    },
+    "material_inspect": {
+      "materials": [
+        {
+          "name": "Dots Stroke",
+          "use_nodes": true,
+          "textures": []
+        },
+        {
+          "name": "Emberveil_Basalt",
+          "use_nodes": true,
+          "textures": []
+        },
+        {
+          "name": "Emberveil_Brass",
+          "use_nodes": true,
+          "textures": []
+        },
+        {
+          "name": "Emberveil_Core",
+          "use_nodes": true,
+          "textures": []
+        },
+        {
+          "name": "Emberveil_Glass",
+          "use_nodes": true,
+          "textures": []
+        },
+        {
+          "name": "Material",
+          "use_nodes": true,
+          "textures": []
+        }
+      ],
+      "texture_dependency_count": 0,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "material.inspect"
+    },
+    "preview": {
+      "frame": 48,
+      "render": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\preview\\preview-frame-0048.png",
+      "resolution": [
+        960,
+        540
+      ],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "render.preview"
+    },
+    "turntable": {
+      "frames": 24,
+      "rendered": [
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-000.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-001.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-002.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-003.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-004.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-005.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-006.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-007.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-008.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-009.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-010.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-011.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-012.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-013.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-014.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-015.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-016.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-017.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-018.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-019.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-020.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-021.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-022.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\turntable\\turntable-023.png"
+      ],
+      "radius": 5.8,
+      "height": 1.7,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "render.turntable"
+    },
+    "camera_path": {
+      "camera": "CinematicCam",
+      "frames": [
+        1,
+        72
+      ],
+      "radius": 6.8,
+      "sweep_degrees": 72.0,
+      "lens_mm": 52.0,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "camera.path"
+    },
+    "sequence": {
+      "frames": 72,
+      "first": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\cinematic-frames\\seq-0001.png",
+      "last": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\cinematic-frames\\seq-0072.png",
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "render.sequence"
+    },
+    "export": {
+      "out_path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\emberveil-canonical.glb",
+      "exists": true,
+      "bytes": 342016,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "asset.export_glb",
+      "glb_validation": {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\emberveil-canonical.glb",
+        "exists": true,
+        "bytes": 342016,
+        "magic": "0x46546c67",
+        "version": 2,
+        "declared_length": 342016,
+        "json_chunk_bytes": 11940,
+        "asset_version": "2.0",
+        "mesh_count": 13,
+        "node_count": 18,
+        "material_count": 4,
+        "animation_count": 4,
+        "has_bin": true,
+        "bin_chunk_bytes": 330048,
+        "valid": true
+      }
+    }
+  },
+  "op_count": 46,
+  "failed": [],
+  "op_runner_version": "0.4.0",
+  "blender_version": "5.2.0 LTS",
+  "ok": true,
+  "health": "PASS",
+  "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\session.blend",
+  "process": {
+    "returncode": 0,
+    "elapsed_seconds": 358.865
+  }
+}

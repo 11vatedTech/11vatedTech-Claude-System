@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "pack_id": "ART_DIRECTION_LOOKDEV_CORE",
+  "date": "2026-08-22",
+  "status": "ACTIVE",
+  "knowledge_class": "evergreen_fundamentals_plus_versioned_tool_notes",
+  "disciplines": ["creative-direction", "art-direction", "composition", "lighting", "material-lookdev", "technical-art"],
+  "professional_baseline": {
+    "beginner": ["shape, value, color, light, material, and composition vocabulary", "can make a readable blockout"],
+    "working_professional": ["visual thesis and references", "multiple directions before production", "controlled value/color/material/lighting studies", "causal critique and repair"],
+    "senior": ["protects hierarchy and authored identity across disciplines", "balances artistic intent with runtime and pipeline constraints", "recognizes genericness and weak reference transfer"],
+    "lead_director": ["sets canon, selection criteria, review cadence, and tradeoffs", "knows when to reject production and return to visual development"]
+  },
+  "workflow": [
+    "intent_and_emotional_target",
+    "reference_and_anti_reference_analysis",
+    "three_materially_different_directions",
+    "thumbnail_silhouette_and_value_studies",
+    "color_and_material_studies",
+    "lighting_keys_and_camera_language",
+    "selected_visual_canon",
+    "production_asset_plan",
+    "controlled_lookdev_renders",
+    "specialist_and_independent_review",
+    "repair",
+    "unseen_transfer_test"
+  ],
+  "quality_dimensions": {
+    "composition": ["focal hierarchy", "value structure", "negative space", "scale cues", "rhythm", "edge control"],
+    "lighting": ["motivated key/fill/rim/bounce", "midtone preservation", "exposure", "color temperature", "silhouette", "atmospheric depth"],
+    "materials": ["surface response", "roughness differentiation", "scale", "normal/detail", "metal/nonmetal behavior", "lighting response"],
+    "identity": ["shape language", "material language", "color philosophy", "motifs", "anti-references", "signature qualities"]
+  },
+  "failure_patterns": [
+    {"id": "black-crush", "symptoms": ["no readable midtones", "hero reads as silhouette/blob", "emissive source does all work"], "repair": "restore value separation with motivated fill, exposure control, surface response, and readable background structure"},
+    {"id": "test-chamber", "symptoms": ["empty room", "floating object", "no scale or world relationship"], "repair": "design environment around subject purpose, landmarks, scale cues, and narrative function"},
+    {"id": "effect-as-art-direction", "symptoms": ["bloom/particles substitute for concept", "same effect fits any project"], "repair": "derive effect shape, timing, density, and color from the visual thesis and gameplay/scene purpose"},
+    {"id": "technically-valid-poor-form", "symptoms": ["valid mesh/material but weak silhouette and light response"], "repair": "return to silhouette, proportion, value, and controlled neutral/grazing/production renders"}
+  ],
+  "evidence_requirements": ["direction board", "thumbnail/value studies", "controlled neutral and production renders", "before/after causal critique", "independent review", "transfer artifact"],
+  "sources": [
+    {"title": "Web Content Accessibility Guidelines 2.2", "url": "https://www.w3.org/TR/WCAG22/", "authority": "W3C Recommendation", "retrieved": "2026-08-22", "transfers": ["evidence discipline and testable criteria are analogous to separating objective and subjective claims"]},
+    {"title": "Blender Manual: Color Management", "url": "https://docs.blender.org/manual/en/latest/render/color_management/index.html", "authority": "Blender documentation", "retrieved": "2026-08-22", "transfers": ["version-specific color-management reference; revalidate when Blender changes"]},
+    {"title": "Unreal Engine Documentation", "url": "https://dev.epicgames.com/documentation/en-us/unreal-engine/", "authority": "Epic Games", "retrieved": "2026-08-22", "transfers": ["engine behavior and feature maturity must be checked against installed version"]}
+  ],
+  "tool_mapping": {"visdev": ["Krita when installed", "ImageMagick", "reference analysis"], "lookdev": ["Blender", "Unreal materials and lighting"], "evidence": ["FFmpeg", "render capture", "visual_evidence_evaluator.py"]},
+  "known_limits": ["No script can certify taste, originality, emotion, or professional appeal.", "Existing Blender and Unreal operations prove infrastructure and bounded production tasks, not broad art mastery."]
+}

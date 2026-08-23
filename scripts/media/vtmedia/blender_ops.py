@@ -32,42 +32,78 @@ SCHEMAS: dict[str, dict[str, tuple[type, bool]]] = {
         "world_color": (list, False), "objects": (list, False),
         "camera": (dict, False), "lights": (list, False),
     },
+    "scene.parent": {"root": (str, True), "children": (list, True)},
     "scene.inspect": {"names": (list, False)},
+    "lighting.construct": {"lights": (list, False), "world_strength": (float, False), "exposure": (float, False)},
+    "pipeline.batch": {"operations": (list, True), "out_dir": (str, False), "save_blend": (str, False)},
     "mesh.analyze": {"names": (list, False)},
     "mesh.optimize": {"name": (str, True), "ratio": (float, False)},
+    "mesh.surface_finish": {"name": (str, True), "smooth": (bool, False), "bevel_width": (float, False), "bevel_segments": (int, False)},
+    "mesh.lathe": {"name": (str, True), "profile": (list, True), "segments": (int, False),
+                    "location": (list, False)},
+    "mesh.radial_array": {"name": (str, True), "count": (int, False)},
     "material.construct": {"name": (str, True), "base_color": (list, False),
                            "metallic": (float, False), "roughness": (float, False),
                            "emission": (list, False), "emission_strength": (float, False),
                            "textures": (list, False), "assign_to": (list, False)},
+    "material.surface_variation": {"name": (str, True), "scale": (float, False),
+                                    "detail": (float, False), "roughness_min": (float, False),
+                                    "roughness_max": (float, False), "bump_strength": (float, False),
+                                    "dark_color": (list, False), "light_color": (list, False)},
+    "material.subsurface": {"name": (str, True), "base_color": (list, False),
+                             "roughness": (float, False), "transmission": (float, False),
+                             "ior": (float, False), "subsurface": (float, False),
+                             "subsurface_color": (list, False), "emission": (list, False),
+                             "emission_strength": (float, False), "clearcoat": (float, False),
+                             "assign_to": (list, False)},
     "material.inspect": {},
+    "material.noise_emission": {"name": (str, True), "scale": (float, False),
+                                 "detail": (float, False), "strength_min": (float, False),
+                                 "strength_max": (float, False), "assign_to": (list, False)},
+    "rig.mechanical": {"name": (str, True), "bones": (list, True)},
     "rig.inspect": {},
     "animation.create_loop": {"name": (str, True), "frame_start": (int, False), "frame_end": (int, False),
                               "turns": (float, False), "axis": (str, False)},
     "animation.create_translation": {"name": (str, True), "frame_start": (int, False), "frame_end": (int, False),
                                      "distance": (float, False), "axis": (str, False)},
+    "animation.float": {"name": (str, True), "frame_start": (int, False), "frame_end": (int, False),
+                         "amplitude": (float, False), "cycles": (int, False), "sway_degrees": (float, False)},
+    "animation.pulse": {"name": (str, True), "frame_start": (int, False), "frame_end": (int, False),
+                         "amplitude": (float, False), "cycles": (int, False)},
+    "animation.rotate": {"name": (str, True), "frame_start": (int, False), "frame_end": (int, False),
+                          "turns": (float, False), "axis": (str, False)},
     "animation.inspect": {},
     "animation.loop_check": {"frame_start": (int, False), "frame_end": (int, False),
                              "resolution": (list, False), "samples": (int, False),
                              "contact_bone": (str, False), "slide_threshold": (float, False)},
     "camera.setup": {"x": (float, False), "y": (float, False), "z": (float, False),
                      "name": (str, False), "lens_mm": (float, False), "look_at": (list, False)},
+    "camera.path": {"name": (str, False), "frame_start": (int, False), "frame_end": (int, False),
+                     "radius": (float, False), "height": (float, False), "target": (list, False),
+                     "sweep_degrees": (float, False), "start_angle": (float, False), "lens_mm": (float, False)},
     "render.preview": {"frame": (int, False), "resolution": (list, False),
-                       "engine": (str, False), "samples": (int, False)},
+                       "engine": (str, False), "samples": (int, False),
+                       "denoising": (bool, False)},
+    "render.sequence": {"frame_start": (int, False), "frame_end": (int, False),
+                         "resolution": (list, False), "engine": (str, False), "samples": (int, False),
+                         "denoising": (bool, False)},
     "render.turntable": {"target": (list, False), "radius": (float, False),
                          "height": (float, False), "frames": (int, False),
                          "resolution": (list, False), "samples": (int, False),
-                         "camera": (dict, False)},
+                         "camera": (dict, False), "denoising": (bool, False)},
     "asset.export_glb": {"out_path": (str, True), "use_selection": (bool, False)},
     "asset.ingest": {"path": (str, True)},
 }
 
 # ops that run in a persistent scene (must be chained in one Blender session)
 SCENE_OPS = {
-    "scene.create", "scene.inspect", "mesh.analyze", "mesh.optimize",
-    "material.construct", "material.inspect", "rig.inspect",
-    "animation.create_loop", "animation.create_translation", "animation.inspect",
-    "animation.loop_check", "camera.setup", "render.preview", "render.turntable",
-    "asset.export_glb", "asset.ingest",
+    "scene.create", "scene.parent", "scene.inspect", "mesh.analyze", "mesh.optimize",
+    "mesh.lathe", "mesh.radial_array", "mesh.surface_finish", "lighting.construct",
+    "material.construct", "material.subsurface", "material.surface_variation", "material.noise_emission", "material.inspect", "rig.mechanical", "rig.inspect",
+    "animation.create_loop", "animation.create_translation", "animation.float", "animation.pulse", "animation.rotate",
+    "animation.inspect", "animation.loop_check",
+    "camera.setup", "camera.path", "render.preview", "render.turntable",
+    "render.sequence", "asset.export_glb", "asset.ingest",
 }
 
 
@@ -80,7 +116,11 @@ def validate(op: str, params: dict) -> list[str]:
             if required:
                 errors.append(f"missing_required_param {param}")
             continue
-        if not isinstance(params[param], typ):
+        value = params[param]
+        matches = isinstance(value, typ)
+        if typ is float and isinstance(value, (int, float)):
+            matches = True  # JSON ints are valid floats
+        if not matches:
             errors.append(f"param_type_mismatch {param} expected {typ.__name__}")
     return errors
 
@@ -191,6 +231,51 @@ def run_op(op: str, params: dict, out_dir: Path, timeout: int = 600,
         if not result["glb_validation"].get("valid"):
             result["ok"] = False
             result["health"] = "FAILED"
+    return result
+
+
+def run_batch(operations: list[dict[str, Any]], out_dir: Path, timeout: int = 900,
+              save_blend: Path | None = None) -> dict[str, Any]:
+    """Execute a validated sequence in one Blender process.
+
+    This is the production-safe boundary for multi-op authoring: the caller
+    can only name registered structured operations, while a single process
+    preserves Blender state and prevents open_mainfile scene loss.
+    """
+    errors = []
+    for index, item in enumerate(operations):
+        op = item.get("op") if isinstance(item, dict) else None
+        params = item.get("params", {}) if isinstance(item, dict) else {}
+        errors.extend(f"batch[{index}] {e}" for e in validate(op, params))
+    if errors:
+        return {"ok": False, "health": "FAILED", "error": "batch_validation_failed", "validation_errors": errors}
+    blender = _blender()
+    if not blender:
+        return {"ok": False, "health": "MISSING", "error": "blender_not_found"}
+    out_dir = Path(out_dir).resolve()
+    out_dir.mkdir(parents=True, exist_ok=True)
+    spec_path = out_dir / "pipeline-batch-spec.json"
+    result_path = out_dir / "pipeline-batch-result.json"
+    spec = {"op": "pipeline.batch", "params": {"operations": operations,
+            "out_dir": str(out_dir), "save_blend": str(save_blend.resolve()) if save_blend else None}}
+    spec_path.write_text(json.dumps(spec, indent=2, ensure_ascii=False), encoding="utf-8")
+    r = run([blender, "--background", "--factory-startup", "--python", str(OP_RUNNER), "--",
+             str(spec_path), str(result_path)], timeout=timeout)
+    if not result_path.exists():
+        return {"ok": False, "health": "FAILED", "error": f"blender_failed rc={r.get('returncode')}",
+                "stderr_tail": (r.get("stderr") or "")[-1000:]}
+    result = json.loads(result_path.read_text(encoding="utf-8"))
+    result["process"] = {"returncode": r.get("returncode"), "elapsed_seconds": r.get("elapsed_seconds")}
+    for item in result.get("results", {}).values():
+        if item.get("op") == "asset.export_glb" and item.get("out_path"):
+            item["glb_validation"] = glb_validate(Path(item["out_path"]))
+            if not item["glb_validation"].get("valid"):
+                item["ok"] = False
+                item["health"] = "FAILED"
+    result["failed"] = [name for name, item in result.get("results", {}).items() if not item.get("ok")]
+    result["ok"] = not result["failed"]
+    result["health"] = "PASS" if result["ok"] else "FAILED"
+    result_path.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
     return result
 
 

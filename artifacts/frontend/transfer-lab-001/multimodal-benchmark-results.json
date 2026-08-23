@@ -1,0 +1,262 @@
+{
+  "schema_version": 2,
+  "kind": "multimodal-benchmark-execution",
+  "date": "2026-08-23T05:08:16Z",
+  "models_tested": [
+    "11",
+    "claude-11",
+    "ag/gemini-2.5-flash"
+  ],
+  "task_count": 11,
+  "image_hashes": {
+    "Heliograph desktop \u2014 default list view": "448b707ac4a0",
+    "Heliograph mobile \u2014 default view": "505c1fcc3fd5",
+    "Heliograph desktop \u2014 detail panel open": "4fb9e9d10942",
+    "Heliograph desktop \u2014 observation confirmed": "bdce5d1a6f98",
+    "Heliograph mobile \u2014 detail panel open": "1926f881e8ae"
+  },
+  "results": [
+    {
+      "task_id": "grounding-01",
+      "model": "11",
+      "ok": true,
+      "latency_ms": 18604,
+      "response_chars": 7,
+      "response": "Desktop",
+      "evaluation": {
+        "correct": true,
+        "grounded": true
+      },
+      "task_type": "objective",
+      "role": "frontend_visual_critic"
+    },
+    {
+      "task_id": "grounding-01",
+      "model": "claude-11",
+      "ok": true,
+      "latency_ms": 3617,
+      "response_chars": 7,
+      "response": "desktop",
+      "evaluation": {
+        "correct": true,
+        "grounded": true
+      },
+      "task_type": "objective",
+      "role": "frontend_visual_critic"
+    },
+    {
+      "task_id": "grounding-01",
+      "model": "ag/gemini-2.5-flash",
+      "ok": true,
+      "latency_ms": 1052,
+      "response_chars": 8,
+      "response": "Desktop.",
+      "evaluation": {
+        "correct": true,
+        "grounded": true
+      },
+      "task_type": "objective",
+      "role": "frontend_visual_critic"
+    },
+    {
+      "task_id": "grounding-02",
+      "model": "11",
+      "ok": true,
+      "latency_ms": 14592,
+      "response_chars": 6,
+      "response": "mobile",
+      "evaluation": {
+        "correct": true,
+        "grounded": true
+      },
+      "task_type": "objective",
+      "role": "frontend_visual_critic"
+    },
+    {
+      "task_id": "grounding-02",
+      "model": "claude-11",
+      "ok": true,
+      "latency_ms": 3549,
+      "response_chars": 6,
+      "response": "Mobile",
+      "evaluation": {
+        "correct": true,
+        "grounded": true
+      },
+      "task_type": "objective",
+      "role": "frontend_visual_critic"
+    },
+    {
+      "task_id": "grounding-02",
+      "model": "ag/gemini-2.5-flash",
+      "ok": true,
+      "latency_ms": 1008,
+      "response_chars": 7,
+      "response": "Mobile.",
+      "evaluation": {
+        "correct": true,
+        "grounded": true
+      },
+      "task_type": "objective",
+      "role": "frontend_visual_critic"
+    },
+    {
+      "task_id": "grounding-03",
+      "model": "11",
+      "ok": true,
+      "latency_ms": 8257,
+      "response_chars": 1,
+      "response": "3",
+      "evaluation": {
+        "correct": false,
+        "grounded": false
+      },
+      "task_type": "objective",
+      "role": "frontend_visual_critic"
+    },
+    {
+      "task_id": "grounding-03",
+      "model": "claude-11",
+      "ok": true,
+      "latency_ms": 3448,
+      "response_chars": 1,
+      "response": "3",
+      "evaluation": {
+        "correct": false,
+        "grounded": false
+      },
+      "task_type": "objective",
+      "role": "frontend_visual_critic"
+    },
+    {
+      "task_id": "grounding-03",
+      "model": "ag/gemini-2.5-flash",
+      "ok": true,
+      "latency_ms": 1447,
+      "response_chars": 1,
+      "response": "3",
+      "evaluation": {
+        "correct": false,
+        "grounded": false
+      },
+      "task_type": "objective",
+      "role": "frontend_visual_critic"
+    },
+    {
+      "task_id": "defect-01",
+      "model": "11",
+      "ok": true,
+      "latency_ms": 88122,
+      "response_chars": 1089,
+      "response": "Duplicate CRITICAL. Badge + bar both say it on first card. Mixes priority with condition. Information architecture owns. Repair: badge \"Priority CRITICAL\". Bar \"Condition CRITICAL\".\n\nHours unlabeled. \"~120 hours\" could be estimate, remaining or deadline. Content design owns. Repair: \"Est. 120h work\".\n\nNo artifact image. Text-only list. Conservator cannot judge damage at glance. UX owns. Repair: 72 px thumbnail left of title.\n\nSeverity visuals split. Diamond/circle colors vs bar fill+hue+word, mappings clash. Visual design owns. Repair: one palette (maroon critical, gold high, slate routine). Legend under header.\n\nCards static. No chevron, button or press hint. User cannot tell how to open item. Interaction design owns. Repair: right chevron. Whole card tappable to detail.\n\nTerm overlap. Co",
+      "evaluation": {
+        "defects_found": 0,
+        "defects_expected": 2,
+        "recall": 0.0,
+        "vague_critique": false
+      },
+      "task_type": "professional",
+      "role": "frontend_visual_critic"
+    },
+    {
+      "task_id": "defect-01",
+      "model": "claude-11",
+      "ok": false,
+      "error": "TypeError: object of type 'NoneType' has no len()",
+      "task_type": "professional"
+    },
+    {
+      "task_id": "defect-01",
+      "model": "ag/gemini-2.5-flash",
+      "ok": true,
+      "latency_ms": 1262,
+      "response_chars": 712,
+      "response": "1. Redundant labels \"CRITICAL\" shown twice in row one. Discipline: Visual Design. Fix: Remove redundant status text; keep color-coded icon.\n\n2. Tiny touch targets. Discipline: UX Design. Fix: Increase card padding and row height for mobile finger accuracy.\n\n3. Low color contrast on progress bars (gray on white). Discipline: Accessibility. Fix: Darken bar background or saturation to meet WCAG AA standards.\n\n4. Unclear hierarchy between priority icon and text status. Discipline: Information Architecture. Fix: Use consistent icon-label pair; remove extraneous status text inside cards.\n\n5. Missing action buttons. Discipline: Interaction Design. Fix: Add \"View details\" or \"Start triage\" touch zones per item.",
+      "evaluation": {
+        "defects_found": 0,
+        "defects_expected": 2,
+        "recall": 0.0,
+        "vague_critique": false
+      },
+      "task_type": "professional",
+      "role": "frontend_visual_critic"
+    },
+    {
+      "task_id": "defect-02",
+      "model": "11",
+      "ok": true,
+      "latency_ms": 65801,
+      "response_chars": 733,
+      "response": "Subtitle gray on cream. Contrast fail. Accessibility. Darken text.\n\nPending count near-invisible. Hierarchy. Boost size/weight.\n\nDuplicate CRITICAL. Left badge vs right label. Info architecture. Split: priority vs condition.\n\nThin faint bars. Low visual weight. Layout. Thicken, saturate to match badge.\n\nHours small gray. Hierarchy. Promote type size.\n\nSerif titles, sans meta, all-caps status. Typography. Statuses too light/small.\n\nLeft text heavy, right metrics sparse. Weight distribution. Balance columns.\n\nBadge colors (maroon/yellow/blue) vs bar fills (gray/gold/maroon) mismatch. Color. Unify scale.\n\nCard mid-gap empty. Column layout. Tighten or table-align metrics.\n\nPage bottom vacant. Layout. Top-loaded for short queue.",
+      "evaluation": {
+        "defects_found": 0,
+        "defects_expected": 3,
+        "recall": 0.0,
+        "vague_critique": false
+      },
+      "task_type": "professional",
+      "role": "frontend_visual_critic"
+    },
+    {
+      "task_id": "defect-02",
+      "model": "claude-11",
+      "ok": false,
+      "error": "TypeError: object of type 'NoneType' has no len()",
+      "task_type": "professional"
+    },
+    {
+      "task_id": "defect-02",
+      "model": "ag/gemini-2.5-flash",
+      "ok": true,
+      "latency_ms": 1405,
+      "response_chars": 599,
+      "response": "Contrast: Low. Light gray text on off-white background fails WCAG readability. Increase text weight/darkness.\n\nTypography: Serif font lacks scanability. Use Sans-Serif for data tables. Increase size for item headers.\n\nInformation Priority: Critical status labels hidden at bottom. Move to top right or integrate into header.\n\nVisual Weight: Inconsistent tag hierarchy. \"CRITICAL\" text in top-right contradicts \"CRITICAL\" badge below. Align data columns.\n\nLayout: Excessive whitespace. Move metadata into aligned columns for vertical scanning.\n\nNext: Refactor grid layout, boost color contrast ratio.",
+      "evaluation": {
+        "defects_found": 1,
+        "defects_expected": 3,
+        "recall": 0.3333333333333333,
+        "vague_critique": false
+      },
+      "task_type": "professional",
+      "role": "frontend_visual_critic"
+    },
+    {
+      "task_id": "critique-01",
+      "model": "11",
+      "ok": true,
+      "latency_ms": 42732,
+      "response_chars": 825,
+      "response": "Visual thesis analog museum catalog. Pursues paper ledger, conservation record. Scholarly archival not software UI.\n\nColor strategy warm ivory ground. White cards. Burgundy hairline rule. Muted earth pigments: oxblood CRITICAL, ochre HIGH, slate ROUTINE. No saturated alerts.\n\nTypographic voice classical serif. Book-title heading. Catalog-entry object names. Small tracked labels. Old-style figures.\n\nSpatial language wide cream field. Centered narrow column. Stacked padded cards. Right status cluster. Vast empty below. Printed page on desk.\n\nDelivers thesis. Distinct from generic dark dashboards: light analog vs neon grids. Strengthens serif catalog type, paper cream, ledger rule, museum-label metadata, pigment-muted statuses. Weakens faint thin bars, small urgency type. Identity holds as co",
+      "evaluation": {
+        "specificity_score": 6,
+        "vague_count": 0,
+        "quality": "SPECIFIC"
+      },
+      "task_type": "professional",
+      "role": "art_director"
+    },
+    {
+      "task_id": "critique-01",
+      "model": "claude-11",
+      "ok": false,
+      "error": "TypeError: object of type 'NoneType' has no len()",
+      "task_type": "professional"
+    },
+    {
+      "task_id": "critique-01",
+      "model": "ag/gemini-2.5-flash",
+      "ok": true,
+      "latency_ms": 2075,
+      "response_chars": 786,
+      "response": "Visual thesis: Archival ledger. Mimics museum catalog card. \n\nColor strategy: Muted parchment background, ink-black text, earthy status markers. Low contrast.\n\nTypographic voice: Serif headings. Modern sans-serif metadata. Contrast between old-world tone and utility data.\n\nSpatial language: Tight vertical grid. Minimalist padding. Dense layout mirrors paper list.\n\nCritique:\n- Thesis success: High. Feels like physical document.\n- Generic dashboard distinctness: High. Escapes standard dark-mode \"tech\" look.\n- Strengths: Color palette consistency. Serif font reinforces historical context.\n- Weaknesses: Low visual hierarchy. Status indicators lack urgency. Labels \"CRITICAL\" / \"POOR\" fight for attention.\n\nNext step: Increase weight of status labels. Add subtle paper-texture noise.",
+      "evaluation": {
+        "specificity_score": 8,
+        "vague_count": 0,
+        "quality": "SPECIFIC"
+      },
+      "task_type": "professional",
+      "role": "art_director"
+    }
+  ],
+  "pairwise_analysis": []
+}

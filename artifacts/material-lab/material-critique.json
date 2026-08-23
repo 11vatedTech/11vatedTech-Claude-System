@@ -1,0 +1,15 @@
+{
+  "critique": "Image 1 (Aged Steel): Reads successful. Specular warm-gray correct. Diffuse absent. Roughness 0.35 visible via light diffusion. Fresnel present at edges. Brushed texture mapping accurate. High realism achieved. Next: maintain shader model.\n\nImage 2 (Ceramic): Reads flawed. Specular colorless correct. Highlight tightness poor (too soft, lacks crispness). Roughness > 0.08 (surface too dull/matte for glaze). Subsurface scattering glow at edges incorrect, reads like bloom/emission, not light transmission. Next: lower roughness map contrast, sharpen specular reflection, remove edge glow.",
+  "renders": [
+    {
+      "label": "aged_steel",
+      "path": "artifacts\\material-lab\\aged_steel.png",
+      "bytes": 685747
+    },
+    {
+      "label": "ceramic",
+      "path": "artifacts\\material-lab\\ceramic.png",
+      "bytes": 500635
+    }
+  ]
+}

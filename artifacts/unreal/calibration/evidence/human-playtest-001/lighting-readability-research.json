@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "kind": "ashwake-lighting-readability-research",
+  "date": "2026-08-21",
+  "purpose": "Translate dark-game lighting professional practice into actionable Ashwake repair gates.",
+  "principles": [
+    "Darkness must be readable through value design, not blanket brightness.",
+    "Subject needs value separation from background through silhouette, rim edge, local contrast, and color-temperature split.",
+    "Midtones carry navigation and form; deepest blacks belong only in non-critical negative space.",
+    "Emissive materials may support mood, signage, and accents, but must not be the sole lighting system.",
+    "Exposure and tone mapping must protect material/form readability without crushing the toe or clipping emissive shoulders."
+  ],
+  "diagnostics": {
+    "black_crush": ["luma_percentile_p01_p05", "near_black_pixel_ratio", "shadow_detail_entropy", "material_normal_visibility_in_shadow"],
+    "midtone_occupancy": ["player_critical_roi_luma_histogram", "midtone_pixel_ratio", "histogram_shape_black_vs_emissive_peaks"],
+    "subject_background_separation": ["roi_subject_background_luma_delta", "edge_contrast_ratio", "hue_temperature_delta", "rim_light_continuity"],
+    "motivated_lighting": ["key_source_exists", "fill_source_exists", "rim_or_kicker_source_exists", "bounce_source_exists_or_plausibly_absent"],
+    "exposure_tonemap": ["exposure_mode", "min_ev100", "max_ev100", "metering_mask", "hdr_eye_adaptation_debug", "toe_shoulder_black_clip"],
+    "emissive_safety": ["emissive_area_pixels", "lumen_scene_presence", "final_gather_noise", "supporting_light_actors"]
+  },
+  "ashwake_repair_order": [
+    "Define gameplay-critical regions of interest for start, first relic, safe window, hostile, success, failure.",
+    "Capture grayscale thumbnails plus Lumen Overview, Lumen Scene, Surface Cache, HDR Eye Adaptation where possible.",
+    "Lock or bound exposure during QA so auto exposure cannot hide lighting defects.",
+    "Assign subject/background value lanes and reserve deep black for non-critical negative space.",
+    "Add motivated sources: cold roof daylight, low forge bounce, gold seam pulses, rim/kicker from broken clerestory or furnace throat.",
+    "Inspect Lumen surface/cache behavior; support tiny important emissives with actual light actors or larger luminous geometry.",
+    "Tune tone mapping/grade after art lighting; do not use global brightness as repair.",
+    "Validate with emissive in/out of frame, bloom off/on, grayscale, thumbnail, and low-display-brightness screenshots."
+  ],
+  "known_failure_modes": [
+    "global exposure compensation masquerading as lighting fix",
+    "histogram dominated by black spike and emissive spike",
+    "auto exposure adapts to edge emissive and darkens subject",
+    "no fill or bounce plane behind attractive silhouette",
+    "dark hero prop against dark wall with no rim",
+    "tiny bright emissive causing Lumen noise/flicker or missing GI",
+    "single giant room mesh with poor Lumen surface cache coverage"
+  ],
+  "sources": [
+    "https://dev.epicgames.com/documentation/en-us/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine",
+    "https://dev.epicgames.com/documentation/en-us/unreal-engine/lumen-technical-details-in-unreal-engine",
+    "https://dev.epicgames.com/documentation/en-us/unreal-engine/auto-exposure-in-unreal-engine",
+    "https://dev.epicgames.com/documentation/en-us/unreal-engine/color-grading-and-the-filmic-tonemapper-in-unreal-engine"
+  ]
+}

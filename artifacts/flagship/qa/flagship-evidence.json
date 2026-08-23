@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "checks": {
+    "canonical_build": true,
+    "glb_structural_valid": true,
+    "material_count": true,
+    "animation_count": true,
+    "perceptual_readability": true,
+    "variant_gate_baseline": true,
+    "runtime_loaded": true,
+    "runtime_complete_animation_set": true,
+    "runtime_console_network_clean": true
+  },
+  "ok": true,
+  "limitations": [
+    "metrics and structural gates do not prove professional artistic quality",
+    "runtime fps=0 is headless SwiftShader throttling"
+  ]
+}

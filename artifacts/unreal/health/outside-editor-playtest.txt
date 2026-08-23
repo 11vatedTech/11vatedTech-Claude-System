@@ -1,0 +1,174 @@
+LogCore: Display: UTS: The Unreal Trace Server binary is not available ('../../../Engine/Binaries/Win64/UnrealTraceServer.exe')
+LogCsvProfiler: Display: Metadata set : platform="Windows"
+LogCsvProfiler: Display: Metadata set : config="Development"
+LogCsvProfiler: Display: Metadata set : buildversion="++UE5+Release-5.8-CL-55116800"
+LogCsvProfiler: Display: Metadata set : engineversion="5.8.0-55116800+++UE5+Release-5.8"
+LogCsvProfiler: Display: Metadata set : enginereleaseversion="5.8.0"
+LogCsvProfiler: Display: Metadata set : os="Windows 11 (25H2) [10.0.26200.9168] "
+LogCsvProfiler: Display: Metadata set : cpu="GenuineIntel|Intel(R) Core(TM) Ultra 9 275HX"
+LogCsvProfiler: Display: Metadata set : pgoenabled="0"
+LogCsvProfiler: Display: Metadata set : pgoprofilingenabled="0"
+LogCsvProfiler: Display: Metadata set : ltoenabled="0"
+LogCsvProfiler: Display: Metadata set : asan="0"
+LogCsvProfiler: Display: Metadata set : mergedmodules="0"
+LogCsvProfiler: Display: Metadata set : compacttset="0"
+LogCsvProfiler: Display: Metadata set : commandline="" FoundryCalibration /Game/Calibration/Maps/EmberveilCalibration -NoSound -Unattended -NoSplash -windowed -ResX=1280 -ResY=720 -log -stdout""
+LogCsvProfiler: Display: Metadata set : loginid="9d319a3cc0734ec39cf8b78ec59b4c52"
+LogCsvProfiler: Display: Metadata set : llm="0"
+LogIoDispatcher: Display: Mounted container '../../../FoundryCalibration/Content/Paks/global.utoc', Id='ffffffffffffffff', Order=0, Slot=0, Options=(None), Flags=(), HasSoftRefs=False
+LogPakFile: Display: Initialized I/O dispatcher file backend. Mounted the global container: ../../../FoundryCalibration/Content/Paks/global.utoc
+LogPakFile: Display: Found Pak file ../../../FoundryCalibration/Content/Paks/FoundryCalibration-Windows.pak attempting to mount.
+LogPakFile: Display: Mounting pak file ../../../FoundryCalibration/Content/Paks/FoundryCalibration-Windows.pak.
+LogIoDispatcher: Display: Mounted container '../../../FoundryCalibration/Content/Paks/FoundryCalibration-Windows.utoc', Id='ade0a02fec81837e', Order=4, Slot=0, Options=(None), Flags=(Compressed|Indexed), HasSoftRefs=False
+LogPakFile: Display: Mounted IoStore container "../../../FoundryCalibration/Content/Paks/FoundryCalibration-Windows.utoc"
+LogPakFile: Display: Mounted Pak file '../../../FoundryCalibration/Content/Paks/FoundryCalibration-Windows.pak', mount point: '../../../'
+LogCsvProfiler: Display: Metadata set : zenstreaming="0"
+LogCsvProfiler: Display: Metadata set : systemresolution.resx="1280"
+LogCsvProfiler: Display: Metadata set : systemresolution.resy="720"
+LogAudio: Display: Audio Device Manager not initializing due to all audio being disabled. If this is not intentional, please check command line arguments for "-nosound".
+RenderDocPlugin: Display: RenderDoc plugin will not be loaded. Use '-AttachRenderDoc' on the cmd line or enable 'renderdoc.AutoAttach' in the plugin settings.
+LogAnalytics: Display: Provider StudioTelemetry.Provider.Log is disabled for this application
+LogAnalytics: Display: Provider StudioTelemetry.Provider.CSV is disabled for this application
+LogAnalytics: Display: Provider StudioTelemetry.Provider.Horde is disabled for this application
+LogStreaming: Display: AsyncLoading2 - Created: Async Loading Thread: true, Async Post Load: true, Multithreaded: false
+[2026.08.20-15.06.52:392][  0]LogHAL: Display: Platform has ~ 32 GB [33736089600 / 34359738368 / 32], which maps to Largest [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+[2026.08.20-15.06.52:548][  0]LogCsvProfiler: Display: Metadata set : extradevelopmentmemorymb="0"
+[2026.08.20-15.06.52:703][  0]LogWindowsTouchpad: Display: CacheForceMaxTouchpadSensitivityMode SetMaxTouchpadSensitivity
+[2026.08.20-15.06.52:712][  0]LogObj: Display: Attempting to load config data for Default__SlateThemeManager before the Class has been constructed/registered/linked (likely during module loading or early startup). This will result in the load silently failing and should be fixed.
+[2026.08.20-15.06.52:877][  0]LogD3D12RHI: Display: Creating D3D12 RHI with Max Feature Level SM5
+[2026.08.20-15.06.52:910][  0]LogRHI: Display: Timeout Detection and Recovery (TDR) summary: 
+	- TDR settings OK - Level: Recover, Delay: 2, DdiDelay: 5
+[2026.08.20-15.06.53:521][  0]LogD3D12RHI: Display: Not using pipeline state disk cache per r.D3D12.PSO.DiskCache=0
+[2026.08.20-15.06.53:521][  0]LogD3D12RHI: Display: Not using driver-optimized pipeline state disk cache per r.D3D12.PSO.DriverOptimizedDiskCache=0
+[2026.08.20-15.06.53:576][  0]LogCsvProfiler: Display: Metadata set : verbatimrhiname="D3D12"
+[2026.08.20-15.06.53:576][  0]LogCsvProfiler: Display: Metadata set : rhiname="D3D12"
+[2026.08.20-15.06.53:576][  0]LogCsvProfiler: Display: Metadata set : rhifeaturelevel="SM5"
+[2026.08.20-15.06.53:577][  0]LogCsvProfiler: Display: Metadata set : shaderplatform="PCD3D_SM5"
+[2026.08.20-15.06.53:577][  0]LogCsvProfiler: Display: Metadata set : gpu="NVIDIA GeForce RTX 5070 Ti Laptop GPU"
+[2026.08.20-15.06.53:577][  0]LogCsvProfiler: Display: Metadata set : gpudriver="610.78"
+[2026.08.20-15.06.53:589][  0]LogShaderLibrary: Display: Using IoDispatcher for shader code library Global. Total 3926 unique shaders.
+[2026.08.20-15.06.53:589][  0]LogShaderLibrary: Display: Cooked Context: Loaded Shared Shader Library Global
+[2026.08.20-15.06.53:589][  0]LogShaderLibrary: Display: Logical shader library 'Global' has been created as a monolithic library, components 1
+[2026.08.20-15.06.53:590][  0]LogTemp: Display: Clearing the OS Cache
+[2026.08.20-15.06.53:966][  0]LogShaderLibrary: Display: Using IoDispatcher for shader code library FoundryCalibration. Total 1254 unique shaders.
+[2026.08.20-15.06.53:967][  0]LogShaderLibrary: Display: Cooked Context: Loaded Shared Shader Library FoundryCalibration
+[2026.08.20-15.06.53:968][  0]LogShaderLibrary: Display: Logical shader library 'FoundryCalibration' has been created as a monolithic library, components 1
+[2026.08.20-15.06.53:969][  0]LogShaderLibrary: Display: Tried to open again shader library 'FoundryCalibration', but could not find new components for it (existing components: 1).
+[2026.08.20-15.06.54:280][  0]LogDeviceProfileManager: Display: Deviceprofile LinuxArm64Editor not found.
+[2026.08.20-15.06.54:281][  0]LogDeviceProfileManager: Display: Deviceprofile LinuxArm64 not found.
+[2026.08.20-15.06.54:284][  0]LogCsvProfiler: Display: Metadata set : deviceprofile="Windows"
+[2026.08.20-15.06.54:286][  0]LogStreaming: Display: FlushAsyncLoading(8): 8 QueuedPackages, 0 AsyncPackages
+[2026.08.20-15.06.54:329][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/WorldGridMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).
+[2026.08.20-15.06.54:335][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/DefaultDeferredDecalMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).
+[2026.08.20-15.06.54:338][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/DefaultLightFunctionMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).
+[2026.08.20-15.06.54:340][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/DefaultPostProcessMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).
+[2026.08.20-15.06.54:415][  0]LogStreaming: Warning: LoadPackage: SkipPackage: /Game/Calibration/VFX/NS_Emberveil_Attune (0x3385196A64A10E1F) - The package to load does not exist on disk or in the loader
+[2026.08.20-15.06.54:418][  0]LogUObjectGlobals: Warning: Failed to find object 'NiagaraSystem /Game/Calibration/VFX/NS_Emberveil_Attune.NS_Emberveil_Attune'
+[2026.08.20-15.06.54:421][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2026.08.20-15.06.54:450][  0]LogMetaSound: Display: MetaSound Page Target Initialized to 'Default'
+[2026.08.20-15.06.54:484][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2026.08.20-15.06.54:760][  0]LogAudio: Display: Registering Engine Module Parameter Interfaces...
+[2026.08.20-15.06.54:827][  0]LogRemoteControl: Display: Web remote control is disabled by default when running outside the editor. Use the -RCWebControlEnable flag when launching in order to use it.
+[2026.08.20-15.06.55:296][  0]LogCsvProfiler: Display: Metadata set : largeworldcoordinates="1"
+[2026.08.20-15.06.55:364][  0]LogInit: Display: Game Engine Initialized.
+[2026.08.20-15.06.55:389][  0]LogCsvProfiler: Display: Metadata set : raytracing="0"
+[2026.08.20-15.06.55:452][  0]LogInit: Display: Starting Game.
+[2026.08.20-15.06.55:757][  0]LogTemp: Display: LogFoundry: ASHWAKE_MAP_BEGINPLAY World=EmberveilCalibration
+[2026.08.20-15.06.55:763][  0]LogTemp: Display: LogFoundry: ASHWAKE_GAMEPLAY_BEGIN RequiredCoals=3
+[2026.08.20-15.06.55:771][  0]LogTemp: Display: LogFoundry: RELIQUARY_BEGINPLAY Actor=FoundryRelicActor_2147482386
+[2026.08.20-15.06.55:773][  0]LogStreaming: Warning: LoadPackage: SkipPackage: /Game/Calibration/Audio/source (0x2CE0F2540751C694) - The package to load does not exist on disk or in the loader
+[2026.08.20-15.06.55:779][  0]LogUObjectGlobals: Warning: Failed to find object 'SoundBase /Game/Calibration/Audio/source.source'
+[2026.08.20-15.06.55:782][  0]LogStreaming: Warning: LoadPackage: SkipPackage: /Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root (0xA6D6E4689C70306B) - The package to load does not exist on disk or in the loader
+[2026.08.20-15.06.55:783][  0]LogUObjectGlobals: Warning: Failed to find object 'AnimationAsset /Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root.emberveil-canonical11vt_float_Emberveil_root'
+[2026.08.20-15.06.55:784][  0]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=1
+[2026.08.20-15.06.55:784][  0]LogTemp: Display: LogFoundry: RELIQUARY_BEGINPLAY Actor=FoundryRelicActor_2147482384
+[2026.08.20-15.06.55:785][  0]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=1
+[2026.08.20-15.06.55:786][  0]LogTemp: Display: LogFoundry: RELIQUARY_BEGINPLAY Actor=FoundryRelicActor_2147482382
+[2026.08.20-15.06.55:786][  0]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=1
+[2026.08.20-15.06.55:795][  0]LogRHI: Display: ShaderPipelineCache: Paused Batching. 1
+[2026.08.20-15.06.55:813][  0]LogRHI: Display: ShaderPipelineCache: Resumed Batching. 0
+[2026.08.20-15.06.55:815][  0]LogRHI: Display: ShaderPipelineCache: Batching Resumed.
+[2026.08.20-15.06.55:817][  0]LogInit: Display: Engine is initialized. Leaving FEngineLoop::Init()
+[2026.08.20-15.06.55:819][  0]LogCsvProfiler: Display: Metadata set : streamingpoolsizemb="1000"
+[2026.08.20-15.06.55:998][  0]LogStreaming: Display: FlushAsyncLoading(83): 1 QueuedPackages, 0 AsyncPackages
+[2026.08.20-15.06.56:071][  0]LogSlate: Display: Synchronously lazy loading font file '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' with subface index 0 in Game thread.
+[2026.08.20-15.06.56:076][  0]LogSlate: Display: Took 0.001846 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K) on Game thread.
+[2026.08.20-15.06.56:077][  0]LogSlate: Display: Freetype font face in memory successfully created with synchronously loaded raw font file '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' subface 0 in Game thread.
+[2026.08.20-15.06.56:078][  0]LogSlate: Display: Font face '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' subface index 0 successfully added to font face map in Game thread.
+[2026.08.20-15.06.56:078][  0]LogSlate: Display: Flushing composite font cache on Game thread. Clearing 1 entries in composite font map and 1 entries in font face map.
+[2026.08.20-15.06.56:111][  0]LogConsoleManager: Warning: Console variable 'r.MotionVectorSimulation' used in the render thread. Rendering artifacts could happen. Use ECVF_RenderThreadSafe or don't use in render thread.
+[2026.08.20-15.06.56:133][  0]LogRHI: Display: Encountered a new graphics PSO: 1562664903 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:140][  0]LogRHI: Display: Encountered a new graphics PSO: 2103596676 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:144][  0]LogRHI: Display: Encountered a new graphics PSO: 2577428162 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:145][  0]LogRHI: Display: Encountered a new compute PSO: 2492016147 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:145][  0]LogRHI: Display: Encountered a new graphics PSO: 3365803695 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:148][  0]LogRHI: Display: Encountered a new graphics PSO: 84256573 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:148][  0]LogRHI: Display: Encountered a new graphics PSO: 351061559 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:148][  0]LogRHI: Display: Encountered a new graphics PSO: 636927946 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:149][  0]LogRHI: Display: Encountered a new graphics PSO: 1196237148 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:149][  0]LogRHI: Display: Encountered a new graphics PSO: 2519847289 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:149][  0]LogRHI: Display: Encountered a new graphics PSO: 154778247 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:149][  0]LogRHI: Display: Encountered a new graphics PSO: 2489923023 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:150][  0]LogRHI: Display: Encountered a new graphics PSO: 3490664842 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:151][  0]LogRHI: Display: Encountered a new graphics PSO: 1852929419 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:151][  0]LogRHI: Display: Encountered a new graphics PSO: 3275642788 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:152][  0]LogRHI: Display: Encountered a new graphics PSO: 3392303429 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:153][  0]LogRHI: Display: Encountered a new graphics PSO: 3823587509 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:166][  0]LogRHI: Display: Encountered a new graphics PSO: 2881335188 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:167][  0]LogRHI: Display: Encountered a new graphics PSO: 3426889929 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.56:168][  0]LogRHI: Display: Encountered a new graphics PSO: 2201795546 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.58:148][  3]LogTrace: Display: Control listening on port 1985
+[2026.08.20-15.06.58:154][  3]LogSlate: Display: Synchronously lazy loading font file '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' with subface index 0 in Game thread.
+[2026.08.20-15.06.58:159][  3]LogSlate: Display: Took 0.001029 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K) on Game thread.
+[2026.08.20-15.06.58:162][  3]LogSlate: Display: Freetype font face in memory successfully created with synchronously loaded raw font file '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' subface 0 in Game thread.
+[2026.08.20-15.06.58:166][  3]LogSlate: Display: Font face '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' subface index 0 successfully added to font face map in Game thread.
+[2026.08.20-15.06.58:167][  3]LogRHI: Display: Encountered a new graphics PSO: 234792378 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.58:177][  3]LogRHI: Display: Encountered a new graphics PSO: 83002203 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.58:192][  3]LogRHI: Display: Encountered a new graphics PSO: 757572267 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.58:207][  3]LogRHI: Display: Encountered a new graphics PSO: 1702714762 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.58:234][  3]LogRHI: Display: Encountered a new graphics PSO: 42123991 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.58:262][  3]LogRHI: Display: Encountered a new graphics PSO: 3946204628 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.58:285][  3]LogRHI: Display: Encountered a new graphics PSO: 1492198247 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.58:315][  3]LogRHI: Display: Encountered a new graphics PSO: 1521076177 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.58:331][  3]LogRHI: Display: Encountered a new graphics PSO: 516924308 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.58:343][  3]LogRHI: Display: Encountered a new graphics PSO: 2695989141 (PSOPrecacheState: Missed)
+[2026.08.20-15.06.59:720][203]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=2
+[2026.08.20-15.06.59:720][203]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=2
+[2026.08.20-15.07.00:118][271]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=2
+[2026.08.20-15.07.01:029][421]LogRHI: Display: Encountered a new graphics PSO: 3822403465 (PSOPrecacheState: Missed)
+[2026.08.20-15.07.02:727][629]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=3
+[2026.08.20-15.07.02:728][629]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=3
+[2026.08.20-15.07.02:728][629]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=3
+[2026.08.20-15.07.04:231][846]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=1
+[2026.08.20-15.07.04:232][846]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=1
+[2026.08.20-15.07.04:232][846]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=1
+[2026.08.20-15.07.06:235][142]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=2
+[2026.08.20-15.07.06:236][142]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=2
+[2026.08.20-15.07.06:236][142]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=2
+[2026.08.20-15.07.09:239][572]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=3
+[2026.08.20-15.07.09:456][603]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=3
+[2026.08.20-15.07.09:601][623]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=3
+[2026.08.20-15.07.10:742][785]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=1
+[2026.08.20-15.07.10:796][792]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=1
+[2026.08.20-15.07.10:833][797]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=1
+[2026.08.20-15.07.12:747][ 71]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=2
+[2026.08.20-15.07.12:883][ 92]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=2
+[2026.08.20-15.07.12:904][ 95]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=2
+[2026.08.20-15.07.15:747][509]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=3
+[2026.08.20-15.07.15:748][509]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=3
+[2026.08.20-15.07.15:834][521]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=3
+[2026.08.20-15.07.17:251][702]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=1
+[2026.08.20-15.07.17:251][702]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=1
+[2026.08.20-15.07.17:253][702]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=1
+[2026.08.20-15.07.19:258][985]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=2
+[2026.08.20-15.07.19:334][994]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=2
+[2026.08.20-15.07.19:342][995]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=2
+[2026.08.20-15.07.22:261][404]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=3
+[2026.08.20-15.07.22:261][404]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=3
+[2026.08.20-15.07.22:261][404]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=3
+[2026.08.20-15.07.23:766][626]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=1
+[2026.08.20-15.07.23:766][626]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=1
+[2026.08.20-15.07.23:766][626]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=1
+[2026.08.20-15.07.25:768][899]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=2
+[2026.08.20-15.07.25:769][899]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=2
+[2026.08.20-15.07.25:769][899]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=2

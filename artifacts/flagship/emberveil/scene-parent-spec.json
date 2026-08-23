@@ -1,0 +1,17 @@
+{
+  "op": "scene.parent",
+  "params": {
+    "root": "Emberveil_root",
+    "children": [
+      "glass_bell",
+      "ember_core",
+      "brass_band",
+      "filigree_arc",
+      "filigree_arc_01",
+      "filigree_arc_02"
+    ],
+    "out_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil",
+    "load_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend",
+    "save_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+  }
+}

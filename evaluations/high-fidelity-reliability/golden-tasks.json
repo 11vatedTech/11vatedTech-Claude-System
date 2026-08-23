@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "kind": "high-fidelity-reliability-golden-tasks",
+  "date": "2026-08-21",
+  "purpose": "Known-bad creative artifacts that are technically valid but must be rejected for high-fidelity quality claims.",
+  "tasks": [
+    {
+      "id": "HFR-GT-001",
+      "name": "technically_valid_black_void_gameplay",
+      "artifact_class": "runtime_screenshot",
+      "technical_status": "PASS",
+      "creative_status_expected_max": "C2",
+      "symptoms": ["major_black_crush_in_player_critical_regions", "no_midtone_environment", "subject_reads_as_emissive_only"],
+      "must_detect": ["major_black_crush_in_player_critical_regions", "emissive_core_substitutes_for_lighting", "engineering_pass_does_not_imply_game_quality_pass"],
+      "must_block": ["POLISHED", "PRODUCTION", "SIGNATURE"]
+    },
+    {
+      "id": "HFR-GT-002",
+      "name": "test_chamber_environment",
+      "artifact_class": "runtime_screenshot",
+      "technical_status": "PASS",
+      "creative_status_expected_max": "C1",
+      "symptoms": ["checker_floor", "empty_room", "no_environmental_storytelling", "floating_hero_objects"],
+      "must_detect": ["test_environment_presentation", "environment_art_capability_gap", "level_design_capability_gap"],
+      "must_block": ["POLISHED", "PRODUCTION", "SIGNATURE"]
+    },
+    {
+      "id": "HFR-GT-003",
+      "name": "state_equals_color_only",
+      "artifact_class": "gameplay_state_capture",
+      "technical_status": "PASS",
+      "creative_status_expected_max": "C2",
+      "symptoms": ["safe_is_yellow", "hostile_is_red", "no_motion_shape_audio_environment_semantics"],
+      "must_detect": ["state_feedback_design_gap", "color_only_state_language", "vfx_artistic_qa_gap"],
+      "must_block": ["POLISHED", "PRODUCTION", "SIGNATURE"]
+    },
+    {
+      "id": "HFR-GT-004",
+      "name": "generic_debug_hud_in_flagship_build",
+      "artifact_class": "runtime_ui_screenshot",
+      "technical_status": "PASS",
+      "creative_status_expected_max": "C2",
+      "symptoms": ["plain_debug_text", "no_visual_canon", "no_state_responsive_ui_language"],
+      "must_detect": ["generic_or_debug_hud", "game_ui_quality_gap"],
+      "must_block": ["POLISHED", "PRODUCTION", "SIGNATURE"]
+    },
+    {
+      "id": "HFR-GT-005",
+      "name": "active_niagara_but_poor_vfx_language",
+      "artifact_class": "runtime_vfx_capture",
+      "technical_status": "PASS",
+      "creative_status_expected_max": "C2",
+      "symptoms": ["effect_exists", "poor_shape_language", "poor_timing", "poor_density_hierarchy"],
+      "must_detect": ["niagara_active_does_not_imply_vfx_quality", "vfx_artistic_qa_gap"],
+      "must_block": ["POLISHED", "PRODUCTION", "SIGNATURE"]
+    }
+  ]
+}

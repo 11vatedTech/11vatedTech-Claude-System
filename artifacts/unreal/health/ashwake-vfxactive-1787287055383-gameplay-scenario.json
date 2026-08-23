@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "kind": "ashwake-packaged-gameplay-scenario",
+  "status": "FAIL",
+  "executable": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Packaged\\ashwake-vfxactive-1787287055383\\Windows\\FoundryCalibration\\Binaries\\Win64\\FoundryCalibration.exe",
+  "scenarios": [
+    {
+      "name": "success",
+      "status": "FAIL",
+      "run_id": "ashwake-success-954cb214d38a",
+      "run_dir": "artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-success-954cb214d38a",
+      "log": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-success-954cb214d38a\\unreal.log",
+      "log_status": "CREATED",
+      "exit_code": 3,
+      "exit_classification": {
+        "classification": "FATAL_ENGINE_ERROR",
+        "exit_code": 3,
+        "timed_out": false,
+        "expected_controlled_shutdown": true,
+        "has_controlled_shutdown_evidence": true,
+        "has_normal_exit_evidence": false,
+        "has_fatal_engine_error": true,
+        "has_crash_evidence": true
+      },
+      "execution_state": "PRODUCT_FAILURE",
+      "duration_seconds": 22.617,
+      "command": [
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Packaged\\ashwake-vfxactive-1787287055383\\Windows\\FoundryCalibration\\Binaries\\Win64\\FoundryCalibration.exe",
+        "-unattended",
+        "-nop4",
+        "-nosplash",
+        "-stdout",
+        "-FullStdOutLogOutput",
+        "-windowed",
+        "-ResX=1280",
+        "-ResY=720",
+        "-AshwakeInputProof",
+        "-AshwakeInputProofExit",
+        "-FoundryRunId=ashwake-success-954cb214d38a",
+        "-FoundryScenario=success",
+        "-abslog=C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/artifacts/unreal/health/ashwake-gameplay-scenario-runs/ashwake-success-954cb214d38a/unreal.log"
+      ],
+      "markers": {
+        "event=INPUT_PROOF_BEGIN": false,
+        "event=PLAYER_INPUT": false,
+        "event=INPUT_ACTION_TRIGGERED": false,
+        "action=Attune": false,
+        "event=INTERACTION_QUERY": false,
+        "event=GAMEPLAY_RULE": false,
+        "event=INTERACTION_ACCEPTED": false,
+        "event=SUCCESS": false,
+        "event=RESTART": false,
+        "INPUT_PROOF_COMPLETE Result=SuccessAndRestart": false,
+        "event=VFX_STATE": false,
+        "event=AUDIO_PLAYING": false,
+        "event=ANIMATION_PLAYING": false
+      },
+      "forbidden_markers": {
+        "event=INTERACTION_REJECTED": false,
+        "event=FAILURE": false
+      },
+      "marker_contract_passed": false,
+      "counts": {
+        "input_events": 0,
+        "gameplay_commands": 0,
+        "accepted_interactions": 0,
+        "rejected_interactions": 0,
+        "state_changes": 0,
+        "vfx_state": 0,
+        "audio_playing": 0,
+        "animation_playing": 0,
+        "structured_events": 0
+      },
+      "runtime_reference_warnings": [],
+      "stdout_path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-success-954cb214d38a\\stdout.log",
+      "stderr_path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-success-954cb214d38a\\stderr.log",
+      "complete_log_path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-success-954cb214d38a\\complete-runtime.log",
+      "stdout_tail": "0 82] Windows\n[2026.08.21-04.40.09:273][  0]LogCsvProfiler: Display: Metadata set : deviceprofile=\"Windows\"\n[2026.08.21-04.40.09:273][  0]LogInit: Running DelayedAutoRegister Phase DeviceProfileManagerReady\n[2026.08.21-04.40.09:276][  0]LogStreaming: Display: FlushAsyncLoading(8): 8 QueuedPackages, 0 AsyncPackages\n[2026.08.21-04.40.09:277][  0]LogFilePackageStore: Updated: NewPackages=510, OldPackages=0, TotalPackages=510\n[2026.08.21-04.40.09:315][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/WorldGridMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).\n[2026.08.21-04.40.09:323][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/DefaultDeferredDecalMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).\n[2026.08.21-04.40.09:325][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/DefaultLightFunctionMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).\n[2026.08.21-04.40.09:326][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/DefaultPostProcessMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).\n[2026.08.21-04.40.09:538][  0]LogWindows: Error: appError called: Assertion failed: (Index >= 0) & (Index < ArrayNum) [File:D:\\build\\++UE5\\Sync\\Engine\\Source\\Runtime\\Core\\Public\\Containers\\ArrayView.h] [Line: 396] \nArray index out of bounds: 1 from an array of size 0\n\n[2026.08.21-04.40.09:539][  0]LogWindows: Windows GetLastError: The operation completed successfully. (0)\n[2026.08.21-04.40.11:745][  0]LogWindows: Could not start crash report client using ../../../Engine/Binaries/Win64/CrashReportClient-Win64-Debug.exe\n[2026.08.21-04.40.11:745][  0]LogMemory: Platform Memory Stats for Windows\n[2026.08.21-04.40.11:745][  0]LogMemory: Process Physical Memory: 642.15 MB used, 648.74 MB peak\n[2026.08.21-04.40.11:745][  0]LogMemory: Process Virtual Memory: 918.37 MB used, 923.15 MB peak\n[2026.08.21-04.40.11:745][  0]LogMemory: Physical Memory: 22181.39 MB used,  9991.85 MB free, 32173.24 MB total\n[2026.08.21-04.40.11:745][  0]LogMemory: Virtual Memory: 29596.18 MB used,  34321.07 MB free, 63917.24 MB total\n[2026.08.21-04.40.11:745][  0]LogWindows: Error: === Critical error: ===\n[2026.08.21-04.40.11:745][  0]LogWindows: Error: \n[2026.08.21-04.40.11:745][  0]LogWindows: Error: Assertion failed: (Index >= 0) & (Index < ArrayNum) [File:D:\\build\\++UE5\\Sync\\Engine\\Source\\Runtime\\Core\\Public\\Containers\\ArrayView.h] [Line: 396] \n[2026.08.21-04.40.11:745][  0]LogWindows: Error: Array index out of bounds: 1 from an array of size 0\n[2026.08.21-04.40.11:745][  0]LogWindows: Error: \n[2026.08.21-04.40.11:746][  0]LogWindows: Error: \n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff628d5fb98 FoundryCalibration.exe!FDebug::CheckVerifyFailedImpl2() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff631391dca FoundryCalibration.exe!UNiagaraStatelessEmitter::Serialize() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff629947c96 FoundryCalibration.exe!FAsyncPackage2::EventDrivenSerializeExport() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff6299413f5 FoundryCalibration.exe!FAsyncPackage2::CreateRuntimeExports() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff629948c8c FoundryCalibration.exe!FAsyncPackage2::Event_CreateExports() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff62994c2c0 FoundryCalibration.exe!FEventLoadNode2::Execute() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff62994d68a FoundryCalibration.exe!FAsyncLoadEventQueue2::ExecuteSyncLoadEvents() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff62995ee8b FoundryCalibration.exe!FAsyncLoadingThread2::ProcessAsyncLoadingFromGameThread() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff6299701bc FoundryCalibration.exe!FAsyncLoadingThread2::TickAsyncLoadingFromGameThread() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff62994f72d FoundryCalibration.exe!FAsyncLoadingThread2::FlushLoading() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff6294dd219 FoundryCalibration.exe!FlushAsyncLoading() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff6294dce2c FoundryCalibration.exe!FlushAsyncLoading() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff62987fb00 FoundryCalibration.exe!LoadPackageInternal() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff62987f0af FoundryCalibration.exe!LoadPackage() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff62987f3ee FoundryCalibration.exe!LoadPackage() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff62988c117 FoundryCalibration.exe!ResolveName2() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff629896867 FoundryCalibration.exe!StaticLoadObjectInternal() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff6298960b2 FoundryCalibration.exe!StaticLoadObject() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff6313b2ce6 FoundryCalibration.exe!ConstructorHelpersInternal::FindOrLoadObject<UNiagaraSystem>() [C:\\Program Files\\Epic Games\\UE_5.8\\Engine\\Source\\Runtime\\CoreUObject\\Public\\UObject\\ConstructorHelpers.h:35]\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff6313b3843 FoundryCalibration.exe!AFoundryRelicActor::AFoundryRelicActor() [C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Source\\FoundryCalibration\\FoundryRelicActor.cpp:69]\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff62955c830 FoundryCalibration.exe!UClass::CreateDefaultObject() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff629839e7d FoundryCalibration.exe!UObjectInitialized() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff62981c08a FoundryCalibration.exe!ProcessNewlyLoadedUObjects() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff630caa29c FoundryCalibration.exe!FEngineLoop::PreInitPostStartupScreen() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff630ca34c6 FoundryCalibration.exe!GuardedMain() []\n[2026.08.21-04.40.11:746][  0]LogWindows: Error: [Callstack] 0x00007ff630ca377a FoundryCalibration.exe!GuardedMainWrapper() []\n[2026.08.21-04.40.11:747][  0]LogWindows: Error: [Callstack] 0x00007ff630ca7360 FoundryCalibration.exe!LaunchWindowsStartup() []\n[2026.08.21-04.40.11:747][  0]LogWindows: Error: [Callstack] 0x00007ff630cb6154 FoundryCalibration.exe!WinMain() []\n[2026.08.21-04.40.11:747][  0]LogWindows: Error: [Callstack] 0x00007ff63685fa1e FoundryCalibration.exe!__scrt_common_main_seh() [D:\\a\\_work\\1\\s\\src\\vctools\\crt\\vcstartup\\src\\startup\\exe_common.inl:288]\n[2026.08.21-04.40.11:747][  0]LogWindows: Error: [Callstack] 0x00007ff85b19ccb7 KERNEL32.DLL!UnknownFunction []\n[2026.08.21-04.40.11:747][  0]LogWindows: Error: \n[2026.08.21-04.40.11:756][  0]LogExit: Executing StaticShutdownAfterError\n[2026.08.21-04.40.11:757][  0]LogWindows: FPlatformMisc::RequestExit(1, LaunchWindowsStartup.ExceptionHandler)\n[2026.08.21-04.40.11:757][  0]LogWindows: FPlatformMisc::RequestExitWithStatus(1, 3, LaunchWindowsStartup.ExceptionHandler)\n[2026.08.21-04.40.11:757][  0]LogCore: Engine exit requested (reason: Win RequestExit)\n",
+      "stderr_tail": "",
+      "timed_out": false,
+      "process_tree_state": {
+        "pid": 36084,
+        "running_after_capture": false
+      }
+    },
+    {
+      "name": "failure",
+      "status": "FAIL",
+      "run_id": "ashwake-failure-349ae1229c77",
+      "run_dir": "artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-failure-349ae1229c77",
+      "log": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-failure-349ae1229c77\\unreal.log",
+      "log_status": "CREATED",
+      "exit_code": 3,
+      "exit_classification": {
+        "classification": "FATAL_ENGINE_ERROR",
+        "exit_code": 3,
+        "timed_out": false,
+        "expected_controlled_shutdown": true,
+        "has_controlled_shutdown_evidence": true,
+        "has_normal_exit_evidence": false,
+        "has_fatal_engine_error": true,
+        "has_crash_evidence": true
+      },
+      "execution_state": "PRODUCT_FAILURE",
+      "duration_seconds": 11.4,
+      "command": [
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Packaged\\ashwake-vfxactive-1787287055383\\Windows\\FoundryCalibration\\Binaries\\Win64\\FoundryCalibration.exe",
+        "-unattended",
+        "-nop4",
+        "-nosplash",
+        "-stdout",
+        "-FullStdOutLogOutput",
+        "-windowed",
+        "-ResX=1280",
+        "-ResY=720",
+        "-AshwakeInputProof",
+        "-AshwakeInputProofExit",
+        "-FoundryRunId=ashwake-failure-349ae1229c77",
+        "-FoundryScenario=failure",
+        "-AshwakeInputProofFailure",
+        "-abslog=C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/artifacts/unreal/health/ashwake-gameplay-scenario-runs/ashwake-failure-349ae1229c77/unreal.log"
+      ],
+      "markers": {
+        "event=INPUT_PROOF_BEGIN": false,
+        "event=PLAYER_INPUT": false,
+        "event=INPUT_ACTION_TRIGGERED": false,
+        "action=Attune": false,
+        "event=INTERACTION_QUERY": false,
+        "event=GAMEPLAY_RULE": false,
+        "event=INTERACTION_REJECTED": false,
+        "event=FAILURE": false,
+        "event=RESTART": false,
+        "INPUT_PROOF_COMPLETE Result=FailureAndRestart": false,
+        "event=VFX_STATE": false,
+        "event=AUDIO_PLAYING": false,
+        "event=ANIMATION_PLAYING": false
+      },
+      "forbidden_markers": {
+        "event=INTERACTION_ACCEPTED": false,
+        "event=SUCCESS": false
+      },
+      "marker_contract_passed": false,
+      "counts": {
+        "input_events": 0,
+        "gameplay_commands": 0,
+        "accepted_interactions": 0,
+        "rejected_interactions": 0,
+        "state_changes": 0,
+        "vfx_state": 0,
+        "audio_playing": 0,
+        "animation_playing": 0,
+        "structured_events": 0
+      },
+      "runtime_reference_warnings": [],
+      "stdout_path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-failure-349ae1229c77\\stdout.log",
+      "stderr_path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-failure-349ae1229c77\\stderr.log",
+      "complete_log_path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\health\\ashwake-gameplay-scenario-runs\\ashwake-failure-349ae1229c77\\complete-runtime.log",
+      "stdout_tail": " 82] Windows\n[2026.08.21-04.40.21:033][  0]LogCsvProfiler: Display: Metadata set : deviceprofile=\"Windows\"\n[2026.08.21-04.40.21:034][  0]LogInit: Running DelayedAutoRegister Phase DeviceProfileManagerReady\n[2026.08.21-04.40.21:040][  0]LogStreaming: Display: FlushAsyncLoading(8): 8 QueuedPackages, 0 AsyncPackages\n[2026.08.21-04.40.21:041][  0]LogFilePackageStore: Updated: NewPackages=510, OldPackages=0, TotalPackages=510\n[2026.08.21-04.40.21:125][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/WorldGridMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).\n[2026.08.21-04.40.21:136][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/DefaultDeferredDecalMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).\n[2026.08.21-04.40.21:140][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/DefaultLightFunctionMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).\n[2026.08.21-04.40.21:143][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/DefaultPostProcessMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).\n[2026.08.21-04.40.21:501][  0]LogWindows: Error: appError called: Assertion failed: (Index >= 0) & (Index < ArrayNum) [File:D:\\build\\++UE5\\Sync\\Engine\\Source\\Runtime\\Core\\Public\\Containers\\ArrayView.h] [Line: 396] \nArray index out of bounds: 1 from an array of size 0\n\n[2026.08.21-04.40.21:501][  0]LogWindows: Windows GetLastError: The operation completed successfully. (0)\n[2026.08.21-04.40.22:893][  0]LogWindows: Could not start crash report client using ../../../Engine/Binaries/Win64/CrashReportClient-Win64-Debug.exe\n[2026.08.21-04.40.22:893][  0]LogMemory: Platform Memory Stats for Windows\n[2026.08.21-04.40.22:893][  0]LogMemory: Process Physical Memory: 626.41 MB used, 627.03 MB peak\n[2026.08.21-04.40.22:893][  0]LogMemory: Process Virtual Memory: 913.93 MB used, 914.89 MB peak\n[2026.08.21-04.40.22:893][  0]LogMemory: Physical Memory: 21984.60 MB used,  10188.64 MB free, 32173.24 MB total\n[2026.08.21-04.40.22:893][  0]LogMemory: Virtual Memory: 29537.89 MB used,  34379.36 MB free, 63917.24 MB total\n[2026.08.21-04.40.22:893][  0]LogWindows: Error: === Critical error: ===\n[2026.08.21-04.40.22:893][  0]LogWindows: Error: \n[2026.08.21-04.40.22:893][  0]LogWindows: Error: Assertion failed: (Index >= 0) & (Index < ArrayNum) [File:D:\\build\\++UE5\\Sync\\Engine\\Source\\Runtime\\Core\\Public\\Containers\\ArrayView.h] [Line: 396] \n[2026.08.21-04.40.22:893][  0]LogWindows: Error: Array index out of bounds: 1 from an array of size 0\n[2026.08.21-04.40.22:893][  0]LogWindows: Error: \n[2026.08.21-04.40.22:893][  0]LogWindows: Error: \n[2026.08.21-04.40.22:894][  0]LogWindows: Error: [Callstack] 0x00007ff628d5fb98 FoundryCalibration.exe!FDebug::CheckVerifyFailedImpl2() []\n[2026.08.21-04.40.22:894][  0]LogWindows: Error: [Callstack] 0x00007ff631391dca FoundryCalibration.exe!UNiagaraStatelessEmitter::Serialize() []\n[2026.08.21-04.40.22:894][  0]LogWindows: Error: [Callstack] 0x00007ff629947c96 FoundryCalibration.exe!FAsyncPackage2::EventDrivenSerializeExport() []\n[2026.08.21-04.40.22:894][  0]LogWindows: Error: [Callstack] 0x00007ff6299413f5 FoundryCalibration.exe!FAsyncPackage2::CreateRuntimeExports() []\n[2026.08.21-04.40.22:894][  0]LogWindows: Error: [Callstack] 0x00007ff629948c8c FoundryCalibration.exe!FAsyncPackage2::Event_CreateExports() []\n[2026.08.21-04.40.22:894][  0]LogWindows: Error: [Callstack] 0x00007ff62994c2c0 FoundryCalibration.exe!FEventLoadNode2::Execute() []\n[2026.08.21-04.40.22:894][  0]LogWindows: Error: [Callstack] 0x00007ff62994d68a FoundryCalibration.exe!FAsyncLoadEventQueue2::ExecuteSyncLoadEvents() []\n[2026.08.21-04.40.22:895][  0]LogWindows: Error: [Callstack] 0x00007ff62995ee8b FoundryCalibration.exe!FAsyncLoadingThread2::ProcessAsyncLoadingFromGameThread() []\n[2026.08.21-04.40.22:895][  0]LogWindows: Error: [Callstack] 0x00007ff6299701bc FoundryCalibration.exe!FAsyncLoadingThread2::TickAsyncLoadingFromGameThread() []\n[2026.08.21-04.40.22:895][  0]LogWindows: Error: [Callstack] 0x00007ff62994f72d FoundryCalibration.exe!FAsyncLoadingThread2::FlushLoading() []\n[2026.08.21-04.40.22:896][  0]LogWindows: Error: [Callstack] 0x00007ff6294dd219 FoundryCalibration.exe!FlushAsyncLoading() []\n[2026.08.21-04.40.22:896][  0]LogWindows: Error: [Callstack] 0x00007ff6294dce2c FoundryCalibration.exe!FlushAsyncLoading() []\n[2026.08.21-04.40.22:896][  0]LogWindows: Error: [Callstack] 0x00007ff62987fb00 FoundryCalibration.exe!LoadPackageInternal() []\n[2026.08.21-04.40.22:896][  0]LogWindows: Error: [Callstack] 0x00007ff62987f0af FoundryCalibration.exe!LoadPackage() []\n[2026.08.21-04.40.22:896][  0]LogWindows: Error: [Callstack] 0x00007ff62987f3ee FoundryCalibration.exe!LoadPackage() []\n[2026.08.21-04.40.22:896][  0]LogWindows: Error: [Callstack] 0x00007ff62988c117 FoundryCalibration.exe!ResolveName2() []\n[2026.08.21-04.40.22:896][  0]LogWindows: Error: [Callstack] 0x00007ff629896867 FoundryCalibration.exe!StaticLoadObjectInternal() []\n[2026.08.21-04.40.22:896][  0]LogWindows: Error: [Callstack] 0x00007ff6298960b2 FoundryCalibration.exe!StaticLoadObject() []\n[2026.08.21-04.40.22:897][  0]LogWindows: Error: [Callstack] 0x00007ff6313b2ce6 FoundryCalibration.exe!ConstructorHelpersInternal::FindOrLoadObject<UNiagaraSystem>() [C:\\Program Files\\Epic Games\\UE_5.8\\Engine\\Source\\Runtime\\CoreUObject\\Public\\UObject\\ConstructorHelpers.h:35]\n[2026.08.21-04.40.22:897][  0]LogWindows: Error: [Callstack] 0x00007ff6313b3843 FoundryCalibration.exe!AFoundryRelicActor::AFoundryRelicActor() [C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Source\\FoundryCalibration\\FoundryRelicActor.cpp:69]\n[2026.08.21-04.40.22:897][  0]LogWindows: Error: [Callstack] 0x00007ff62955c830 FoundryCalibration.exe!UClass::CreateDefaultObject() []\n[2026.08.21-04.40.22:897][  0]LogWindows: Error: [Callstack] 0x00007ff629839e7d FoundryCalibration.exe!UObjectInitialized() []\n[2026.08.21-04.40.22:897][  0]LogWindows: Error: [Callstack] 0x00007ff62981c08a FoundryCalibration.exe!ProcessNewlyLoadedUObjects() []\n[2026.08.21-04.40.22:897][  0]LogWindows: Error: [Callstack] 0x00007ff630caa29c FoundryCalibration.exe!FEngineLoop::PreInitPostStartupScreen() []\n[2026.08.21-04.40.22:897][  0]LogWindows: Error: [Callstack] 0x00007ff630ca34c6 FoundryCalibration.exe!GuardedMain() []\n[2026.08.21-04.40.22:897][  0]LogWindows: Error: [Callstack] 0x00007ff630ca377a FoundryCalibration.exe!GuardedMainWrapper() []\n[2026.08.21-04.40.22:897][  0]LogWindows: Error: [Callstack] 0x00007ff630ca7360 FoundryCalibration.exe!LaunchWindowsStartup() []\n[2026.08.21-04.40.22:897][  0]LogWindows: Error: [Callstack] 0x00007ff630cb6154 FoundryCalibration.exe!WinMain() []\n[2026.08.21-04.40.22:897][  0]LogWindows: Error: [Callstack] 0x00007ff63685fa1e FoundryCalibration.exe!__scrt_common_main_seh() [D:\\a\\_work\\1\\s\\src\\vctools\\crt\\vcstartup\\src\\startup\\exe_common.inl:288]\n[2026.08.21-04.40.22:897][  0]LogWindows: Error: [Callstack] 0x00007ff85b19ccb7 KERNEL32.DLL!UnknownFunction []\n[2026.08.21-04.40.22:897][  0]LogWindows: Error: \n[2026.08.21-04.40.22:901][  0]LogExit: Executing StaticShutdownAfterError\n[2026.08.21-04.40.22:903][  0]LogWindows: FPlatformMisc::RequestExit(1, LaunchWindowsStartup.ExceptionHandler)\n[2026.08.21-04.40.22:903][  0]LogWindows: FPlatformMisc::RequestExitWithStatus(1, 3, LaunchWindowsStartup.ExceptionHandler)\n[2026.08.21-04.40.22:903][  0]LogCore: Engine exit requested (reason: Win RequestExit)\n",
+      "stderr_tail": "",
+      "timed_out": false,
+      "process_tree_state": {
+        "pid": 31368,
+        "running_after_capture": false
+      }
+    }
+  ]
+}

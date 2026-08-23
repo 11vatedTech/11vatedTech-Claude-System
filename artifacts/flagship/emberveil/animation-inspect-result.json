@@ -1,0 +1,26 @@
+{
+  "actions": [
+    {
+      "name": "11vt_float_Emberveil_root",
+      "frame_range": [
+        1.0,
+        96.0
+      ],
+      "fcurves": 6,
+      "channels_per_bone": {
+        "location": 3,
+        "rotation_euler": 3
+      }
+    }
+  ],
+  "scene_frame_range": [
+    1,
+    96
+  ],
+  "scene_frame_current": 96,
+  "op_runner_version": "0.4.0",
+  "blender_version": "5.2.0 LTS",
+  "ok": true,
+  "health": "PASS",
+  "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+}

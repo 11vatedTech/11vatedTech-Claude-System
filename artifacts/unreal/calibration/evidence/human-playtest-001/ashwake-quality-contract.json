@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "kind": "product-quality-contract",
+  "product": "Ashwake — The Last Reliquary",
+  "date": "2026-08-21",
+  "product_intent": "Small original Unreal game-feel calibration where player restores dying reliquaries by reading a pulse and attuning during a gold window.",
+  "player_experience": "Player enters a dying fire place, learns pulse timing from the world, restores three coals, and sees the environment awaken through each success.",
+  "emotional_target": ["ritual tension", "fragile warmth", "ancient failure", "earned ignition"],
+  "visual_thesis": "Dead abbey-forge where ash remembers sound, and gold conducts last light.",
+  "selected_environment_direction": "CINDER_ABBEY_BELL_FORGE_RELIQUARY",
+  "art_direction": {
+    "shape_language": "suspended reliquary organs, bell cables, furnace ribs, cracked gold seams, ash-softened masonry",
+    "material_language": ["charred limestone", "clinker brick", "cooled slag", "blackened oak", "tarnished brass", "cracked gold leaf", "ash drifts"],
+    "lighting_philosophy": "controlled darkness with motivated cold ash daylight, low forge bounce, gold timing strikes, and visible midtone form",
+    "anti_qualities": ["empty black void", "checker test floor", "generic glowing orb", "uniform brighten fix", "yellow/red-only state language", "particle spam"]
+  },
+  "motion_language": "breathing ash pulse, cable tremor, shutter opening, contraction/lock, ignition expansion, collapse/recoil",
+  "audio_language": "pulse rhythm, bell-wire resonance, one-frame safe-window hush, consonant success ignition, muted failure collapse",
+  "interaction_language": "world object teaches timing; HUD mirrors but does not explain; gold window is convergence and opening, not colored text prompt",
+  "performance_target": "Development Windows package remains playable with runtime content contract PASS and no critical GPU/runtime blockers; VFX density bounded by state role.",
+  "accessibility_target": "Safe/hostile/success/failure readable without hue alone; audio-off and reduced-motion alternatives preserve cadence and state shape.",
+  "platform_target": "Windows Unreal 5.8 packaged build",
+  "signature_qualities": [
+    "gold leaf as timing conductor",
+    "ash as memory and failure record",
+    "bell-forge architecture maps mechanic to world",
+    "success relights physical fire channels and opens space"
+  ],
+  "quality_floor": {
+    "before_human_playtest_2": [
+      "environment readable as real place",
+      "primary relic readable in grayscale thumbnail",
+      "major materials readable under intended lighting",
+      "safe and hostile states visually distinct without HUD text",
+      "no primary subject clipping in golden start/interact views",
+      "HUD readable and Ashwake-specific",
+      "lighting has noncritical blacks only; critical path has midtones",
+      "audio/VFX/animation state evidence captured as video/audio where possible"
+    ]
+  },
+  "acceptance_evidence": [
+    "before_after screenshot set from equivalent camera/state positions",
+    "perceptual QA report for golden views",
+    "state-feedback no-text clips",
+    "specialist council review",
+    "runtime content contract PASS",
+    "package PASS",
+    "Founder Human Playtest #2 blind observation"
+  ]
+}

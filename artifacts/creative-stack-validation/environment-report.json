@@ -8,9 +8,9 @@
     "powershell_inventory": {
       "command": "powershell -NoProfile -Command \"Get-CimInstance Win32_Processor | Select-Object Name,NumberOfCores,NumberOfLogicalProcessors | ConvertTo-Json -Compress; Get-CimInstance Win32_ComputerSystem | Select-Object TotalPhysicalMemory | ConvertTo-Json -Compress; Get-CimInstance Win32_OperatingSystem | Select-Object Caption,Version,BuildNumber | ConvertTo-Json -Compress; Get-PSDrive -PSProvider FileSystem | Select-Object Name,Free,Used | ConvertTo-Json -Compress\"",
       "returncode": 0,
-      "stdout": "{\"Name\":\"Intel(R) Core(TM) Ultra 9 275HX\",\"NumberOfCores\":24,\"NumberOfLogicalProcessors\":24}\n{\"TotalPhysicalMemory\":33736089600}\n{\"Caption\":\"Microsoft Windows 11 Home\",\"Version\":\"10.0.26200\",\"BuildNumber\":\"26200\"}\n{\"Name\":\"C\",\"Free\":479727095808,\"Used\":506537271296}\n",
+      "stdout": "{\"Name\":\"Intel(R) Core(TM) Ultra 9 275HX\",\"NumberOfCores\":24,\"NumberOfLogicalProcessors\":24}\n{\"TotalPhysicalMemory\":33736089600}\n{\"Caption\":\"Microsoft Windows 11 Home\",\"Version\":\"10.0.26200\",\"BuildNumber\":\"26200\"}\n{\"Name\":\"C\",\"Free\":442933559296,\"Used\":543330807808}\n",
       "stderr": "",
-      "elapsed_seconds": 5.871
+      "elapsed_seconds": 3.402
     }
   },
   "tools": {
@@ -28,7 +28,7 @@
         "returncode": 0,
         "stdout": "git version 2.55.0.windows.3\n",
         "stderr": "",
-        "elapsed_seconds": 0.063
+        "elapsed_seconds": 0.05
       }
     },
     "node": {
@@ -45,7 +45,7 @@
         "returncode": 0,
         "stdout": "v24.18.0\n",
         "stderr": "",
-        "elapsed_seconds": 0.098
+        "elapsed_seconds": 0.073
       }
     },
     "npm": {
@@ -62,7 +62,7 @@
         "returncode": 0,
         "stdout": "11.16.0\n",
         "stderr": "",
-        "elapsed_seconds": 0.804
+        "elapsed_seconds": 0.763
       }
     },
     "python": {
@@ -79,7 +79,7 @@
         "returncode": 0,
         "stdout": "Python 3.14.6\n",
         "stderr": "",
-        "elapsed_seconds": 0.064
+        "elapsed_seconds": 0.037
       }
     },
     "ffmpeg": {
@@ -96,7 +96,7 @@
         "returncode": 0,
         "stdout": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers\nbuilt with gcc 16.1.0 (Rev2, Built by MSYS2 project)\nconfiguration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrenco...[truncated]",
         "stderr": "",
-        "elapsed_seconds": 0.161
+        "elapsed_seconds": 0.08
       }
     },
     "ffprobe": {
@@ -113,7 +113,7 @@
         "returncode": 0,
         "stdout": "ffprobe version 8.1.2-full_build-www.gyan.dev Copyright (c) 2007-2026 the FFmpeg developers\nbuilt with gcc 16.1.0 (Rev2, Built by MSYS2 project)\nconfiguration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrenc...[truncated]",
         "stderr": "",
-        "elapsed_seconds": 0.15
+        "elapsed_seconds": 0.08
       }
     },
     "magick": {
@@ -130,7 +130,7 @@
         "returncode": 0,
         "stdout": "Version: ImageMagick 7.1.2-29 Q16-HDRI x64 360eda5:20260727 https://imagemagick.org\nCopyright: (C) 1999 ImageMagick Studio LLC\nLicense: https://imagemagick.org/license/\nFeatures: Channel-masks(64-bit) Cipher DPC HDRI Modules OpenCL OpenMP(2.0) \nDelegates (built-in): bzlib cairo freetype gslib heic jng jp2 jpeg jxl lcms lqr lzma openexr pangocairo png ps raqm raw rsvg tiff webp xml zip zlib\nCompiler: Visual Studio 2026 (195136248)\n",
         "stderr": "",
-        "elapsed_seconds": 0.105
+        "elapsed_seconds": 0.065
       }
     },
     "identify": {
@@ -148,7 +148,7 @@
         "returncode": 0,
         "stdout": "Version: ImageMagick 7.1.2-29 Q16-HDRI x64 360eda5:20260727 https://imagemagick.org\nCopyright: (C) 1999 ImageMagick Studio LLC\nLicense: https://imagemagick.org/license/\nFeatures: Channel-masks(64-bit) Cipher DPC HDRI Modules OpenCL OpenMP(2.0) \nDelegates (built-in): bzlib cairo freetype gslib heic jng jp2 jpeg jxl lcms lqr lzma openexr pangocairo png ps raqm raw rsvg tiff webp xml zip zlib\nCompiler: Visual Studio 2026 (195136248)\n",
         "stderr": "",
-        "elapsed_seconds": 0.067
+        "elapsed_seconds": 0.057
       }
     },
     "compare": {
@@ -166,7 +166,7 @@
         "returncode": 0,
         "stdout": "Version: ImageMagick 7.1.2-29 Q16-HDRI x64 360eda5:20260727 https://imagemagick.org\nCopyright: (C) 1999 ImageMagick Studio LLC\nLicense: https://imagemagick.org/license/\nFeatures: Channel-masks(64-bit) Cipher DPC HDRI Modules OpenCL OpenMP(2.0) \nDelegates (built-in): bzlib cairo freetype gslib heic jng jp2 jpeg jxl lcms lqr lzma openexr pangocairo png ps raqm raw rsvg tiff webp xml zip zlib\nCompiler: Visual Studio 2026 (195136248)\n",
         "stderr": "",
-        "elapsed_seconds": 0.066
+        "elapsed_seconds": 0.054
       }
     },
     "composite": {
@@ -184,7 +184,7 @@
         "returncode": 0,
         "stdout": "Version: ImageMagick 7.1.2-29 Q16-HDRI x64 360eda5:20260727 https://imagemagick.org\nCopyright: (C) 1999 ImageMagick Studio LLC\nLicense: https://imagemagick.org/license/\nFeatures: Channel-masks(64-bit) Cipher DPC HDRI Modules OpenCL OpenMP(2.0) \nDelegates (built-in): bzlib cairo freetype gslib heic jng jp2 jpeg jxl lcms lqr lzma openexr pangocairo png ps raqm raw rsvg tiff webp xml zip zlib\nCompiler: Visual Studio 2026 (195136248)\n",
         "stderr": "",
-        "elapsed_seconds": 0.062
+        "elapsed_seconds": 0.061
       }
     },
     "blender": {
@@ -201,7 +201,7 @@
         "returncode": 0,
         "stdout": "Blender 5.2.0 LTS\n\tbuild date: 2026-07-14\n\tbuild time: 01:35:40\n\tbuild commit date: 2026-07-13\n\tbuild commit time: 15:20\n\tbuild hash: fbe6228777e7\n\tbuild branch: blender-v5.2-release\n\tbuild platform: Windows\n\tbuild type: Release\n\tbuild c flags:  /W3 -Werror=implicit-function-declaration -Werror=return-type -Wno-tautological-compare -Wno-unknown-pragmas -Wno-char-subscripts -Wstrict-prototypes -Wmissing-prototypes -Wunused-parameter -Wundef -Wundef-prefix -Werror=unguarded-availability-new /DWIN32 /D_WINDOWS /MP /nologo /J /Gy /Gd /showFilenames -Wno-unused-command-line-argument -Wno-microsoft-enum-forward-reference /clang:-funsigned-char /clang:-fno-strict-aliasing /clang:-ffp-contract=off -march=x86-64-v2 \n\tbuild c++ flags:  /W3 -Wno-tautological-compare -Wno-unknown-pragmas -Wno-char-sub...[truncated]",
         "stderr": "",
-        "elapsed_seconds": 0.415
+        "elapsed_seconds": 0.209
       }
     },
     "inkscape": {
@@ -218,7 +218,7 @@
         "returncode": 0,
         "stdout": "Inkscape 1.4.4 (dcaf3e7, 2026-05-05)\n",
         "stderr": "",
-        "elapsed_seconds": 2.908
+        "elapsed_seconds": 1.612
       }
     },
     "krita": {
@@ -253,16 +253,16 @@
       "tool": "nvidia-smi",
       "availability": "available",
       "path": "C:\\Windows\\system32\\nvidia-smi.EXE",
-      "version": "Tue Aug 18 20:18:38 2026",
+      "version": "Sat Aug 22 14:36:51 2026",
       "health": "PASS",
       "check": {
         "argv": [
           "C:\\Windows\\system32\\nvidia-smi.EXE"
         ],
         "returncode": 0,
-        "stdout": "Tue Aug 18 20:18:38 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 591.44                 Driver Version: 591.44         CUDA Version: 13.1     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5070 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |\n| N/A   37C    P8              7...[truncated]",
+        "stdout": "Sat Aug 22 14:36:51 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.78                 KMD Version: 610.78        CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5070 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |\n| N/A   54C    P8              8...[truncated]",
         "stderr": "",
-        "elapsed_seconds": 0.18
+        "elapsed_seconds": 0.136
       }
     },
     "nvcc": {
@@ -279,7 +279,7 @@
         "returncode": 0,
         "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2026 NVIDIA Corporation\nBuilt on Tue_Jun__9_14:30:19_Pacific_Daylight_Time_2026\nCuda compilation tools, release 13.3, V13.3.73\nBuild cuda_13.3.r13.3/compiler.38244171_0\n",
         "stderr": "",
-        "elapsed_seconds": 0.073
+        "elapsed_seconds": 0.062
       }
     }
   },
@@ -293,28 +293,28 @@
         "--format=csv,noheader,nounits"
       ],
       "returncode": 0,
-      "stdout": "NVIDIA GeForce RTX 5070 Ti Laptop GPU, 12227, 591.44\n",
+      "stdout": "NVIDIA GeForce RTX 5070 Ti Laptop GPU, 12227, 610.78\n",
       "stderr": "",
-      "elapsed_seconds": 0.431
+      "elapsed_seconds": 0.182
     },
     "smi": {
       "argv": [
         "C:\\Windows\\system32\\nvidia-smi.EXE"
       ],
       "returncode": 0,
-      "stdout": "Tue Aug 18 20:18:32 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 591.44                 Driver Version: 591.44         CUDA Version: 13.1     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5070 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |\n| N/A   37C    P8              7W /   50W |     491MiB /  12227MiB |      1%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A           15760    C+G   ...s\\Win64\\EpicGamesLauncher.exe      N/A      |\n|  ...[truncated]",
+      "stdout": "Sat Aug 22 14:36:47 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.78                 KMD Version: 610.78        CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5070 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |\n| N/A   54C    P8              8W /   50W |      12MiB /  12227MiB |      1%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A           19508    C+G   ...s\\Win64\\EpicGamesLauncher.exe      N/A      |\n|  ...[truncated]",
       "stderr": "",
-      "elapsed_seconds": 0.913
+      "elapsed_seconds": 0.25
     },
     "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
     "vram_mb": 12227,
-    "driver": "591.44"
+    "driver": "610.78"
   },
   "9router": {
     "base": "http://127.0.0.1:20128",
     "health": "PASS",
     "categories": {
-      "/v1/models": 329,
+      "/v1/models": 340,
       "/v1/models/image": 4,
       "/v1/models/tts": 5,
       "/v1/models/embedding": 8,
@@ -793,7 +793,7 @@
           "returncode": 0,
           "stdout": "git version 2.55.0.windows.3\n",
           "stderr": "",
-          "elapsed_seconds": 0.063
+          "elapsed_seconds": 0.05
         }
       },
       "node": {
@@ -810,7 +810,7 @@
           "returncode": 0,
           "stdout": "v24.18.0\n",
           "stderr": "",
-          "elapsed_seconds": 0.098
+          "elapsed_seconds": 0.073
         }
       },
       "npm": {
@@ -827,7 +827,7 @@
           "returncode": 0,
           "stdout": "11.16.0\n",
           "stderr": "",
-          "elapsed_seconds": 0.804
+          "elapsed_seconds": 0.763
         }
       },
       "python": {
@@ -844,7 +844,7 @@
           "returncode": 0,
           "stdout": "Python 3.14.6\n",
           "stderr": "",
-          "elapsed_seconds": 0.064
+          "elapsed_seconds": 0.037
         }
       },
       "ffmpeg": {
@@ -861,7 +861,7 @@
           "returncode": 0,
           "stdout": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers\nbuilt with gcc 16.1.0 (Rev2, Built by MSYS2 project)\nconfiguration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrenco...[truncated]",
           "stderr": "",
-          "elapsed_seconds": 0.161
+          "elapsed_seconds": 0.08
         }
       },
       "ffprobe": {
@@ -878,7 +878,7 @@
           "returncode": 0,
           "stdout": "ffprobe version 8.1.2-full_build-www.gyan.dev Copyright (c) 2007-2026 the FFmpeg developers\nbuilt with gcc 16.1.0 (Rev2, Built by MSYS2 project)\nconfiguration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrenc...[truncated]",
           "stderr": "",
-          "elapsed_seconds": 0.15
+          "elapsed_seconds": 0.08
         }
       },
       "magick": {
@@ -895,7 +895,7 @@
           "returncode": 0,
           "stdout": "Version: ImageMagick 7.1.2-29 Q16-HDRI x64 360eda5:20260727 https://imagemagick.org\nCopyright: (C) 1999 ImageMagick Studio LLC\nLicense: https://imagemagick.org/license/\nFeatures: Channel-masks(64-bit) Cipher DPC HDRI Modules OpenCL OpenMP(2.0) \nDelegates (built-in): bzlib cairo freetype gslib heic jng jp2 jpeg jxl lcms lqr lzma openexr pangocairo png ps raqm raw rsvg tiff webp xml zip zlib\nCompiler: Visual Studio 2026 (195136248)\n",
           "stderr": "",
-          "elapsed_seconds": 0.105
+          "elapsed_seconds": 0.065
         }
       },
       "identify": {
@@ -913,7 +913,7 @@
           "returncode": 0,
           "stdout": "Version: ImageMagick 7.1.2-29 Q16-HDRI x64 360eda5:20260727 https://imagemagick.org\nCopyright: (C) 1999 ImageMagick Studio LLC\nLicense: https://imagemagick.org/license/\nFeatures: Channel-masks(64-bit) Cipher DPC HDRI Modules OpenCL OpenMP(2.0) \nDelegates (built-in): bzlib cairo freetype gslib heic jng jp2 jpeg jxl lcms lqr lzma openexr pangocairo png ps raqm raw rsvg tiff webp xml zip zlib\nCompiler: Visual Studio 2026 (195136248)\n",
           "stderr": "",
-          "elapsed_seconds": 0.067
+          "elapsed_seconds": 0.057
         }
       },
       "compare": {
@@ -931,7 +931,7 @@
           "returncode": 0,
           "stdout": "Version: ImageMagick 7.1.2-29 Q16-HDRI x64 360eda5:20260727 https://imagemagick.org\nCopyright: (C) 1999 ImageMagick Studio LLC\nLicense: https://imagemagick.org/license/\nFeatures: Channel-masks(64-bit) Cipher DPC HDRI Modules OpenCL OpenMP(2.0) \nDelegates (built-in): bzlib cairo freetype gslib heic jng jp2 jpeg jxl lcms lqr lzma openexr pangocairo png ps raqm raw rsvg tiff webp xml zip zlib\nCompiler: Visual Studio 2026 (195136248)\n",
           "stderr": "",
-          "elapsed_seconds": 0.066
+          "elapsed_seconds": 0.054
         }
       },
       "composite": {
@@ -949,7 +949,7 @@
           "returncode": 0,
           "stdout": "Version: ImageMagick 7.1.2-29 Q16-HDRI x64 360eda5:20260727 https://imagemagick.org\nCopyright: (C) 1999 ImageMagick Studio LLC\nLicense: https://imagemagick.org/license/\nFeatures: Channel-masks(64-bit) Cipher DPC HDRI Modules OpenCL OpenMP(2.0) \nDelegates (built-in): bzlib cairo freetype gslib heic jng jp2 jpeg jxl lcms lqr lzma openexr pangocairo png ps raqm raw rsvg tiff webp xml zip zlib\nCompiler: Visual Studio 2026 (195136248)\n",
           "stderr": "",
-          "elapsed_seconds": 0.062
+          "elapsed_seconds": 0.061
         }
       },
       "blender": {
@@ -966,7 +966,7 @@
           "returncode": 0,
           "stdout": "Blender 5.2.0 LTS\n\tbuild date: 2026-07-14\n\tbuild time: 01:35:40\n\tbuild commit date: 2026-07-13\n\tbuild commit time: 15:20\n\tbuild hash: fbe6228777e7\n\tbuild branch: blender-v5.2-release\n\tbuild platform: Windows\n\tbuild type: Release\n\tbuild c flags:  /W3 -Werror=implicit-function-declaration -Werror=return-type -Wno-tautological-compare -Wno-unknown-pragmas -Wno-char-subscripts -Wstrict-prototypes -Wmissing-prototypes -Wunused-parameter -Wundef -Wundef-prefix -Werror=unguarded-availability-new /DWIN32 /D_WINDOWS /MP /nologo /J /Gy /Gd /showFilenames -Wno-unused-command-line-argument -Wno-microsoft-enum-forward-reference /clang:-funsigned-char /clang:-fno-strict-aliasing /clang:-ffp-contract=off -march=x86-64-v2 \n\tbuild c++ flags:  /W3 -Wno-tautological-compare -Wno-unknown-pragmas -Wno-char-sub...[truncated]",
           "stderr": "",
-          "elapsed_seconds": 0.415
+          "elapsed_seconds": 0.209
         }
       },
       "inkscape": {
@@ -983,7 +983,7 @@
           "returncode": 0,
           "stdout": "Inkscape 1.4.4 (dcaf3e7, 2026-05-05)\n",
           "stderr": "",
-          "elapsed_seconds": 2.908
+          "elapsed_seconds": 1.612
         }
       },
       "krita": {
@@ -1018,16 +1018,16 @@
         "tool": "nvidia-smi",
         "availability": "available",
         "path": "C:\\Windows\\system32\\nvidia-smi.EXE",
-        "version": "Tue Aug 18 20:18:38 2026",
+        "version": "Sat Aug 22 14:36:51 2026",
         "health": "PASS",
         "check": {
           "argv": [
             "C:\\Windows\\system32\\nvidia-smi.EXE"
           ],
           "returncode": 0,
-          "stdout": "Tue Aug 18 20:18:38 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 591.44                 Driver Version: 591.44         CUDA Version: 13.1     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5070 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |\n| N/A   37C    P8              7...[truncated]",
+          "stdout": "Sat Aug 22 14:36:51 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.78                 KMD Version: 610.78        CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5070 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |\n| N/A   54C    P8              8...[truncated]",
           "stderr": "",
-          "elapsed_seconds": 0.18
+          "elapsed_seconds": 0.136
         }
       },
       "nvcc": {
@@ -1044,7 +1044,7 @@
           "returncode": 0,
           "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2026 NVIDIA Corporation\nBuilt on Tue_Jun__9_14:30:19_Pacific_Daylight_Time_2026\nCuda compilation tools, release 13.3, V13.3.73\nBuild cuda_13.3.r13.3/compiler.38244171_0\n",
           "stderr": "",
-          "elapsed_seconds": 0.073
+          "elapsed_seconds": 0.062
         }
       }
     },
@@ -1058,28 +1058,28 @@
           "--format=csv,noheader,nounits"
         ],
         "returncode": 0,
-        "stdout": "NVIDIA GeForce RTX 5070 Ti Laptop GPU, 12227, 591.44\n",
+        "stdout": "NVIDIA GeForce RTX 5070 Ti Laptop GPU, 12227, 610.78\n",
         "stderr": "",
-        "elapsed_seconds": 0.431
+        "elapsed_seconds": 0.182
       },
       "smi": {
         "argv": [
           "C:\\Windows\\system32\\nvidia-smi.EXE"
         ],
         "returncode": 0,
-        "stdout": "Tue Aug 18 20:18:32 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 591.44                 Driver Version: 591.44         CUDA Version: 13.1     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5070 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |\n| N/A   37C    P8              7W /   50W |     491MiB /  12227MiB |      1%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A           15760    C+G   ...s\\Win64\\EpicGamesLauncher.exe      N/A      |\n|  ...[truncated]",
+        "stdout": "Sat Aug 22 14:36:47 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.78                 KMD Version: 610.78        CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5070 ...  WDDM  |   00000000:01:00.0 Off |                  N/A |\n| N/A   54C    P8              8W /   50W |      12MiB /  12227MiB |      1%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A           19508    C+G   ...s\\Win64\\EpicGamesLauncher.exe      N/A      |\n|  ...[truncated]",
         "stderr": "",
-        "elapsed_seconds": 0.913
+        "elapsed_seconds": 0.25
       },
       "name": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
       "vram_mb": 12227,
-      "driver": "591.44"
+      "driver": "610.78"
     },
     "9router": {
       "base": "http://127.0.0.1:20128",
       "health": "PASS",
       "categories": {
-        "/v1/models": 329,
+        "/v1/models": 340,
         "/v1/models/image": 4,
         "/v1/models/tts": 5,
         "/v1/models/embedding": 8,

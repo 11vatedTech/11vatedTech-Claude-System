@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "kind": "model-selection-matrix",
+  "date": "2026-08-22",
+  "source_registry": "config/model-capability-registry.json",
+  "selection_method": "passed-task coverage weighted 70 percent and task coverage weighted 30 percent, latency as tie-breaker",
+  "roles": {
+    "builder": {
+      "selected": "kr/deepseek-3.2",
+      "fallback": "ag/gemini-3.7-flash-medium",
+      "task_basis": ["code", "debug", "repo"],
+      "limitation": "small Golden Task suite; tie resolved by measured latency"
+    },
+    "reviewer": {
+      "selected": "kr/qwen3-coder-next",
+      "fallback": "kr/glm-5",
+      "task_basis": ["debug", "repo", "visual-critique"],
+      "limitation": "visual-critique task is text-only and does not prove multimodal visual review"
+    },
+    "researcher": {
+      "selected": "kr/deepseek-3.2",
+      "fallback": "ag/gemini-3.7-flash-medium",
+      "task_basis": ["research", "repo"],
+      "limitation": "source retrieval and contradiction handling were not live-tested in this matrix"
+    },
+    "visual-critic": {
+      "selected": "kr/qwen3-coder-next",
+      "fallback": "kr/glm-5",
+      "task_basis": ["visual-critique", "research"],
+      "limitation": "no image payload was used; this is language critique evidence only"
+    },
+    "architect": {
+      "selected": "kr/deepseek-3.2",
+      "fallback": "ag/gemini-3.7-flash-medium",
+      "task_basis": ["repo", "research", "debug"],
+      "limitation": "architecture-specific rubric and long-context stress test remain open"
+    },
+    "fast": {
+      "selected": "kr/qwen3-coder-next",
+      "fallback": "kr/glm-5",
+      "task_basis": ["code"],
+      "limitation": "fast selection optimizes measured latency only after pass requirement"
+    }
+  },
+  "not_claimed": [
+    "No model is certified as universally best.",
+    "No multimodal visual model ranking is claimed from text-only tasks.",
+    "The degraded gcli/grok-4.6 records remain evidence of 429 failure, not a quality judgment."
+  ]
+}

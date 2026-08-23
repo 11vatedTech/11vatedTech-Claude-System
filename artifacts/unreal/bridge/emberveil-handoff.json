@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "kind": "blender-unreal-handoff",
+  "asset_id": "11vt-9d606062c71ff2bb",
+  "created_at": "2026-08-19T13:33:14.452042+00:00",
+  "source": {
+    "asset_path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\emberveil-canonical.glb",
+    "asset_hash": "sha256:9d606062c71ff2bba1b80935e69f58f6e6bf4782e1b891e474be9afc144d7aea",
+    "source_blender": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-canonical\\session.blend",
+    "source_blender_hash": "sha256:3558ec4aa569fde4479f417716a46a89805e2ded37097bea9b4a9593fdfcf085",
+    "format": "glb"
+  },
+  "unreal": {
+    "project": "C:\\Users\\11vat\\OneDrive\\Desktop\\Nemesis\\Nemesis.uproject",
+    "content_path": "/Game/Calibration/Emberveil/emberveil-canonical",
+    "import_contract": {
+      "units": "centimeters",
+      "forward_axis": "+X",
+      "up_axis": "+Z",
+      "preserve_material_slots": true,
+      "preserve_skeleton_and_animation_names": true,
+      "generate_missing_collision": false
+    }
+  },
+  "structure": {
+    "scenes": 1,
+    "nodes": 18,
+    "meshes": 13,
+    "materials": 4,
+    "textures": 0,
+    "animations": [
+      "11vt_float_Emberveil_root",
+      "11vt_rotate_brass_band",
+      "11vt_pulse_ember_core",
+      "11vt_rotate_filigree_arc"
+    ],
+    "skins": 1
+  },
+  "provenance": {
+    "license": "generated-local",
+    "source": "11vatedTech-directed-original",
+    "creator": "11vatedTech Foundry"
+  },
+  "status": "HANDOFF_READY",
+  "validation": {
+    "ok": true,
+    "issues": []
+  }
+}

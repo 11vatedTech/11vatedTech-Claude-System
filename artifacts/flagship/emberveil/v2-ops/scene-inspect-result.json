@@ -1,0 +1,274 @@
+{
+  "scene": {
+    "name": "Scene",
+    "frame_current": 96,
+    "frame_start": 1,
+    "frame_end": 96
+  },
+  "camera": "Cam",
+  "objects": [
+    {
+      "name": "brass_band",
+      "type": "MESH",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "Emberveil_Brass_v2"
+      ]
+    },
+    {
+      "name": "Cam",
+      "type": "CAMERA",
+      "location": [
+        6.0,
+        -7.0,
+        3.0
+      ],
+      "rotation": [
+        78.95,
+        0.0,
+        40.6
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": []
+    },
+    {
+      "name": "CoolRim",
+      "type": "LIGHT",
+      "location": [
+        -4.0,
+        -6.0,
+        10.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": []
+    },
+    {
+      "name": "ember_core",
+      "type": "MESH",
+      "location": [
+        0.0,
+        0.0,
+        0.4
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "Emberveil_Core_v2"
+      ]
+    },
+    {
+      "name": "EmberCoreLight",
+      "type": "LIGHT",
+      "location": [
+        0.0,
+        0.0,
+        0.85
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": []
+    },
+    {
+      "name": "Emberveil_root",
+      "type": "EMPTY",
+      "location": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": []
+    },
+    {
+      "name": "filigree_arc",
+      "type": "MESH",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "Emberveil_Brass_v2"
+      ]
+    },
+    {
+      "name": "filigree_arc_01",
+      "type": "MESH",
+      "location": [
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        120.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "Emberveil_Brass_v2"
+      ]
+    },
+    {
+      "name": "filigree_arc_02",
+      "type": "MESH",
+      "location": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        240.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "Emberveil_Brass_v2"
+      ]
+    },
+    {
+      "name": "FillLight",
+      "type": "LIGHT",
+      "location": [
+        1.5,
+        -2.0,
+        -0.3
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": []
+    },
+    {
+      "name": "glass_bell",
+      "type": "MESH",
+      "location": [
+        0.0,
+        0.0,
+        0.25
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": []
+    },
+    {
+      "name": "plinth",
+      "type": "MESH",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "materials": [
+        "Emberveil_Plinth_v2"
+      ]
+    }
+  ],
+  "object_count": 12,
+  "lights": [
+    "CoolRim",
+    "EmberCoreLight",
+    "FillLight"
+  ],
+  "op_runner_version": "0.4.0",
+  "blender_version": "5.2.0 LTS",
+  "ok": true,
+  "health": "PASS",
+  "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+}

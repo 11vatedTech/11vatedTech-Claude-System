@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "source": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\audio\\source.wav",
+  "destination": "/Game/Calibration/Audio",
+  "status": "PASS",
+  "provenance": {
+    "license": "generated-local",
+    "source": "ffmpeg sine 550Hz",
+    "record": "artifacts/creative-stack-validation/audio/provenance.json"
+  },
+  "imported_object_paths": [
+    "/Game/Calibration/Audio/source.source"
+  ],
+  "errors": []
+}

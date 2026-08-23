@@ -1,0 +1,14 @@
+{
+  "source": "arc",
+  "count": 3,
+  "objects": [
+    "arc",
+    "arc_01",
+    "arc_02"
+  ],
+  "op_runner_version": "0.4.0",
+  "blender_version": "5.2.0 LTS",
+  "ok": true,
+  "health": "PASS",
+  "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-smoke\\session.blend"
+}

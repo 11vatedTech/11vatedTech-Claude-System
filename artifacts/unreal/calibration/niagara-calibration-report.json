@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "assets": [
+    {
+      "kind": "emitter",
+      "path": "/Game/Calibration/VFX/NE_Emberveil_Attune.NE_Emberveil_Attune"
+    },
+    {
+      "kind": "system",
+      "path": "/Game/Calibration/VFX/NS_Emberveil_Attune.NS_Emberveil_Attune"
+    }
+  ]
+}

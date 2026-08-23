@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "system_id": "11VT_CREATIVE_INTELLIGENCE_INSTITUTE",
+  "status": "ACTIVE",
+  "date": "2026-08-22",
+  "purpose": "Acquire, practice, evaluate, retain, and deploy professional creative-production intelligence without confusing tool access with artistic mastery.",
+  "layers": {
+    "professional_knowledge": "research-backed discipline vocabulary, workflows, failure modes, and source provenance",
+    "tool_intelligence": "versioned knowledge of installed tools, automation surfaces, strengths, and limitations",
+    "practice": "small controlled exercises with explicit questions, bounded scope, and before/after evidence",
+    "artistic_judgment": "perceptual, specialist, independent, and human review separated from structural validity",
+    "production_orchestration": "mission-to-discipline-to-tool-to-evidence routing with stop conditions"
+  },
+  "professional_loop": [
+    "QUESTION",
+    "RESEARCH",
+    "REFERENCE_ANALYSIS",
+    "HYPOTHESIS",
+    "CONTROLLED_EXERCISE",
+    "REVIEW",
+    "REPAIR",
+    "A_B_COMPARISON",
+    "LESSON_DISTILLATION",
+    "GOLDEN_TASK",
+    "GLOBAL_DEPLOYMENT"
+  ],
+  "experience_scales": {
+    "engineering": ["E0_ABSENT", "E1_CONCEPTUAL", "E2_SCRIPTED", "E3_OPERATIONAL", "E4_VERIFIED", "E5_PRODUCTION_PROVEN"],
+    "creative_art": ["C0_UNRESOLVED", "C1_BLOCKOUT", "C2_FUNCTIONAL", "C3_COHERENT", "C4_POLISHED", "C5_PRODUCTION", "C6_SIGNATURE"],
+    "experience_ux": ["X0_UNKNOWN", "X1_INTERACTION_EXISTS", "X2_USABLE", "X3_COMPREHENSIBLE", "X4_REFINED", "X5_VALIDATED_WITH_USERS", "X6_EXCEPTIONAL"],
+    "tool_mastery": ["T0_UNAVAILABLE", "T1_DISCOVERED", "T2_UNDERSTOOD", "T3_OPERABLE", "T4_EXERCISED", "T5_PRODUCTION_USED", "T6_FAILURE_REPAIRED", "T7_REPEATABLY_PROFESSIONAL"],
+    "professional_experience": ["P0_NONE", "P1_THEORY_STUDIED", "P2_REFERENCES_STUDIED", "P3_CONTROLLED_EXERCISES", "P4_INDEPENDENTLY_CRITIQUED_EXERCISES", "P5_REAL_PRODUCT_USE", "P6_MULTIPLE_CONTEXTS", "P7_EXTERNAL_HUMAN_VALIDATION"],
+    "reliability": ["R0_SUBJECTIVE", "R1_RUBRIC", "R2_EVIDENCE_CAPTURED", "R3_EXECUTABLE_QA", "R4_REGRESSION_PROTECTED", "R5_REPEATABLY_CONVERGES"]
+  },
+  "maturity_contract": "config/maturity-and-knowledge-contract.json",
+  "resource_packs": [
+    "config/resource-packs/frontend-ui-ux-core.json",
+    "config/resource-packs/art-direction-lookdev-core.json",
+    "config/resource-packs/semantic-engineering-core.json"
+  ],
+  "freeze_policy": {
+    "calibration_fixture": "Ashwake — The Last Reliquary",
+    "fixture_id": "CALIBRATION_FIXTURE_001",
+    "freeze_record": "artifacts/flagship/ASHWAKE-FREEZE.md",
+    "lesson_record": "artifacts/flagship/ASHWAKE-LESSON-EXTRACTION.json",
+    "allowed_return": "bounded regression only; declare global capability, scope, expected lesson, evidence, and stop condition before touching fixture"
+  },
+  "first_global_proofs": [
+    {
+      "capability": "capability-truth-audit",
+      "before": "ontology and skills implied capability; no machine-readable actual-state audit",
+      "after": "every ontology entry receives a truth state and explicit evidence limitations",
+      "proof": "scripts/validate/capability_truth_audit.py"
+    },
+    {
+      "capability": "mission-value-gate",
+      "before": "long missions could continue improving a calibration artifact after its lesson was extracted",
+      "after": "frozen-fixture work without a bounded regression declaration returns STOP_AND_REPLAN",
+      "proof": "scripts/validate/mission_value_gate.py"
+    },
+    {
+      "capability": "visual-evidence-evaluator",
+      "before": "perceptual metrics were available but did not consistently block known creative failure patterns",
+      "after": "known-bad visual evidence is classified separately from structural validity and cannot support POLISHED without review",
+      "proof": "scripts/validate/visual_evidence_evaluator.py"
+    }
+  ],
+  "known_limits": [
+    "pattern detection is not semantic vision",
+    "model registry evidence is small and task rubrics are still shallow",
+    "creative quality requires actual image/video/audio evidence and independent or human review",
+    "professional mastery is not claimed for any broad creative production domain"
+  ]
+}

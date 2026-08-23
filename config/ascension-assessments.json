@@ -482,5 +482,395 @@
     "target_maturity": "L3",
     "priority": "P3",
     "next_action": "none critical"
+  },
+  "perceptual-readability-qa": {
+    "missing_executable": "diagnostic metrics exist; no artistic classifier or calibrated subject mask",
+    "missing_observation": "headless/render evidence only; GPU color-management variance remains",
+    "missing_evaluation": "canonical Emberveil evidence only; needs blinded multi-artifact benchmark",
+    "missing_verification": "independent professional review not yet completed",
+    "dependencies": ["pixel-diff", "raster-processing"],
+    "target_maturity": "L4",
+    "priority": "P1",
+    "next_action": "calibrate subject masks against reviewed renders and run independent visual critique"
+  },
+  "composition-qa": {
+    "missing_executable": "bright-subject occupancy and separation diagnostics only",
+    "missing_observation": "no shot-purpose or focal-hierarchy annotation capture",
+    "missing_evaluation": "single flagship calibration",
+    "missing_verification": "no blinded composition review",
+    "dependencies": ["perceptual-readability-qa"],
+    "target_maturity": "L4",
+    "priority": "P1",
+    "next_action": "add shot-purpose annotations and professional composition benchmark"
+  },
+  "lighting-intelligence": {
+    "missing_executable": "structured motivated light-rig construction",
+    "missing_observation": "no light contribution/pass breakdown",
+    "missing_evaluation": "canonical Emberveil render diagnostics",
+    "missing_verification": "independent lighting review pending",
+    "dependencies": ["blender-bridge", "perceptual-readability-qa"],
+    "target_maturity": "L4",
+    "priority": "P1",
+    "next_action": "add lighting-pass inspection and blinded readability evaluation"
+  },
+  "material-production": {
+    "missing_executable": "structured subsurface, emissive noise, and surface variation ops",
+    "missing_observation": "no material turntable rubric or texture-density inspection",
+    "missing_evaluation": "canonical material set only",
+    "missing_verification": "independent material review pending",
+    "dependencies": ["blender-bridge", "quality-models"],
+    "target_maturity": "L3",
+    "priority": "P1",
+    "next_action": "add material response turntable and roughness/normal diagnostics"
+  },
+  "environment-production": {
+    "missing_executable": "structured lathed shrine environment and radial pillars",
+    "missing_observation": "no environment scale/depth/grounding rubric",
+    "missing_evaluation": "canonical Emberveil only",
+    "missing_verification": "independent environment review pending",
+    "dependencies": ["scene-authoring", "material-production"],
+    "target_maturity": "L3",
+    "priority": "P2",
+    "next_action": "add environment packaging, scale checks, and a second scene benchmark"
+  },
+  "mechanical-rigging": {
+    "missing_executable": "structured control armature creation and hierarchy inspection",
+    "missing_observation": "no control manipulation/extreme pose deformation capture",
+    "missing_evaluation": "three-bone mechanical rig smoke only",
+    "missing_verification": "no independent rigging review",
+    "dependencies": ["blender-bridge", "scene-authoring"],
+    "target_maturity": "L3",
+    "priority": "P1",
+    "next_action": "bind controls to articulated parts and add constraint/range failure tests"
+  },
+  "animation-production": {
+    "missing_executable": "structured float, pulse, and secondary rotation actions",
+    "missing_observation": "runtime plays clips but no pose/weight/acting review layer",
+    "missing_evaluation": "canonical four-clip asset + runtime state evidence",
+    "missing_verification": "independent animation review pending",
+    "dependencies": ["mechanical-rigging", "animation-qa"],
+    "target_maturity": "L3",
+    "priority": "P1",
+    "next_action": "author an ignition performance and add video-based motion critique"
+  },
+  "vfx-runtime": {
+    "missing_executable": "ambient and burst additive ember particle systems",
+    "missing_observation": "no overdraw/particle performance budget",
+    "missing_evaluation": "runtime observation only",
+    "missing_verification": "no independent VFX review",
+    "dependencies": ["animation-production", "runtime-observation"],
+    "target_maturity": "L3",
+    "priority": "P1",
+    "next_action": "add signature ignition timing, heat distortion, and performance capture"
+  },
+  "cinematic-production": {
+    "missing_executable": "camera path, PNG sequence, and FFmpeg encoded clips",
+    "missing_observation": "no edit/pacing/color/sound review metrics",
+    "missing_evaluation": "canonical sequence only",
+    "missing_verification": "independent cinematic review pending",
+    "dependencies": ["lighting-intelligence", "animation-production", "vfx-runtime"],
+    "target_maturity": "L3",
+    "priority": "P1",
+    "next_action": "add shot manifest and independent sequence critique"
+  },
+  "asset-variant-regression": {
+    "missing_executable": "GLB structural diff detects lost materials/animations/nodes",
+    "missing_observation": "no semantic shader or deformation diff",
+    "missing_evaluation": "real v2-to-runtime material loss captured and canonical self-gate passes",
+    "missing_verification": "no independent audit of diff policy",
+    "dependencies": ["asset-export", "animation-qa"],
+    "target_maturity": "L5",
+    "priority": "P0",
+    "next_action": "add mutation fixtures and independent review of release policy"
+  },
+  "cohesion-auditing": {
+    "missing_executable": "cross-layer artifact/file/palette/motion/VFX checks",
+    "missing_observation": "does not yet inspect audio or perceptual art quality",
+    "missing_evaluation": "canonical Emberveil only",
+    "missing_verification": "independent creative review pending",
+    "dependencies": ["perceptual-readability-qa", "quality-models"],
+    "target_maturity": "L4",
+    "priority": "P1",
+    "next_action": "add blinded review findings as auditable cohesion evidence"
+  },
+  "ast-repository-index": {
+    "missing_executable": "Python AST index with definitions, references, imports, impact, and requirement search",
+    "missing_observation": "no LSP type resolution or runtime dependency observation",
+    "missing_evaluation": "controlled Python golden tasks pass",
+    "missing_verification": "independent review pending",
+    "dependencies": ["repository-audit"],
+    "target_maturity": "L4",
+    "priority": "P1",
+    "next_action": "add TypeScript/tree-sitter or LSP provider based on repository evidence"
+  },
+  "repository-golden-tasks": {
+    "missing_executable": "semantic golden task runner with evidence artifact",
+    "missing_observation": "Python-only fixture coverage",
+    "missing_evaluation": "six controlled checks pass",
+    "missing_verification": "independent review pending",
+    "dependencies": ["ast-repository-index"],
+    "target_maturity": "L4",
+    "priority": "P1",
+    "next_action": "expand controlled tasks to contract mismatch, dead code, and change impact"
+  },
+  "unreal-installation-health": {
+    "missing_executable": "no editor launch or SDK compile probe yet",
+    "missing_observation": "does not observe editor logs, plugin load failures, or GPU/runtime health",
+    "missing_evaluation": "health schema is exercised on one installed engine",
+    "missing_verification": "no independent review of engine readiness",
+    "dependencies": ["environment-doctor"],
+    "target_maturity": "L4",
+    "priority": "P0",
+    "next_action": "add bounded UnrealEditor-Cmd health probe and compare reported version/plugins with filesystem discovery"
+  },
+  "unreal-project-intelligence": {
+    "missing_executable": "static inspector does not parse binary Blueprint graphs or Asset Registry dependencies",
+    "missing_observation": "no editor/runtime asset graph or map actor observation",
+    "missing_evaluation": "one real C++ project inspection; no mutation suite yet",
+    "missing_verification": "no independent project-architecture review",
+    "dependencies": ["ast-repository-index", "unreal-installation-health"],
+    "target_maturity": "L4",
+    "priority": "P0",
+    "next_action": "add project fixture golden tasks and an editor commandlet/Asset Registry adapter"
+  },
+  "blender-unreal-asset-handoff": {
+    "missing_executable": "creates handoff contract but does not import through Unreal Interchange",
+    "missing_observation": "no Unreal-side imported asset inspection",
+    "missing_evaluation": "single Emberveil GLB handoff",
+    "missing_verification": "no round-trip import review or stale asset watcher",
+    "dependencies": ["asset-export", "provenance", "unreal-project-intelligence"],
+    "target_maturity": "L4",
+    "priority": "P0",
+    "next_action": "run a bounded Unreal import/Asset Registry probe and compare imported slots, skeleton, animation names, and scale"
+  },
+  "unreal-editor-asset-import": {
+    "missing_executable": "GLB import via AssetImportTask works, but no typed Interchange import settings or Unreal-side asset graph query",
+    "missing_observation": "import report lists object paths but does not inspect material parameters, skeleton compatibility, scale, or runtime use",
+    "missing_evaluation": "canonical Emberveil import only; no malformed-asset and stale-source mutation suite",
+    "missing_verification": "no independent technical-art review of imported asset quality",
+    "dependencies": ["blender-unreal-asset-handoff", "unreal-editor-commandline"],
+    "target_maturity": "L4",
+    "priority": "P0",
+    "next_action": "add Asset Registry inspection and compare imported materials, skeletal assets, animation names, bounds, and source hash"
+  },
+  "unreal-content-contract-validation": {
+    "missing_executable": "pre-import validation only; native Data Validation commandlet not exercised",
+    "missing_observation": "cannot inspect loaded UObject validation messages",
+    "missing_evaluation": "positive Emberveil contract only; failure fixtures needed",
+    "missing_verification": "no independent technical-art review",
+    "dependencies": ["blender-unreal-asset-handoff", "asset-variant-regression"],
+    "target_maturity": "L4",
+    "priority": "P1",
+    "next_action": "add missing-provenance, stale-hash, invalid-path, and missing-animation fixtures plus native commandlet evidence"
+  },
+  "unreal-cpp-compile": {
+    "missing_executable": "game target C++ compile wrapper and real FoundryCalibration module compile",
+    "missing_observation": "no loaded module behavior or editor target due missing .NET Framework SDK",
+    "missing_evaluation": "native automation test compiles but has not executed in Unreal",
+    "missing_verification": "no independent code review or packaged runtime review",
+    "dependencies": ["unreal-installation-health"],
+    "target_maturity": "L4",
+    "priority": "P0",
+    "next_action": "install the existing Build Tools .NET Framework 4.8 SDK component, build the Editor target, execute the native state test, and load the module"
+  },
+  "unreal-gameplay-architecture": {
+    "missing_executable": "compiled C++ game mode, player, relic state machine, HUD, and production graph",
+    "missing_observation": "no playable runtime observation; direct unstaged executable crashed during asset IO before game loop",
+    "missing_evaluation": "compile-only; no functional scenario",
+    "missing_verification": "independent game-design review not yet possible",
+    "dependencies": ["unreal-cpp-compile", "unreal-game-design", "blender-unreal-asset-handoff"],
+    "target_maturity": "L4",
+    "priority": "P0",
+    "next_action": "complete Editor target/cook path, launch the map, and attach state/input/game-feel evidence"
+  },
+  "unreal-game-design": {
+    "missing_executable": "brief schema and traceability validator; no playable mechanic implementation yet",
+    "missing_observation": "no input telemetry, playtest capture, or game-feel measurements",
+    "missing_evaluation": "schema validation only; no controlled player study",
+    "missing_verification": "no independent game-design review of an actual playable slice",
+    "dependencies": ["game-development", "unreal-project-intelligence"],
+    "target_maturity": "L4",
+    "priority": "P0",
+    "next_action": "implement one traceable attunement mechanic in Unreal and collect first playtest evidence before promoting beyond L3"
+  },
+  "unreal-editor-commandline": {
+    "missing_executable": "bounded allowlisted commandlet runner exists; no Editor remote-control lifecycle yet",
+    "missing_observation": "captures commandlet stdout/stderr but not editor viewport or gameplay state",
+    "missing_evaluation": "DataValidation PASS on a clean Unreal 5.8 calibration project and expected plugin-load FAIL on legacy Nemesis/MyProject",
+    "missing_verification": "no independent clean-project launch review",
+    "dependencies": ["unreal-installation-health"],
+    "target_maturity": "L4",
+    "priority": "P1",
+    "next_action": "add a commandlet failure taxonomy and editor/Remote Control health probe without weakening timeout cleanup"
+  },
+  "unreal-runtime-observation": {
+    "missing_executable": "bounded game-target launch and log classification now exists",
+    "missing_observation": "no map/gameplay observation because loose-content runtime fails before map load",
+    "missing_evaluation": "startup/crash evidence exists; no playable scenario pass",
+    "missing_verification": "no independent review of gameplay footage",
+    "dependencies": ["unreal-cpp-compile", "unreal-project-intelligence"],
+    "target_maturity": "L3",
+    "priority": "P0",
+    "next_action": "unblock Editor target and cook/package, then add state-transition telemetry to the runtime observer"
+  },
+  "unreal-native-test-discovery": {
+    "missing_executable": "source-level discovery only; Unreal automation execution is unavailable without Editor target",
+    "missing_observation": "no test result/log evidence",
+    "missing_evaluation": "discovery count only",
+    "missing_verification": "none",
+    "dependencies": ["unreal-cpp-compile", "unreal-runtime-observation"],
+    "target_maturity": "L2",
+    "priority": "P0",
+    "next_action": "execute the discovered test through Unreal automation and capture pass/fail evidence"
+  },
+  "unreal-packaging-preflight": {
+    "missing_executable": "bounded BuildCookRun wrapper with explicit prerequisite preflight",
+    "missing_observation": "no packaged artifact because Editor target prerequisite is absent",
+    "missing_evaluation": "real missing-component blocker is detected and regression-recorded",
+    "missing_verification": "no executable hash or outside-Editor launch",
+    "dependencies": ["unreal-installation-health", "unreal-cpp-compile"],
+    "target_maturity": "L2",
+    "priority": "P0",
+    "next_action": "install Microsoft.Net.Component.4.8.SDK in the existing Build Tools instance, rerun BuildCookRun, and verify the packaged executable"
+  },
+  "capability-truth-audit": {
+    "missing_executable": "truth classifier over ontology providers and evidence paths",
+    "missing_observation": "does not observe live Claude session routing or model behavior",
+    "missing_evaluation": "eight focused ascension Golden Tasks exercise core classification boundaries",
+    "missing_verification": "no independent audit of classification policy yet",
+    "dependencies": ["ontology_check", "global-sync"],
+    "target_maturity": "L4",
+    "priority": "P0",
+    "next_action": "add mutation fixtures for stale evidence, missing providers, and false production-proof claims"
+  },
+  "mission-value-gate": {
+    "missing_executable": "deterministic mission schema and frozen-fixture drift detector",
+    "missing_observation": "no live workstream telemetry or historical score calibration",
+    "missing_evaluation": "bounded regression and Ashwake drift cases pass",
+    "missing_verification": "no independent review of value scoring decisions",
+    "dependencies": ["core-operating-system", "creative-intelligence-institute"],
+    "target_maturity": "L3",
+    "priority": "P0",
+    "next_action": "integrate gate at mission start and record allow/stop decisions without blocking ordinary small fixes"
+  },
+  "visual-evidence-evaluator": {
+    "missing_executable": "image diagnostics plus known-failure pattern blockers",
+    "missing_observation": "no semantic segmentation, video temporal analysis, or audio evidence",
+    "missing_evaluation": "known-bad Ashwake frame and clean canonical frame cases pass",
+    "missing_verification": "independent multimodal review remains required",
+    "dependencies": ["perceptual-readability-qa", "high-fidelity-reliability"],
+    "target_maturity": "L4",
+    "priority": "P0",
+    "next_action": "add a compact blinded multi-artifact image benchmark and route visual evidence to a vision-capable reviewer"
+  },
+  "evidence-based-model-selection": {
+    "missing_executable": "role selector over measured model Golden Task records",
+    "missing_observation": "no live task outcome feedback loop or stale-registry expiry",
+    "missing_evaluation": "current matrix covers code/debug/repo/research/text visual critique",
+    "missing_verification": "no independent model benchmark review",
+    "dependencies": ["model-benchmark", "9router-endpoint"],
+    "target_maturity": "L4",
+    "priority": "P0",
+    "next_action": "add stale-evidence expiry, task-specific confidence, and real image-payload visual tasks"
+  },
+  "capability-gap-discovery": {
+    "missing_executable": "ranked top-ten gap report from truth audit and lesson extraction",
+    "missing_observation": "no automatic frontier research or project-specific unknown discovery",
+    "missing_evaluation": "selected-first-three output and gap rationale are machine-readable",
+    "missing_verification": "no independent prioritization review",
+    "dependencies": ["capability-truth-audit", "evidence-ledger"],
+    "target_maturity": "L3",
+    "priority": "P1",
+    "next_action": "add evidence-backed frontier discovery from professional sources and project bootstrap results"
+  },
+  "creative-intelligence-institute": {
+    "missing_executable": "policy/configuration for knowledge, practice, judgment, and orchestration layers",
+    "missing_observation": "no per-discipline experience telemetry or tool mastery history",
+    "missing_evaluation": "policy is protected by focused drift and visual Golden Tasks",
+    "missing_verification": "no independent professional curriculum review",
+    "dependencies": ["capability-gap-discovery", "visual-evidence-evaluator"],
+    "target_maturity": "L3",
+    "priority": "P1",
+    "next_action": "add one bounded creative micro-lab outside Ashwake with before/after evidence and independent critique"
+  },
+  "repository-golden-tasks": {
+    "missing_executable": "Python semantic Golden Tasks plus multi-language index baseline",
+    "missing_observation": "no LSP/type-resolved references or runtime data flow",
+    "missing_evaluation": "Python fixture and multi-language fixture pass",
+    "missing_verification": "no independent repository architecture review",
+    "dependencies": ["ast-repository-index", "repository-audit"],
+    "target_maturity": "L4",
+    "priority": "P1",
+    "next_action": "expand fixtures for TypeScript/C++ contract mismatch and add LSP only where installed evidence justifies it"
+  },
+  "maturity-axes-contract": {
+    "missing_executable": "shared six-axis maturity and knowledge contract",
+    "missing_observation": "no project telemetry automatically populates each axis",
+    "missing_evaluation": "ontology and focused Golden Tasks protect non-inheritance semantics",
+    "missing_verification": "independent curriculum review pending",
+    "dependencies": ["capability-truth-audit"],
+    "target_maturity": "L4",
+    "priority": "P1",
+    "next_action": "attach axis observations to mission and lab evidence without collapsing scores"
+  },
+  "frontend-ui-ux-institute": {
+    "missing_executable": "institute policy plus frontend evidence contract",
+    "missing_observation": "no live browser state capture owned by the institute",
+    "missing_evaluation": "contract fixture catches missing responsive, keyboard, state, and performance evidence",
+    "missing_verification": "no human usability study or independent visual review on an unseen frontend",
+    "dependencies": ["frontend-quality-contract", "professional-resource-packs"],
+    "target_maturity": "L3",
+    "priority": "P1",
+    "next_action": "run a bounded unseen browser exercise with Playwright when a project surface is available"
+  },
+  "experience-game-design-institute": {
+    "missing_executable": "professional workflow and evidence policy",
+    "missing_observation": "no generalized playtest telemetry outside Ashwake fixture",
+    "missing_evaluation": "mission compiler routes game disciplines; runtime/game-feel quality remains unproven",
+    "missing_verification": "independent game-design review pending",
+    "dependencies": ["mission-compiler", "professional-resource-packs"],
+    "target_maturity": "L2",
+    "priority": "P1",
+    "next_action": "create one bounded unseen mechanic lab, not a new game"
+  },
+  "professional-resource-packs": {
+    "missing_executable": "three source-grounded JSON packs with workflow, failure, tool, and evidence mappings",
+    "missing_observation": "no retrieval/use telemetry or knowledge expiry process",
+    "missing_evaluation": "source presence and focused usage fixtures only",
+    "missing_verification": "no independent professional curriculum review",
+    "dependencies": ["web-research"],
+    "target_maturity": "L3",
+    "priority": "P1",
+    "next_action": "add source freshness checks and one transfer result per pack"
+  },
+  "mission-compiler": {
+    "missing_executable": "deterministic intent-to-disciplines/tools/evidence compiler",
+    "missing_observation": "no live session routing log or compiler feedback loop",
+    "missing_evaluation": "browser-game intent Golden Task passes",
+    "missing_verification": "independent mission-planning review pending",
+    "dependencies": ["founder-intent-routing", "capability-truth-audit"],
+    "target_maturity": "L3",
+    "priority": "P1",
+    "next_action": "compare compiled plans to expert-reviewed missions and record omissions"
+  },
+  "creative-apprenticeship": {
+    "missing_executable": "bounded micro-lab evidence and transfer evaluator",
+    "missing_observation": "does not inspect actual visual artifact semantics",
+    "missing_evaluation": "creative transfer fixture passes with causal critique and independent review marker",
+    "missing_verification": "human art review remains absent in fixture",
+    "dependencies": ["professional-resource-packs", "visual-evidence-evaluator"],
+    "target_maturity": "L3",
+    "priority": "P1",
+    "next_action": "replace schema-only transfer fixture with a real unseen render and independent review"
+  },
+  "frontend-quality-contract": {
+    "missing_executable": "declared frontend quality contract evaluator",
+    "missing_observation": "no direct Playwright/browser integration",
+    "missing_evaluation": "complete-evidence and score-only failure cases pass",
+    "missing_verification": "visual design and usability remain uncertified",
+    "dependencies": ["frontend-ui-ux-institute"],
+    "target_maturity": "L3",
+    "priority": "P1",
+    "next_action": "connect to a real browser state matrix without treating axe/Lighthouse as full certification"
   }
 }

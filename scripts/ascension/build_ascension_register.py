@@ -51,7 +51,7 @@ def main() -> int:
     register: dict = {
         "schema_version": 1,
         "register_id": "11vt-capability-ascension-register",
-        "generated": "2026-08-18",
+        "generated": "2026-08-22",
         "baseline_version": ontology["baseline_version"],
         "maturity_scale": scale,
         "principle": "maturity is never inflated; L5 requires real implementation + real use + failure test + regression test + independent review + documented limitations",

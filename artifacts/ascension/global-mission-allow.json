@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "kind": "mission-value-gate",
+  "decision": "ALLOW",
+  "blockers": [],
+  "missing_fields": [],
+  "missing_scores": [],
+  "frozen_fixture_detected": false,
+  "drift_signals": [],
+  "bounded_regression": false,
+  "scores": {
+    "global_capability_value": 5,
+    "project_value": 1,
+    "learning_value": 5,
+    "time_compute_cost": 2,
+    "redundancy": 1,
+    "opportunity_cost": 5
+  },
+  "interpretation": "value scoring is a planning control, not proof that the resulting work is high quality"
+}

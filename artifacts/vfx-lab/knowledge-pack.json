@@ -1,0 +1,53 @@
+{
+  "discipline": "VFX",
+  "knowledge_pack_version": "1.0.0",
+  "date": "2026-08-23",
+  "temporal_composition": {
+    "anticipation_phase": "Energy buildup before the main event. Duration: 100-400ms. Visual: converging particles, brightening glow, screen shake, charging particles, contracting energy. Purpose: tells player/viewer WHERE and WHEN impact will occur.",
+    "birth_phase": "The instant of impact. Duration: 1-3 frames. Visual: brightest flash, maximum particle density, sharp contrast against background. Purpose: peak visual punctuation — this is the screenshot moment.",
+    "primary_event": "The main visual read. Duration: 200-600ms. Visual: expanding shockwave, debris/sparks burst, energy ring, directional particle spray. This is what the viewer remembers.",
+    "secondary_event": "Follow-up elements. Duration: 400-1000ms. Visual: trailing sparks, secondary debris, smoke puffs, lingering glow, afterimage. Gives the event depth and complexity.",
+    "tertiary_detail": "Fine elements that reward close inspection. Duration: 500-2000ms. Visual: tiny embers, dust motes, light refraction artifacts, subtle ground scorch, heat shimmer. Separates professional VFX from basic.",
+    "dissipation": "The event fades out. Duration: 500-3000ms. Visual: particles fade/shrink, smoke dissipates, glow dims, debris settles, scorch marks remain. Must not just disappear — needs transition to rest state."
+  },
+  "three_visual_languages": {
+    "physical_debris": {
+      "primary_shapes": "Angular fragments, irregular chunks, directional spray from impact point",
+      "motion": "Gravity-influenced arcs, bounce on ground contact, secondary collision particles",
+      "color": "Scene-material-derived (concrete = gray, metal = warm gray, earth = brown)",
+      "value": "Wide range — bright flash at birth, dark debris in flight, midtone settled debris",
+      "timing": "Fast birth (1-2 frames flash), rapid primary spray (200ms), longer debris arcs (500-1000ms), slow dust settle (2000ms+)",
+      "energy_shape": "Spherical/hemispherical expansion from impact point"
+    },
+    "magical_energy": {
+      "primary_shapes": "Flowing ribbons, orbital particles, radial bursts, runic/symbolic shapes",
+      "motion": "Gravity-defying arcs, spiral trails, floating particle drift, oscillating intensity",
+      "color": "Saturated spectral colors (violet/cyan/magenta/gold), deliberate color harmony",
+      "value": "Bright at core, darker at edges. Emissive glow reads against dark backgrounds",
+      "timing": "Anticipation glow (200-400ms), explosive radial burst (100-300ms), lingering particle drift (1000-3000ms)",
+      "energy_shape": "Radial + spiral, often with symbolic concentric rings"
+    },
+    "technological_signal": {
+      "primary_shapes": "Scanlines, data streams, hexagonal grids, concentric rings, wireframe overlays",
+      "motion": "Linear propagation, scanning sweeps, grid expansion, data cascade, clean directional flow",
+      "color": "Signal colors (cyan, amber, green on dark), high contrast, limited palette",
+      "value": "Binary — bright signal lines on dark/transparent background. Few midtones.",
+      "timing": "Scanning buildup (200-300ms), grid pulse (100-200ms), data cascade fade (500-1500ms)",
+      "energy_shape": "Planar/2D-aligned grids, holographic projection cones, concentric data rings"
+    }
+  },
+  "diagnostic_framework": {
+    "particle_spam": "Too many particles with uniform size/brightness/speed. No hierarchy — everything fights for attention. Fix: reduce count, create size/speed hierarchy, use fewer but more deliberate elements.",
+    "constant_intensity": "The VFX maintains the same brightness throughout its lifecycle. No birth flash, no dissipation fade. Looks like a looping GIF. Fix: add alpha/size curve that peaks early and decays.",
+    "no_dissipation": "Particles disappear instantly or persist forever. Unnatural, jarring. Fix: add fade-out with slight size reduction and speed decay.",
+    "zero_environment_interaction": "VFX exists in isolation — no ground contact, no reflection on nearby surfaces, no shadow. Looks composited, not integrated. Fix: add ground plane interaction (decal/scorch), light contribution to scene.",
+    "gameplay_obscuring": "VFX blocks the player's view of important gameplay elements. Screen-space occupancy is too high. Fix: reduce opacity, move effects to periphery, use negative space in effect design.",
+    "overdraw_catastrophe": "Too many overlapping transparent particles causing GPU fill-rate issues. Fix: reduce particle count, use opaque particles where possible, limit screen coverage."
+  },
+  "niagara_mapping": {
+    "concept_structure": "System → Emitter → Module → Parameter",
+    "module_groups": "Spawn, Update, Particle State, Render",
+    "simulation_stages": "Modules execute in ordered groups within each frame",
+    "key_workflow": "Define emitter → configure spawn rate/distribution → add force/velocity modules → define particle update (color/size/rotation over lifetime) → configure renderer"
+  }
+}

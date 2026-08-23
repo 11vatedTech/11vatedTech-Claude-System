@@ -13,8 +13,8 @@ and an evidence pointer.
 ## Structure
 
 ```
-domains[]                       # 13 capability domains
-  └ capabilities[]              # 49 capabilities
+domains[]                       # 16 capability domains
+  └ capabilities[]              # 78 capabilities
       ├ providers[]             # kind: skill | agent | script | template |
       │                         #       tool | tool-degraded | 9router-endpoint
       ├ maturity                # L0..L5
@@ -58,8 +58,17 @@ regression gate.
 6. `three-d-pipeline` — Blender bridge, structured scene authoring, GLB export
 7. `asset-intelligence` — asset direction, provenance
 8. `visual-qa` — pixel diff, PSNR, visual QA direction, independent review
-9. `repo-runtime-intelligence` — repository audit, status, environment doctor, GPU
-10. `deployment-governance` — global sync, global validation, rollback
-11. `evaluation-lab` — routing, behavioral, regression, bootstrap, manifest, model benchmark
-12. `product-lifecycle` — bootstrap, lifecycle, release engineering, hooks
-13. `foundry-maintenance` — skill foundry, documentation canon, core OS
+9. `ascension-production-intelligence` — perceptual/composition QA, lighting, materials, environment, rigging, animation, VFX, cinematic, variant regression, cohesion
+10. `repo-runtime-intelligence` — repository audit, status, environment doctor, GPU
+11. `semantic-repository-intelligence` — AST index and repository golden tasks
+12. `deployment-governance` — global sync, global validation, rollback
+13. `evaluation-lab` — routing, behavioral, regression, bootstrap, manifest, model benchmark
+14. `product-lifecycle` — bootstrap, lifecycle, release engineering, hooks
+15. `foundry-maintenance` — skill foundry, documentation canon, core OS
+16. `unreal-game-studio` — game-design traceability, C++ compile, gameplay architecture graphing, installed-engine health, static project intelligence, governed Blender handoff, Editor-Python GLB import, pre-import contract validation, bounded command-line surface, runtime-failure observation, native-test discovery, and package preflight
+
+The Unreal entries remain intentionally narrow. Runtime observation and package
+preflight do not imply playable game quality; source-level native-test discovery
+does not imply test execution. Blueprint graph comprehension, game-feel quality,
+Gauntlet, profiling analysis, and packaged-build readiness require their own
+executable evidence.

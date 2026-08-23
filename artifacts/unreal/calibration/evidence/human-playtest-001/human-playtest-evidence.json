@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "kind": "ashwake-human-playtest-evidence",
+  "date": "2026-08-21",
+  "product": "Ashwake — The Last Reliquary",
+  "build": {
+    "package_report": "artifacts/unreal/health/ashwake-vfxactive-robust-1787287516561-package.json",
+    "package_verify_report": "artifacts/unreal/health/ashwake-vfxactive-robust-1787287516561-package-verify.json",
+    "gameplay_report": "artifacts/unreal/health/ashwake-vfxactive-robust-1787287516561-gameplay-scenario.json",
+    "content_contract_report": "artifacts/unreal/health/ashwake-vfxactive-robust-1787287516561-content-contract-cooked.json"
+  },
+  "evidence_type": "HUMAN_PLAYTEST_RUNTIME_SCREENSHOT",
+  "classification": "HIGH_FIDELITY_FAILURE_BASELINE_001",
+  "baseline_status": "FOUNDATIONAL_FAILURE",
+  "human_verdict": "Packaged build runs and is technically playable, but actual visual/game-design presentation remains a calibration prototype.",
+  "quality_state": {
+    "engineering_maturity": "E4",
+    "creative_maturity": {
+      "gameplay_systems": "C3",
+      "visual_experience": "C2",
+      "environment": "C1",
+      "level_design": "C2",
+      "vfx": "C2",
+      "audio": "C2_UNVERIFIED_PERCEPTUALLY",
+      "game_feel": "C2_UNVERIFIED_HUMAN_FEEL"
+    },
+    "fidelity_reliability": "R2",
+    "promotion_blockers": [
+      "extreme_black_crush_insufficient_environmental_visibility",
+      "test_chamber_checker_floor_appearance",
+      "almost_nonexistent_environment",
+      "hero_reliquary_forms_difficult_to_read",
+      "emissive_core_substitutes_for_material_and_form_readability",
+      "oversized_clipped_top_frame_relic_or_light",
+      "weak_camera_composition",
+      "simplistic_yellow_red_state_communication",
+      "functional_but_primitive_hud",
+      "no_signature_game_world_identity"
+    ]
+  },
+  "screenshots": [
+    {
+      "id": "founder-runtime-screenshot-001",
+      "evidence_type": "HUMAN_PLAYTEST_RUNTIME_SCREENSHOT",
+      "source": "Founder supplied in Claude session on 2026-08-21",
+      "description": "Initial packaged Ashwake view: amber/orange suspended reliquaries against near-black void, primitive HUD, checker floor barely visible.",
+      "authoritative_for": ["actual_packaged_runtime_visual_experience", "human_visible_readability", "composition_baseline"],
+      "observed_failures": ["extreme_black_crush_insufficient_environmental_visibility", "test_chamber_checker_floor_appearance", "hero_reliquary_forms_difficult_to_read", "functional_but_primitive_hud"]
+    },
+    {
+      "id": "founder-runtime-screenshot-002",
+      "evidence_type": "HUMAN_PLAYTEST_RUNTIME_SCREENSHOT",
+      "source": "Founder supplied in Claude session on 2026-08-21",
+      "description": "Gold state with visible suspended relics, high-frame subject clustering, weak environment, weak material/form readability.",
+      "authoritative_for": ["actual_packaged_runtime_visual_experience", "gold_state_readability_baseline"],
+      "observed_failures": ["weak_camera_composition", "almost_nonexistent_environment", "weak_spatial_grounding", "emissive_core_substitutes_for_material_and_form_readability"]
+    },
+    {
+      "id": "founder-runtime-screenshot-003",
+      "evidence_type": "HUMAN_PLAYTEST_RUNTIME_SCREENSHOT",
+      "source": "Founder supplied in Claude session on 2026-08-21",
+      "description": "Hostile red state reads mainly as red wash/floor illumination, with same primitive room and clipped overhead composition.",
+      "authoritative_for": ["actual_packaged_runtime_visual_experience", "hostile_state_readability_baseline"],
+      "observed_failures": ["simplistic_yellow_red_state_communication", "weak_vfx_sophistication", "oversized_clipped_top_frame_relic_or_light", "test_chamber_checker_floor_appearance"]
+    }
+  ],
+  "do_not_claim": ["POLISHED", "PRODUCTION", "SIGNATURE", "game_quality_pass_from_runtime_pass"],
+  "required_next_evidence": [
+    "perceptual_analysis_report",
+    "artistic_specialist_review_report",
+    "quality_debt_register",
+    "Ashwake_quality_contract",
+    "before_after_captures",
+    "Human_Playtest_2_blind_observation"
+  ]
+}

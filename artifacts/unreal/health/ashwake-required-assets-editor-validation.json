@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "kind": "ashwake-required-asset-validation",
+  "project": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\FoundryCalibration.uproject",
+  "manifest": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\ashwake-required-assets.json",
+  "source_checks": [
+    {
+      "id": "emberveil_attune_vfx",
+      "kind": "NiagaraSystem",
+      "package_path": "/Game/Calibration/VFX/NS_Emberveil_Attune",
+      "object_path": "/Game/Calibration/VFX/NS_Emberveil_Attune.NS_Emberveil_Attune",
+      "source_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Content\\Calibration\\VFX\\NS_Emberveil_Attune.uasset",
+      "source_exists": true
+    },
+    {
+      "id": "ashwake_attune_success_audio",
+      "kind": "SoundWave",
+      "package_path": "/Game/Calibration/Audio/S_Ashwake_AttuneSuccess",
+      "object_path": "/Game/Calibration/Audio/S_Ashwake_AttuneSuccess.S_Ashwake_AttuneSuccess",
+      "source_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Content\\Calibration\\Audio\\S_Ashwake_AttuneSuccess.uasset",
+      "source_exists": true
+    },
+    {
+      "id": "ashwake_attune_reject_audio",
+      "kind": "SoundWave",
+      "package_path": "/Game/Calibration/Audio/S_Ashwake_AttuneReject",
+      "object_path": "/Game/Calibration/Audio/S_Ashwake_AttuneReject.S_Ashwake_AttuneReject",
+      "source_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Content\\Calibration\\Audio\\S_Ashwake_AttuneReject.uasset",
+      "source_exists": true
+    },
+    {
+      "id": "ashwake_safe_window_audio",
+      "kind": "SoundWave",
+      "package_path": "/Game/Calibration/Audio/S_Ashwake_SafeWindow",
+      "object_path": "/Game/Calibration/Audio/S_Ashwake_SafeWindow.S_Ashwake_SafeWindow",
+      "source_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Content\\Calibration\\Audio\\S_Ashwake_SafeWindow.uasset",
+      "source_exists": true
+    },
+    {
+      "id": "ashwake_hostile_audio",
+      "kind": "SoundWave",
+      "package_path": "/Game/Calibration/Audio/S_Ashwake_Hostile",
+      "object_path": "/Game/Calibration/Audio/S_Ashwake_Hostile.S_Ashwake_Hostile",
+      "source_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Content\\Calibration\\Audio\\S_Ashwake_Hostile.uasset",
+      "source_exists": true
+    },
+    {
+      "id": "emberveil_idle_animation",
+      "kind": "AnimSequence",
+      "package_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root",
+      "object_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root.emberveil-canonical11vt_float_Emberveil_root",
+      "source_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Content\\Calibration\\Emberveil\\emberveil-canonical\\SkeletalMeshes\\emberveil-canonical11vt_float_Emberveil_root.uasset",
+      "source_exists": true
+    },
+    {
+      "id": "emberveil_safe_animation",
+      "kind": "AnimSequence",
+      "package_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_brass_band",
+      "object_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_brass_band.emberveil-canonical11vt_rotate_brass_band",
+      "source_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Content\\Calibration\\Emberveil\\emberveil-canonical\\SkeletalMeshes\\emberveil-canonical11vt_rotate_brass_band.uasset",
+      "source_exists": true
+    },
+    {
+      "id": "emberveil_hostile_animation",
+      "kind": "AnimSequence",
+      "package_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_pulse_ember_core",
+      "object_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_pulse_ember_core.emberveil-canonical11vt_pulse_ember_core",
+      "source_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Content\\Calibration\\Emberveil\\emberveil-canonical\\SkeletalMeshes\\emberveil-canonical11vt_pulse_ember_core.uasset",
+      "source_exists": true
+    },
+    {
+      "id": "emberveil_success_animation",
+      "kind": "AnimSequence",
+      "package_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_filigree_arc",
+      "object_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_filigree_arc.emberveil-canonical11vt_rotate_filigree_arc",
+      "source_file": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\Content\\Calibration\\Emberveil\\emberveil-canonical\\SkeletalMeshes\\emberveil-canonical11vt_rotate_filigree_arc.uasset",
+      "source_exists": true
+    }
+  ],
+  "cooked_checks": [],
+  "runtime_reference_warnings": [],
+  "editor_load": {
+    "schema_version": 1,
+    "kind": "ashwake-editor-asset-load",
+    "status": "PASS",
+    "checks": [
+      {
+        "id": "emberveil_attune_vfx",
+        "kind": "NiagaraSystem",
+        "object_path": "/Game/Calibration/VFX/NS_Emberveil_Attune.NS_Emberveil_Attune",
+        "loaded": true,
+        "loaded_class": "NiagaraSystem"
+      },
+      {
+        "id": "ashwake_attune_success_audio",
+        "kind": "SoundWave",
+        "object_path": "/Game/Calibration/Audio/S_Ashwake_AttuneSuccess.S_Ashwake_AttuneSuccess",
+        "loaded": true,
+        "loaded_class": "SoundWave"
+      },
+      {
+        "id": "ashwake_attune_reject_audio",
+        "kind": "SoundWave",
+        "object_path": "/Game/Calibration/Audio/S_Ashwake_AttuneReject.S_Ashwake_AttuneReject",
+        "loaded": true,
+        "loaded_class": "SoundWave"
+      },
+      {
+        "id": "ashwake_safe_window_audio",
+        "kind": "SoundWave",
+        "object_path": "/Game/Calibration/Audio/S_Ashwake_SafeWindow.S_Ashwake_SafeWindow",
+        "loaded": true,
+        "loaded_class": "SoundWave"
+      },
+      {
+        "id": "ashwake_hostile_audio",
+        "kind": "SoundWave",
+        "object_path": "/Game/Calibration/Audio/S_Ashwake_Hostile.S_Ashwake_Hostile",
+        "loaded": true,
+        "loaded_class": "SoundWave"
+      },
+      {
+        "id": "emberveil_idle_animation",
+        "kind": "AnimSequence",
+        "object_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root.emberveil-canonical11vt_float_Emberveil_root",
+        "loaded": true,
+        "loaded_class": "AnimSequence"
+      },
+      {
+        "id": "emberveil_safe_animation",
+        "kind": "AnimSequence",
+        "object_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_brass_band.emberveil-canonical11vt_rotate_brass_band",
+        "loaded": true,
+        "loaded_class": "AnimSequence"
+      },
+      {
+        "id": "emberveil_hostile_animation",
+        "kind": "AnimSequence",
+        "object_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_pulse_ember_core.emberveil-canonical11vt_pulse_ember_core",
+        "loaded": true,
+        "loaded_class": "AnimSequence"
+      },
+      {
+        "id": "emberveil_success_animation",
+        "kind": "AnimSequence",
+        "object_path": "/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_filigree_arc.emberveil-canonical11vt_rotate_filigree_arc",
+        "loaded": true,
+        "loaded_class": "AnimSequence"
+      }
+    ],
+    "editor_exit_code": 0,
+    "duration_seconds": 19.07,
+    "stdout_tail": "narCut.dll')\nLogModuleManager: InternalLoadLibrary: 'WaterEditor' ('C:/Program Files/Epic Games/UE_5.8/Engine/Plugins/Experimental/Water/Binaries/Win64/UnrealEditor-WaterEditor.dll')\nLogModuleManager: InternalLoadLibrary: 'ScribbleEditor' ('C:/Program Files/Epic Games/UE_5.8/Engine/Plugins/Experimental/Animation/Scribble/Binaries/Win64/UnrealEditor-ScribbleEditor.dll')\nLogModuleManager: InternalLoadLibrary: 'ActorPickerMode' ('C:/Program Files/Epic Games/UE_5.8/Engine/Binaries/Win64/UnrealEditor-ActorPickerMode.dll')\nLogModuleManager: InternalLoadLibrary: 'SceneDepthPickerMode' ('C:/Program Files/Epic Games/UE_5.8/Engine/Binaries/Win64/UnrealEditor-SceneDepthPickerMode.dll')\nLogModuleManager: InternalLoadLibrary: 'LandscapeEditor' ('C:/Program Files/Epic Games/UE_5.8/Engine/Binaries/Win64/UnrealEditor-LandscapeEditor.dll')\nLogModuleManager: InternalLoadLibrary: 'EditorWidgets' ('C:/Program Files/Epic Games/UE_5.8/Engine/Binaries/Win64/UnrealEditor-EditorWidgets.dll')\nLogModuleManager: InternalLoadLibrary: 'FoliageEdit' ('C:/Program Files/Epic Games/UE_5.8/Engine/Binaries/Win64/UnrealEditor-FoliageEdit.dll')\nLogModuleManager: InternalLoadLibrary: 'VirtualTexturingEditor' ('C:/Program Files/Epic Games/UE_5.8/Engine/Binaries/Win64/UnrealEditor-VirtualTexturingEditor.dll')\nLogPython: Display: Running start-up script C:/Program Files/Epic Games/UE_5.8/Engine/Plugins/Experimental/ToolsetRegistry/Content/Python/init_unreal.py... started...\nLogPython: Display: Running start-up script C:/Program Files/Epic Games/UE_5.8/Engine/Plugins/Experimental/ToolsetRegistry/Content/Python/init_unreal.py... took 182.206 ms\nLogPython: Display: Running start-up script C:/Program Files/Epic Games/UE_5.8/Engine/Plugins/Animation/IKRig/Content/Python/init_unreal.py... started...\nLogPython: Display: Running start-up script C:/Program Files/Epic Games/UE_5.8/Engine/Plugins/Animation/IKRig/Content/Python/init_unreal.py... took 6.747 ms (total: 188.953 ms)\nLogPython: Display: Running start-up script C:/Program Files/Epic Games/UE_5.8/Engine/Plugins/Animation/ControlRig/Content/Python/init_unreal.py... started...\nLogPython: registering <class 'ControlRigWorkflows.workflow_deformation_rig_preset.provider'>\n\n\nLogPython: Display: Running start-up script C:/Program Files/Epic Games/UE_5.8/Engine/Plugins/Animation/ControlRig/Content/Python/init_unreal.py... took 54.272 ms (total: 243.225 ms)\nLogPython: Python enabled via IPythonScriptPlugin::ForceEnablePythonAtRuntime: D:\\build\\++UE5\\Sync\\Engine\\Plugins\\Experimental\\PythonScriptPlugin\\Source\\PythonScriptPlugin\\Private\\PythonScriptCommandlet.cpp(43:30) int __cdecl UPythonScriptCommandlet::Main(const class FString &)\nSourceControl: Revision control is disabled\nLogPythonScriptCommandlet: Display: Running Python script: C:\\Users\\11vat\\AppData\\Local\\Temp\\tmpcmd9fiv4\\ashwake_editor_asset_check.py\nLogPython: {\"schema_version\": 1, \"kind\": \"ashwake-editor-asset-load\", \"status\": \"PASS\", \"checks\": [{\"id\": \"emberveil_attune_vfx\", \"kind\": \"NiagaraSystem\", \"object_path\": \"/Game/Calibration/VFX/NS_Emberveil_Attune.NS_Emberveil_Attune\", \"loaded\": true, \"loaded_class\": \"NiagaraSystem\"}, {\"id\": \"ashwake_attune_success_audio\", \"kind\": \"SoundWave\", \"object_path\": \"/Game/Calibration/Audio/S_Ashwake_AttuneSuccess.S_Ashwake_AttuneSuccess\", \"loaded\": true, \"loaded_class\": \"SoundWave\"}, {\"id\": \"ashwake_attune_reject_audio\", \"kind\": \"SoundWave\", \"object_path\": \"/Game/Calibration/Audio/S_Ashwake_AttuneReject.S_Ashwake_AttuneReject\", \"loaded\": true, \"loaded_class\": \"SoundWave\"}, {\"id\": \"ashwake_safe_window_audio\", \"kind\": \"SoundWave\", \"object_path\": \"/Game/Calibration/Audio/S_Ashwake_SafeWindow.S_Ashwake_SafeWindow\", \"loaded\": true, \"loaded_class\": \"SoundWave\"}, {\"id\": \"ashwake_hostile_audio\", \"kind\": \"SoundWave\", \"object_path\": \"/Game/Calibration/Audio/S_Ashwake_Hostile.S_Ashwake_Hostile\", \"loaded\": true, \"loaded_class\": \"SoundWave\"}, {\"id\": \"emberveil_idle_animation\", \"kind\": \"AnimSequence\", \"object_path\": \"/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root.emberveil-canonical11vt_float_Emberveil_root\", \"loaded\": true, \"loaded_class\": \"AnimSequence\"}, {\"id\": \"emberveil_safe_animation\", \"kind\": \"AnimSequence\", \"object_path\": \"/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_brass_band.emberveil-canonical11vt_rotate_brass_band\", \"loaded\": true, \"loaded_class\": \"AnimSequence\"}, {\"id\": \"emberveil_hostile_animation\", \"kind\": \"AnimSequence\", \"object_path\": \"/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_pulse_ember_core.emberveil-canonical11vt_pulse_ember_core\", \"loaded\": true, \"loaded_class\": \"AnimSequence\"}, {\"id\": \"emberveil_success_animation\", \"kind\": \"AnimSequence\", \"object_path\": \"/Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_rotate_filigree_arc.emberveil-canonical11vt_rotate_filigree_arc\", \"loaded\": true, \"loaded_class\": \"AnimSequence\"}]}\n\n\nLogPythonScriptCommandlet: Display: Python script executed successfully\nLogCore: Engine exit requested (reason: Commandlet PythonScriptCommandlet_0 finished execution (result 0))\nLogInit: Display: \nLogInit: Display: Success - 0 error(s), 0 warning(s)\nLogInit: Display: \n\nExecution of commandlet took:  0.50 seconds, PeakPhysMemoryMB=1684 MB, PeakVirtMemoryMB=1525 MB\nLogCore: Engine exit requested (reason: EngineExit() was called; note: exit was already requested)\nLogStaticMesh: Abandoning remaining async distance field tasks for shutdown\nLogStaticMesh: Abandoning remaining async card representation tasks for shutdown\nMassEntity: New Page: MassEntity\nLogMovieScene: USequencerBakeSubsystem subsystem deinitialized.\nLogToolsetRegistry: Display: Unregistering Toolset ToolsetRegistry.AgentSkillToolset\nLogTedsSettings: UTedsSettingsEditorSubsystem::Deinitialize\nLogLevelSequenceEditor: LevelSequenceEditor subsystem deinitialized.\nLogRuntimeTelemetry: Recording EnginePreExit events\nLogExit: Preparing to exit.\nLogUObjectHash: Compacting FUObjectHashTables data took   1.26ms\nLogPython: Display: Object '/ControlRig/Python/RigHierarchy/add_controls_for_selected_PY.ControlOutputFormat' was externally referenced when shutting down Python. Forcibly releasing its Python resources!\nLogAssetRegistry: Display: CleanupOrphanedCacheFiles (PostWrite): 1 .ref files found, 1 referenced binaries\nLogAssetRegistry: Display: CleanupOrphanedCacheFiles: 1 total binaries, 1 referenced (kept), 0 old-style pre-migration (kept), 0 orphans deleted, 0 orphans locked (kept)\nLogDemo: Cleaned up 0 splitscreen connections, owner deletion: enabled\nLogExit: Editor shut down\nLogEditorDataStorage: Destroyed TEDS Core.\nLogEditorDataStorage: Destroyed TEDS Compatibility.\nLogExit: Object subsystem successfully closed.\nLogShaderCompilers: Display: Exiting ShaderCompilingThread\nLogObjectProfiler: Shutdown\nLogMemoryProfiler: Shutdown\nLogNetworkingProfiler: Shutdown\nLogLoadingProfiler: Shutdown\nLogTimingProfiler: Shutdown\nLogChaosVDEditor: [FChaosVDExtensionsManager::UnRegisterExtension] UnRegistering CVD Extension [FChaosVDGenericDebugDrawExtension] ...\nLogChaosVDEditor: [FChaosVDExtensionsManager::UnRegisterExtension] UnRegistering CVD Extension [FChaosVDAccelerationStructuresExtension] ...\nLogChaosVDEditor: [FChaosVDExtensionsManager::UnRegisterExtension] UnRegistering CVD Extension [FChaosVDCameraTracesExtension] ...\nLogChaosVDEditor: [FChaosVDExtensionsManager::UnRegisterExtension] UnRegistering CVD Extension [FChaosVDParticleExtraDataExtension] ...\nLogChaosVDEditor: [FChaosVDExtensionsManager::UnRegisterExtension] UnRegistering CVD Extension [FPerformanceMetricsExtension] ...\nLogChaosDD: Chaos Debug Draw Shutdown\nLogNFORDenoise: NFORDenoise function shutting down\nLogEOSShared: FEOSSDKManager::Shutdown EOS_Shutdown Result=[EOS_Success]\nLogXGEController: Cleaning working directory: C:/Users/11vat/AppData/Local/Temp/UnrealXGEWorkingDir/\nLogPakFile: Destroying PakPlatformFile\nLogExit: Exiting.\n",
+    "stderr_tail": ""
+  },
+  "status": "PASS",
+  "failures": []
+}

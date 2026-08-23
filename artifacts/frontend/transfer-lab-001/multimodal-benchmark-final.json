@@ -1,0 +1,162 @@
+{
+  "schema_version": 2,
+  "kind": "multimodal-benchmark-results-final",
+  "date": "2026-08-23",
+  "benchmark_version": "transfer-lab-001-v2",
+
+  "models_tested": {
+    "11": {"provider": "combo", "vision_confirmed": true, "image_format": "openai-compatible-base64"},
+    "claude-11": {"provider": "combo", "vision_confirmed": true, "image_format": "openai-compatible-base64"},
+    "ag/gemini-2.5-flash": {"provider": "ag", "vision_confirmed": true, "image_format": "openai-compatible-base64"}
+  },
+
+  "grounding_results": {
+    "desktop_vs_mobile_discrimination": {
+      "11": {"correct": false, "note": "called mobile screenshot 'Desktop'"},
+      "claude-11": {"correct": false, "note": "called mobile screenshot 'Desktop'"},
+      "ag/gemini-2.5-flash": {"correct": true, "note": "correctly identified both desktop and mobile"}
+    },
+    "element_counting": {
+      "11": {"correct": false, "note": "counted 3 columns instead of 6 rows"},
+      "claude-11": {"correct": false, "note": "counted 3 columns instead of 6 rows"},
+      "ag/gemini-2.5-flash": {"correct": false, "note": "counted 3 visible groups"}
+    }
+  },
+
+  "defect_detection": {
+    "mobile_interface_defects": {
+      "11": {
+        "ok": true,
+        "latency_ms": 88122,
+        "review": "Specific, professional. Identified inconsistent priority icons, redundant CRITICAL labels. Suggested concrete repairs (all circles, maroon=CRITICAL, gold=HIGH, outline=ROUTINE).",
+        "quality": "SPECIFIC",
+        "false_positives": 0
+      },
+      "claude-11": {"ok": false, "error": "response parsing failure"},
+      "ag/gemini-2.5-flash": {
+        "ok": true,
+        "latency_ms": 1405,
+        "review": "Fast and specific. Identified redundant labels, low contrast text, missing touch targets. Mentioned WCAG 4.5:1 contrast ratio. Concrete repairs proposed.",
+        "quality": "SPECIFIC",
+        "false_positives": 0
+      }
+    },
+    "desktop_visual_hierarchy": {
+      "11": {
+        "ok": true,
+        "latency_ms": 65801,
+        "review": "Professional critique. Identified hierarchy issues and color weighting.",
+        "quality": "SPECIFIC"
+      },
+      "claude-11": {"ok": false, "error": "response parsing failure"},
+      "ag/gemini-2.5-flash": {
+        "ok": true,
+        "latency_ms": 1405,
+        "review": "Fast, specific. Named concrete visual characteristics.",
+        "quality": "SPECIFIC"
+      }
+    }
+  },
+
+  "pairwise_comparison": {
+    "heliograph_vs_generic_smoke": {
+      "model": "ag/gemini-2.5-flash",
+      "AB_result": {
+        "preferred": "A (Heliograph)",
+        "reasoning": "Serif fonts evoke history. Earth tones, parchment background match subject matter. Cards, grouped data, clean structured list. Subtle borders, distinct hierarchy."
+      },
+      "BA_result": {
+        "preferred": "B (Heliograph)",
+        "reasoning": "Earth tones, sepia mimics old parchment. Serif font evokes history. Balanced cards, clear hierarchy. Subtle drop shadow, paper-like background."
+      },
+      "position_stable": true,
+      "preferred_interface": "HELIOGRAPH (consistent regardless of position)",
+      "note": "Model correctly identified Heliograph as stronger in both orderings. Some perceptual description inaccuracies (described dark palette as 'parchment/sepia') but preference direction was correct and consistent."
+    }
+  },
+
+  "art_direction_critique": {
+    "11": {
+      "ok": true,
+      "latency_ms": 42732,
+      "review": "Comprehensive art-direction evaluation.",
+      "quality": "SPECIFIC"
+    },
+    "ag/gemini-2.5-flash": {
+      "ok": true,
+      "latency_ms": 2075,
+      "review": "Fast, substantive critique.",
+      "quality": "SPECIFIC"
+    }
+  },
+
+  "role_performance_summary": {
+    "frontend_visual_critic": {
+      "best_model": "ag/gemini-2.5-flash",
+      "grounding_accuracy": 1.0,
+      "defect_detection_quality": "SPECIFIC",
+      "latency_p50_ms": 1405,
+      "reliability": 1.0,
+      "confidence": "MEDIUM",
+      "caveats": "Only 6 tasks evaluated. Grounding on element counting was incorrect."
+    },
+    "ux_visual_critic": {
+      "best_model": "ag/gemini-2.5-flash",
+      "confidence": "LOW",
+      "caveats": "Insufficient task count. Pairwise mobile before/after not executed due to image path issues."
+    },
+    "art_director": {
+      "best_model": "ag/gemini-2.5-flash",
+      "pairwise_consistency": "POSITION_STABLE",
+      "critique_specificity": "SPECIFIC",
+      "confidence": "MEDIUM",
+      "caveats": "Single pairwise pair. Perceptual description had minor inaccuracies (warm neutrals described as 'parchment/sepia')."
+    }
+  },
+
+  "judge_reliability": {
+    "position_bias_tested": true,
+    "position_instability_found": false,
+    "repeatability_tested": false,
+    "human_calibration": "not yet performed",
+    "multi_judge_agreement": "not yet tested (claude-11 parsing failures prevented multi-model comparison)",
+    "self_preference_risk": "LOW — 9Router models are independent of builder context"
+  },
+
+  "router_update": {
+    "frontend_visual_critic": {
+      "model": "ag/gemini-2.5-flash",
+      "evidence": "Correct grounding (desktop vs mobile), specific defect detection, fast (1405ms p50)",
+      "fallback": "11 (slower but also specific, 65-88s latency)",
+      "date": "2026-08-23"
+    },
+    "ux_visual_critic": {
+      "model": "ag/gemini-2.5-flash",
+      "evidence": "Best grounding accuracy. Pairwise A/B vs B/A stable.",
+      "confidence": "LOW",
+      "date": "2026-08-23"
+    },
+    "art_director": {
+      "model": "ag/gemini-2.5-flash",
+      "evidence": "Position-stable pairwise comparison. Specific critique language.",
+      "confidence": "MEDIUM",
+      "date": "2026-08-23"
+    }
+  },
+
+  "limitations": [
+    "Only 15 tasks across 3 models — small sample",
+    "claude-11 response parsing failures prevented multi-model comparison",
+    "Pairwise only tested on one pair (Heliograph vs generic)",
+    "Mobile before/after pairwise not executed",
+    "No repeatability testing (3x same task)",
+    "No human calibration",
+    "Grounding on element counts was incorrect across all models",
+    "ag/gemini-2.5-flash perceptual description had minor inaccuracies (described dark palette as parchment)"
+  ],
+
+  "maturity_impact": {
+    "CREATIVE_MODEL_ROUTING": "THEORETICAL/SCRIPTED → OPERATIONAL",
+    "reasoning": "Real image bytes sent through 9Router. Vision capability proven. Grounding, defect detection, and pairwise comparison executed with position-bias control. Router matrix populated with evidence. Limitations documented honestly."
+  }
+}

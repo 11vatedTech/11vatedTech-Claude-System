@@ -1,0 +1,30 @@
+{
+  "op": "material.subsurface",
+  "params": {
+    "name": "Emberveil_Core_v2",
+    "base_color": [
+      1.0,
+      0.478,
+      0.102
+    ],
+    "roughness": 0.3,
+    "subsurface": 0.5,
+    "subsurface_color": [
+      1.0,
+      0.3,
+      0.05
+    ],
+    "emission": [
+      1.0,
+      0.478,
+      0.102
+    ],
+    "emission_strength": 25.0,
+    "assign_to": [
+      "ember_core"
+    ],
+    "out_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil",
+    "load_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend",
+    "save_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+  }
+}

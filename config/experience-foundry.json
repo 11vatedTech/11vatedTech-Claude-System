@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "system_id": "11VT_EXPERIENCE_FOUNDRY",
+  "date": "2026-08-21",
+  "doctrine": "Experience is a first-class asset. Reading docs or installing tools is not production experience.",
+  "professional_experience_capital": {
+    "KNOWLEDGE": "understands concepts and professional vocabulary",
+    "TOOL_ACCESS": "can invoke relevant software or API",
+    "OPERATIONAL_SKILL": "can successfully perform bounded task on real artifacts",
+    "PRODUCTION_EXPERIENCE": "has performed task inside realistic product constraints",
+    "CRITICAL_EXPERIENCE": "has failed, diagnosed, repaired, and retained lesson",
+    "MASTERED_CAPABILITY": "produces consistently strong results across materially different contexts under independent review"
+  },
+  "experience_levels": {
+    "E0": "unexposed",
+    "E1": "researched",
+    "E2": "controlled exercise completed",
+    "E3": "multiple exercises completed with critique",
+    "E4": "successfully used in real product",
+    "E5": "failed and repaired in real production",
+    "E6": "successful across different products/styles",
+    "E7": "repeatably produces professional-quality results under independent review"
+  },
+  "loop": [
+    "DISCOVER_DISCIPLINE",
+    "RESEARCH_PROFESSIONAL_PRACTICE",
+    "IDENTIFY_TOOLS",
+    "IDENTIFY_EXEMPLARS",
+    "STUDY_WORKFLOWS",
+    "PERFORM_CONTROLLED_EXERCISE",
+    "PRODUCE_ARTIFACT",
+    "REVIEW",
+    "FAIL_DIAGNOSE",
+    "REPAIR",
+    "REPEAT",
+    "APPLY_IN_REAL_PRODUCT",
+    "INDEPENDENT_REVIEW",
+    "HUMAN_REVIEW",
+    "DISTILL_LESSONS",
+    "CREATE_GOLDEN_TASK",
+    "RETAIN_EXPERIENCE"
+  ],
+  "source_quality_tiers": {
+    "TIER_A": ["official engine/tool documentation", "SIGGRAPH/GDC-style technical material", "peer-reviewed graphics/HCI research", "professional production breakdowns", "recognized studio talks", "engine/source-code truth"],
+    "TIER_B": ["high-quality specialist tutorials", "professional portfolios with breakdowns", "experienced practitioner articles", "open-source production projects"],
+    "TIER_C": ["community discussion useful for discovery only"]
+  },
+  "specialist_profiles": [
+    {
+      "id": "lighting_specialist",
+      "current_experience": "E1",
+      "ashwake_failure_pattern": "BLACK_VOID_ENVIRONMENT / EMISSION_AS_LIGHTING",
+      "next_learning_objective": "dark playable environment readability with motivated key/fill/rim/bounce, Lumen diagnostics, exposure lock, before/after captures",
+      "required_exercises": ["dark sanctuary readable subject", "emissive-in-frame exposure stability", "Lumen surface cache debug", "grayscale thumbnail readability"]
+    },
+    {
+      "id": "environment_level_specialist",
+      "current_experience": "E1",
+      "ashwake_failure_pattern": "LEVEL_AS_TEST_CHAMBER",
+      "next_learning_objective": "one-room reliquary route with start/landmark/tutorial/escalation/climax and environmental story cues",
+      "required_exercises": ["blockout path readability", "landmark silhouette pass", "environmental storytelling prop pass", "blind navigation capture"]
+    },
+    {
+      "id": "material_form_specialist",
+      "current_experience": "E1",
+      "ashwake_failure_pattern": "BLACK_BLOB_HERO_FORM",
+      "next_learning_objective": "reliquary surfaces readable under dark production lighting without relying on emissive discs",
+      "required_exercises": ["aged brass lookdev", "charred basalt lookdev", "dirty glass/ceramic lookdev", "edge highlight and roughness response test"]
+    },
+    {
+      "id": "state_feedback_vfx_specialist",
+      "current_experience": "E1",
+      "ashwake_failure_pattern": "STATE_EQUALS_COLOR_ONLY",
+      "next_learning_objective": "safe/hostile/success/failure language readable through motion, material, audio, environment, and UI, not hue alone",
+      "required_exercises": ["no-text safe window clip", "hostile without red clip", "success within 100ms feedback", "failure teaches too early/late"]
+    },
+    {
+      "id": "game_ui_specialist",
+      "current_experience": "E1",
+      "ashwake_failure_pattern": "GENERIC_DEBUG_HUD",
+      "next_learning_objective": "Ashwake HUD canon with coal progression, attunement state, interaction availability, and accessibility",
+      "required_exercises": ["diegetic reticle language", "grayscale UI contrast", "state-responsive HUD motion", "no-text mechanic teaching support"]
+    }
+  ],
+  "experience_ledger_required_fields": [
+    "context",
+    "goal",
+    "discipline",
+    "approach",
+    "tools",
+    "artifact",
+    "what_succeeded",
+    "what_failed",
+    "review_findings",
+    "human_findings",
+    "root_cause",
+    "repair",
+    "lesson",
+    "when_lesson_applies",
+    "when_lesson_does_not_apply",
+    "confidence",
+    "tool_or_engine_version",
+    "date"
+  ],
+  "case_studies": [
+    {
+      "id": "ASHWAKE_CASE_STUDY_001",
+      "title": "Technically valid packaged Unreal build with human-visible creative failure",
+      "evidence": "artifacts/unreal/calibration/evidence/human-playtest-001/human-playtest-evidence.json",
+      "primary_lessons": [
+        "automated runtime PASS cannot certify creative maturity",
+        "darkness without midtone form becomes black void",
+        "environment absence is level/art capability debt, not cosmetic polish",
+        "state markers active do not prove state language readable to player"
+      ]
+    }
+  ]
+}

@@ -63,7 +63,7 @@ When metadata exists, consider:
 
 ## Multi-model intelligence
 
-For important decisions, use multiple models for independent critique, but synthesize by evidence. Majority vote is not truth.
+For important decisions, use multiple models for independent critique, but synthesize by evidence. Majority vote is not truth. Use `scripts/validate/model_golden_tasks.py` to refresh measured task results and `scripts/validate/model_router.py` for role selection. The current matrix is evidence, not a permanent hardcoded truth; it explicitly does not certify multimodal visual quality from text-only tasks.
 
 ## Current observed environment on 2026-08-15
 

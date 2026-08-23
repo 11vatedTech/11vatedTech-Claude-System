@@ -1,0 +1,19 @@
+{
+  "test": "FoundryCalibration.Gameplay.GameStateTransitions",
+  "result": "SUCCESS",
+  "evidence": {
+    "line_33": "LogCsvProfiler: Display: Metadata set : commandline=\"\" C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/artifacts/unreal/calibration/FoundryCalibration.uproject -ExecCmds=\"Automation RunTests FoundryCalibration.Gameplay.GameStateTransitions;Quit\" -TestExit=\"Automation Test Queue Empty\" -Unattended -NullRHI -NoSound -NoSplash -NoStdOut -Messaging -log\"\"",
+    "line_465": "LogInit: Command Line: -ExecCmds=\"Automation RunTests FoundryCalibration.Gameplay.GameStateTransitions;Quit\" -TestExit=\"Automation Test Queue Empty\" -Unattended -NullRHI -NoSound -NoSplash -NoStdOut -Messaging -log",
+    "line_1796": "[2026.08.20-05.03.00:939][  0]Cmd: Automation RunTests FoundryCalibration.Gameplay.GameStateTransitions;Quit",
+    "line_1797": "[2026.08.20-05.03.00:943][  0]Automation: RunTests='FoundryCalibration.Gameplay.GameStateTransitions' Queued.",
+    "line_1817": "[2026.08.20-05.03.07:952][234]LogAutomationCommandLine: Display: Found 1 automation tests based on 'FoundryCalibration.Gameplay.GameStateTransitions'",
+    "line_1818": "[2026.08.20-05.03.07:952][234]LogAutomationCommandLine: Display: \tFoundryCalibration.Gameplay.GameStateTransitions",
+    "line_1824": "[2026.08.20-05.03.07:967][235]LogAutomationController: Display: Test Started. Name={GameStateTransitions} Path={FoundryCalibration.Gameplay.GameStateTransitions}",
+    "line_1828": "[2026.08.20-05.03.08:033][237]LogAutomationController: Display: Test Completed. Result={Success} Name={GameStateTransitions} Path={FoundryCalibration.Gameplay.GameStateTransitions}",
+    "line_1829": "[2026.08.20-05.03.08:033][237]LogAutomationController: BeginEvents: FoundryCalibration.Gameplay.GameStateTransitions",
+    "line_1830": "[2026.08.20-05.03.08:033][237]LogAutomationController: EndEvents: FoundryCalibration.Gameplay.GameStateTransitions"
+  },
+  "sdk_prerequisite": "RESOLVED",
+  "sdk_location": "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8",
+  "sdk_version": "4.8.03928"
+}

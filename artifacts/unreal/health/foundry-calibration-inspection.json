@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "kind": "unreal-project-inspection",
+  "project": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration\\FoundryCalibration.uproject",
+  "root": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\unreal\\calibration",
+  "metadata": {
+    "FileVersion": 3,
+    "EngineAssociation": "5.8",
+    "Category": "11vatedTech Foundry",
+    "Description": "Minimal Unreal Game Studio calibration project; commandlet validation only."
+  },
+  "modules": [],
+  "enabled_plugins": [
+    "DataValidation",
+    "PythonScriptPlugin",
+    "RemoteControl",
+    "EnhancedInput",
+    "Niagara",
+    "ControlRig",
+    "PCG"
+  ],
+  "content": {
+    "files_by_extension": {
+      ".ini": 1
+    },
+    "maps": [],
+    "source_files": 0,
+    "classes": []
+  },
+  "startup_maps": [],
+  "warnings": [
+    "no_configured_startup_map",
+    "no_project_maps_found"
+  ],
+  "static_inspection_only": true
+}

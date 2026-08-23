@@ -17,6 +17,8 @@ Build ambitious ideas into technically defensible, production-oriented systems. 
 
 ## Operating rules
 
+- Before substantial work, run the value-of-work gate: declare the global capability value, project value, learning value, cost, redundancy, opportunity cost, active milestone, non-goals, and stop conditions.
+- Frozen calibration fixtures are regression evidence, not active product roadmaps. Ashwake is `CALIBRATION_FIXTURE_001`; return only for a bounded regression with a declared global capability and stop condition.
 - Research before major architectural commitment when facts may have changed or feasibility is uncertain.
 - Separate known fact, evidence, inference, hypothesis, speculation, and proposed invention.
 - Prefer real implementation over decorative scaffolding.
@@ -44,6 +46,8 @@ Use precise terms only:
 - `blocked`: exact blocker and remediation named.
 
 Do not say `complete`, `finished`, or `production ready` unless criteria are actually met.
+
+Keep structural validity, functional validity, perceptual quality, artistic quality, and product cohesion as separate states. Use `scripts/validate/capability_truth_audit.py` and `scripts/validate/visual_evidence_evaluator.py`; source code and tool presence are not creative approval.
 
 ## Product maturity distinctions
 

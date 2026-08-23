@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "kind": "mission-value-gate",
+  "decision": "STOP_AND_REPLAN",
+  "blockers": [
+    "missing_required_mission_fields",
+    "missing_value_scores",
+    "no_stop_condition"
+  ],
+  "missing_fields": [
+    "mission_id",
+    "primary_objective",
+    "active_milestone",
+    "non_goals",
+    "stop_conditions",
+    "task"
+  ],
+  "missing_scores": [
+    "global_capability_value",
+    "project_value",
+    "learning_value",
+    "time_compute_cost",
+    "redundancy",
+    "opportunity_cost"
+  ],
+  "frozen_fixture_detected": false,
+  "drift_signals": [],
+  "bounded_regression": false,
+  "scores": {},
+  "interpretation": "value scoring is a planning control, not proof that the resulting work is high quality"
+}

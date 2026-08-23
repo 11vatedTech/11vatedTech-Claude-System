@@ -1,0 +1,6 @@
+{
+  "model": "ag/gemini-2.5-flash",
+  "latency_ms": 3002,
+  "response": "### Composition A\n1. Eye: 0.72\", Headline, Body.\n2. Hierarchy: Value focus.\n3. Clear. Centered layout forces vertical scan.\n\n### Composition B\n1. Eye: Headline, 0.72\", Body.\n2. Hierarchy: Concept focus.\n3. Clear. Left-heavy alignment creates strong reading path.\n\n### Composition C\n1. Eye: Headline, 0.72\", Left text.\n2. Hierarchy: Confused.\n3. Confused. Divided columns break reading flow, force erratic eye movement.\n\n### Composition D\n1. Eye: 0.72\", Subtext, Body.\n2. Hierarchy: Metric focus.\n3. Clear. High scale contrast and background block create instant focal pull.\n\n### Composition E\n1. Eye: Headline, 0.72\", Body.\n2. Hierarchy: Editorial focus.\n3. Clear. Left margin line acts as anchor for primary information.\n\n---\n\n### Ranking\n1. **D** (Strongest: Immediate impact)\n2. **B** (Balanced: Logical flow)\n3. **E** (Sophisticated: Good use of negative space)\n4. **A** (Classic: Predictable)\n5. **C** (Weakest: Disruptive)\n\n---\n\n### Weakest: Composition C\n- **Weakness:** Forced columnar split of single block of text.\n- **Discipline:** Typography and Grid systems.\n- **Repair:** Remove column split. Revert to full-width text alignment beneath headline to restore logical eye path and improve proximity.",
+  "date": "2026-08-23T05:32:36Z"
+}

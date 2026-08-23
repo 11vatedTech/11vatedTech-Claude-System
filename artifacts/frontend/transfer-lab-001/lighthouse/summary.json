@@ -1,0 +1,68 @@
+{
+  "runs": [
+    {
+      "run": 1,
+      "performance": 92,
+      "accessibility": 100,
+      "best_practices": 96,
+      "lcp": "2.7\u00a0s",
+      "cls": "0",
+      "tbt": "0\u00a0ms",
+      "fcp": "2.7\u00a0s",
+      "speed_index": "2.8\u00a0s"
+    },
+    {
+      "run": 2,
+      "performance": 92,
+      "accessibility": 100,
+      "best_practices": 96,
+      "lcp": "2.7\u00a0s",
+      "cls": "0",
+      "tbt": "0\u00a0ms",
+      "fcp": "2.7\u00a0s",
+      "speed_index": "2.8\u00a0s"
+    },
+    {
+      "run": 3,
+      "performance": 98,
+      "accessibility": 100,
+      "best_practices": 96,
+      "lcp": "1.6\u00a0s",
+      "cls": "0.087",
+      "tbt": "0\u00a0ms",
+      "fcp": "1.6\u00a0s",
+      "speed_index": "1.6\u00a0s"
+    }
+  ],
+  "count": 3,
+  "median_performance": 92,
+  "median_accessibility": 100,
+  "median_best_practices": 96,
+  "lcp_samples": [
+    "2.7\u00a0s",
+    "2.7\u00a0s",
+    "1.6\u00a0s"
+  ],
+  "cls_samples": [
+    "0",
+    "0",
+    "0.087"
+  ],
+  "tbt_samples": [
+    "0\u00a0ms",
+    "0\u00a0ms",
+    "0\u00a0ms"
+  ],
+  "fcp_samples": [
+    "2.7\u00a0s",
+    "2.7\u00a0s",
+    "1.6\u00a0s"
+  ],
+  "speed_index_samples": [
+    "2.8\u00a0s",
+    "2.8\u00a0s",
+    "1.6\u00a0s"
+  ],
+  "note": "INP not measured \u2014 Lighthouse lab data, not field RUM",
+  "captured_at": "2026-08-23T05:02:30Z"
+}

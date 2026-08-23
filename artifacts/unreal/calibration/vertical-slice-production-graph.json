@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "kind": "unreal-vertical-slice-production-graph",
+  "title": "Emberveil: The Last Reliquary",
+  "nodes": [
+    {
+      "id": "design",
+      "kind": "design",
+      "label": "Emberveil: The Last Reliquary",
+      "evidence": [
+        "artifacts/unreal/calibration/emberveil-game-design.json"
+      ]
+    },
+    {
+      "id": "input",
+      "kind": "runtime",
+      "label": "Enhanced Input actions and mapping context",
+      "evidence": [
+        "artifacts/unreal/calibration/Source/FoundryCalibration/FoundryPlayerCharacter.cpp"
+      ]
+    },
+    {
+      "id": "player",
+      "kind": "gameplay",
+      "label": "player character movement and camera",
+      "evidence": [
+        "artifacts/unreal/calibration/Source/FoundryCalibration/FoundryPlayerCharacter.cpp",
+        "artifacts/unreal/health/foundry-compile-evidence.json"
+      ]
+    },
+    {
+      "id": "state",
+      "kind": "gameplay",
+      "label": "explicit START/PLAYING/SUCCESS/FAILURE/RESTART state",
+      "evidence": [
+        "artifacts/unreal/calibration/Source/FoundryCalibration/FoundryGameState.cpp",
+        "artifacts/unreal/health/foundry-compile-evidence.json"
+      ]
+    },
+    {
+      "id": "reliquary",
+      "kind": "gameplay",
+      "label": "attunement mechanic and deterministic shrine response",
+      "evidence": [
+        "artifacts/unreal/calibration/Source/FoundryCalibration/FoundryRelicActor.cpp"
+      ]
+    },
+    {
+      "id": "level",
+      "kind": "world",
+      "label": "designed shrine chamber and recoverable encounter path",
+      "evidence": [
+        "artifacts/unreal/calibration/map-authoring-report.json"
+      ]
+    },
+    {
+      "id": "challenge",
+      "kind": "ai",
+      "label": "deterministic shrine-response state machine",
+      "evidence": [
+        "artifacts/unreal/calibration/Source/FoundryCalibration/FoundryRelicActor.cpp"
+      ]
+    },
+    {
+      "id": "mesh",
+      "kind": "asset",
+      "label": "Emberveil imported skeletal mesh and authored environment assets",
+      "evidence": [
+        "artifacts/unreal/calibration/emberveil-game-design.json",
+        "artifacts/unreal/health/foundry-calibration-datavalidation-vfx.json"
+      ]
+    },
+    {
+      "id": "materials",
+      "kind": "asset",
+      "label": "parameterized brass/glass/core material instances",
+      "evidence": [
+        "artifacts/unreal/health/foundry-calibration-datavalidation-vfx.json"
+      ]
+    },
+    {
+      "id": "animation",
+      "kind": "animation",
+      "label": "player locomotion, attune action, reliquary pulse, hostile surge, success ignition, failure recoil",
+      "evidence": [
+        "artifacts/unreal/health/foundry-calibration-datavalidation-vfx.json"
+      ]
+    },
+    {
+      "id": "vfx",
+      "kind": "vfx",
+      "label": "SAFE_WINDOW, HOSTILE",
+      "evidence": [
+        "artifacts/unreal/calibration/niagara-calibration-report.json"
+      ]
+    },
+    {
+      "id": "audio",
+      "kind": "audio",
+      "label": "chamber ambience, pulse tick, attune confirmation, hostile warning, success ignition, failure recoil",
+      "evidence": [
+        "artifacts/unreal/calibration/audio-import-report.json"
+      ]
+    },
+    {
+      "id": "ui",
+      "kind": "ui",
+      "label": "state label, coal progress, interaction prompt, failure/restart prompt, reduced-motion and high-contrast modes",
+      "evidence": [
+        "artifacts/unreal/calibration/Source/FoundryCalibration/FoundryHUD.cpp"
+      ]
+    },
+    {
+      "id": "tests",
+      "kind": "verification",
+      "label": "native state tests, functional scenario, content validation",
+      "evidence": [
+        "artifacts/unreal/calibration/Source/FoundryCalibration/FoundryGameStateTests.cpp",
+        "artifacts/unreal/health/native-test-discovery.json",
+        "artifacts/unreal/health/foundry-calibration-datavalidation-vfx.json"
+      ]
+    },
+    {
+      "id": "runtime",
+      "kind": "observation",
+      "label": "play capture, logs, state telemetry, visual QA",
+      "evidence": [
+        "artifacts/unreal/health/foundry-runtime-observation-trace.json"
+      ]
+    },
+    {
+      "id": "package",
+      "kind": "release",
+      "label": "Windows packaged build and launch verification",
+      "evidence": [
+        "artifacts/unreal/health/foundry-package-preflight.json"
+      ]
+    },
+    {
+      "id": "mechanic-attunement",
+      "kind": "mechanic",
+      "label": "attunement",
+      "evidence": [
+        "planned: unreal gameplay test",
+        "planned: playtest capture"
+      ]
+    },
+    {
+      "id": "mechanic-ember-routing",
+      "kind": "mechanic",
+      "label": "ember-routing",
+      "evidence": [
+        "planned: level-design review"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "design",
+      "to": "input",
+      "relation": "requires"
+    },
+    {
+      "from": "input",
+      "to": "player",
+      "relation": "drives"
+    },
+    {
+      "from": "player",
+      "to": "reliquary",
+      "relation": "enables"
+    },
+    {
+      "from": "reliquary",
+      "to": "state",
+      "relation": "mutates"
+    },
+    {
+      "from": "state",
+      "to": "challenge",
+      "relation": "controls"
+    },
+    {
+      "from": "challenge",
+      "to": "level",
+      "relation": "occupies"
+    },
+    {
+      "from": "level",
+      "to": "mesh",
+      "relation": "uses"
+    },
+    {
+      "from": "mesh",
+      "to": "materials",
+      "relation": "assigns"
+    },
+    {
+      "from": "reliquary",
+      "to": "animation",
+      "relation": "synchronizes"
+    },
+    {
+      "from": "reliquary",
+      "to": "vfx",
+      "relation": "signals"
+    },
+    {
+      "from": "reliquary",
+      "to": "audio",
+      "relation": "signals"
+    },
+    {
+      "from": "state",
+      "to": "ui",
+      "relation": "drives"
+    },
+    {
+      "from": "state",
+      "to": "tests",
+      "relation": "verified_by"
+    },
+    {
+      "from": "tests",
+      "to": "runtime",
+      "relation": "observed_in"
+    },
+    {
+      "from": "runtime",
+      "to": "package",
+      "relation": "qualifies"
+    },
+    {
+      "from": "design",
+      "to": "mechanic-attunement",
+      "relation": "traces"
+    },
+    {
+      "from": "mechanic-attunement",
+      "to": "reliquary",
+      "relation": "implemented_by"
+    },
+    {
+      "from": "mechanic-attunement",
+      "to": "tests",
+      "relation": "tested_by"
+    },
+    {
+      "from": "design",
+      "to": "mechanic-ember-routing",
+      "relation": "traces"
+    },
+    {
+      "from": "mechanic-ember-routing",
+      "to": "reliquary",
+      "relation": "implemented_by"
+    },
+    {
+      "from": "mechanic-ember-routing",
+      "to": "tests",
+      "relation": "tested_by"
+    }
+  ],
+  "quality_ladder": "BLOCKOUT",
+  "evidence_semantics": "Evidence pointers prove implementation or inspection only; they do not promote quality without runtime/playtest evidence.",
+  "limitations": [
+    "Graph derivation does not prove the referenced runtime systems exist until Unreal project inspection and play evidence are attached.",
+    "Runtime currently fails before map load because loose-content asset registry/cook evidence is unavailable."
+  ]
+}

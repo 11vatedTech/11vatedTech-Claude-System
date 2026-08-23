@@ -1,0 +1,108 @@
+{
+  "states": [
+    {
+      "state": "default",
+      "aria_snapshot": "- banner:\n  - heading \"Heliograph\" [level=1]\n  - paragraph: Solar Observation Planning \u2014 Hale Observing Station\n  - text: \"2026-08-23 05:30:00 UTC System nominal Seeing: 0.82\u2033 Solar X-ray: C2.3\"\n- main:\n  - list \"Observation windows\":\n    - listitem \"Observation window AR 13354, confidence 87%\": 2026-08-24 10:45 UTC 90 min AR 13354 N18\u00b0 W42\u00b0 87% HMI/SOT URGENT\n    - listitem \"Observation window AR 13352, confidence 72%\": 2026-08-24 13:30 UTC 90 min AR 13352 S12\u00b0 E08\u00b0 72% AIA HIGH\n    - listitem \"Observation window Filament N45, confidence 91%\": 2026-08-24 16:00 UTC 75 min Filament N45 N45\u00b0 W60\u00b0 91% H-alpha Lyot URGENT\n    - listitem \"Observation window CH 892, confidence 58%\": 2026-08-24 18:30 UTC 90 min CH 892 S30\u00b0 W25\u00b0 58% EIS ROUTINE\n    - listitem \"Observation window AR 13354, confidence 78%\": 2026-08-24 21:00 UTC 90 min AR 13354 N18\u00b0 W50\u00b0 78% IBIS HIGH\n    - listitem \"Observation window Limb N85, confidence 34%\": 2026-08-24 23:15 UTC 45 min Limb N85 N85\u00b0 E90\u00b0 34% H-alpha Lyot ROUTINE\n- contentinfo: HELIOGRAPH v1.0 \u2014 Transfer Lab 001 UTC \u00b7 Hale Observing Station \u00b7 2026-08-23"
+    },
+    {
+      "state": "detail-open",
+      "aria_snapshot": "- banner:\n  - heading \"Heliograph\" [level=1]\n  - paragraph: Solar Observation Planning \u2014 Hale Observing Station\n  - text: \"2026-08-23 05:30:00 UTC System nominal Seeing: 0.82\u2033 Solar X-ray: C2.3\"\n- main:\n  - list \"Observation windows\":\n    - listitem \"Observation window AR 13354, confidence 87%\":\n      - text: 2026-08-24 10:45 UTC 90 min AR 13354 N18\u00b0 W42\u00b0 87% HMI/SOT URGENT Target AR 13354 \u2014 Active Region Coordinates N18\u00b0 W42\u00b0 Instrument Helioseismic & Magnetic Imager / Solar Optical Telescope Window 2026-08-24 10:45 UTC \u2192 2026-08-24 12:15 UTC (90 min) Seeing forecast 0.72\u2033 Transparency 91%\n      - heading \"Recommendation Rationale\" [level=3]\n      - paragraph: Outstanding seeing forecast (0.72\u2033) combined with high magnetic shear in AR 13354. This region produced three M-class flares in the past 48 hours and is rotating into a favorable disk position. The HMI vector magnetogram cadence aligns with the predicted emergence of new flux. Recommend this window.\n      - text: Exceptional seeing High flare probability Favorable disk position Instrument warm-up required\n      - button \"Select this observation\"\n      - button \"Close details\"\n    - listitem \"Observation window AR 13352, confidence 72%\": 2026-08-24 13:30 UTC 90 min AR 13352 S12\u00b0 E08\u00b0 72% AIA HIGH\n    - listitem \"Observation window Filament N45, confidence 91%\": 2026-08-24 16:00 UTC 75 min Filament N45 N45\u00b0 W60\u00b0 91% H-alpha Lyot URGENT\n    - listitem \"Observation window CH 892, confidence 58%\": 2026-08-24 18:30 UTC 90 min CH 892 S30\u00b0 W25\u00b0 58% EIS ROUTINE\n    - listitem \"Observation window AR 13354, confidence 78%\": 2026-08-24 21:00 UTC 90 min AR 13354 N18\u00b0 W50\u00b0 78% IBIS HIGH\n    - listitem \"Observation window Limb N85, confidence 34%\": 2026-08-24 23:15 UTC 45 min Limb N85 N85\u00b0 E90\u00b0 34% H-alpha Lyot ROUTINE\n- contentinfo: HELIOGRAPH v1.0 \u2014 Transfer Lab 001 UTC \u00b7 Hale Observing Station \u00b7 2026-08-23"
+    },
+    {
+      "state": "confirmed",
+      "aria_snapshot": "- banner:\n  - heading \"Heliograph\" [level=1]\n  - paragraph: Solar Observation Planning \u2014 Hale Observing Station\n  - text: \"2026-08-23 05:30:01 UTC System nominal Seeing: 0.82\u2033 Solar X-ray: C2.3\"\n- main:\n  - list \"Observation windows\":\n    - listitem \"Observation window AR 13354, confidence 87%\": 2026-08-24 10:45 UTC 90 min AR 13354 N18\u00b0 W42\u00b0 87% HMI/SOT URGENT\n    - listitem \"Observation window AR 13352, confidence 72%\": 2026-08-24 13:30 UTC 90 min AR 13352 S12\u00b0 E08\u00b0 72% AIA HIGH\n    - listitem \"Observation window Filament N45, confidence 91%\": 2026-08-24 16:00 UTC 75 min Filament N45 N45\u00b0 W60\u00b0 91% H-alpha Lyot URGENT\n    - listitem \"Observation window CH 892, confidence 58%\": 2026-08-24 18:30 UTC 90 min CH 892 S30\u00b0 W25\u00b0 58% EIS ROUTINE\n    - listitem \"Observation window AR 13354, confidence 78%\": 2026-08-24 21:00 UTC 90 min AR 13354 N18\u00b0 W50\u00b0 78% IBIS HIGH\n    - listitem \"Observation window Limb N85, confidence 34%\": 2026-08-24 23:15 UTC 45 min Limb N85 N85\u00b0 E90\u00b0 34% H-alpha Lyot ROUTINE\n- contentinfo: HELIOGRAPH v1.0 \u2014 Transfer Lab 001 UTC \u00b7 Hale Observing Station \u00b7 2026-08-23"
+    }
+  ],
+  "keyboard_task": {
+    "task_complete_keyboard_only": false,
+    "steps": [
+      {
+        "step": 1,
+        "key": "Tab",
+        "description": "Focus first observation row",
+        "focused": {
+          "tag": "DIV",
+          "label": "Observation window AR 13354, confidence 87%",
+          "ariaExpanded": "false",
+          "role": "listitem",
+          "text": "2026-08-24 10:45 UTC\n          90 min\n        \n   "
+        }
+      },
+      {
+        "step": 2,
+        "key": "Enter",
+        "description": "Select row (open detail)",
+        "focused": {
+          "tag": "DIV",
+          "label": "Observation window AR 13354, confidence 87%",
+          "ariaExpanded": "true",
+          "role": "listitem",
+          "text": "2026-08-24 10:45 UTC\n          90 min\n        \n   "
+        }
+      },
+      {
+        "step": 3,
+        "key": "Tab",
+        "description": "Focus into detail panel",
+        "focused": {
+          "tag": "BUTTON",
+          "label": "",
+          "ariaExpanded": null,
+          "role": "",
+          "text": "Select this observation"
+        }
+      },
+      {
+        "step": 4,
+        "key": "Tab",
+        "description": "Focus next detail element",
+        "focused": {
+          "tag": "BUTTON",
+          "label": "",
+          "ariaExpanded": null,
+          "role": "",
+          "text": "Close details"
+        }
+      },
+      {
+        "step": 5,
+        "key": "Tab",
+        "description": "Focus next detail element",
+        "focused": {
+          "tag": "DIV",
+          "label": "Observation window AR 13352, confidence 72%",
+          "ariaExpanded": "false",
+          "role": "listitem",
+          "text": "2026-08-24 13:30 UTC\n          90 min\n        \n   "
+        }
+      },
+      {
+        "step": 6,
+        "key": "Tab",
+        "description": "Focus Select button",
+        "focused": {
+          "tag": "DIV",
+          "label": "Observation window Filament N45, confidence 91%",
+          "ariaExpanded": "false",
+          "role": "listitem",
+          "text": "2026-08-24 16:00 UTC\n          75 min\n        \n   "
+        }
+      },
+      {
+        "step": 7,
+        "key": "Enter",
+        "description": "Confirm observation",
+        "focused": {
+          "tag": "DIV",
+          "label": "Observation window Filament N45, confidence 91%",
+          "ariaExpanded": "true",
+          "role": "listitem",
+          "text": "2026-08-24 16:00 UTC\n          75 min\n        \n   "
+        }
+      }
+    ],
+    "focus_visible": true,
+    "focus_obscured": false
+  },
+  "captured_at": "2026-08-23T05:29:54Z"
+}

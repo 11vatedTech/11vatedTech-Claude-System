@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "kind": "capability-gap-register",
+  "date": "2026-08-22",
+  "principle": "rank improvements by reusable global capability value, not fixture polish",
+  "top_ten": [
+    {
+      "rank": 1,
+      "capability": "model-routing",
+      "category": "MODEL INTELLIGENCE",
+      "truth_state": "OPERATIONAL",
+      "ontology_maturity": "L3",
+      "global_leverage": 5,
+      "why_now": "Many project disciplines depend on correct builder/reviewer/researcher selection.",
+      "lesson_linked": false,
+      "next_proof": {
+        "before": "tool/prose/evidence exists without a cross-project capability demonstration",
+        "after": "small Golden Task passes with a machine-readable report and global deployment verification"
+      }
+    },
+    {
+      "rank": 2,
+      "capability": "ast-repository-index",
+      "category": "REPOSITORY INTELLIGENCE",
+      "truth_state": "VERIFIED",
+      "ontology_maturity": "L3",
+      "global_leverage": 5,
+      "why_now": "Semantic impact and contract tracing reduce errors across every codebase.",
+      "lesson_linked": false,
+      "next_proof": {
+        "before": "tool/prose/evidence exists without a cross-project capability demonstration",
+        "after": "small Golden Task passes with a machine-readable report and global deployment verification"
+      }
+    },
+    {
+      "rank": 3,
+      "capability": "perceptual-readability-qa",
+      "category": "MULTIMODAL CREATIVE INTELLIGENCE",
+      "truth_state": "OPERATIONAL",
+      "ontology_maturity": "L3",
+      "global_leverage": 5,
+      "why_now": "Ashwake showed engineering PASS can coexist with human-visible failure.",
+      "lesson_linked": true,
+      "next_proof": {
+        "before": "tool/prose/evidence exists without a cross-project capability demonstration",
+        "after": "small Golden Task passes with a machine-readable report and global deployment verification"
+      }
+    },
+    {
+      "rank": 4,
+      "capability": "mission-value-gate",
+      "category": "LONG-HORIZON EXECUTION",
+      "truth_state": "OPERATIONAL",
+      "ontology_maturity": "L2",
+      "global_leverage": 5,
+      "why_now": "Prevents calibration drift and preserves the global objective.",
+      "lesson_linked": true,
+      "next_proof": {
+        "before": "tool/prose/evidence exists without a cross-project capability demonstration",
+        "after": "small Golden Task passes with a machine-readable report and global deployment verification"
+      }
+    },
+    {
+      "rank": 5,
+      "capability": "web-research",
+      "category": "AUTONOMOUS RESEARCH",
+      "truth_state": "THEORETICAL",
+      "ontology_maturity": "L2",
+      "global_leverage": 5,
+      "why_now": "Unknown-unknown discovery is currently mostly procedural prompting.",
+      "lesson_linked": false,
+      "next_proof": {
+        "before": "tool/prose/evidence exists without a cross-project capability demonstration",
+        "after": "small Golden Task passes with a machine-readable report and global deployment verification"
+      }
+    },
+    {
+      "rank": 6,
+      "capability": "founder-intent-routing",
+      "category": "CAPABILITY AUTO-SELECTION",
+      "truth_state": "THEORETICAL",
+      "ontology_maturity": "L4",
+      "global_leverage": 4,
+      "why_now": "Founder should describe outcomes, not name internal tools.",
+      "lesson_linked": false,
+      "next_proof": {
+        "before": "tool/prose/evidence exists without a cross-project capability demonstration",
+        "after": "small Golden Task passes with a machine-readable report and global deployment verification"
+      }
+    },
+    {
+      "rank": 7,
+      "capability": "evidence-ledger",
+      "category": "EXPERIENCE / MEMORY",
+      "truth_state": "OPERATIONAL",
+      "ontology_maturity": "L3",
+      "global_leverage": 4,
+      "why_now": "Causal lessons need durable evidence and reuse, not raw history.",
+      "lesson_linked": false,
+      "next_proof": {
+        "before": "tool/prose/evidence exists without a cross-project capability demonstration",
+        "after": "small Golden Task passes with a machine-readable report and global deployment verification"
+      }
+    },
+    {
+      "rank": 8,
+      "capability": "visual-qa-direction",
+      "category": "QUALITY EVALUATION",
+      "truth_state": "THEORETICAL",
+      "ontology_maturity": "L3",
+      "global_leverage": 4,
+      "why_now": "Visual diagnostics still need explicit review and policy boundaries.",
+      "lesson_linked": false,
+      "next_proof": {
+        "before": "tool/prose/evidence exists without a cross-project capability demonstration",
+        "after": "small Golden Task passes with a machine-readable report and global deployment verification"
+      }
+    },
+    {
+      "rank": 9,
+      "capability": "audio-processing",
+      "category": "TEMPORAL / AUDIO INTELLIGENCE",
+      "truth_state": "OPERATIONAL",
+      "ontology_maturity": "L4",
+      "global_leverage": 3,
+      "why_now": "Audio evidence is validated structurally but not perceptually.",
+      "lesson_linked": false,
+      "next_proof": {
+        "before": "tool/prose/evidence exists without a cross-project capability demonstration",
+        "after": "small Golden Task passes with a machine-readable report and global deployment verification"
+      }
+    },
+    {
+      "rank": 10,
+      "capability": "project-bootstrap",
+      "category": "PROJECT BOOTSTRAPPING",
+      "truth_state": "OPERATIONAL",
+      "ontology_maturity": "L4",
+      "global_leverage": 3,
+      "why_now": "New repositories still require manual reconstruction and routing.",
+      "lesson_linked": false,
+      "next_proof": {
+        "before": "tool/prose/evidence exists without a cross-project capability demonstration",
+        "after": "small Golden Task passes with a machine-readable report and global deployment verification"
+      }
+    }
+  ],
+  "selected_first_three": [
+    "model-routing",
+    "ast-repository-index",
+    "perceptual-readability-qa"
+  ],
+  "drift_control": "Ashwake is frozen; only bounded regression changes are allowed"
+}

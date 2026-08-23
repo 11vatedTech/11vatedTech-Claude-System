@@ -1,0 +1,71 @@
+{
+  "schema_version": 2,
+  "kind": "multimodal-benchmark-record",
+  "benchmark_version": "transfer-lab-001-v2",
+  "date": "2026-08-23",
+  "corrected_from": "transfer-lab-001-v1",
+
+  "corrections": {
+    "v1_self_review_reclassified": {
+      "original_classification": "INDEPENDENT_MULTIMODAL_REVIEW",
+      "corrected_classification": "BUILDER_TEXTUAL_SELF_REVIEW",
+      "primary_image_seen": false,
+      "independent": false,
+      "router_qualification_eligible": false,
+      "method": "builder reviewed own design from filenames and textual descriptions — no actual image bytes were sent to any vision model",
+      "lesson": "DESCRIPTIVE_PROXY_IS_NOT_PRIMARY_MULTIMODAL_EVIDENCE"
+    }
+  },
+
+  "current_status": {
+    "HELIOGRAPH_IMPLEMENTATION": "COMPLETE",
+    "INITIAL_CAPTURES": "COMPLETE",
+    "REPAIRED_CAPTURES": "COMPLETE",
+    "AXE_AUTOMATION": "COMPLETE",
+    "TRANSFER_COMPONENT": "COMPLETE",
+    "LIGHTHOUSE": "INCOMPLETE",
+    "ARIA_STRUCTURAL_EVIDENCE": "INCOMPLETE",
+    "INDEPENDENT_MULTIMODAL_REVIEW": "INCOMPLETE",
+    "9ROUTER_VISUAL_ROUTING": "UNPROVEN"
+  },
+
+  "new_failure_patterns": [
+    {
+      "id": "FP-EVIDENCE-SUBSTITUTION-001",
+      "name": "EVIDENCE_SUBSTITUTION",
+      "definition": "Agent lacks required primary evidence modality and substitutes a description, metadata, builder memory, or inferred representation, then treats the result as equivalent evidence.",
+      "examples": [
+        "reviewing image from filename",
+        "reviewing animation from source code",
+        "reviewing audio from metadata",
+        "reviewing UX from DOM only",
+        "reviewing runtime correctness from source"
+      ],
+      "required_response": "BLOCK_CLAIM; REQUEST_PRIMARY_EVIDENCE; OR DOWNGRADE_CLAIM",
+      "scope": "FOUNDRY_WIDE"
+    },
+    {
+      "id": "FP-SELF-REVIEW-001",
+      "name": "SELF_REVIEW_MASQUERADING_AS_INDEPENDENT_REVIEW",
+      "definition": "Builder model/reviewer context is the same as the implementing model/context, and no isolation (different model family, blinded inputs, independent evidence) exists.",
+      "examples": [
+        "Builder critiques own work and classifies it as independent review",
+        "Same model context used for implementation and quality certification"
+      ],
+      "required_response": "CLASSIFY_AS_SELF_REVIEW; DO_NOT_TREAT_AS_INDEPENDENT",
+      "scope": "FOUNDRY_WIDE"
+    }
+  ],
+
+  "benchmark_tasks_defined": true,
+  "benchmark_executed_with_images": false,
+  "vision_models_discovered": false,
+  "pending": [
+    "Probe 9Router /v1/models/image for vision-capable models",
+    "Send real image bytes through 9Router gateway",
+    "Execute 12-20 visual tasks with actual screenshots",
+    "Run A/B + B/A pairwise comparisons",
+    "Record position consistency and repeatability",
+    "Update router with real model evidence"
+  ]
+}

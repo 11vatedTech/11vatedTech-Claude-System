@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "pack_id": "SEMANTIC_ENGINEERING_CORE",
+  "date": "2026-08-22",
+  "status": "ACTIVE",
+  "knowledge_class": "evergreen_engineering_plus_versioned_language_tooling",
+  "disciplines": ["software-engineering", "architecture", "repository-intelligence", "debugging", "tool-orchestration"],
+  "professional_baseline": {
+    "beginner": ["read entry points", "run existing tests", "identify configuration and dependencies", "make narrow changes"],
+    "working_professional": ["build symbol/dependency/requirement graphs", "trace runtime ownership", "use compiler and test evidence", "record failure class and impact"],
+    "senior": ["reason about change impact and architecture boundaries", "separate source claims from runtime behavior", "choose AST/LSP/compiler databases instead of lexical approximation when risk warrants"],
+    "lead_director": ["set repository intelligence policy, evidence standards, and migration strategy", "balance semantic depth, portability, latency, and maintenance"]
+  },
+  "workflow": [
+    "reconstruct_project_state",
+    "compile_intent_to_requirements",
+    "index_symbols_dependencies_and_configuration",
+    "trace_requirement_to_implementation_to_test",
+    "research_unknowns",
+    "form_hypotheses",
+    "make_small_change",
+    "run_focused_and_regression_tests",
+    "observe_runtime",
+    "record_root_cause_and_transfer_lesson"
+  ],
+  "quality_dimensions": {
+    "semantic": ["definition", "references", "dependencies", "data flow", "configuration", "generated code boundaries"],
+    "architecture": ["ownership", "coupling", "contracts", "layering", "failure containment", "migration cost"],
+    "debugging": ["reproduction", "evidence", "root cause", "minimal repair", "regression protection"],
+    "truth": ["implemented vs claimed", "source vs runtime", "structural vs functional vs perceptual", "version and provenance"]
+  },
+  "failure_patterns": [
+    {"id": "grep-as-semantics", "symptoms": ["lexical match treated as type-resolved truth", "generated/runtime references missed"], "repair": "use AST, LSP, compiler database, or native project inspector at risk-appropriate boundaries"},
+    {"id": "source-runtime-mismatch", "symptoms": ["source exists but packaged behavior differs", "test discovery mistaken for execution"], "repair": "capture runtime evidence and map it back to source ownership"},
+    {"id": "false-completion", "symptoms": ["build pass used as product certification", "documentation used as proof"], "repair": "require discipline-appropriate evidence and independent review"},
+    {"id": "unbounded-debugging", "symptoms": ["repeated local fixes without systemic lesson"], "repair": "classify gap, upgrade reusable capability, add regression, then stop or replan"}
+  ],
+  "evidence_requirements": ["repository index", "impact query", "focused test", "runtime evidence where relevant", "failure classification", "regression case"],
+  "sources": [
+    {"title": "Python ast module documentation", "url": "https://docs.python.org/3/library/ast.html", "authority": "Python documentation", "retrieved": "2026-08-22", "transfers": ["syntax-tree parsing is more reliable than text-only search for Python structure"]},
+    {"title": "TypeScript Language Service", "url": "https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API", "authority": "Microsoft TypeScript documentation", "retrieved": "2026-08-22", "transfers": ["typed navigation should use compiler services where TypeScript risk warrants it"]},
+    {"title": "Language Server Protocol specification", "url": "https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/", "authority": "Microsoft-hosted specification", "retrieved": "2026-08-22", "transfers": ["go-to-definition, references, symbols, and diagnostics are protocol capabilities rather than grep conventions"]}
+  ],
+  "tool_mapping": {"python": ["ast", "pytest", "language server when installed"], "typescript": ["TypeScript compiler services", "LSP when installed"], "cpp": ["compiler database", "clang tooling or LSP when installed"], "unreal": [".uproject inspector", "Asset Registry/Data Validation", "C++ compiler evidence"]},
+  "known_limits": ["The current multi-language index is lexical for TypeScript/JavaScript/C++ and does not claim type resolution.", "Runtime dependency graphs and generated code remain partial until native tooling is connected."]
+}

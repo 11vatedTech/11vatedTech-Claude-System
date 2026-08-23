@@ -1,0 +1,107 @@
+{
+  "discipline": "MATERIAL / LOOKDEV",
+  "knowledge_pack_version": "1.0.0",
+  "date": "2026-08-23",
+  "primary_sources": [
+    "OpenPBR Surface 1.1.1 (2026-04-17)",
+    "MaterialX 1.39",
+    "Physically Based Rendering (Pharr, Jakob, Humphreys)",
+    "Disney Principled BRDF (Burley 2012/2015)"
+  ],
+  "foundational_principles": {
+    "microfacet_theory": "Surfaces are modeled as collections of microscopic facets. Surface roughness controls the statistical distribution of facet orientations — higher roughness = broader, dimmer specular; lower roughness = tighter, brighter specular.",
+    "fresnel": "Specular reflectance increases at grazing angles. Dielectrics have low F0 (~0.04 for most), conductors have high F0 (gold ~0.47, copper ~0.95 at red wavelengths). This is the single most diagnostic material cue in renders.",
+    "dielectric_vs_conductor": "Dielectrics (plastic, glass, ceramic, wood, stone) have colorless specular (white highlights). Conductors (metals) have colored specular — the metal's color comes from specular, not diffuse. A material with both a diffuse color AND white specular is a dielectric with a colored base.",
+    "roughness": "Controls microfacet distribution width. Affects specular lobe width AND diffuse appearance (rougher = less contrast in diffuse). This is NOT the same as bump — roughness is statistical, bump is geometric.",
+    "subsurface": "Light enters, scatters, exits at a different point. Crucial for skin, wax, marble, milk, leaves. Controlled by subsurface radius (mean free path in mm) and subsurface color.",
+    "coat": "A thin transparent layer on top (varnish, clear coat, water film). Has its own roughness. Affects specular separately from base roughness.",
+    "sheen": "A microfiber-like grazing response. Useful for velvet, some fabrics, peach fuzz. Not a general-purpose effect.",
+    "emission": "Self-illumination. Does not actually cast light (that's the renderer's job), but appears bright regardless of scene lighting.",
+    "transmission": "Light passes THROUGH the material. Controlled by transmission weight + IOR + roughness. Rough transmission = frosted/diffuse translucency."
+  },
+  "five_material_identities": {
+    "aged_steel": {
+      "class": "Conductor",
+      "f0": {"r": 0.47, "g": 0.44, "b": 0.42},
+      "roughness": 0.35,
+      "anisotropy": 0.15,
+      "normal_detail": "Fine brushed directional scratches (0.02-0.05mm scale), occasional pitting (0.1-0.3mm)",
+      "edge_behavior": "Moderate roughness keeps specular visible at edges. Fresnel still applies — edges brighter than center at grazing.",
+      "surface_history": "Light surface oxidation darkens crevices. Subtle fingerprint smudging near handled areas. Slight darkening at edges from wear.",
+      "diagnostic_tests": {
+        "specular_color": "Specular is NOT white — it's warm gray with slight yellow shift. If specular is pure white → treated as dielectric, wrong.",
+        "diffuse_absence": "As a conductor, should have NO diffuse component (or near-zero base_weight). If visible diffuse color → wrong.",
+        "grazing_angle": "At grazing light, specular should dominate. If material goes dark at edges → roughness too high or IOR wrong."
+      }
+    },
+    "ceramic": {
+      "class": "Dielectric",
+      "f0": 0.04,
+      "roughness": 0.08,
+      "anisotropy": 0,
+      "subsurface": {"weight": 0.15, "radius": [0.8, 0.7, 0.6], "color": [1.0, 0.96, 0.90]},
+      "normal_detail": "Smooth glaze surface with micro-pitting (0.01mm). Subtle throwing rings on form (0.5-1.0mm wavelength, 0.05mm amplitude)",
+      "edge_behavior": "Very low roughness = tight specular highlights. Glaze layer creates distinct highlight shape reflecting light source geometry. Subsurface creates soft color shift at shadow edges.",
+      "diagnostic_tests": {
+        "specular_tightness": "Highlight should be small, bright, and mirror light source shape. If large/blobby → roughness too high.",
+        "subsurface_glow": "In shadow areas near the terminator, a subtle warm glow from subsurface scattering. If edges are dead black → subsurface missing or wrong radius.",
+        "f0_too_high": "If specular is visibly colored → being treated as conductor (wrong). Ceramic = dielectric = white specular."
+      }
+    },
+    "painted_wood": {
+      "class": "Dielectric with coat",
+      "base_roughness": 0.45,
+      "coat_roughness": 0.12,
+      "coat_weight": 0.3,
+      "coat_ior": 1.5,
+      "normal_detail": "Visible wood grain (0.5-2.0mm wavelength, 0.1mm amplitude) beneath paint. Paint surface has subtle brush texture (5-10mm wavelength, 0.02mm amplitude).",
+      "edge_behavior": "Coat layer provides specular on top of rough base. Two specular lobes visible: one tight (from coat), one broad (from base). At grazing, coat dominates.",
+      "diagnostic_tests": {
+        "double_specular": "Should see two distinct highlight qualities — a sharp reflection from the clear coat and a softer, broader highlight from the paint base. If only one → coat missing or base roughness matches coat.",
+        "grain_visibility": "Grain should be visible in diffuse but softened by the paint layer. If grain is sharply detailed → coat missing. If grain invisible → base roughness too high or paint opacity too strong.",
+        "edge_wear": "Natural paint wears at edges exposing wood beneath. Wear mask should follow curvature — high points and edges more exposed."
+      }
+    },
+    "dirty_glass": {
+      "class": "Dielectric with transmission",
+      "ior": 1.52,
+      "transmission_weight": 0.85,
+      "roughness": 0.05,
+      "transmission_roughness": 0.08,
+      "absorption": [0.02, 0.01, 0.005],
+      "coat": {"weight": 0.0},
+      "surface_contamination": "Patchy fingerprint/dust layer with roughness 0.3-0.6 covering ~15-25% of surface, concentrated near edges and center where handled.",
+      "edge_behavior": "At edges, total internal reflection creates bright rim regardless of viewing angle. Dirt/contamination scatters light at contaminated regions, creating visible matte patches contrasting with clean glossy areas.",
+      "diagnostic_tests": {
+        "inside_visibility": "Transmission should show refracted background with slight darkening from absorption. If completely opaque → transmission_weight = 0. If perfectly clear as air → absorption = 0, missing.",
+        "contamination_contrast": "Dirty patches should appear as matte scatter areas against glossy clean surface. If the whole surface looks uniformly rough → contamination mask missing or roughness set uniformly.",
+        "edge_brightness": "Glass edges should be bright (total internal reflection at high IOR contrast). If edges are dark → IOR too low, IOR matches medium, or renderer doesn't support TIR."
+      }
+    },
+    "rubber_polymer": {
+      "class": "Dielectric",
+      "f0": 0.03,
+      "roughness": 0.85,
+      "sheen": {"weight": 0.2, "roughness": 0.6, "color": [1.0, 1.0, 1.0]},
+      "normal_detail": "Subtle mold texture (0.1-0.3mm surface grain). Micro-scratches from handling.",
+      "edge_behavior": "Very high roughness = almost no visible specular. Diffuse-dominated. Slight sheen at grazing angles. At direct light, the surface should look matte — no distinct highlight shape.",
+      "diagnostic_tests": {
+        "specular_absence": "At roughness 0.85, specular should be nearly invisible. If there's a visible highlight → roughness too low. This is the most common error with rubber materials.",
+        "sheen_grazing": "At grazing angles, a subtle brightening (sheen) should be visible — this is the microfiber-like response. If the surface is equally dark at all angles → sheen missing.",
+        "contact_darkening": "Where rubber contacts other surfaces or flexes, it should darken slightly (compression/displacement). If uniformly colored → missing surface variation."
+      }
+    }
+  },
+  "diagnostic_framework": {
+    "bad_material_vs_bad_light": "A material that looks wrong under one light but correct under another = likely a lighting problem, not a material problem. A material that looks wrong under ALL lights = likely a material definition problem.",
+    "bad_material_vs_bad_scale": "Roughness and normal detail are scale-dependent. A 0.5mm scratch is huge on a 5mm object (visible crater) but invisible on a 500mm object. If material detail looks wrong at the expected object scale → scale mismatch.",
+    "bad_material_vs_bad_color_management": "If specular color is wrong when the base color looks right = likely color space problem (base color in sRGB, specular expected in linear). If the whole image is washed out or crushed → likely tone mapping / display transform issue.",
+    "common_failures": [
+      "Everything looks plastic: roughness set to ~0.1-0.2, no material differentiation. Fix: vary roughness across materials. The most important single parameter for material identity.",
+      "Everything looks metallic: F0 too high for dielectrics. Dielectric F0 should be ~0.02-0.05. Anything above 0.08 starts looking metallic at grazing.",
+      "No edge behavior: all materials look the same regardless of viewing angle. Missing Fresnel. Every material should change appearance at grazing angles.",
+      "Surface scale wrong: normal map detail looks like mountains at object scale. Normal amplitude must match real-world measurements.",
+      "Uniform surface history: perfectly uniform roughness/color across entire surface. Real materials have wear, contamination, variation."
+    ]
+  }
+}

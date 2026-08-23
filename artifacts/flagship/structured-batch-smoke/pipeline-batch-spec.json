@@ -1,0 +1,173 @@
+{
+  "op": "pipeline.batch",
+  "params": {
+    "operations": [
+      {
+        "name": "scene",
+        "op": "scene.create",
+        "params": {
+          "objects": [
+            {
+              "type": "empty",
+              "name": "Root"
+            }
+          ],
+          "camera": {
+            "name": "Cam",
+            "x": 4,
+            "y": -5,
+            "z": 3,
+            "look_at": [
+              0,
+              0,
+              1
+            ]
+          }
+        }
+      },
+      {
+        "name": "mesh",
+        "op": "mesh.lathe",
+        "params": {
+          "name": "body",
+          "profile": [
+            [
+              0,
+              0
+            ],
+            [
+              0.5,
+              0.2
+            ],
+            [
+              0.4,
+              1
+            ],
+            [
+              0,
+              1.2
+            ]
+          ],
+          "segments": 32,
+          "location": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      {
+        "name": "material",
+        "op": "material.construct",
+        "params": {
+          "name": "BodyMat",
+          "base_color": [
+            0.3,
+            0.1,
+            0.02
+          ],
+          "metallic": 0.7,
+          "roughness": 0.3,
+          "assign_to": [
+            "body"
+          ]
+        }
+      },
+      {
+        "name": "variation",
+        "op": "material.surface_variation",
+        "params": {
+          "name": "BodyMat",
+          "scale": 4,
+          "detail": 3,
+          "bump_strength": 0.1
+        }
+      },
+      {
+        "name": "rig",
+        "op": "rig.mechanical",
+        "params": {
+          "name": "Rig",
+          "bones": [
+            {
+              "name": "root",
+              "head": [
+                0,
+                0,
+                0
+              ],
+              "tail": [
+                0,
+                0,
+                1
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "float",
+        "op": "animation.float",
+        "params": {
+          "name": "Root",
+          "frame_end": 24,
+          "amplitude": 0.1,
+          "cycles": 1
+        }
+      },
+      {
+        "name": "pulse",
+        "op": "animation.pulse",
+        "params": {
+          "name": "body",
+          "frame_end": 24,
+          "amplitude": 0.05,
+          "cycles": 2
+        }
+      },
+      {
+        "name": "light",
+        "op": "lighting.construct",
+        "params": {
+          "world_strength": 0.2,
+          "lights": [
+            {
+              "name": "Key",
+              "type": "AREA",
+              "location": [
+                2,
+                -3,
+                3
+              ],
+              "energy": 300,
+              "color": [
+                1,
+                0.3,
+                0.1
+              ],
+              "look_at": [
+                0,
+                0,
+                0.5
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "name": "inspect",
+        "op": "rig.inspect",
+        "params": {}
+      },
+      {
+        "name": "export",
+        "op": "asset.export_glb",
+        "params": {
+          "out_path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\structured-batch-smoke\\smoke.glb"
+        }
+      }
+    ],
+    "out_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\structured-batch-smoke",
+    "save_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\structured-batch-smoke\\session.blend"
+  }
+}

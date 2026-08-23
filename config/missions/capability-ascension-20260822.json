@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "mission_id": "capability-ascension-20260822",
+  "primary_objective": "Improve the global 11vatedTech Claude plus 9Router Foundry across unrelated projects.",
+  "active_milestone": "Extract Ashwake lessons and deploy reusable truth, visual-evidence, mission-control, routing, and repository capabilities.",
+  "non_goals": [
+    "Ashwake environment selection",
+    "Ashwake review-board polish",
+    "Ashwake level expansion",
+    "new calibration product"
+  ],
+  "stop_conditions": [
+    "stop when the selected global Golden Tasks pass and reusable capability is deployed",
+    "stop and replan if work primarily improves CALIBRATION_FIXTURE_001",
+    "stop if evidence cannot distinguish implementation from production proof"
+  ],
+  "task": {
+    "description": "Run focused global Foundry capability proofs and deploy validated reusable tooling.",
+    "bounded_regression": false,
+    "fixture": "CALIBRATION_FIXTURE_001 is evidence only"
+  },
+  "scores": {
+    "global_capability_value": 5,
+    "project_value": 1,
+    "learning_value": 5,
+    "time_compute_cost": 2,
+    "redundancy": 1,
+    "opportunity_cost": 5
+  }
+}

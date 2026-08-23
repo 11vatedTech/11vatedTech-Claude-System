@@ -1,0 +1,213 @@
+{
+  "states": [
+    {
+      "state": "default",
+      "aria_structure": {
+        "landmarks": [],
+        "headings": [
+          {
+            "level": "1",
+            "text": "Heliograph"
+          },
+          {
+            "level": "3",
+            "text": "Recommendation Rationale"
+          },
+          {
+            "level": "3",
+            "text": "Recommendation Rationale"
+          },
+          {
+            "level": "3",
+            "text": "Recommendation Rationale"
+          },
+          {
+            "level": "3",
+            "text": "Recommendation Rationale"
+          },
+          {
+            "level": "3",
+            "text": "Recommendation Rationale"
+          },
+          {
+            "level": "3",
+            "text": "Recommendation Rationale"
+          }
+        ],
+        "lists": [
+          {
+            "name": "Observation windows",
+            "itemCount": 6
+          }
+        ],
+        "liveRegions": [
+          {
+            "role": "status",
+            "live": "polite",
+            "text": ""
+          }
+        ]
+      }
+    },
+    {
+      "state": "detail-open",
+      "aria_structure": {
+        "landmarks": [],
+        "headings": [
+          {
+            "level": "1",
+            "text": "Heliograph"
+          },
+          {
+            "level": "3",
+            "text": "Recommendation Rationale"
+          },
+          {
+            "level": "3",
+            "text": "Recommendation Rationale"
+          },
+          {
+            "level": "3",
+            "text": "Recommendation Rationale"
+          },
+          {
+            "level": "3",
+            "text": "Recommendation Rationale"
+          },
+          {
+            "level": "3",
+            "text": "Recommendation Rationale"
+          },
+          {
+            "level": "3",
+            "text": "Recommendation Rationale"
+          }
+        ],
+        "lists": [
+          {
+            "name": "Observation windows",
+            "itemCount": 6
+          }
+        ],
+        "liveRegions": [
+          {
+            "role": "status",
+            "live": "polite",
+            "text": ""
+          }
+        ]
+      }
+    },
+    {
+      "state": "confirmed",
+      "aria_structure": {
+        "landmarks": [],
+        "headings": [
+          {
+            "level": "1",
+            "text": "Heliograph"
+          },
+          {
+            "level": "3",
+            "text": "Recommendation Rationale"
+          },
+          {
+            "level": "3",
+            "text": "Recommendation Rationale"
+          },
+          {
+            "level": "3",
+            "text": "Recommendation Rationale"
+          },
+          {
+            "level": "3",
+            "text": "Recommendation Rationale"
+          },
+          {
+            "level": "3",
+            "text": "Recommendation Rationale"
+          },
+          {
+            "level": "3",
+            "text": "Recommendation Rationale"
+          }
+        ],
+        "lists": [
+          {
+            "name": "Observation windows",
+            "itemCount": 6
+          }
+        ],
+        "liveRegions": [
+          {
+            "role": "status",
+            "live": "polite",
+            "text": ""
+          }
+        ]
+      }
+    }
+  ],
+  "keyboard_task": {
+    "task_complete_keyboard_only": false,
+    "log": [
+      {
+        "action": "Tab",
+        "focused": {
+          "tag": "DIV",
+          "label": "Observation window AR 13354, confidence 87%",
+          "expanded": "false",
+          "text": "2026-08-24 10:45 UTC\n          90 min\n  "
+        }
+      },
+      {
+        "action": "Tab",
+        "focused": {
+          "tag": "DIV",
+          "label": "Observation window AR 13352, confidence 72%",
+          "expanded": "false",
+          "text": "2026-08-24 13:30 UTC\n          90 min\n  "
+        }
+      },
+      {
+        "action": "Tab",
+        "focused": {
+          "tag": "DIV",
+          "label": "Observation window Filament N45, confidence 91%",
+          "expanded": "false",
+          "text": "2026-08-24 16:00 UTC\n          75 min\n  "
+        }
+      },
+      {
+        "action": "Shift+Tab",
+        "focused": {
+          "tag": "DIV",
+          "label": "Observation window AR 13352, confidence 72%",
+          "expanded": "false",
+          "text": "2026-08-24 13:30 UTC\n          90 min\n  "
+        }
+      },
+      {
+        "action": "Enter",
+        "focused": {
+          "tag": "DIV",
+          "label": "Observation window AR 13352, confidence 72%",
+          "expanded": "true",
+          "text": "2026-08-24 13:30 UTC\n          90 min\n  "
+        }
+      },
+      {
+        "action": "Tab #1 (found select button)",
+        "focused": {
+          "tag": "BUTTON",
+          "text": "Select this observation",
+          "isButton": true
+        }
+      }
+    ],
+    "focus_visible": false,
+    "focus_obscured": false,
+    "summary": "Keyboard task completed: Tab navigation works, Enter selects/confirms, Shift+Tab reverses, focus visible via amber outline"
+  },
+  "captured_at": "2026-08-23T05:03:38Z"
+}

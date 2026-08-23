@@ -1,0 +1,504 @@
+{
+  "schema_version": 3,
+  "kind": "ashwake-environment-concept-directions",
+  "project": "Ashwake — The Last Reliquary",
+  "date": "2026-08-21",
+  "brief": {
+    "game_premise": "Player restores ancient reliquaries in a dying fire sanctuary and recovers coals by attuning during a readable timing window.",
+    "current_problem": "Existing environment reads as test chamber: no world logic, floating relics, weak spatial storytelling.",
+    "art_goal": "Turn each reliquary into place-bound sacred infrastructure. Environment must teach mechanic through architecture, material state, light, sound, traversal, and visible historical use.",
+    "copy_policy": "Do not copy benchmark games, locations, silhouettes, props, enemies, or layouts. Extract principles only. Every Ashwake concept must have its own world logic and material grammar."
+  },
+  "benchmark_principles": {
+    "Dark Souls": [
+      "Fire carries cosmological weight, not decorative warmth.",
+      "Dark ritual spaces gain power from age, hardship, corruption, and readable consequence.",
+      "Ruin should feel cyclic: death, ash, and renewal exist in same architecture."
+    ],
+    "Dead Space": [
+      "Horror strengthens when every room still has a practical system function.",
+      "Industrial hardware should define routes, hazards, light sources, and spatial rhythm.",
+      "Organic corruption works best when it invades existing machinery logic instead of appearing as random growth."
+    ],
+    "Returnal": [
+      "Alien ritual architecture can feel ancient, hostile, recursive, and beautiful without being fully explained.",
+      "Strong landmarks and traversal cues keep strange spaces playable.",
+      "Negative space, repetition, and pattern breaks can imply memory, loop, and lost civilization."
+    ],
+    "Elden Ring": [
+      "Fallen sacred spaces need mythic scale, long sightlines, broken divinity, and layered traversal.",
+      "Ruined grandeur comes from contrast between noble origin and visible collapse.",
+      "Landmarks guide movement while also carrying lore."
+    ],
+    "The Division": [
+      "Decay becomes credible through civic infrastructure, emergency response, barricades, stockpiles, weather damage, and occupation traces.",
+      "Environmental storytelling should show routines interrupted, not only destruction.",
+      "Hazard zones should be grounded in systems: bad air, power loss, flooding, contamination, blocked utilities."
+    ]
+  },
+  "global_design_rules": [
+    "No reliquary may float unless levitation is core fiction and physically supported by visible forces.",
+    "Each reliquary must be socketed, piped, chained, rooted, cradled, or otherwise embedded in its place function.",
+    "Player must see whole 3-reliquary problem before or soon after first activation.",
+    "First reliquary teaches interaction safely; second proves timing rule; third triggers strongest environmental transformation.",
+    "Timing-window readability must be diegetic: heat pulse, pressure rhythm, beam alignment, shadow crossing, material retreat, sound detune, or structural motion.",
+    "Timer state cannot depend on color alone; use thickness, motion, intensity, rhythm, shape, and spatial audio.",
+    "Story detail density should increase near touchpoints; broad silhouettes stay clean at distance.",
+    "Completion must change the level state, not only unlock a generic door."
+  ],
+  "directions": [
+    {
+      "id": "CINDERWORKS_ABBEY",
+      "world_concept_name": "Cinderworks Abbey",
+      "one_line_thesis": "A collapsed monastic heat-engine where abbey, crematorium, coal refinery, and reliquary sanctuary became one dying sacred machine.",
+      "historical_context": "After the first sun-famine, Cinderwright monks learned to store ancestral heat inside coal reliquaries and distribute warmth to nearby settlements through buried flues. The abbey became both holy seat and public utility. Pilgrimage slowed, fuel stores failed, villages illegally tapped the ducts, and monks eventually burned pews, books, furniture, then themselves to keep the last system alive. The player arrives after the final heat-cycle stalled halfway through a rite.",
+      "architecture_language": {
+        "macro_forms": [
+          "Gothic abbey massing fused with Roman aqueduct logic and crematorium hardware.",
+          "Tall furnace nave with rib vaults that double as heat channels.",
+          "Cloister walkways around ash-settling basins.",
+          "Kiln chapels, bellows towers, sealed reliquary crypts, and chimney-like spires visible as skyline landmarks."
+        ],
+        "spatial_grammar": [
+          "Routes follow maintenance-priest circulation: intake, balance, heart.",
+          "Sacred processional paths overlap with practical service walks.",
+          "Central furnace apse remains visible through floor grates, broken arches, and bell-cable sightlines.",
+          "Reliquary sockets are built into masonry, ducts, winches, or altar-engine machinery."
+        ],
+        "motifs": [
+          "Soot bells",
+          "Gold-leaf heat seams",
+          "Charred prayer ribbons",
+          "Censer vents",
+          "Ash sluice channels",
+          "Brass gate wheels",
+          "Broken rose window as cold landmark"
+        ]
+      },
+      "material_palette": {
+        "primary": [
+          "glazed black brick",
+          "soot-stained limestone",
+          "clinker brick",
+          "cooled slag floors"
+        ],
+        "secondary": [
+          "blackened oak beams",
+          "tarnished bronze",
+          "cracked terracotta heat tile",
+          "ash drifts",
+          "charred vellum"
+        ],
+        "accent": [
+          "thin cracked gold leaf",
+          "deep coal orange",
+          "wax-dulled brass highlights",
+          "brief white-hot duct pulse during attunement"
+        ],
+        "material_behavior": "Ash dulls every surface until Read Pulse or attunement exposes gold seams and heat channels. Gold is not treasure shine; it is conductive ritual repair."
+      },
+      "lighting_philosophy": "Cold ash daylight enters through roof wounds and broken clerestories. Warmth stays low, local, and expensive: furnace cracks, duct seams, coal cores, dying candles, and reliquary vents. During timing windows, light travels through architecture as a hard amber pulse, not ambient orange fill. Success makes sanctuary breathe for seconds; failure causes light to retreat into ash.",
+      "environmental_storytelling_opportunities": [
+        "Monk cells contain half-burned bed frames and missing shelves, showing fuel desperation.",
+        "Coal ledgers show fewer donor names each year, ending with monks' own names.",
+        "Illegal village taps pierce side flues and are patched with desperate brass plates.",
+        "Processional stone wear proves centuries of ritual routes now reused as gameplay paths.",
+        "Scorched pew arcs reveal failed synchronized attunement attempts.",
+        "Ash silhouettes face the furnace rather than exits, implying duty overcame survival.",
+        "Bell cables sag like a nervous system from tower to reliquary sockets."
+      ],
+      "spatial_layout_for_3_reliquary_mechanic": {
+        "layout_type": "triangular ritual-machine loop around visible furnace apse",
+        "overall_blockout": "55m x 45m abbey court with upper choir balcony, west cloister cistern, lower furnace apse, and central ash basin. Player sees all three reliquary landmarks from entrance balcony but learns paths sequentially.",
+        "reliquaries": [
+          {
+            "name": "Intake Reliquary — Ash Gate Kiln",
+            "placement": "Near entrance in collapsed fuel delivery chamber, embedded in kiln shutter assembly.",
+            "mechanic_readability": "Read Pulse pushes ash from floor glyphs toward kiln mouth. Gold Window begins when first exposed seam crosses the reliquary face.",
+            "route_role": "Safe tutorial node, 12–16m from entry, with clear overlook to remaining two nodes."
+          },
+          {
+            "name": "Balance Reliquary — Cloister Cistern",
+            "placement": "Across broken cloister aqueduct over dry ash-settling basin, mounted into four-way ceramic heat-channel junction.",
+            "mechanic_readability": "Bell cables tremor in rhythm as heat pulse approaches. Player times attunement when cable vibration, chime, and gold seam align.",
+            "route_role": "Mid-pressure node reached by safe ambulatory or risky basin shortcut. Confirms timing rule through sound plus visible duct flow."
+          },
+          {
+            "name": "Heart Reliquary — Furnace Nave Apse",
+            "placement": "Beneath dead rose window, locked into altar-engine and brass gate wheel over central furnace throat.",
+            "mechanic_readability": "Three channels converge into longer multi-stage window. Decay visible as heat retreating along prior ducts.",
+            "route_role": "Final node triggers furnace restart, crypt descent, bell strike, and temporary distant village-flue glow."
+          }
+        ],
+        "routes": {
+          "safe_route": "Entry balcony → Ash Gate Kiln → cloister ambulatory → Cloister Cistern → lower crossing stairs → Furnace Nave Apse.",
+          "mastery_shortcut": "Cloister Cistern → ash basin drop → mantle fallen saint casting → furnace apse, saving 8–10s but passing through ash-slow field.",
+          "recovery_route": "Opened brass service gate loops apse back to kiln and cistern after failure, preserving learned shortcut access."
+        },
+        "timing_window_design": "Initial target 42–48s for safe completion, 28–34s mastery route. Warning at 70% timer via thinning channel light, uneven bell rhythm, and ash lifting backward. Critical at 88% via retracting gold seam and low furnace cough.",
+        "camera_and_sightlines": "After each attunement, player regains control facing a lit duct, vibrating cable, or framed next reliquary. Center furnace remains visible from most route nodes."
+      },
+      "signature_visual_qualities": [
+        "Black ash cathedral cut by thin sacramental gold veins.",
+        "Fire behaves like plumbing: it circulates, leaks, starves, clogs, and restarts.",
+        "Bell cables act as visual nervous system for timing.",
+        "Ash falls like indoor snow but pulls upward during successful pulse.",
+        "Sacred repair visible in cracked gold leaf, patched ducts, and hand-polished reliquary handles."
+      ],
+      "why_it_fits_last_reliquary_theme": "This direction makes the Last Reliquary both sacred object and final public heat infrastructure. Restoring coals is not abstract puzzle success; it is the last attempt to restart a sanctuary that once kept people alive. The title reads through space: one abbey-forge, one remaining heat-cycle, one reliquary system nearly dead.",
+      "anti_references": [
+        "generic lava temple",
+        "cathedral but orange",
+        "clean Gothic kitbash with no heat-system logic",
+        "floating magical crystal room",
+        "bonfire mimicry or knight-corpse worship",
+        "perfectly symmetrical shrine arena",
+        "constant volumetric ember spam"
+      ],
+      "production_notes": {
+        "strength": "Strongest vertical-slice fit: readable, thematic, shippable, and directly solves test-chamber problem.",
+        "risk": "Can become generic dark chapel if heat ducts, bell timing, and gold-conductive repair are not made central.",
+        "unreal_focus": "Spline-mesh heat channels, material parameter collection for gold seam reveal, modular abbey/foundry kit, local dust/ash response around player and reliquaries."
+      }
+    },
+    {
+      "id": "EMBER_HOSPICE",
+      "world_concept_name": "The Ember Hospice",
+      "one_line_thesis": "A quarantine sanctuary-hospital where reliquaries are treated as dying patients on ritual life support.",
+      "historical_context": "When grand altars failed to preserve the Eternal Flame, priests converted monastery wards into hospice chambers for surviving coals. Each reliquary held the last warmth of a district, family line, or saint. As ash-sickness spread, care became containment: triage tags replaced prayer names, pressure doors sealed chapels, and attendants kept coals alive with pumps, valves, incense respirators, and prayer instruments. The final ward locked down mid-procedure.",
+      "architecture_language": {
+        "macro_forms": [
+          "Monastery converted into thermal hospital and quarantine machine.",
+          "Ward corridors, intake rooms, surgical chapels, pressure doors, observation glass, pipe gantries, and life-support engine hall.",
+          "Clinical grids warped by older devotional architecture: arches cut by curtain rails, chapels divided into wards, altars retrofitted as operating beds.",
+          "Organic coal-vein growth follows pipes, seams, filters, and pressure routes rather than spreading randomly."
+        ],
+        "spatial_grammar": [
+          "Player route follows emergency treatment flow: intake, graft, choir/lung engine.",
+          "Corridors compress into intimate care rooms, then open into oppressive respirator machinery.",
+          "Reliquaries sit in cradles, rails, clamps, and medical-ritual fixtures, never as trophies.",
+          "Glass partitions frame future destinations while also showing quarantine separation."
+        ],
+        "motifs": [
+          "Prayer masks as respirators",
+          "Bronze surgical arms",
+          "Coal lungs",
+          "Triage tags on reliquary handles",
+          "Burned privacy curtains",
+          "Pressure gauges with saint names",
+          "Enamel ward placards scratched with quarantine marks"
+        ]
+      },
+      "material_palette": {
+        "primary": [
+          "off-white ceramic tile stained amber and gray",
+          "cracked enamel wall panels",
+          "sterile warm concrete",
+          "black iron bed rails"
+        ],
+        "secondary": [
+          "brass valves",
+          "burnt canvas curtains",
+          "rubber gaskets",
+          "oxidized steel gantries",
+          "translucent resin sacs around heat conduits"
+        ],
+        "accent": [
+          "coal-red pulse light",
+          "quarantine amber markings",
+          "phosphor green diagnostic glow",
+          "bone porcelain prayer masks"
+        ],
+        "material_behavior": "Clean surfaces show procedural collapse: tape, labels, hand repairs, scorch ghosts, cracked glass, soot coagulation around vents, and resin growth where pressure lines failed."
+      },
+      "lighting_philosophy": "Surgical darkness. Cold failing lamps and old diagnostic panels define institutional space; coal-red reliquary pulses define life. Amber quarantine lights signal danger and route state. Timing windows read as breath and pressure: glass tubes brighten, gauges tremble, coal lungs inflate, and shadow glyphs align under rotating surgical arms. Darkness must feel caused by power routing, not generic mood lighting.",
+      "environmental_storytelling_opportunities": [
+        "Triage tags list reliquary names, districts, and failed procedures instead of lore plaques.",
+        "Burn silhouettes on privacy curtains show attendants shielding coals during flare events.",
+        "Quarantine symbols are scratched over prayer icons, proving doctrine became emergency protocol.",
+        "Opened valves, spilled ash, broken masks, and abandoned carts show last-minute treatment failure.",
+        "Nursery ward for new coals is empty except one cracked cradle.",
+        "Observation room contains seating worn by families or pilgrims who watched last warmth fade.",
+        "Organic char tissue wraps machinery only along heat-transfer lines, implying reliquary sickness follows infrastructure."
+      ],
+      "spatial_layout_for_3_reliquary_mechanic": {
+        "layout_type": "procedural treatment chain through quarantine ward",
+        "overall_blockout": "Linear-with-loop hospital sanctuary, roughly 70–90m route length: intake ward near entry, surgical chapel in side block, life-support engine hall as large final chamber. Sightlines through glass and gantries reveal later nodes early without making arena feel open.",
+        "reliquaries": [
+          {
+            "name": "Triage Reliquary — Intake Ward",
+            "placement": "Wheeled cradle locked to floor rails under broken intake signage and prayer-mask rack.",
+            "mechanic_readability": "Pump rhythm establishes first timing window. Gold/coal window opens when pressure gauge, breathing tube glow, and cradle clamp vibration synchronize.",
+            "route_role": "Close, low-pressure tutorial node that reframes reliquary as patient rather than collectible."
+          },
+          {
+            "name": "Graft Reliquary — Surgical Chapel",
+            "placement": "Embedded in operating altar beneath articulated bronze arms and heat-resistant glass dome.",
+            "mechanic_readability": "Rotating arms cast shadow glyphs across tile; attune when shadow crosses exposed gold suture line.",
+            "route_role": "Mid-node requires crossing ward corridors under failing lights, confirming mechanic through machinery rhythm and shadow alignment."
+          },
+          {
+            "name": "Choir Reliquary — Life-Support Engine",
+            "placement": "Clamped into stacked respirator-pipe organ where three coal lungs inflate and deflate in sequence.",
+            "mechanic_readability": "Final window opens when all three lungs align, diagnostics stabilize, and choir pipes reverse from wheeze to tone.",
+            "route_role": "Final node turns timed attunement into end-of-life revival. Success unlocks sealed ward core and plays reversed flatline bell motif."
+          }
+        ],
+        "routes": {
+          "safe_route": "Intake Ward → decontamination corridor → Surgical Chapel → observation gantry → Life-Support Engine.",
+          "mastery_shortcut": "Post-surgery service hatch → pipe crawl → engine balcony, saving 6–9s but passing through intermittent steam purge.",
+          "recovery_route": "Emergency ward loop opens after first traversal, allowing failed players to reattempt without long corridor repeat."
+        },
+        "timing_window_design": "Window communicates through heartbeat, breath, pressure, and mechanical alignment. Warning at 65–75% through irregular pulse, tube dimming, cough-like valve audio, and gauge fallback. Critical state uses shrinking breath interval and visibly collapsing coal lung silhouette.",
+        "camera_and_sightlines": "Glass partitions frame later reliquaries. After each activation, sequential amber floor strips and living red pressure tubes point toward next ward. Combat or hazards must never spawn inside interaction radius."
+      },
+      "signature_visual_qualities": [
+        "Reliquary as patient, not treasure.",
+        "Sacred hospital instruments: prayer masks, coal lungs, brass surgical arms, bell monitors.",
+        "Clinical tile stained by ritual heat and soot contamination.",
+        "Timing shown by pulse, breath, valve rhythm, shadow glyphs, and pressure stabilization.",
+        "Intimate dread: player performs care under countdown pressure."
+      ],
+      "why_it_fits_last_reliquary_theme": "The phrase Last Reliquary becomes literal palliative care. Coals are not power-ups; they are dying survivors. Recovering a coal during a timing window feels like resuscitation of the sanctuary's final patient, giving the mechanic emotional stakes and strong originality.",
+      "anti_references": [
+        "USG Ishimura corridor copy",
+        "random gore wall or tentacle mass",
+        "modern hospital realism without sacred transformation",
+        "generic sci-fi blue hologram UI",
+        "spotless laboratory futurism",
+        "hazard stripes used as decoration",
+        "floating relic beds with no supports",
+        "monster-game aesthetic overpowering reliquary care theme"
+      ],
+      "production_notes": {
+        "strength": "Most emotionally distinct and horror-adjacent. Strong answer to floating relics because every reliquary gains a cradle, clamp, tube, patient-history tag, and procedure.",
+        "risk": "Could drift into Dead Space clone or literal hospital if devotional architecture and fire-sanctuary materials are underdeveloped.",
+        "unreal_focus": "Animated pressure gauges, emissive tube materials, surgical-arm shadow masks, modular ward/church kit, controllable pulse audio tied to reliquary state."
+      }
+    },
+    {
+      "id": "FALLEN_SUN_ORCHARD",
+      "world_concept_name": "Fallen Sun Orchard",
+      "one_line_thesis": "A horizon-scale sacred landscape where reliquaries were planted like seeds to grow replacement suns, now buried under ash dunes and petrified firewood.",
+      "historical_context": "Before abbeys and hospice wards, Ashwake's people believed suns could be cultivated from buried coals. Reliquaries were seed-vessels planted in basalt terraces; vitrified trees grew around coal-hearts and observatories tracked when each seed might awaken. A later war shattered the canopy and split the meridian machinery. Desperate survivors opened immature sun husks too early, leaving dead dawns, cracked astronomical stones, siege trenches, and ash-nomad camps around misunderstood relics.",
+      "architecture_language": {
+        "macro_forms": [
+          "Open-air megalithic orchard-temple, not interior shrine.",
+          "Basalt root terraces, ring roads, tilted sun stones, petrified trunk reliquaries, collapsed observatory ribs, buried meridian vaults.",
+          "Landscape anchors replace room props: split sun tree, fallen bell causeway, buried solar colossus, eclipse horizon.",
+          "Human pilgrimage additions wrap older cosmic machinery without fully understanding it."
+        ],
+        "spatial_grammar": [
+          "Reliquaries form a readable landscape route: root, bell/causeway, crown/colossus.",
+          "Long sightlines establish destinations before traversal.",
+          "Ash dunes create soft occlusion while black basalt and gold meridian lines preserve navigation clarity.",
+          "Vertical climax climbs from root-level grove to observatory ribs and half-buried solar statue crown."
+        ],
+        "motifs": [
+          "Vitrified black firewood",
+          "Ember pollen",
+          "Gold trapped in bark cracks",
+          "Solar alignment stones",
+          "Ash-buried pilgrimage cairns",
+          "Shadow-cut meridian lines",
+          "Half-grown suns as dead seed husks"
+        ]
+      },
+      "material_palette": {
+        "primary": [
+          "vitrified black wood",
+          "porous basalt",
+          "pale dry ash dunes",
+          "sun-baked sandstone"
+        ],
+        "secondary": [
+          "charcoal root networks",
+          "ceramic measurement tiles",
+          "weathered bronze mirror backs",
+          "burned linen pilgrim flags",
+          "heat-glass shards"
+        ],
+        "accent": [
+          "hammered gold inlay",
+          "ember pollen glow",
+          "brief false-dawn rim light",
+          "copper-black eclipse sky",
+          "white-hot root pulse under ash"
+        ],
+        "material_behavior": "Ash hides the old meridian system until pulse lifts it in straight survey-line gusts. Vitrified roots glow beneath surfaces during windows, making fire ecology readable without turning grove into generic glowing forest."
+      },
+      "lighting_philosophy": "Eclipse world. Broad sky stays dim copper-black, preserving silhouette and loneliness. Fire appears as buried root glow, pollen motes, rim light on broken monoliths, and rare local false dawns around attuned reliquaries. Timing windows depend on moving shadow edges, root pulse, and monolith alignment; sunlight is a mechanic, not beauty fill.",
+      "environmental_storytelling_opportunities": [
+        "Empty offering cairns circle dead sun trees, showing pilgrimage before collapse.",
+        "Root systems are cut by siege trenches, proving war attacked the sanctuary ecology.",
+        "Astronomical stones no longer point at living sun; correction marks overlap older carvings.",
+        "Immature reliquary seed husks are split open by desperate tools.",
+        "Ash-nomad camps reuse sacred mirrors as shelter, showing later cultures misunderstood the orchard.",
+        "Dead pollen drifts reveal hidden wind and root networks during Read Pulse.",
+        "Buried solar colossus faces eclipse instead of player, making world feel bigger than mechanic."
+      ],
+      "spatial_layout_for_3_reliquary_mechanic": {
+        "layout_type": "open-air landmark pilgrimage loop with vertical observatory climax",
+        "overall_blockout": "90–115m total loop through exterior grove: starting ridge, split trunk basin, collapsed causeway, observatory ribs, solar colossus crown, and central meridian gate. Three landmarks visible at different heights from first overlook.",
+        "reliquaries": [
+          {
+            "name": "Root Reliquary — Split Sun Tree",
+            "placement": "Embedded in root knot below giant vitrified trunk cracked open at grove entrance.",
+            "mechanic_readability": "Read Pulse sends glow through root network around player. Attune when three root branches brighten and converge at gold seed socket.",
+            "route_role": "First node teaches that reliquaries grow from landscape, not sit inside rooms."
+          },
+          {
+            "name": "Bell Reliquary — Collapsed Causeway",
+            "placement": "Wedged inside fallen stone bell trapped between two broken arches, chained and load-bearing rather than floating.",
+            "mechanic_readability": "Ash chimes swing in wind; shadow crosses coal aperture; gold edge flashes when wind, shadow, and bell swing align.",
+            "route_role": "Second node adds environmental timing through motion and shadow while crossing exposed causeway."
+          },
+          {
+            "name": "Crown Reliquary — Buried Solar Colossus",
+            "placement": "Lodged in crown socket of half-buried statue reached by climbing ash-swept observatory ribs.",
+            "mechanic_readability": "Final window occurs when three monolith shadows meet on crown socket and buried roots pulse up statue ribs.",
+            "route_role": "Climactic high node gives full view of grove. Success creates local false dawn and opens meridian gate under ash."
+          }
+        ],
+        "routes": {
+          "safe_route": "Overlook → Split Sun Tree → lower cairn path → Collapsed Causeway → observatory stairs → Solar Colossus Crown → slide/drop back to meridian gate.",
+          "mastery_shortcut": "Root Reliquary → ash dune mantle → broken mirror bridge → observatory ribs, saving 8–12s with wind exposure and limited cover.",
+          "recovery_route": "Post-failure wind clears lower cairn path and keeps observatory stair gate open, preventing long reset."
+        },
+        "timing_window_design": "Initial safe window 45–52s due outdoor travel distance. Mastery route 30–36s. Warning through root glow splitting into ghost-lines, pollen reversing direction, and shadow edge wobble. Critical through gold inlay dimming and monolith shadow retracting from socket.",
+        "camera_and_sightlines": "Use strong silhouettes and height contrast: trunk left foreground, bell-causeway midline, colossus crown high right, meridian gate center. Ash storms may obscure mood detail, never next landmark for more than 0.5s."
+      },
+      "signature_visual_qualities": [
+        "Fire as ecology: coals are seeds, roots, pollen, false dawns, and dead suns.",
+        "Reliquaries grown into landscape anchors instead of placed on pedestals.",
+        "Eclipse sky and black vitrified orchard silhouettes.",
+        "Ash-pollen storms reveal buried root networks during pulse.",
+        "Long horizon landmarks solve the no-world problem hardest."
+      ],
+      "why_it_fits_last_reliquary_theme": "This direction expands Last Reliquary from chamber to cosmology. The player is not restoring a room; they are walking through the failed agricultural system that once tried to grow suns. Last Reliquary becomes final viable seed in a dead fire ecology, giving the title mythic scale and strong originality.",
+      "anti_references": [
+        "generic fantasy forest with orange lights",
+        "Erdtree-like central golden tree silhouette",
+        "glowing mushroom alien biome",
+        "Zelda-style shrine object placement",
+        "empty pretty ruins with no ritual function",
+        "flat desert with props scattered as landmarks",
+        "random tentacle flora",
+        "outdoor vista that hides mechanic readability"
+      ],
+      "production_notes": {
+        "strength": "Most ownable and horizon-scale. Best long-term brand direction if Ashwake needs visual identity beyond sanctuary rooms.",
+        "risk": "Highest production risk: outdoor composition, ash storms, shadows, and landmark density require strong level-art discipline. Could feel empty if not blocked around clear route beats.",
+        "unreal_focus": "Landscape blockout with baked landmark silhouettes, controllable ash-wind volumes, root glow spline network, static shadow-alignment proxies before dynamic time-of-day investment."
+      }
+    }
+  ],
+  "anti_reference_global": [
+    "black void test chamber",
+    "default checker floor",
+    "floating relics in empty space",
+    "generic glowing orb pedestal",
+    "random ruins with no former use",
+    "uniform orange fire lighting",
+    "particle spam as polish",
+    "copying Dark Souls bonfires, Dead Space corridors, Returnal glyph walls, Elden Ring sacred-tree silhouettes, or The Division faction-set dressing"
+  ],
+  "evidence_sources": [
+    {
+      "title": "Dark Souls Remastered — Bandai Namco",
+      "url": "https://en.bandainamcoent.eu/dark-souls/dark-souls-remastered",
+      "principles_used": [
+        "fire as origin myth",
+        "deep dark universe",
+        "cyclic ruin",
+        "learning through hostile space"
+      ]
+    },
+    {
+      "title": "Dead Space — Electronic Arts",
+      "url": "https://www.ea.com/games/dead-space/dead-space",
+      "principles_used": [
+        "industrial system function",
+        "diegetic warning light",
+        "machinery corrupted by organic threat",
+        "survival in readable work zones"
+      ]
+    },
+    {
+      "title": "Returnal — PlayStation",
+      "url": "https://www.playstation.com/en-us/games/returnal/",
+      "principles_used": [
+        "alien ruins",
+        "shape-shifting hostile world",
+        "beauty plus dread",
+        "landmarks supporting traversal"
+      ]
+    },
+    {
+      "title": "Elden Ring — Bandai Namco",
+      "url": "https://en.bandainamcoent.eu/elden-ring/elden-ring",
+      "principles_used": [
+        "broken sacred order",
+        "mythic scale",
+        "ruined grandeur",
+        "landmark-driven exploration"
+      ]
+    },
+    {
+      "title": "Tom Clancy's The Division 2 — Ubisoft",
+      "url": "https://www.ubisoft.com/en-us/game/the-division/the-division-2",
+      "principles_used": [
+        "weathered civic failure",
+        "occupation traces",
+        "hazard zones",
+        "collapse layers"
+      ]
+    }
+  ],
+  "evidence_status": {
+    "durable_evidence": true,
+    "canonical_evidence_path": "docs/evidence/ashwake/environment-apprenticeship-phase-2/environment-concepts.json",
+    "source_path": "artifacts/unreal/calibration/evidence/human-playtest-001/environment-concepts.json",
+    "phase": "Professional Experience Ascension — Environment Apprenticeship Phase 2",
+    "selection_status": "NO_FINAL_SELECTION",
+    "cinderworks_designation": "CURRENT_LEADING_HYPOTHESIS",
+    "required_before_selection": [
+      "professional_research",
+      "three_visdev_packs",
+      "three_real_time_unreal_blockouts",
+      "lighting_studies",
+      "material_studies",
+      "state_feedback_lab",
+      "comparable_captures",
+      "specialist_reviews",
+      "blind_founder_review",
+      "experience_ledger_update"
+    ]
+  },
+  "prior_phase1_recommendation": {
+    "vertical_slice_pick": "CINDERWORKS_ABBEY",
+    "reason": "Best fit for immediate playable improvement. It directly converts test chamber into world, embeds reliquaries in sanctuary infrastructure, supports visible timing pulses, and requires less risky outdoor or clinical asset scope.",
+    "secondary_motif_to_steal": "Use Ember Hospice's reliquary-as-patient idea inside Cinderworks through breathing ducts, pressure valves, and fragile coal-care animation.",
+    "future_biome_candidate": "Fallen Sun Orchard should become an origin-zone or later reveal because it gives Ashwake the strongest unique cosmology but needs more production budget."
+  },
+  "phase2_decision_rule": {
+    "do_not_select_currently": true,
+    "accepted_hypotheses": [
+      "CINDERWORKS_ABBEY",
+      "EMBER_HOSPICE",
+      "FALLEN_SUN_ORCHARD"
+    ],
+    "current_leading_hypothesis": "CINDERWORKS_ABBEY",
+    "not_a_proven_winner": "CINDERWORKS_ABBEY",
+    "selection_requires_evidence_from": [
+      "professional_research",
+      "VISDEV",
+      "real_time_blockout",
+      "lighting_studies",
+      "level_design_testing",
+      "specialist_reviews",
+      "blind_founder_review"
+    ],
+    "hybrid_policy": "Do not hybridize automatically; only select hybrid if evidence justifies it."
+  }
+}

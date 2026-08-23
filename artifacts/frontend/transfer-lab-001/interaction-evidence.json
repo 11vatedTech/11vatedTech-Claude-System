@@ -1,0 +1,66 @@
+{
+  "states": [
+    {
+      "viewport": "desktop",
+      "state": "hover-row",
+      "screenshot": "desktop_hover-row.png"
+    },
+    {
+      "viewport": "desktop",
+      "state": "selected-detail-open",
+      "screenshot": "desktop_selected-detail.png"
+    },
+    {
+      "viewport": "desktop",
+      "state": "confirmed",
+      "screenshot": "desktop_confirmed.png"
+    },
+    {
+      "viewport": "desktop",
+      "state": "keyboard-focus",
+      "screenshot": "desktop_keyboard-focus.png"
+    },
+    {
+      "viewport": "tablet",
+      "state": "hover-row",
+      "screenshot": "tablet_hover-row.png"
+    },
+    {
+      "viewport": "tablet",
+      "state": "selected-detail-open",
+      "screenshot": "tablet_selected-detail.png"
+    },
+    {
+      "viewport": "tablet",
+      "state": "confirmed",
+      "screenshot": "tablet_confirmed.png"
+    },
+    {
+      "viewport": "tablet",
+      "state": "keyboard-focus",
+      "screenshot": "tablet_keyboard-focus.png"
+    },
+    {
+      "viewport": "mobile",
+      "state": "hover-row",
+      "screenshot": "mobile_hover-row.png"
+    },
+    {
+      "viewport": "mobile",
+      "state": "selected-detail-open",
+      "screenshot": "mobile_selected-detail.png"
+    },
+    {
+      "viewport": "mobile",
+      "state": "confirmed",
+      "screenshot": "mobile_confirmed.png"
+    },
+    {
+      "viewport": "mobile",
+      "state": "keyboard-focus",
+      "screenshot": "mobile_keyboard-focus.png"
+    }
+  ],
+  "console_errors": [],
+  "captured_at": "2026-08-23T04:46:09Z"
+}

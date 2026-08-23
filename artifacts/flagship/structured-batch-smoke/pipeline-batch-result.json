@@ -1,0 +1,236 @@
+{
+  "results": {
+    "scene": {
+      "scene": {
+        "name": "Scene",
+        "frame_current": 1,
+        "frame_start": 1,
+        "frame_end": 250
+      },
+      "camera": "Cam",
+      "objects": [
+        {
+          "name": "Cam",
+          "type": "CAMERA",
+          "location": [
+            4.0,
+            -5.0,
+            3.0
+          ],
+          "rotation": [
+            72.65,
+            0.0,
+            38.66
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": []
+        },
+        {
+          "name": "Root",
+          "type": "EMPTY",
+          "location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": []
+        }
+      ],
+      "object_count": 2,
+      "lights": [],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "scene.create"
+    },
+    "mesh": {
+      "name": "body",
+      "vertices": 128,
+      "faces": 96,
+      "profile_points": 4,
+      "segments": 32,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "mesh.lathe"
+    },
+    "material": {
+      "material": "BodyMat",
+      "node_count": 2,
+      "textures": [],
+      "assigned_to": [
+        "body"
+      ],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "material.construct"
+    },
+    "variation": {
+      "material": "BodyMat",
+      "variation": "noise_color_roughness_bump",
+      "scale": 4.0,
+      "detail": 3.0,
+      "node_count": 6,
+      "assigned_to": [],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "material.surface_variation"
+    },
+    "rig": {
+      "armature": "Rig",
+      "bone_count": 1,
+      "bones": [
+        {
+          "name": "root",
+          "parent": null
+        }
+      ],
+      "purpose": "Emberveil mechanical vessel controls",
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "rig.mechanical"
+    },
+    "float": {
+      "object": "Root",
+      "action": "11vt_float_Root",
+      "frames": [
+        1,
+        24
+      ],
+      "amplitude": 0.1,
+      "cycles": 1,
+      "loop_safe": true,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "animation.float"
+    },
+    "pulse": {
+      "object": "body",
+      "action": "11vt_pulse_body",
+      "frames": [
+        1,
+        24
+      ],
+      "amplitude": 0.05,
+      "cycles": 2,
+      "purpose": "contained-fire breathing pulse",
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "animation.pulse"
+    },
+    "light": {
+      "lights": [
+        {
+          "name": "Key",
+          "type": "AREA",
+          "energy": 300.0,
+          "color": [
+            1.0,
+            0.3,
+            0.1
+          ],
+          "location": [
+            2.0,
+            -3.0,
+            3.0
+          ]
+        }
+      ],
+      "world_strength": 0.20000000298023224,
+      "exposure": 0.0,
+      "motivation": {
+        "key": "EmberCoreLight",
+        "fill": "WarmBounce",
+        "rim": "CoolSeparation"
+      },
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "lighting.construct"
+    },
+    "inspect": {
+      "armature": "Rig",
+      "bone_count": 1,
+      "max_hierarchy_depth": 0,
+      "deform_bones": 1,
+      "constraints": [],
+      "skinned_meshes": [
+        {
+          "name": "body",
+          "vertex_groups": 0,
+          "groups_overlap_bones": 0
+        }
+      ],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "rig.inspect"
+    },
+    "export": {
+      "out_path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\structured-batch-smoke\\smoke.glb",
+      "exists": true,
+      "bytes": 13608,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "op": "asset.export_glb",
+      "glb_validation": {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\structured-batch-smoke\\smoke.glb",
+        "exists": true,
+        "bytes": 13608,
+        "magic": "0x46546c67",
+        "version": 2,
+        "declared_length": 13608,
+        "json_chunk_bytes": 2092,
+        "asset_version": "2.0",
+        "mesh_count": 1,
+        "node_count": 4,
+        "material_count": 1,
+        "animation_count": 2,
+        "has_bin": true,
+        "bin_chunk_bytes": 11488,
+        "valid": true
+      }
+    }
+  },
+  "op_count": 10,
+  "failed": [],
+  "op_runner_version": "0.4.0",
+  "blender_version": "5.2.0 LTS",
+  "ok": true,
+  "health": "PASS",
+  "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\structured-batch-smoke\\session.blend",
+  "process": {
+    "returncode": 0,
+    "elapsed_seconds": 5.278
+  }
+}

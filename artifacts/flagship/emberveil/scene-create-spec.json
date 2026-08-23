@@ -1,0 +1,46 @@
+{
+  "op": "scene.create",
+  "params": {
+    "world_color": [
+      0.02,
+      0.015,
+      0.01
+    ],
+    "objects": [
+      {
+        "type": "empty",
+        "name": "Emberveil_root",
+        "location": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "camera": {
+      "name": "Cam",
+      "lens_mm": 55,
+      "x": 6.0,
+      "y": -7.0,
+      "z": 3.0,
+      "look_at": [
+        0,
+        0,
+        1.2
+      ]
+    },
+    "lights": [
+      {
+        "type": "sun",
+        "name": "CoolRim",
+        "x": -6,
+        "y": -4,
+        "z": 8,
+        "energy": 0.6
+      }
+    ],
+    "out_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil",
+    "load_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend",
+    "save_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+  }
+}

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emberveil</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:100%;height:100%;overflow:hidden;background:#0a0503}
+  body{
+    cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='4' fill='none' stroke='%23d46b28' stroke-opacity='.75'/%3E%3Ccircle cx='12' cy='12' r='1' fill='%23ff9a42'/%3E%3C/svg%3E") 12 12,crosshair;
+    font-family:'Playfair Display',Georgia,serif
+  }
+  body::before{
+    content:'';position:fixed;inset:0;z-index:2;pointer-events:none;
+    background:radial-gradient(circle at 50% 46%,rgba(86,31,9,.08) 0%,rgba(18,8,5,.03) 38%,rgba(1,2,5,.28) 100%);
+  }
+  canvas{display:block;position:fixed;top:0;left:0;width:100%;height:100%}
+  #title-block{
+    position:fixed;bottom:3rem;left:3rem;z-index:10;pointer-events:none;
+    user-select:none;
+  }
+  #title-block h1{
+    font-size:clamp(2rem,5vw,4.5rem);font-weight:700;letter-spacing:0.08em;
+    color:#f6e7d0;opacity:0.86;line-height:1;margin-bottom:0.3rem;
+    text-shadow:0 0 40px rgba(255,122,26,0.28),0 2px 18px rgba(0,0,0,0.65);
+  }
+  #title-block p{
+    font-size:clamp(0.7rem,1.5vw,1.1rem);font-style:italic;font-weight:400;
+    color:#d8b78f;opacity:0.72;letter-spacing:0.15em;text-shadow:0 1px 12px rgba(0,0,0,0.7);
+  }
+  #loading{
+    position:fixed;inset:0;z-index:100;display:flex;align-items:center;
+    justify-content:center;background:#0a0503;transition:opacity 1.2s ease;
+  }
+  #loading.hidden{opacity:0;pointer-events:none}
+  #loading span{
+    font-size:1rem;letter-spacing:0.3em;color:#a08060;opacity:0.4;
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{0%,100%{opacity:0.2}50%{opacity:0.6}}
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="loading"><span>EMBER</span></div>
+<div id="title-block">
+  <h1>Emberveil</h1>
+  <p>Warden of Dying Fires</p>
+</div>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { AnimationMixer } from 'three/animation/AnimationMixer.js';
+
+/* ── Reduced motion ── */
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ── Renderer ── */
+const renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.45;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+document.body.appendChild(renderer.domElement);
+
+/* ── Scene ── */
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0a0503);
+scene.fog = new THREE.FogExp2(0x0a0503, 0.12);
+
+/* ── Camera ── */
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+camera.position.set(4, 2.5, 5);
+
+/* ── Controls ── */
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.dampingFactor = 0.06;
+controls.minDistance = 3;
+controls.maxDistance = 10;
+controls.autoRotate = !prefersReduced;
+controls.autoRotateSpeed = 0.3;
+controls.enablePan = false;
+controls.target.set(0, 0.8, 0);
+controls.update();
+
+/* ── Lighting ── */
+const ambient = new THREE.AmbientLight(0x1a0e05, 0.3);
+scene.add(ambient);
+
+const emberLight = new THREE.PointLight(0xff7a1a, 1.5, 20, 1.5);
+emberLight.position.set(0, 0.3, 0);
+scene.add(emberLight);
+
+const rimLight = new THREE.DirectionalLight(0x67d9ff, 0.4);
+rimLight.position.set(-5, 6, 3);
+scene.add(rimLight);
+
+const hemiLight = new THREE.HemisphereLight(0x0a0a12, 0x2a1508, 0.35);
+scene.add(hemiLight);
+
+const emberFill = new THREE.PointLight(0xff5500, 0.4, 8, 2);
+emberFill.position.set(0.5, 0.5, -0.5);
+scene.add(emberFill);
+
+/* ── Post-processing ── */
+// Unsigned-byte targets maximize compatibility with integrated and mobile GPUs.
+const postTarget = new THREE.WebGLRenderTarget(window.innerWidth, window.innerHeight, {
+  type: THREE.UnsignedByteType,
+  format: THREE.RGBAFormat,
+  colorSpace: THREE.LinearSRGBColorSpace,
+  depthBuffer: true,
+  stencilBuffer: false
+});
+const composer = new EffectComposer(renderer, postTarget);
+composer.addPass(new RenderPass(scene, camera));
+const bloomPass = new UnrealBloomPass(
+  new THREE.Vector2(window.innerWidth, window.innerHeight),
+  0.8, 0.4, 0.6
+);
+// UnrealBloomPass defaults to half-float targets; 8-bit targets avoid unsupported
+// color-buffer combinations while preserving this deliberately restrained bloom.
+bloomPass.renderTargetBright.texture.type = THREE.UnsignedByteType;
+for (const target of [...bloomPass.renderTargetsHorizontal, ...bloomPass.renderTargetsVertical]) {
+  target.texture.type = THREE.UnsignedByteType;
+}
+composer.addPass(bloomPass);
+composer.addPass(new OutputPass());
+
+/* ── Load GLB ── */
+let model = null;
+let mixer = null;
+const loader = new GLTFLoader();
+loader.load(
+  '../emberveil-canonical/emberveil-canonical.glb',
+  (gltf) => {
+    model = gltf.scene;
+    // The canonical GLB includes a deliberate shrine environment. Preserve
+    // authored world units so the hero remains readable inside that context.
+    model.position.set(0, 0, 0);
+    model.updateMatrixWorld(true);
+
+    // Preserve exported materials while giving bloom a true emissive source.
+    const maxAnisotropy = renderer.capabilities.getMaxAnisotropy();
+    model.traverse((object) => {
+      if (!object.isMesh) return;
+      const materials = Array.isArray(object.material) ? object.material : [object.material];
+      for (const material of materials) {
+        for (const key of ['map', 'normalMap', 'roughnessMap', 'metalnessMap', 'emissiveMap']) {
+          if (material[key]) material[key].anisotropy = maxAnisotropy;
+        }
+        if (object.name.toLowerCase().includes('ember')) {
+          material.color?.set(0xff8a32);
+          material.emissive?.set(0xff3d08);
+          material.emissiveIntensity = 3.2;
+          material.roughness = 0.3;
+        } else if (object.name.toLowerCase().includes('brass') || object.name.toLowerCase().includes('filigree')) {
+          material.metalness = 0.78;
+          material.roughness = 0.3;
+        } else if (object.name.toLowerCase().includes('basalt') || object.name.toLowerCase().includes('ash') || object.name.toLowerCase().includes('shrine')) {
+          material.roughness = 0.62;
+          material.color?.multiplyScalar(0.72);
+        } else if (object.name.toLowerCase().includes('glass')) {
+          material.transparent = true;
+          material.opacity = Math.min(material.opacity, 0.26);
+          material.depthWrite = false;
+          material.roughness = 0.12;
+        }
+        material.needsUpdate = true;
+      }
+    });
+    scene.add(model);
+
+    // Play embedded animation (float/bob cycle)
+    if (gltf.animations.length > 0) {
+      mixer = new AnimationMixer(scene);
+      const action = mixer.clipAction(gltf.animations[0]);
+      action.play();
+    }
+
+    // Hide loading
+    const loadEl = document.getElementById('loading');
+    if (loadEl) loadEl.classList.add('hidden');
+    setTimeout(() => { if (loadEl) loadEl.remove(); }, 1500);
+  },
+  undefined,
+  (err) => {
+    console.error('GLB load failed:', err);
+    const loadEl = document.getElementById('loading');
+    if (loadEl) loadEl.innerHTML = '<span>LOAD FAILED</span>';
+  }
+);
+
+/* ── Particle system ── */
+const particlePool = [];
+const MAX_PARTICLES = 60;
+
+function spawnBurst(origin) {
+  const count = 20 + Math.floor(Math.random() * 11);
+  for (let i = 0; i < count && particlePool.length < MAX_PARTICLES; i++) {
+    const geo = new THREE.SphereGeometry(0.02 + Math.random() * 0.02, 4, 4);
+    const mat = new THREE.MeshBasicMaterial({
+      color: new THREE.Color().setHSL(0.06 + Math.random() * 0.05, 0.9, 0.5 + Math.random() * 0.3),
+      transparent: true,
+      opacity: 1
+    });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.copy(origin);
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.random() * Math.PI;
+    const speed = 1.5 + Math.random() * 2.5;
+    mesh.userData.velocity = new THREE.Vector3(
+      Math.sin(phi) * Math.cos(theta),
+      Math.cos(phi) * 0.8 + 0.5,
+      Math.sin(phi) * Math.sin(theta)
+    ).multiplyScalar(speed);
+    mesh.userData.life = 1.0;
+    mesh.userData.decay = 0.6 + Math.random() * 0.8;
+    scene.add(mesh);
+    particlePool.push(mesh);
+  }
+}
+
+function updateParticles(dt) {
+  for (let i = particlePool.length - 1; i >= 0; i--) {
+    const p = particlePool[i];
+    p.userData.life -= p.userData.decay * dt;
+    if (p.userData.life <= 0) {
+      scene.remove(p);
+      p.geometry.dispose();
+      p.material.dispose();
+      particlePool.splice(i, 1);
+      continue;
+    }
+    p.material.opacity = p.userData.life;
+    p.position.add(p.userData.velocity.clone().multiplyScalar(dt));
+    p.userData.velocity.y -= 2.0 * dt;
+    p.scale.setScalar(p.userData.life);
+  }
+}
+
+/* ── Interaction ── */
+function onInteract(clientX, clientY) {
+  const origin = emberLight.position.clone();
+  const ndcX = (clientX / window.innerWidth) * 2 - 1;
+  const ndcY = (clientY / window.innerHeight) * 2 - 1;
+  origin.x += ndcX * 0.2;
+  origin.y += ndcY * 0.12;
+  spawnBurst(origin);
+}
+
+renderer.domElement.addEventListener('click', (e) => onInteract(e.clientX, e.clientY));
+renderer.domElement.addEventListener('touchend', (e) => {
+  if (e.changedTouches.length > 0) {
+    onInteract(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+  }
+});
+
+/* ── Mouse parallax ── */
+const mouseNDC = { x: 0, y: 0 };
+const parallaxTarget = { x: 0, y: 0.8, z: 0 };
+
+renderer.domElement.addEventListener('mousemove', (e) => {
+  if (prefersReduced) return;
+  mouseNDC.x = (e.clientX / window.innerWidth) * 2 - 1;
+  mouseNDC.y = (e.clientY / window.innerHeight) * 2 - 1;
+});
+
+/* ── Resize ── */
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+    composer.setSize(w, h);
+    bloomPass.resolution.set(w, h);
+  }, 100);
+});
+
+/* ── Animation loop ── */
+const clock = new THREE.Clock();
+let elapsed = 0;
+
+function animate() {
+  requestAnimationFrame(animate);
+  const dt = Math.min(clock.getDelta(), 0.05);
+  elapsed += dt;
+
+  // Parallax
+  if (!prefersReduced) {
+    const tx = mouseNDC.x * 0.2;
+    const ty = 0.8 + mouseNDC.y * 0.1;
+    parallaxTarget.x += (tx - parallaxTarget.x) * 0.03;
+    parallaxTarget.y += (ty - parallaxTarget.y) * 0.03;
+    controls.target.set(parallaxTarget.x, parallaxTarget.y, parallaxTarget.z);
+  }
+
+  // Ember flicker
+  const flicker = Math.sin(elapsed * 3.7) * 0.15
+    + Math.sin(elapsed * 7.1) * 0.08
+    + Math.sin(elapsed * 11.3) * 0.05;
+  emberLight.intensity = 1.5 + flicker;
+  emberFill.intensity = 0.4 + flicker * 0.3;
+
+  controls.update();
+  if (mixer) mixer.update(dt);
+  updateParticles(dt);
+
+  composer.render();
+}
+
+animate();
+</script>
+</body>
+</html>

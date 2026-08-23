@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "institute_id": "11VT_FRONTEND_UI_UX_INSTITUTE",
+  "date": "2026-08-22",
+  "status": "ACTIVE",
+  "purpose": "Produce frontend experiences with product-specific visual identity, clear interaction, responsive composition, accessibility, and measured performance.",
+  "disciplines": ["frontend-design", "ui-design", "ux", "interaction-design", "accessibility", "web-performance"],
+  "workflow": ["product-character", "user-task-model", "information-architecture", "visual-directions", "selected-thesis", "state-inventory", "responsive-implementation", "keyboard-review", "browser-qa", "performance", "independent-review", "transfer"],
+  "quality_axes": ["visual-design", "information-architecture", "interaction", "content", "responsive", "accessibility", "performance", "motion", "product-identity"],
+  "standards": ["WCAG 2.2", "WAI-ARIA Authoring Practices Guide", "semantic HTML", "Core Web Vitals"],
+  "evidence": ["browser screenshots", "interaction states", "keyboard path", "automated accessibility scan", "responsive viewport matrix", "performance metrics", "human or independent usability review"],
+  "hard_rules": ["Lighthouse is not a design score", "axe is not a complete accessibility audit", "pixel similarity is not perceptual approval", "mobile is recomposed, not merely shrunk desktop"],
+  "known_limits": ["No current global frontend exercise proves exceptional visual identity or user validation.", "Framework-specific guidance must be researched just in time."]
+}

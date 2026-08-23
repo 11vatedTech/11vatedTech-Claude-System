@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "kind": "unreal-package-verification",
+  "status": "PASS",
+  "archive": "artifacts\\unreal\\calibration\\Packaged\\Ashwake",
+  "file_count": 52,
+  "executables": [
+    {
+      "path": "artifacts\\unreal\\calibration\\Packaged\\Ashwake\\Windows\\FoundryCalibration\\Binaries\\Win64\\FoundryCalibration.exe",
+      "sha256": "d11f9e1ec1618bbe58375e38da2867ea30c71aeb8930380073821e90a5dc21a0",
+      "bytes": 342831616
+    },
+    {
+      "path": "artifacts\\unreal\\calibration\\Packaged\\Ashwake\\Windows\\FoundryCalibration.exe",
+      "sha256": "4a13e38d9cf1ac060835913601cf37dbdc71efa2bb857dfc277c65c46053d7ca",
+      "bytes": 171520
+    }
+  ]
+}

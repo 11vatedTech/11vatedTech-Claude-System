@@ -1,0 +1,35 @@
+{
+  "discipline": "ANIMATION / MOTION",
+  "knowledge_pack_version": "1.0.0",
+  "date": "2026-08-23",
+  "twelve_principles": {
+    "timing": "The speed of an action. Determines weight, mood, and readability. Heavy objects accelerate slowly, decelerate slowly. Light objects change direction quickly. Timing is the primary weight cue — more important than scale or visual design.",
+    "spacing": "The distribution of frames across time. Even spacing = mechanical, constant velocity. Ease-in/ease-out spacing = organic, physical. Spacing creates the FEEL of motion — this is what animators draw frame-by-frame.",
+    "anticipation": "Movement in the opposite direction before the main action. The bigger the action, the bigger the anticipation. A character jumping crouches first. A punch pulls back first. Anticipation tells the viewer what's about to happen.",
+    "follow_through": "Parts continue moving after the main body stops. Hair, cloth, antennae, loose elements. Creates physical believability. Amount depends on mass and flexibility.",
+    "overlap": "Different parts of a body move at different times. The shoulder moves, then the elbow, then the wrist, then the fingers. Creates organic, non-robotic motion.",
+    "arcs": "Natural motion follows curved paths, not straight lines. A walking character's hip traces an arc. A thrown ball traces a parabola. Mechanical objects CAN move in straight lines — this is what distinguishes organic from mechanical motion.",
+    "weight": "Communicated through timing + spacing + contact + reaction. A heavy object: slow to start, slow to stop, deep contact impact, little bounce. A light object: fast to start, fast to stop, minimal contact, lots of bounce.",
+    "secondary_action": "Motion that supports the primary action without distracting. A character walks (primary) while swinging arms (secondary). Must not compete with or obscure the primary action.",
+    "exaggeration": "Pushing motion beyond realism to communicate intent. Not random distortion — purposeful emphasis. A surprised character doesn't just raise eyebrows; their whole body reacts.",
+    "staging": "The presentation of an action so it reads clearly. Silhouette must be readable. Action must not be obscured by overlapping elements. The most important movement should be in the clearest visual position.",
+    "appeal": "The quality of being interesting to watch. Not 'cute' — compelling. Even a villain or a mechanical object should have appeal in its motion.",
+    "solid_drawing": "Understanding of form in 3D space. Weight, balance, volume. The character/object must feel like it occupies real space, not a flat plane."
+  },
+  "three_motion_profiles": {
+    "light_object": {"timing": "Quick acceleration, fast peak velocity, quick stop. Small anticipation. High bounce factor. Minimal overlap.", "key_indicators": "Short contact time, high-frequency oscillation on settle, floaty/bouncy rhythm"},
+    "heavy_object": {"timing": "Slow acceleration, slow deceleration, long settle time. Large anticipation. Deep contact impact. Significant follow-through on attached parts.", "key_indicators": "Long contact time, low-frequency deep oscillation, grounded feel, strong weight shift visible"},
+    "mechanical_object": {"timing": "Constant velocity phases, abrupt starts/stops. No anticipation unless designed in. No follow-through. Linear movement between key positions.", "key_indicators": "Constant speed segments, hard stops, no organic deceleration, repeatable motion cycles"}
+  },
+  "diagnostic_framework": {
+    "weight_readability": "Can a blind reviewer identify which object is heavy and which is light from motion alone? If not, timing/spacing are insufficiently differentiated.",
+    "sliding_contact": "Feet/wheels/contact points slide across the surface instead of gripping. Caused by: translation speed not matching limb movement, or IK solving without contact constraints.",
+    "floaty_motion": "Everything moves with the same ease-in/ease-out curve, creating a weightless, 'CG default' feel. Fix: differentiate timing per object, add contact impact, vary spacing curves.",
+    "puppet_motion": "Body parts move in sequence without overlap, looking like a marionette. Fix: add overlap — different body parts start and end movement at slightly different times."
+  },
+  "blender_mapping": {
+    "tools": ["Graph Editor (F-curves)", "Dope Sheet", "Action Editor", "NLA Editor", "Pose Library", "Motion Paths"],
+    "curve_types": "Bezier handles for organic, linear for mechanical, constant for held poses",
+    "key_interpolation": "Bezier (default, organic), Linear (mechanical), Constant (held/freeze frames)"
+  }
+}

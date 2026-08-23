@@ -1,0 +1,115 @@
+LogCore: Display: UTS: The Unreal Trace Server binary is not available ('../../../Engine/Binaries/Win64/UnrealTraceServer.exe')
+LogCore: Display: Requested channels: 'default,frame,bookmark,loadtime,cpu'
+LogCore: Display: Trace started (writing to file "C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/artifacts/unreal/health/traces/ashwake-packaged.utrace").
+LogTrace: Display: Control listening on port 1985
+LogCsvProfiler: Display: Metadata set : platform="Windows"
+LogCsvProfiler: Display: Metadata set : config="Development"
+LogCsvProfiler: Display: Metadata set : buildversion="++UE5+Release-5.8-CL-55116800"
+LogCsvProfiler: Display: Metadata set : engineversion="5.8.0-55116800+++UE5+Release-5.8"
+LogCsvProfiler: Display: Metadata set : enginereleaseversion="5.8.0"
+LogCsvProfiler: Display: Metadata set : os="Windows 11 (25H2) [10.0.26200.9168] "
+LogCsvProfiler: Display: Metadata set : cpu="GenuineIntel|Intel(R) Core(TM) Ultra 9 275HX"
+LogCsvProfiler: Display: Metadata set : pgoenabled="0"
+LogCsvProfiler: Display: Metadata set : pgoprofilingenabled="0"
+LogCsvProfiler: Display: Metadata set : ltoenabled="0"
+LogCsvProfiler: Display: Metadata set : asan="0"
+LogCsvProfiler: Display: Metadata set : mergedmodules="0"
+LogCsvProfiler: Display: Metadata set : compacttset="0"
+LogCsvProfiler: Display: Metadata set : commandline="" FoundryCalibration /Game/Calibration/Maps/EmberveilCalibration -NullRHI -NoSound -Unattended -NoSplash -log -stdout -trace=default,frame,bookmark,loadtime,cpu -tracefile=C:/Users/11vat/OneDrive/Desktop/11vatedTech-Claude-System/artifacts/unreal/health/traces/ashwake-packaged.utrace""
+LogCsvProfiler: Display: Metadata set : loginid="9d319a3cc0734ec39cf8b78ec59b4c52"
+LogCsvProfiler: Display: Metadata set : llm="0"
+LogIoDispatcher: Display: Mounted container '../../../FoundryCalibration/Content/Paks/global.utoc', Id='ffffffffffffffff', Order=0, Slot=0, Options=(None), Flags=(), HasSoftRefs=False
+LogPakFile: Display: Initialized I/O dispatcher file backend. Mounted the global container: ../../../FoundryCalibration/Content/Paks/global.utoc
+LogPakFile: Display: Found Pak file ../../../FoundryCalibration/Content/Paks/FoundryCalibration-Windows.pak attempting to mount.
+LogPakFile: Display: Mounting pak file ../../../FoundryCalibration/Content/Paks/FoundryCalibration-Windows.pak.
+LogIoDispatcher: Display: Mounted container '../../../FoundryCalibration/Content/Paks/FoundryCalibration-Windows.utoc', Id='ade0a02fec81837e', Order=4, Slot=0, Options=(None), Flags=(Compressed|Indexed), HasSoftRefs=False
+LogPakFile: Display: Mounted IoStore container "../../../FoundryCalibration/Content/Paks/FoundryCalibration-Windows.utoc"
+LogPakFile: Display: Mounted Pak file '../../../FoundryCalibration/Content/Paks/FoundryCalibration-Windows.pak', mount point: '../../../'
+LogCsvProfiler: Display: Metadata set : zenstreaming="0"
+LogCsvProfiler: Display: Metadata set : systemresolution.resx="1280"
+LogCsvProfiler: Display: Metadata set : systemresolution.resy="720"
+LogAudio: Display: Audio Device Manager not initializing due to all audio being disabled. If this is not intentional, please check command line arguments for "-nosound".
+RenderDocPlugin: Display: RenderDoc plugin will not be loaded. Use '-AttachRenderDoc' on the cmd line or enable 'renderdoc.AutoAttach' in the plugin settings.
+LogAnalytics: Display: Provider StudioTelemetry.Provider.Log is disabled for this application
+LogAnalytics: Display: Provider StudioTelemetry.Provider.CSV is disabled for this application
+LogAnalytics: Display: Provider StudioTelemetry.Provider.Horde is disabled for this application
+LogStreaming: Display: AsyncLoading2 - Created: Async Loading Thread: true, Async Post Load: true, Multithreaded: false
+[2026.08.20-15.03.40:578][  0]LogCsvProfiler: Display: Metadata set : systemresolution.resx="1707"
+[2026.08.20-15.03.40:578][  0]LogCsvProfiler: Display: Metadata set : systemresolution.resy="1067"
+[2026.08.20-15.03.40:642][  0]LogHAL: Display: Platform has ~ 32 GB [33736089600 / 34359738368 / 32], which maps to Largest [LargestMinGB=32, LargerMinGB=12, DefaultMinGB=8, SmallerMinGB=6, SmallestMinGB=0)
+[2026.08.20-15.03.40:743][  0]LogCsvProfiler: Display: Metadata set : extradevelopmentmemorymb="0"
+[2026.08.20-15.03.40:892][  0]LogWindowsTouchpad: Display: CacheForceMaxTouchpadSensitivityMode SetMaxTouchpadSensitivity
+[2026.08.20-15.03.40:899][  0]LogObj: Display: Attempting to load config data for Default__SlateThemeManager before the Class has been constructed/registered/linked (likely during module loading or early startup). This will result in the load silently failing and should be fixed.
+[2026.08.20-15.03.40:979][  0]LogCsvProfiler: Display: Metadata set : verbatimrhiname="Null"
+[2026.08.20-15.03.40:979][  0]LogCsvProfiler: Display: Metadata set : rhiname="Null"
+[2026.08.20-15.03.40:979][  0]LogCsvProfiler: Display: Metadata set : rhifeaturelevel="SM6"
+[2026.08.20-15.03.40:979][  0]LogCsvProfiler: Display: Metadata set : shaderplatform="PCD3D_SM6"
+[2026.08.20-15.03.40:980][  0]LogCsvProfiler: Display: Metadata set : gpu=""
+[2026.08.20-15.03.40:980][  0]LogCsvProfiler: Display: Metadata set : gpudriver=""
+[2026.08.20-15.03.41:333][  0]LogDeviceProfileManager: Display: Deviceprofile LinuxArm64Editor not found.
+[2026.08.20-15.03.41:334][  0]LogDeviceProfileManager: Display: Deviceprofile LinuxArm64 not found.
+[2026.08.20-15.03.41:337][  0]LogCsvProfiler: Display: Metadata set : deviceprofile="Windows"
+[2026.08.20-15.03.41:340][  0]LogStreaming: Display: FlushAsyncLoading(8): 8 QueuedPackages, 0 AsyncPackages
+[2026.08.20-15.03.41:381][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/WorldGridMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).
+[2026.08.20-15.03.41:382][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/DefaultDeferredDecalMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).
+[2026.08.20-15.03.41:383][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/DefaultLightFunctionMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).
+[2026.08.20-15.03.41:383][  0]LogStreaming: Display: Partially loaded package /Engine/EngineMaterials/DefaultPostProcessMaterial (state: WaitingForIo) to avoid deadlock when it was recursively flushed by package /Engine/EngineMaterials/DefaultTextMaterialOpaque (state: PostLoad). UniqueCallstack(-1).
+[2026.08.20-15.03.41:442][  0]LogStreaming: Warning: LoadPackage: SkipPackage: /Game/Calibration/VFX/NS_Emberveil_Attune (0x3385196A64A10E1F) - The package to load does not exist on disk or in the loader
+[2026.08.20-15.03.41:444][  0]LogUObjectGlobals: Warning: Failed to find object 'NiagaraSystem /Game/Calibration/VFX/NS_Emberveil_Attune.NS_Emberveil_Attune'
+[2026.08.20-15.03.41:445][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2026.08.20-15.03.41:457][  0]LogMetaSound: Display: MetaSound Page Target Initialized to 'Default'
+[2026.08.20-15.03.41:477][  0]LogAudioCaptureCore: Display: No Audio Capture implementations found. Audio input will be silent.
+[2026.08.20-15.03.41:542][  0]LogAudio: Display: Registering Engine Module Parameter Interfaces...
+[2026.08.20-15.03.41:622][  0]LogCsvProfiler: Display: Metadata set : largeworldcoordinates="1"
+[2026.08.20-15.03.41:632][  0]LogInit: Display: Game Engine Initialized.
+[2026.08.20-15.03.41:640][  0]LogCsvProfiler: Display: Metadata set : raytracing="0"
+[2026.08.20-15.03.41:668][  0]LogInit: Display: Starting Game.
+[2026.08.20-15.03.41:688][  0]LogTemp: Display: LogFoundry: ASHWAKE_MAP_BEGINPLAY World=EmberveilCalibration
+[2026.08.20-15.03.41:690][  0]LogTemp: Display: LogFoundry: ASHWAKE_GAMEPLAY_BEGIN RequiredCoals=3
+[2026.08.20-15.03.41:695][  0]LogTemp: Display: LogFoundry: RELIQUARY_BEGINPLAY Actor=FoundryRelicActor_2147482386
+[2026.08.20-15.03.41:695][  0]LogStreaming: Warning: LoadPackage: SkipPackage: /Game/Calibration/Audio/source (0x2CE0F2540751C694) - The package to load does not exist on disk or in the loader
+[2026.08.20-15.03.41:695][  0]LogUObjectGlobals: Warning: Failed to find object 'SoundBase /Game/Calibration/Audio/source.source'
+[2026.08.20-15.03.41:695][  0]LogStreaming: Warning: LoadPackage: SkipPackage: /Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root (0xA6D6E4689C70306B) - The package to load does not exist on disk or in the loader
+[2026.08.20-15.03.41:696][  0]LogUObjectGlobals: Warning: Failed to find object 'AnimationAsset /Game/Calibration/Emberveil/emberveil-canonical/SkeletalMeshes/emberveil-canonical11vt_float_Emberveil_root.emberveil-canonical11vt_float_Emberveil_root'
+[2026.08.20-15.03.41:696][  0]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=1
+[2026.08.20-15.03.41:696][  0]LogTemp: Display: LogFoundry: RELIQUARY_BEGINPLAY Actor=FoundryRelicActor_2147482384
+[2026.08.20-15.03.41:697][  0]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=1
+[2026.08.20-15.03.41:697][  0]LogTemp: Display: LogFoundry: RELIQUARY_BEGINPLAY Actor=FoundryRelicActor_2147482382
+[2026.08.20-15.03.41:697][  0]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=1
+[2026.08.20-15.03.41:698][  0]LogInit: Display: Engine is initialized. Leaving FEngineLoop::Init()
+[2026.08.20-15.03.43:694][592]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=2
+[2026.08.20-15.03.43:695][592]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=2
+[2026.08.20-15.03.43:696][594]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=2
+[2026.08.20-15.03.46:695][526]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=3
+[2026.08.20-15.03.46:695][526]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=3
+[2026.08.20-15.03.46:697][528]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=3
+[2026.08.20-15.03.48:195][438]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=1
+[2026.08.20-15.03.48:195][438]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=1
+[2026.08.20-15.03.48:196][440]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=1
+[2026.08.20-15.03.50:195][ 63]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=2
+[2026.08.20-15.03.50:195][ 63]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=2
+[2026.08.20-15.03.50:197][ 65]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=2
+[2026.08.20-15.03.53:195][ 11]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=3
+[2026.08.20-15.03.53:195][ 11]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=3
+[2026.08.20-15.03.53:196][ 12]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=3
+[2026.08.20-15.03.54:695][984]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=1
+[2026.08.20-15.03.54:695][984]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=1
+[2026.08.20-15.03.54:696][985]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=1
+[2026.08.20-15.03.56:695][648]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=2
+[2026.08.20-15.03.56:695][649]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=2
+[2026.08.20-15.03.56:696][650]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=2
+[2026.08.20-15.03.59:695][650]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=3
+[2026.08.20-15.03.59:695][650]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=3
+[2026.08.20-15.03.59:697][651]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=3
+[2026.08.20-15.04.01:195][794]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=1
+[2026.08.20-15.04.01:196][794]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=1
+[2026.08.20-15.04.01:197][796]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=1
+[2026.08.20-15.04.03:195][460]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=2
+[2026.08.20-15.04.03:195][460]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=2
+[2026.08.20-15.04.03:197][462]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=2
+[2026.08.20-15.04.06:195][428]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=3
+[2026.08.20-15.04.06:196][428]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=3
+[2026.08.20-15.04.06:197][429]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=3
+[2026.08.20-15.04.07:696][403]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482386 State=1
+[2026.08.20-15.04.07:696][403]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482384 State=1
+[2026.08.20-15.04.07:697][404]LogTemp: Display: LogFoundry: RELIQUARY_STATE Actor=FoundryRelicActor_2147482382 State=1

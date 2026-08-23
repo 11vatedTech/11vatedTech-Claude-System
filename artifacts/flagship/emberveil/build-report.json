@@ -1,0 +1,419 @@
+{
+  "ok": true,
+  "failed": [],
+  "results": {
+    "scene.create": {
+      "scene": {
+        "name": "Scene",
+        "frame_current": 72,
+        "frame_start": 1,
+        "frame_end": 96
+      },
+      "camera": "Cam",
+      "objects": [
+        {
+          "name": "Cam",
+          "type": "CAMERA",
+          "location": [
+            6.0,
+            -7.0,
+            3.0
+          ],
+          "rotation": [
+            78.95,
+            0.0,
+            40.6
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": []
+        },
+        {
+          "name": "CoolRim",
+          "type": "LIGHT",
+          "location": [
+            -6.0,
+            -4.0,
+            8.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": []
+        },
+        {
+          "name": "Emberveil_root",
+          "type": "EMPTY",
+          "location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "materials": []
+        }
+      ],
+      "object_count": 3,
+      "lights": [
+        "CoolRim"
+      ],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "mesh.lathe.bell": {
+      "name": "glass_bell",
+      "vertices": 864,
+      "faces": 768,
+      "profile_points": 9,
+      "segments": 96,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "mesh.lathe.core": {
+      "name": "ember_core",
+      "vertices": 448,
+      "faces": 384,
+      "profile_points": 7,
+      "segments": 64,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "mesh.lathe.band": {
+      "name": "brass_band",
+      "vertices": 384,
+      "faces": 288,
+      "profile_points": 4,
+      "segments": 96,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "mesh.lathe.filigree": {
+      "name": "filigree_arc",
+      "vertices": 240,
+      "faces": 192,
+      "profile_points": 5,
+      "segments": 48,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "mesh.radial_array": {
+      "source": "filigree_arc",
+      "count": 3,
+      "objects": [
+        "filigree_arc",
+        "filigree_arc_01",
+        "filigree_arc_02"
+      ],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "mesh.lathe.plinth": {
+      "name": "plinth",
+      "vertices": 384,
+      "faces": 288,
+      "profile_points": 4,
+      "segments": 96,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "mat.glass": {
+      "material": "Emberveil_Glass",
+      "node_count": 2,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "mat.ember": {
+      "material": "Emberveil_Core",
+      "node_count": 2,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "mat.brass": {
+      "material": "Emberveil_Brass",
+      "node_count": 2,
+      "textures": [],
+      "assigned_to": [
+        "brass_band",
+        "filigree_arc",
+        "filigree_arc_01",
+        "filigree_arc_02"
+      ],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "mat.plinth": {
+      "material": "Emberveil_Plinth",
+      "node_count": 2,
+      "textures": [],
+      "assigned_to": [
+        "plinth"
+      ],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "rig.parent": {
+      "root": "Emberveil_root",
+      "children": [
+        "glass_bell",
+        "ember_core",
+        "brass_band",
+        "filigree_arc",
+        "filigree_arc_01",
+        "filigree_arc_02"
+      ],
+      "parented": 6,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "anim.float": {
+      "object": "Emberveil_root",
+      "action": "11vt_float_Emberveil_root",
+      "frames": [
+        1,
+        96
+      ],
+      "amplitude": 0.18,
+      "cycles": 2,
+      "loop_safe": true,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "rig.inspect": {
+      "armature": null,
+      "bones": [],
+      "note": "no_armature_in_scene",
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "anim.inspect": {
+      "actions": [
+        {
+          "name": "11vt_float_Emberveil_root",
+          "frame_range": [
+            1.0,
+            96.0
+          ],
+          "fcurves": 6,
+          "channels_per_bone": {
+            "location": 3,
+            "rotation_euler": 3
+          }
+        }
+      ],
+      "scene_frame_range": [
+        1,
+        96
+      ],
+      "scene_frame_current": 96,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "render.turntable": {
+      "frames": 24,
+      "rendered": [
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-000.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-001.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-002.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-003.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-004.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-005.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-006.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-007.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-008.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-009.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-010.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-011.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-012.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-013.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-014.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-015.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-016.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-017.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-018.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-019.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-020.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-021.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-022.png",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-023.png"
+      ],
+      "radius": 5.5,
+      "height": 1.8,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "render.preview": {
+      "frame": 24,
+      "render": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\preview\\preview-frame-0024.png",
+      "resolution": [
+        960,
+        540
+      ],
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "camera.path": {
+      "camera": "CinematicCam",
+      "frames": [
+        1,
+        72
+      ],
+      "radius": 6.2,
+      "sweep_degrees": 80.0,
+      "lens_mm": 45.0,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "render.sequence": {
+      "frames": 72,
+      "first": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\cinematic-frames\\seq-0001.png",
+      "last": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\cinematic-frames\\seq-0072.png",
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+    },
+    "asset.export_glb": {
+      "out_path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\emberveil.glb",
+      "exists": true,
+      "bytes": 231272,
+      "op_runner_version": "0.4.0",
+      "blender_version": "5.2.0 LTS",
+      "ok": true,
+      "health": "PASS",
+      "saved_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend",
+      "glb_validation": {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\emberveil.glb",
+        "exists": true,
+        "bytes": 231272,
+        "magic": "0x46546c67",
+        "version": 2,
+        "declared_length": 231272,
+        "json_chunk_bytes": 5836,
+        "asset_version": "2.0",
+        "mesh_count": 7,
+        "node_count": 8,
+        "material_count": 2,
+        "animation_count": 1,
+        "has_bin": true,
+        "bin_chunk_bytes": 225408,
+        "valid": true
+      }
+    },
+    "video.turntable": {
+      "argv": [
+        "ffmpeg",
+        "-y",
+        "-framerate",
+        "12",
+        "-i",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-%03d.png",
+        "-c:v",
+        "libx264",
+        "-pix_fmt",
+        "yuv420p",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\emberveil-turntable.mp4"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers\n  built with gcc 16.1.0 (Rev2, Built by MSYS2 project)\n  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libsvtjpegxs --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper\n  libavutil      60. 26.102 / 60. 26.102\n  libavcodec     62. 28.102 / 62. 28.102\n  libavformat    62. 12.102 / 62. 12.102\n  libavdevice    62.  3.102 / 62.  3.102\n  libavfilter    11. 14.102 / 11. 14.102\n  libswscale      9.  5.102 /  9.  5.102\n  libswresample   6.  3.102 /  6.  3.102\nInput #0, image2, from 'C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\turntable\\turntable-%03d.png':\n  Duration: 00:00:02.00, start: 0.000000, bitrate: N/A\n  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 640x360 [SAR 2834:2834 DAR 16:9], 12 fps, 12 tbr, 12 tbn\nStream mapping:\n  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))\nPress [q] to stop, [?] for help\n[libx264 @ 0000016e1cb4a080] using SAR=1/1\n[libx264 @ 0000016e1cb4a080] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2\n[libx264 @ 0000016e1cb4a080] profile High, level 2.2, 4:2:0, 8-bit\n[libx264 @ 0000016e1cb4a080] 264 - core 165 r3223 0480cb0 - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=11 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=12 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00\nOutput #0, mp4, to 'C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\emberveil-turntable.mp4':\n  Metadata:\n    encoder         : Lavf62.12.102\n  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 640x360 [SAR 1:1 DAR 16:9], q=2-31, 12 fps, 12288 tbn\n    Metadata:\n      encoder         : Lavc62.28.102 libx264\n    Side data:\n      EXIF metadata: (54 bytes)\n      CPB properties: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A\n[out#0/mp4 @ 0000016e1ca90000] video:20KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 5.627727%\nframe=   24 fps=0.0 q=-1.0 Lsize=      21KiB time=00:00:01.83 bitrate=  95.1kbits/s speed=16.5x elapsed=0:00:00.11    \n[libx264 @ 0000016e1cb4a080] frame I:1     Avg QP:12.82  size:  3935\n[libx264 @ 0000016e1cb4a080] frame P:6     Avg QP:15.53  size:   977\n[libx264 @ 0000016e1cb4a080] frame B:17    Avg QP:18.25  size:   597\n[libx264 @ 0000016e1cb4a080] consecutive B-frames:  4.2%  0.0% 12.5% 83.3%\n[libx264 @ 0000016e1cb4a080] mb I  I16..4: 16.8% 73.3%  9.9%\n[libx264 @ 0000016e1cb4a080] mb P  I16..4:  4.4% 12.7%  0.2%  P16..4: 19.0%  1.9%  1.8%  0.0%  0.0%    skip:59.9%\n[libx264 @ 0000016e1cb4a080] mb B  I16..4:  2.3%  2.1%  0.0%  B16..8: 15.4%  1.7%  0.1%  direct: 0.9%  skip:77.6%  L0:52.9% L1:45.9% BI: 1.3%\n[libx264 @ 0000016e1cb4a080] 8x8 transform intra:66.5% inter:98.7%\n[libx264 @ 0000016e1cb4a080] coded y,uvDC,uvAC intra: 36.1% 21.6% 2.5% inter: 5.6% 3.3% 0.0%\n[libx264 @ 0000016e1cb4a080] i16 v,h,dc,p: 49% 15% 17% 20%\n[libx264 @ 0000016e1cb4a080] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 38% 12% 41%  2%  1%  1%  1%  2%  1%\n[libx264 @ 0000016e1cb4a080] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 35% 29% 12%  3%  2%  3%  6%  3%  8%\n[libx264 @ 0000016e1cb4a080] i8c dc,h,v,p: 70% 10% 18%  3%\n[libx264 @ 0000016e1cb4a080] Weighted P-Frames: Y:0.0% UV:0.0%\n[libx264 @ 0000016e1cb4a080] ref P L0: 56.1%  1.5% 31.1% 11.3%\n[libx264 @ 0000016e1cb4a080] ref B L0: 62.7% 22.7% 14.6%\n[libx264 @ 0000016e1cb4a080] ref B L1: 86.1% 13.9%\n[libx264 @ 0000016e1cb4a080] kb/s:79.76\n",
+      "elapsed_seconds": 0.221,
+      "ok": true,
+      "health": "PASS"
+    },
+    "video.cinematic": {
+      "argv": [
+        "ffmpeg",
+        "-y",
+        "-framerate",
+        "12",
+        "-i",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\cinematic-frames\\seq-%04d.png",
+        "-c:v",
+        "libx264",
+        "-pix_fmt",
+        "yuv420p",
+        "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\emberveil-cinematic.mp4"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers\n  built with gcc 16.1.0 (Rev2, Built by MSYS2 project)\n  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libsvtjpegxs --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper\n  libavutil      60. 26.102 / 60. 26.102\n  libavcodec     62. 28.102 / 62. 28.102\n  libavformat    62. 12.102 / 62. 12.102\n  libavdevice    62.  3.102 / 62.  3.102\n  libavfilter    11. 14.102 / 11. 14.102\n  libswscale      9.  5.102 /  9.  5.102\n  libswresample   6.  3.102 /  6.  3.102\nInput #0, image2, from 'C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\cinematic-frames\\seq-%04d.png':\n  Duration: 00:00:06.00, start: 0.000000, bitrate: N/A\n  Stream #0:0: Video: png, rgba(pc, gbr/bt709/iec61966-2-1), 640x360 [SAR 2834:2834 DAR 16:9], 12 fps, 12 tbr, 12 tbn\nStream mapping:\n  Stream #0:0 -> #0:0 (png (native) -> h264 (libx264))\nPress [q] to stop, [?] for help\n[libx264 @ 000001e29a16b1c0] using SAR=1/1\n[libx264 @ 000001e29a16b1c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2\n[libx264 @ 000001e29a16b1c0] profile High, level 2.2, 4:2:0, 8-bit\n[libx264 @ 000001e29a16b1c0] 264 - core 165 r3223 0480cb0 - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=11 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=12 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00\nOutput #0, mp4, to 'C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\emberveil-cinematic.mp4':\n  Metadata:\n    encoder         : Lavf62.12.102\n  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, unknown/bt709/iec61966-2-1, progressive), 640x360 [SAR 1:1 DAR 16:9], q=2-31, 12 fps, 12288 tbn\n    Metadata:\n      encoder         : Lavc62.28.102 libx264\n    Side data:\n      EXIF metadata: (54 bytes)\n      CPB properties: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A\n[out#0/mp4 @ 000001e29a0b1880] video:71KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 2.382716%\nframe=   72 fps=0.0 q=-1.0 Lsize=      73KiB time=00:00:05.83 bitrate= 102.4kbits/s speed=  25x elapsed=0:00:00.23    \n[libx264 @ 000001e29a16b1c0] frame I:1     Avg QP:11.66  size:  6449\n[libx264 @ 000001e29a16b1c0] frame P:18    Avg QP:12.95  size:  1562\n[libx264 @ 000001e29a16b1c0] frame B:53    Avg QP:18.54  size:   710\n[libx264 @ 000001e29a16b1c0] consecutive B-frames:  1.4%  0.0%  4.2% 94.4%\n[libx264 @ 000001e29a16b1c0] mb I  I16..4: 10.5% 80.5%  8.9%\n[libx264 @ 000001e29a16b1c0] mb P  I16..4:  2.9% 13.2%  0.3%  P16..4: 21.0%  3.8%  2.9%  0.0%  0.0%    skip:56.0%\n[libx264 @ 000001e29a16b1c0] mb B  I16..4:  1.3%  1.5%  0.0%  B16..8: 19.2%  2.6%  0.1%  direct: 0.6%  skip:74.7%  L0:50.4% L1:48.3% BI: 1.4%\n[libx264 @ 000001e29a16b1c0] 8x8 transform intra:73.3% inter:97.4%\n[libx264 @ 000001e29a16b1c0] coded y,uvDC,uvAC intra: 46.8% 23.9% 1.4% inter: 5.6% 3.4% 0.0%\n[libx264 @ 000001e29a16b1c0] i16 v,h,dc,p: 41% 18% 12% 29%\n[libx264 @ 000001e29a16b1c0] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 25%  9% 57%  2%  1%  1%  1%  4%  1%\n[libx264 @ 000001e29a16b1c0] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 28% 22% 26%  2%  2%  2%  7%  2%  8%\n[libx264 @ 000001e29a16b1c0] i8c dc,h,v,p: 71% 10% 17%  3%\n[libx264 @ 000001e29a16b1c0] Weighted P-Frames: Y:0.0% UV:0.0%\n[libx264 @ 000001e29a16b1c0] ref P L0: 62.0%  2.5% 20.9% 14.6%\n[libx264 @ 000001e29a16b1c0] ref B L0: 65.2% 25.9%  8.9%\n[libx264 @ 000001e29a16b1c0] ref B L1: 84.6% 15.4%\n[libx264 @ 000001e29a16b1c0] kb/s:96.28\n",
+      "elapsed_seconds": 0.344,
+      "ok": true,
+      "health": "PASS"
+    }
+  }
+}

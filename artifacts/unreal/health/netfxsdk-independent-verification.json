@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-08-19",
+  "checks": {
+    "netfxsdk_dir_NETFXSDK": {
+      "path": "C:\\Program Files\\Microsoft SDKs\\NETFXSDK",
+      "exists": false,
+      "versions": [],
+      "usable": false
+    },
+    "ref_assemblies_v4.8": {
+      "path": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8",
+      "exists": false
+    },
+    "ref_assemblies_v4.8.1": {
+      "path": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8.1",
+      "exists": false
+    },
+    "reg_HKLM_NETFXSDK": {
+      "key": "HKLM\\SOFTWARE\\Microsoft\\Microsoft SDKs\\NETFXSDK",
+      "exists": false,
+      "subkeys": []
+    },
+    "reg_HKCU_NETFXSDK": {
+      "key": "HKCU\\SOFTWARE\\Microsoft\\Microsoft SDKs\\NETFXSDK",
+      "exists": false,
+      "subkeys": []
+    },
+    "vswhere_requires_48": {
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "vswhere_requires_48_json": {
+      "count": 0,
+      "installations": []
+    },
+    "env_NETFXSDKDir": null
+  },
+  "summary": {
+    "filesystem_usable": false,
+    "registry_present": false,
+    "vswhere_discoverable": false,
+    "overall": "NOT_INSTALLED"
+  }
+}

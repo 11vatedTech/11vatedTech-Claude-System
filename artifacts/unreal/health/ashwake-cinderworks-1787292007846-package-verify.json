@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "kind": "unreal-package-verification",
+  "status": "PASS",
+  "archive": "artifacts\\unreal\\calibration\\Packaged\\ashwake-cinderworks-1787292007846",
+  "file_count": 48,
+  "executables": [
+    {
+      "path": "artifacts\\unreal\\calibration\\Packaged\\ashwake-cinderworks-1787292007846\\Windows\\FoundryCalibration\\Binaries\\Win64\\FoundryCalibration.exe",
+      "sha256": "ad509f1c28defdc55dfe6f29965263e9916205d6348ddc7187466ae1e81ddd20",
+      "bytes": 342863360
+    },
+    {
+      "path": "artifacts\\unreal\\calibration\\Packaged\\ashwake-cinderworks-1787292007846\\Windows\\FoundryCalibration.exe",
+      "sha256": "4a13e38d9cf1ac060835913601cf37dbdc71efa2bb857dfc277c65c46053d7ca",
+      "bytes": 171520
+    }
+  ]
+}

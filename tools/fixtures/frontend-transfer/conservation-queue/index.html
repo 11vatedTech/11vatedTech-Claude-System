@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conservation Queue — Eastwood Museum</title>
+<style>
+/* ── Reset ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f8f6f2;
+  --surface:#ffffff;
+  --surface-hover:#f4f1ea;
+  --surface-selected:#ede8db;
+  --text-primary:#2c2820;
+  --text-secondary:#6e6558;
+  --text-muted:#6b6358;
+  --accent-burgundy:#7a3b3b;
+  --accent-gold:#b8860b;
+  --accent-slate:#5d6d7e;
+  --accent-green:#5c7a64;
+  --divider:#e0dbd2;
+  --focus-ring:rgba(122,59,59,0.4);
+  --font-text:'Georgia', 'Times New Roman', serif;
+  --font-data:'Consolas', 'Cascadia Code', monospace;
+  --radius:6px;
+  --transition:200ms ease-out;
+}
+html{background:var(--bg);color:var(--text-primary);font-family:var(--font-text);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body{min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:clamp(16px,3vw,40px) clamp(12px,2.5vw,32px)}
+
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+
+/* ── Container ── */
+.queue{width:100%;max-width:680px}
+.queue-header{margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--accent-burgundy)}
+.queue-header h2{font-size:1.1rem;font-weight:400;letter-spacing:0.03em;color:var(--text-primary)}
+.queue-header .meta{font-size:0.82rem;color:var(--text-secondary);margin-top:4px}
+.queue-header .meta span{font-family:var(--font-data);font-size:0.72rem;color:var(--text-muted);margin-left:12px}
+
+/* ── Card list ── */
+.card-list{display:flex;flex-direction:column;gap:1px;background:var(--divider);border-radius:var(--radius);overflow:hidden;border:1px solid var(--divider)}
+.card{background:var(--surface);cursor:pointer;transition:background var(--transition);outline:none;position:relative}
+.card:hover{background:var(--surface-hover)}
+.card:focus-visible{outline:2px solid var(--accent-burgundy);outline-offset:-2px;z-index:1}
+.card.selected{background:var(--surface-selected)}
+.card.scheduled .card-main{opacity:0.55}
+
+/* Card main row */
+.card-main{display:grid;grid-template-columns:1fr auto auto;align-items:center;padding:clamp(14px,2.5vw,20px) clamp(14px,2.5vw,20px);gap:12px;min-height:56px}
+@media(max-width:500px){.card-main{grid-template-columns:1fr auto auto;grid-template-rows:auto auto;row-gap:4px}.col-title{grid-column:1/3;grid-row:1}.col-urgency{grid-column:3;grid-row:1;justify-self:end}.col-condition{grid-column:1;grid-row:2}.col-time{grid-column:2/4;grid-row:2;justify-self:end}}
+
+.col-title{display:flex;flex-direction:column;gap:2px}
+.col-title .name{font-size:0.95rem;color:var(--text-primary);line-height:1.3}
+.col-title .medium{font-size:0.75rem;color:var(--text-secondary);font-family:var(--font-data)}
+.col-condition{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--text-secondary)}
+.condition-bar{width:48px;height:5px;background:var(--divider);border-radius:3px;overflow:hidden}
+.condition-bar .fill{height:100%;border-radius:3px;transition:width var(--transition)}
+.condition-bar .fill.critical{background:var(--accent-burgundy)}
+.condition-bar .fill.poor{background:var(--accent-gold)}
+.condition-bar .fill.fair{background:var(--accent-slate)}
+.condition-label{font-family:var(--font-data);font-size:0.72rem;min-width:40px}
+.col-time{font-family:var(--font-data);font-size:0.78rem;color:var(--text-secondary);white-space:nowrap}
+
+/* Urgency shape encoding */
+.col-urgency{display:flex;align-items:center;gap:6px}
+.urgency-shape{flex-shrink:0}
+.urgency-shape.critical{width:12px;height:12px;background:var(--accent-burgundy);clip-path:polygon(50% 0%, 80% 30%, 100% 60%, 80% 100%, 20% 100%, 0% 60%, 20% 30%)}
+.urgency-shape.high{width:10px;height:10px;background:var(--accent-gold);border-radius:50%}
+.urgency-shape.routine{width:10px;height:10px;border:2px solid var(--accent-slate);border-radius:50%;background:transparent}
+.urgency-label{font-family:var(--font-data);font-size:0.68rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em}
+
+/* Detail panel */
+.card-detail{display:none;border-top:1px solid var(--divider);padding:clamp(14px,3vw,20px);background:var(--surface-selected);font-size:0.85rem;color:var(--text-secondary);line-height:1.6}
+.card.selected .card-detail{display:block;animation:expand var(--transition)}
+@keyframes expand{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px}
+@media(max-width:500px){.detail-grid{grid-template-columns:1fr}}
+.detail-item{display:flex;flex-direction:column;gap:2px}
+.detail-label{font-size:0.72rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em}
+.detail-value{color:var(--text-primary);font-family:var(--font-data);font-size:0.82rem}
+
+.detail-actions{margin-top:14px;display:flex;gap:10px;align-items:center}
+.btn-schedule{font-family:var(--font-data);font-size:0.78rem;font-weight:500;padding:8px 18px;border:1px solid var(--accent-burgundy);border-radius:var(--radius);background:var(--accent-burgundy);color:var(--bg);cursor:pointer;letter-spacing:0.03em;text-transform:uppercase;transition:all var(--transition)}
+.btn-schedule:hover{background:#8e4a4a}
+.btn-schedule:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+.btn-schedule:active{transform:scale(0.98)}
+.btn-dismiss{font-family:var(--font-text);font-size:0.82rem;padding:6px 12px;border:none;background:transparent;color:var(--text-secondary);cursor:pointer;border-radius:var(--radius)}
+.btn-dismiss:hover{color:var(--text-primary)}
+
+/* Scheduled badge */
+.scheduled-badge{display:none;position:absolute;top:0;left:0;width:3px;height:100%;background:var(--accent-green);border-radius:var(--radius) 0 0 var(--radius)}
+.card.scheduled .scheduled-badge{display:block;animation:pulseIn 350ms cubic-bezier(0.2,0,0,1)}
+@keyframes pulseIn{0%{opacity:0;transform:scaleY(0.3)}50%{opacity:1;transform:scaleY(1.05)}100%{opacity:1;transform:scaleY(1)}}
+
+/* Confirmation inline */
+.confirmation-inline{display:none;margin-top:14px;padding:12px 16px;background:#edf5ee;border:1px solid var(--accent-green);border-radius:var(--radius);font-size:0.85rem;color:var(--text-primary)}
+.confirmation-inline.active{display:flex;align-items:center;gap:8px;animation:expand var(--transition)}
+.confirmation-inline .check{color:var(--accent-green);font-weight:bold}
+
+/* Empty state */
+.empty-state{text-align:center;padding:32px 20px;color:var(--text-muted)}
+.empty-state p{font-size:0.95rem;margin-bottom:4px}
+.empty-state span{font-family:var(--font-data);font-size:0.74rem}
+
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="queue">
+  <header class="queue-header">
+    <h2>Conservation Triage Queue</h2>
+    <p class="meta">Eastwood Museum — August 2026 <span>3 candidates pending</span></p>
+  </header>
+
+  <div class="card-list" role="list" aria-label="Conservation candidates">
+    <!-- JS injected -->
+  </div>
+</div>
+
+<script>
+const CANDIDATES = [
+  { id: "con-001", name: "Portrait of a Lady", date: "c. 1792", medium: "Oil on canvas, 94 × 72 cm",
+    condition: 82, conditionLabel: "CRITICAL",
+    time: "~120 hours", conservator: "Elaine Voss (paintings)",
+    urgency: "critical", urgencyLabel: "CRITICAL",
+    notes: "Active flaking in lower third. Craquelure advancing across the sitter's hands. Canvas tension compromised at lower-right tacking margin. Requires immediate consolidation before cleaning can begin.",
+    factors: ["Active flaking", "Structural instability", "High visitor visibility"] },
+  { id: "con-002", name: "Celestial Globe", date: "c. 1860", medium: "Brass, engraved paper gores, mahogany stand",
+    condition: 55, conditionLabel: "POOR",
+    time: "~40 hours", conservator: "Marcus Chen (objects)",
+    urgency: "high", urgencyLabel: "HIGH",
+    notes: "Paper gores are lifting at the equatorial seam. Brass meridian ring has verdigris corrosion where hands have touched it. Mahogany stand joint loose but stable. Treat before next rotational display opening.",
+    factors: ["Paper delamination", "Corrosion at touch points", "Display deadline"] },
+  { id: "con-003", name: "Manuscript Fragment", date: "14th c.", medium: "Vellum, iron gall ink, 3 folios",
+    condition: 38, conditionLabel: "FAIR",
+    time: "~18 hours", conservator: "Elaine Voss (works on paper)",
+    urgency: "routine", urgencyLabel: "ROUTINE",
+    notes: "Ink corrosion stable in current environment. Minor tideline at lower margin from pre-acquisition water contact. Scheduled for rehousing in custom alkaline-buffered folder. No active degradation.",
+    factors: ["Stable condition", "Preventive rehousing", "No urgency"] }
+];
+
+let selectedId = null;
+let scheduledId = null;
+
+const list = document.querySelector('.card-list');
+
+function render() {
+  list.innerHTML = '';
+
+  if (CANDIDATES.length === 0) {
+    list.innerHTML = `<div class="empty-state"><p>No conservation candidates found</p><span>Check back after next condition survey</span></div>`;
+    return;
+  }
+
+  CANDIDATES.forEach(c => {
+    const isSelected = selectedId === c.id;
+    const isScheduled = scheduledId === c.id;
+    const card = document.createElement('div');
+    card.className = 'card' + (isSelected ? ' selected' : '') + (isScheduled ? ' scheduled' : '');
+    card.setAttribute('role', 'listitem');
+    card.setAttribute('tabindex', isSelected ? '-1' : '0');
+    card.setAttribute('aria-expanded', String(isSelected));
+    card.setAttribute('aria-label', `${c.name}, ${c.conditionLabel} condition, ${c.urgencyLabel} urgency`);
+
+    card.innerHTML = `
+      <div class="scheduled-badge" aria-hidden="true"></div>
+      <div class="card-main">
+        <div class="col-title">
+          <span class="name">${c.name}</span>
+          <span class="medium">${c.medium} · ${c.date}</span>
+        </div>
+        <div class="col-condition">
+          <div class="condition-bar" aria-hidden="true"><div class="fill ${c.condition < 50 ? 'critical' : c.condition < 70 ? 'poor' : 'fair'}" style="width:${c.condition}%"></div></div>
+          <span class="condition-label">${c.conditionLabel}</span>
+        </div>
+        <div class="col-time">${c.time}</div>
+        <div class="col-urgency">
+          <span class="urgency-shape ${c.urgency}" aria-hidden="true"></span>
+          <span class="urgency-label">${c.urgencyLabel}</span>
+        </div>
+      </div>
+      <div class="card-detail">
+        <div class="detail-grid">
+          <div class="detail-item"><span class="detail-label">Conservator</span><span class="detail-value">${c.conservator}</span></div>
+          <div class="detail-item"><span class="detail-label">Est. treatment time</span><span class="detail-value">${c.time}</span></div>
+          <div class="detail-item"><span class="detail-label">Medium</span><span class="detail-value">${c.medium}</span></div>
+          <div class="detail-item"><span class="detail-label">Condition index</span><span class="detail-value">${c.condition}/100</span></div>
+        </div>
+        <p style="margin-top:12px;font-size:0.84rem">${c.notes}</p>
+        <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:5px">
+          ${c.factors.map(f => `<span style="font-family:var(--font-data);font-size:0.66rem;padding:2px 8px;border-radius:var(--radius);background:var(--bg);color:var(--text-secondary);border:1px solid var(--divider)">${f}</span>`).join('')}
+        </div>
+        <div class="detail-actions">
+          <button class="btn-schedule" data-id="${c.id}" ${isScheduled ? 'disabled style="opacity:0.5;pointer-events:none"' : ''}>
+            ${isScheduled ? 'Treatment SCHEDULED' : 'Schedule treatment'}
+          </button>
+          ${isSelected ? '<button class="btn-dismiss">Close</button>' : ''}
+        </div>
+        ${isScheduled ? `<div class="confirmation-inline active"><span class="check">✓</span> Treatment for <strong>${c.name}</strong> scheduled. Conservator ${c.conservator} notified.</div>` : ''}
+      </div>
+    `;
+
+    card.querySelector('.card-main').addEventListener('click', () => selectCard(c.id));
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectCard(c.id); }
+    });
+    list.appendChild(card);
+  });
+
+  document.querySelectorAll('.btn-schedule').forEach(b => {
+    b.addEventListener('click', e => { e.stopPropagation(); scheduleTreatment(b.dataset.id); });
+  });
+  document.querySelectorAll('.btn-dismiss').forEach(b => {
+    b.addEventListener('click', e => { e.stopPropagation(); selectCard(null); });
+  });
+}
+
+function selectCard(id) { if (scheduledId) return; selectedId = selectedId === id ? null : id; render(); }
+function scheduleTreatment(id) { if (scheduledId) return; scheduledId = id; selectedId = null; render(); }
+
+render();
+
+document.addEventListener('keydown', e => {
+  if (scheduledId) return;
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    e.preventDefault();
+    const cards = Array.from(list.querySelectorAll('.card'));
+    const idx = cards.findIndex(c => c.classList.contains('selected'));
+    const next = e.key === 'ArrowDown' ? idx + 1 : idx - 1;
+    if (next >= 0 && next < CANDIDATES.length) selectCard(CANDIDATES[next].id);
+  }
+  if (e.key === 'Escape' && selectedId) { e.preventDefault(); selectCard(null); }
+});
+</script>
+</body>
+</html>

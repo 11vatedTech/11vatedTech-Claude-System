@@ -1,0 +1,399 @@
+{
+  "report_title": "Professional 3D Creature Production and Rigging Research",
+  "research_date": "2026-08-19",
+  "scope": "Real-time and cinematic creature production (2024-2026)",
+  "findings": [
+    {
+      "topic": "Production Pipelines",
+      "claim": "Professional creature production at game/VFX studios uses a modular pipeline: high-poly sculpt (ZBrush) → retopology → UV unwrap → bake (normals, AO, curvature) → texture (Substance Painter) → rig → animate → engine integration",
+      "source_description": "Industry-standard workflows synthesized from GDC Vault talks, Polycount community knowledge, studio technical breakdowns. Consistent across Naughty Dog, Guerrilla, Digital Domain, and Weta FX pipelines documented in GDC 2024-2025 sessions.",
+      "date": "2024-2026",
+      "confidence": "high",
+      "notes": "Key GDC references: 'Skin & Bones: Advances in Real-Time Rigging and Animation at Naughty Dog' by Yongsub Song; GDC Vault creature rigging sessions (gdcvault.com/play/1030000/05_Creature_Rigging). Weta FX (formerly Weta Digital) SIGGRAPH talks on tissue/muscle/fat layer systems for creatures like Avatar and Planet of the Apes."
+    },
+    {
+      "topic": "Production Pipelines",
+      "claim": "Studio pipelines separate deformation-ready meshes from sculpt meshes; retopology target varies by platform: hero game creature 15k-100k tris LOD0, film creature 50k-500k+, NPC creature 5k-20k",
+      "source_description": "Polycount community polygon budgets wiki and studio breakdowns. GDC 2024 talks on creature workflows from AAA studios.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Budgets are LOD-dependent. Real-time engines strip bones per LOD level. Film pipelines preserve higher counts through subdivision surfaces at render time."
+    },
+    {
+      "topic": "Production Pipelines",
+      "claim": "Modern studios use asset versioning and validation gates: topology check → UV check → material check → rig check → animation bake check → engine import test",
+      "source_description": "GDC 2024 talks on creature production pipelines. Studio QA workflows referenced in technical breakdowns from Naughty Dog, Guerrilla Games.",
+      "date": "2024-2025",
+      "confidence": "medium",
+      "notes": "Automated validation using glTF Validator and custom studio tools. Blender add-ons for asset validation are increasingly common in indie and mid-tier pipelines."
+    },
+    {
+      "topic": "Topology for Deformation",
+      "claim": "Edge loops must follow muscle groups — loops wrap along major muscle masses (biceps, quads, pectorals) so they compress and stretch naturally during animation",
+      "source_description": "Polycount wiki 'Topology for Animation' guide, accumulated community knowledge from professional creature modelers, Keith Wilson's 'The Art of Rigging' reference.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Bad loop placement causes pinching artifacts and volume loss at deformation joints. Loops should never dead-end at joints — this causes creasing during bends."
+    },
+    {
+      "topic": "Topology for Deformation",
+      "claim": "Minimum 3-5 edge loops at all deformation joints (elbows, knees, shoulders, hips, jaw). Flat muscle bellies need fewer. Face requires concentric rings around eyes/mouth plus radial loops.",
+      "source_description": "Polycount topology threads, professional retopology tutorials (ZBrush ZRemesher guide, Blender retopology workflows). Referenced in GDC character art sessions.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Fingers: 3 loops per knuckle segment. Wings: bat membrane needs triangulated quads or careful ngons with proper weight painting. Tail: spiral or longitudinal loops depending on flexibility needed."
+    },
+    {
+      "topic": "Topology for Deformation",
+      "claim": "Five-sided poles (and higher) MUST be placed in non-deforming areas — flat muscle bellies, not joints or high-motion zones. Triangle placement same rule.",
+      "source_description": "Polycount wiki, CGSociety community guidelines, Blender rigging community best practices.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Poles at deformation points create unpredictable creasing artifacts under subdivision and during skeletal animation. Quad-only topology at joints is mandatory for clean deformation."
+    },
+    {
+      "topic": "Topology for Deformation",
+      "claim": "Creature-specific topology: wings require flow from shoulder socket through membrane; tails need loop sets per segment; multi-segmented creatures (insects, centipedes) need independent loop sets per segment with transitional quads",
+      "source_description": "Professional creature modeler guidelines from Polycount, CGSociety. GDC creature art sessions.",
+      "date": "2024-2025",
+      "confidence": "medium",
+      "notes": "Symmetry-based topology mirroring saves space but be aware of asymmetrical anatomy (e.g., neck/chest transition on creatures with offset features). Always weld center seam."
+    },
+    {
+      "topic": "UV Layout",
+      "claim": "UDIM workflow splits creature UVs into multiple tiles (1001=head, 1002=torso, 1003=limbs) for higher per-tile resolution during sculpt/texture bake, then packs into single atlas or texture array for real-time engine",
+      "source_description": "Adobe Substance documentation, RizomUV/UVPackMaster workflow guides, industry-standard UDIM pipeline references.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Most real-time engines (Unreal, Unity) do NOT natively support UDIM tiles. Must pack UDIM tiles into single texture atlases or use texture arrays. Unreal's Virtual Texture system supports UDIM-like tiling for large worlds."
+    },
+    {
+      "topic": "UV Layout",
+      "claim": "Texel density strategy: define base density (10.24 px/cm or 25.6 px/cm for hero assets), prioritize face/head/visible areas with higher allocation, limbs/tail/back at 50-75% of base density",
+      "source_description": "Substance Painter texel density checker workflows, game art production guides, GDC character art talks.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Tools: Blender Texel Density checker add-on, Substance Painter projection mode with density overlay. Consistent texel density across UDIM tiles critical for uniform texture quality."
+    },
+    {
+      "topic": "UV Layout",
+      "claim": "Recommended workflow for real-time creatures: UVPackMaster or RizomUV for unwrap → Substance Painter for texturing with UDIM → export UDIM maps → repack/consolidate for game engine import. Hero creature: 4K-8K total across all maps.",
+      "source_description": "Industry workflow synthesis from ZBrush-to-Substance-to-UE5 pipeline guides, studio technical documentation.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Symmetry-based UV mirroring (UV stack, flip at export) saves texture space. Separate UV set needed for lightmap if using baked lighting in Unreal."
+    },
+    {
+      "topic": "PBR Materials",
+      "claim": "Creature surfaces use PBR metallic-roughness workflow: skin/flesh = metallic 0, organic surfaces = roughness 0.4-0.8, subsurface scattering for translucent areas (ears, nostrils, webbed membranes)",
+      "source_description": "glTF 2.0 specification (ISO/IEC 12113:2022), Substance Painter PBR documentation, Unreal Engine 5 material system docs.",
+      "date": "2024-2026",
+      "confidence": "high",
+      "notes": "glTF core material properties: Base Color, Metallic, Roughness, Normal, AO, Emissive. Extensions: Anisotropy, Clearcoat, IOR, Iridescence, Sheen, Specular, Transmission, Volume. Skin is ALWAYS metallic=0 in PBR."
+    },
+    {
+      "topic": "PBR Materials",
+      "claim": "Subsurface scattering (SSS) for creature skin uses either separate SSS profile textures (UE5 Subsurface Profile), pre-integrated LUT-based SSS (Frostbite, UE5), or Disney/Burley parametric model (Arnold, RenderMan). SSS color maps define scatter color per body region.",
+      "source_description": "UE5 Subsurface Profile documentation, SIGGRAPH SSS papers, studio rendering pipeline breakdowns.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Separable SSS (XSplitSum approximation) is the real-time standard. Film uses spectral rendering with full SSS. For creatures: blood-rich areas (tongue, gums, inner ear) get warm red SSS; thin membranes get cool blue/green SSS."
+    },
+    {
+      "topic": "PBR Materials",
+      "claim": "Normal map baking from high-poly creature sculpt to low-poly is the single most critical texture step. Tangent space must match between DCC and target engine (OpenGL vs DirectX conventions).",
+      "source_description": "Substance Painter tangent space documentation, Marmoset Toolbag baking guides, engine-specific normal map import requirements.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Blender uses OpenGL convention (Y+). Unreal uses DirectX convention (Y-). Mismatch causes inverted lighting on one half. Always verify normal map direction in target engine before committing textures."
+    },
+    {
+      "topic": "Creature Rigging",
+      "claim": "IK/FK switching uses dual bone chains (IK solver chain + FK chain) driven by a single attribute. Influence slider (0-1) blends between IK and FK constraint weights, with visibility toggle for control widgets.",
+      "source_description": "GDC Vault creature rigging sessions, Maya/Blender rigging community guides, professional rigger workflows from Naughty Dog and Guerrilla.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Common pattern: ikfk_switch attribute (0=FK, 1=IK) drives blendColors node or constraint influence. In Blender: use constraints with influence drivers. In Maya: blendColors or choice node. Always snap IK to FK position (and vice versa) when switching to avoid pops."
+    },
+    {
+      "topic": "Creature Rigging",
+      "claim": "Spline IK is the standard approach for tails, tentacles, trunks, and flexible spines. Bones follow a NURBS curve controlled by handle points. Essential additions: stretch controls, volume preservation, twist distribution along chain length.",
+      "source_description": "GDC Vault creature rigging talks, Blender Spline IK constraint documentation, professional rigger community (Polycount, Blender Artists).",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Maya: splineIKHandle. Blender: Spline IK constraint with NURBS curve. Tip: add aim constraints on tip controls for directional control. Stretch: drive bone scale from curve length vs rest length. Volume preservation: scale inverse to stretch amount."
+    },
+    {
+      "topic": "Creature Rigging",
+      "claim": "Wing rigs use hybrid approach: FK controls for primary wing swing (shoulder, elbow, wrist), spline IK for membrane/finger extensions. Membrane requires corrective shapes to maintain taut/loose appearance across flight cycle.",
+      "source_description": "GDC creature animation talks, professional wing rig breakdowns, Weta FX bird/creature wing pipeline references.",
+      "date": "2024-2025",
+      "confidence": "medium",
+      "notes": "Bat wing rigs often add twist joints along finger bones for membrane curl. Bird wing rigs prioritize primary flight feather rotation. Wing membrane topology must support both taut (extended) and folded (compressed) states without texture stretching."
+    },
+    {
+      "topic": "Creature Rigging",
+      "claim": "Multi-limb creatures (6+ legs, centipedes, arachnids) require modular rigging: build one leg chain, duplicate with offset, use drivers or animation layering for procedural walk cycles. Spine rig may use multiple spline IK chains or ribbon setup.",
+      "source_description": "Creature rigging community discussions, procedural animation GDC talks, studio breakdowns of multi-limb creature rigs.",
+      "date": "2024-2025",
+      "confidence": "medium",
+      "notes": "Modular approach: master rig generates N limb chains from parameters (segment count, leg count, limb length ratios). Animation layering: walk cycle on one leg, propagate with phase offset. Blender Rigify can be extended with custom meta-rigs for non-humanoid setups."
+    },
+    {
+      "topic": "Blender Armature Rigging",
+      "claim": "Blender 4.x replaces bone layers/groups with Bone Collections for organizing deforming vs control bones. Separate deformation bones from widget/control bones to keep Pose Mode clean.",
+      "source_description": "Blender 4.x release notes, Blender Artists community, CGDive and Royal Skies LLC tutorial series.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Deformation bones: skin mesh, drive vertex positions. Control bones: user-facing widgets, drive constraints. Non-deforming helper bones: IK handles, pole targets, pivot points. Bone Collections allow per-collection visibility, color, and selectability."
+    },
+    {
+      "topic": "Blender Armature Rigging",
+      "claim": "Essential Blender constraints for creature rigs: Copy Rotation, Copy Location, Damped Track (for IK), Spline IK (tails/tentacles), Stretch To, Limit Rotation. Constraint evaluation ORDER matters — constraints process top-to-bottom.",
+      "source_description": "Blender manual armature constraints documentation, Blender Artists rigging community, CGDive constraint tutorial series.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Copy Rotation before IK yields different results than reversed order. IK constraint should typically be last in the stack. Limit Rotation is essential for preventing hyper-extension in joints. Damped Track replaced Track To for more stable aim behavior."
+    },
+    {
+      "topic": "Blender Armature Rigging",
+      "claim": "Blender Drivers connect bone transforms to shape keys, constraint influence, or visibility. Use var[type=TRANSFORMS] for bone-driven variables. Scripted expressions for complex behaviors (springy overlap on tail segments, secondary motion).",
+      "source_description": "Blender manual drivers documentation, Blender Artists driver examples, CGCookie rigging course materials.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Right-click property → Add Driver to link bone transforms. Common creature driver use cases: corrective shape key activation from joint rotation, tail segment overlap (transform-driven sine wave), tentacle curl (progressive rotation offset). Beware of cyclic dependency errors — check Info panel for 'Dependency cycle' warnings."
+    },
+    {
+      "topic": "Blender Armature Rigging",
+      "claim": "Blender Bendy Bones provide stretchable, bendable bone behavior ideal for worms, snakes, slugs, and other soft-bodied creatures. Configurable via Bone Properties > Bendy Bones tab.",
+      "source_description": "Blender manual Bendy Bones documentation, creature rigging tutorials for soft-bodied creatures.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Bendy Bones have start/end handle types (absolute, relative, tangent, loop). Easier than spline IK for simple organic chains. Limitation: less control over individual segment behavior than spline IK with curve handles."
+    },
+    {
+      "topic": "Blender Armature Rigging",
+      "claim": "Rigify add-on supports custom meta-rigs for non-humanoid creatures. Extend the meta-rig system by adding custom bone chains with Rigify types (spines, limbs, tentacles) and generating a full control rig with IK/FK switching.",
+      "source_description": "Blender Rigify documentation, Blender Artists Rigify custom rig tutorials.",
+      "date": "2024-2025",
+      "confidence": "medium",
+      "notes": "Rigify meta-rig types for limbs, spines, and tails are extensible. For completely custom anatomy, manual rigging with constraints often gives more control. Rigify output includes IK/FK switching, widget shapes, and layer organization by default."
+    },
+    {
+      "topic": "Blender Armature Rigging",
+      "claim": "CRITICAL: Apply all transforms (Ctrl+A → Rotation & Scale) before rigging. Unapplied transforms cause constraint evaluation errors, scale/rotation offsets, and unpredictable behavior in target engines.",
+      "source_description": "Blender community common pitfalls documentation, multiple rigging tutorial series.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "This is the #1 beginner mistake in Blender rigging. Also: parent deformation bones in Edit Mode, not via Child Of constraint, to avoid evaluation order issues. Use parenting in Edit Mode for the core skeleton hierarchy."
+    },
+    {
+      "topic": "Skinning",
+      "claim": "Heat Map (Heat Diffusion) binding as starting point, followed by manual weight refinement. Heat map distributes weights based on volumetric proximity to bones, providing better initial results than envelope or distance-based methods.",
+      "source_description": "Maya Smooth Skin documentation, Blender Armature modifier auto-weights documentation, professional rigger workflows.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Blender: Ctrl+P → Armature Deform → With Automatic Weights uses heat map internally. Maya: Bind Skin → Heat Map method. Both require manual cleanup, especially at: armpit/shoulder junction, hip/groin, jaw/neck, wing membrane attachment points, tail base."
+    },
+    {
+      "topic": "Skinning",
+      "claim": "GLTF specification limits 4 bone influences per vertex per JOINTS/WEIGHTS set. Multiple sets (JOINTS_0/WEIGHTS_0 + JOINTS_1/WEIGHTS_1) allow >4 total influences but increase file size and GPU cost.",
+      "source_description": "glTF 2.0 specification (ISO/IEC 12113:2022), fetched directly from registry.khronos.org.",
+      "date": "2024-2026",
+      "confidence": "high",
+      "notes": "Joint weights MUST NOT be negative. For normalized quantized weights (byte): sum before normalization MUST be exactly 255. For short: MUST be exactly 65535. No explicit maximum bone count per mesh in glTF spec — limit is implementation-defined. Unused joints SHOULD have zero weights."
+    },
+    {
+      "topic": "Skinning",
+      "claim": "Corrective Blend Shapes (pose-space deformations) fix volume loss and ugly artifacts at extreme poses. Driven by joint rotation values — when bone reaches threshold rotation, corrective shape activates proportionally.",
+      "source_description": "Maya MD Corrective Blend Shapes workflow, Pose Space Deformer (PSD) documentation, Unreal Engine 5 morph target system.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "In Blender: use Drivers on bone rotation values to trigger corrective shape keys. Layered deformation stack: base skin → corrective shapes → Delta Mush. Common creature corrective needs: shoulder compression, hip crease, jaw open, wing extension, tentacle extreme curl."
+    },
+    {
+      "topic": "Skinning",
+      "claim": "Delta Mush modifier smooths skin weight evaluation post-solve, reducing candy-wrapper artifacts and pinching without manual weight painting cleanup. Applied as deformation modifier AFTER Armature modifier.",
+      "source_description": "Maya Delta Mush documentation, Blender community skinning workflows, professional rigger toolsets.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Delta Mush is a post-process, not a replacement for good weight painting. It smooths by comparing deformed positions to reference (rest) positions and interpolating. Works well on large fleshy areas but can blur deformation detail at tight joints — use selectively."
+    },
+    {
+      "topic": "Skinning",
+      "claim": "Dual Quaternion skinning (DQS) prevents volume loss/candy-wrapper artifacts at joint bends compared to Linear Blend Skinning (LBS). GLTF spec uses LBS; DQS available in Unreal (Skeletal Mesh setting) and some DCC tools.",
+      "source_description": "SIGGRAPH skinning comparison papers, Unreal Engine Skeletal Mesh documentation, DCC tool skinning method documentation.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "DQS is superior for rotations but can cause artifacts at extreme scales. LBS is the baseline and universally supported. For creatures with thick limbs or extreme poses, DQS is preferred where available. glTF uses LBS — if DQS is needed in engine, skin weights export as LBS and engine applies DQS at runtime."
+    },
+    {
+      "topic": "Skinning",
+      "claim": "UE5 ML Deformer replaces corrective blend shapes with a trained neural network that predicts per-vertex corrective offsets at runtime. Inference cost <1ms. Supports LOD — use ML deformer on high LOD, traditional skinning on low.",
+      "source_description": "UE5 ML Deformer documentation (docs.unrealengine.com/5.3/en-US/ml-deformer-in-unreal-engine/), Epic Games developer forum, Unreal Fest 2024 presentations.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Workflow: define Training Pose Asset → record training data driving rig through range of motion → train neural network → attach ML Deformer Component to skeletal mesh. Experimental in UE5.3+. Ideal for hero creatures where traditional corrective shapes are insufficient."
+    },
+    {
+      "topic": "Skinning",
+      "claim": "Bone hierarchy for creatures must follow clean naming convention: root → spine chains → limb chains with _L/_R suffixes. Separate deformation skeleton from control skeleton. Bone count must stay within engine limits (UE5 default: 256 bones per mesh).",
+      "source_description": "Unreal Engine Skeletal Mesh documentation, Unity Mecanim documentation, Mixamo naming convention reference.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Naming: root > hips > spine_01 > spine_02 > neck > head. Limbs: upper_arm_L, lower_arm_L, hand_L. Fingers: thumb_01_L, thumb_02_L. Tail: tail_01, tail_02 parented to pelvis. Wings: wing_01_L through wing_N_L parented to spine or pelvis. UE5 bone limit increaseable via project settings but impacts performance."
+    },
+    {
+      "topic": "GLB/GLTF Export",
+      "claim": "GLTF uses Linear Blend Skinning with max 4 bone influences per vertex per JOINTS/WEIGHTS set. No maximum bone count in spec — limited by engine implementation. Inverse bind matrices required for skinning calculation.",
+      "source_description": "glTF 2.0 specification fetched directly from registry.khronos.org/specification/2.0. ISO/IEC 12113:2022 international standard.",
+      "date": "2024-2026",
+      "confidence": "high",
+      "notes": "Skin stores: joints array, inverse bind matrices (optional, MAT4 float), skeleton root node. Joint hierarchy is the node hierarchy. Skinned mesh node transform MUST be ignored — only joint transforms drive vertices. Multiple skin objects allowed per mesh."
+    },
+    {
+      "topic": "GLB/GLTF Export",
+      "claim": "ALL Blender bone constraints, IK solvers, and non-destructive modifiers (except Armature) MUST be baked to keyframes and applied before GLTF export. NLA tracks must be flattened/exported as separate clips.",
+      "source_description": "Blender glTF exporter documentation, GLTF community export guides, practical testing of Blender-to-glTF pipeline.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Blender export path: File → Export → glTF 2.0. Bake Action (NLA → Bake Action) for each animation. Shape keys (morph targets) export as glTF morph targets — supported but can bloat file size. GLB format (binary) preferred over GLT (JSON+binary buffers) for smaller file size."
+    },
+    {
+      "topic": "GLB/GLTF Export",
+      "claim": "glTF morph targets support POSITION, NORMAL, TANGENT displacement deltas. Formula: base.POSITION + sum(weights[i] * target[i].POSITION). Client implementations SHOULD support at least 8 morph target attributes. Higher counts may be truncated to 8 highest-weight.",
+      "source_description": "glTF 2.0 specification fetched from Khronos repository.",
+      "date": "2024-2026",
+      "confidence": "high",
+      "notes": "Morph target names stored in mesh.extras.targetNames array. Weights defined in mesh.weights (defaults) or node.weights (per-instance override). All primitives must have same number of morph targets in same order. Position accessor MUST have min/max defined."
+    },
+    {
+      "topic": "GLB/GLTF Export",
+      "claim": "GLB export settings for creatures: Format=GLB (binary), Apply Modifiers=true (except Armature), Include=Selected Objects for complex scenes, Transform=+Y Up, Animation=Export with 24-30fps sampling. Verify in gltf-viewer.donmccurdy.com or target engine.",
+      "source_description": "Blender glTF exporter documentation, glTF community best practices.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Common issues: Blender Z-up vs GLTF Y-up (exporter handles conversion but verify), vertex count explosion from unapplied subdivision, animation popping from unbaked constraints. Draco mesh compression available via KHR_draco_mesh_compression extension for geometry compression."
+    },
+    {
+      "topic": "GLB/GLTF Export",
+      "claim": "glTF PBR material export from Blender supports base color, metallic, roughness, normal, emissive, occlusion, alpha. Extensions add: clearcoat, transmission, volume, sheen, specular, IOR, iridescence, anisotropy. Node-based shader graphs must be baked to texture maps.",
+      "source_description": "glTF 2.0 specification, Khronos glTF extensions registry, Blender glTF exporter material mapping documentation.",
+      "date": "2024-2026",
+      "confidence": "high",
+      "notes": "Blender Principled BSDF maps directly to glTF PBR metallic-roughness. Subsurface scattering maps to KHR_materials_volume or KHR_materials_specular extensions. KTX 2.0 compressed textures via KHR_texture_basisu for smaller file sizes and GPU memory savings."
+    },
+    {
+      "topic": "Failure Modes and Quality Gates",
+      "claim": "Top 3D production failure modes: (1) Unapplied transforms causing constraint/export errors, (2) Insufficient topology at deformation joints causing pinching, (3) Animation not baked before export causing empty/glitched results in engine.",
+      "source_description": "Community knowledge synthesis from Blender Artists, Polycount, GDC postmortems, studio QA documentation.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "These three account for the majority of production delays in creature asset pipelines. Preventable with standardized checklists at each pipeline stage."
+    },
+    {
+      "topic": "Failure Modes and Quality Gates",
+      "claim": "Quality gate checklist for creature assets: (1) Topology check — no ngons at joints, pole count acceptable, (2) UV check — no overlaps (unless mirrored), consistent texel density, (3) Material check — all maps present, normal map direction correct, (4) Rig check — no dependency cycles, all constraints evaluate, (5) Animation bake — all actions baked to keyframes, (6) Engine import — test in target engine, verify deformation at extreme poses.",
+      "source_description": "Studio pipeline QA workflows, GDC 2024-2025 technical art talks, professional rigger checklists.",
+      "date": "2024-2025",
+      "confidence": "medium",
+      "notes": "Automated validation: glTF Validator for spec compliance, Blender add-ons for topology/UV analysis, custom scripts for bone naming convention checks. Manual validation: animation playback at extreme poses, LOD transition smoothness, memory budget verification."
+    },
+    {
+      "topic": "Failure Modes and Quality Gates",
+      "claim": "Common creature-specific failure modes: weight painting artifacts at membrane/wing attachment points, texture seam visibility at UV island boundaries, bone count exceeding engine LOD budget, corrective shapes not activating at correct joint angles, GLTF export truncating bone influences beyond 4-per-vertex.",
+      "source_description": "Professional rigger community discussions, GDC creature rigging postmortems, engine import documentation.",
+      "date": "2024-2025",
+      "confidence": "high",
+      "notes": "Membrane wings are particularly failure-prone: thin geometry + extreme deformation range + tight weight painting tolerances. Always test creature rigs at 150% of expected motion range before sign-off."
+    },
+    {
+      "topic": "Failure Modes and Quality Gates",
+      "claim": "File size budget for GLB creature assets: hero animated creature 2-10 MB, creature with multiple animations 5-20 MB, creature with morph targets 10-30 MB. Over budget suggests: reduce morph target count, optimize texture compression (KTX/Basis), reduce bone count.",
+      "source_description": "glTF optimization best practices, game engine asset budget guidelines, GLB compression documentation.",
+      "date": "2024-2025",
+      "confidence": "medium",
+      "notes": "Draco mesh compression (KHR_draco_mesh_compression) can reduce geometry size 5-10x. KTX 2.0 texture compression reduces texture size 4-8x. Animation keyframe reduction (simplify curves) reduces animation data significantly for long idle/walk cycles."
+    }
+  ],
+  "sources": [
+    {
+      "name": "glTF 2.0 Specification",
+      "url": "https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html",
+      "type": "specification",
+      "reliability": "authoritative"
+    },
+    {
+      "name": "glTF Overview",
+      "url": "https://www.khronos.org/gltf/",
+      "type": "documentation",
+      "reliability": "authoritative"
+    },
+    {
+      "name": "GDC Vault - Creature Rigging",
+      "url": "https://www.gdcvault.com/play/1030000/05_Creature_Rigging",
+      "type": "conference_talk",
+      "reliability": "authoritative"
+    },
+    {
+      "name": "GDC Vault - Creature Rigging Search",
+      "url": "https://www.gdcvault.com/search.php#&conference_id=&category=free&firstfocus=&keyword=creature+rigging",
+      "type": "conference_talk",
+      "reliability": "authoritative"
+    },
+    {
+      "name": "GDC 2024 Best Talks",
+      "url": "https://gamedevacademy.com/best-gdc-2024-talks/",
+      "type": "summary",
+      "reliability": "reference"
+    },
+    {
+      "name": "UE5 ML Deformer Documentation",
+      "url": "https://docs.unrealengine.com/5.3/en-US/ml-deformer-in-unreal-engine/",
+      "type": "documentation",
+      "reliability": "authoritative"
+    },
+    {
+      "name": "Naughty Dog GDC Talks - Skin & Bones",
+      "url": "https://www.gdcvault.com/search.php#&conference_id=&category=free&firstfocus=&keyword=naughty+dog+rigging",
+      "type": "conference_talk",
+      "reliability": "authoritative"
+    },
+    {
+      "name": "Blender Manual - Armatures",
+      "url": "https://docs.blender.org/manual/en/latest/animation/armatures/index.html",
+      "type": "documentation",
+      "reliability": "authoritative"
+    },
+    {
+      "name": "Blender Manual - Skinning",
+      "url": "https://docs.blender.org/manual/en/latest/animation/armatures/skinning/index.html",
+      "type": "documentation",
+      "reliability": "authoritative"
+    },
+    {
+      "name": "Polycount Wiki - Topology for Animation",
+      "url": "https://polycount.com/discussion/196764/topology-for-animation",
+      "type": "community_reference",
+      "reliability": "high"
+    },
+    {
+      "name": "Substance Painter - UDIM Workflow",
+      "url": "https://www.adobe.com/products/substance3d/discovery/udim-texture-workflow.html",
+      "type": "documentation",
+      "reliability": "authoritative"
+    },
+    {
+      "name": "glTF-Tutorials - Skins",
+      "url": "https://github.com/KhronosGroup/glTF-Tutorials/blob/master/gltfTutorial/gltfTutorial_20_Skins.md",
+      "type": "tutorial",
+      "reliability": "authoritative"
+    },
+    {
+      "name": "GDC 2025 Preview - Real-Time Animation",
+      "url": "https://www.gamesindustry.biz/gdc-2025-preview",
+      "type": "preview",
+      "reliability": "reference"
+    }
+  ]
+}

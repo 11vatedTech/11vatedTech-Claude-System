@@ -1,0 +1,43 @@
+{
+  "op": "scene.create",
+  "params": {
+    "world_color": [
+      0.02,
+      0.015,
+      0.01
+    ],
+    "objects": [
+      {
+        "type": "empty",
+        "name": "root",
+        "location": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "camera": {
+      "name": "Cam",
+      "x": 6,
+      "y": -7,
+      "z": 3,
+      "look_at": [
+        0,
+        0,
+        1
+      ]
+    },
+    "lights": [
+      {
+        "type": "sun",
+        "name": "Rim",
+        "x": -6,
+        "y": -4,
+        "z": 8
+      }
+    ],
+    "out_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-smoke",
+    "save_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil-smoke\\session.blend"
+  }
+}

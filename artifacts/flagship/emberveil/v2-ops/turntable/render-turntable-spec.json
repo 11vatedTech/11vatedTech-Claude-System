@@ -1,0 +1,26 @@
+{
+  "op": "render.turntable",
+  "params": {
+    "target": [
+      0,
+      0,
+      0.8
+    ],
+    "radius": 5.0,
+    "height": 1.8,
+    "frames": 24,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "engine": "CYCLES",
+    "samples": 64,
+    "camera": {
+      "name": "TurntableCam",
+      "lens_mm": 50
+    },
+    "out_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\v2-ops\\turntable",
+    "load_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend",
+    "save_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+  }
+}

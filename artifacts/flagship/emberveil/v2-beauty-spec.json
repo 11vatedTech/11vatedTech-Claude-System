@@ -1,0 +1,15 @@
+{
+  "op": "render.preview",
+  "params": {
+    "frame": 1,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "engine": "CYCLES",
+    "samples": 256,
+    "out_dir": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil",
+    "load_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend",
+    "save_blend": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\flagship\\emberveil\\session.blend"
+  }
+}

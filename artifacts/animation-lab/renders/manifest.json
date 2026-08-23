@@ -1,0 +1,11 @@
+{
+  "lab": "Animation Lab",
+  "blender": "5.2.0 LTS",
+  "profiles": [
+    "light",
+    "heavy",
+    "mechanical"
+  ],
+  "fps": 24,
+  "frames": 96
+}

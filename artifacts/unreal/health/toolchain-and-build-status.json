@@ -1,0 +1,67 @@
+{
+  "schema_version": 2,
+  "updated": "2026-08-20",
+  "engine": "Unreal Engine 5.8.0",
+  "visual_studio": {
+    "installation": "C:/Program Files/Microsoft Visual Studio/2022/BuildTools",
+    "version": "17.14.37411.7",
+    "msvc": "14.44.35207",
+    "cl": "present",
+    "link": "present",
+    "msbuild": "present",
+    "vswhere": "C:/Program Files (x86)/Microsoft Visual Studio/Installer/vswhere.exe"
+  },
+  "netfx_sdk": {
+    "status": "INSTALLED",
+    "path": "C:/Program Files (x86)/Windows Kits/NETFXSDK/4.8",
+    "include_um": true,
+    "lib_um": true,
+    "detection_note": "Non-standard path; detection scripts updated to scan Windows Kits/NETFXSDK"
+  },
+  "windows_sdk": "10.0.26100.0",
+  "game_compile": {
+    "status": "PASS",
+    "target": "FoundryCalibration",
+    "configuration": "Development",
+    "binary": "artifacts/unreal/calibration/Binaries/Win64/FoundryCalibration.exe"
+  },
+  "editor_compile": {
+    "status": "PASS",
+    "target": "FoundryCalibrationEditor",
+    "configuration": "Development",
+    "evidence": "Build succeeds after .NET Framework 4.8 SDK install"
+  },
+  "native_test_discovery": {
+    "status": "VERIFIED",
+    "count": 7041,
+    "foundry_test": "FoundryCalibration.Gameplay.GameStateTransitions",
+    "evidence": "FoundryCalibration_6.log lines 1814-1818"
+  },
+  "native_test_execution": {
+    "status": "PASS",
+    "test": "FoundryCalibration.Gameplay.GameStateTransitions",
+    "result": "Success",
+    "duration_ms": 50,
+    "evidence": "FoundryCalibration_6.log lines 1824-1828",
+    "critical_discovery": "UE 5.8 requires -ExecCmds=\"...\" (equals-sign form); space-separated -ExecCmds \"...\" silently ignores the command"
+  },
+  "automation_harness": {
+    "runner": "scripts/unreal/automation_runner.py",
+    "syntax": "-ExecCmds=\"Automation RunTests <pattern>\"",
+    "test_exit": "-TestExit=\"Automation Test Queue Empty\"",
+    "notes": "Equals-sign form is required; space form silently drops the command"
+  },
+  "runtime_observation": {
+    "status": "RUNTIME_CRASH",
+    "phase": "before_map_load",
+    "evidence": "artifacts/unreal/health/foundry-runtime-observation-trace.json"
+  },
+  "package": {
+    "status": "UNBLOCKED",
+    "reason": "Editor target compiles, BuildCookRun prerequisites met",
+    "next_step": "Run BuildCookRun via build_pipeline.py"
+  },
+  "limitations": [
+    "Cooked/staged data, playable map, Gauntlet, Insights, outside-Editor play not yet proven"
+  ]
+}

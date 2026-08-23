@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "tool": "perceptual_visual_qa",
+  "records": [
+    {
+      "path": "artifacts\\flagship\\qa\\live\\frame-01.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "luminance": {
+        "mean": 0.034788,
+        "central_mean": 0.034934,
+        "corner_mean": 0.034693,
+        "subject_background_separation": 0.000241,
+        "black_crush_fraction_below_8_percent": 0.999727,
+        "highlight_clip_fraction_above_95_percent": 0.0
+      },
+      "composition": {
+        "threshold": "12% luminance",
+        "subject_bbox": {
+          "x": 593,
+          "y": 396,
+          "width": 91,
+          "height": 9
+        },
+        "subject_occupancy": 0.0008
+      },
+      "failures": [
+        "severe_underexposure_or_blank_frame"
+      ],
+      "warnings": [
+        "low_subject_background_separation",
+        "subject_occupancy_too_small"
+      ],
+      "status": "FAIL",
+      "interpretation": "diagnostic metrics require human/professional visual review; they do not prove artistic quality"
+    },
+    {
+      "path": "artifacts\\flagship\\qa\\live\\frame-02.png",
+      "dimensions": [
+        1280,
+        800
+      ],
+      "luminance": {
+        "mean": 0.085212,
+        "central_mean": 0.120477,
+        "corner_mean": 0.065828,
+        "subject_background_separation": 0.054649,
+        "black_crush_fraction_below_8_percent": 0.892475,
+        "highlight_clip_fraction_above_95_percent": 0.000597
+      },
+      "composition": {
+        "threshold": "12% luminance",
+        "subject_bbox": {
+          "x": 16,
+          "y": 0,
+          "width": 1264,
+          "height": 784
+        },
+        "subject_occupancy": 0.96775
+      },
+      "failures": [],
+      "warnings": [
+        "black_crush_subject_may_be_unreadable",
+        "subject_or_threshold_occupancy_too_large"
+      ],
+      "status": "WARN",
+      "interpretation": "diagnostic metrics require human/professional visual review; they do not prove artistic quality"
+    },
+    {
+      "path": "artifacts\\flagship\\emberveil\\preview\\preview-frame-0024.png",
+      "dimensions": [
+        960,
+        540
+      ],
+      "luminance": {
+        "mean": 0.535997,
+        "central_mean": 0.529428,
+        "corner_mean": 0.551122,
+        "subject_background_separation": -0.021694,
+        "black_crush_fraction_below_8_percent": 0.334176,
+        "highlight_clip_fraction_above_95_percent": 0.0
+      },
+      "composition": {
+        "threshold": "12% luminance",
+        "subject_bbox": {
+          "x": 0,
+          "y": 275,
+          "width": 960,
+          "height": 69
+        },
+        "subject_occupancy": 0.127778
+      },
+      "failures": [],
+      "warnings": [
+        "low_subject_background_separation"
+      ],
+      "status": "WARN",
+      "interpretation": "diagnostic metrics require human/professional visual review; they do not prove artistic quality"
+    }
+  ],
+  "ok": false
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "baseline": "artifacts\\flagship\\emberveil-canonical\\emberveil-canonical.glb",
+  "candidate": "artifacts\\flagship\\emberveil-canonical\\emberveil-canonical.glb",
+  "counts": {
+    "nodes": {
+      "baseline": 18,
+      "candidate": 18
+    },
+    "meshes": {
+      "baseline": 13,
+      "candidate": 13
+    },
+    "materials": {
+      "baseline": 4,
+      "candidate": 4
+    },
+    "animations": {
+      "baseline": 4,
+      "candidate": 4
+    },
+    "textures": {
+      "baseline": 0,
+      "candidate": 0
+    },
+    "images": {
+      "baseline": 0,
+      "candidate": 0
+    }
+  },
+  "missing_names": {
+    "nodes": [],
+    "meshes": [],
+    "materials": [],
+    "animations": [],
+    "textures": [],
+    "images": []
+  },
+  "added_names": {
+    "nodes": [],
+    "meshes": [],
+    "materials": [],
+    "animations": [],
+    "textures": [],
+    "images": []
+  },
+  "regressions": [],
+  "ok": true,
+  "interpretation": "structural regression result; material and animation presence do not prove perceptual quality"
+}

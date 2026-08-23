@@ -1,0 +1,14 @@
+{
+  "failure": "LOOSE_CONTENT_ASSET_REGISTRY_FAILURE",
+  "root_cause": "Standalone game binary attempts to load uncooked content. Without a Cook/Stage step, UAsset files cannot be deserialized by the packaged binary.",
+  "evidence": {
+    "asset_registry_loaded": false,
+    "game_module_loaded": true,
+    "map_loaded": false,
+    "error_count": 26,
+    "crash_callstack_top": "[2026.08.19-15.30.26:074][  0]LogWindows: Error: [Callstack] 0x00007ff6c179efab FoundryCalibration.exe!FBufferReaderBase::Serialize() []"
+  },
+  "resolution": "BuildCookRun (package) will cook content into platform-specific format, build the asset registry, and stage into Pak files. The cooked content resolves the serialization failure.",
+  "verification": "After BuildCookRun completes, verify Packaged/Ashwake/ has .pak files and the game binary launches without serialization errors.",
+  "not_a_sdk_issue": true
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Composition Micro-Lab — Apprenticeship Wave 001</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#f0ede8;font-family:Georgia,'Times New Roman',serif;color:#1a1817;padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap:48px}
+
+.panel{width:100%;max-width:720px;background:#fff;border:1px solid #d8d4cc;border-radius:6px;overflow:hidden}
+.panel-label{font-family:monospace;font-size:0.7rem;color:#9c9488;text-transform:uppercase;letter-spacing:0.08em;padding:8px 16px;background:#f8f6f2;border-bottom:1px solid #e8e4dc}
+.panel-body{padding:clamp(20px,4vw,40px)}
+
+/* === SHARED CONTENT ELEMENTS === */
+.headline{font-size:clamp(20px,3vw,28px);line-height:1.2}
+.body-text{font-size:0.95rem;line-height:1.65;color:#4a4440}
+.measure{font-family:'Courier New',monospace;font-size:clamp(24px,4vw,36px);font-weight:700;color:#7a3b3b}
+.measure-label{font-family:'Courier New',monospace;font-size:0.7rem;color:#9c9488;text-transform:uppercase;letter-spacing:0.05em}
+
+/* === COMPOSITION A: CLASSIC CENTERED === */
+.comp-a{text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px}
+.comp-a .headline{max-width:20ch}
+.comp-a .rule{width:60px;height:1px;background:#d8d4cc}
+.comp-a .body-text{max-width:48ch;margin:0 auto}
+.comp-a .measure-group{display:flex;flex-direction:column;align-items:center;gap:2px;padding:16px 24px;border:1px solid #e8e4dc;border-radius:4px;background:#faf9f6}
+
+/* === COMPOSITION B: ASYMMETRIC LEFT-HEAVY === */
+.comp-b{display:grid;grid-template-columns:2fr 1fr;gap:24px;align-items:start}
+.comp-b .left-col{display:flex;flex-direction:column;gap:16px}
+.comp-b .right-col{display:flex;flex-direction:column;align-items:flex-end;gap:4px;padding-top:4px}
+.comp-b .measure{font-size:42px}
+.comp-b .rule{width:100%;height:1px;background:#e8e4dc;grid-column:1/-1}
+
+/* === COMPOSITION C: NEWSPAPER COLUMN === */
+.comp-c{display:flex;flex-direction:column;gap:12px}
+.comp-c .top-bar{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.comp-c .body-text{column-count:2;column-gap:28px}
+.comp-c .measure{font-size:28px;white-space:nowrap}
+.comp-c .rule{width:100%;height:1px;background:#e8e4dc}
+
+/* === COMPOSITION D: MEASUREMENT-FIRST === */
+.comp-d{display:flex;flex-direction:column;gap:16px}
+.comp-d .hero-measure{padding:28px;background:#1a1817;color:#f0ede8;border-radius:4px;display:flex;align-items:baseline;gap:16px}
+.comp-d .hero-measure .measure{color:#d4a843;font-size:56px;line-height:1}
+.comp-d .hero-measure .measure-label{color:#9c9488;font-size:0.8rem}
+.comp-d .headline{font-size:1.1rem;color:#ede4d8;font-weight:400}
+.comp-d .body-text{max-width:52ch}
+
+/* === COMPOSITION E: MARGIN-LED === */
+.comp-e{display:flex;flex-direction:column;gap:8px}
+.comp-e .headline{margin-left:60px;border-left:3px solid #7a3b3b;padding-left:16px}
+.comp-e .body-text{margin-left:60px;max-width:46ch}
+.comp-e .measure-group{margin-left:20px;padding-left:40px;border-left:1px solid #e8e4dc;display:flex;align-items:baseline;gap:12px}
+</style>
+</head>
+<body>
+
+<!-- COMPOSITION A: Classic Centered -->
+<div class="panel" id="comp-a">
+  <div class="panel-label">Composition A — Classic Centered</div>
+  <div class="panel-body comp-a">
+    <div class="measure-group"><span class="measure">0.72″</span><span class="measure-label">Atmospheric Seeing</span></div>
+    <div class="rule"></div>
+    <h1 class="headline">Observation Conditions Favorable for N45 Filament Study</h1>
+    <p class="body-text">The approaching window offers exceptional atmospheric stability. Transparency remains above the 0.90 threshold, and instrument calibration completed ahead of schedule. The filament's magnetic topology suggests continued activation through the cycle.</p>
+  </div>
+</div>
+
+<!-- COMPOSITION B: Asymmetric Left-Heavy -->
+<div class="panel" id="comp-b">
+  <div class="panel-label">Composition B — Asymmetric Left-Heavy</div>
+  <div class="panel-body comp-b">
+    <div class="left-col">
+      <h1 class="headline">Observation Conditions Favorable for N45 Filament Study</h1>
+      <p class="body-text">The approaching window offers exceptional atmospheric stability. Transparency remains above the 0.90 threshold, and instrument calibration completed ahead of schedule. The filament's magnetic topology suggests continued activation through the cycle.</p>
+    </div>
+    <div class="right-col">
+      <span class="measure">0.72″</span>
+      <span class="measure-label">Seeing</span>
+    </div>
+    <div class="rule"></div>
+  </div>
+</div>
+
+<!-- COMPOSITION C: Newspaper Column -->
+<div class="panel" id="comp-c">
+  <div class="panel-label">Composition C — Newspaper Column</div>
+  <div class="panel-body comp-c">
+    <div class="top-bar">
+      <h1 class="headline">Observation Conditions Favorable for N45 Filament Study</h1>
+      <span class="measure">0.72″</span>
+    </div>
+    <div class="rule"></div>
+    <p class="body-text">The approaching window offers exceptional atmospheric stability. Transparency remains above the 0.90 threshold, and instrument calibration completed ahead of schedule. The filament's magnetic topology suggests continued activation through the cycle.</p>
+  </div>
+</div>
+
+<!-- COMPOSITION D: Measurement-First -->
+<div class="panel" id="comp-d">
+  <div class="panel-label">Composition D — Measurement-First</div>
+  <div class="panel-body comp-d">
+    <div class="hero-measure">
+      <span class="measure">0.72″</span>
+      <div><span class="measure-label">Atmospheric Seeing · N45 Filament</span><br><span class="headline">Conditions Favorable</span></div>
+    </div>
+    <p class="body-text">The approaching window offers exceptional atmospheric stability. Transparency remains above the 0.90 threshold, and instrument calibration completed ahead of schedule. The filament's magnetic topology suggests continued activation through the cycle.</p>
+  </div>
+</div>
+
+<!-- COMPOSITION E: Margin-Led -->
+<div class="panel" id="comp-e">
+  <div class="panel-label">Composition E — Margin-Led</div>
+  <div class="panel-body comp-e">
+    <h1 class="headline">Observation Conditions Favorable for N45 Filament Study</h1>
+    <div class="measure-group"><span class="measure">0.72″</span><span class="measure-label">Atmospheric Seeing</span></div>
+    <p class="body-text">The approaching window offers exceptional atmospheric stability. Transparency remains above the 0.90 threshold, and instrument calibration completed ahead of schedule. The filament's magnetic topology suggests continued activation through the cycle.</p>
+  </div>
+</div>
+
+</body>
+</html>

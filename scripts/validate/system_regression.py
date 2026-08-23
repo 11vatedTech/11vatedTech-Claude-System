@@ -67,10 +67,14 @@ def check_bootstrap():
         return ok and idem and preserved
 
 def check_9router():
+    """Bounded semantic router gate: core/chat may pass while registry is degraded."""
+    sys.path.insert(0, str(ROOT / 'scripts/validate'))
     try:
-        data=json.loads(urllib.request.urlopen('http://127.0.0.1:20128/api/health',timeout=5).read().decode())
-        print('9router_health', data)
-        return data.get('ok') is True
+        from router_health import probe
+        data=probe('http://127.0.0.1:20128', timeout=8)
+        print('9router_health', data.get('router'))
+        print('9router_status', data.get('summary'))
+        return data.get('core_status') == 'PASS'
     except Exception as e:
         print('9router_health_error', e); return False
 
@@ -145,6 +149,25 @@ def check_failure_tests():
     print('failure_tests', 'ok' if ok else (err or out)[-400:])
     return ok
 
+def check_ascension_golden_tasks():
+    code,out,err=run(f'python "{ROOT / "scripts/validate/foundry_ascension_tests.py"}"')
+    ok=code==0
+    print('foundry_ascension', 'ok' if ok else (err or out)[-500:])
+    return ok
+
+def check_capability_truth():
+    code,out,err=run(f'python "{ROOT / "scripts/validate/capability_truth_audit.py"}"')
+    ok=code==0
+    print('capability_truth_audit', 'ok' if ok else (err or out)[-400:])
+    return ok
+
+def check_mission_value_gate():
+    mission=ROOT/'config/missions/capability-ascension-20260822.json'
+    code,out,err=run(f'python "{ROOT / "scripts/validate/mission_value_gate.py"}" "{mission}"')
+    ok=code==0 and '"decision": "ALLOW"' in out
+    print('mission_value_gate', 'ok' if ok else (err or out)[-400:])
+    return ok
+
 def check_l5_evidence():
     code,out,err=run(f'python "{ROOT / "scripts/validate/l5_evidence.py"}"')
     ok=code==0
@@ -167,6 +190,34 @@ def check_ontology():
     if ok: print('  ' + ' | '.join(tail[:3]))
     return ok
 
+def check_flagship_evidence():
+    """Regression gate for the real calibration artifact: perceptual evidence,
+    complete animated GLB, variant protection, and live runtime observation."""
+    code,out,err=run(f'python "{ROOT / "scripts/validate/flagship_evidence.py"}"', timeout=240)
+    ok=code==0
+    print('flagship_evidence', 'ok' if ok else (err or out)[-600:])
+    return ok
+
+def check_repo_semantic():
+    code,out,err=run(f'python "{ROOT / "scripts/validate/repo_semantic_golden_tasks.py"}"')
+    ok=code==0
+    print('repo_semantic_golden', 'ok' if ok else (err or out)[-400:])
+    return ok
+
+def check_unreal_foundry():
+    """Unreal health/project/handoff gate; static when no engine is present."""
+    code,out,err=run(f'python "{ROOT / "scripts/validate/unreal_foundry_tests.py"}"', timeout=180)
+    ok=code==0
+    print('unreal_foundry', 'ok' if ok else (err or out)[-500:])
+    return ok
+
+def check_high_fidelity_reliability():
+    """Human-facing quality gate: engineering pass must not imply creative pass."""
+    code,out,err=run(f'python "{ROOT / "scripts/validate/high_fidelity_reliability.py"}"')
+    ok=code==0
+    print('high_fidelity_reliability', 'ok' if ok else (err or out)[-500:])
+    return ok
+
 def check_media():
     """Media toolchain is a first-class regression gate: image/vector/video/audio."""
     cli=str(ROOT/'scripts/media/11vt_media.py')
@@ -183,7 +234,7 @@ def check_media():
     return not failures
 
 def main():
-    checks=[check_plugin,check_skills,check_agents,check_manifest_template,check_hooks,check_bootstrap,check_media,check_blender_ops,check_assets,check_failure_tests,check_l5_evidence,check_routing,check_ontology,check_9router]
+    checks=[check_plugin,check_skills,check_agents,check_manifest_template,check_hooks,check_bootstrap,check_media,check_blender_ops,check_assets,check_failure_tests,check_ascension_golden_tasks,check_capability_truth,check_mission_value_gate,check_l5_evidence,check_routing,check_ontology,check_flagship_evidence,check_repo_semantic,check_unreal_foundry,check_high_fidelity_reliability,check_9router]
     results=[c() for c in checks]
     print('system_regression_ok', all(results))
     return 0 if all(results) else 1

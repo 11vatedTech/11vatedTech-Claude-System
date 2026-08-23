@@ -1,0 +1,39 @@
+{
+  "discipline": "LIGHTING",
+  "knowledge_pack_version": "1.0.0",
+  "date": "2026-08-23",
+  "foundational_principles": {
+    "exposure_and_dynamic_range": "Exposure controls how much light the camera/sensor receives. Dynamic range is the ratio between brightest and darkest values that can be captured without clipping. Lighting must work within the display's dynamic range — what the renderer sees internally (HDR) is not what the viewer sees (tonemapped).",
+    "key_light": "Primary light source. Establishes direction, mood, and form. Position determines which planes of the subject are illuminated vs in shadow. A key light 45° above and 30° to the side is the classical portrait starting point — not because it's 'correct' but because it reveals form while creating readable shadow structure.",
+    "fill_light": "Secondary light that controls shadow density. Fill does NOT eliminate shadows — it controls how dark they are. Fill ratio (key:fill) is the primary creative control. 2:1 = readable shadows. 8:1 = dramatic, near-silhouette shadows. No fill = black shadows (unless bounce/environment provides it).",
+    "rim_light": "Edge light from behind/above the subject. Separates subject from background. Creates silhouette reading. Should be motivated (practical source, environment reflection) or intentionally stylized.",
+    "motivated_light": "Light that appears to come from a logical source in the scene — a window, a lamp, the sky, a display screen. Unmotivated light breaks immersion unless it's an intentional stylistic choice.",
+    "falloff": "Light intensity decreases with distance (inverse square law for point sources). This is the primary depth cue in lighting — foreground brighter, background darker. Linear falloff looks flat/unreal.",
+    "color_temperature": "Measured in Kelvin. Candle ~1850K, tungsten ~3200K, daylight ~5500-6500K, overcast ~7000K, blue sky ~10000K+. Warm light (low K) advances, cool light (high K) recedes. This is a spatial depth cue, not just a mood choice.",
+    "light_ratio": "The relationship between key and fill intensity. Higher ratio = more dramatic. Lower ratio = flatter. The ratio communicates emotional tone: flat lighting for clinical/factual, high ratio for dramatic/mysterious.",
+    "specular_shaping": "Light sources have size and shape. A small source = hard light (sharp shadows, tight specular). A large source = soft light (diffuse shadows, broad specular). This is NOT the same as intensity.",
+    "atmospheric_perspective": "Distant objects lose contrast and shift toward the atmosphere color (blue for sky, warm for sunset). Created by volumetric scattering. Essential for depth in large scenes."
+  },
+  "six_lighting_treatments": {
+    "flat_baseline": {"key": "single overhead dome/HDRI, no directional emphasis", "fill": "none", "rim": "none", "ratio": "1:1", "purpose": "Barely reveals form. Flat, informational. Use: technical documentation, material reference."},
+    "key_fill_portrait": {"key": "45°/30° main light, moderate intensity", "fill": "opposite side, 1/4 key intensity", "rim": "none", "ratio": "4:1", "purpose": "Classic form-revealing. Clear shadow structure, readable planes. Use: product visualization, character introduction."},
+    "low_key_motivated": {"key": "single practical source (lantern/window/screen), close proximity", "fill": "subtle bounce from environment only", "rim": "none", "ratio": "16:1+", "purpose": "Dramatic, mysterious. Subject emerges from shadow. Deep shadows are the composition. Use: suspense, intimacy, focus."},
+    "high_key": {"key": "large soft source from multiple directions", "fill": "broad fill matching key exposure", "rim": "subtle overhead/back", "ratio": "1.5:1", "purpose": "Bright, optimistic, clinical. Minimal shadows. Use: corporate, medical, lifestyle."},
+    "silhouette": {"key": "behind subject, strong backlight", "fill": "none", "rim": "key IS the rim", "ratio": "infinite (no fill)", "purpose": "Shape reading only. Identity through contour. Use: mystery, reveal, transition."},
+    "material_readability": {"key": "large soft source at 30°", "fill": "broad bounce from below (white card)", "rim": "subtle overhead for specular edge reading", "ratio": "2:1", "purpose": "Optimized for material evaluation. Specular reads cleanly, normals visible, no harsh shadows obscuring detail. Use: lookdev, material review."}
+  },
+  "diagnostic_framework": {
+    "black_crush": "Shadows at 0,0,0 with no detail. Caused by: exposure too low, fill ratio too high, no bounce/environment contribution, display transform clipping. Fix: raise shadow floor via fill or exposure, check that shadows contain SOME detail.",
+    "highlight_clipping": "Bright areas at 1,1,1 with no detail. Caused by: exposure too high, key too close/intense, specular from small source at grazing. Fix: reduce key intensity, increase source size, adjust exposure.",
+    "midtone_preservation": "The transition between light and shadow should have visible gradient. If the terminator (shadow edge) is a hard line, the light source is too small. If the midtone band is absent (crushed to black or white), dynamic range is being wasted.",
+    "form_flattening": "The 3D form reads as flat. Caused by: key light directly behind or in front of camera (no shadow cast), fill ratio too high (shadows eliminated), no rim/edge light for separation.",
+    "lighting_vs_material_confusion": "If a surface looks wrong under ONE light but correct under another, it's a lighting issue. If it looks wrong under ALL lights, it's a material issue. This is the fundamental diagnostic rule."
+  },
+  "common_failures": [
+    "Emission as lighting: using a bright emission material to light a scene. Emission doesn't cast proper shadows or falloff. Looks flat and unconvincing.",
+    "Single-point-light scenes: one point light with no fill, bounce, or environment. Creates harsh single shadow that reads as beginner work.",
+    "Overexposed key: key light so bright that specular clips and surface detail is lost. The brightest highlight should still contain detail.",
+    "No motivated source: lights placed for convenience rather than realism. Every light should have a 'why' — what in the scene is producing it?",
+    "Uniform environment: HDRI/skydome with no directional emphasis. Everything is evenly lit. No hierarchy, no form reading."
+  ]
+}
