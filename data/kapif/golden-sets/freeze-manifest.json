@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "kind": "reference_set_freeze",
+  "date": "2026-08-24",
+  "note": "Re-frozen after FORMAT_ONLY adjudication. Content unchanged.",
+  "sets": {
+    "FOUNDRY_CURATED_EXTRACTION_REFERENCE_SET": {
+      "path": "data/kapif/golden-sets/extraction-golden-set.json",
+      "sha256": "c98de5fc3eb7ad7cfb73959acf53d059442f48116b390ccd0a9f3ab41b39f34d",
+      "total_items": 27,
+      "frozen_by": "KAPIF M002.1 Completion Pass 02",
+      "note": "Re-frozen after honest naming update"
+    },
+    "FOUNDRY_CURATED_RETRIEVAL_RELEVANCE_SET": {
+      "path": "data/kapif/golden-sets/retrieval-golden-set.json",
+      "sha256": "e17a9e34c8f119f9bbfe20af9219ad19df313e79c454dca571bcb81eab2db38a",
+      "total_items": 30,
+      "frozen_by": "M002.1 Completion Pass 04 Addendum"
+    }
+  }
+}

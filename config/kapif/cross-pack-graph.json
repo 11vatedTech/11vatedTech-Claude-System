@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "graph_id": "KAPIF_M002_CROSS_PACK_GRAPH",
+  "date": "2026-08-23",
+  "nodes": {
+    "ART_DIRECTION_LOOKDEV_CORE": {
+      "depends_on": [],
+      "feeds_into": [
+        "COMPOSITION_VALUE_COLOR_CORE",
+        "TYPOGRAPHY_INFORMATION_DESIGN_CORE",
+        "MOTION_DESIGN_CORE",
+        "FRONTEND_UI_UX_CORE",
+        "UI_UX_INTERACTION_CORE"
+      ],
+      "relationship": "Art direction sets the visual thesis and quality bar that all other packs execute within. It defines the relationships between composition, typography, motion, and interaction."
+    },
+    "COMPOSITION_VALUE_COLOR_CORE": {
+      "depends_on": [
+        "ART_DIRECTION_LOOKDEV_CORE"
+      ],
+      "feeds_into": [
+        "TYPOGRAPHY_INFORMATION_DESIGN_CORE",
+        "MOTION_DESIGN_CORE",
+        "FRONTEND_UI_UX_CORE"
+      ],
+      "relationship": "Structural foundation that art direction orchestrates, typography inhabits, motion activates"
+    },
+    "TYPOGRAPHY_INFORMATION_DESIGN_CORE": {
+      "depends_on": [
+        "COMPOSITION_VALUE_COLOR_CORE",
+        "FRONTEND_UI_UX_CORE"
+      ],
+      "feeds_into": [
+        "UI_UX_INTERACTION_CORE",
+        "MOTION_DESIGN_CORE",
+        "ART_DIRECTION_LOOKDEV_CORE"
+      ],
+      "relationship": "Typography is the structural material that gives composition its verbal dimension and frontend its information voice"
+    },
+    "FRONTEND_UI_UX_CORE": {
+      "depends_on": [
+        "COMPOSITION_VALUE_COLOR_CORE",
+        "TYPOGRAPHY_INFORMATION_DESIGN_CORE",
+        "UI_UX_INTERACTION_CORE",
+        "MOTION_DESIGN_CORE"
+      ],
+      "feeds_into": [
+        "ART_DIRECTION_LOOKDEV_CORE"
+      ],
+      "relationship": "Frontend design is the integration discipline where composition, typography, interaction, and motion converge into implementable product interfaces"
+    },
+    "UI_UX_INTERACTION_CORE": {
+      "depends_on": [
+        "TYPOGRAPHY_INFORMATION_DESIGN_CORE",
+        "FRONTEND_UI_UX_CORE",
+        "COMPOSITION_VALUE_COLOR_CORE"
+      ],
+      "feeds_into": [
+        "MOTION_DESIGN_CORE",
+        "ART_DIRECTION_LOOKDEV_CORE"
+      ],
+      "relationship": "Interaction is where typography, composition, and visual hierarchy become usable behavior"
+    },
+    "MOTION_DESIGN_CORE": {
+      "depends_on": [
+        "UI_UX_INTERACTION_CORE",
+        "COMPOSITION_VALUE_COLOR_CORE",
+        "TYPOGRAPHY_INFORMATION_DESIGN_CORE"
+      ],
+      "feeds_into": [
+        "FRONTEND_UI_UX_CORE",
+        "ART_DIRECTION_LOOKDEV_CORE"
+      ],
+      "relationship": "Motion is the temporal dimension of interaction, the activation of composition, and the behavior of typography"
+    }
+  },
+  "edges": [
+    {
+      "from": "ART_DIRECTION_LOOKDEV_CORE",
+      "to": "COMPOSITION_VALUE_COLOR_CORE",
+      "type": "FEEDS_INTO"
+    },
+    {
+      "from": "ART_DIRECTION_LOOKDEV_CORE",
+      "to": "TYPOGRAPHY_INFORMATION_DESIGN_CORE",
+      "type": "FEEDS_INTO"
+    },
+    {
+      "from": "ART_DIRECTION_LOOKDEV_CORE",
+      "to": "MOTION_DESIGN_CORE",
+      "type": "FEEDS_INTO"
+    },
+    {
+      "from": "ART_DIRECTION_LOOKDEV_CORE",
+      "to": "FRONTEND_UI_UX_CORE",
+      "type": "FEEDS_INTO"
+    },
+    {
+      "from": "ART_DIRECTION_LOOKDEV_CORE",
+      "to": "UI_UX_INTERACTION_CORE",
+      "type": "FEEDS_INTO"
+    },
+    {
+      "from": "ART_DIRECTION_LOOKDEV_CORE",
+      "to": "COMPOSITION_VALUE_COLOR_CORE",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "from": "COMPOSITION_VALUE_COLOR_CORE",
+      "to": "TYPOGRAPHY_INFORMATION_DESIGN_CORE",
+      "type": "FEEDS_INTO"
+    },
+    {
+      "from": "COMPOSITION_VALUE_COLOR_CORE",
+      "to": "MOTION_DESIGN_CORE",
+      "type": "FEEDS_INTO"
+    },
+    {
+      "from": "COMPOSITION_VALUE_COLOR_CORE",
+      "to": "FRONTEND_UI_UX_CORE",
+      "type": "FEEDS_INTO"
+    },
+    {
+      "from": "COMPOSITION_VALUE_COLOR_CORE",
+      "to": "TYPOGRAPHY_INFORMATION_DESIGN_CORE",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "from": "FRONTEND_UI_UX_CORE",
+      "to": "TYPOGRAPHY_INFORMATION_DESIGN_CORE",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "from": "TYPOGRAPHY_INFORMATION_DESIGN_CORE",
+      "to": "UI_UX_INTERACTION_CORE",
+      "type": "FEEDS_INTO"
+    },
+    {
+      "from": "TYPOGRAPHY_INFORMATION_DESIGN_CORE",
+      "to": "MOTION_DESIGN_CORE",
+      "type": "FEEDS_INTO"
+    },
+    {
+      "from": "TYPOGRAPHY_INFORMATION_DESIGN_CORE",
+      "to": "ART_DIRECTION_LOOKDEV_CORE",
+      "type": "FEEDS_INTO"
+    },
+    {
+      "from": "COMPOSITION_VALUE_COLOR_CORE",
+      "to": "FRONTEND_UI_UX_CORE",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "from": "TYPOGRAPHY_INFORMATION_DESIGN_CORE",
+      "to": "FRONTEND_UI_UX_CORE",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "from": "UI_UX_INTERACTION_CORE",
+      "to": "FRONTEND_UI_UX_CORE",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "from": "MOTION_DESIGN_CORE",
+      "to": "FRONTEND_UI_UX_CORE",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "from": "FRONTEND_UI_UX_CORE",
+      "to": "ART_DIRECTION_LOOKDEV_CORE",
+      "type": "FEEDS_INTO"
+    },
+    {
+      "from": "TYPOGRAPHY_INFORMATION_DESIGN_CORE",
+      "to": "UI_UX_INTERACTION_CORE",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "from": "FRONTEND_UI_UX_CORE",
+      "to": "UI_UX_INTERACTION_CORE",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "from": "COMPOSITION_VALUE_COLOR_CORE",
+      "to": "UI_UX_INTERACTION_CORE",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "from": "UI_UX_INTERACTION_CORE",
+      "to": "MOTION_DESIGN_CORE",
+      "type": "FEEDS_INTO"
+    },
+    {
+      "from": "UI_UX_INTERACTION_CORE",
+      "to": "ART_DIRECTION_LOOKDEV_CORE",
+      "type": "FEEDS_INTO"
+    },
+    {
+      "from": "UI_UX_INTERACTION_CORE",
+      "to": "MOTION_DESIGN_CORE",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "from": "COMPOSITION_VALUE_COLOR_CORE",
+      "to": "MOTION_DESIGN_CORE",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "from": "TYPOGRAPHY_INFORMATION_DESIGN_CORE",
+      "to": "MOTION_DESIGN_CORE",
+      "type": "DEPENDS_ON"
+    },
+    {
+      "from": "MOTION_DESIGN_CORE",
+      "to": "FRONTEND_UI_UX_CORE",
+      "type": "FEEDS_INTO"
+    },
+    {
+      "from": "MOTION_DESIGN_CORE",
+      "to": "ART_DIRECTION_LOOKDEV_CORE",
+      "type": "FEEDS_INTO"
+    }
+  ],
+  "summary": {
+    "total_nodes": 6,
+    "total_edges": 29,
+    "root_nodes": [
+      "ART_DIRECTION_LOOKDEV_CORE"
+    ],
+    "leaf_nodes": [],
+    "max_depth": 6
+  }
+}

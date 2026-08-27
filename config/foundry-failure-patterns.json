@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "kind": "foundry-wide-failure-patterns",
+  "date": "2026-08-24",
+  "patterns": [
+    {
+      "id": "CAPABILITY_PROXY_ACCEPTANCE",
+      "definition": "A capability requirement is satisfied using a schema, interface, placeholder, fallback, metadata declaration, or test double rather than actual execution of the required capability.",
+      "examples": [
+        "LLMExtractionTemplate treated as LLM_BACKED_EXTRACTION",
+        "FTS OR-query fallback treated as SEMANTIC_RETRIEVAL",
+        "Reviewer role schema treated as MULTIMODAL_REVIEW",
+        "Embedding candidate metadata treated as EMBEDDING_BENCHMARK",
+        "HybridRetriever class definition treated as HYBRID_RETRIEVAL"
+      ],
+      "required_reaction": [
+        "DOWNGRADE CLAIM",
+        "EXECUTE PRIMARY CAPABILITY",
+        "CAPTURE PRIMARY EVIDENCE",
+        "RE-EVALUATE"
+      ],
+      "discovered_in": "M002 reality closure directive",
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "SELF_FULFILLING_ACCEPTANCE_TEST",
+      "definition": "A test proves that the implementation has the structure the builder just created but does not establish the professional or behavioral requirement that motivated that structure.",
+      "examples": [
+        "hasattr(reviewer, \"roles\") == true does NOT prove visual reviewer correctly understands images",
+        "hybrid_search returns list does NOT prove retrieval is semantically meaningful",
+        "ExtractorVerifier.verify() returns dict does NOT prove independent verification"
+      ],
+      "correct_pattern": [
+        "Golden tasks must measure BEHAVIOR, TRUTH, QUALITY, FAILURE RESISTANCE",
+        "Not: API PRESENCE, STRUCTURE EXISTENCE, JSON PARSE SUCCESS"
+      ],
+      "discovered_in": "M002.1 reality closure directive",
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "PREMATURE_ACCEPTANCE",
+      "definition": "The acceptance ledger marks tasks as COMPLETE while their own evidence remains NOT_RUN, incomplete, or not fresh. Acceptance is declared before all required primary-evidence gates have actually executed.",
+      "examples": [
+        "Visual grounding V2 marked complete but no benchmark was run",
+        "Global deployment marked complete but hash proof was not executed",
+        "Acceptance matrix shows PASS while final report shows NOT_RUN",
+        "TODO ledger says done but evidence artifact does not exist"
+      ],
+      "required_reaction": [
+        "RECLASSIFY todo/evidence ledger",
+        "REJECT premature acceptance",
+        "RUN missing primary evidence",
+        "RE-EVALUATE only against fresh evidence"
+      ],
+      "discovered_in": "M002.1 Completion Pass 04 Final Truth-Closure Addendum",
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "CONSTANT_LABEL_VISUAL_BENCHMARK",
+      "definition": "A visual benchmark appears diverse because it contains many images while its ground-truth labels are substantially identical, allowing constant predictions to score highly without proving visual discrimination.",
+      "required_reaction": ["INVALIDATE QUALITY SCORE", "REPAIR DATASET", "REPAIR SCORER", "RERUN"],
+      "discovered_in": "M002.1 Final Capability Closure",
+      "severity": "HIGH"
+    },
+    {
+      "id": "PERMISSIVE_SUBSTRING_SCORING",
+      "definition": "A benchmark accepts predictions through substring containment rather than normalized exact semantic labels, allowing ambiguous or contradictory answers to score as correct.",
+      "required_reaction": ["INVALIDATE QUALITY SCORE", "USE CONTROLLED ENUMS", "REQUIRE EXACT MATCH", "RERUN"],
+      "discovered_in": "M002.1 Final Capability Closure",
+      "severity": "HIGH"
+    },
+    {
+      "id": "ENDPOINT_DRIFT_FALSE_PROVIDER_FAILURE",
+      "definition": "A provider is classified unavailable (UNHEALTHY / RATE_LIMITED / OFFLINE) because a health probe used a stale, invented, duplicated, or non-authoritative endpoint instead of resolving the provider endpoint from canonical configuration.",
+      "examples": [
+        "health probe used http://localhost:9966 while canonical NINEROUTER_URL resolves http://127.0.0.1:20128",
+        "benchmark script hardcodes a port that differs from the configured gateway"
+      ],
+      "required_reaction": [
+        "RESOLVE ENDPOINT ONLY FROM: explicit env config -> canonical 9Router config -> provider registry -> installation discovery",
+        "PROBE THE RESOLVED ENDPOINT",
+        "RECLASSIFY PROVIDER HEALTH",
+        "RE-RECORD HEALTH MATRIX"
+      ],
+      "discovered_in": "M002.1 Completion Pass 06",
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "BENCHMARK_BALANCE_MISREPRESENTATION",
+      "definition": "A dataset is called balanced while individual evaluated dimensions remain strongly majority-dominated (e.g. an 88% majority baseline for a binary property), letting an always-majority predictor appear competent without demonstrating discrimination.",
+      "required_reaction": [
+        "COMPUTE PER-PROPERTY CLASS DISTRIBUTIONS BEFORE MODEL RUN",
+        "RECORD TRIVIAL BASELINES (ALWAYS_MAJORITY / ALWAYS_NO / ALWAYS_CENTER / ALWAYS_DARK)",
+        "REJECT FIXTURE IF STRONGLY DOMINATED",
+        "REBALANCE OR DROP THE PROPERTY"
+      ],
+      "discovered_in": "M002.1 Completion Pass 06",
+      "severity": "HIGH"
+    },
+    {
+      "id": "PROVIDER_FAILURE_AS_BENCHMARK_PASS",
+      "definition": "A benchmark/tournament reports PASS despite having zero successful eligible evaluations because provider failures, HTTP errors, missing samples, or empty result sets are not included in its success predicate.",
+      "examples": [
+        "visual critique: aggregate status=PASS while every model call returned HTTP 402",
+        "extraction: 10/10 HTTP 429 treated as quality=0% rather than PROVIDER_UNAVAILABLE",
+        "embedding tournament: 0 successful embeddings counted as tournament completion"
+      ],
+      "required_reaction": [
+        "INVALIDATE BENCHMARK PASS",
+        "CORRECT AGGREGATOR TO REQUIRE MINIMUM SUCCESSFUL N",
+        "CLASSIFY AS PROVIDER_UNAVAILABLE / PAYMENT_REQUIRED / RATE_LIMITED",
+        "RE-RUN WHEN PROVIDER AVAILABLE",
+        "DO NOT CERTIFY ROLE FROM FAILED BENCHMARK"
+      ],
+      "discovered_in": "M002.1 Completion Pass 05",
+      "severity": "HIGH"
+    },
+    {
+      "id": "PRIMITIVE_PROXY_FOR_DESIGNED_ASSET",
+      "definition": "A deliberately authored visual subject supplied by the Founder (concept creature / character / environment identity) is replaced by an easier generic geometric approximation (spheres/capsules/triangles, generic mascot body, palette + glowing eyes only).",
+      "examples": [
+        "concept creature -> sphere/capsule composition",
+        "distinctive anatomy -> generic mascot body",
+        "character identity -> only palette + glowing eyes"
+      ],
+      "required_reaction": ["REJECT ASSET", "DO NOT INTEGRATE DOWNSTREAM", "RERUN WITH IDENTITY-PRESERVING REPRESENTATION"],
+      "discovered_in": "M002.1 Completion Pass 06 (Pumkit failure operationalization)",
+      "severity": "HIGH"
+    },
+    {
+      "id": "TECHNICAL_3D_AS_FIDELITY_PROXY",
+      "definition": "Assuming a 3D representation is higher fidelity merely because it is 3D. Medium (2D / 2.5D / hybrid / 3D) must be chosen from identity fidelity, visual quality, motion requirement, interaction requirement, and production maturity.",
+      "required_reaction": ["CHOOSE MEDIUM BY REQUIREMENTS", "A HIGH-FIDELITY 2D CHARACTER BEATS A PRIMITIVE 3D APPROXIMATION"],
+      "discovered_in": "M002.1 Completion Pass 06",
+      "severity": "MEDIUM"
+    }
+  ],
+  "governing_principle": "THE FOUNDATION MUST NEVER AGAIN TREAT: THE PLAN FOR A CAPABILITY AS: THE CAPABILITY."
+}

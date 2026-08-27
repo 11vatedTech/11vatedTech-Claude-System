@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "taxonomy_id": "11vt-provider-taxonomy",
+  "date": "2026-08-23",
+  "description": "Semantic categories for capability providers. Models generate, tools create, engines orchestrate, platforms host, services deliver. Do not store ComfyUI or Penpot as models.",
+  "registries": {
+    "model_registry": {
+      "description": "AI/ML models that accept inputs and produce outputs",
+      "entries": ["flux2_klein_4b", "stable_fast_3d", "spar3d", "9router_image_models"],
+      "file": "config/provider-registry-models.json"
+    },
+    "tool_registry": {
+      "description": "Creative tools that artists/developers operate directly",
+      "entries": ["blender", "pixelorama", "inkscape", "krita", "imagemagick", "ffmpeg"],
+      "file": "config/provider-registry-tools.json"
+    },
+    "workflow_engine_registry": {
+      "description": "Engines that execute graphs of model/tool operations",
+      "entries": ["comfyui"],
+      "file": "config/provider-registry-workflow-engines.json"
+    },
+    "platform_registry": {
+      "description": "Design/collaboration platforms with APIs and protocols",
+      "entries": ["penpot", "unreal_engine"],
+      "file": "config/provider-registry-platforms.json"
+    },
+    "service_registry": {
+      "description": "Remote services accessed via API",
+      "entries": ["9router_chat", "9router_image", "9router_tts", "9router_stt", "9router_video", "9router_search", "9router_fetch"],
+      "file": "config/provider-registry-services.json"
+    }
+  },
+  "capability_provider_graph_examples": {
+    "image_generation_local": {
+      "capability": "IMAGE_GENERATION_LOCAL",
+      "provider_chain": [
+        {"role": "model", "provider": "flux2_klein_4b"},
+        {"role": "executed_by", "provider": "comfyui"},
+        {"role": "on", "provider": "local_gpu_rtx5070ti"},
+        {"role": "evidence", "provider": "benchmark_flux2_2026-08-23"}
+      ]
+    },
+    "frontend_design_authoring": {
+      "capability": "FRONTEND_DESIGN_AUTHORING",
+      "provider_chain": [
+        {"role": "platform", "provider": "penpot"},
+        {"role": "accessed_by", "provider": "penpot_mcp"},
+        {"role": "controlled_by", "provider": "claude"}
+      ]
+    },
+    "sprite_production": {
+      "capability": "SPRITE_PRODUCTION",
+      "provider_chain": [
+        {"role": "tool", "provider": "pixelorama"},
+        {"role": "output_to", "provider": "png_spritesheet"},
+        {"role": "imported_by", "provider": "unreal_paper2d"}
+      ]
+    }
+  },
+  "environment_scoped_availability": {
+    "description": "Availability is always environment-scoped. installed_system != foundry_managed != project_local != session_available.",
+    "required_fields": [
+      "installed_system",
+      "foundry_managed",
+      "project_local",
+      "session_available",
+      "path_visible",
+      "resolved_absolute_path",
+      "runtime_verified",
+      "version",
+      "interpreter_environment",
+      "last_verified"
+    ]
+  }
+}

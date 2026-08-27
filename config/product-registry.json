@@ -1,0 +1,28 @@
+{
+  "schema": "11vated-product-registry/1",
+  "boundary": "FOUNDRY != PRODUCT_PORTFOLIO",
+  "products": [
+    {
+      "product_id": "frontend.pumkit",
+      "name": "Pumkit Frontend Design",
+      "category": "FRONTEND",
+      "subtype": "CHARACTER_CONCEPT_EXPERIENCE",
+      "local_path": "Frontend-Designs/Pumkit-Frontend-Design",
+      "git_repository": true,
+      "GitHub_repository": null,
+      "lifecycle": "DEVELOPMENT",
+      "commercial_status": "UNKNOWN",
+      "Foundry_access": "REVIEW_ONLY",
+      "experience_capture": true,
+      "deployment_status": "UNKNOWN",
+      "last_known_revision": "90f798eba5da55038c158b371aeda84c9ca7aed9",
+      "ownership_boundary": "PRODUCT_REPOSITORY",
+      "working_tree": "DIRTY"
+    }
+  ],
+  "classification_rules": {
+    "PRODUCT_REPOSITORY": "never stage into Foundry",
+    "PRODUCT_WORKSPACE_CONTAINER": "never stage into Foundry",
+    "GENERATED_EVIDENCE": "bounded intentional evidence only"
+  }
+}

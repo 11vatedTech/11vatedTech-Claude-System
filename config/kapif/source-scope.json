@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "policy_id": "11vt-kapif-source-scope",
+  "date": "2026-08-23",
+  "description": "Explicit scope gate preventing KAPIF from treating project directories as institutional knowledge.",
+  "default_policy": "UNKNOWN_ROOT_CONTENT_IS_EXCLUDED",
+  "repository_boundary_note": "11vated-growth_OS/ and Frontend-Designs/ remain project directories within the Foundry repo. They must not become institutional knowledge merely because they reside under the repository root. Repository boundary cleanup is still desirable but not within this milestone scope.",
+  "scope_classes": {
+    "FOUNDRY_CANONICAL_SOURCE": "Core Foundry source code and configuration",
+    "FOUNDRY_EVIDENCE": "Calibration evidence, validation artifacts, benchmark results",
+    "FOUNDRY_FIXTURE": "Tool distributions, backups, disposable test fixtures",
+    "PROJECT_SOURCE": "11vatedTech product source code — excluded from KAPIF ingestion",
+    "EXCLUDED": "Explicitly excluded content",
+    "REQUIRES_REVIEW": "Unknown content requiring human review before ingestion"
+  },
+  "directory_classifications": {
+    "scripts/": "FOUNDRY_CANONICAL_SOURCE",
+    "config/": "FOUNDRY_CANONICAL_SOURCE",
+    "docs/": "FOUNDRY_CANONICAL_SOURCE",
+    "plugin/": "FOUNDRY_CANONICAL_SOURCE",
+    "evaluations/": "FOUNDRY_EVIDENCE",
+    "templates/": "FOUNDRY_CANONICAL_SOURCE",
+    "artifacts/ascension/": "FOUNDRY_EVIDENCE",
+    "artifacts/unreal/": "FOUNDRY_EVIDENCE",
+    "artifacts/flagship/": "FOUNDRY_EVIDENCE",
+    "artifacts/creative-stack-validation/": "FOUNDRY_EVIDENCE",
+    "tools/": "FOUNDRY_FIXTURE",
+    "claude-backups/": "FOUNDRY_FIXTURE",
+    "data/kapif/": "FOUNDRY_FIXTURE",
+    "11vated-growth_OS/": "PROJECT_SOURCE",
+    "Frontend-Designs/": "PROJECT_SOURCE"
+  },
+  "ingestion_rules": {
+    "FOUNDRY_CANONICAL_SOURCE": "ALLOWED_FOR_REFERENCE",
+    "FOUNDRY_EVIDENCE": "ALLOWED_FOR_REFERENCE",
+    "FOUNDRY_FIXTURE": "METADATA_ONLY",
+    "PROJECT_SOURCE": "EXCLUDED",
+    "EXCLUDED": "EXCLUDED",
+    "REQUIRES_REVIEW": "BLOCKED"
+  }
+}

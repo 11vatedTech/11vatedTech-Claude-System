@@ -1,0 +1,416 @@
+{
+  "schema_version": 2,
+  "pack_id": "TYPOGRAPHY_INFORMATION_DESIGN_CORE",
+  "date": "2026-08-23",
+  "status": "CANON_DRAFT",
+  "knowledge_class": "DRAFT_FROM_MODEL_KNOWLEDGE",
+  "disciplines": [
+    "typography",
+    "information-design",
+    "editorial-design",
+    "frontend-design",
+    "accessibility"
+  ],
+  "professional_baseline": {
+    "beginner": [
+      "understands typeface vs font distinction",
+      "can identify serif, sans-serif, monospace, display classifications",
+      "sets readable body copy (measure, leading, size)",
+      "establishes a basic heading/body hierarchy"
+    ],
+    "working_professional": [
+      "designs type systems with clear role assignment across breakpoints",
+      "controls measure (45-75 chars), leading (1.2-1.6x), and tracking intentionally",
+      "uses type scale with harmonic ratios (major third, perfect fourth, golden ratio)",
+      "understands optical sizing and variable font axes",
+      "designs tabular data, labels, annotations as first-class typography"
+    ],
+    "senior": [
+      "diagnoses readability failures causally (not just 'too small')",
+      "understands how typography interacts with composition, color, and motion",
+      "selects typefaces for product identity, not decoration",
+      "designs information hierarchy that survives responsive collapse",
+      "critiques density, scan patterns, and information architecture through typography"
+    ],
+    "lead_director": [
+      "establishes typographic voice that scales across products and media",
+      "knows when a type system needs character vs. when it needs restraint",
+      "approves typeface selection with accessibility, performance, and licensing awareness"
+    ]
+  },
+  "foundations": {
+    "type_system_principles": [
+      {
+        "principle": "hierarchy_through_type",
+        "definition": "Size, weight, case, color, position, and spacing differentiate information levels. Use at least 3 of these channels for robust hierarchy.",
+        "failure": "single-channel-hierarchy: only size differentiates levels",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "measure_discipline",
+        "definition": "Line length (measure) of 45-75 characters for body text. Shorter for captions; can be longer for headings. Measure affects reading comfort as much as size.",
+        "failure": "measure-drift: body lines span full viewport width at desktop",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "vertical_rhythm",
+        "definition": "Consistent baseline grid creates structural order. Line-height multiples align elements even when they span different type sizes.",
+        "failure": "rhythm-break: adjacent blocks float at different vertical offsets",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "type_scale_ratios",
+        "definition": "Harmonic ratios (1.25 major third, 1.333 perfect fourth, 1.5 perfect fifth, 1.618 golden ratio) produce intentional contrast between levels.",
+        "failure": "arbitrary-scale: sizes chosen by eye with no mathematical relationship",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "role_assignment",
+        "definition": "Every typeface in a system has a role: body, heading, UI, data, code, display. Roles constrain usage and prevent ad-hoc font selection.",
+        "failure": "role-drift: heading font used for body, display font used for UI labels",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "optical_sizing",
+        "definition": "Type designed for display sizes differs from type designed for text sizes. Optical size axes or separate optical variants ensure readability at every scale.",
+        "failure": "single-optical: display typeface used at 12px with collapsed stroke contrast",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      }
+    ],
+    "readability_principles": [
+      {
+        "principle": "contrast_is_not_just_ratio",
+        "definition": "WCAG 4.5:1 is minimum. Beyond ratio: font weight, size, anti-aliasing, and background complexity affect real-world readability.",
+        "failure": "passes-ratio-fails-real: 4.5:1 but thin weight on photographic background unreadable",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "content_density",
+        "definition": "Information density must match user task. Dense applications need tighter typography; editorial reading needs generous spacing.",
+        "failure": "wrong-density: editorial at application density or dashboard at reading density",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "scan_patterns",
+        "definition": "Users scan before they read. F-pattern and Z-pattern scanning behavior should inform heading placement, bold lead-ins, and key information positioning.",
+        "failure": "unscannable: walls of text with no entry points, bold terms, or structural breaks",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      }
+    ],
+    "information_design_principles": [
+      {
+        "principle": "tabular_numerics",
+        "definition": "Numbers in tables and data displays must be tabular (fixed-width) and right-aligned for magnitude comparison. Proportional figures destroy scan-ability.",
+        "failure": "proportional-data: proportional figures in data columns create jagged reads",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "label_hierarchy",
+        "definition": "Labels, captions, annotations, and metadata each need distinct typographic treatment. Not everything is body or heading.",
+        "failure": "label-flattening: all secondary text at same size/weight/color",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "responsive_typography",
+        "definition": "Type scales, measure, and hierarchy must adapt to viewport. A 48px headline on desktop may need to become 32px on mobile \u2014 but relationship to body must survive.",
+        "failure": "scale-collapse: mobile headings and body collapse to same visual weight",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      }
+    ]
+  },
+  "workflow": [
+    "content_audit_and_type_specimen",
+    "typeface_selection_with_roles",
+    "type_scale_definition",
+    "vertical_rhythm_baseline",
+    "heading_body_ui_data_code_assignments",
+    "responsive_scale_breakpoints",
+    "contrast_verification_all_sizes",
+    "readability_testing_real_content",
+    "accessibility_review",
+    "performance_audit_font_loading",
+    "independent_review",
+    "causal_repair",
+    "unseen_transfer_test"
+  ],
+  "quality_dimensions": {
+    "hierarchy": [
+      "heading/body differentiation",
+      "information level count",
+      "multi-channel coding",
+      "responsive adaptation"
+    ],
+    "readability": [
+      "measure",
+      "leading",
+      "contrast",
+      "weight",
+      "size",
+      "content density match"
+    ],
+    "identity": [
+      "typeface character",
+      "voice appropriateness",
+      "role assignment clarity",
+      "cross-media coherence"
+    ],
+    "accessibility": [
+      "contrast ratios",
+      "resize behavior",
+      "font loading fallback",
+      "letter-spacing for readability"
+    ],
+    "performance": [
+      "font file size",
+      "loading strategy",
+      "FOIT/FOUT handling",
+      "subset if appropriate"
+    ]
+  },
+  "failure_patterns": [
+    {
+      "id": "measure-drift",
+      "discipline": "typography",
+      "symptoms": [
+        "body text spans full viewport",
+        "eye loses place between lines"
+      ],
+      "causes": [
+        "no max-width on text containers",
+        "responsive breakpoints ignore measure"
+      ],
+      "repair": "cap body text containers at 65-75ch; test at every breakpoint",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "faux-hierarchy",
+      "discipline": "information-design",
+      "symptoms": [
+        "everything looks same importance",
+        "users cannot scan"
+      ],
+      "causes": [
+        "only size differentiates levels",
+        "no weight/color/position contrast"
+      ],
+      "repair": "add at least 2 additional hierarchy channels",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "type-overload",
+      "discipline": "typography",
+      "symptoms": [
+        "too many typefaces",
+        "no clear role per font"
+      ],
+      "causes": [
+        "ad-hoc selection",
+        "every designer adds a favorite"
+      ],
+      "repair": "reduce to 2-3 typefaces with explicit roles, document in design system",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "system-font-default",
+      "discipline": "typography+identity",
+      "symptoms": [
+        "no product identity",
+        "looks like unstyled browser default"
+      ],
+      "causes": [
+        "no typeface selection process",
+        "defaulting to system sans-serif without intention"
+      ],
+      "repair": "select typeface(s) that express product character",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "contrast-brittle",
+      "discipline": "typography+accessibility",
+      "symptoms": [
+        "text readable on solid background, unreadable on image"
+      ],
+      "causes": [
+        "contrast tested only on flat backgrounds"
+      ],
+      "repair": "test on photographic/video/gradient backgrounds, add text-shadow or scrim if needed",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "data-typography-neglect",
+      "discipline": "information-design",
+      "symptoms": [
+        "numbers hard to compare",
+        "tables visually chaotic"
+      ],
+      "causes": [
+        "proportional figures in data",
+        "no alignment discipline"
+      ],
+      "repair": "tabular figures, right-align numbers, consistent label treatment",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    }
+  ],
+  "causal_diagnostics": {
+    "why_is_my_type_hierarchy_weak": [
+      "Are you using at least 3 channels (size, weight, color, position, case, spacing)?",
+      "Does your type scale use a harmonic ratio?",
+      "Is your heading/body contrast at least 2x in visual weight?",
+      "Does your hierarchy survive at mobile breakpoints?"
+    ],
+    "why_is_my_text_hard_to_read": [
+      "Is measure between 45-75 characters?",
+      "Is leading at least 1.4x for body text?",
+      "Is contrast at least 4.5:1 on actual backgrounds?",
+      "Is font weight at least 400 at the rendered size?",
+      "Are fonts loading before text is visible?"
+    ]
+  },
+  "tools": {
+    "selection": [
+      "Google Fonts for quick prototyping",
+      "professional foundry catalogs",
+      "variable font testing tools"
+    ],
+    "implementation": [
+      "CSS font-face",
+      "variable font axes",
+      "font-display strategy",
+      "WOFF2 delivery"
+    ],
+    "testing": [
+      "contrast checkers",
+      "zoom/resize testing",
+      "Playwright screenshots",
+      "Lighthouse font metrics"
+    ]
+  },
+  "micro_labs": [
+    {
+      "id": "type-scale-build",
+      "goal": "Build a type scale from a chosen ratio, assign it to heading/body/UI/caption roles, and verify at 3 breakpoints",
+      "success": "clear differentiation at every level, ratio consistent across breakpoints"
+    },
+    {
+      "id": "roles-only-system",
+      "goal": "Design a typography system using exactly 2 typefaces (1 body, 1 display) with explicit role boundaries",
+      "success": "no cross-role usage, every text element classifiable"
+    },
+    {
+      "id": "responsive-measure",
+      "goal": "Test body text measure at 320, 768, 1024, and 1440px viewports; adjust containers until measure stays 45-75 chars everywhere",
+      "success": "measure in range at all breakpoints"
+    },
+    {
+      "id": "contrast-audit",
+      "goal": "Audit every text element on real backgrounds (not flat color swatches), record actual contrast ratios",
+      "success": "all text elements meet 4.5:1 on actual backgrounds"
+    }
+  ],
+  "transfer_tests": [
+    {
+      "id": "editorial-to-application",
+      "goal": "Apply typographic principles from an editorial layout to a data-dense application UI",
+      "success": "hierarchy transfers, density adapts, identity survives"
+    },
+    {
+      "id": "brand-swap",
+      "goal": "Swap typefaces while preserving all hierarchy, measure, and readability constraints",
+      "success": "hierarchy intact, new typeface expresses different character"
+    }
+  ],
+  "golden_tasks": [
+    {
+      "id": "type-system-audit",
+      "description": "Audit a provided UI against all typographic dimensions: hierarchy, measure, contrast, roles, accessibility, responsive behavior",
+      "evidence": "structured audit with specific failure citations"
+    },
+    {
+      "id": "type-repair",
+      "description": "Given a typography system with identified failures, produce a repaired system with rationales",
+      "evidence": "before/after with role assignments, scale table, breakpoint behavior"
+    },
+    {
+      "id": "responsive-scale-test",
+      "description": "Test type scale survival across 4 breakpoints, diagnose collapse points",
+      "evidence": "breakpoint comparison table with specific hierarchy measurements"
+    }
+  ],
+  "cross_pack_links": {
+    "depends_on": [
+      "COMPOSITION_VALUE_COLOR_CORE",
+      "FRONTEND_UI_UX_CORE"
+    ],
+    "feeds_into": [
+      "UI_UX_INTERACTION_CORE",
+      "MOTION_DESIGN_CORE",
+      "ART_DIRECTION_LOOKDEV_CORE"
+    ],
+    "relationship": "Typography is the structural material that gives composition its verbal dimension and frontend its information voice"
+  },
+  "evidence_requirements": [
+    "type scale table",
+    "role assignment map",
+    "contrast audit",
+    "responsive breakpoint evidence",
+    "before/after repair",
+    "transfer artifact"
+  ],
+  "sources": [
+    {
+      "title": "WCAG 2.2 \u2014 Contrast Minimum (1.4.3)",
+      "url": "https://www.w3.org/TR/WCAG22/#contrast-minimum",
+      "authority": "W3C Recommendation",
+      "retrieved": "2026-08-23"
+    },
+    {
+      "title": "WCAG 2.2 \u2014 Resize Text (1.4.4)",
+      "url": "https://www.w3.org/TR/WCAG22/#resize-text",
+      "authority": "W3C Recommendation",
+      "retrieved": "2026-08-23"
+    },
+    {
+      "title": "WCAG 2.2 \u2014 Text Spacing (1.4.12)",
+      "url": "https://www.w3.org/TR/WCAG22/#text-spacing",
+      "authority": "W3C Recommendation",
+      "retrieved": "2026-08-23"
+    },
+    {
+      "title": "MDN: CSS Text",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_text",
+      "authority": "MDN Web Docs",
+      "retrieved": "2026-08-23"
+    }
+  ],
+  "version_sensitive_facts": [
+    {
+      "fact": "CSS text-wrap: balance and pretty support",
+      "version": "browser-dependent, check caniuse",
+      "revalidation": "quarterly"
+    },
+    {
+      "fact": "Variable font browser support",
+      "version": "96%+ global support as of 2025",
+      "revalidation": "annually"
+    }
+  ],
+  "known_limits": [
+    "Typography quality depends on content context; this pack provides frameworks, not automated grading.",
+    "Font licensing must be verified per typeface selected.",
+    "Real readability requires human testing; automated metrics are necessary but insufficient."
+  ],
+  "research_needed": true,
+  "provenance_note": "Authored from model knowledge. Requires KAPIF research evidence before canon eligibility."
+}

@@ -44,3 +44,16 @@ Frontend-Designs/
 
 # Recovery artifacts (extracted products)
 11vated-growth_OS/
+
+# Build outputs and binary artifacts (regression evidence only, not source)
+artifacts/unreal/calibration/Content/
+*.uasset
+*.umap
+*.glb
+
+# Product evidence (handled separately)
+artifacts/frontend/wave-a-pumkit-before/
+artifacts/kapif/
+artifacts/character-identity/
+artifacts/asset-vault/
+artifacts/ascension/

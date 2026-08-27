@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "registry_id": "11vt-comfyui-custom-node-allowlist",
+  "date": "2026-08-23",
+  "policy": {
+    "default_policy": "DENY_ALL",
+    "auto_install": "NEVER",
+    "review_required": true,
+    "review_criteria": ["repository", "commit/tag", "license", "maintainer", "permissions", "dependencies", "network_behavior"],
+    "installation_environment": "isolated_venv_only",
+    "security_note": "Hacktivist attacks documented against ComfyUI custom nodes (2024-2025). Custom nodes execute arbitrary Python. Allowlist is mandatory before any mission-use."
+  },
+  "allowed_nodes": [],
+  "pending_review": [],
+  "rejected_nodes": [],
+  "review_template": {
+    "node_name": "",
+    "repository": "",
+    "commit_or_tag": "",
+    "license": "",
+    "maintainer": "",
+    "reason_for_use": "",
+    "permissions_required": [],
+    "dependencies": [],
+    "network_behavior": "unknown",
+    "last_reviewed": "",
+    "reviewer": ""
+  },
+  "core_installation_policy": {
+    "comfyui_core": "Approved for isolated install if needed for FLUX benchmark (quantized variant)",
+    "comfyui_manager": "Approved for managed node discovery, NOT for automatic node installation",
+    "isolation": "Separate venv, no access to Foundry configs, no filesystem access outside cache/output dirs"
+  }
+}

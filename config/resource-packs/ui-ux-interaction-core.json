@@ -1,0 +1,426 @@
+{
+  "schema_version": 2,
+  "pack_id": "UI_UX_INTERACTION_CORE",
+  "date": "2026-08-23",
+  "status": "CANON_DRAFT",
+  "knowledge_class": "DRAFT_FROM_MODEL_KNOWLEDGE",
+  "disciplines": [
+    "ui-design",
+    "ux",
+    "interaction-design",
+    "accessibility",
+    "frontend-design"
+  ],
+  "professional_baseline": {
+    "beginner": [
+      "can design a single-screen form or task flow",
+      "understands basic affordance (buttons look clickable)",
+      "designs for one breakpoint coherently",
+      "can create a basic state inventory (default, hover, focus, active)"
+    ],
+    "working_professional": [
+      "designs complete task architectures spanning multiple screens/states",
+      "understands information scent and progressive disclosure",
+      "handles error prevention, validation, and recovery systematically",
+      "designs keyboard, touch, and pointer interaction paths",
+      "produces state-complete designs (loading, empty, error, edge cases)"
+    ],
+    "senior": [
+      "diagnoses why users get lost or abandon tasks",
+      "designs navigation that reveals structure without overwhelming",
+      "balances power (expert shortcuts) with learnability (novice guidance)",
+      "understands when automation harms user agency",
+      "critiques interaction from task evidence, not just heuristic opinion"
+    ],
+    "lead_director": [
+      "establishes interaction language and quality bar across products",
+      "aligns UX research, interaction design, visual design, and engineering",
+      "protects user outcomes when business/stakeholder pressure pushes dark patterns"
+    ]
+  },
+  "foundations": {
+    "task_architecture": [
+      {
+        "principle": "task_analysis",
+        "definition": "Map what users need to accomplish before designing screens. Jobs-to-be-done or task analysis precedes layout.",
+        "failure": "screen-first-design: screens designed before understanding what user needs to do",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "progressive_disclosure",
+        "definition": "Show what is needed now; reveal complexity on demand. Don't present every option at once.",
+        "failure": "control-bombardment: every possible action visible at all times",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "information_scent",
+        "definition": "Every interaction element should communicate what will happen next. Users forage for information; strong scent reduces abandonment.",
+        "failure": "mystery-navigation: labels don't predict content, users guess and fail",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      }
+    ],
+    "interaction_principles": [
+      {
+        "principle": "affordance_clarity",
+        "definition": "Interactive elements must look interactive. Buttons look like buttons. Links are distinguishable. Non-interactive elements don't invite clicks.",
+        "failure": "flat-design-extremism: everything looks like everything, users poke randomly",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "feedback_immediacy",
+        "definition": "Every action produces visible, immediate feedback. No silent operations. No mystery loading states.",
+        "failure": "silent-operation: click produces no visible change, user repeats or abandons",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "error_prevention_over_recovery",
+        "definition": "Prevent errors before they happen (constraints, defaults, confirmation for destructive actions). Recovery is necessary but prevention is better.",
+        "failure": "blame-the-user: destructive action has no undo, no confirmation, no recovery path",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "recognition_over_recall",
+        "definition": "Show options; don't require users to remember them. Menus, autocomplete, and visible affordances reduce cognitive load.",
+        "failure": "command-line-memory: users must remember exact commands, paths, or codes",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      }
+    ],
+    "state_design": [
+      {
+        "principle": "state_inventory",
+        "definition": "Every component has states: default, hover, focus, active, disabled, loading, empty, error, success. Design all of them.",
+        "failure": "state-gaps: loading spinner appears with no explanation, empty state is blank, error message is technical",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "empty_state_as_onboarding",
+        "definition": "Empty states teach. Show what belongs there, provide a first action, set expectations.",
+        "failure": "void-empty: blank screen with 'No items' and no next step",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "loading_communication",
+        "definition": "Loading states must communicate what is happening, how long, and whether the user can do anything else. Skeletons > spinners > blank.",
+        "failure": "spinner-everywhere: generic spinner with no context, progress, or cancel option",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      }
+    ],
+    "accessibility_interaction": [
+      {
+        "principle": "keyboard_completeness",
+        "definition": "Every interactive element reachable and operable via keyboard. Tab order follows visual order. Focus never trapped.",
+        "failure": "mouse-only: critical flows impossible without pointer device",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "focus_management",
+        "definition": "Focus moves predictably. After modal opens, focus moves inside. After modal closes, focus returns to trigger. Dynamic content changes manage focus.",
+        "failure": "focus-loss: focus disappears after interaction, user disoriented",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "accessible_names",
+        "definition": "Every interactive element has an accessible name. Icons have labels. Form controls have associated labels. State changes are announced.",
+        "failure": "unnamed-controls: interactive elements read as 'button' with no purpose",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      }
+    ]
+  },
+  "workflow": [
+    "user_task_analysis",
+    "information_architecture",
+    "interaction_flow_mapping",
+    "state_inventory_per_component",
+    "keyboard_path_design",
+    "touch_target_sizing",
+    "error_prevention_review",
+    "loading_empty_error_design",
+    "accessibility_audit",
+    "usability_testing_plan",
+    "independent_review",
+    "causal_repair",
+    "unseen_transfer_test"
+  ],
+  "quality_dimensions": {
+    "task": [
+      "completeness",
+      "efficiency",
+      "error rate",
+      "learnability",
+      "satisfaction"
+    ],
+    "interaction": [
+      "affordance clarity",
+      "feedback immediacy",
+      "state coverage",
+      "keyboard operability",
+      "touch operability"
+    ],
+    "accessibility": [
+      "WCAG 2.2 AA minimum",
+      "screen reader path",
+      "focus management",
+      "reduced motion",
+      "color independence"
+    ],
+    "resilience": [
+      "error prevention",
+      "recovery paths",
+      "loading communication",
+      "empty state guidance"
+    ]
+  },
+  "failure_patterns": [
+    {
+      "id": "form-hostility",
+      "discipline": "interaction",
+      "symptoms": [
+        "validation on submit only",
+        "unclear error location",
+        "lost input on error"
+      ],
+      "causes": [
+        "no inline validation",
+        "no input preservation"
+      ],
+      "repair": "validate on blur, preserve input, show field-level errors with guidance",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "modal-mismanagement",
+      "discipline": "interaction+accessibility",
+      "symptoms": [
+        "focus not trapped",
+        "escape doesn't close",
+        "background scrolls"
+      ],
+      "causes": [
+        "no focus management",
+        "no inert background"
+      ],
+      "repair": "trap focus, close on escape, inert background, return focus on close",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "mystery-meat-navigation",
+      "discipline": "information-architecture",
+      "symptoms": [
+        "users cannot find content",
+        "navigation labels vague"
+      ],
+      "causes": [
+        "clever labels over clear ones",
+        "no information scent testing"
+      ],
+      "repair": "use user language, test navigation comprehension, add breadcrumbs",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "infinite-scroll-trauma",
+      "discipline": "interaction",
+      "symptoms": [
+        "cannot reach footer",
+        "lost position on back navigation",
+        "no pagination alternative"
+      ],
+      "causes": [
+        "infinite scroll as default without escape hatch"
+      ],
+      "repair": "provide pagination option, preserve scroll position, show count",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "dark-pattern",
+      "discipline": "ux-ethics",
+      "symptoms": [
+        "unsubscribe hidden",
+        "charges without clear consent",
+        "confirmshamed into action"
+      ],
+      "causes": [
+        "metrics prioritized over user agency"
+      ],
+      "repair": "clear opt-out paths, transparent pricing, no manipulative language",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "motion-sickness",
+      "discipline": "interaction+accessibility",
+      "symptoms": [
+        "parallax nausea",
+        "autoplay video cannot stop",
+        "scroll-jacking"
+      ],
+      "causes": [
+        "motion without user control",
+        "prefers-reduced-motion ignored"
+      ],
+      "repair": "respect prefers-reduced-motion, add pause controls, never hijack scroll",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    }
+  ],
+  "causal_diagnostics": {
+    "why_are_users_abandoning_this_flow": [
+      "Is there a clear next step at every point?",
+      "Are loading states communicating progress?",
+      "Are errors helpful (what happened + what to do)?",
+      "Is the path completable via keyboard alone?",
+      "Did we test with someone who has never seen this before?"
+    ],
+    "why_does_this_feel_hard_to_use": [
+      "Are interactive elements visually distinct from non-interactive?",
+      "Does every action produce immediate feedback?",
+      "Are destructive actions protected?",
+      "Can users recover from mistakes without starting over?",
+      "Does the interface remember user choices that matter?"
+    ]
+  },
+  "tools": {
+    "design": [
+      "Figma/Penpot wireframes",
+      "interaction specifications",
+      "state inventory documents"
+    ],
+    "testing": [
+      "Playwright for interaction paths",
+      "axe-core for accessibility",
+      "keyboard-only walkthrough",
+      "screen reader testing"
+    ],
+    "evidence": [
+      "interaction flow recordings",
+      "keyboard path evidence",
+      "accessibility audit results",
+      "task completion evidence"
+    ]
+  },
+  "micro_labs": [
+    {
+      "id": "state-inventory",
+      "goal": "Take a single component and design all 8+ states: default, hover, focus, active, disabled, loading, empty, error, success",
+      "success": "every state visually distinct and appropriate"
+    },
+    {
+      "id": "keyboard-path",
+      "goal": "Complete a multi-step task using only keyboard, document every focus transition",
+      "success": "task completable, focus never lost, tab order logical"
+    },
+    {
+      "id": "error-friendly-form",
+      "goal": "Design a form that prevents 5 common errors, validates inline, preserves input, and guides recovery",
+      "success": "errors prevented or recovered without data loss"
+    },
+    {
+      "id": "empty-state-onboarding",
+      "goal": "Design empty states for 3 different components that teach first action",
+      "success": "user knows exactly what to do first in each"
+    }
+  ],
+  "transfer_tests": [
+    {
+      "id": "desktop-to-mobile-task",
+      "goal": "Redesign a desktop interaction flow for mobile touch without losing task completeness",
+      "success": "task completable via touch, no information loss"
+    },
+    {
+      "id": "visual-to-nonvisual",
+      "goal": "Design the interaction path so it works via screen reader without visual reference",
+      "success": "all states announced, all actions reachable, all feedback audible"
+    }
+  ],
+  "golden_tasks": [
+    {
+      "id": "interaction-audit",
+      "description": "Audit a flow against all interaction principles: affordance, feedback, error handling, state coverage, keyboard, accessibility",
+      "evidence": "structured audit with specific failure citations and severity"
+    },
+    {
+      "id": "state-repair",
+      "description": "Given a component with missing states, design the complete state inventory",
+      "evidence": "state matrix before/after, rationale for each state design"
+    },
+    {
+      "id": "accessibility-path-test",
+      "description": "Complete a task via keyboard and screen reader, document every barrier",
+      "evidence": "barrier log with severity, WCAG reference, repair recommendation"
+    }
+  ],
+  "cross_pack_links": {
+    "depends_on": [
+      "TYPOGRAPHY_INFORMATION_DESIGN_CORE",
+      "FRONTEND_UI_UX_CORE",
+      "COMPOSITION_VALUE_COLOR_CORE"
+    ],
+    "feeds_into": [
+      "MOTION_DESIGN_CORE",
+      "ART_DIRECTION_LOOKDEV_CORE"
+    ],
+    "relationship": "Interaction is where typography, composition, and visual hierarchy become usable behavior"
+  },
+  "evidence_requirements": [
+    "state inventory",
+    "keyboard path evidence",
+    "interaction flow recording",
+    "accessibility audit",
+    "human task evidence where available"
+  ],
+  "sources": [
+    {
+      "title": "WCAG 2.2 \u2014 Keyboard (2.1)",
+      "url": "https://www.w3.org/TR/WCAG22/#keyboard-accessible",
+      "authority": "W3C Recommendation",
+      "retrieved": "2026-08-23"
+    },
+    {
+      "title": "WCAG 2.2 \u2014 Focus Order (2.4.3)",
+      "url": "https://www.w3.org/TR/WCAG22/#focus-order",
+      "authority": "W3C Recommendation",
+      "retrieved": "2026-08-23"
+    },
+    {
+      "title": "ARIA Authoring Practices Guide",
+      "url": "https://www.w3.org/WAI/ARIA/apg/",
+      "authority": "W3C WAI",
+      "retrieved": "2026-08-23"
+    },
+    {
+      "title": "NNGroup: 10 Usability Heuristics",
+      "url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+      "authority": "Nielsen Norman Group",
+      "retrieved": "2026-08-23"
+    }
+  ],
+  "version_sensitive_facts": [
+    {
+      "fact": "CSS :has() selector support enables parent-state styling without JS",
+      "version": "92%+ browser support as of 2025",
+      "revalidation": "quarterly"
+    },
+    {
+      "fact": "Popover API and invokers for accessible overlays",
+      "version": "browser-dependent",
+      "revalidation": "quarterly"
+    }
+  ],
+  "known_limits": [
+    "UX quality cannot be certified from screenshots alone.",
+    "Real usability requires task evidence with representative users.",
+    "This pack provides professional frameworks; human testing remains essential.",
+    "Heuristic evaluation is not usability testing."
+  ],
+  "research_needed": true,
+  "provenance_note": "Authored from model knowledge. Requires KAPIF research evidence before canon eligibility."
+}

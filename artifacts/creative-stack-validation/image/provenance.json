@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "job_id": "image-test",
-  "created_at_local": "2026-08-22T14:38:43-0400",
+  "created_at_local": "2026-08-27T16:15:09-0400",
   "intent": "generate_refine_upscale_alpha",
   "cost_policy": "free_local_default_no_paid_generation",
   "inputs": [],
@@ -10,7 +10,7 @@
       "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\image\\generated.png",
       "exists": true,
       "bytes": 8461,
-      "sha256": "9ec7b5e1ea312b9a746fb28ef3f6ea573f3cd45f429da661c994597a2f18a553",
+      "sha256": "de1f76c3d66dd081ca48bcc9e6944c7433a2fc9cebd2c73c110760b201127d93",
       "role": "output",
       "license": "generated-local"
     },
@@ -18,7 +18,7 @@
       "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\image\\alpha.png",
       "exists": true,
       "bytes": 4602,
-      "sha256": "e8e1163d68674fbe19c1628a04d05edbeb8c813600c1cdcf8ff00cd610617f0e",
+      "sha256": "4d0a67e965ebeebf5f70752f84ac0397d05e8d7a8b9e681269f76ff082990c57",
       "role": "output",
       "license": "generated-local"
     },
@@ -34,7 +34,7 @@
       "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\image\\diff.png",
       "exists": true,
       "bytes": 32808,
-      "sha256": "2370c8e022da59320464aba096ef26dd65a781f149194b1587aeac794f8487b2",
+      "sha256": "ec81025e98ee7365c561d32101cc198ecad2ea6369df82dd32e7b8f4084eebb8",
       "role": "output",
       "license": "generated-local"
     }

@@ -3,7 +3,7 @@
     "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\image\\generated.png",
     "exists": true,
     "bytes": 8461,
-    "sha256": "9ec7b5e1ea312b9a746fb28ef3f6ea573f3cd45f429da661c994597a2f18a553",
+    "sha256": "de1f76c3d66dd081ca48bcc9e6944c7433a2fc9cebd2c73c110760b201127d93",
     "suffix": ".png",
     "width": 1024,
     "height": 768
@@ -12,7 +12,7 @@
     "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\image\\alpha.png",
     "exists": true,
     "bytes": 4602,
-    "sha256": "e8e1163d68674fbe19c1628a04d05edbeb8c813600c1cdcf8ff00cd610617f0e",
+    "sha256": "4d0a67e965ebeebf5f70752f84ac0397d05e8d7a8b9e681269f76ff082990c57",
     "suffix": ".png",
     "width": 512,
     "height": 512
@@ -40,7 +40,7 @@
       "returncode": 0,
       "stdout": "",
       "stderr": "",
-      "elapsed_seconds": 0.203
+      "elapsed_seconds": 0.416
     },
     {
       "argv": [
@@ -57,7 +57,7 @@
       "returncode": 0,
       "stdout": "",
       "stderr": "",
-      "elapsed_seconds": 0.113
+      "elapsed_seconds": 0.167
     },
     {
       "argv": [
@@ -71,8 +71,8 @@
       ],
       "returncode": 0,
       "stdout": "",
-      "stderr": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers\n  built with gcc 16.1.0 (Rev2, Built by MSYS2 project)\n  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libsvtjpegxs --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper\n  libavutil      60. 26.102 / 60. 26.102\n  libavcodec     62. 28.102 / 62. 28.102\n  libavformat    62. 12.102 / 62. 12.102\n  libavdevice    62.  3.102 / 62.  3.102\n  libavfilter    11. 14.102 / 11. 14.102\n  libswscale      9.  5.102 /  9.  5.102\n  libswresample   6.  3.102 /  6.  3.102\nInput #0, png_pipe, from 'C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\image\\generated.png':\n  Duration: N/A, bitrate: N/A\n  Stream #0:0: Video: png, rgb48be(pc, gbr/bt709/unknown), 1024x768, 25 fps, 25 tbr, 25 tbn\nStream mapping:\n  Stream #0:0 -> #0:0 (png (native) -> png (native))\nPress [q] to stop, [?] for help\nOutput #0, image2, to 'C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\image\\upscale.png':\n  Metadata:\n    encoder         : Lavf62.12.102\n  Stream #0:0: Video: png, rgb48be(pc, gbr/bt709/unknown, progressive), 2048x1536, q=2-31, 200 kb/s, 25 fps, 25 tbn\n    Metadata:\n      encoder         : Lavc62.28.102 png\n[image2 @ 000001ee09568980] The specified filename 'C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\image\\upscale.png' does not contain an image sequence pattern or a pattern is invalid.\n[image2 @ 000001ee09568980] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.\n[out#0/image2 @ 000001ee094ef440] video:28KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    1 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.04 bitrate=N/A speed=0.306x elapsed=0:00:00.13    \n",
-      "elapsed_seconds": 0.238
+      "stderr": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers\n  built with gcc 16.1.0 (Rev2, Built by MSYS2 project)\n  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libsvtjpegxs --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper\n  libavutil      60. 26.102 / 60. 26.102\n  libavcodec     62. 28.102 / 62. 28.102\n  libavformat    62. 12.102 / 62. 12.102\n  libavdevice    62.  3.102 / 62.  3.102\n  libavfilter    11. 14.102 / 11. 14.102\n  libswscale      9.  5.102 /  9.  5.102\n  libswresample   6.  3.102 /  6.  3.102\nInput #0, png_pipe, from 'C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\image\\generated.png':\n  Duration: N/A, bitrate: N/A\n  Stream #0:0: Video: png, rgb48be(pc, gbr/bt709/unknown), 1024x768, 25 fps, 25 tbr, 25 tbn\nStream mapping:\n  Stream #0:0 -> #0:0 (png (native) -> png (native))\nPress [q] to stop, [?] for help\nOutput #0, image2, to 'C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\image\\upscale.png':\n  Metadata:\n    encoder         : Lavf62.12.102\n  Stream #0:0: Video: png, rgb48be(pc, gbr/bt709/unknown, progressive), 2048x1536, q=2-31, 200 kb/s, 25 fps, 25 tbn\n    Metadata:\n      encoder         : Lavc62.28.102 png\n[image2 @ 0000023980d26040] The specified filename 'C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\creative-stack-validation\\image\\upscale.png' does not contain an image sequence pattern or a pattern is invalid.\n[image2 @ 0000023980d26040] Use a pattern such as %03d for an image sequence or use the -update option (with -frames:v 1 if needed) to write a single image.\n[out#0/image2 @ 0000023980c9f580] video:28KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown\nframe=    1 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.04 bitrate=N/A speed=0.286x elapsed=0:00:00.13    \n",
+      "elapsed_seconds": 0.231
     }
   ],
   "compare": {
@@ -91,7 +91,7 @@
       "returncode": 1,
       "stdout": "",
       "stderr": "521324 (0.165725)",
-      "elapsed_seconds": 0.953
+      "elapsed_seconds": 0.95
     },
     "passed": true,
     "visual_equivalence_claim": false

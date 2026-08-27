@@ -1,0 +1,89 @@
+{
+  "schema_version": 2,
+  "schema_id": "11vt-asset-provenance-v2",
+  "date": "2026-08-23",
+  "description": "Every artifact stores enough provenance to reproduce where possible and verify trust. C2PA-compatible export is designed in from the start.",
+  "c2pa_awareness": {
+    "status": "designed_for_future_integration",
+    "c2pa_version_target": "2.4",
+    "concepts_applied": ["hard_binding", "soft_binding", "manifest", "actions", "ingredients", "ai_ml_provenance"],
+    "implementation_priority": "post-milestone-1"
+  },
+  "required_fields": {
+    "identity": {
+      "logical_id": "globally unique asset identifier (11vt-{hash12})",
+      "hash": "SHA-256 of primary artifact file",
+      "hash_algorithm": "sha256"
+    },
+    "source_origin": {
+      "source_type": "enum: sourced | created | procedural | generated | captured | tool_invented",
+      "source_url": "URL if sourced",
+      "source_license": "SPDX identifier or custom license name",
+      "source_license_url": "URL to license text",
+      "source_attribution": "required creator/author attribution",
+      "download_date": "ISO 8601 if sourced",
+      "api_terms": "API terms may differ from asset license — record separately"
+    },
+    "creation_context": {
+      "creator": "agent or tool that created the asset",
+      "creator_version": "version of creating agent",
+      "model_used": "AI model if generated",
+      "model_version": "model version/hash",
+      "model_license": "model license",
+      "tool_used": "DCC or pipeline tool",
+      "tool_version": "exact tool version"
+    },
+    "generation_workflow": {
+      "workflow_type": "generation workflow identifier",
+      "prompt_hash": "SHA-256 of prompt if AI-generated",
+      "seed": "random seed if deterministic",
+      "parameters": "key generation parameters for reproducibility",
+      "parent_artifacts": ["logical_ids of input/upstream artifacts"],
+      "transformations": ["ordered list of transformations applied"]
+    },
+    "technical_properties": {
+      "format": "MIME type or file extension",
+      "dimensions": "width x height for images/video",
+      "color_space": "sRGB, Linear, ACES, etc.",
+      "bit_depth": "8, 16, 32",
+      "material_schema": "OpenPBR, MaterialX, custom",
+      "rig_status": "none | basic | production",
+      "animation_status": "none | baked | full_rig",
+      "lod_levels": 0,
+      "triangle_count": 0,
+      "texture_resolution": "e.g., 2K, 4K",
+      "file_size_bytes": 0
+    },
+    "usage_rights": {
+      "commercial_status": "free_commercial | non_commercial_only | requires_license | unknown",
+      "attribution_required": true,
+      "modification_allowed": true,
+      "redistribution_allowed": true,
+      "restrictions": ["any known usage restrictions"]
+    },
+    "quality": {
+      "quality_status": "raw | draft | review | approved | production",
+      "validation_passed": ["list of validators that passed"],
+      "known_issues": ["any known quality issues"],
+      "human_review_status": "pending | passed | failed | not_applicable"
+    },
+    "evidence": {
+      "primary_evidence": "image evidence for visual assets",
+      "turntable": "multi-view evidence for 3D",
+      "frame_sequence": "animation evidence",
+      "comparison_evidence": "diff/comparison evidence",
+      "runtime_evidence": "in-engine/in-browser evidence"
+    }
+  },
+  "sourcing_decision_framework": {
+    "always_evaluate": ["identity", "quality", "license", "time", "cost", "editability", "performance", "repeatability", "pipeline_compatibility"],
+    "source_priority": ["CC0 (Poly Haven, Kenney)", "MIT/Apache 2.0", "GPL-compatible", "proprietary_with_license"],
+    "do_not_always_generate": true,
+    "do_not_always_build_manually": true
+  },
+  "integration_with_existing_vault": {
+    "existing_vault": "artifacts/asset-vault/index.json",
+    "migration_path": "Add v2 fields to existing vault entries on next touch",
+    "new_entries": "Use v2 schema for all new assets"
+  }
+}

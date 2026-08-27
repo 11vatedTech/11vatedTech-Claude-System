@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "registry_id": "11vt-professional-resource-packs",
+  "generated_at": "2026-08-23",
+  "provider": "Creative Production Superstack — Milestone 1",
+  "policy": {
+    "pack_does_not_increase_maturity": true,
+    "pack_must_change_behavior": true,
+    "documentation_without_behavior_change_is_not_intelligence": true,
+    "source_tier_priority": "A > B > C > D",
+    "tier_a": "official standards, tool docs, papers, engine source/API, OpenPBR, MaterialX, OpenUSD, W3C, ISO",
+    "tier_b": "SIGGRAPH, GDC, studio production talks, postmortems, senior/lead breakdowns",
+    "tier_c": "high-quality specialist practitioner material",
+    "tier_d": "community discovery",
+    "never_derive_from": ["AI-generated tutorials", "SEO content", "prompt collections", "beginner listicles"],
+    "research_process_not_just_beauty": true
+  },
+  "content_standard": {
+    "required_sections": [
+      "discipline_purpose",
+      "foundational_principles",
+      "working_professional_knowledge",
+      "senior_lead_judgment",
+      "production_workflow",
+      "production_deliverables",
+      "quality_dimensions",
+      "failure_taxonomy",
+      "causal_diagnostics",
+      "tool_independent_knowledge",
+      "tool_specific_mappings",
+      "performance_implications",
+      "accessibility_implications",
+      "primary_sources",
+      "professional_production_sources",
+      "version_sensitive_facts",
+      "what_must_be_researched_jit",
+      "micro_labs",
+      "transfer_tests",
+      "golden_tasks",
+      "known_limitations"
+    ]
+  },
+  "packs": [
+    {
+      "id": "art-direction-visdev-core",
+      "number": "01",
+      "title": "ART_DIRECTION_VISDEV_CORE",
+      "status": "existing",
+      "file": "art-direction-lookdev-core.json",
+      "version": "1.0.0"
+    },
+    {
+      "id": "composition-value-color-core",
+      "number": "02",
+      "title": "COMPOSITION_VALUE_COLOR_CORE",
+      "status": "slot_created",
+      "file": "composition-value-color-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    },
+    {
+      "id": "typography-information-design-core",
+      "number": "03",
+      "title": "TYPOGRAPHY_INFORMATION_DESIGN_CORE",
+      "status": "slot_created",
+      "file": "typography-information-design-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    },
+    {
+      "id": "frontend-design-core",
+      "number": "04",
+      "title": "FRONTEND_DESIGN_CORE",
+      "status": "existing",
+      "file": "frontend-ui-ux-core.json",
+      "version": "1.0.0"
+    },
+    {
+      "id": "ui-ux-interaction-core",
+      "number": "05",
+      "title": "UI_UX_INTERACTION_CORE",
+      "status": "slot_created",
+      "file": "ui-ux-interaction-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    },
+    {
+      "id": "motion-design-core",
+      "number": "06",
+      "title": "MOTION_DESIGN_CORE",
+      "status": "slot_created",
+      "file": "motion-design-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    },
+    {
+      "id": "two-d-art-illustration-core",
+      "number": "07",
+      "title": "TWO_D_ART_ILLUSTRATION_CORE",
+      "status": "slot_created",
+      "file": "two-d-art-illustration-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    },
+    {
+      "id": "pixel-art-sprite-core",
+      "number": "08",
+      "title": "PIXEL_ART_SPRITE_CORE",
+      "status": "slot_created",
+      "file": "pixel-art-sprite-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    },
+    {
+      "id": "three-d-modeling-core",
+      "number": "09",
+      "title": "THREE_D_MODELING_CORE",
+      "status": "slot_created",
+      "file": "three-d-modeling-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    },
+    {
+      "id": "material-lookdev-core",
+      "number": "10",
+      "title": "MATERIAL_LOOKDEV_CORE",
+      "status": "slot_created",
+      "file": "material-lookdev-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    },
+    {
+      "id": "lighting-rendering-core",
+      "number": "11",
+      "title": "LIGHTING_RENDERING_CORE",
+      "status": "slot_created",
+      "file": "lighting-rendering-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    },
+    {
+      "id": "rigging-animation-core",
+      "number": "12",
+      "title": "RIGGING_ANIMATION_CORE",
+      "status": "slot_created",
+      "file": "rigging-animation-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    },
+    {
+      "id": "vfx-simulation-core",
+      "number": "13",
+      "title": "VFX_SIMULATION_CORE",
+      "status": "slot_created",
+      "file": "vfx-simulation-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    },
+    {
+      "id": "technical-art-core",
+      "number": "14",
+      "title": "TECHNICAL_ART_CORE",
+      "status": "slot_created",
+      "file": "technical-art-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    },
+    {
+      "id": "game-design-core",
+      "number": "15",
+      "title": "GAME_DESIGN_CORE",
+      "status": "slot_created",
+      "file": "game-design-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    },
+    {
+      "id": "level-environment-core",
+      "number": "16",
+      "title": "LEVEL_ENVIRONMENT_CORE",
+      "status": "slot_created",
+      "file": "level-environment-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    },
+    {
+      "id": "procedural-world-core",
+      "number": "17",
+      "title": "PROCEDURAL_WORLD_CORE",
+      "status": "slot_created",
+      "file": "procedural-world-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    },
+    {
+      "id": "cinematography-core",
+      "number": "18",
+      "title": "CINEMATOGRAPHY_CORE",
+      "status": "slot_created",
+      "file": "cinematography-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    },
+    {
+      "id": "audio-interactive-sound-core",
+      "number": "19",
+      "title": "AUDIO_INTERACTIVE_SOUND_CORE",
+      "status": "slot_created",
+      "file": "audio-interactive-sound-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    },
+    {
+      "id": "ai-creative-media-core",
+      "number": "20",
+      "title": "AI_CREATIVE_MEDIA_CORE",
+      "status": "slot_created",
+      "file": "ai-creative-media-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    },
+    {
+      "id": "asset-pipeline-provenance-core",
+      "number": "21",
+      "title": "ASSET_PIPELINE_PROVENANCE_CORE",
+      "status": "slot_created",
+      "file": "asset-pipeline-provenance-core.json",
+      "version": "0.1.0",
+      "note": "Needs professional research depth"
+    }
+  ],
+  "summary": {
+    "total_packs": 21,
+    "existing_with_depth": 3,
+    "slots_created": 18,
+    "slots_need_research": 18
+  }
+}

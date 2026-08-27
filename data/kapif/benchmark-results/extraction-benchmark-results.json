@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-24T01:34:37.962313",
+  "excerpts_run": 10,
+  "total_expected_atoms": 16,
+  "total_extracted_atoms": 0,
+  "matched": 0,
+  "metrics": {
+    "claim_precision": 0.0,
+    "claim_recall": 0.0,
+    "f1": 0.0,
+    "atom_type_accuracy": 0.0,
+    "evidence_span_grounding_rate": 0.0,
+    "overclaim_rate": 0.0,
+    "must_not_extract_fp_rate": 0.0
+  },
+  "latency_ms": {
+    "p50": 9074,
+    "p95": 9372
+  },
+  "model_failures": 10,
+  "failure_rate": 1.0
+}

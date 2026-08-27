@@ -1,0 +1,6 @@
+Source: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+Publisher: MDN Web Docs
+Authority: MDN Web Docs (browser vendor documentation); WCAG 2.2 SC 2.3.3
+Evidence span: The prefers-reduced-motion CSS media feature is used to detect if a user has enabled a setting on their device to minimize the amount of non-essential motion
+Version/date: MDN retrieved 2026-08; WCAG 2.2 published 2023-10-05
+Retrieved: 2026-08-26T00:56:55.934815+00:00

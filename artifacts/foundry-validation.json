@@ -1,16 +1,16 @@
 {
-  "validation_time": "2026-08-27T16:23:01",
+  "validation_time": "2026-08-27T16:32:37",
   "total": 9,
   "passed": 9,
   "failed": 0,
   "gates": {
     "closure_gates": {
       "status": "PASS",
-      "duration": 0.3
+      "duration": 0.2
     },
     "golden_tasks": {
       "status": "PASS",
-      "duration": 1.6
+      "duration": 1.2
     },
     "behavioral_validation": {
       "status": "PASS",
@@ -26,15 +26,15 @@
     },
     "sync_dry_run": {
       "status": "PASS",
-      "duration": 0.7
+      "duration": 0.5
     },
     "truth_generator": {
       "status": "PASS",
-      "duration": 6.2
+      "duration": 4.5
     },
     "capability_truth_audit": {
       "status": "PASS",
-      "duration": 0.5
+      "duration": 0.4
     },
     "env_doctor": {
       "status": "PASS",

@@ -1,0 +1,422 @@
+{
+  "schema_version": 2,
+  "pack_id": "MOTION_DESIGN_CORE",
+  "date": "2026-08-23",
+  "status": "CANON_DRAFT",
+  "knowledge_class": "DRAFT_FROM_MODEL_KNOWLEDGE",
+  "disciplines": [
+    "motion-design",
+    "interaction-design",
+    "frontend-design",
+    "animation",
+    "accessibility"
+  ],
+  "professional_baseline": {
+    "beginner": [
+      "can animate opacity, transform, and position with CSS transitions",
+      "understands easing vs linear motion",
+      "can apply hover transitions to interactive elements",
+      "respects prefers-reduced-motion as binary on/off"
+    ],
+    "working_professional": [
+      "designs motion that communicates state change, spatial relationship, and causality",
+      "uses duration hierarchy (micro 100-200ms, macro 300-500ms, page 500-1000ms)",
+      "orchestrates staggered animations with intentional delay relationships",
+      "designs enter/exit/layout-shift animations that preserve spatial understanding",
+      "handles reduced-motion with meaningful alternatives, not just disabling"
+    ],
+    "senior": [
+      "diagnoses why motion feels 'off' \u2014 timing, easing, spatial inconsistency",
+      "designs motion language consistent with visual identity and interaction model",
+      "understands when motion adds clarity vs when it adds noise",
+      "critiques motion from performance, accessibility, and perceptual perspectives simultaneously"
+    ],
+    "lead_director": [
+      "establishes motion language that scales across products and platforms",
+      "knows when motion enhances brand vs when it impedes usability",
+      "approves motion with awareness of frame budget, accessibility law, and device diversity"
+    ]
+  },
+  "foundations": {
+    "motion_purpose": [
+      {
+        "principle": "motion_explains_state",
+        "definition": "Motion's primary job is to explain what changed, where it came from, where it went, and why. Decorative motion is secondary and must not impede understanding.",
+        "failure": "motion-as-decoration: animation exists purely for visual interest, obscures rather than explains",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "causal_motion",
+        "definition": "Actions should have visible consequences. A tap causes a ripple. A delete causes the item to leave. A navigation causes directionally appropriate movement.",
+        "failure": "acausal-motion: things animate with no clear trigger or relationship to user action",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "continuity",
+        "definition": "Motion bridges states so users maintain spatial understanding. A card expanding to full page communicates 'this is the same object.'",
+        "failure": "hard-cut: state change with no transition destroys spatial model",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      }
+    ],
+    "temporal_principles": [
+      {
+        "principle": "duration_hierarchy",
+        "definition": "Micro-interactions (100-200ms), component transitions (200-400ms), page transitions (300-700ms). Duration communicates importance and distance.",
+        "failure": "uniform-duration: everything takes exactly 300ms regardless of distance or importance",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "easing_intentionality",
+        "definition": "Ease-out for entering (decelerating into position). Ease-in for exiting (accelerating away). Custom curves for branded motion. Never linear.",
+        "failure": "linear-default: linear easing produces robotic, unnatural movement",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "staggering",
+        "definition": "Multiple elements animating simultaneously should stagger (20-50ms delay between items) to create readable sequence rather than simultaneous noise.",
+        "failure": "simultaneous-flash: everything animates at once, eye cannot track",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "anticipation_and_settle",
+        "definition": "Meaningful motion often has anticipation (preparing for action) and settle (overshooting and correcting). These phases communicate physicality.",
+        "failure": "abrupt-start-stop: motion begins and ends with no preparation or deceleration",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      }
+    ],
+    "spatial_principles": [
+      {
+        "principle": "directional_consistency",
+        "definition": "Navigation forward moves content right-to-left. Going back moves left-to-right. Expanding downward reveals more. Inconsistent direction destroys spatial model.",
+        "failure": "direction-chaos: forward moves left, back moves down, expand moves up",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "shared_element_transition",
+        "definition": "When an element appears in two different contexts, animate between them to communicate they are the same thing.",
+        "failure": "disconnected-views: same content in two places with no spatial bridge",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "z_space_clarity",
+        "definition": "Elements moving toward the user (modals, overlays) should scale up or translate in Z. Elements receding should scale down. Motion communicates depth.",
+        "failure": "flat-motion: all movement in screen plane regardless of depth relationship",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      }
+    ],
+    "accessibility_motion": [
+      {
+        "principle": "reduced_motion_is_not_no_motion",
+        "definition": "prefers-reduced-motion does not mean disable all animation. It means reduce vestibular triggers: no large parallax, no spinning, no rapid flashing, reduced distance/duration.",
+        "failure": "all-or-nothing: reduced motion kills all animation including important state communication",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "no_flashing",
+        "definition": "No content flashes more than 3 times per second (WCAG 2.3.1). Flashing can trigger seizures.",
+        "failure": "strobe-effect: rapid blinking or flashing animation",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "duration_control",
+        "definition": "Animations triggered by interaction should be brief. Long-running animations should be pausable. Autoplay motion should be stoppable.",
+        "failure": "trapped-in-animation: cannot interact until animation completes",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      }
+    ]
+  },
+  "workflow": [
+    "identify_state_changes_needing_explanation",
+    "define_motion_language_duration_easing",
+    "design_enter_exit_layout_animations",
+    "spatial_consistency_review",
+    "stagger_sequence_design",
+    "performance_profiling_frame_budget",
+    "reduced_motion_alternatives",
+    "flashing_seizure_review",
+    "independent_review",
+    "causal_repair",
+    "unseen_transfer_test"
+  ],
+  "quality_dimensions": {
+    "communication": [
+      "state change clarity",
+      "spatial relationship",
+      "causality",
+      "attention direction"
+    ],
+    "craft": [
+      "easing quality",
+      "duration appropriateness",
+      "stagger choreography",
+      "settle behavior"
+    ],
+    "accessibility": [
+      "reduced-motion alternatives",
+      "no flashing",
+      "duration control",
+      "interruptibility"
+    ],
+    "performance": [
+      "60fps target",
+      "compositor-only properties",
+      "no layout thrashing",
+      "will-change restraint"
+    ],
+    "identity": [
+      "motion language coherence",
+      "brand character",
+      "cross-component consistency"
+    ]
+  },
+  "failure_patterns": [
+    {
+      "id": "everything-bounces",
+      "discipline": "motion",
+      "symptoms": [
+        "every element has overshoot bounce",
+        "motion feels same across components"
+      ],
+      "causes": [
+        "default easing applied universally",
+        "no motion hierarchy"
+      ],
+      "repair": "assign easing by purpose: subtle for micro, moderate for component, expressive for branded moments",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "vestibular-assault",
+      "discipline": "motion+accessibility",
+      "symptoms": [
+        "large parallax on scroll",
+        "continuous spinning",
+        "rapid flashing"
+      ],
+      "causes": [
+        "motion designed for visual impact without accessibility review"
+      ],
+      "repair": "respect prefers-reduced-motion, limit parallax displacement, no auto-spin",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "animation-race",
+      "discipline": "motion+interaction",
+      "symptoms": [
+        "animations overlap unexpectedly",
+        "state changes queue up"
+      ],
+      "causes": [
+        "no interrupt handling",
+        "animations fire on every state change"
+      ],
+      "repair": "cancel previous animations on new interaction, debounce rapid triggers",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "jank-scroll",
+      "discipline": "motion+performance",
+      "symptoms": [
+        "stutter during animated scroll",
+        "frames drop below 30fps"
+      ],
+      "causes": [
+        "animating layout-triggering properties",
+        "no will-change or transform-only strategy"
+      ],
+      "repair": "animate only transform and opacity, promote layers, profile frame budget",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "loading-as-entertainment",
+      "discipline": "motion",
+      "symptoms": [
+        "elaborate loading animation longer than the load itself",
+        "no progress communication"
+      ],
+      "causes": [
+        "loading animation prioritized over actual loading speed"
+      ],
+      "repair": "loading animation must communicate progress; never extend perceived wait",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "reduced-motion-as-afterthought",
+      "discipline": "motion+accessibility",
+      "symptoms": [
+        "reduced motion disables all animation including status indicators"
+      ],
+      "causes": [
+        "binary toggle without semantic alternatives"
+      ],
+      "repair": "design reduced-motion alternatives that still communicate state change",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    }
+  ],
+  "causal_diagnostics": {
+    "why_does_this_motion_feel_wrong": [
+      "Is the easing appropriate for the action (enter/exit/attention)?",
+      "Is the duration proportional to the distance/importance?",
+      "Does the direction match the spatial relationship?",
+      "Are stagger delays creating readable sequence or just delay?",
+      "Does the motion explain the state change or just decorate it?"
+    ],
+    "why_is_this_motion_janky": [
+      "Are you animating only transform and opacity?",
+      "Is the element promoted to its own compositor layer?",
+      "Are you measuring layout during animation?",
+      "Is the frame budget under 16ms (60fps) / 8ms (120Hz)?"
+    ]
+  },
+  "tools": {
+    "design": [
+      "CSS animations/transitions",
+      "Web Animations API",
+      "Framer Motion or project animation library"
+    ],
+    "profiling": [
+      "Chrome DevTools Performance panel",
+      "Rendering > Paint Flashing",
+      "Frame Rendering Stats"
+    ],
+    "testing": [
+      "Playwright for reduced-motion testing",
+      "manual frame-rate observation",
+      "accessibility motion audit"
+    ]
+  },
+  "micro_labs": [
+    {
+      "id": "state-communication",
+      "goal": "Animate 3 state changes (open modal, add item, delete item) using motion that explains what happened",
+      "success": "without labels, observer can identify what changed and where it came from"
+    },
+    {
+      "id": "easing-system",
+      "goal": "Define an easing system with 3-4 curves, assign each to a purpose, and apply consistently across components",
+      "success": "every animation uses an intentional curve from the system"
+    },
+    {
+      "id": "reduced-motion-redesign",
+      "goal": "Take an animation-heavy interaction and design its reduced-motion alternative that still communicates state",
+      "success": "state change remains clear without vestibular triggers"
+    },
+    {
+      "id": "frame-budget",
+      "goal": "Profile an animated page, identify frames exceeding 16ms, and optimize to 60fps",
+      "success": "all frames under 16ms, no layout thrashing detected"
+    }
+  ],
+  "transfer_tests": [
+    {
+      "id": "same-language-different-product",
+      "goal": "Apply the same motion language to a completely different product type",
+      "success": "motion feels coherently branded but appropriate to new context"
+    },
+    {
+      "id": "desktop-to-mobile-motion",
+      "goal": "Adapt desktop motion patterns for mobile touch interaction",
+      "success": "spatial clarity survives, gestures feel natural, duration adapts to smaller screen"
+    }
+  ],
+  "golden_tasks": [
+    {
+      "id": "motion-audit",
+      "description": "Audit an interface for motion quality: state communication, easing, duration, spatial consistency, accessibility, performance",
+      "evidence": "structured audit with specific observations and frame analysis"
+    },
+    {
+      "id": "motion-system",
+      "description": "Design a complete motion system: duration scale, easing curves with purposes, stagger rules, reduced-motion alternatives",
+      "evidence": "system document with rationale, before/after examples"
+    },
+    {
+      "id": "jank-repair",
+      "description": "Given a janky animation, diagnose cause and produce optimized version at 60fps",
+      "evidence": "before/after performance profiles, optimization rationale"
+    }
+  ],
+  "cross_pack_links": {
+    "depends_on": [
+      "UI_UX_INTERACTION_CORE",
+      "COMPOSITION_VALUE_COLOR_CORE",
+      "TYPOGRAPHY_INFORMATION_DESIGN_CORE"
+    ],
+    "feeds_into": [
+      "FRONTEND_UI_UX_CORE",
+      "ART_DIRECTION_LOOKDEV_CORE"
+    ],
+    "relationship": "Motion is the temporal dimension of interaction, the activation of composition, and the behavior of typography"
+  },
+  "evidence_requirements": [
+    "motion system document",
+    "before/after recordings",
+    "performance profiles",
+    "reduced-motion evidence",
+    "transfer artifact"
+  ],
+  "sources": [
+    {
+      "title": "WCAG 2.2 \u2014 Three Flashes or Below Threshold (2.3.1)",
+      "url": "https://www.w3.org/TR/WCAG22/#three-flashes-or-below-threshold",
+      "authority": "W3C Recommendation",
+      "retrieved": "2026-08-23"
+    },
+    {
+      "title": "WCAG 2.2 \u2014 Pause, Stop, Hide (2.2.2)",
+      "url": "https://www.w3.org/TR/WCAG22/#pause-stop-hide",
+      "authority": "W3C Recommendation",
+      "retrieved": "2026-08-23"
+    },
+    {
+      "title": "WCAG 2.2 \u2014 Motion Actuation (2.5.4)",
+      "url": "https://www.w3.org/TR/WCAG22/#motion-actuation",
+      "authority": "W3C Recommendation",
+      "retrieved": "2026-08-23"
+    },
+    {
+      "title": "MDN: prefers-reduced-motion",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion",
+      "authority": "MDN Web Docs",
+      "retrieved": "2026-08-23"
+    },
+    {
+      "title": "Material Design: Motion",
+      "url": "https://m3.material.io/styles/motion/overview",
+      "authority": "Google Material Design",
+      "retrieved": "2026-08-23"
+    }
+  ],
+  "version_sensitive_facts": [
+    {
+      "fact": "Scroll-driven animations (CSS scroll-timeline)",
+      "version": "browser-dependent, check caniuse",
+      "revalidation": "quarterly"
+    },
+    {
+      "fact": "View Transitions API browser support",
+      "version": "Chrome 111+, expanding",
+      "revalidation": "quarterly"
+    }
+  ],
+  "known_limits": [
+    "Motion quality is inherently temporal; static screenshots cannot evaluate it.",
+    "60fps on developer machine does not guarantee 60fps on target devices.",
+    "Motion taste is subjective; professional principles guide, not dictate.",
+    "Real vestibular impact requires user testing, not just WCAG compliance."
+  ],
+  "research_needed": true,
+  "provenance_note": "Authored from model knowledge. Requires KAPIF research evidence before canon eligibility."
+}

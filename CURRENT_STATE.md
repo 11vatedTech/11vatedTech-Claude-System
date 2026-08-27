@@ -1,3 +1,10 @@
+
+<!-- CANONICAL_TRUTH_META
+generated_at: 2026-08-27T18:03:10.268503
+provider: scripts/validate/canonical_truth_generator.py
+freshness: fresh
+verification: PASS
+-->
 <!-- CANONICAL_TRUTH_META
 generated_at: 2026-08-27T16:30:00
 provider: scripts/generate_v1_truth.py

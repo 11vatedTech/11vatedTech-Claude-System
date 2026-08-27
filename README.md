@@ -56,8 +56,7 @@ installation can be rolled back.
 
 ## Capability ontology & maturity
 
-- `config/capability-ontology.json` — machine-readable ontology (13 domains,
-  49 capabilities) with L0-L5 maturity and resolvable providers.
+- `config/capability-ontology.json` — machine-readable ontology (18 domains, 92 capabilities) with L0-L5 maturity and resolvable providers.
 - `scripts/validate/ontology_check.py` — evidence gate: every provider
   resolves, every evidence pointer exists.
 - `docs/capability-ontology.md`, `docs/maturity-baseline.md` — scale and

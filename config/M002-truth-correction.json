@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "kind": "M002-capability-state-correction",
+  "date": "2026-08-23",
+  "trigger": "M002.1 reality closure directive",
+  "previous_state": "KAPIF_M002_ACCEPTED",
+  "corrected_state": "KAPIF_M002_SCAFFOLD_IMPLEMENTED | KAPIF_M002_PRIMARY_EVIDENCE_INCOMPLETE | WAVE_A_BLOCKED",
+  "classifications": {
+    "LLM_PROFESSIONAL_EXTRACTION": {
+      "previous": "IMPLEMENTED (golden task: 75/75)",
+      "corrected": "TEMPLATE_READY | NOT_EXECUTED",
+      "evidence": "LLMExtractionTemplate provides structured prompt schema. No real 9Router call executes it. golden_task success only proves template parses, not extraction quality."
+    },
+    "SEMANTIC_RETRIEVAL": {
+      "previous": "OPERATIONAL (semantic_search returns list)",
+      "corrected": "NOT_IMPLEMENTED",
+      "evidence": "semantic_search() in hybrid_retrieval.py performs FTS OR-query fallback. No vector embeddings generated. No vector similarity computed. Naming is misleading."
+    },
+    "HYBRID_RETRIEVAL": {
+      "previous": "OPERATIONAL (hybrid_search returns list)",
+      "corrected": "LEXICAL_BASELINE_WITH_FUTURE_SEMANTIC_SLOT",
+      "evidence": "hybrid_search() combines lexical + graph traversal. No semantic component exists. Fusion logic is absent or trivial."
+    },
+    "VISUAL_REFERENCE_INTELLIGENCE": {
+      "previous": "OPERATIONAL (VisualReference dataclass + 18 dimensions)",
+      "corrected": "SCHEMA_READY | NOT_MULTIMODALLY_PRACTICED",
+      "evidence": "Dataclass defines metadata fields. No actual image bytes sent to multimodal model. No analysis results produced."
+    },
+    "MULTIMODAL_REVIEWER_BENCHMARK": {
+      "previous": "VERIFIED (10 reviewer roles defined)",
+      "corrected": "SCHEMA_READY | NOT_EXECUTED",
+      "evidence": "REVIEWER_ROLES dict maps role names to dimensions. No actual image analysis performed. hasattr check is self-fulfilling test."
+    },
+    "EXTRACTOR_VERIFIER_SEPARATION": {
+      "previous": "VERIFIED (separate classes, verify returns dict)",
+      "corrected": "IMPLEMENTED_BUT_INSUFFICIENT",
+      "evidence": "ExtractorVerifier.verify() uses keyword overlap only. Cheap heuristic, not independent semantic verification. Classification of UNVERIFIED_LEXICAL not equivalent to professional verification."
+    },
+    "FTS5": {
+      "previous": "OPERATIONAL",
+      "corrected": "OPERATIONAL (lexical search genuine)",
+      "evidence": "FTS5 virtual table and search genuinely work. This is a real capability. BUT it was misclassified as part of semantic retrieval when it is lexical only."
+    },
+    "CANON_PIPELINE": {
+      "previous": "VERIFIED (8-state pipeline)",
+      "corrected": "IMPLEMENTED_BUT_SAFETY_REPAIR_REQUIRED",
+      "evidence": "validate_evidence() result arg unused. independent_verify() verdict arg unused. promote_to_canon() does not verify state gate before insert. Supersede fails with IntegrityError."
+    },
+    "TINT_PROPAGATION": {
+      "previous": "TESTED_AGAINST_CURRENT_SUITE",
+      "corrected": "NEEDS_REVISION \u2014 naming implies extraction reduces trust",
+      "evidence": "clear_extraction_taint implies extraction established trust. External content remains tainted after extraction. Taint model needs conceptual correction."
+    },
+    "GLOBAL_M002_DEPLOYMENT": {
+      "previous": "DEPLOYED (20260823-200319)",
+      "corrected": "REVERIFY_REQUIRED",
+      "evidence": "Sync manifest updated only art-direction-lookdev-core.json and frontend-ui-ux-core.json. M002 modules (professional_extractor.py, fts_index.py, hybrid_retrieval.py, visual_intelligence.py, canon_pipeline.py, security.py) not verified in global install."
+    }
+  },
+  "golden_task_reclassification": {
+    "M002_INTERFACE_AND_SCAFFOLD_GOLDEN_TASKS": "75/75 PASS (preserved historically)",
+    "M002_PRIMARY_EVIDENCE_GOLDEN_TASKS": "0/26 (not yet executed)",
+    "note": "The 75/75 tests proved interface consistency and scaffold completeness. They did NOT prove extraction quality, retrieval relevance, visual analysis accuracy, or canon pipeline safety."
+  }
+}

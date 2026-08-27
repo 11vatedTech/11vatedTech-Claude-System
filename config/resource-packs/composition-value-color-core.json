@@ -1,0 +1,440 @@
+{
+  "schema_version": 2,
+  "pack_id": "COMPOSITION_VALUE_COLOR_CORE",
+  "date": "2026-08-23",
+  "status": "CANON_DRAFT",
+  "knowledge_class": "DRAFT_FROM_MODEL_KNOWLEDGE",
+  "disciplines": [
+    "composition",
+    "value-structure",
+    "color-theory",
+    "visual-hierarchy",
+    "art-direction"
+  ],
+  "professional_baseline": {
+    "beginner": [
+      "rule of thirds and basic framing vocabulary",
+      "can identify foreground/midground/background",
+      "understands value as lightness independent of hue",
+      "can produce a 3-value thumbnail"
+    ],
+    "working_professional": [
+      "controls focal hierarchy through value contrast, not just placement",
+      "designs compositions that read at thumbnail, mid-distance, and full size",
+      "builds color relationships from temperature, saturation, and value",
+      "produces controlled value keys: high-key, low-key, full-range"
+    ],
+    "senior": [
+      "diagnoses why a composition fails despite correct rule application",
+      "recognizes value-grouping failures from local contrast conflicts",
+      "understands color as structural hierarchy tool, not decoration",
+      "critiques saturation exhaustion and weak focal budgeting"
+    ],
+    "lead_director": [
+      "establishes composition/value/color canon that scales across media",
+      "knows when a color script is ready for production",
+      "rejects technically-correct but visually-dead compositions with causal reasoning"
+    ]
+  },
+  "foundations": {
+    "composition_principles": [
+      {
+        "principle": "focal_hierarchy",
+        "definition": "One dominant point. Hierarchy via contrast (value, color, scale, detail, isolation).",
+        "failure": "everything-shouts: competing focal points with equal contrast",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "value_grouping",
+        "definition": "Shapes with similar value read as one group. If 3-value thumbnail fails, composition fails.",
+        "failure": "value-bleed: adjacent shapes share same value",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "negative_space",
+        "definition": "Space around subjects carries structural weight equal to subjects.",
+        "failure": "claustrophobic: no rest areas",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "visual_rhythm",
+        "definition": "Repeated/varied spacing creates visual beat guiding scanning.",
+        "failure": "monotonous-grid: equal spacing destroys hierarchy",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "scale_and_proportion",
+        "definition": "Relative size determines perceived importance. Scale contrast is strongest hierarchy tool.",
+        "failure": "scale-confusion: no clear size hierarchy",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "edge_control",
+        "definition": "Hard edges draw eye; soft edges recede; lost edges invite depth.",
+        "failure": "uniform-edges: every edge equally sharp",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "depth_cues",
+        "definition": "Overlap, scale diminution, atmospheric perspective, value falloff, temperature shift signal depth.",
+        "failure": "flat-stack: objects like flat collage",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      }
+    ],
+    "value_principles": [
+      {
+        "principle": "value_is_structure",
+        "definition": "Value carries more structural weight than color. Works in grayscale = works in color.",
+        "failure": "color-dependent-structure: relies on hue for hierarchy",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "contrast_budgeting",
+        "definition": "Max contrast is finite resource. Spend at focal point.",
+        "failure": "contrast-waste: high contrast in background",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "value_keys",
+        "definition": "High-key, low-key, full-range create different emotional registers.",
+        "failure": "inappropriate-key: key contradicts mood",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "midtone_preservation",
+        "definition": "Midtones carry readable detail. Crushed blacks/blown whites destroy information.",
+        "failure": "black-crush: shadows become opaque",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      }
+    ],
+    "color_principles": [
+      {
+        "principle": "temperature_hierarchy",
+        "definition": "Warm advances, cool recedes. Temperature defines spatial depth more reliably than hue.",
+        "failure": "temperature-chaos: warm/cool random",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "saturation_economy",
+        "definition": "High saturation demands attention. Gray is context that makes color meaningful.",
+        "failure": "saturation-exhaustion: everything saturated",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "simultaneous_contrast",
+        "definition": "Color changes with surroundings. Design relationships, not isolated swatches.",
+        "failure": "swatch-design: colors chosen in isolation",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "color_as_information",
+        "definition": "Color encodes categories but must never be sole information channel.",
+        "failure": "color-only-coding: critical info via hue alone",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      },
+      {
+        "principle": "limited_palette_discipline",
+        "definition": "3-7 colors with clear roles produce stronger identity than unlimited choice.",
+        "failure": "palette-bloat: dozens of colors, no role structure",
+        "knowledge_class": "PRACTITIONER_HEURISTIC",
+        "source_evidence": "MODEL_KNOWLEDGE"
+      }
+    ]
+  },
+  "workflow": [
+    "intent_and_emotional_target",
+    "thumbnail_exploration_3_value_minimum",
+    "value_key_selection",
+    "major_value_mass_blocking",
+    "focal_contrast_budgeting",
+    "color_temperature_strategy",
+    "limited_palette_selection_with_roles",
+    "saturation_hierarchy_assignment",
+    "controlled_studies",
+    "grayscale_verification",
+    "color_blindness_simulation",
+    "independent_review",
+    "causal_repair",
+    "unseen_transfer_test"
+  ],
+  "quality_dimensions": {
+    "composition": [
+      "focal hierarchy",
+      "value grouping",
+      "negative space",
+      "rhythm",
+      "scale",
+      "depth cues",
+      "edge control"
+    ],
+    "value": [
+      "thumbnail readability",
+      "contrast budgeting",
+      "midtone preservation",
+      "key appropriateness",
+      "plane separation"
+    ],
+    "color": [
+      "temperature structure",
+      "saturation hierarchy",
+      "palette discipline",
+      "simultaneous contrast",
+      "color-as-information",
+      "accessibility"
+    ],
+    "integration": [
+      "grayscale verification",
+      "color-blind simulation",
+      "emotional register",
+      "identity coherence"
+    ]
+  },
+  "failure_patterns": [
+    {
+      "id": "black-crush",
+      "discipline": "value",
+      "symptoms": [
+        "no readable midtones",
+        "hero reads as silhouette"
+      ],
+      "causes": [
+        "exposure too low",
+        "no motivated fill"
+      ],
+      "repair": "restore midtone separation with motivated fill",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "flat-hierarchy",
+      "discipline": "composition",
+      "symptoms": [
+        "eye wanders",
+        "no primary/secondary/tertiary read"
+      ],
+      "causes": [
+        "no contrast budgeting",
+        "equal spacing"
+      ],
+      "repair": "assign dominant focal, reduce contrast elsewhere",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "saturation-exhaustion",
+      "discipline": "color",
+      "symptoms": [
+        "visual fatigue",
+        "nothing stands out"
+      ],
+      "causes": [
+        "all colors high saturation"
+      ],
+      "repair": "reduce 80% to low-medium, reserve high for focal",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "value-bleed",
+      "discipline": "value",
+      "symptoms": [
+        "subject merges with background",
+        "fails grayscale"
+      ],
+      "causes": [
+        "adjacent values too similar"
+      ],
+      "repair": "10-15% value difference at critical boundaries",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "temperature-chaos",
+      "discipline": "color",
+      "symptoms": [
+        "spatial depth contradicts cues"
+      ],
+      "causes": [
+        "warm/cool ignores perspective"
+      ],
+      "repair": "warm-to-cool depth gradient",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "negative-space-collapse",
+      "discipline": "composition",
+      "symptoms": [
+        "claustrophobic",
+        "no breathing room"
+      ],
+      "causes": [
+        "uniform detail density"
+      ],
+      "repair": "allocate 20-30% frame to rest areas",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    },
+    {
+      "id": "color-only-coding",
+      "discipline": "color+accessibility",
+      "symptoms": [
+        "info lost in grayscale"
+      ],
+      "causes": [
+        "hue as sole differentiator"
+      ],
+      "repair": "add secondary channel",
+      "knowledge_class": "PRACTITIONER_HEURISTIC"
+    }
+  ],
+  "causal_diagnostics": {
+    "why_is_my_composition_flat": [
+      "Is there one dominant focal point with maximum contrast?",
+      "Are secondary areas demonstrably lower contrast?",
+      "Do you have clear foreground/midground/background value plan?",
+      "Are there rest areas for the eye?",
+      "Does the 3-value thumbnail read clearly?"
+    ],
+    "why_does_my_color_feel_chaotic": [
+      "Is there a clear temperature strategy?",
+      "Is saturation used hierarchically?",
+      "Does the palette have assigned roles?",
+      "Have you tested adjacency effects between key pairs?"
+    ]
+  },
+  "tools": {
+    "analysis": [
+      "grayscale conversion",
+      "color-blind simulation",
+      "thumbnail reduction",
+      "squint test",
+      "value histogram"
+    ],
+    "creation": [
+      "Krita when installed",
+      "Blender lookdev",
+      "Unreal post-process",
+      "ImageMagick"
+    ],
+    "evidence": [
+      "grayscale screenshots",
+      "color-blind captures",
+      "3-value exports",
+      "before/after comparisons"
+    ]
+  },
+  "micro_labs": [
+    {
+      "id": "three-value-thumbnail",
+      "goal": "Readable composition with exactly 3 values before color/detail",
+      "success": "reads at postage-stamp size, focal clear"
+    },
+    {
+      "id": "limited-palette-study",
+      "goal": "Composition with exactly 5 colors and clear role assignment",
+      "success": "every color role identifiable, palette intentional"
+    },
+    {
+      "id": "grayscale-verification",
+      "goal": "Convert color composition to grayscale, diagnose value-grouping failures",
+      "success": "identify 2+ value-bleed locations with repairs"
+    },
+    {
+      "id": "contrast-budget",
+      "goal": "Map contrast budget: highest/medium/lowest regions vs intended hierarchy",
+      "success": "contrast map matches focal hierarchy"
+    }
+  ],
+  "transfer_tests": [
+    {
+      "id": "different-domain",
+      "goal": "Apply value/color principles from character to environment/UI",
+      "success": "principles transfer, visual result distinct"
+    },
+    {
+      "id": "invert-key",
+      "goal": "Re-block high-key composition in low-key without losing hierarchy",
+      "success": "focal hierarchy survives key inversion"
+    }
+  ],
+  "golden_tasks": [
+    {
+      "id": "composition-audit",
+      "description": "Analyze composition: focal hierarchy, value structure, color relationships, 2+ failure patterns with causal diagnosis",
+      "evidence": "structured audit"
+    },
+    {
+      "id": "value-repair",
+      "description": "Given black-crush or value-bleed failures, produce repaired version",
+      "evidence": "before/after grayscale, written rationale"
+    },
+    {
+      "id": "palette-critique",
+      "description": "Critique palette: saturation, temperature, roles, accessibility",
+      "evidence": "causal critique with recommendations"
+    }
+  ],
+  "cross_pack_links": {
+    "depends_on": [
+      "ART_DIRECTION_LOOKDEV_CORE"
+    ],
+    "feeds_into": [
+      "TYPOGRAPHY_INFORMATION_DESIGN_CORE",
+      "MOTION_DESIGN_CORE",
+      "FRONTEND_UI_UX_CORE"
+    ],
+    "relationship": "Structural foundation that art direction orchestrates, typography inhabits, motion activates"
+  },
+  "evidence_requirements": [
+    "value thumbnail",
+    "grayscale verification",
+    "color-blind simulation",
+    "before/after repair",
+    "independent review",
+    "transfer artifact"
+  ],
+  "sources": [
+    {
+      "title": "WCAG 2.2 \u2014 Use of Color (1.4.1)",
+      "url": "https://www.w3.org/TR/WCAG22/#use-of-color",
+      "authority": "W3C Recommendation",
+      "retrieved": "2026-08-23"
+    },
+    {
+      "title": "WCAG 2.2 \u2014 Contrast Minimum (1.4.3)",
+      "url": "https://www.w3.org/TR/WCAG22/#contrast-minimum",
+      "authority": "W3C Recommendation",
+      "retrieved": "2026-08-23"
+    },
+    {
+      "title": "Blender Manual: Color Management",
+      "url": "https://docs.blender.org/manual/en/latest/render/color_management/index.html",
+      "authority": "Blender docs",
+      "retrieved": "2026-08-23"
+    }
+  ],
+  "version_sensitive_facts": [
+    {
+      "fact": "Blender Filmic/AgX color management defaults",
+      "version": "Blender 5.x",
+      "revalidation": "on-major-release"
+    }
+  ],
+  "known_limits": [
+    "No script can certify visual taste or emotional impact.",
+    "Color perception is physiological and cultural.",
+    "Provides professional vocabulary and diagnostic frameworks, not automated scoring."
+  ],
+  "research_needed": true,
+  "provenance_note": "Authored from model knowledge. Requires KAPIF research evidence before canon eligibility."
+}
