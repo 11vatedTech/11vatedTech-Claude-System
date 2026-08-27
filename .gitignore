@@ -38,3 +38,9 @@ tools/frontend/py-deps/playwright/driver/
 *.log
 .DS_Store
 Thumbs.db
+
+# Product repositories (external to Foundry)
+Frontend-Designs/
+
+# Recovery artifacts (extracted products)
+11vated-growth_OS/

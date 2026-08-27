@@ -1,0 +1,34 @@
+{
+  "mission_id": "MISSION-1787862219",
+  "intent": "analyze the GrowthOS architecture and identify design patterns, API structure, and potential improvements",
+  "disciplines": [
+    "software_engineering",
+    "research"
+  ],
+  "models": {
+    "orchestrator": "claude",
+    "analysis": "codestral-22b",
+    "web": "tavily"
+  },
+  "tools": [
+    "test-runner",
+    "git",
+    "web-search",
+    "lsp",
+    "kapiF-retrieval"
+  ],
+  "knowledge_packs": [
+    "architecture",
+    "software-engineering"
+  ],
+  "evidence_requirements": [
+    "primary-evidence",
+    "deterministic-facts"
+  ],
+  "validation": "foundry-validate",
+  "escalation": "auto",
+  "stop_conditions": [
+    "objective-defects-resolved",
+    "founder-approval"
+  ]
+}

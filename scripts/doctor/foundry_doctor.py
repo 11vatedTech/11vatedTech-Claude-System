@@ -1,0 +1,171 @@
+#!/usr/bin/env python3
+"""
+Foundry Doctor — single operator health command for 11vatedTech Foundry.
+Checks: source, deployment, git, products, KAPIF, 9Router, models, tools, regression, security.
+No mutations. Read-only diagnostic.
+"""
+from __future__ import annotations
+import json, os, platform, socket, subprocess, sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+GLOBAL = Path.home() / ".claude" / "11vatedtech"
+GLOBAL_CAP = GLOBAL / "capability-system"
+
+class Check:
+    def __init__(self, name: str):
+        self.name = name
+        self.status = "UNKNOWN"
+        self.detail = ""
+    def ok(self, detail=""): self.status = "PASS"; self.detail = detail; return self
+    def warn(self, detail=""): self.status = "WARN"; self.detail = detail; return self
+    def fail(self, detail=""): self.status = "FAIL"; self.detail = detail; return self
+    def skip(self, detail=""): self.status = "SKIP"; self.detail = detail; return self
+    def __repr__(self): return f"[{self.status}] {self.name}: {self.detail}"
+
+def run_cmd(cmd, timeout=10):
+    try:
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, shell=isinstance(cmd, str))
+        return r.stdout.strip() if r.returncode == 0 else None
+    except: return None
+
+def check_git():
+    c = Check("FOUNDRY_GIT")
+    root = run_cmd("git rev-parse --show-toplevel")
+    if not root or "11vatedTech-Claude-System" not in root:
+        return c.fail(f"root={root}")
+    head = run_cmd("git rev-parse HEAD")
+    branch = run_cmd("git rev-parse --abbrev-ref HEAD")
+    dirty = run_cmd("git status --porcelain=v1")
+    dirty_count = len(dirty.splitlines()) if dirty else 0
+    remote = run_cmd("git remote get-url origin")
+    return c.ok(f"HEAD={head[:8]} branch={branch} dirty={dirty_count} remote={'yes' if remote else 'no'}")
+
+def check_deployment():
+    c = Check("GLOBAL_DEPLOYMENT")
+    if not GLOBAL_CAP.exists():
+        return c.fail("capability-system not found")
+    kapif = GLOBAL_CAP / "scripts" / "kapif"
+    if not kapif.exists():
+        return c.fail("KAPIF not in global deployment")
+    managed = len(list(kapif.rglob("*.py")))
+    return c.ok(f"managed={managed} modules")
+
+def check_kapif():
+    c = Check("KAPIF_HEALTH")
+    try:
+        sys.path.insert(0, str(GLOBAL_CAP / "scripts"))
+        from kapif.data_layer import init_db, stats
+        init_db()
+        s = stats()
+        atoms = s.get("atoms", 0)
+        sources = s.get("sources", 0)
+        return c.ok(f"atoms={atoms} sources={sources}")
+    except Exception as e:
+        return c.fail(str(e)[:80])
+
+def check_9router():
+    c = Check("9ROUTER")
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(3)
+        result = s.connect_ex(("127.0.0.1", 20128))
+        s.close()
+        if result != 0:
+            return c.fail("port 20128 closed")
+        # Try API endpoint
+        import urllib.request
+        try:
+            r = urllib.request.urlopen("http://127.0.0.1:20128/v1/models", timeout=5)
+            data = json.loads(r.read())
+            models = data.get("data", [])
+            return c.ok(f"{len(models)} models via API")
+        except:
+            return c.warn("port open but /v1/models not responding (may be web UI)")
+    except Exception as e:
+        return c.fail(str(e)[:80])
+
+def check_ollama():
+    c = Check("OLLAMA_LOCAL_MODELS")
+    try:
+        import urllib.request
+        r = urllib.request.urlopen("http://127.0.0.1:11434/api/tags", timeout=3)
+        data = json.loads(r.read())
+        models = data.get("models", [])
+        names = [m.get("name", "?") for m in models[:5]]
+        return c.ok(f"{len(models)} models: {', '.join(names)}")
+    except:
+        return c.fail("not reachable")
+
+def check_tools():
+    c = Check("TOOLCHAIN")
+    tools = {}
+    for tool, cmd in [("git","git --version"), ("python","python --version"), ("node","node --version"),
+                       ("npm","npm --version"), ("ffmpeg","ffmpeg -version"), ("magick","magick --version"),
+                       ("ollama","ollama --version"), ("cmake","cmake --version")]:
+        v = run_cmd(cmd)
+        tools[tool] = "installed" if v else "missing"
+    missing = [k for k,v in tools.items() if v == "missing"]
+    found = len([v for v in tools.values() if v == "installed"])
+    if missing:
+        return c.warn(f"{found}/{len(tools)} installed, missing: {', '.join(missing)}")
+    return c.ok(f"{found}/{len(tools)} installed")
+
+def check_products():
+    c = Check("PRODUCT_REGISTRY")
+    registry = Path.home() / "OneDrive" / "Desktop" / "11vatedTech-Portfolio" / "11vatedTech-Product-Registry"
+    if not registry.exists():
+        return c.fail("registry not found")
+    head = run_cmd(f'git -C "{registry}" rev-parse HEAD')
+    pumkit = Path.home() / "OneDrive" / "Desktop" / "11vatedTech-Portfolio" / "Products" / "Frontend-Designs" / "Pumkit-Frontend-Design"
+    pumkit_head = run_cmd(f'git -C "{pumkit}" rev-parse HEAD') if pumkit.exists() else None
+    return c.ok(f"registry={head[:8] if head else 'unborn'} pumkit={pumkit_head[:8] if pumkit_head else 'none'}")
+
+def check_security():
+    c = Check("SECURITY")
+    # Check for secrets in tracked files
+    secrets = run_cmd('git log --all --diff-filter=A -p -- "*.pem" "*.key" "*.env" 2>/dev/null | grep -c "PRIVATE" || echo 0')
+    return c.ok(f"secret_history_entries={secrets or '0'}")
+
+def check_contamination():
+    c = Check("PRODUCT_CONTAMINATION")
+    # Check for product files tracked in Foundry
+    growthos = run_cmd("git ls-files 11vated-growth_OS/ 2>/dev/null | wc -l")
+    frontend = run_cmd("git ls-files Frontend-Designs/ 2>/dev/null | wc -l")
+    g = int(growthos or 0)
+    f = int(frontend or 0)
+    if g > 0 or f > 0:
+        return c.warn(f"GrowthOS={g} Frontend-Designs={f} files still tracked")
+    return c.ok("no product files tracked in Foundry")
+
+def main():
+    print(f"11VATEDTECH FOUNDRY DOCTOR")
+    print(f"Platform: {platform.platform()}")
+    print(f"Python: {sys.version.split()[0]}")
+    print(f"Root: {ROOT}")
+    print()
+    
+    checks = [
+        check_git(),
+        check_deployment(),
+        check_kapif(),
+        check_9router(),
+        check_ollama(),
+        check_tools(),
+        check_products(),
+        check_contamination(),
+        check_security(),
+    ]
+    
+    for c in checks:
+        icon = {"PASS":"OK","WARN":"!!","FAIL":"XX","SKIP":"--","UNKNOWN":"??"}.get(c.status, "??")
+        print(f"  {icon} {c.name}: {c.detail}")
+    
+    passed = sum(1 for c in checks if c.status == "PASS")
+    warned = sum(1 for c in checks if c.status == "WARN")
+    failed = sum(1 for c in checks if c.status == "FAIL")
+    print(f"\n  Summary: {passed} PASS, {warned} WARN, {failed} FAIL / {len(checks)} total")
+    return 0 if failed == 0 else 1
+
+if __name__ == "__main__":
+    sys.exit(main())

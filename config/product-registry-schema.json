@@ -1,0 +1,12 @@
+{
+  "schema": "11vated-product/1",
+  "required": [
+    "product_id",
+    "name",
+    "category",
+    "subtype",
+    "local_path",
+    "lifecycle",
+    "ownership_boundary"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "$schema": "./product-registry-schema.json",
+  "schema": "11vated-product-portfolio-mirror/1",
+  "authority": {
+    "repository": "11vatedTech-Product-Registry",
+    "role": "PORTFOLIO_GOVERNANCE_REPOSITORY",
+    "direction": "authoritative registry -> Foundry sync/import -> this generated mirror",
+    "editable_here": false
+  },
+  "products": [
+    {
+      "schema_version": "11vated-product/1",
+      "product_id": "frontend.pumkit",
+      "name": "Pumkit Frontend Design",
+      "organization": "11vatedTech",
+      "category": "FRONTEND",
+      "subtype": "CHARACTER_CONCEPT_EXPERIENCE",
+      "classification": "PRODUCT_REPOSITORY",
+      "lifecycle": "DEVELOPMENT",
+      "commercial_status": "UNKNOWN",
+      "repository": {
+        "local_path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Portfolio\\Products\\Frontend-Designs\\Pumkit-Frontend-Design",
+        "repository_root": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Portfolio\\Products\\Frontend-Designs\\Pumkit-Frontend-Design",
+        "git_repository": true,
+        "branch": "main",
+        "head": "UNBORN",
+        "remote": null,
+        "dirty": true,
+        "revision_proven": true
+      },
+      "workspace": {
+        "root": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Portfolio\\Products",
+        "container": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Portfolio\\Products\\Frontend-Designs",
+        "classification": "PRODUCT_WORKSPACE_CONTAINER"
+      },
+      "foundry_access": {
+        "review_only": true,
+        "source_copy_allowed": false,
+        "experience_capture": true
+      },
+      "release_status": "NOT_RELEASED",
+      "ownership": "11vatedTech",
+      "legacy_source": {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\Frontend-Designs\\Pumkit-Frontend-Design",
+        "classification": "LEGACY_WORKSPACE_COPY_PENDING_CLEANUP",
+        "foundry_revision_claim": "90f798eba5da55038c158b371aeda84c9ca7aed9 INVALID_AS_PRODUCT_REVISION"
+      }
+    }
+  ],
+  "source_of_truth": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Portfolio\\11vatedTech-Product-Registry",
+  "source_of_truth_type": "PORTFOLIO_GOVERNANCE_REPOSITORY",
+  "editable_here": false,
+  "sync_direction": "PRODUCT_REGISTRY_TO_FOUNDRY_MIRROR",
+  "generated_mirror": true
+}

@@ -1,0 +1,44 @@
+{
+  "validation_time": "2026-08-27T16:23:01",
+  "total": 9,
+  "passed": 9,
+  "failed": 0,
+  "gates": {
+    "closure_gates": {
+      "status": "PASS",
+      "duration": 0.3
+    },
+    "golden_tasks": {
+      "status": "PASS",
+      "duration": 1.6
+    },
+    "behavioral_validation": {
+      "status": "PASS",
+      "duration": 0.5
+    },
+    "injection_e2e": {
+      "status": "PASS",
+      "duration": 0.2
+    },
+    "deployment_parity": {
+      "status": "PASS",
+      "duration": 0.2
+    },
+    "sync_dry_run": {
+      "status": "PASS",
+      "duration": 0.7
+    },
+    "truth_generator": {
+      "status": "PASS",
+      "duration": 6.2
+    },
+    "capability_truth_audit": {
+      "status": "PASS",
+      "duration": 0.5
+    },
+    "env_doctor": {
+      "status": "PASS",
+      "duration": 8.0
+    }
+  }
+}
