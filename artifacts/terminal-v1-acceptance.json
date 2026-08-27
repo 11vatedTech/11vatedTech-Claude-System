@@ -1,0 +1,192 @@
+{
+  "generated_at": "2026-08-27T22:39:55.924726+00:00",
+  "criteria_count": 43,
+  "criteria": {
+    "REPOSITORY_HYGIENE": {
+      "status": "PASS"
+    },
+    "PRODUCT_CONTAMINATION_REMOVED": {
+      "status": "PASS"
+    },
+    "PUMKIT_EXTRACTION_COMPLETE": {
+      "status": "PASS"
+    },
+    "GROWTHOS_RECOVERY_CLASSIFIED_COMPLETE": {
+      "status": "PASS"
+    },
+    "PRODUCT_REGISTRY_OPERATIONAL": {
+      "status": "PASS"
+    },
+    "PRODUCT_MANIFEST_STANDARD": {
+      "status": "PASS"
+    },
+    "GLOBAL_DEPLOYMENT": {
+      "status": "PASS"
+    },
+    "GLOBAL_UNRELATED_PROJECT_PROOF": {
+      "status": "NOT_PROVEN"
+    },
+    "CAPABILITY_ENTRYPOINT": {
+      "status": "NOT_PROVEN"
+    },
+    "MISSION_COMPILER": {
+      "status": "PASS"
+    },
+    "KAPIF_STORAGE": {
+      "status": "PASS"
+    },
+    "KAPIF_RETRIEVAL": {
+      "status": "NOT_PROVEN"
+    },
+    "KAPIF_PROVENANCE": {
+      "status": "NOT_PROVEN"
+    },
+    "KAPIF_SECURITY": {
+      "status": "PASS"
+    },
+    "PROFESSIONAL_PACK_SYSTEM": {
+      "status": "NOT_PROVEN"
+    },
+    "KNOWLEDGE_FRESHNESS": {
+      "status": "PASS"
+    },
+    "9ROUTER_HEALTH": {
+      "status": "NOT_PROVEN"
+    },
+    "MODEL_ROLE_REGISTRY": {
+      "status": "NOT_PROVEN"
+    },
+    "LOCAL_MODEL_FALLBACK": {
+      "status": "NOT_PROVEN"
+    },
+    "TOOL_DISCOVERY": {
+      "status": "PASS"
+    },
+    "BLENDER_PIPELINE": {
+      "status": "PASS"
+    },
+    "UNREAL_PIPELINE": {
+      "status": "NOT_PROVEN"
+    },
+    "SOFTWARE_ENGINEERING_PATH": {
+      "status": "NOT_PROVEN"
+    },
+    "FRONTEND_UI_UX_PATH": {
+      "status": "PASS"
+    },
+    "CHARACTER_IDENTITY_PATH": {
+      "status": "PASS"
+    },
+    "CREATIVE_MEDIA_PATH": {
+      "status": "NOT_PROVEN"
+    },
+    "PRODUCT_DEVELOPMENT_PATH": {
+      "status": "NOT_PROVEN"
+    },
+    "COMMERCIAL_INTELLIGENCE_PATH": {
+      "status": "NOT_PROVEN"
+    },
+    "EXPERIENCE_CAPTURE": {
+      "status": "NOT_PROVEN"
+    },
+    "FAILURE_PATTERN_ENFORCEMENT": {
+      "status": "NOT_PROVEN"
+    },
+    "GIT_SAFETY": {
+      "status": "NOT_PROVEN"
+    },
+    "SECRET_SAFETY": {
+      "status": "NOT_PROVEN"
+    },
+    "LICENSE_PROVENANCE": {
+      "status": "NOT_PROVEN"
+    },
+    "RELEASE_GATE": {
+      "status": "NOT_PROVEN"
+    },
+    "ROLLBACK": {
+      "status": "NOT_PROVEN"
+    },
+    "DISASTER_RECOVERY": {
+      "status": "NOT_PROVEN"
+    },
+    "FOUNDRY_DOCTOR": {
+      "status": "PASS"
+    },
+    "FOUNDRY_VALIDATE": {
+      "status": "PASS"
+    },
+    "FOUNDRY_MISSION": {
+      "status": "NOT_PROVEN"
+    },
+    "GOLDEN_REAL_WORK_MISSIONS": {
+      "status": "NOT_PROVEN"
+    },
+    "CANONICAL_TRUTH_GENERATOR": {
+      "status": "PASS"
+    },
+    "DOCUMENTATION": {
+      "status": "NOT_PROVEN"
+    },
+    "GLOBAL_RELEASE_PARITY": {
+      "status": "NOT_PROVEN"
+    }
+  },
+  "golden_artifacts": [
+    "golden-A.json",
+    "golden-E.json",
+    "golden-F.json",
+    "golden-G.json"
+  ],
+  "core_regression": {
+    "validation_time": "2026-08-27T18:39:41",
+    "total": 9,
+    "passed": 9,
+    "failed": 0,
+    "gates": {
+      "closure_gates": {
+        "status": "PASS",
+        "duration": 0.2
+      },
+      "golden_tasks": {
+        "status": "PASS",
+        "duration": 2.3
+      },
+      "behavioral_validation": {
+        "status": "PASS",
+        "duration": 0.3
+      },
+      "injection_e2e": {
+        "status": "PASS",
+        "duration": 0.1
+      },
+      "deployment_parity": {
+        "status": "PASS",
+        "duration": 0.1
+      },
+      "sync_dry_run": {
+        "status": "PASS",
+        "duration": 0.3
+      },
+      "truth_generator": {
+        "status": "PASS",
+        "duration": 3.0
+      },
+      "capability_truth_audit": {
+        "status": "PASS",
+        "duration": 0.3
+      },
+      "env_doctor": {
+        "status": "PASS",
+        "duration": 22.5
+      }
+    }
+  },
+  "knowledge_freshness": {
+    "checked": 0,
+    "stale": [],
+    "malformed_metadata": [],
+    "status": "PASS"
+  },
+  "final_verdict": "NOT_COMPLETE"
+}

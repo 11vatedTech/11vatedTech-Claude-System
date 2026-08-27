@@ -1,0 +1,12 @@
+{
+  "mission_id": "GOLDEN-G-PRODUCT",
+  "input_intent": "assess registered Pumkit product positioning and launch considerations",
+  "product_id": "frontend.pumkit",
+  "primary_evidence": {
+    "registry_path": "external Product Registry",
+    "product_repo": "independent repository",
+    "market_claims": "none fabricated"
+  },
+  "result": "ESCALATION_REQUIRED",
+  "decision": "Founder approval required for positioning/pricing"
+}

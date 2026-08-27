@@ -1,0 +1,16 @@
+{
+  "mission_id": "GOLDEN-A-RESEARCH",
+  "input_intent": "verify current KAPIF professional knowledge retrieval",
+  "knowledge_used": [
+    "data/kapif/kapif.db"
+  ],
+  "primary_evidence": {
+    "db_exists": true,
+    "db_bytes": 262144
+  },
+  "result": "COMPLETED_WITH_GUARDRAILS",
+  "errors": [
+    "external web acquisition not invoked in offline run"
+  ],
+  "validation": "storage artifact present"
+}

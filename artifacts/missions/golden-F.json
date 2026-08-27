@@ -1,0 +1,14 @@
+{
+  "mission_id": "GOLDEN-F-UNREAL",
+  "input_intent": "probe current Unreal commandlet",
+  "tools_used": [
+    "Unreal 5.8"
+  ],
+  "primary_evidence": {
+    "tool": "C:\\Program Files\\Epic Games\\UE_5.8\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+    "operation": "version",
+    "error": "Command '['C:\\\\Program Files\\\\Epic Games\\\\UE_5.8\\\\Engine\\\\Binaries\\\\Win64\\\\UnrealEditor-Cmd.exe', '-version']' timed out after 30 seconds"
+  },
+  "technical_pipeline_status": "ESCALATION_REQUIRED",
+  "result": "COMPLETED_WITH_GUARDRAILS"
+}

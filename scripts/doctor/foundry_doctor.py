@@ -33,13 +33,15 @@ def check_git():
     c = Check("FOUNDRY_GIT")
     root = run_cmd("git rev-parse --show-toplevel")
     if not root or "11vatedTech-Claude-System" not in root:
-        return c.fail(f"root={root}")
+        return c.fail(f"GIT_REPOSITORY_VALID=FAIL root={root}")
     head = run_cmd("git rev-parse HEAD")
     branch = run_cmd("git rev-parse --abbrev-ref HEAD")
     dirty = run_cmd("git status --porcelain=v1")
     dirty_count = len(dirty.splitlines()) if dirty else 0
     remote = run_cmd("git remote get-url origin")
-    return c.ok(f"HEAD={head[:8]} branch={branch} dirty={dirty_count} remote={'yes' if remote else 'no'}")
+    if dirty_count:
+        return c.warn(f"GIT_REPOSITORY_VALID=PASS GIT_WORKTREE_CLEAN=FAIL dirty={dirty_count} branch={branch}")
+    return c.ok(f"GIT_REPOSITORY_VALID=PASS GIT_WORKTREE_CLEAN=PASS GIT_RELEASE_READY=PASS HEAD={head[:8]} branch={branch} remote={'yes' if remote else 'no'}")
 
 def check_deployment():
     c = Check("GLOBAL_DEPLOYMENT")
@@ -99,17 +101,19 @@ def check_ollama():
 
 def check_tools():
     c = Check("TOOLCHAIN")
-    tools = {}
-    for tool, cmd in [("git","git --version"), ("python","python --version"), ("node","node --version"),
-                       ("npm","npm --version"), ("ffmpeg","ffmpeg -version"), ("magick","magick --version"),
-                       ("ollama","ollama --version"), ("cmake","cmake --version")]:
-        v = run_cmd(cmd)
-        tools[tool] = "installed" if v else "missing"
-    missing = [k for k,v in tools.items() if v == "missing"]
-    found = len([v for v in tools.values() if v == "installed"])
-    if missing:
-        return c.warn(f"{found}/{len(tools)} installed, missing: {', '.join(missing)}")
-    return c.ok(f"{found}/{len(tools)} installed")
+    try:
+        sys.path.insert(0, str(ROOT / "scripts" / "validate"))
+        from tool_resolver import discover_all
+        tools = discover_all()
+        states = {k: v.get("state") for k, v in tools.items()}
+        missing = [k for k, state in states.items() if state == "NOT_FOUND"]
+        proven = [k for k, state in states.items() if state == "EXECUTION_PROVEN"]
+        detail = f"execution_proven={len(proven)}/{len(states)} installed_or_proven={len(states)-len(missing)}/{len(states)}"
+        if missing:
+            return c.warn(f"{detail} not_found={','.join(missing)}")
+        return c.ok(detail)
+    except Exception as e:
+        return c.fail(f"resolver={e}")
 
 def check_products():
     c = Check("PRODUCT_REGISTRY")

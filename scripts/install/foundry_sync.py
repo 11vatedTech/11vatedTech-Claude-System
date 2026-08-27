@@ -31,6 +31,11 @@ def main():
         sys.exit(run("python scripts/install/sync_to_claude.py", "FOUNDRY SYNC"))
     elif cmd == "status":
         sys.exit(run("python scripts/doctor/foundry_doctor.py", "FOUNDRY STATUS"))
+    elif cmd == "rollback":
+        if len(sys.argv) < 3:
+            print("Usage: foundry_sync.py rollback <deployment_id>")
+            sys.exit(1)
+        sys.exit(run(f"python scripts/install/sync_to_claude.py --rollback {sys.argv[2]}", "FOUNDRY ROLLBACK"))
     else:
         print(f"Unknown command: {cmd}")
         sys.exit(1)

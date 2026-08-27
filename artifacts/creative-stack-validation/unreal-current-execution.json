@@ -1,0 +1,5 @@
+{
+  "tool": "C:\\Program Files\\Epic Games\\UE_5.8\\Engine\\Binaries\\Win64\\UnrealEditor-Cmd.exe",
+  "operation": "version",
+  "error": "Command '['C:\\\\Program Files\\\\Epic Games\\\\UE_5.8\\\\Engine\\\\Binaries\\\\Win64\\\\UnrealEditor-Cmd.exe', '-version']' timed out after 30 seconds"
+}

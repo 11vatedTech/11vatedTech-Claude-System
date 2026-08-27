@@ -27,7 +27,16 @@ import sys
 from pathlib import Path
 from typing import Any
 
-ROOT = Path(__file__).resolve().parents[2]
+
+def _find_foundry_root(start: Path) -> Path:
+    """Resolve the repository root from this file, independent of cwd."""
+    for candidate in [start, *start.parents]:
+        if (candidate / ".git").exists() and (candidate / "config").exists() and (candidate / "scripts").exists():
+            return candidate
+    raise RuntimeError(f"Foundry Git root not found from {start}")
+
+
+ROOT = _find_foundry_root(Path(__file__).resolve().parent)
 
 # ── Windows-aware tool resolution (mirrors scripts/media/vtmedia/common.py) ──
 
@@ -57,20 +66,10 @@ WINDOWS_TOOL_HINTS: dict[str, list[str]] = {
 
 
 def resolve_tool(name: str) -> str | None:
-    """Resolve an executable, falling back to known Windows install locations."""
-    import shutil
-    exe = shutil.which(name)
-    if exe:
-        return exe
-    for pattern in WINDOWS_TOOL_HINTS.get(name, []):
-        hits = sorted(Path(p) for p in Path("/").glob(pattern.lstrip("C:\\").replace("\\", "/")) if Path(p).exists())
-        # Try direct glob on the Windows-style path too
-        if not hits:
-            import glob
-            hits = sorted(Path(p) for p in glob.glob(pattern) if Path(p).exists())
-        if hits:
-            return str(hits[0])
-    return None
+    """Use the shared environment-aware resolver."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from tool_resolver import resolve_tool as _resolve
+    return _resolve(name)
 
 
 def _try_run(argv: list[str], timeout: int = 10) -> dict[str, Any]:
