@@ -57,3 +57,20 @@ artifacts/kapif/
 artifacts/character-identity/
 artifacts/asset-vault/
 artifacts/ascension/
+
+# Generated runtime validation outputs (regenerate after release)
+artifacts/foundry-validation.json
+artifacts/terminal-v1-acceptance.json
+artifacts/INTENDED_FOUNDRY_V1_RELEASE_MANIFEST.json
+artifacts/knowledge-freshness.json
+artifacts/missions/*.log
+artifacts/missions/*-result.json
+artifacts/creative-stack-validation/blender-ops/current-proof.blend
+
+# External/tool distributions and generated binary evidence
+*.exe
+*.dll
+artifacts/**/*.glb
+artifacts/**/*.blend
+artifacts/**/*.uasset
+artifacts/**/*.umap

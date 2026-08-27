@@ -5,7 +5,7 @@ Receives Founder intent and resolves: disciplines, tools, models, knowledge, evi
 Does not replace Claude conversation. Proves the system has a stable execution boundary.
 """
 from __future__ import annotations
-import json, sys, time, subprocess, hashlib, os
+import json, sys, time, subprocess, hashlib, os, uuid
 from pathlib import Path
 from typing import Any
 
@@ -84,7 +84,7 @@ def compile_mission(intent: str) -> dict[str, Any]:
     """Full mission compilation."""
     disciplines = resolve_disciplines(intent)
     return {
-        "mission_id": f"MISSION-{int(time.time())}",
+        "mission_id": f"MISSION-{uuid.uuid4().hex}",
         "intent": intent,
         "disciplines": disciplines,
         "models": resolve_models(disciplines),
@@ -114,7 +114,7 @@ def execute_mission(mission: dict[str, Any]) -> dict[str, Any]:
         status = subprocess.run(["git", "-C", str(target), "status", "--porcelain=v1"], capture_output=True, text=True)
         head = subprocess.run(["git", "-C", str(target), "rev-parse", "HEAD"], capture_output=True, text=True)
         evidence.append({"type":"repository_facts", "path":str(target), "head":head.stdout.strip(), "dirty":bool(status.stdout.strip()), "file_count":sum(1 for f in target.rglob('*') if f.is_file() and '.git' not in f.parts)})
-    result = "COMPLETED_WITH_GUARDRAILS" if evidence else "FAILED"
+    result = "COMPLETED_WITH_GUARDRAILS" if target and target.exists() else "ESCALATION_REQUIRED"
     return {"mission_id": mission["mission_id"], "intent": intent, "result": result, "started_at": time.strftime("%Y-%m-%dT%H:%M:%S"), "duration_seconds": round(time.time()-started,3), "evidence": evidence, "errors": errors, "fallbacks": ["deterministic_local_execution"], "decision": "review_output_before_mutation"}
 
 
@@ -147,6 +147,8 @@ def main():
         result = execute_mission(mission)
         result_path = ROOT / "artifacts" / "missions" / f"{mission['mission_id']}-result.json"
         result_path.parent.mkdir(parents=True, exist_ok=True)
+        if result_path.exists():
+            raise RuntimeError(f"Refusing duplicate mission result: {result_path.name}")
         result_path.write_text(json.dumps(result, indent=2))
         print(f"Mission result: {result['result']}\nEvidence saved: {result_path}")
 

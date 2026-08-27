@@ -4,6 +4,26 @@
   "date": "2026-08-24",
   "patterns": [
     {
+      "id": "VALIDATOR_FAILURE_MASKING",
+      "definition": "A parent validator converts a failing subsystem result into PASS without proving the underlying condition is non-failing.",
+      "examples": ["foundry_validate accepted env_doctor return code 1 while doctor reported a FAIL"],
+      "required_reaction": ["PARSE STRUCTURED SUBSYSTEM STATE", "PRESERVE FAIL", "BLOCK RELEASE"],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "HARDCODED_ACCEPTANCE_TRUTH",
+      "definition": "An acceptance evaluator grants PASS through literal booleans or defaults instead of executing an evidence-producing evaluator.",
+      "examples": ["terminal matrix assigned repository and security criteria literal True"],
+      "required_reaction": ["REQUIRE EVALUATOR", "REQUIRE EVIDENCE", "DOWNGRADE MISSING EVIDENCE"],
+      "severity": "CRITICAL"
+    },
+    {
+      "id": "MISSION_RESULT_ID_COLLISION",
+      "definition": "Second-resolution mission identifiers cause distinct executions to overwrite one result artifact.",
+      "required_reaction": ["USE UUID OR CRYPTOGRAPHIC SUFFIX", "REFUSE DUPLICATES", "ATOMIC CREATE"],
+      "severity": "HIGH"
+    },
+    {
       "id": "CAPABILITY_PROXY_ACCEPTANCE",
       "definition": "A capability requirement is satisfied using a schema, interface, placeholder, fallback, metadata declaration, or test double rather than actual execution of the required capability.",
       "examples": [
