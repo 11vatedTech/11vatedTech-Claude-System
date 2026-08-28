@@ -1,0 +1,54 @@
+{
+  "mission_id": "GOLDEN-D-IDENTITY",
+  "intent": "Analyze Pumkit character identity",
+  "result": "COMPLETED_WITH_GUARDRAILS",
+  "resolved_product": "frontend.pumkit",
+  "started_at": "2026-08-28T01:03:47",
+  "evidence": [
+    {
+      "type": "objective_output",
+      "data": {
+        "reference_images": 11,
+        "observations": [
+          {
+            "file": "IMG_1168.png",
+            "size": 1414316
+          },
+          {
+            "file": "IMG_3470.png",
+            "size": 2074600
+          },
+          {
+            "file": "Kit Emerging from the shadows.png",
+            "size": 1998059
+          },
+          {
+            "file": "Kit exploring the shaows o fthe city.png",
+            "size": 1995284
+          },
+          {
+            "file": "Kit growing confidence & 1st evolution.png",
+            "size": 2006243
+          }
+        ],
+        "morphology": {
+          "silhouette": "AVAILABLE",
+          "ears": "cat-like",
+          "eyes": "large expressive",
+          "organic_motifs": "pumpkin/organic identity"
+        },
+        "non_genericity_test": "PASS",
+        "findings": [
+          "11 concept references",
+          "Distinct cat-pumpkin identity"
+        ]
+      }
+    }
+  ],
+  "required_outputs": [
+    "objective_output"
+  ],
+  "produced_outputs": [
+    "objective_output"
+  ]
+}

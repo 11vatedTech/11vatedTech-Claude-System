@@ -2,13 +2,13 @@
   "REPOSITORY_HYGIENE": {
     "status": "NOT_PROVEN",
     "evidence": {
-      "dirty_paths": 250,
+      "dirty_paths": 9,
       "sample": [
-        "D  11vated-growth_OS/.env.example",
-        "D  11vated-growth_OS/.gitignore",
-        "D  11vated-growth_OS/FREE_RUNTIME_POLICY.json",
-        "D  11vated-growth_OS/README.md",
-        "D  11vated-growth_OS/alembic.ini"
+        "M artifacts/foundry-doctor.json",
+        " M artifacts/foundry-validation.json",
+        " M artifacts/terminal-evaluator-results.json",
+        " M data/kapif/kapif.db",
+        "?? artifacts/missions/golden-B.json"
       ]
     },
     "evaluator": "eval_repository_hygiene"
@@ -394,10 +394,10 @@
     "evaluator": "eval_tool_discovery"
   },
   "SOFTWARE_ENGINEERING_PATH": {
-    "status": "NOT_PROVEN",
+    "status": "PASS",
     "evidence": {
       "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\missions\\golden-B.json",
-      "result": null
+      "result": "COMPLETED_WITH_GUARDRAILS"
     },
     "evaluator": "eval_software_engineering_path"
   },
@@ -537,14 +537,21 @@
     "evaluator": "eval_license_provenance"
   },
   "RELEASE_GATE": {
-    "status": "NOT_PROVEN",
+    "status": "PASS",
     "evidence": {
       "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\release-gate-proof.json",
       "data": {
-        "status": "FAIL",
-        "doctor_ok": false,
-        "validate_ok": false,
-        "note": "Requires both doctor and validate to pass with no FAILs"
+        "status": "PASS",
+        "doctor_ok": true,
+        "validate_ok": true,
+        "doctor_summary": {
+          "pass": 8,
+          "warn": 1,
+          "fail": 0,
+          "total": 9
+        },
+        "validate_passed": 9,
+        "validate_failed": 0
       }
     },
     "evaluator": "eval_release_gate"
@@ -599,7 +606,7 @@
         {
           "name": "FOUNDRY_GIT",
           "status": "WARN",
-          "detail": "GIT_REPOSITORY_VALID=PASS GIT_WORKTREE_CLEAN=FAIL dirty=248 branch=main"
+          "detail": "GIT_REPOSITORY_VALID=PASS GIT_WORKTREE_CLEAN=FAIL dirty=3 branch=main"
         },
         {
           "name": "GLOBAL_DEPLOYMENT",
@@ -669,9 +676,9 @@
     "evaluator": "eval_foundry_mission"
   },
   "GOLDEN_REAL_WORK_MISSIONS": {
-    "status": "NOT_PROVEN",
+    "status": "PASS",
     "evidence": {
-      "complete": 4,
+      "complete": 8,
       "total": 8,
       "results": {
         "A": {
@@ -679,13 +686,16 @@
           "mission_id": "GOLDEN-A-RESEARCH"
         },
         "B": {
-          "result": "MISSING"
+          "result": "COMPLETED_WITH_GUARDRAILS",
+          "mission_id": "GOLDEN-B-SW"
         },
         "C": {
-          "result": "MISSING"
+          "result": "COMPLETED_WITH_GUARDRAILS",
+          "mission_id": "GOLDEN-C-FRONTEND"
         },
         "D": {
-          "result": "MISSING"
+          "result": "COMPLETED_WITH_GUARDRAILS",
+          "mission_id": "GOLDEN-D-IDENTITY"
         },
         "E": {
           "result": "COMPLETED_WITH_GUARDRAILS",
@@ -700,7 +710,8 @@
           "mission_id": "GOLDEN-G-PRODUCT"
         },
         "H": {
-          "result": "MISSING"
+          "result": "COMPLETED_WITH_GUARDRAILS",
+          "mission_id": "GOLDEN-H-PORTFOLIO"
         }
       }
     },
