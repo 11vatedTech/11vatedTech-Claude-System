@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "db_stats": {
+    "sources": 22,
+    "snapshots": 24,
+    "atoms": 34,
+    "contradictions": 0,
+    "canon": 0,
+    "external_experience": 1,
+    "foundry_experience": 0,
+    "stale_dependencies": 0,
+    "fetch_log": 3
+  },
+  "retrieval_sample": [
+    {
+      "id": 11,
+      "type": "VERSION_FACT",
+      "statement": "Blender 5.2 supports feature X"
+    }
+  ],
+  "search_term": "blender",
+  "results_count": 1
+}

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "unrelated_dir": "C:\\Users\\11vat\\AppData\\Local\\Temp\\foundry-unrelated-t5tjjabh\\unrelated-project",
+  "global_capsys": "C:\\Users\\11vat\\.claude\\11vatedtech\\capability-system",
+  "mission_executed": true,
+  "output_sample": "11VATEDTECH FOUNDRY MISSION\nIntent: analyze this project\nMission ID: MISSION-58ce178aa87e4d8e88b7970d5c6872df\nDisciplines: research\nModels: {\n  \"orchestrator\": \"claude\",\n  \"web\": \"tavily\"\n}\nTools: kapiF-retrieval, web-search\nKnowledge: general\nEscalation: auto\nValidation: foundry-validate\n\nMission plan saved: C:\\Users\\11vat\\.claude\\11vatedtech\\capability-system\\artifacts\\MISSION-58ce178aa87e4d8e88b7970d5c6872df.json\n",
+  "no_source_syspath": true
+}

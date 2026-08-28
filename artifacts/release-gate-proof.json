@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "doctor_ok": true,
+  "validate_ok": true,
+  "doctor_summary": {
+    "pass": 8,
+    "warn": 1,
+    "fail": 0,
+    "total": 9
+  },
+  "validate_passed": 9,
+  "validate_failed": 0
+}

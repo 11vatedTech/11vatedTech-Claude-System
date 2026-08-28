@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "total_tests": 6,
+  "all_blocked": true,
+  "results": [
+    {
+      "mode": "pretool-bash",
+      "input_cmd": "rm -rf /",
+      "blocked": true,
+      "output": "{\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"deny\", \"permissionDecisionReason\": \"11vatedTech guard blocked destructive or unsafe shell command\"}}\n"
+    },
+    {
+      "mode": "pretool-bash",
+      "input_cmd": "git push origin main --force",
+      "blocked": true,
+      "output": "{\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"deny\", \"permissionDecisionReason\": \"11vatedTech guard blocked destructive or unsafe shell command\"}}\n"
+    },
+    {
+      "mode": "pretool-bash",
+      "input_cmd": "git reset --hard",
+      "blocked": true,
+      "output": "{\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"deny\", \"permissionDecisionReason\": \"11vatedTech guard blocked destructive or unsafe shell command\"}}\n"
+    },
+    {
+      "mode": "pretool-bash",
+      "input_cmd": "git clean -fdx",
+      "blocked": true,
+      "output": "{\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"deny\", \"permissionDecisionReason\": \"11vatedTech guard blocked destructive or unsafe shell command\"}}\n"
+    },
+    {
+      "mode": "pretool-file",
+      "input_cmd": "secrets/api-key.pem",
+      "blocked": true,
+      "output": "{\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"deny\", \"permissionDecisionReason\": \"11vatedTech guard blocked secret/protected path access\"}}\n"
+    },
+    {
+      "mode": "pretool-file",
+      "input_cmd": ".env",
+      "blocked": true,
+      "output": "{\"hookSpecificOutput\": {\"hookEventName\": \"PreToolUse\", \"permissionDecision\": \"deny\", \"permissionDecisionReason\": \"11vatedTech guard blocked secret/protected path access\"}}\n"
+    }
+  ]
+}

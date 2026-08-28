@@ -1,0 +1,33 @@
+{
+  "experience_id": "EXP-962efafbf0a340478d323b7392020c94",
+  "mission_id": "MISSION-6d1f28950ddd476eb6a383c5f348e543",
+  "product": null,
+  "objective": "Review Pumkit",
+  "evidence": [
+    {
+      "type": "mission_plan",
+      "path": "artifacts/MISSION-6d1f28950ddd476eb6a383c5f348e543.json"
+    }
+  ],
+  "result": "FAILED",
+  "limitations": [
+    {
+      "code": "REQUIRED_OUTPUT_MISSING",
+      "outputs": [
+        "objective_output",
+        "validated_evidence"
+      ]
+    }
+  ],
+  "models": {
+    "orchestrator": "claude",
+    "critic": "gemini-3.7-flash",
+    "challenger": "haiku-4.5",
+    "grounding": "qwen3-vl-8b"
+  },
+  "tools": [
+    "visual-canon",
+    "image-analysis"
+  ],
+  "transferable_principle": "Discovery facts do not establish objective completion."
+}

@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "deployments_found": 43,
+  "dry_run_ok": true,
+  "list_output": "20260818-203656 version=0.4.0 updated=6 rolled_back=True\n20260818-203830 version=0.4.0 updated=4 rolled_back=False\n20260818-220704 version=0.4.0 updated=0 rolled_back=False\n20260819-083055 version=0.4.1 updated=18 rolled_back=False\n20260819-083457 version=0.4.1 updated=1 rolled_back=False\n20260819-094752 version=0.5.0 updated=6 rolled_back=False\n20260819-095328 version=0.5.0 updated=1 rolled_back=False\n20260819-095347 version=0.5.0 updated=1 rolled_back=False\n20260819-113539 version=0.5.0 update",
+  "dry_run_output": "version=0.7.0\nmanaged_files=138\nto_update=6\n  update capability-system/config/foundry-failure-patterns.json\n  update capability-system/scripts/doctor/foundry_doctor.py\n  update capability-system/scripts/install/foundry_sync.py\n  update capability-system/scripts/mission/foundry_mission.py\n  update capability-system/scripts/validate/canonical_truth_generator.py\n  update capability-system/scripts/validate/foundry_validate.py\nstale_11vt_removable=[]\ndry_run=True no_changes_written\n"
+}

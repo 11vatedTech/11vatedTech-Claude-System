@@ -1,0 +1,42 @@
+{
+  "mission_id": "MISSION-250bc42425b644f3ab9165efc4adb65a",
+  "intent": "Review Pumkit frontend",
+  "disciplines": [
+    "frontend",
+    "character_identity"
+  ],
+  "models": {
+    "orchestrator": "claude",
+    "critic": "gemini-3.7-flash",
+    "challenger": "haiku-4.5",
+    "grounding": "qwen3-vl-8b"
+  },
+  "tools": [
+    "lighthouse",
+    "visual-canon",
+    "playwright",
+    "image-analysis",
+    "browser"
+  ],
+  "knowledge_packs": [
+    "typography-information-design",
+    "ui-ux-interaction",
+    "art-direction-visual-development",
+    "frontend-engineering",
+    "two-d-art-illustration"
+  ],
+  "evidence_requirements": [
+    "primary-evidence",
+    "deterministic-facts"
+  ],
+  "required_outputs": [
+    "objective_output",
+    "validated_evidence"
+  ],
+  "validation": "foundry-validate",
+  "escalation": "founder-review",
+  "stop_conditions": [
+    "objective-defects-resolved",
+    "founder-approval"
+  ]
+}

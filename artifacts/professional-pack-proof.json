@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "pack_count": 23,
+  "packs": [
+    {
+      "file": "ai-creative-media-core.json",
+      "valid_json": true,
+      "has_structure": false
+    },
+    {
+      "file": "art-direction-lookdev-core.json",
+      "valid_json": true,
+      "has_structure": false
+    },
+    {
+      "file": "asset-pipeline-provenance-core.json",
+      "valid_json": true,
+      "has_structure": false
+    },
+    {
+      "file": "audio-interactive-sound-core.json",
+      "valid_json": true,
+      "has_structure": false
+    },
+    {
+      "file": "cinematography-core.json",
+      "valid_json": true,
+      "has_structure": false
+    }
+  ]
+}

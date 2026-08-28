@@ -1,0 +1,150 @@
+{
+  "status": "PASS",
+  "all_pass": true,
+  "injection_suite": {
+    "suite": "advanced_injection_suite_v1",
+    "pattern_classes_tested": 14,
+    "fixtures_tested": 9,
+    "total_pattern_applications": 126,
+    "all_pass": true,
+    "results": [
+      {
+        "fixture": "instruction_as_documentation",
+        "pass": true,
+        "flagged": true,
+        "should_flag": true,
+        "finding_count": 3,
+        "finding_classes": [
+          "instruction_override",
+          "identity_change"
+        ]
+      },
+      {
+        "fixture": "json_tool_directive",
+        "pass": true,
+        "flagged": true,
+        "should_flag": true,
+        "finding_count": 1,
+        "finding_classes": [
+          "json_tool_injection"
+        ]
+      },
+      {
+        "fixture": "hidden_css_content",
+        "pass": true,
+        "flagged": true,
+        "should_flag": true,
+        "finding_count": 5,
+        "finding_classes": [
+          "fake_role_prefix",
+          "instruction_override",
+          "hidden_css",
+          "xml_tool_injection",
+          "json_tool_injection"
+        ]
+      },
+      {
+        "fixture": "unicode_obfuscation",
+        "pass": true,
+        "flagged": true,
+        "should_flag": true,
+        "finding_count": 3,
+        "finding_classes": [
+          "unicode_control"
+        ]
+      },
+      {
+        "fixture": "base64_payload",
+        "pass": true,
+        "flagged": true,
+        "should_flag": true,
+        "finding_count": 1,
+        "finding_classes": [
+          "potential_base64_payload"
+        ]
+      },
+      {
+        "fixture": "authority_claim",
+        "pass": true,
+        "flagged": true,
+        "should_flag": true,
+        "finding_count": 1,
+        "finding_classes": [
+          "authority_claim_injection"
+        ]
+      },
+      {
+        "fixture": "memory_poisoning",
+        "pass": true,
+        "flagged": true,
+        "should_flag": true,
+        "finding_count": 2,
+        "finding_classes": [
+          "memory_poisoning"
+        ]
+      },
+      {
+        "fixture": "cross_document",
+        "pass": true,
+        "flagged": true,
+        "should_flag": true,
+        "finding_count": 1,
+        "finding_classes": [
+          "cross_document_reference"
+        ]
+      },
+      {
+        "fixture": "benign_reference",
+        "pass": true,
+        "flagged": false,
+        "should_flag": false,
+        "finding_count": 0,
+        "finding_classes": []
+      }
+    ],
+    "caveat": "TESTED_AGAINST_CURRENT_SUITE \u2014 not proven injection-proof against novel attacks",
+    "expected_behavior_on_failure": "NO PRIVILEGED EFFECT \u2014 CONTENT_FLAGGED \u2014 NO CANON WRITE \u2014 NO MEMORY WRITE \u2014 NO TOOL EXECUTION"
+  },
+  "taint_test": {
+    "tested_state_machine": "TaintTracker_v2",
+    "states": [
+      "RAW_EXTERNAL",
+      "UNTRUSTED_DERIVATIVE",
+      "SCHEMA_VALIDATED",
+      "EVIDENCE_VERIFIED",
+      "CANON_ELIGIBLE",
+      "CANONICAL_FOR_SCOPE"
+    ],
+    "governing_principle": "Extraction is transformation, not trust establishment",
+    "results": [
+      {
+        "test": "raw_content_untrusted",
+        "pass": true
+      },
+      {
+        "test": "extraction_does_not_establish_trust",
+        "pass": true,
+        "detail": "state=UNTRUSTED_DERIVATIVE, is_trusted=False"
+      },
+      {
+        "test": "schema_validation_still_untrusted",
+        "pass": true,
+        "detail": "state=SCHEMA_VALIDATED, is_trusted=False"
+      },
+      {
+        "test": "evidence_verification_establishes_trust",
+        "pass": true,
+        "detail": "state=EVIDENCE_VERIFIED, is_trusted=True"
+      },
+      {
+        "test": "canon_gates_pass",
+        "pass": true
+      },
+      {
+        "test": "canon_promotion_with_scope",
+        "pass": true
+      }
+    ],
+    "all_pass": true
+  }
+}

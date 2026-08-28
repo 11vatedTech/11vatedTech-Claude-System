@@ -1,192 +1,318 @@
 {
-  "generated_at": "2026-08-27T22:39:55.924726+00:00",
+  "schema_version": "1.0.0",
   "criteria_count": 43,
-  "criteria": {
+  "unique_criterion_ids": 43,
+  "status_counts": {
+    "PASS": 11,
+    "GUARDED_OPERATIONAL": 0,
+    "ESCALATION_REQUIRED": 0,
+    "BLOCKED_EXTERNAL": 0,
+    "FAIL": 0,
+    "NOT_PROVEN": 32
+  },
+  "pass": 11,
+  "not_proven": 32,
+  "rows": {
     "REPOSITORY_HYGIENE": {
-      "status": "PASS"
+      "status": "NOT_PROVEN",
+      "evaluator": "git",
+      "required_evidence": "git status --porcelain=v1",
+      "pass_condition": "empty output",
+      "blocking_condition": "any dirty path"
     },
     "PRODUCT_CONTAMINATION_REMOVED": {
-      "status": "PASS"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "PUMKIT_EXTRACTION_COMPLETE": {
-      "status": "PASS"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "GROWTHOS_RECOVERY_CLASSIFIED_COMPLETE": {
-      "status": "PASS"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "PRODUCT_REGISTRY_OPERATIONAL": {
-      "status": "PASS"
+      "status": "PASS",
+      "evaluator": "artifact evaluator",
+      "required_evidence": "config/product-portfolio-registry.json",
+      "pass_condition": "artifact exists and is valid",
+      "blocking_condition": "missing evidence"
     },
     "PRODUCT_MANIFEST_STANDARD": {
-      "status": "PASS"
+      "status": "PASS",
+      "evaluator": "artifact evaluator",
+      "required_evidence": "config/product-portfolio-registry.json",
+      "pass_condition": "artifact exists and is valid",
+      "blocking_condition": "missing evidence"
     },
     "GLOBAL_DEPLOYMENT": {
-      "status": "PASS"
+      "status": "PASS",
+      "evaluator": "foundry_doctor.py",
+      "required_evidence": "artifacts/foundry-doctor.json",
+      "pass_condition": "deployment PASS",
+      "blocking_condition": "deployment FAIL"
     },
     "GLOBAL_UNRELATED_PROJECT_PROOF": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "CAPABILITY_ENTRYPOINT": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "MISSION_COMPILER": {
-      "status": "PASS"
+      "status": "PASS",
+      "evaluator": "filesystem",
+      "required_evidence": "scripts/mission/foundry_mission.py",
+      "pass_condition": "file exists",
+      "blocking_condition": "missing compiler"
     },
     "KAPIF_STORAGE": {
-      "status": "PASS"
+      "status": "PASS",
+      "evaluator": "foundry_doctor.py",
+      "required_evidence": "artifacts/foundry-doctor.json",
+      "pass_condition": "KAPIF health PASS",
+      "blocking_condition": "KAPIF FAIL"
     },
     "KAPIF_RETRIEVAL": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "KAPIF_PROVENANCE": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "KAPIF_SECURITY": {
-      "status": "PASS"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "PROFESSIONAL_PACK_SYSTEM": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "KNOWLEDGE_FRESHNESS": {
-      "status": "PASS"
+      "status": "PASS",
+      "evaluator": "artifact evaluator",
+      "required_evidence": "artifacts/knowledge-freshness.json",
+      "pass_condition": "artifact exists and is valid",
+      "blocking_condition": "missing evidence"
     },
     "9ROUTER_HEALTH": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "foundry_doctor.py",
+      "required_evidence": "artifacts/foundry-doctor.json",
+      "pass_condition": "gateway API PASS",
+      "blocking_condition": "gateway down"
     },
     "MODEL_ROLE_REGISTRY": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "LOCAL_MODEL_FALLBACK": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "TOOL_DISCOVERY": {
-      "status": "PASS"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "BLENDER_PIPELINE": {
-      "status": "PASS"
+      "status": "PASS",
+      "evaluator": "artifact evaluator",
+      "required_evidence": "artifacts/creative-stack-validation/blender-ops/current-execution-evidence.json",
+      "pass_condition": "artifact exists and is valid",
+      "blocking_condition": "missing evidence"
     },
     "UNREAL_PIPELINE": {
-      "status": "NOT_PROVEN"
+      "status": "PASS",
+      "evaluator": "artifact evaluator",
+      "required_evidence": "artifacts/creative-stack-validation/unreal-current-execution.json",
+      "pass_condition": "artifact exists and is valid",
+      "blocking_condition": "missing evidence"
     },
     "SOFTWARE_ENGINEERING_PATH": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "FRONTEND_UI_UX_PATH": {
-      "status": "PASS"
+      "status": "PASS",
+      "evaluator": "artifact evaluator",
+      "required_evidence": "artifacts/frontend/wave-a-pumkit-before/pumkit-before-evidence.json",
+      "pass_condition": "artifact exists and is valid",
+      "blocking_condition": "missing evidence"
     },
     "CHARACTER_IDENTITY_PATH": {
-      "status": "PASS"
+      "status": "PASS",
+      "evaluator": "artifact evaluator",
+      "required_evidence": "artifacts/frontend/wave-a-pumkit-before/pumkit-visual-canon-v2.json",
+      "pass_condition": "artifact exists and is valid",
+      "blocking_condition": "missing evidence"
     },
     "CREATIVE_MEDIA_PATH": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "PRODUCT_DEVELOPMENT_PATH": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "COMMERCIAL_INTELLIGENCE_PATH": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "EXPERIENCE_CAPTURE": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "FAILURE_PATTERN_ENFORCEMENT": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "GIT_SAFETY": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "SECRET_SAFETY": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "LICENSE_PROVENANCE": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "RELEASE_GATE": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "ROLLBACK": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "DISASTER_RECOVERY": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "FOUNDRY_DOCTOR": {
-      "status": "PASS"
+      "status": "NOT_PROVEN",
+      "evaluator": "foundry_doctor.py",
+      "required_evidence": "artifacts/foundry-doctor.json",
+      "pass_condition": "no FAIL checks",
+      "blocking_condition": "any FAIL"
     },
     "FOUNDRY_VALIDATE": {
-      "status": "PASS"
+      "status": "NOT_PROVEN",
+      "evaluator": "foundry_validate.py",
+      "required_evidence": "artifacts/foundry-validation.json",
+      "pass_condition": "all gates PASS",
+      "blocking_condition": "any failed gate"
     },
     "FOUNDRY_MISSION": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "GOLDEN_REAL_WORK_MISSIONS": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "golden mission evaluator",
+      "required_evidence": "artifacts/missions/golden-{A..H}.json",
+      "pass_condition": "eight valid distinct results",
+      "blocking_condition": "missing or invalid artifact"
     },
     "CANONICAL_TRUTH_GENERATOR": {
-      "status": "PASS"
+      "status": "PASS",
+      "evaluator": "artifact evaluator",
+      "required_evidence": "scripts/validate/canonical_truth_generator.py",
+      "pass_condition": "artifact exists and is valid",
+      "blocking_condition": "missing evidence"
     },
     "DOCUMENTATION": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     },
     "GLOBAL_RELEASE_PARITY": {
-      "status": "NOT_PROVEN"
+      "status": "NOT_PROVEN",
+      "evaluator": "no evaluator",
+      "required_evidence": "unspecified",
+      "pass_condition": "evidence-backed PASS",
+      "blocking_condition": "missing evaluator/evidence"
     }
-  },
-  "golden_artifacts": [
-    "golden-A.json",
-    "golden-E.json",
-    "golden-F.json",
-    "golden-G.json"
-  ],
-  "core_regression": {
-    "validation_time": "2026-08-27T18:39:41",
-    "total": 9,
-    "passed": 9,
-    "failed": 0,
-    "gates": {
-      "closure_gates": {
-        "status": "PASS",
-        "duration": 0.2
-      },
-      "golden_tasks": {
-        "status": "PASS",
-        "duration": 2.3
-      },
-      "behavioral_validation": {
-        "status": "PASS",
-        "duration": 0.3
-      },
-      "injection_e2e": {
-        "status": "PASS",
-        "duration": 0.1
-      },
-      "deployment_parity": {
-        "status": "PASS",
-        "duration": 0.1
-      },
-      "sync_dry_run": {
-        "status": "PASS",
-        "duration": 0.3
-      },
-      "truth_generator": {
-        "status": "PASS",
-        "duration": 3.0
-      },
-      "capability_truth_audit": {
-        "status": "PASS",
-        "duration": 0.3
-      },
-      "env_doctor": {
-        "status": "PASS",
-        "duration": 22.5
-      }
-    }
-  },
-  "knowledge_freshness": {
-    "checked": 0,
-    "stale": [],
-    "malformed_metadata": [],
-    "status": "PASS"
-  },
-  "final_verdict": "NOT_COMPLETE"
+  }
 }

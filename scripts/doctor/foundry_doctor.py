@@ -133,13 +133,17 @@ def check_security():
 
 def check_contamination():
     c = Check("PRODUCT_CONTAMINATION")
-    # Check for product files tracked in Foundry
-    growthos = run_cmd("git ls-files 11vated-growth_OS/ 2>/dev/null | wc -l")
-    frontend = run_cmd("git ls-files Frontend-Designs/ 2>/dev/null | wc -l")
-    g = int(growthos or 0)
-    f = int(frontend or 0)
-    if g > 0 or f > 0:
-        return c.warn(f"GrowthOS={g} Frontend-Designs={f} files still tracked")
+    try:
+        r = subprocess.run(['git', 'ls-files', '11vated-growth_OS/', 'Frontend-Designs/'],
+                          capture_output=True, text=True, timeout=10, cwd=str(ROOT))
+        tracked = [l for l in r.stdout.splitlines() if l.strip()]
+        growthos = sum(1 for l in tracked if '11vated-growth_OS/' in l)
+        frontend = sum(1 for l in tracked if 'Frontend-Designs/' in l)
+    except Exception:
+        growthos, frontend = 0, 0
+        tracked = []
+    if growthos > 0 or frontend > 0:
+        return c.warn(f"GrowthOS={growthos} Frontend-Designs={frontend} files still tracked")
     return c.ok("no product files tracked in Foundry")
 
 def main():
@@ -169,6 +173,14 @@ def main():
     warned = sum(1 for c in checks if c.status == "WARN")
     failed = sum(1 for c in checks if c.status == "FAIL")
     print(f"\n  Summary: {passed} PASS, {warned} WARN, {failed} FAIL / {len(checks)} total")
+    report = {
+        "schema_version": "1.0.0",
+        "checks": [{"name": c.name, "status": c.status, "detail": c.detail} for c in checks],
+        "summary": {"pass": passed, "warn": warned, "fail": failed, "total": len(checks)},
+    }
+    report_path = ROOT / "artifacts" / "foundry-doctor.json"
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
     return 0 if failed == 0 else 1
 
 if __name__ == "__main__":

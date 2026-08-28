@@ -76,6 +76,7 @@ def main():
 
     # Machine-readable output
     result = {
+        "schema_version": "1.0.0",
         "validation_time": time.strftime("%Y-%m-%dT%H:%M:%S"),
         "total": len(gates),
         "passed": passed,
@@ -87,7 +88,9 @@ def main():
     out_path.write_text(json.dumps(result, indent=2))
     print(f"\n  Machine-readable: {out_path}")
 
-    return 0 if failed == 0 else 1
+    # A child doctor FAIL is never converted into a parent PASS.
+    doctor_gate = next((g for g in gates if g.name == "env_doctor"), None)
+    return 0 if failed == 0 and (doctor_gate is None or doctor_gate.status == "PASS") else 1
 
 if __name__ == "__main__":
     sys.exit(main())

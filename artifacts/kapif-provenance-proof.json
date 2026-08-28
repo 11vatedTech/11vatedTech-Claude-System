@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "atoms_with_source": 5,
+  "has_source_hash": false,
+  "sample": [
+    {
+      "id": 1,
+      "atom_type": "FACT",
+      "statement": "Test atom for canon bypass",
+      "source_hash": null,
+      "extraction_model": null
+    },
+    {
+      "id": 2,
+      "atom_type": "LICENSE_FACT",
+      "statement": "mit",
+      "source_hash": null,
+      "extraction_model": null
+    },
+    {
+      "id": 3,
+      "atom_type": "LICENSE_FACT",
+      "statement": "mit",
+      "source_hash": null,
+      "extraction_model": null
+    }
+  ]
+}

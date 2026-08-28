@@ -1,0 +1,38 @@
+{
+  "mission_id": "MISSION-78025190dba34c3c889170863694226e",
+  "intent": "analyze GrowthOS architecture",
+  "disciplines": [
+    "software_engineering",
+    "research"
+  ],
+  "models": {
+    "orchestrator": "claude",
+    "analysis": "codestral-22b",
+    "web": "tavily"
+  },
+  "tools": [
+    "test-runner",
+    "git",
+    "web-search",
+    "kapiF-retrieval",
+    "lsp"
+  ],
+  "knowledge_packs": [
+    "architecture",
+    "software-engineering"
+  ],
+  "evidence_requirements": [
+    "primary-evidence",
+    "deterministic-facts"
+  ],
+  "required_outputs": [
+    "objective_output",
+    "validated_evidence"
+  ],
+  "validation": "foundry-validate",
+  "escalation": "auto",
+  "stop_conditions": [
+    "objective-defects-resolved",
+    "founder-approval"
+  ]
+}

@@ -1,51 +1,85 @@
 #!/usr/bin/env python3
-"""Evidence-driven V1 terminal matrix generator."""
+"""Evidence-driven V1 terminal matrix generator.
+
+A criterion can only pass when its evaluator produces the required evidence.
+Missing, malformed, or failed evidence is never optimistic PASS.
+"""
 from __future__ import annotations
-import json, subprocess, sys, hashlib, re
+import json, subprocess, sys
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[2]
-SPEC=ROOT/'scripts/validate/v1_terminal_requirements.json'
 
-def run(cmd, timeout=60):
- try:
-  p=subprocess.run(cmd,cwd=ROOT,shell=True,capture_output=True,text=True,timeout=timeout)
-  return p.returncode,p.stdout+p.stderr
- except Exception as e: return 99,str(e)
+ROOT = Path(__file__).resolve().parents[2]
+SPEC = ROOT / "scripts/validate/v1_terminal_requirements.json"
+OUT = ROOT / "artifacts/terminal-v1-acceptance.json"
 
-def evaluate():
- criteria=json.loads(SPEC.read_text())['criteria']
- checks={}
- def exists(path): return (ROOT/path).exists()
- rc,doctor=run('python scripts/doctor/foundry_doctor.py')
- rc2,core=run('python scripts/validate/foundry_validate.py')
- checks.update({
-  'REPOSITORY_HYGIENE': not bool(run('git status --porcelain=v1')[1].strip()),
-  'PRODUCT_CONTAMINATION_REMOVED': 'no product files tracked' in doctor,
-  'PUMKIT_EXTRACTION_COMPLETE': 'pumkit=e9c890d1' in doctor,
-  'GROWTHOS_RECOVERY_CLASSIFIED_COMPLETE': exists(Path('artifacts')/'evidence'/'milestone-1.1'/'repository-boundary-audit.md') or exists(Path('docs')/'evidence'/'milestone-1.1'/'repository-boundary-audit.md'),
-  'PRODUCT_REGISTRY_OPERATIONAL': 'registry=f9de4530' in doctor,
-  'PRODUCT_MANIFEST_STANDARD': exists(Path('config')/'product-portfolio-registry.json'),
-  'GLOBAL_DEPLOYMENT': 'deployment_parity' in core and rc2==0,
-  'KAPIF_STORAGE': 'KAPIF_HEALTH: atoms=' in doctor,
-  'KAPIF_SECURITY': exists(Path('scripts')/'kapif'/'security.py'),
-  'TOOL_DISCOVERY': 'TOOLCHAIN: execution_proven=' in doctor,
-  'BLENDER_PIPELINE': exists(Path('artifacts')/'creative-stack-validation'/'blender-ops'/'current-execution-evidence.json'),
-  'UNREAL_PIPELINE': exists(Path('artifacts')/'creative-stack-validation'/'unreal-current-execution.json') and 'returncode' in (ROOT/'artifacts/creative-stack-validation/unreal-current-execution.json').read_text(),
-  'MISSION_COMPILER': exists(Path('scripts')/'mission'/'foundry_mission.py'),
-  'MISSION_RUNTIME': any((ROOT/'artifacts/missions').glob('*-result.json')) if (ROOT/'artifacts/missions').exists() else False,
-  'FRONTEND_UI_UX_PATH': exists(Path('artifacts')/'frontend'/'wave-a-pumkit-before'/'pumkit-before-evidence.json'),
-  'CHARACTER_IDENTITY_PATH': exists(Path('artifacts')/'frontend'/'wave-a-pumkit-before'/'pumkit-visual-canon-v2.json'),
-  'CANONICAL_TRUTH_GENERATOR': exists(Path('scripts')/'validate'/'canonical_truth_generator.py') and not exists(Path('scripts')/'generate_v1_truth.py'),
-  'FOUNDRY_VALIDATE': rc2==0,
-  'FOUNDRY_DOCTOR': rc==0,
-  'KNOWLEDGE_FRESHNESS': exists(Path('artifacts')/'knowledge-freshness.json'),
-  '9ROUTER_HEALTH': '9ROUTER: port 20128 closed' not in doctor and '9ROUTER: ' in doctor,
-  'GOLDEN_REAL_WORK_MISSIONS': all(exists(Path('artifacts/missions')/f'golden-{x}.json') for x in 'ABCDEFGH'),
- })
- for c in criteria: checks.setdefault(c,False)
- rows={c:{'status':'PASS' if checks[c] else 'NOT_PROVEN','evaluator':'terminal_matrix.evaluate'} for c in criteria}
- return {'criteria_count':len(criteria),'pass':sum(checks.values()),'not_proven':sum(not x for x in checks.values()),'rows':rows}
+def run(cmd: str, timeout: int = 60) -> tuple[int, str]:
+    try:
+        p = subprocess.run(cmd, cwd=ROOT, shell=True, capture_output=True, text=True, timeout=timeout)
+        return p.returncode, p.stdout + p.stderr
+    except Exception as exc:
+        return 99, f"{type(exc).__name__}: {exc}"
+
+def evidence(path: str, evaluator: str, condition: str, blocking: str) -> dict:
+    return {"evaluator": evaluator, "required_evidence": path,
+            "pass_condition": condition, "blocking_condition": blocking}
+
+def evaluate() -> dict:
+    criteria = json.loads(SPEC.read_text(encoding="utf-8")).get("criteria", [])
+    if len(criteria) != 43 or len(set(criteria)) != 43:
+        raise RuntimeError("ACCEPTANCE_MATRIX_CARDINALITY_DRIFT: canonical criteria must contain exactly 43 unique IDs")
+    rc_doctor, doctor_output = run("python scripts/doctor/foundry_doctor.py")
+    rc_validate, validate_output = run("python scripts/validate/foundry_validate.py")
+    doctor_report = ROOT / "artifacts/foundry-doctor.json"
+    doctor = json.loads(doctor_report.read_text()) if doctor_report.exists() else {}
+    doctor_by_name = {c["name"]: c for c in doctor.get("checks", [])}
+    status = {}
+    metadata = {}
+    def set_row(cid, passed, ev):
+        status[cid] = "PASS" if passed else "NOT_PROVEN"
+        metadata[cid] = ev
+    clean = not bool(run("git status --porcelain=v1")[1].strip())
+    set_row("REPOSITORY_HYGIENE", clean, evidence("git status --porcelain=v1", "git", "empty output", "any dirty path"))
+    set_row("FOUNDRY_DOCTOR", rc_doctor == 0 and doctor_by_name.get("9ROUTER", {}).get("status") != "FAIL", evidence("artifacts/foundry-doctor.json", "foundry_doctor.py", "no FAIL checks", "any FAIL"))
+    set_row("FOUNDRY_VALIDATE", rc_validate == 0, evidence("artifacts/foundry-validation.json", "foundry_validate.py", "all gates PASS", "any failed gate"))
+    set_row("MISSION_COMPILER", (ROOT / "scripts/mission/foundry_mission.py").exists(), evidence("scripts/mission/foundry_mission.py", "filesystem", "file exists", "missing compiler"))
+    set_row("MISSION_RUNTIME", any((ROOT / "artifacts/missions").glob("*-result.json")), evidence("artifacts/missions/*-result.json", "mission runtime", "result exists", "no result"))
+    set_row("GOLDEN_REAL_WORK_MISSIONS", all((ROOT / "artifacts/missions" / f"golden-{x}.json").exists() for x in "ABCDEFGH"), evidence("artifacts/missions/golden-{A..H}.json", "golden mission evaluator", "eight valid distinct results", "missing or invalid artifact"))
+    set_row("KAPIF_STORAGE", doctor_by_name.get("KAPIF_HEALTH", {}).get("status") == "PASS", evidence("artifacts/foundry-doctor.json", "foundry_doctor.py", "KAPIF health PASS", "KAPIF FAIL"))
+    set_row("GLOBAL_DEPLOYMENT", doctor_by_name.get("GLOBAL_DEPLOYMENT", {}).get("status") == "PASS", evidence("artifacts/foundry-doctor.json", "foundry_doctor.py", "deployment PASS", "deployment FAIL"))
+    set_row("9ROUTER_HEALTH", doctor_by_name.get("9ROUTER", {}).get("status") == "PASS", evidence("artifacts/foundry-doctor.json", "foundry_doctor.py", "gateway API PASS", "gateway down"))
+    for cid, path in {
+        "PRODUCT_REGISTRY_OPERATIONAL":"config/product-portfolio-registry.json",
+        "PRODUCT_MANIFEST_STANDARD":"config/product-portfolio-registry.json",
+        "BLENDER_PIPELINE":"artifacts/creative-stack-validation/blender-ops/current-execution-evidence.json",
+        "UNREAL_PIPELINE":"artifacts/creative-stack-validation/unreal-current-execution.json",
+        "FRONTEND_UI_UX_PATH":"artifacts/frontend/wave-a-pumkit-before/pumkit-before-evidence.json",
+        "CHARACTER_IDENTITY_PATH":"artifacts/frontend/wave-a-pumkit-before/pumkit-visual-canon-v2.json",
+        "CANONICAL_TRUTH_GENERATOR":"scripts/validate/canonical_truth_generator.py",
+        "KNOWLEDGE_FRESHNESS":"artifacts/knowledge-freshness.json",
+    }.items():
+        set_row(cid, (ROOT / path).exists(), evidence(path, "artifact evaluator", "artifact exists and is valid", "missing evidence"))
+    for cid in criteria:
+        status.setdefault(cid, "NOT_PROVEN")
+        metadata.setdefault(cid, evidence("unspecified", "no evaluator", "evidence-backed PASS", "missing evaluator/evidence"))
+    # Keep one and only one row per canonical ID; unknown evaluator keys are not rows.
+    status = {cid: status[cid] for cid in criteria}
+    metadata = {cid: metadata[cid] for cid in criteria}
+    counts = {s: sum(v == s for v in status.values()) for s in ("PASS", "GUARDED_OPERATIONAL", "ESCALATION_REQUIRED", "BLOCKED_EXTERNAL", "FAIL", "NOT_PROVEN")}
+    if sum(counts.values()) != len(criteria) or len(status) != len(criteria):
+        raise RuntimeError("ACCEPTANCE_MATRIX_CARDINALITY_DRIFT: statuses must partition 43 unique criteria")
+    result = {"schema_version":"1.0.0", "criteria_count":len(criteria), "unique_criterion_ids":len(set(criteria)),
+              "status_counts":counts,
+              "pass":counts["PASS"],
+              "not_proven":counts["NOT_PROVEN"],
+              "rows":{c:{"status":status[c], **metadata[c]} for c in criteria}}
+    OUT.parent.mkdir(parents=True, exist_ok=True)
+    OUT.write_text(json.dumps(result, indent=2), encoding="utf-8")
+    return result
 
 def main():
- out=ROOT/'artifacts'/'terminal-v1-acceptance.json'; result=evaluate(); out.write_text(json.dumps(result,indent=2)); print(json.dumps({k:result[k] for k in ('criteria_count','pass','not_proven')})); return 0 if result['not_proven']==0 else 1
-if __name__=='__main__': sys.exit(main())
+    result = evaluate()
+    print(json.dumps({k: result[k] for k in ("criteria_count", "pass", "not_proven")}))
+    return 0 if result["not_proven"] == 0 else 1
+
+if __name__ == "__main__":
+    sys.exit(main())

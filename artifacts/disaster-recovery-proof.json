@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "scripts_copied": true,
+  "entrypoints": {
+    "kapif_data_layer": true,
+    "kapif_db": true,
+    "doctor": true,
+    "mission": true,
+    "sync": true,
+    "validate": true,
+    "terminal_matrix": true,
+    "tool_resolver": true
+  },
+  "recovered_count": 8,
+  "total_expected": 8
+}
