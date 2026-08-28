@@ -60,12 +60,22 @@ artifacts/ascension/
 
 # Generated runtime validation outputs (regenerate after release)
 artifacts/foundry-validation.json
+artifacts/foundry-doctor.json
 artifacts/terminal-v1-acceptance.json
+artifacts/terminal-evaluator-results.json
 artifacts/INTENDED_FOUNDRY_V1_RELEASE_MANIFEST.json
 artifacts/knowledge-freshness.json
 artifacts/missions/*.log
 artifacts/missions/*-result.json
 artifacts/creative-stack-validation/blender-ops/current-proof.blend
+artifacts/v1-execution-ledger.json
+
+# KAPIF database (generated from schema)
+data/kapif/kapif.db
+data/kapif/snapshots/
+
+# Mission execution artifacts (ephemeral)
+artifacts/MISSION-*.json
 
 # External/tool distributions and generated binary evidence
 *.exe
