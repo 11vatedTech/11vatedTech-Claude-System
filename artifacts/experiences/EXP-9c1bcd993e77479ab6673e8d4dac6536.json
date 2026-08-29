@@ -1,0 +1,32 @@
+{
+  "experience_id": "EXP-9c1bcd993e77479ab6673e8d4dac6536",
+  "mission_id": "MISSION-60aa9e3bab50492c81bc5ec6178d0993",
+  "product": null,
+  "objective": "test health check",
+  "evidence": [
+    {
+      "type": "mission_plan",
+      "path": "artifacts/MISSION-60aa9e3bab50492c81bc5ec6178d0993.json"
+    }
+  ],
+  "result": "FAILED",
+  "limitations": [
+    {
+      "code": "REQUIRED_OUTPUT_MISSING",
+      "outputs": [
+        "objective_output",
+        "validated_evidence"
+      ]
+    }
+  ],
+  "models": {
+    "orchestrator": "claude",
+    "analysis": "codestral-22b"
+  },
+  "tools": [
+    "lsp",
+    "git",
+    "test-runner"
+  ],
+  "transferable_principle": "Discovery facts do not establish objective completion."
+}
