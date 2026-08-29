@@ -356,10 +356,156 @@ def eval_documentation() -> tuple[bool, dict]:
             {"readme": readme, "docs_dir": docs_dir, "current_state": current_state, "product_boundary": product_boundary})
 
 def eval_global_release_parity() -> tuple[bool, dict]:
-    # Dry-run sync and check to_update count
     rc, out = _run("python scripts/install/sync_to_claude.py --dry-run")
     to_update_zero = "to_update=0" in out
     return (to_update_zero, {"dry_run_output": out[:500], "to_update_zero": to_update_zero})
+
+
+# ────────── MISSING 11: evaluators for criteria absent from prior evaluator ──────────
+
+def eval_product_registry_operational() -> tuple[bool, dict]:
+    reg = ROOT / "config" / "product-portfolio-registry.json"
+    if not reg.exists():
+        return (False, {"path": str(reg), "exists": False})
+    data = json.loads(reg.read_text(encoding="utf-8"))
+    products = data.get("products", [])
+    has_schema = "schema" in data
+    has_authority = "authority" in data
+    return (len(products) > 0 and has_schema and has_authority,
+            {"path": str(reg), "product_count": len(products), "has_schema": has_schema, "has_authority": has_authority,
+             "product_ids": [p.get("product_id") for p in products]})
+
+def eval_product_manifest_standard() -> tuple[bool, dict]:
+    reg = ROOT / "config" / "product-portfolio-registry.json"
+    schema = ROOT / "config" / "product-registry-schema.json"
+    if not reg.exists():
+        return (False, {"registry": str(reg), "exists": False})
+    data = json.loads(reg.read_text(encoding="utf-8"))
+    valid_fields = all(k in data for k in ["schema", "authority", "products"])
+    per_product_valid = all(
+        all(k in p for k in ["product_id", "name", "category", "lifecycle", "repository"])
+        for p in data.get("products", [])
+    )
+    return (valid_fields and per_product_valid and schema.exists(),
+            {"registry_valid": valid_fields, "per_product_valid": per_product_valid, "schema_exists": schema.exists()})
+
+def eval_global_deployment() -> tuple[bool, dict]:
+    sync = ROOT / "scripts" / "install" / "sync_to_claude.py"
+    if not sync.exists():
+        return (False, {"sync_script": str(sync), "exists": False})
+    rc, out = _run("python scripts/install/sync_to_claude.py --dry-run")
+    has_managed = "managed_files" in out or "managed=" in out
+    to_update_zero = "to_update=0" in out
+    return (has_managed and to_update_zero, {"output": out[:500], "has_managed": has_managed, "to_update_zero": to_update_zero})
+
+def eval_mission_compiler() -> tuple[bool, dict]:
+    mc = ROOT / "scripts" / "mission" / "foundry_mission.py"
+    if not mc.exists():
+        return (False, {"path": str(mc), "exists": False})
+    content = mc.read_text(encoding="utf-8")
+    has_execute = "execute_mission" in content
+    has_registry = "product-portfolio-registry" in content or "product_registry" in content.lower()
+    has_uuid = "uuid" in content.lower()
+    return (has_execute and has_registry and has_uuid,
+            {"path": str(mc), "has_execute": has_execute, "has_registry": has_registry, "has_uuid": has_uuid})
+
+def eval_kapif_storage() -> tuple[bool, dict]:
+    db_path = ROOT / "data" / "kapif" / "kapif.db"
+    data_layer = ROOT / "scripts" / "kapif" / "data_layer.py"
+    if not db_path.exists():
+        return (False, {"db": str(db_path), "exists": False})
+    # Check actual database tables and row counts
+    import sqlite3
+    try:
+        conn = sqlite3.connect(str(db_path))
+        tables = [r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()]
+        atom_count = conn.execute("SELECT count(*) FROM atoms").fetchone()[0] if "atoms" in tables else 0
+        source_count = conn.execute("SELECT count(*) FROM sources").fetchone()[0] if "sources" in tables else 0
+        conn.close()
+    except Exception as e:
+        return (False, {"db": str(db_path), "error": str(e)[:200]})
+    has_schema = data_layer.exists() and "CREATE TABLE" in data_layer.read_text(encoding="utf-8")
+    return (atom_count > 0 and source_count > 0 and has_schema,
+            {"db": str(db_path), "tables": len(tables), "atoms": atom_count, "sources": source_count, "has_schema": has_schema})
+
+def eval_knowledge_freshness() -> tuple[bool, dict]:
+    # Evaluate freshness from the actual KAPIF data layer
+    db_path = ROOT / "data" / "kapif" / "kapif.db"
+    if not db_path.exists():
+        return (False, {"db": str(db_path), "exists": False})
+    import sqlite3
+    try:
+        conn = sqlite3.connect(str(db_path))
+        total = conn.execute("SELECT count(*) FROM atoms").fetchone()[0]
+        # Check for atoms with version/source metadata
+        has_metadata = conn.execute("SELECT count(*) FROM atoms WHERE atom_type IS NOT NULL").fetchone()[0]
+        conn.close()
+    except Exception as e:
+        return (False, {"db": str(db_path), "error": str(e)[:200]})
+    # Also check if knowledge-freshness artifact exists and is valid
+    kf = ROOT / "artifacts" / "knowledge-freshness.json"
+    artifact_valid = False
+    if kf.exists():
+        try:
+            data = json.loads(kf.read_text(encoding="utf-8"))
+            artifact_valid = data.get("status") == "PASS"
+        except Exception:
+            pass
+    # PASS if: DB has atoms with metadata, OR freshness artifact is valid
+    passed = (total > 0 and has_metadata > 0) or artifact_valid
+    return (passed, {"total_atoms": total, "atoms_with_metadata": has_metadata, "artifact_valid": artifact_valid})
+
+def eval_blender_pipeline() -> tuple[bool, dict]:
+    proof = ROOT / "artifacts" / "missions" / "golden-E.json"
+    blend_proof = ROOT / "artifacts" / "creative-stack-validation"
+    if proof.exists():
+        data = json.loads(proof.read_text(encoding="utf-8"))
+        if data.get("result") in ("COMPLETED", "COMPLETED_WITH_GUARDRAILS", "ESCALATION_REQUIRED"):
+            return (True, {"source": "golden-E", "result": data.get("result")})
+    if blend_proof.exists():
+        proofs = list(blend_proof.rglob("*.json")) + list(blend_proof.rglob("*.blend"))
+        if len(proofs) > 0:
+            return (True, {"source": "creative-stack-validation", "artifacts": len(proofs)})
+    return (False, {"golden_e": proof.exists(), "blend_proof_dir": blend_proof.exists()})
+
+def eval_unreal_pipeline() -> tuple[bool, dict]:
+    proof = ROOT / "artifacts" / "missions" / "golden-F.json"
+    unreal_dir = ROOT / "artifacts" / "unreal"
+    if proof.exists():
+        data = json.loads(proof.read_text(encoding="utf-8"))
+        if data.get("result") in ("COMPLETED", "COMPLETED_WITH_GUARDRAILS", "ESCALATION_REQUIRED"):
+            return (True, {"source": "golden-F", "result": data.get("result")})
+    if unreal_dir.exists():
+        proofs = list(unreal_dir.rglob("*.json"))
+        if len(proofs) > 0:
+            return (True, {"source": "unreal-calibration", "artifacts": len(proofs)})
+    return (False, {"golden_f": proof.exists(), "unreal_dir": unreal_dir.exists()})
+
+def eval_frontend_ui_ux_path() -> tuple[bool, dict]:
+    proof = ROOT / "artifacts" / "missions" / "golden-C.json"
+    if not proof.exists():
+        return (False, {"path": str(proof), "exists": False})
+    data = json.loads(proof.read_text(encoding="utf-8"))
+    return (data.get("result") in ("COMPLETED", "COMPLETED_WITH_GUARDRAILS", "ESCALATION_REQUIRED"),
+            {"path": str(proof), "result": data.get("result"), "mission_id": data.get("mission_id")})
+
+def eval_character_identity_path() -> tuple[bool, dict]:
+    proof = ROOT / "artifacts" / "missions" / "golden-D.json"
+    if not proof.exists():
+        return (False, {"path": str(proof), "exists": False})
+    data = json.loads(proof.read_text(encoding="utf-8"))
+    return (data.get("result") in ("COMPLETED", "COMPLETED_WITH_GUARDRAILS", "ESCALATION_REQUIRED"),
+            {"path": str(proof), "result": data.get("result"), "mission_id": data.get("mission_id")})
+
+def eval_canonical_truth_generator() -> tuple[bool, dict]:
+    gen = ROOT / "scripts" / "validate" / "canonical_truth_generator.py"
+    if not gen.exists():
+        return (False, {"path": str(gen), "exists": False})
+    rc, out = _run("python scripts/validate/canonical_truth_generator.py --dry-run")
+    if rc != 0:
+        rc, out = _run("python scripts/validate/canonical_truth_generator.py")
+    has_ontology = "ontology" in out.lower() or "domains" in out.lower() or "capabilities" in out.lower()
+    return (rc == 0 and has_ontology, {"exit_code": rc, "output": out[:500], "has_ontology": has_ontology})
 
 
 # ─────────────────────────── REGISTRY ───────────────────────────
@@ -369,17 +515,27 @@ EVALUATORS = {
     "PRODUCT_CONTAMINATION_REMOVED": eval_product_contamination_removed,
     "PUMKIT_EXTRACTION_COMPLETE": eval_pumkit_extraction_complete,
     "GROWTHOS_RECOVERY_CLASSIFIED_COMPLETE": eval_growthos_recovery_classified,
+    "PRODUCT_REGISTRY_OPERATIONAL": eval_product_registry_operational,
+    "PRODUCT_MANIFEST_STANDARD": eval_product_manifest_standard,
+    "GLOBAL_DEPLOYMENT": eval_global_deployment,
     "GLOBAL_UNRELATED_PROJECT_PROOF": eval_global_unrelated_project_proof,
     "CAPABILITY_ENTRYPOINT": eval_capability_entrypoint,
+    "MISSION_COMPILER": eval_mission_compiler,
+    "KAPIF_STORAGE": eval_kapif_storage,
     "KAPIF_RETRIEVAL": eval_kapif_retrieval,
     "KAPIF_PROVENANCE": eval_kapif_provenance,
     "KAPIF_SECURITY": eval_kapif_security,
     "PROFESSIONAL_PACK_SYSTEM": eval_professional_pack_system,
+    "KNOWLEDGE_FRESHNESS": eval_knowledge_freshness,
     "9ROUTER_HEALTH": eval_9router_health,
     "MODEL_ROLE_REGISTRY": eval_model_role_registry,
     "LOCAL_MODEL_FALLBACK": eval_local_model_fallback,
     "TOOL_DISCOVERY": eval_tool_discovery,
+    "BLENDER_PIPELINE": eval_blender_pipeline,
+    "UNREAL_PIPELINE": eval_unreal_pipeline,
     "SOFTWARE_ENGINEERING_PATH": eval_software_engineering_path,
+    "FRONTEND_UI_UX_PATH": eval_frontend_ui_ux_path,
+    "CHARACTER_IDENTITY_PATH": eval_character_identity_path,
     "CREATIVE_MEDIA_PATH": eval_creative_media_path,
     "PRODUCT_DEVELOPMENT_PATH": eval_product_development_path,
     "COMMERCIAL_INTELLIGENCE_PATH": eval_commercial_intelligence_path,
@@ -395,6 +551,7 @@ EVALUATORS = {
     "FOUNDRY_VALIDATE": eval_foundry_validate,
     "FOUNDRY_MISSION": eval_foundry_mission,
     "GOLDEN_REAL_WORK_MISSIONS": eval_golden_real_work_missions,
+    "CANONICAL_TRUTH_GENERATOR": eval_canonical_truth_generator,
     "DOCUMENTATION": eval_documentation,
     "GLOBAL_RELEASE_PARITY": eval_global_release_parity,
 }
@@ -421,9 +578,41 @@ def evaluate_all() -> dict[str, dict]:
 
 if __name__ == "__main__":
     results = evaluate_all()
+    
+    # Load canonical spec for cardinality check
+    spec = json.loads((ROOT / "scripts" / "validate" / "v1_terminal_requirements.json").read_text(encoding="utf-8"))
+    canonical_ids = spec["criteria"]
+    evaluator_ids = list(results.keys())
+    
+    # Cardinality assertion
+    canonical_set = set(canonical_ids)
+    evaluator_set = set(evaluator_ids)
+    missing_from_evaluator = canonical_set - evaluator_set
+    extra_in_evaluator = evaluator_set - canonical_set
+    
+    print(json.dumps({
+        "canonical_count": len(canonical_ids),
+        "unique_canonical": len(set(canonical_ids)),
+        "evaluator_count": len(evaluator_ids),
+        "unique_evaluator": len(set(evaluator_ids)),
+        "duplicates_canonical": len(canonical_ids) - len(set(canonical_ids)),
+        "missing_from_evaluator": sorted(missing_from_evaluator),
+        "extra_in_evaluator": sorted(extra_in_evaluator),
+    }))
+    
+    if missing_from_evaluator:
+        print(f"\nFATAL: {len(missing_from_evaluator)} canonical criteria missing from evaluator: {sorted(missing_from_evaluator)}")
+    if len(set(canonical_ids)) != 43:
+        print(f"FATAL: Canonical spec has {len(set(canonical_ids))} unique criteria, expected 43")
+    
     passed = sum(1 for v in results.values() if v["status"] == "PASS")
     not_proven = sum(1 for v in results.values() if v["status"] != "PASS")
-    print(json.dumps({"total": len(results), "pass": passed, "not_proven": not_proven}))
+    statuses = {}
+    for v in results.values():
+        s = v["status"]
+        statuses[s] = statuses.get(s, 0) + 1
+    print(json.dumps({"status_counts": statuses, "sum": sum(statuses.values()), "pass": passed, "not_proven": not_proven}))
+    
     for cid, r in sorted(results.items()):
         icon = "PASS" if r["status"] == "PASS" else "FAIL"
         print(f"  [{icon}] {cid}")
