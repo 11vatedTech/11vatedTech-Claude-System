@@ -14,9 +14,9 @@ verification: PASS
 
 | Component | Status | Evidence |
 |---|---|---|
-| Canonical SHA | c2b310ca | git rev-parse HEAD |
+| Canonical SHA | 7fda0b5 | git rev-parse HEAD |
 | Branch | main | git rev-parse --abbrev-ref HEAD |
-| Origin/main SHA | c2b310ca | git rev-parse origin/main |
+| Origin/main SHA | 7fda0b5 | git rev-parse origin/main |
 | Push parity | YES (0 ahead, 0 behind) | git rev-list --left-right --count |
 | Worktree | CLEAN | git status --porcelain |
 | Version | 0.7.0 | sync_to_claude.py (existing convention) |
