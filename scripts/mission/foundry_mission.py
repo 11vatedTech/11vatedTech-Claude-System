@@ -15,16 +15,33 @@ EXPERIENCE_DIR = ROOT / "artifacts" / "experiences"
 
 
 def resolve_product(intent: str) -> dict[str, Any] | None:
-    """Resolve a registered product by canonical name, ID, or explicit alias."""
+    """Resolve a registered product by canonical name, ID, or explicit alias.
+    
+    Matching strategy:
+    1. Exact substring: product name/ID is a substring of the query
+    2. Word overlap: any significant word from the product name/ID appears in the query
+    3. Alias match: explicit alias matches
+    """
     if not REGISTRY_PATH.exists():
         return None
     products = json.loads(REGISTRY_PATH.read_text(encoding="utf-8")).get("products", [])
     query = intent.casefold()
+    # Stop words that don't help identify products
+    stop_words = {'the', 'a', 'an', 'is', 'are', 'for', 'and', 'or', 'of', 'to', 'in', 'on', 'at', 'by', 'with', 'from', 'review', 'inspect', 'check', 'look', 'analyze', 'assess', 'evaluate'}
+    query_words = set(w for w in query.split() if len(w) > 2 and w not in stop_words)
     for product in products:
         terms = [product.get("product_id", ""), product.get("name", "")]
         terms.extend(product.get("aliases", []))
+        # Strategy 1: substring match (original)
         if any(term and term.casefold() in query for term in terms):
             return product
+        # Strategy 2: word overlap
+        for term in terms:
+            if not term:
+                continue
+            term_words = set(w for w in term.casefold().split() if len(w) > 2)
+            if term_words & query_words:
+                return product
     return None
 
 def resolve_disciplines(intent: str) -> list[str]:
