@@ -51,7 +51,7 @@ def main():
         Gate("deployment_parity", "python scripts/install/verify_kapif_deployment.py --quiet", 30),
         Gate("sync_dry_run", "python scripts/install/sync_to_claude.py --dry-run", 30),
         Gate("truth_generator", "python scripts/validate/canonical_truth_generator.py", 30),
-        Gate("capability_truth_audit", "python scripts/validate/capability_truth_audit.py", 30),
+        Gate("capability_truth_audit", "python scripts/validate/capability_truth_audit.py --out artifacts/foundry-validation.json", 30),
         Gate("env_doctor", "python scripts/doctor/foundry_doctor.py", 30),
     ]
 

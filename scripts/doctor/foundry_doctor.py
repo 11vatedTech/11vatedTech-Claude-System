@@ -31,17 +31,23 @@ def run_cmd(cmd, timeout=10):
 
 def check_git():
     c = Check("FOUNDRY_GIT")
-    root = run_cmd("git rev-parse --show-toplevel")
+    if not (ROOT / ".git").exists():
+        manifests = sorted((GLOBAL / "deployments").glob("*.json")) if (GLOBAL / "deployments").exists() else []
+        if ROOT == GLOBAL_CAP and manifests:
+            latest = json.loads(manifests[-1].read_text(encoding="utf-8"))
+            return c.ok(f"GLOBAL_RUNTIME=PASS deployment_id={latest.get('id')} version={latest.get('version')} git_required=false")
+        return c.fail(f"GIT_REPOSITORY_VALID=FAIL root={ROOT}")
+    root = run_cmd(["git", "-C", str(ROOT), "rev-parse", "--show-toplevel"])
     if not root or "11vatedTech-Claude-System" not in root:
         return c.fail(f"GIT_REPOSITORY_VALID=FAIL root={root}")
-    head = run_cmd("git rev-parse HEAD")
-    branch = run_cmd("git rev-parse --abbrev-ref HEAD")
-    dirty = run_cmd("git status --porcelain=v1")
+    head = run_cmd(["git", "-C", str(ROOT), "rev-parse", "HEAD"])
+    branch = run_cmd(["git", "-C", str(ROOT), "rev-parse", "--abbrev-ref", "HEAD"])
+    dirty = run_cmd(["git", "-C", str(ROOT), "status", "--porcelain=v1"])
     dirty_count = len(dirty.splitlines()) if dirty else 0
-    remote = run_cmd("git remote get-url origin")
+    remote = run_cmd(["git", "-C", str(ROOT), "remote", "get-url", "origin"])
     if dirty_count:
         return c.warn(f"GIT_REPOSITORY_VALID=PASS GIT_WORKTREE_CLEAN=FAIL dirty={dirty_count} branch={branch}")
-    return c.ok(f"GIT_REPOSITORY_VALID=PASS GIT_WORKTREE_CLEAN=PASS GIT_RELEASE_READY=PASS HEAD={head[:8]} branch={branch} remote={'yes' if remote else 'no'}")
+    return c.ok(f"GIT_REPOSITORY_VALID=PASS GIT_WORKTREE_CLEAN=PASS GIT_RELEASE_READY=PASS HEAD={head[:8] if head else 'unknown'} branch={branch} remote={'yes' if remote else 'no'}")
 
 def check_deployment():
     c = Check("GLOBAL_DEPLOYMENT")
@@ -127,8 +133,10 @@ def check_products():
 
 def check_security():
     c = Check("SECURITY")
-    # Check for secrets in tracked files
-    secrets = run_cmd('git log --all --diff-filter=A -p -- "*.pem" "*.key" "*.env" 2>/dev/null | grep -c "PRIVATE" || echo 0')
+    if not (ROOT / ".git").exists():
+        sensitive = [p for p in ROOT.rglob("*") if p.is_file() and p.suffix.lower() in {".pem", ".key", ".env"}]
+        return c.ok(f"global_sensitive_files={len(sensitive)} git_history_check=not_applicable")
+    secrets = run_cmd('git -C "' + str(ROOT) + '" log --all --diff-filter=A -p -- "*.pem" "*.key" "*.env" 2>/dev/null | grep -c "PRIVATE" || echo 0')
     return c.ok(f"secret_history_entries={secrets or '0'}")
 
 def check_contamination():

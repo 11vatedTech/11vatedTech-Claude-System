@@ -30,6 +30,7 @@ import argparse
 import hashlib
 import json
 import shutil
+import subprocess
 import sys
 import time
 from pathlib import Path
@@ -46,6 +47,7 @@ BACKUPS_DIR = CLAUDE_DIR / "backups"
 
 # repo docs -> capability-system destination names
 CAPSYS_MAP: dict[str, str] = {
+    "VERSION": "VERSION",
     "docs/capability-registry.md": "capability-registry.md",
     "docs/memory-architecture.md": "memory-architecture.md",
     "docs/source-ledger.md": "source-ledger.md",
@@ -81,6 +83,12 @@ CAPSYS_MAP: dict[str, str] = {
     "config/resource-packs/frontend-ui-ux-core.json": "config/resource-packs/frontend-ui-ux-core.json",
     "config/resource-packs/art-direction-lookdev-core.json": "config/resource-packs/art-direction-lookdev-core.json",
     "config/resource-packs/semantic-engineering-core.json": "config/resource-packs/semantic-engineering-core.json",
+    "config/resource-packs/composition-value-color-core.json": "config/resource-packs/composition-value-color-core.json",
+    "config/resource-packs/typography-information-design-core.json": "config/resource-packs/typography-information-design-core.json",
+    "config/resource-packs/ui-ux-interaction-core.json": "config/resource-packs/ui-ux-interaction-core.json",
+    "config/resource-packs/motion-design-core.json": "config/resource-packs/motion-design-core.json",
+    "config/kapif/cross-pack-graph.json": "config/kapif/cross-pack-graph.json",
+    "config/kapif/source-scope.json": "config/kapif/source-scope.json",
     "config/missions/capability-ascension-20260822.json": "config/missions/capability-ascension-20260822.json",
     "config/model-capability-registry.json": "config/model-capability-registry.json",
     "artifacts/ascension/model-selection-matrix.json": "artifacts/ascension/model-selection-matrix.json",
@@ -130,14 +138,19 @@ CAPSYS_MAP: dict[str, str] = {
     "scripts/kapif/visual_intelligence.py": "scripts/kapif/visual_intelligence.py",
     "scripts/kapif/canon_pipeline.py": "scripts/kapif/canon_pipeline.py",
     "scripts/kapif/security.py": "scripts/kapif/security.py",
+    "scripts/kapif/content_normalizer.py": "scripts/kapif/content_normalizer.py",
     "scripts/kapif/mission_compiler.py": "scripts/kapif/mission_compiler.py",
     "scripts/kapif/knowledge_extractor.py": "scripts/kapif/knowledge_extractor.py",
+    "scripts/kapif/closure_gates_pass06.py": "scripts/kapif/closure_gates_pass06.py",
+    "scripts/kapif/golden_tasks_m002.py": "scripts/kapif/golden_tasks_m002.py",
     "scripts/kapif/behavioral_validation_m0021.py": "scripts/kapif/behavioral_validation_m0021.py",
     "scripts/kapif/injection_e2e_validation.py": "scripts/kapif/injection_e2e_validation.py",
     "scripts/kapif/pack_claim_audit.py": "scripts/kapif/pack_claim_audit.py",
     "scripts/kapif/visual_grounding_benchmark.py": "scripts/kapif/visual_grounding_benchmark.py",
     "scripts/kapif/visual_council.py": "scripts/kapif/visual_council.py",
     "scripts/install/verify_kapif_deployment.py": "scripts/install/verify_kapif_deployment.py",
+    "scripts/install/sync_to_claude.py": "scripts/install/sync_to_claude.py",
+    "scripts/validate/tool_resolver.py": "scripts/validate/tool_resolver.py",
     "config/foundry-failure-patterns.json": "config/foundry-failure-patterns.json",
     "config/M002-truth-correction.json": "config/M002-truth-correction.json",
     "scripts/doctor/foundry_doctor.py": "scripts/doctor/foundry_doctor.py",
@@ -169,9 +182,25 @@ def manifest_for(sources: dict[str, Path]) -> dict[str, str]:
     return {name: "sha256:" + sha256_file(p) for name, p in sources.items()}
 
 
+def source_mode() -> bool:
+    return (ROOT / "plugin" / "skills").exists() and (ROOT / "plugin" / "agents").exists()
+
+
+def latest_manifest() -> dict[str, Any] | None:
+    if not DEPLOYMENTS_DIR.exists():
+        return None
+    manifests = sorted(DEPLOYMENTS_DIR.glob("*.json"))
+    if not manifests:
+        return None
+    return json.loads(manifests[-1].read_text(encoding="utf-8"))
+
+
 def collect_skills() -> dict[str, Path]:
     out: dict[str, Path] = {}
-    for d in (ROOT / "plugin" / "skills").iterdir():
+    skills_dir = ROOT / "plugin" / "skills"
+    if not skills_dir.exists():
+        return out
+    for d in skills_dir.iterdir():
         if d.is_dir() and (d / "SKILL.md").exists():
             out[f"skills/{d.name}/SKILL.md"] = d / "SKILL.md"
     return out
@@ -179,7 +208,10 @@ def collect_skills() -> dict[str, Path]:
 
 def collect_agents() -> dict[str, Path]:
     out: dict[str, Path] = {}
-    for f in (ROOT / "plugin" / "agents").glob("*.md"):
+    agents_dir = ROOT / "plugin" / "agents"
+    if not agents_dir.exists():
+        return out
+    for f in agents_dir.glob("*.md"):
         out[f"agents/{f.name}"] = f
     return out
 
@@ -211,9 +243,10 @@ def dst_for(name: str) -> Path:
     raise ValueError(f"unknown target: {name}")
 
 
-def current_state() -> dict[str, str]:
+def current_state(names: list[str] | None = None) -> dict[str, str]:
     out: dict[str, str] = {}
-    for name in collect_all():
+    managed = names if names is not None else list(collect_all())
+    for name in managed:
         p = dst_for(name)
         if p.exists():
             out[name] = "sha256:" + sha256_file(p)
@@ -222,6 +255,8 @@ def current_state() -> dict[str, str]:
 
 def detect_stale() -> list[str]:
     """11vt-* skills/agents present globally but absent from the repo."""
+    if not source_mode():
+        return []
     repo_skills = {d.name for d in (ROOT / "plugin" / "skills").iterdir() if d.is_dir()}
     repo_agents = {f.stem for f in (ROOT / "plugin" / "agents").glob("*.md")}
     stale: list[str] = []
@@ -263,6 +298,25 @@ def write_file_safely(name: str, src: Path) -> None:
 
 
 def sync(dry_run: bool = False, prune: bool = False, no_backup: bool = False) -> int:
+    manifest = latest_manifest() if not source_mode() else None
+    if manifest:
+        desired = manifest.get("files", {})
+        sources: dict[str, Path] = {}
+        current = current_state(list(desired))
+        to_write = [n for n in desired if current.get(n) != desired[n]]
+        stale: list[str] = []
+        print(f"version={read_version()}")
+        print(f"managed_files={len(desired)}")
+        print(f"to_update={len(to_write)}")
+        for n in sorted(to_write):
+            print(f"  update {n}")
+        print("stale_11vt_removable=[]")
+        if dry_run:
+            print("dry_run=True no_changes_written")
+            return 0
+        print("global_runtime_source_absent=True sync_not_available_from_deployed_runtime")
+        return 1
+
     sources = collect_all()
     current = current_state()
     desired = manifest_for(sources)
@@ -298,10 +352,17 @@ def sync(dry_run: bool = False, prune: bool = False, no_backup: bool = False) ->
             p.unlink(missing_ok=True)
         print(f"  pruned {s}")
 
+    source_sha = None
+    if (ROOT / ".git").exists():
+        try:
+            source_sha = subprocess.run(["git", "-C", str(ROOT), "rev-parse", "HEAD"], capture_output=True, text=True, timeout=10).stdout.strip() or None
+        except Exception:
+            source_sha = None
     manifest = {
         "id": deployment_id,
         "created": time.strftime("%Y-%m-%dT%H:%M:%S"),
         "version": read_version(),
+        "source_sha": source_sha,
         "backup_dir": str(backup_dir) if backup_dir else None,
         "updated": sorted(to_write),
         "pruned": stale,

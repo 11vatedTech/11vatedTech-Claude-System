@@ -29,11 +29,12 @@ from typing import Any
 
 
 def _find_foundry_root(start: Path) -> Path:
-    """Resolve the repository root from this file, independent of cwd."""
+    """Resolve the Foundry source or deployed runtime root, independent of cwd."""
     for candidate in [start, *start.parents]:
-        if (candidate / ".git").exists() and (candidate / "config").exists() and (candidate / "scripts").exists():
+        has_runtime_shape = (candidate / "config").exists() and (candidate / "scripts").exists()
+        if has_runtime_shape and ((candidate / ".git").exists() or (candidate / "VERSION").exists()):
             return candidate
-    raise RuntimeError(f"Foundry Git root not found from {start}")
+    raise RuntimeError(f"Foundry root not found from {start}")
 
 
 ROOT = _find_foundry_root(Path(__file__).resolve().parent)
