@@ -76,6 +76,7 @@ data/kapif/snapshots/
 
 # Mission execution artifacts (ephemeral)
 artifacts/MISSION-*.json
+artifacts/experiences/EXP-*.json
 
 # External/tool distributions and generated binary evidence
 *.exe
