@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11vatedTech — Living Material</title>
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  body {
+    background: #06060a;
+    overflow: hidden;
+    cursor: crosshair;
+    font-family: 'Georgia', serif;
+  }
+  canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+  }
+  .ui-overlay {
+    position: fixed;
+    bottom: 2.5rem;
+    left: 2.5rem;
+    z-index: 10;
+    pointer-events: none;
+  }
+  .ui-label {
+    font-size: 0.55rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(201,169,110,0.35);
+    line-height: 1.8;
+  }
+  .ui-title {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: rgba(212,212,220,0.5);
+    margin-top: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+  .perf {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    color: rgba(201,169,110,0.2);
+    font-family: monospace;
+    z-index: 10;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    canvas { display: none; }
+    body::after {
+      content: 'Living material — reduced motion preferred';
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(201,169,110,0.3);
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+    }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="c"></canvas>
+
+<div class="ui-overlay">
+  <div class="ui-label">11vatedTech — Shader Intelligence</div>
+  <div class="ui-title">Living Material No. 001</div>
+</div>
+<div class="perf" id="perf"></div>
+
+<script>
+// ═══════════════════════════════════════════════════
+// LIVING MATERIAL — Art-directed shader experience
+// Not a tech demo. A directed material study.
+// ═══════════════════════════════════════════════════
+
+const canvas = document.getElementById('c');
+const gl = canvas.getContext('webgl2') || canvas.getContext('webgl');
+if (!gl) { document.body.innerHTML = '<p style="color:#666;padding:2rem">WebGL not supported</p>'; }
+
+// Resize
+function resize() {
+  const dpr = Math.min(window.devicePixelRatio, 2);
+  canvas.width = window.innerWidth * dpr;
+  canvas.height = window.innerHeight * dpr;
+  gl.viewport(0, 0, canvas.width, canvas.height);
+}
+resize();
+window.addEventListener('resize', resize);
+
+// Mouse tracking (smoothed)
+const mouse = { x: 0.5, y: 0.5, tx: 0.5, ty: 0.5 };
+window.addEventListener('mousemove', e => {
+  mouse.tx = e.clientX / window.innerWidth;
+  mouse.ty = 1.0 - e.clientY / window.innerHeight;
+});
+window.addEventListener('touchmove', e => {
+  const t = e.touches[0];
+  mouse.tx = t.clientX / window.innerWidth;
+  mouse.ty = 1.0 - t.clientY / window.innerHeight;
+}, { passive: true });
+
+// ═══════════════════════════════════════════════════
+// SHADER: Iridescent fluid material
+// Art direction: molten moonlight — luminous, 
+// organic, spectral breakup, controlled depth
+// ═══════════════════════════════════════════════════
+
+const vertSrc = `
+attribute vec2 a_position;
+varying vec2 v_uv;
+void main() {
+  v_uv = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+
+const fragSrc = `
+precision highp float;
+varying vec2 v_uv;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+
+// --- Noise primitives ---
+vec3 mod289(vec3 x) { return x - floor(x * (1.0/289.0)) * 289.0; }
+vec2 mod289(vec2 x) { return x - floor(x * (1.0/289.0)) * 289.0; }
+vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+
+float snoise(vec2 v) {
+  const vec4 C = vec4(0.211324865405187, 0.366025403784439,
+                       -0.577350269189626, 0.024390243902439);
+  vec2 i = floor(v + dot(v, C.yy));
+  vec2 x0 = v - i + dot(i, C.xx);
+  vec2 i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+  vec4 x12 = x0.xyxy + C.xxzz;
+  x12.xy -= i1;
+  i = mod289(i);
+  vec3 p = permute(permute(i.y + vec3(0.0, i1.y, 1.0)) + i.x + vec3(0.0, i1.x, 1.0));
+  vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
+  m = m*m; m = m*m;
+  vec3 x = 2.0 * fract(p * C.www) - 1.0;
+  vec3 h = abs(x) - 0.5;
+  vec3 ox = floor(x + 0.5);
+  vec3 a0 = x - ox;
+  m *= 1.79284291400159 - 0.85373472095314 * (a0*a0 + h*h);
+  vec3 g;
+  g.x = a0.x * x0.x + h.x * x0.y;
+  g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+  return 130.0 * dot(m, g);
+}
+
+// FBM
+float fbm(vec2 p) {
+  float f = 0.0;
+  float w = 0.5;
+  for (int i = 0; i < 5; i++) {
+    f += w * snoise(p);
+    p *= 2.0;
+    w *= 0.5;
+  }
+  return f;
+}
+
+// Domain warp — organic fluid distortion
+float domainWarp(vec2 p, float t) {
+  vec2 q = vec2(fbm(p + vec2(0.0, 0.0)),
+                 fbm(p + vec2(5.2, 1.3)));
+  vec2 r = vec2(fbm(p + 4.0*q + vec2(1.7, 9.2) + 0.15*t),
+                 fbm(p + 4.0*q + vec2(8.3, 2.8) + 0.126*t));
+  return fbm(p + 3.5*r);
+}
+
+// Spectral color from angle
+vec3 spectral(float t) {
+  vec3 a = vec3(0.5);
+  vec3 b = vec3(0.5);
+  vec3 c = vec3(1.0, 1.0, 1.0);
+  vec3 d = vec3(0.00, 0.33, 0.67);
+  return a + b * cos(6.28318 * (c * t + d));
+}
+
+void main() {
+  vec2 uv = v_uv;
+  float aspect = u_resolution.x / u_resolution.y;
+  vec2 p = (uv - 0.5) * vec2(aspect, 1.0);
+  
+  // Smooth mouse
+  vec2 m = u_mouse;
+  float t = u_time * 0.15;
+  
+  // Mouse field — subtle gravitational pull
+  vec2 toMouse = m - uv;
+  float mouseDist = length(toMouse);
+  float mouseField = smoothstep(0.5, 0.0, mouseDist) * 0.15;
+  
+  // Domain warping for organic fluid
+  float n1 = domainWarp(p * 1.8 + vec2(t * 0.3, t * 0.2), t);
+  
+  // Secondary warp — finer detail
+  float n2 = domainWarp(p * 3.5 + vec2(-t * 0.2, t * 0.15) + n1 * 0.3, t * 1.3);
+  
+  // Combine
+  float n = n1 * 0.6 + n2 * 0.4 + mouseField;
+  
+  // Iridescent color — thin-film interference approximation
+  float angle = atan(p.y, p.x);
+  float spectralInput = n * 2.0 + angle * 0.3 + t * 0.5;
+  vec3 iridescent = spectral(spectralInput);
+  
+  // Base material color — dark with spectral highlights
+  vec3 baseColor = vec3(0.02, 0.02, 0.03);
+  
+  // Fresnel-like edge response
+  float fresnel = pow(1.0 - abs(n), 3.0) * 0.8;
+  
+  // Luminous regions
+  float luminance = smoothstep(0.3, 0.8, n);
+  
+  // Combine material
+  vec3 color = baseColor;
+  color += iridescent * luminance * 0.35;
+  color += iridescent * fresnel * 0.2;
+  
+  // Warm gold accent in highlights
+  vec3 gold = vec3(0.79, 0.66, 0.43);
+  color += gold * fresnel * luminance * 0.15;
+  
+  // Cool blue in shadows
+  vec3 coolShadow = vec3(0.25, 0.35, 0.55);
+  float shadowMask = smoothstep(0.4, 0.0, n);
+  color += coolShadow * shadowMask * 0.06;
+  
+  // Soft vignette
+  float vignette = 1.0 - dot(uv - 0.5, uv - 0.5) * 1.5;
+  color *= vignette;
+  
+  // Filmic tone mapping
+  color = color / (color + vec3(1.0));
+  
+  // Subtle grain
+  float grain = (snoise(uv * 500.0 + t * 100.0) * 0.5 + 0.5) * 0.02;
+  color += grain;
+  
+  gl_FragColor = vec4(color, 1.0);
+}`;
+
+// Compile
+function createShader(type, src) {
+  const s = gl.createShader(type);
+  gl.shaderSource(s, src);
+  gl.compileShader(s);
+  if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+    console.error(gl.getShaderInfoLog(s));
+    return null;
+  }
+  return s;
+}
+
+const vs = createShader(gl.VERTEX_SHADER, vertSrc);
+const fs = createShader(gl.FRAGMENT_SHADER, fragSrc);
+const prog = gl.createProgram();
+gl.attachShader(prog, vs);
+gl.attachShader(prog, fs);
+gl.linkProgram(prog);
+gl.useProgram(prog);
+
+// Fullscreen quad
+const buf = gl.createBuffer();
+gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+const aPos = gl.getAttribLocation(prog, 'a_position');
+gl.enableVertexAttribArray(aPos);
+gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
+
+// Uniforms
+const uTime = gl.getUniformLocation(prog, 'u_time');
+const uRes = gl.getUniformLocation(prog, 'u_resolution');
+const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+// Render loop
+let lastTime = 0;
+const perfEl = document.getElementById('perf');
+let frameCount = 0;
+let fpsAccum = 0;
+
+function render(now) {
+  const dt = (now - lastTime) / 1000;
+  lastTime = now;
+  
+  // Smooth mouse
+  mouse.x += (mouse.tx - mouse.x) * 0.03;
+  mouse.y += (mouse.ty - mouse.y) * 0.03;
+  
+  gl.uniform1f(uTime, now * 0.001);
+  gl.uniform2f(uRes, canvas.width, canvas.height);
+  gl.uniform2f(uMouse, mouse.x, mouse.y);
+  
+  gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+  
+  // FPS
+  frameCount++;
+  fpsAccum += dt;
+  if (fpsAccum >= 1.0) {
+    perfEl.textContent = Math.round(frameCount / fpsAccum) + ' FPS';
+    frameCount = 0;
+    fpsAccum = 0;
+  }
+  
+  requestAnimationFrame(render);
+}
+requestAnimationFrame(render);
+</script>
+</body>
+</html>

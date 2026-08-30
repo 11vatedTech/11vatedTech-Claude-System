@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11vatedTech — Vector Identity</title>
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  :root {
+    --ink: #0a0a0f;
+    --paper: #f5f0e8;
+    --cream: #ebe4d6;
+    --charcoal: #2a2a2e;
+    --gold: #b8955a;
+    --gold-dim: #8a6d3e;
+  }
+  
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Georgia', serif;
+    overflow-x: hidden;
+  }
+  
+  /* ═══════ FULL-PAGE IDENTITY COMPOSITION ═══════ */
+  .identity-composition {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+  
+  /* Left: SVG procedural illustration */
+  .identity-left {
+    position: relative;
+    background: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .identity-left svg {
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+  }
+  
+  /* Right: typographic treatment */
+  .identity-right {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 5rem;
+  }
+  
+  /* ═══════ TYPOGRAPHY SYSTEM ═══════ */
+  .type-system {
+    position: relative;
+  }
+  
+  .type-overline {
+    font-size: 0.6rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 3rem;
+    font-weight: 400;
+  }
+  
+  .type-hero {
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 100;
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    margin-bottom: 2rem;
+  }
+  
+  .type-hero .thin {
+    font-weight: 100;
+    color: var(--charcoal);
+  }
+  
+  .type-hero .bold {
+    font-weight: 700;
+    font-style: italic;
+    color: var(--gold);
+  }
+  
+  .type-rule {
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    margin: 2.5rem 0;
+  }
+  
+  .type-body {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--charcoal);
+    max-width: 380px;
+    font-weight: 400;
+    opacity: 0.8;
+  }
+  
+  .type-footer {
+    margin-top: 4rem;
+    display: flex;
+    gap: 3rem;
+    align-items: baseline;
+  }
+  
+  .type-footer span {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+  
+  /* ═══════ PROCEDURAL SVG ELEMENTS ═══════ */
+  .proc-lines {
+    position: absolute;
+    top: 10%;
+    right: -5%;
+    width: 120px;
+    height: 80%;
+    pointer-events: none;
+  }
+  
+  .proc-dots {
+    position: absolute;
+    bottom: 8%;
+    left: 5%;
+    display: flex;
+    gap: 8px;
+  }
+  
+  .proc-dots span {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.4;
+  }
+  
+  .proc-dots span:nth-child(2) { opacity: 0.25; width: 3px; height: 3px; }
+  .proc-dots span:nth-child(3) { opacity: 0.15; width: 2px; height: 2px; }
+  
+  /* ═══════ RESPONSIVE ═══════ */
+  @media (max-width: 900px) {
+    .identity-composition {
+      grid-template-columns: 1fr;
+    }
+    .identity-left {
+      min-height: 50vh;
+    }
+    .identity-right {
+      padding: 3rem 2rem;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .rotating-element { animation: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="identity-composition">
+  
+  <!-- Left: Procedural SVG Illustration -->
+  <div class="identity-left">
+    <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ig1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#b8955a" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="#8a6d3e" stop-opacity="0.3"/>
+        </linearGradient>
+        <linearGradient id="ig2" x1="0%" y1="100%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#f5f0e8" stop-opacity="0.1"/>
+          <stop offset="100%" stop-color="#f5f0e8" stop-opacity="0.03"/>
+        </linearGradient>
+        <clipPath id="frameClip">
+          <rect x="40" y="40" width="320" height="420" rx="0"/>
+        </clipPath>
+      </defs>
+      
+      <!-- Background frame -->
+      <rect x="40" y="40" width="320" height="420" fill="none" stroke="url(#ig1)" stroke-width="0.5" opacity="0.3"/>
+      
+      <g clip-path="url(#frameClip)">
+        <!-- Procedural organic form — layered bezier curves -->
+        <path d="M200 80 C260 120, 300 200, 280 280 C260 360, 200 400, 200 420 C200 400, 140 360, 120 280 C100 200, 140 120, 200 80Z" 
+              fill="url(#ig2)" stroke="url(#ig1)" stroke-width="0.8"/>
+        
+        <!-- Inner organic rings — concentric organic forms -->
+        <path d="M200 120 C240 145, 265 195, 255 250 C245 305, 215 340, 200 355 C185 340, 155 305, 145 250 C135 195, 160 145, 200 120Z" 
+              fill="none" stroke="#b8955a" stroke-width="0.6" opacity="0.4"/>
+        
+        <path d="M200 160 C225 178, 240 210, 235 245 C230 280, 215 305, 200 315 C185 305, 170 280, 165 245 C160 210, 175 178, 200 160Z" 
+              fill="none" stroke="#b8955a" stroke-width="0.4" opacity="0.25"/>
+        
+        <!-- Central nucleus -->
+        <circle cx="200" cy="235" r="8" fill="#b8955a" opacity="0.15"/>
+        <circle cx="200" cy="235" r="2" fill="#b8955a" opacity="0.6"/>
+        
+        <!-- Radiating construction lines -->
+        <line x1="200" y1="235" x2="200" y2="80" stroke="#f5f0e8" stroke-width="0.3" opacity="0.1"/>
+        <line x1="200" y1="235" x2="280" y2="280" stroke="#f5f0e8" stroke-width="0.3" opacity="0.08"/>
+        <line x1="200" y1="235" x2="120" y2="280" stroke="#f5f0e8" stroke-width="0.3" opacity="0.08"/>
+        <line x1="200" y1="235" x2="320" y2="200" stroke="#f5f0e8" stroke-width="0.3" opacity="0.06"/>
+        <line x1="200" y1="235" x2="80" y2="200" stroke="#f5f0e8" stroke-width="0.3" opacity="0.06"/>
+        
+        <!-- Procedural texture dots -->
+        <circle cx="170" cy="180" r="1" fill="#b8955a" opacity="0.2"/>
+        <circle cx="230" cy="180" r="1" fill="#b8955a" opacity="0.2"/>
+        <circle cx="160" cy="280" r="0.8" fill="#f5f0e8" opacity="0.1"/>
+        <circle cx="240" cy="280" r="0.8" fill="#f5f0e8" opacity="0.1"/>
+        <circle cx="200" cy="150" r="0.6" fill="#b8955a" opacity="0.3"/>
+        <circle cx="200" cy="320" r="0.6" fill="#b8955a" opacity="0.3"/>
+      </g>
+      
+      <!-- Corner marks — precise, geometric -->
+      <line x1="40" y1="55" x2="55" y2="55" stroke="#b8955a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="40" y1="40" x2="40" y2="55" stroke="#b8955a" stroke-width="0.5" opacity="0.4"/>
+      
+      <line x1="360" y1="445" x2="345" y2="445" stroke="#b8955a" stroke-width="0.5" opacity="0.4"/>
+      <line x1="360" y1="460" x2="360" y2="445" stroke="#b8955a" stroke-width="0.5" opacity="0.4"/>
+      
+      <!-- Dimension annotations -->
+      <text x="200" y="478" text-anchor="middle" font-family="Georgia, serif" font-size="6" fill="#b8955a" opacity="0.3" letter-spacing="0.2em">PROCEDURAL FORM NO. 001</text>
+    </svg>
+  </div>
+  
+  <!-- Right: Typographic Identity -->
+  <div class="identity-right">
+    <div class="type-system">
+      <p class="type-overline">Identity System — 2026</p>
+      
+      <h1 class="type-hero">
+        <span class="thin">Eleven</span><br>
+        <span class="bold">vated</span>
+      </h1>
+      
+      <div class="type-rule"></div>
+      
+      <p class="type-body">
+        Intelligence forged through structured craft. 
+        Every system deliberate. Every output intentional. 
+        No accidental composition.
+      </p>
+      
+      <div class="type-footer">
+        <span>Founded 2026</span>
+        <span>Intelligence Foundry</span>
+      </div>
+    </div>
+    
+    <!-- Procedural accent lines -->
+    <svg class="proc-lines" viewBox="0 0 120 400" xmlns="http://www.w3.org/2000/svg">
+      <line x1="60" y1="0" x2="60" y2="400" stroke="#b8955a" stroke-width="0.3" opacity="0.1"/>
+      <line x1="80" y1="50" x2="80" y2="350" stroke="#b8955a" stroke-width="0.3" opacity="0.06"/>
+      <line x1="40" y1="100" x2="40" y2="300" stroke="#b8955a" stroke-width="0.3" opacity="0.04"/>
+      <circle cx="60" cy="200" r="3" fill="none" stroke="#b8955a" stroke-width="0.3" opacity="0.15"/>
+    </svg>
+    
+    <div class="proc-dots">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+  
+</div>
+
+</body>
+</html>

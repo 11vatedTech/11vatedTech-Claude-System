@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11vatedTech — Hybrid Hero</title>
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  
+  :root {
+    --bg: #050508;
+    --gold: #c9a96e;
+    --gold-dim: rgba(201,169,110,0.15);
+    --chrome: #d4d4dc;
+    --chrome-dim: rgba(212,212,220,0.4);
+  }
+  
+  body {
+    background: var(--bg);
+    color: var(--chrome);
+    font-family: 'Georgia', serif;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  /* ═══════ LAYER 0: GENERATIVE ATMOSPHERE (Canvas2D) ═══════ */
+  #atmosphere {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+  }
+  
+  /* ═══════ LAYER 1: WebGL MATERIAL FIELD ═══════ */
+  #material-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.6;
+    mix-blend-mode: screen;
+  }
+  
+  /* ═══════ LAYER 2: SVG IDENTITY ═══════ */
+  .svg-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  
+  .svg-layer svg {
+    width: min(70vw, 600px);
+    height: auto;
+    opacity: 0.2;
+  }
+  
+  /* ═══════ LAYER 3: TYPOGRAPHY ═══════ */
+  .type-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .type-pre {
+    font-size: clamp(0.5rem, 1vw, 0.7rem);
+    letter-spacing: 0.6em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.5;
+    margin-bottom: 2rem;
+    animation: fadeSlideUp 1.5s ease-out 0.3s both;
+  }
+  
+  .type-hero {
+    font-size: clamp(3rem, 9vw, 8rem);
+    font-weight: 100;
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    color: var(--chrome);
+    margin-bottom: 1.5rem;
+    animation: fadeSlideUp 1.5s ease-out 0.6s both;
+  }
+  
+  .type-hero .accent {
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 300;
+  }
+  
+  .type-rule {
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 2rem;
+    animation: ruleExpand 1.5s ease-out 1.2s both;
+  }
+  
+  .type-sub {
+    font-size: clamp(0.85rem, 1.3vw, 1.05rem);
+    color: var(--chrome-dim);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+    max-width: 450px;
+    animation: fadeSlideUp 1.5s ease-out 1.5s both;
+  }
+  
+  /* ═══════ LAYER 4: INTERACTIVE LIGHT FOLLOW ═══════ */
+  .light-follow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,169,110,0.04) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 4;
+    transition: left 0.3s ease-out, top 0.3s ease-out;
+    mix-blend-mode: screen;
+  }
+  
+  /* ═══════ LAYER 5: GRAIN ═══════ */
+  .grain-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0.03;
+    mix-blend-mode: overlay;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px;
+  }
+  
+  /* ═══════ CORNER MARKS ═══════ */
+  .corner {
+    position: fixed;
+    z-index: 6;
+    pointer-events: none;
+  }
+  .corner svg { width: 30px; height: 30px; opacity: 0.15; }
+  .corner-tl { top: 2rem; left: 2rem; }
+  .corner-tr { top: 2rem; right: 2rem; transform: scaleX(-1); }
+  .corner-bl { bottom: 2rem; left: 2rem; transform: scaleY(-1); }
+  .corner-br { bottom: 2rem; right: 2rem; transform: scale(-1); }
+  
+  /* ═══════ FOOTER ═══════ */
+  .footer-layer {
+    position: fixed;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    z-index: 6;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    pointer-events: none;
+  }
+  
+  .footer-layer span {
+    font-size: 0.5rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.2;
+  }
+  
+  /* ═══════ ANIMATIONS ═══════ */
+  @keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes ruleExpand {
+    from { width: 0; opacity: 0; }
+    to { width: 60px; opacity: 0.4; }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .svg-layer svg { width: 90vw; }
+    .corner { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LAYER 0: Canvas2D generative atmosphere -->
+<canvas id="atmosphere"></canvas>
+
+<!-- LAYER 1: WebGL material field -->
+<canvas id="material-canvas"></canvas>
+
+<!-- LAYER 2: SVG procedural identity -->
+<div class="svg-layer">
+  <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="hg1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#c9a96e" stop-opacity="0.6"/>
+        <stop offset="50%" stop-color="#e8d5a3" stop-opacity="0.3"/>
+        <stop offset="100%" stop-color="#7a6340" stop-opacity="0.5"/>
+      </linearGradient>
+    </defs>
+    <!-- Outer frame -->
+    <rect x="20" y="20" width="360" height="360" fill="none" stroke="url(#hg1)" stroke-width="0.3" opacity="0.2"/>
+    <!-- Organic sculptural form -->
+    <path d="M200 50 C280 90, 340 170, 320 250 C300 330, 220 370, 200 380 C180 370, 100 330, 80 250 C60 170, 120 90, 200 50Z" 
+          fill="none" stroke="url(#hg1)" stroke-width="0.6"/>
+    <path d="M200 100 C250 125, 290 175, 280 230 C270 285, 225 320, 200 335 C175 320, 130 285, 120 230 C110 175, 150 125, 200 100Z" 
+          fill="none" stroke="#c9a96e" stroke-width="0.4" opacity="0.25"/>
+    <!-- Center -->
+    <circle cx="200" cy="215" r="20" fill="none" stroke="#c9a96e" stroke-width="0.3" opacity="0.15"/>
+    <circle cx="200" cy="215" r="3" fill="#c9a96e" opacity="0.3"/>
+    <!-- Construction lines -->
+    <line x1="200" y1="50" x2="200" y2="380" stroke="#c9a96e" stroke-width="0.2" opacity="0.06"/>
+    <line x1="80" y1="250" x2="320" y2="170" stroke="#c9a96e" stroke-width="0.2" opacity="0.04"/>
+  </svg>
+</div>
+
+<!-- LAYER 3: Typography -->
+<div class="type-layer">
+  <p class="type-pre">Visual Production Intelligence</p>
+  <h1 class="type-hero">Beyond<br><span class="accent">Code</span></h1>
+  <div class="type-rule"></div>
+  <p class="type-sub">Where generative intelligence meets procedural craft. Multi-medium synthesis directed by taste.</p>
+</div>
+
+<!-- LAYER 4: Interactive light -->
+<div class="light-follow" id="lightFollow"></div>
+
+<!-- LAYER 5: Grain -->
+<div class="grain-layer"></div>
+
+<!-- Corner marks -->
+<div class="corner corner-tl"><svg viewBox="0 0 30 30"><path d="M0 15 L0 0 L15 0" fill="none" stroke="#c9a96e" stroke-width="0.5"/></svg></div>
+<div class="corner corner-tr"><svg viewBox="0 0 30 30"><path d="M0 15 L0 0 L15 0" fill="none" stroke="#c9a96e" stroke-width="0.5"/></svg></div>
+<div class="corner corner-bl"><svg viewBox="0 0 30 30"><path d="M0 15 L0 0 L15 0" fill="none" stroke="#c9a96e" stroke-width="0.5"/></svg></div>
+<div class="corner corner-br"><svg viewBox="0 0 30 30"><path d="M0 15 L0 0 L15 0" fill="none" stroke="#c9a96e" stroke-width="0.5"/></svg></div>
+
+<!-- Footer -->
+<div class="footer-layer">
+  <span>11vatedTech</span>
+  <span>Hybrid Synthesis</span>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════
+// LAYER 0: Canvas2D Generative Atmosphere
+// Organic particle field with flow dynamics
+// ═══════════════════════════════════════════════════
+(function() {
+  const c = document.getElementById('atmosphere');
+  const ctx = c.getContext('2d');
+  
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio, 1.5);
+    c.width = window.innerWidth * dpr;
+    c.height = window.innerHeight * dpr;
+    ctx.scale(dpr, dpr);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  
+  const particles = [];
+  const COUNT = 80;
+  
+  for (let i = 0; i < COUNT; i++) {
+    particles.push({
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.2 - 0.1,
+      r: Math.random() * 1.5 + 0.5,
+      alpha: Math.random() * 0.15 + 0.02,
+      phase: Math.random() * Math.PI * 2,
+    });
+  }
+  
+  function drawAtmosphere(t) {
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    
+    // Ambient gradient
+    const grad = ctx.createRadialGradient(
+      window.innerWidth * 0.5, window.innerHeight * 0.35, 0,
+      window.innerWidth * 0.5, window.innerHeight * 0.35, window.innerWidth * 0.5
+    );
+    grad.addColorStop(0, 'rgba(201,169,110,0.025)');
+    grad.addColorStop(0.5, 'rgba(201,169,110,0.008)');
+    grad.addColorStop(1, 'transparent');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+    
+    // Particles
+    particles.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      
+      if (p.x < -10) p.x = window.innerWidth + 10;
+      if (p.x > window.innerWidth + 10) p.x = -10;
+      if (p.y < -10) p.y = window.innerHeight + 10;
+      if (p.y > window.innerHeight + 10) p.y = -10;
+      
+      const flicker = 0.7 + 0.3 * Math.sin(t * 0.001 + p.phase);
+      
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(201,169,110,${p.alpha * flicker})`;
+      ctx.fill();
+    });
+    
+    requestAnimationFrame(drawAtmosphere);
+  }
+  requestAnimationFrame(drawAtmosphere);
+})();
+
+// ═══════════════════════════════════════════════════
+// LAYER 1: WebGL Material Field
+// Subtle iridescent surface
+// ═══════════════════════════════════════════════════
+(function() {
+  const c = document.getElementById('material-canvas');
+  const gl = c.getContext('webgl');
+  if (!gl) return;
+  
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio, 1.5);
+    c.width = window.innerWidth * dpr;
+    c.height = window.innerHeight * dpr;
+    gl.viewport(0, 0, c.width, c.height);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  
+  const vs = gl.createShader(gl.VERTEX_SHADER);
+  gl.shaderSource(vs, `attribute vec2 a;varying vec2 v;void main(){v=a*0.5+0.5;gl_Position=vec4(a,0,1);}`);
+  gl.compileShader(vs);
+  
+  const fs = gl.createShader(gl.FRAGMENT_SHADER);
+  gl.shaderSource(fs, `
+    precision highp float;
+    varying vec2 v;
+    uniform float t;
+    uniform vec2 r;
+    
+    vec3 mod289(vec3 x){return x-floor(x/289.)*289.;}
+    vec2 mod289(vec2 x){return x-floor(x/289.)*289.;}
+    vec3 permute(vec3 x){return mod289(((x*34.)+1.)*x);}
+    
+    float snoise(vec2 v){
+      const vec4 C=vec4(.211324865,.366025403,-.577350269,.024390243);
+      vec2 i=floor(v+dot(v,C.yy));
+      vec2 x0=v-i+dot(i,C.xx);
+      vec2 i1=(x0.x>x0.y)?vec2(1,0):vec2(0,1);
+      vec4 x12=x0.xyxy+C.xxzz;
+      x12.xy-=i1;
+      i=mod289(i);
+      vec3 p=permute(permute(i.y+vec3(0,i1.y,1))+i.x+vec3(0,i1.x,1));
+      vec3 m=max(.5-vec3(dot(x0,x0),dot(x12.xy,x12.xy),dot(x12.zw,x12.zw)),0.);
+      m=m*m;m=m*m;
+      vec3 x=2.*fract(p*C.www)-1.;
+      vec3 h=abs(x)-.5;
+      vec3 ox=floor(x+.5);
+      vec3 a0=x-ox;
+      m*=1.79284291400159-.85373472095314*(a0*a0+h*h);
+      vec3 g;
+      g.x=a0.x*x0.x+h.x*x0.y;
+      g.yz=a0.yz*x12.xz+h.yz*x12.yw;
+      return 130.*dot(m,g);
+    }
+    
+    void main(){
+      vec2 uv=v;
+      float n=snoise(uv*3.+t*.1)*.5+.5;
+      float n2=snoise(uv*6.-t*.08)*.5+.5;
+      float combined=n*.7+n2*.3;
+      
+      vec3 warm=vec3(.79,.66,.43);
+      vec3 cool=vec3(.3,.4,.6);
+      vec3 color=mix(cool*.02,warm*.06,combined);
+      
+      float vignette=1.-length(uv-.5)*1.8;
+      color*=max(vignette,0.);
+      
+      gl_FragColor=vec4(color,.6);
+    }
+  `);
+  gl.compileShader(fs);
+  
+  const prog = gl.createProgram();
+  gl.attachShader(prog, vs);
+  gl.attachShader(prog, fs);
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,1,1]), gl.STATIC_DRAW);
+  const a = gl.getAttribLocation(prog, 'a');
+  gl.enableVertexAttribArray(a);
+  gl.vertexAttribPointer(a, 2, gl.FLOAT, false, 0, 0);
+  
+  const ut = gl.getUniformLocation(prog, 't');
+  const ur = gl.getUniformLocation(prog, 'r');
+  
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+  
+  function render(now) {
+    gl.uniform1f(ut, now * 0.001);
+    gl.uniform2f(ur, c.width, c.height);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  requestAnimationFrame(render);
+})();
+
+// ═══════════════════════════════════════════════════
+// LAYER 4: Interactive light follow
+// ═══════════════════════════════════════════════════
+const lightEl = document.getElementById('lightFollow');
+let lightX = window.innerWidth / 2;
+let lightY = window.innerHeight / 2;
+let targetX = lightX, targetY = lightY;
+
+document.addEventListener('mousemove', e => {
+  targetX = e.clientX;
+  targetY = e.clientY;
+});
+document.addEventListener('touchmove', e => {
+  targetX = e.touches[0].clientX;
+  targetY = e.touches[0].clientY;
+}, { passive: true });
+
+function updateLight() {
+  lightX += (targetX - lightX) * 0.05;
+  lightY += (targetY - lightY) * 0.05;
+  lightEl.style.left = lightX + 'px';
+  lightEl.style.top = lightY + 'px';
+  requestAnimationFrame(updateLight);
+}
+requestAnimationFrame(updateLight);
+</script>
+</body>
+</html>
