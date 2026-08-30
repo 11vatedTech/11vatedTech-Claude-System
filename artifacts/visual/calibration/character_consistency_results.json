@@ -1,0 +1,41 @@
+{
+  "reference": {
+    "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\char_consistency_ref.png",
+    "seed": 42
+  },
+  "char_ipa_front": {
+    "status": "OK",
+    "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\char_ipa_front.png",
+    "size_kb": 1168
+  },
+  "char_ipa_side": {
+    "status": "OK",
+    "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\char_ipa_side.png",
+    "size_kb": 1154
+  },
+  "char_ipa_action": {
+    "status": "OK",
+    "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\char_ipa_action.png",
+    "size_kb": 1208
+  },
+  "char_ipa_closeup": {
+    "status": "OK",
+    "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\char_ipa_closeup.png",
+    "size_kb": 1172
+  },
+  "char_ipa_night": {
+    "status": "OK",
+    "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\char_ipa_night.png",
+    "size_kb": 1215
+  },
+  "char_noipa_a": {
+    "status": "OK",
+    "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\char_noipa_a.png",
+    "size_kb": 1100
+  },
+  "char_noipa_b": {
+    "status": "OK",
+    "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\char_noipa_b.png",
+    "size_kb": 1162
+  }
+}

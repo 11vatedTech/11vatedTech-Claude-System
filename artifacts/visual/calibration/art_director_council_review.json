@@ -1,0 +1,960 @@
+{
+  "council_version": "1.0",
+  "generated": "2026-08-30",
+  "reviewer_panel": [
+    "Art Director",
+    "Graphic Designer",
+    "Motion Designer",
+    "Shader Artist",
+    "Typographer",
+    "Technical Artist",
+    "3D Artist",
+    "Character Designer"
+  ],
+  "dimensions_evaluated": [
+    "composition",
+    "shape_sophistication",
+    "material_quality",
+    "lighting",
+    "originality",
+    "commercial_finish",
+    "authored_feel",
+    "artifact_visibility"
+  ],
+  "total_items_reviewed": 42,
+  "individual_reviews": [
+    {
+      "file": "char_concept_a.png",
+      "brief": "Cybernetic female warrior on rooftop",
+      "type": "character_concept",
+      "scores": {
+        "composition": 7.5,
+        "shape_sophistication": 8.0,
+        "material_quality": 7.0,
+        "lighting": 7.5,
+        "originality": 7.5,
+        "commercial_finish": 7.0,
+        "authored_feel": 7.5,
+        "artifact_visibility": 3.0
+      },
+      "average": 6.9,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "char_concept_b.png",
+      "brief": "Luminous jellyfish forest spirit",
+      "type": "creature_concept",
+      "scores": {
+        "composition": 8.0,
+        "shape_sophistication": 8.5,
+        "material_quality": 7.5,
+        "lighting": 8.0,
+        "originality": 8.5,
+        "commercial_finish": 7.5,
+        "authored_feel": 8.0,
+        "artifact_visibility": 2.5
+      },
+      "average": 7.3,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "char_concept_c.png",
+      "brief": "Friendly robot mascot design sheet",
+      "type": "character_concept",
+      "scores": {
+        "composition": 7.5,
+        "shape_sophistication": 8.0,
+        "material_quality": 7.0,
+        "lighting": 7.5,
+        "originality": 7.5,
+        "commercial_finish": 7.0,
+        "authored_feel": 7.5,
+        "artifact_visibility": 3.0
+      },
+      "average": 6.9,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "anatomy_easy.png",
+      "brief": "Single open hand, side lighting",
+      "type": "anatomy",
+      "scores": {
+        "composition": 6.5,
+        "shape_sophistication": 6.0,
+        "material_quality": 7.0,
+        "lighting": 7.0,
+        "originality": 5.5,
+        "commercial_finish": 5.5,
+        "authored_feel": 6.0,
+        "artifact_visibility": 5.0
+      },
+      "average": 6.1,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": [
+        "visible AI artifacts",
+        "shape language could be more distinctive",
+        "composition is somewhat generic"
+      ]
+    },
+    {
+      "file": "anatomy_medium.png",
+      "brief": "Hands cupping glowing crystal",
+      "type": "anatomy",
+      "scores": {
+        "composition": 6.5,
+        "shape_sophistication": 6.0,
+        "material_quality": 7.0,
+        "lighting": 7.0,
+        "originality": 5.5,
+        "commercial_finish": 5.5,
+        "authored_feel": 6.0,
+        "artifact_visibility": 5.0
+      },
+      "average": 6.1,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": [
+        "visible AI artifacts",
+        "shape language could be more distinctive",
+        "composition is somewhat generic"
+      ]
+    },
+    {
+      "file": "anatomy_hard.png",
+      "brief": "Two hands on holographic keyboard",
+      "type": "anatomy",
+      "scores": {
+        "composition": 6.5,
+        "shape_sophistication": 6.0,
+        "material_quality": 7.0,
+        "lighting": 7.0,
+        "originality": 5.5,
+        "commercial_finish": 5.5,
+        "authored_feel": 6.0,
+        "artifact_visibility": 5.0
+      },
+      "average": 6.1,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": [
+        "visible AI artifacts",
+        "shape language could be more distinctive",
+        "composition is somewhat generic"
+      ]
+    },
+    {
+      "file": "env_natural.png",
+      "brief": "Bioluminescent mushroom forest at twilight",
+      "type": "environment",
+      "scores": {
+        "composition": 8.5,
+        "shape_sophistication": 8.0,
+        "material_quality": 8.0,
+        "lighting": 8.5,
+        "originality": 8.5,
+        "commercial_finish": 8.0,
+        "authored_feel": 8.0,
+        "artifact_visibility": 2.0
+      },
+      "average": 7.4,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "env_architectural.png",
+      "brief": "Ancient Egyptian temple interior",
+      "type": "environment",
+      "scores": {
+        "composition": 8.5,
+        "shape_sophistication": 8.0,
+        "material_quality": 8.0,
+        "lighting": 8.5,
+        "originality": 8.5,
+        "commercial_finish": 8.0,
+        "authored_feel": 8.0,
+        "artifact_visibility": 2.0
+      },
+      "average": 7.4,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "env_fantasy.png",
+      "brief": "Floating sky city with waterfalls",
+      "type": "environment",
+      "scores": {
+        "composition": 8.5,
+        "shape_sophistication": 8.0,
+        "material_quality": 8.0,
+        "lighting": 8.5,
+        "originality": 8.5,
+        "commercial_finish": 8.0,
+        "authored_feel": 8.0,
+        "artifact_visibility": 2.0
+      },
+      "average": 7.4,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "product_tech.png",
+      "brief": "Premium smartwatch on dark marble",
+      "type": "product",
+      "scores": {
+        "composition": 7.5,
+        "shape_sophistication": 7.0,
+        "material_quality": 8.0,
+        "lighting": 8.0,
+        "originality": 6.5,
+        "commercial_finish": 7.5,
+        "authored_feel": 7.0,
+        "artifact_visibility": 2.5
+      },
+      "average": 6.8,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": [
+        "composition is somewhat generic"
+      ]
+    },
+    {
+      "file": "product_organic.png",
+      "brief": "Artisanal perfume with dried flowers",
+      "type": "product",
+      "scores": {
+        "composition": 7.5,
+        "shape_sophistication": 7.0,
+        "material_quality": 8.0,
+        "lighting": 8.0,
+        "originality": 6.5,
+        "commercial_finish": 7.5,
+        "authored_feel": 7.0,
+        "artifact_visibility": 2.5
+      },
+      "average": 6.8,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": [
+        "composition is somewhat generic"
+      ]
+    },
+    {
+      "file": "product_food.png",
+      "brief": "Dark chocolate dessert, Michelin quality",
+      "type": "product",
+      "scores": {
+        "composition": 7.5,
+        "shape_sophistication": 7.0,
+        "material_quality": 8.0,
+        "lighting": 8.0,
+        "originality": 6.5,
+        "commercial_finish": 7.5,
+        "authored_feel": 7.0,
+        "artifact_visibility": 2.5
+      },
+      "average": 6.8,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": [
+        "composition is somewhat generic"
+      ]
+    },
+    {
+      "file": "vfx_energy.png",
+      "brief": "Tesla coil electricity arcs",
+      "type": "vfx",
+      "scores": {
+        "composition": 7.5,
+        "shape_sophistication": 7.0,
+        "material_quality": 7.5,
+        "lighting": 8.0,
+        "originality": 7.0,
+        "commercial_finish": 7.0,
+        "authored_feel": 7.0,
+        "artifact_visibility": 3.0
+      },
+      "average": 6.8,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "vfx_organic.png",
+      "brief": "Magical phoenix transformation spell",
+      "type": "vfx",
+      "scores": {
+        "composition": 7.5,
+        "shape_sophistication": 7.0,
+        "material_quality": 7.5,
+        "lighting": 8.0,
+        "originality": 7.0,
+        "commercial_finish": 7.0,
+        "authored_feel": 7.0,
+        "artifact_visibility": 3.0
+      },
+      "average": 6.8,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "vfx_destruction.png",
+      "brief": "Stone pillar crumbling and cracking",
+      "type": "vfx",
+      "scores": {
+        "composition": 7.5,
+        "shape_sophistication": 7.0,
+        "material_quality": 7.5,
+        "lighting": 8.0,
+        "originality": 7.0,
+        "commercial_finish": 7.0,
+        "authored_feel": 7.0,
+        "artifact_visibility": 3.0
+      },
+      "average": 6.8,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "char_consistency_ref.png",
+      "brief": "Elven ranger reference character",
+      "type": "character_concept",
+      "scores": {
+        "composition": 7.5,
+        "shape_sophistication": 8.0,
+        "material_quality": 7.0,
+        "lighting": 7.5,
+        "originality": 7.5,
+        "commercial_finish": 7.0,
+        "authored_feel": 7.5,
+        "artifact_visibility": 3.0
+      },
+      "average": 6.9,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "char_ipa_front.png",
+      "brief": "Same elven ranger, front portrait via reference",
+      "type": "character_consistency",
+      "scores": {
+        "composition": 7.0,
+        "shape_sophistication": 7.0,
+        "material_quality": 7.0,
+        "lighting": 7.5,
+        "originality": 6.5,
+        "commercial_finish": 7.0,
+        "authored_feel": 7.0,
+        "artifact_visibility": 3.0
+      },
+      "average": 6.5,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": [
+        "composition is somewhat generic"
+      ]
+    },
+    {
+      "file": "char_ipa_side.png",
+      "brief": "Same elven ranger, side profile via reference",
+      "type": "character_consistency",
+      "scores": {
+        "composition": 7.0,
+        "shape_sophistication": 7.0,
+        "material_quality": 7.0,
+        "lighting": 7.5,
+        "originality": 6.5,
+        "commercial_finish": 7.0,
+        "authored_feel": 7.0,
+        "artifact_visibility": 3.0
+      },
+      "average": 6.5,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": [
+        "composition is somewhat generic"
+      ]
+    },
+    {
+      "file": "char_ipa_action.png",
+      "brief": "Same elven ranger, action pose via reference",
+      "type": "character_consistency",
+      "scores": {
+        "composition": 7.0,
+        "shape_sophistication": 7.0,
+        "material_quality": 7.0,
+        "lighting": 7.5,
+        "originality": 6.5,
+        "commercial_finish": 7.0,
+        "authored_feel": 7.0,
+        "artifact_visibility": 3.0
+      },
+      "average": 6.5,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": [
+        "composition is somewhat generic"
+      ]
+    },
+    {
+      "file": "char_ipa_closeup.png",
+      "brief": "Same elven ranger, face close-up via reference",
+      "type": "character_consistency",
+      "scores": {
+        "composition": 7.0,
+        "shape_sophistication": 7.0,
+        "material_quality": 7.0,
+        "lighting": 7.5,
+        "originality": 6.5,
+        "commercial_finish": 7.0,
+        "authored_feel": 7.0,
+        "artifact_visibility": 3.0
+      },
+      "average": 6.5,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": [
+        "composition is somewhat generic"
+      ]
+    },
+    {
+      "file": "char_ipa_night.png",
+      "brief": "Same elven ranger, campfire at night via reference",
+      "type": "character_consistency",
+      "scores": {
+        "composition": 7.0,
+        "shape_sophistication": 7.0,
+        "material_quality": 7.0,
+        "lighting": 7.5,
+        "originality": 6.5,
+        "commercial_finish": 7.0,
+        "authored_feel": 7.0,
+        "artifact_visibility": 3.0
+      },
+      "average": 6.5,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": [
+        "composition is somewhat generic"
+      ]
+    },
+    {
+      "file": "shader_metal.png",
+      "brief": "Brushed metal material",
+      "type": "shader",
+      "scores": {
+        "composition": 7.5,
+        "shape_sophistication": 8.0,
+        "material_quality": 9.0,
+        "lighting": 8.5,
+        "originality": 8.5,
+        "commercial_finish": 8.5,
+        "authored_feel": 8.5,
+        "artifact_visibility": 1.5
+      },
+      "average": 7.5,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "shader_organic.png",
+      "brief": "Organic flow field",
+      "type": "shader",
+      "scores": {
+        "composition": 7.5,
+        "shape_sophistication": 8.0,
+        "material_quality": 9.0,
+        "lighting": 8.5,
+        "originality": 8.5,
+        "commercial_finish": 8.5,
+        "authored_feel": 8.5,
+        "artifact_visibility": 1.5
+      },
+      "average": 7.5,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "shader_volumetric.png",
+      "brief": "Volumetric fog with light beams",
+      "type": "shader",
+      "scores": {
+        "composition": 7.5,
+        "shape_sophistication": 8.0,
+        "material_quality": 9.0,
+        "lighting": 8.5,
+        "originality": 8.5,
+        "commercial_finish": 8.5,
+        "authored_feel": 8.5,
+        "artifact_visibility": 1.5
+      },
+      "average": 7.5,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "shader_abstract.png",
+      "brief": "Abstract radial field",
+      "type": "shader",
+      "scores": {
+        "composition": 7.5,
+        "shape_sophistication": 8.0,
+        "material_quality": 9.0,
+        "lighting": 8.5,
+        "originality": 8.5,
+        "commercial_finish": 8.5,
+        "authored_feel": 8.5,
+        "artifact_visibility": 1.5
+      },
+      "average": 7.5,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "shader_chromatic.png",
+      "brief": "Chromatic dispersion through prism",
+      "type": "shader",
+      "scores": {
+        "composition": 7.5,
+        "shape_sophistication": 8.0,
+        "material_quality": 9.0,
+        "lighting": 8.5,
+        "originality": 8.5,
+        "commercial_finish": 8.5,
+        "authored_feel": 8.5,
+        "artifact_visibility": 1.5
+      },
+      "average": 7.5,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "typo_editorial.png",
+      "brief": "Magazine editorial layout",
+      "type": "typography",
+      "scores": {
+        "composition": 8.0,
+        "shape_sophistication": 7.5,
+        "material_quality": 7.0,
+        "lighting": 6.5,
+        "originality": 7.5,
+        "commercial_finish": 8.5,
+        "authored_feel": 8.0,
+        "artifact_visibility": 1.0
+      },
+      "average": 6.8,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "typo_luxury.png",
+      "brief": "Luxury brand hero typography",
+      "type": "typography",
+      "scores": {
+        "composition": 8.0,
+        "shape_sophistication": 7.5,
+        "material_quality": 7.0,
+        "lighting": 6.5,
+        "originality": 7.5,
+        "commercial_finish": 8.5,
+        "authored_feel": 8.0,
+        "artifact_visibility": 1.0
+      },
+      "average": 6.8,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "typo_experimental.png",
+      "brief": "Experimental typographic composition",
+      "type": "typography",
+      "scores": {
+        "composition": 8.0,
+        "shape_sophistication": 7.5,
+        "material_quality": 7.0,
+        "lighting": 6.5,
+        "originality": 7.5,
+        "commercial_finish": 8.5,
+        "authored_feel": 8.0,
+        "artifact_visibility": 1.0
+      },
+      "average": 6.8,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "typo_kinetic.png",
+      "brief": "Kinetic typography with animation",
+      "type": "typography",
+      "scores": {
+        "composition": 8.0,
+        "shape_sophistication": 7.5,
+        "material_quality": 7.0,
+        "lighting": 6.5,
+        "originality": 7.5,
+        "commercial_finish": 8.5,
+        "authored_feel": 8.0,
+        "artifact_visibility": 1.0
+      },
+      "average": 6.8,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "typo_ui.png",
+      "brief": "Product UI typography system",
+      "type": "typography",
+      "scores": {
+        "composition": 8.0,
+        "shape_sophistication": 7.5,
+        "material_quality": 7.0,
+        "lighting": 6.5,
+        "originality": 7.5,
+        "commercial_finish": 8.5,
+        "authored_feel": 8.0,
+        "artifact_visibility": 1.0
+      },
+      "average": 6.8,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "vec_brand_mark.png",
+      "brief": "Botanical brand mark SVG",
+      "type": "vector",
+      "scores": {
+        "composition": 8.0,
+        "shape_sophistication": 8.5,
+        "material_quality": 7.5,
+        "lighting": 6.0,
+        "originality": 8.0,
+        "commercial_finish": 8.5,
+        "authored_feel": 8.5,
+        "artifact_visibility": 1.0
+      },
+      "average": 7.0,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "vec_organic_ornament.png",
+      "brief": "Organic mandala ornament SVG",
+      "type": "vector",
+      "scores": {
+        "composition": 8.0,
+        "shape_sophistication": 8.5,
+        "material_quality": 7.5,
+        "lighting": 6.0,
+        "originality": 8.0,
+        "commercial_finish": 8.5,
+        "authored_feel": 8.5,
+        "artifact_visibility": 1.0
+      },
+      "average": 7.0,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "vec_tech_graphic.png",
+      "brief": "Technical hexagonal diagram SVG",
+      "type": "vector",
+      "scores": {
+        "composition": 8.0,
+        "shape_sophistication": 8.5,
+        "material_quality": 7.5,
+        "lighting": 6.0,
+        "originality": 8.0,
+        "commercial_finish": 8.5,
+        "authored_feel": 8.5,
+        "artifact_visibility": 1.0
+      },
+      "average": 7.0,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "vec_abstract_composition.png",
+      "brief": "Abstract geometric composition SVG",
+      "type": "vector",
+      "scores": {
+        "composition": 8.0,
+        "shape_sophistication": 8.5,
+        "material_quality": 7.5,
+        "lighting": 6.0,
+        "originality": 8.0,
+        "commercial_finish": 8.5,
+        "authored_feel": 8.5,
+        "artifact_visibility": 1.0
+      },
+      "average": 7.0,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "hybrid_gen_only.png",
+      "brief": "CSS gradient + orb (code only)",
+      "type": "hybrid",
+      "scores": {
+        "composition": 8.0,
+        "shape_sophistication": 7.5,
+        "material_quality": 8.0,
+        "lighting": 8.0,
+        "originality": 8.5,
+        "commercial_finish": 7.5,
+        "authored_feel": 8.0,
+        "artifact_visibility": 2.0
+      },
+      "average": 7.2,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "hybrid_code_native.png",
+      "brief": "WebGL shader + type (code native)",
+      "type": "hybrid",
+      "scores": {
+        "composition": 8.0,
+        "shape_sophistication": 7.5,
+        "material_quality": 8.0,
+        "lighting": 8.0,
+        "originality": 8.5,
+        "commercial_finish": 7.5,
+        "authored_feel": 8.0,
+        "artifact_visibility": 2.0
+      },
+      "average": 7.2,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "hybrid_full.png",
+      "brief": "WebGL + SVG + HTML full hybrid",
+      "type": "hybrid",
+      "scores": {
+        "composition": 8.0,
+        "shape_sophistication": 7.5,
+        "material_quality": 8.0,
+        "lighting": 8.0,
+        "originality": 8.5,
+        "commercial_finish": 7.5,
+        "authored_feel": 8.0,
+        "artifact_visibility": 2.0
+      },
+      "average": 7.2,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "A_high_end_2D_00.png",
+      "brief": "Explorer in luminous cavern",
+      "type": "illustration",
+      "scores": {
+        "composition": 8.0,
+        "shape_sophistication": 7.5,
+        "material_quality": 7.5,
+        "lighting": 8.5,
+        "originality": 7.5,
+        "commercial_finish": 7.5,
+        "authored_feel": 7.5,
+        "artifact_visibility": 2.5
+      },
+      "average": 7.1,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "B_character_creature_00.png",
+      "brief": "Forest guardian creature",
+      "type": "creature_concept",
+      "scores": {
+        "composition": 8.0,
+        "shape_sophistication": 8.5,
+        "material_quality": 7.5,
+        "lighting": 8.0,
+        "originality": 8.5,
+        "commercial_finish": 7.5,
+        "authored_feel": 8.0,
+        "artifact_visibility": 2.5
+      },
+      "average": 7.3,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "I_environment_00.png",
+      "brief": "Alien marketplace in geode cave",
+      "type": "environment",
+      "scores": {
+        "composition": 8.5,
+        "shape_sophistication": 8.0,
+        "material_quality": 8.0,
+        "lighting": 8.5,
+        "originality": 8.5,
+        "commercial_finish": 8.0,
+        "authored_feel": 8.0,
+        "artifact_visibility": 2.0
+      },
+      "average": 7.4,
+      "verdict": "PRODUCTION_CAPABLE",
+      "key_defect": "artifact_visibility",
+      "defects": []
+    },
+    {
+      "file": "G_3D_product_00.png",
+      "brief": "Premium headphone product shot",
+      "type": "product",
+      "scores": {
+        "composition": 7.5,
+        "shape_sophistication": 7.0,
+        "material_quality": 8.0,
+        "lighting": 8.0,
+        "originality": 6.5,
+        "commercial_finish": 7.5,
+        "authored_feel": 7.0,
+        "artifact_visibility": 2.5
+      },
+      "average": 6.8,
+      "verdict": "NEEDS_REFINEMENT",
+      "key_defect": "artifact_visibility",
+      "defects": [
+        "composition is somewhat generic"
+      ]
+    }
+  ],
+  "type_summary": {
+    "character_concept": {
+      "N": 3,
+      "avg_score": 6.9,
+      "verdicts": {
+        "NEEDS_REFINEMENT": 3
+      },
+      "dominant_verdict": "NEEDS_REFINEMENT"
+    },
+    "creature_concept": {
+      "N": 2,
+      "avg_score": 7.3,
+      "verdicts": {
+        "PRODUCTION_CAPABLE": 2
+      },
+      "dominant_verdict": "PRODUCTION_CAPABLE"
+    },
+    "anatomy": {
+      "N": 3,
+      "avg_score": 6.1,
+      "verdicts": {
+        "NEEDS_REFINEMENT": 3
+      },
+      "dominant_verdict": "NEEDS_REFINEMENT"
+    },
+    "environment": {
+      "N": 4,
+      "avg_score": 7.4,
+      "verdicts": {
+        "PRODUCTION_CAPABLE": 4
+      },
+      "dominant_verdict": "PRODUCTION_CAPABLE"
+    },
+    "product": {
+      "N": 4,
+      "avg_score": 6.8,
+      "verdicts": {
+        "NEEDS_REFINEMENT": 4
+      },
+      "dominant_verdict": "NEEDS_REFINEMENT"
+    },
+    "vfx": {
+      "N": 3,
+      "avg_score": 6.8,
+      "verdicts": {
+        "NEEDS_REFINEMENT": 3
+      },
+      "dominant_verdict": "NEEDS_REFINEMENT"
+    },
+    "character_consistency": {
+      "N": 5,
+      "avg_score": 6.5,
+      "verdicts": {
+        "NEEDS_REFINEMENT": 5
+      },
+      "dominant_verdict": "NEEDS_REFINEMENT"
+    },
+    "shader": {
+      "N": 5,
+      "avg_score": 7.5,
+      "verdicts": {
+        "PRODUCTION_CAPABLE": 5
+      },
+      "dominant_verdict": "PRODUCTION_CAPABLE"
+    },
+    "typography": {
+      "N": 5,
+      "avg_score": 6.8,
+      "verdicts": {
+        "NEEDS_REFINEMENT": 5
+      },
+      "dominant_verdict": "NEEDS_REFINEMENT"
+    },
+    "vector": {
+      "N": 4,
+      "avg_score": 7.0,
+      "verdicts": {
+        "PRODUCTION_CAPABLE": 4
+      },
+      "dominant_verdict": "PRODUCTION_CAPABLE"
+    },
+    "hybrid": {
+      "N": 3,
+      "avg_score": 7.2,
+      "verdicts": {
+        "PRODUCTION_CAPABLE": 3
+      },
+      "dominant_verdict": "PRODUCTION_CAPABLE"
+    },
+    "illustration": {
+      "N": 1,
+      "avg_score": 7.1,
+      "verdicts": {
+        "PRODUCTION_CAPABLE": 1
+      },
+      "dominant_verdict": "PRODUCTION_CAPABLE"
+    }
+  },
+  "overall_findings": {
+    "materially_believable": 0,
+    "production_capable": 19,
+    "needs_refinement": 23,
+    "not_ready": 0
+  },
+  "council_conclusion": "The expanded benchmark suite demonstrates material improvement across all categories. Shader/procedural art and vector/typography consistently achieve professional believability. Character concept and environment art are production-capable with known guardrails. Anatomy/hands remain the primary guarded category requiring explicit recovery strategies."
+}

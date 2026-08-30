@@ -1,0 +1,167 @@
+{
+  "char_concept_a": {
+    "status": "OK",
+    "model": "ds8",
+    "dimensions": "768x1024",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\char_concept_a.png",
+        "size_kb": 826
+      }
+    ]
+  },
+  "char_concept_b": {
+    "status": "OK",
+    "model": "ds8",
+    "dimensions": "768x1024",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\char_concept_b.png",
+        "size_kb": 953
+      }
+    ]
+  },
+  "char_concept_c": {
+    "status": "OK",
+    "model": "ds8",
+    "dimensions": "768x1024",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\char_concept_c.png",
+        "size_kb": 694
+      }
+    ]
+  },
+  "anatomy_easy": {
+    "status": "OK",
+    "model": "ds8",
+    "dimensions": "768x768",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\anatomy_easy.png",
+        "size_kb": 648
+      }
+    ]
+  },
+  "anatomy_medium": {
+    "status": "OK",
+    "model": "ds8",
+    "dimensions": "768x768",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\anatomy_medium.png",
+        "size_kb": 734
+      }
+    ]
+  },
+  "anatomy_hard": {
+    "status": "OK",
+    "model": "ds8",
+    "dimensions": "768x768",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\anatomy_hard.png",
+        "size_kb": 708
+      }
+    ]
+  },
+  "env_natural": {
+    "status": "OK",
+    "model": "dsxl",
+    "dimensions": "1024x768",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\env_natural.png",
+        "size_kb": 1187
+      }
+    ]
+  },
+  "env_architectural": {
+    "status": "OK",
+    "model": "dsxl",
+    "dimensions": "1024x768",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\env_architectural.png",
+        "size_kb": 1068
+      }
+    ]
+  },
+  "env_fantasy": {
+    "status": "OK",
+    "model": "dsxl",
+    "dimensions": "1024x768",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\env_fantasy.png",
+        "size_kb": 1212
+      }
+    ]
+  },
+  "product_tech": {
+    "status": "OK",
+    "model": "dsxl",
+    "dimensions": "1024x1024",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\product_tech.png",
+        "size_kb": 1225
+      }
+    ]
+  },
+  "product_organic": {
+    "status": "OK",
+    "model": "dsxl",
+    "dimensions": "1024x1024",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\product_organic.png",
+        "size_kb": 1278
+      }
+    ]
+  },
+  "product_food": {
+    "status": "OK",
+    "model": "dsxl",
+    "dimensions": "1024x1024",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\product_food.png",
+        "size_kb": 1428
+      }
+    ]
+  },
+  "vfx_energy": {
+    "status": "OK",
+    "model": "dsxl",
+    "dimensions": "768x1024",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\vfx_energy.png",
+        "size_kb": 1076
+      }
+    ]
+  },
+  "vfx_organic": {
+    "status": "OK",
+    "model": "dsxl",
+    "dimensions": "768x1024",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\vfx_organic.png",
+        "size_kb": 1067
+      }
+    ]
+  },
+  "vfx_destruction": {
+    "status": "OK",
+    "model": "dsxl",
+    "dimensions": "768x1024",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\calibration\\vfx_destruction.png",
+        "size_kb": 1137
+      }
+    ]
+  }
+}
