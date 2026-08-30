@@ -121,6 +121,74 @@
     color: var(--gold-dim);
   }
   
+  /* ═══════ TYPE SPECIMEN BLOCK ═══════ */
+  .type-specimen {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(184,149,90,0.15);
+  }
+  
+  .specimen-label {
+    font-size: 0.5rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 1rem;
+  }
+  
+  .specimen-weights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+  
+  .specimen-weights span {
+    font-size: 0.85rem;
+    color: var(--charcoal);
+    opacity: 0.6;
+  }
+  
+  .specimen-weights span:first-child {
+    font-weight: 100;
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+  
+  .specimen-weights span:nth-child(2) {
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  
+  .specimen-weights span:last-child {
+    font-weight: 700;
+    font-style: italic;
+    color: var(--gold);
+    opacity: 0.8;
+  }
+  
+  /* ═══════ COLOR PALETTE ═══════ */
+  .palette {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 6px;
+  }
+  
+  .palette-swatch {
+    width: 28px;
+    height: 28px;
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  
+  .palette-label {
+    margin-top: 0.5rem;
+    font-size: 0.45rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    opacity: 0.5;
+  }
+  
   /* ═══════ PROCEDURAL SVG ELEMENTS ═══════ */
   .proc-lines {
     position: absolute;
@@ -258,6 +326,27 @@
         <span>Founded 2026</span>
         <span>Intelligence Foundry</span>
       </div>
+      
+      <!-- Type Specimen -->
+      <div class="type-specimen">
+        <p class="specimen-label">Type System</p>
+        <div class="specimen-weights">
+          <span>Light — structural headings</span>
+          <span>Regular — body and interface</span>
+          <span>Bold Italic — accent and emphasis</span>
+        </div>
+      </div>
+      
+      <!-- Color Palette -->
+      <div class="palette">
+        <div class="palette-swatch" style="background:#0a0a0f"></div>
+        <div class="palette-swatch" style="background:#2a2a2e"></div>
+        <div class="palette-swatch" style="background:#b8955a"></div>
+        <div class="palette-swatch" style="background:#8a6d3e"></div>
+        <div class="palette-swatch" style="background:#f5f0e8"></div>
+        <div class="palette-swatch" style="background:#ebe4d6"></div>
+      </div>
+      <p class="palette-label">Identity Palette</p>
     </div>
     
     <!-- Procedural accent lines -->

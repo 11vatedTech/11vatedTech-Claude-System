@@ -54,7 +54,8 @@
   .svg-layer svg {
     width: min(70vw, 600px);
     height: auto;
-    opacity: 0.2;
+    opacity: 0;
+    animation: markReveal 2s cubic-bezier(0.22, 1, 0.36, 1) 0.8s both;
   }
   
   /* ═══════ LAYER 3: TYPOGRAPHY ═══════ */
@@ -77,7 +78,7 @@
     color: var(--gold);
     opacity: 0.5;
     margin-bottom: 2rem;
-    animation: fadeSlideUp 1.5s ease-out 0.3s both;
+    animation: fadeSlideUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
   }
   
   .type-hero {
@@ -87,7 +88,7 @@
     letter-spacing: -0.04em;
     color: var(--chrome);
     margin-bottom: 1.5rem;
-    animation: fadeSlideUp 1.5s ease-out 0.6s both;
+    animation: fadeSlideUp 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
   }
   
   .type-hero .accent {
@@ -101,7 +102,7 @@
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
     margin: 0 auto 2rem;
-    animation: ruleExpand 1.5s ease-out 1.2s both;
+    animation: ruleExpand 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.0s both;
   }
   
   .type-sub {
@@ -111,7 +112,7 @@
     letter-spacing: 0.04em;
     line-height: 1.7;
     max-width: 450px;
-    animation: fadeSlideUp 1.5s ease-out 1.5s both;
+    animation: fadeSlideUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.3s both;
   }
   
   /* ═══════ LAYER 4: INTERACTIVE LIGHT FOLLOW ═══════ */
@@ -146,7 +147,7 @@
     z-index: 6;
     pointer-events: none;
   }
-  .corner svg { width: 30px; height: 30px; opacity: 0.15; }
+  .corner svg { width: 30px; height: 30px; opacity: 0; animation: cornerFade 1.5s ease-out 1.8s both; }
   .corner-tl { top: 2rem; left: 2rem; }
   .corner-tr { top: 2rem; right: 2rem; transform: scaleX(-1); }
   .corner-bl { bottom: 2rem; left: 2rem; transform: scaleY(-1); }
@@ -170,18 +171,34 @@
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--gold);
-    opacity: 0.2;
+    opacity: 0;
+    animation: footerSlide 1s ease-out 2s both;
   }
   
   /* ═══════ ANIMATIONS ═══════ */
   @keyframes fadeSlideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
   
   @keyframes ruleExpand {
-    from { width: 0; opacity: 0; }
-    to { width: 60px; opacity: 0.4; }
+    0% { width: 0; opacity: 0; }
+    100% { width: 80px; opacity: 0.5; }
+  }
+  
+  @keyframes markReveal {
+    0% { opacity: 0; transform: scale(0.9); filter: blur(4px); }
+    100% { opacity: 0.2; transform: scale(1); filter: blur(0); }
+  }
+  
+  @keyframes cornerFade {
+    0% { opacity: 0; }
+    100% { opacity: 0.15; }
+  }
+  
+  @keyframes footerSlide {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
   
   @media (prefers-reduced-motion: reduce) {
@@ -234,9 +251,9 @@
 <!-- LAYER 3: Typography -->
 <div class="type-layer">
   <p class="type-pre">Visual Production Intelligence</p>
-  <h1 class="type-hero">Beyond<br><span class="accent">Code</span></h1>
+  <h1 class="type-hero">Every Medium<br><span class="accent">One Vision</span></h1>
   <div class="type-rule"></div>
-  <p class="type-sub">Where generative intelligence meets procedural craft. Multi-medium synthesis directed by taste.</p>
+  <p class="type-sub">Generative atmosphere. Procedural geometry. Shader materials. Vector identity. Typographic hierarchy. All directed as one.</p>
 </div>
 
 <!-- LAYER 4: Interactive light -->

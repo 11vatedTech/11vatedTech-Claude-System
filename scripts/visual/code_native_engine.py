@@ -123,31 +123,55 @@ def route_representation(
     
     Returns medium selection with reasoning.
     """
+    # Intent keyword analysis for stronger signal
+    intent_lower = visual_intent.lower()
+    wants_gpu = any(w in intent_lower for w in ["shader", "gpu", "webgl", "webgpu", "real-time", "fluid", "compute"])
+    wants_3d = any(w in intent_lower for w in ["3d", "three.js", "scene", "volumetric", "raymarch"])
+    wants_generative = any(w in intent_lower for w in ["generative", "procedural", "particle", "simulation"])
+    wants_vector = any(w in intent_lower for w in ["vector", "svg", "logo", "brand", "identity", "emblem"])
+    wants_css = any(w in intent_lower for w in ["layout", "responsive", "ui", "interface", "typography"])
+    
     scores = {}
     
     for medium, props in REPRESENTATION_MEDIA.items():
-        score = 50  # base
+        score = 30  # base — low enough for intent to matter
         
         # Boost for relevant strengths
         if responsive and "responsive" in props["strengths"]:
-            score += 15
+            score += 12
         if interaction and "animation" in props["strengths"]:
-            score += 10
+            score += 8
         if identity_sensitive and "identity" in props["strengths"]:
-            score += 15
+            score += 12
         if determinism_required and props["determinism"] == "high":
+            score += 18
+        
+        # Intent-based boosts (strong signal)
+        if wants_gpu and medium in ["webgl", "webgpu"]:
+            score += 30
+        if wants_3d and medium in ["three_js", "webgl"]:
+            score += 25
+        if wants_generative and medium in ["canvas2d", "webgl"]:
+            score += 20
+        if wants_vector and medium == "svg":
+            score += 30
+        if wants_css and medium == "css":
             score += 20
         
         # Boost for best-for match
         for bf in props["best_for"]:
-            if asset_type.lower() in bf.lower() or bf.lower() in visual_intent.lower():
-                score += 10
+            if asset_type.lower() in bf.lower() or bf.lower() in intent_lower:
+                score += 12
         
-        # Penalty for weaknesses
+        # Penalty for weaknesses (stronger)
         if runtime_target == "browser" and medium in ["blender", "generative_image"]:
-            score -= 20
+            score -= 25
         if performance_budget == "tight" and props["performance"] in ["slow (offline)", "slow (generation)"]:
-            score -= 15
+            score -= 20
+        if wants_gpu and medium not in ["webgl", "webgpu", "three_js"]:
+            score -= 10
+        if wants_vector and medium != "svg":
+            score -= 5
         
         scores[medium] = score
     

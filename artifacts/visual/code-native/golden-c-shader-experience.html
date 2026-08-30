@@ -190,61 +190,87 @@ void main() {
   float aspect = u_resolution.x / u_resolution.y;
   vec2 p = (uv - 0.5) * vec2(aspect, 1.0);
   
-  // Smooth mouse
   vec2 m = u_mouse;
-  float t = u_time * 0.15;
+  float t = u_time * 0.12;
   
-  // Mouse field — subtle gravitational pull
+  // Mouse field — gravitational distortion
   vec2 toMouse = m - uv;
   float mouseDist = length(toMouse);
-  float mouseField = smoothstep(0.5, 0.0, mouseDist) * 0.15;
+  float mouseField = smoothstep(0.4, 0.0, mouseDist) * 0.2;
   
-  // Domain warping for organic fluid
-  float n1 = domainWarp(p * 1.8 + vec2(t * 0.3, t * 0.2), t);
+  // === SURFACE STRUCTURE ===
+  // Create a defined organic form, not just noise
+  float blobDist = length(p) - 0.35;
+  float blobDeform = domainWarp(p * 2.0 + vec2(t * 0.2), t) * 0.15;
+  float surface = blobDist + blobDeform + mouseField;
   
-  // Secondary warp — finer detail
-  float n2 = domainWarp(p * 3.5 + vec2(-t * 0.2, t * 0.15) + n1 * 0.3, t * 1.3);
+  // Surface normal estimation (finite differences)
+  float eps = 0.005;
+  float sx = domainWarp((p + vec2(eps, 0.0)) * 2.0 + vec2(t * 0.2), t) * 0.15;
+  float sy = domainWarp((p + vec2(0.0, eps)) * 2.0 + vec2(t * 0.2), t) * 0.15;
+  vec3 normal = normalize(vec3((sx - blobDeform) / eps, (sy - blobDeform) / eps, 1.0));
   
-  // Combine
-  float n = n1 * 0.6 + n2 * 0.4 + mouseField;
+  // === LIGHTING ===
+  // Directional light from upper-right
+  vec3 lightDir = normalize(vec3(0.6, 0.8, 0.5));
+  float diffuse = max(dot(normal, lightDir), 0.0);
   
-  // Iridescent color — thin-film interference approximation
+  // Rim light from behind-left
+  vec3 rimDir = normalize(vec3(-0.5, 0.3, 0.8));
+  float viewDir = 0.0;
+  float rim = pow(1.0 - max(dot(normal, vec3(0.0, 0.0, 1.0)), 0.0), 2.5);
+  
+  // === MATERIAL ===
+  // Iridescent thin-film on surface
   float angle = atan(p.y, p.x);
-  float spectralInput = n * 2.0 + angle * 0.3 + t * 0.5;
+  float spectralInput = diffuse * 1.5 + angle * 0.2 + t * 0.3;
   vec3 iridescent = spectral(spectralInput);
   
-  // Base material color — dark with spectral highlights
-  vec3 baseColor = vec3(0.02, 0.02, 0.03);
+  // Base: deep dark with slight warmth
+  vec3 baseColor = vec3(0.015, 0.012, 0.02);
   
-  // Fresnel-like edge response
-  float fresnel = pow(1.0 - abs(n), 3.0) * 0.8;
+  // Fresnel — edge glow
+  float fresnel = rim * 0.7;
   
-  // Luminous regions
-  float luminance = smoothstep(0.3, 0.8, n);
-  
-  // Combine material
+  // === COMPOSE ===
   vec3 color = baseColor;
-  color += iridescent * luminance * 0.35;
-  color += iridescent * fresnel * 0.2;
   
-  // Warm gold accent in highlights
+  // Diffuse iridescent surface
+  color += iridescent * diffuse * 0.25;
+  
+  // Fresnel iridescent edge
+  color += iridescent * fresnel * 0.3;
+  
+  // Warm gold specular
   vec3 gold = vec3(0.79, 0.66, 0.43);
-  color += gold * fresnel * luminance * 0.15;
+  float spec = pow(max(dot(reflect(-lightDir, normal), vec3(0.0, 0.0, 1.0)), 0.0), 16.0);
+  color += gold * spec * 0.4;
   
-  // Cool blue in shadows
-  vec3 coolShadow = vec3(0.25, 0.35, 0.55);
-  float shadowMask = smoothstep(0.4, 0.0, n);
-  color += coolShadow * shadowMask * 0.06;
+  // Cool ambient in shadows
+  vec3 coolShadow = vec3(0.12, 0.18, 0.3);
+  float shadowMask = 1.0 - diffuse;
+  color += coolShadow * shadowMask * 0.08;
+  
+  // Surface edge darkening (form cue)
+  float edgeDark = smoothstep(0.0, 0.08, surface);
+  color *= edgeDark;
+  
+  // Background atmosphere (outside the form)
+  float bgMask = smoothstep(-0.02, 0.05, surface);
+  vec3 bgAtmosphere = vec3(0.01, 0.01, 0.015);
+  float bgNoise = fbm(p * 3.0 + t * 0.1) * 0.5 + 0.5;
+  bgAtmosphere += gold * bgNoise * 0.015;
+  color = mix(bgAtmosphere, color, bgMask);
   
   // Soft vignette
-  float vignette = 1.0 - dot(uv - 0.5, uv - 0.5) * 1.5;
+  float vignette = 1.0 - dot(uv - 0.5, uv - 0.5) * 1.2;
   color *= vignette;
   
   // Filmic tone mapping
   color = color / (color + vec3(1.0));
   
   // Subtle grain
-  float grain = (snoise(uv * 500.0 + t * 100.0) * 0.5 + 0.5) * 0.02;
+  float grain = (snoise(uv * 500.0 + t * 100.0) * 0.5 + 0.5) * 0.015;
   color += grain;
   
   gl_FragColor = vec4(color, 1.0);
