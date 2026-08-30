@@ -1,0 +1,102 @@
+[
+  {
+    "key": "A_high_end_2D",
+    "status": "OK",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\atlas\\A_high_end_2D_00.png",
+        "size_bytes": 846721
+      }
+    ]
+  },
+  {
+    "key": "B_character_creature",
+    "status": "OK",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\atlas\\B_character_creature_00.png",
+        "size_bytes": 1163170
+      }
+    ]
+  },
+  {
+    "key": "C_difficult_anatomy",
+    "status": "OK",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\atlas\\C_difficult_anatomy_00.png",
+        "size_bytes": 848730
+      }
+    ]
+  },
+  {
+    "key": "D_pixel_sprite",
+    "status": "OK",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\atlas\\D_pixel_sprite_00.png",
+        "size_bytes": 160803
+      }
+    ]
+  },
+  {
+    "key": "E_vector_identity",
+    "status": "OK",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\atlas\\E_vector_identity_00.png",
+        "size_bytes": 1392432
+      }
+    ]
+  },
+  {
+    "key": "F_2_5D_composition",
+    "status": "OK",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\atlas\\F_2_5D_composition_00.png",
+        "size_bytes": 1241571
+      }
+    ]
+  },
+  {
+    "key": "G_3D_product",
+    "status": "OK",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\atlas\\G_3D_product_00.png",
+        "size_bytes": 1046676
+      }
+    ]
+  },
+  {
+    "key": "H_stylized_3D",
+    "status": "OK",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\atlas\\H_stylized_3D_00.png",
+        "size_bytes": 1303540
+      }
+    ]
+  },
+  {
+    "key": "I_environment",
+    "status": "OK",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\atlas\\I_environment_00.png",
+        "size_bytes": 1230670
+      }
+    ]
+  },
+  {
+    "key": "L_VFX",
+    "status": "OK",
+    "results": [
+      {
+        "path": "C:\\Users\\11vat\\OneDrive\\Desktop\\11vatedTech-Claude-System\\artifacts\\visual\\atlas\\L_VFX_00.png",
+        "size_bytes": 1244033
+      }
+    ]
+  }
+]

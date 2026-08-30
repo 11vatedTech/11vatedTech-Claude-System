@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O — Multi-Asset World: VOID WANDERER</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&family=Space+Grotesk:wght@300;500;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#06060a;color:#e8e4dc;font-family:'Inter',sans-serif}
+.world{max-width:1200px;margin:0 auto;padding:40px}
+h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;letter-spacing:8px;text-transform:uppercase;color:#4a9eff;margin-bottom:8px}
+h2{font-weight:100;font-size:48px;letter-spacing:-0.02em;margin-bottom:40px}
+h2 span{color:#4a9eff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:40px}
+.asset{background:#0c0c12;border:1px solid rgba(74,158,255,0.1);border-radius:8px;overflow:hidden;aspect-ratio:4/3;position:relative}
+.asset-label{position:absolute;top:12px;left:12px;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(74,158,255,0.6);z-index:2}
+/* Character portrait */
+.char{background:linear-gradient(180deg,#0d1520 0%,#0a0e18 100%);display:flex;align-items:center;justify-content:center}
+.char-body{width:120px;height:160px;position:relative}
+.char-head{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#2a3a52,#1a2535);border:1px solid rgba(74,158,255,0.15);position:absolute;top:0;left:50%;transform:translateX(-50%)}
+.char-eye{width:8px;height:4px;background:#4a9eff;border-radius:50%;position:absolute;top:24px;box-shadow:0 0 12px #4a9eff}
+.char-eye.l{left:14px}.char-eye.r{right:14px}
+.char-torso{width:80px;height:80px;background:linear-gradient(180deg,#162030,#0e1520);border:1px solid rgba(74,158,255,0.08);border-radius:4px;position:absolute;top:55px;left:50%;transform:translateX(-50%)}
+.char-line{position:absolute;height:1px;background:rgba(74,158,255,0.15);left:0;right:0}
+.char-line:nth-child(1){top:20px}.char-line:nth-child(2){top:40px}.char-line:nth-child(3){top:60px}
+.char-badge{position:absolute;bottom:12px;right:12px;font-size:8px;letter-spacing:2px;color:rgba(74,158,255,0.4);text-transform:uppercase}
+/* Environment */
+.env{background:linear-gradient(180deg,#080c18,#0a1025,#060a14);display:flex;align-items:flex-end;justify-content:center;padding:20px}
+.env-stars{position:absolute;inset:0}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%}
+.env-ground{width:100%;height:40%;background:linear-gradient(0deg,#0c1020,transparent);position:absolute;bottom:0}
+.env-structure{width:60px;height:100px;background:linear-gradient(180deg,rgba(74,158,255,0.05),rgba(74,158,255,0.02));border:1px solid rgba(74,158,255,0.1);border-radius:2px 2px 0 0;position:relative}
+.env-struct-glow{position:absolute;top:20px;left:50%;transform:translateX(-50%);width:8px;height:8px;background:#4a9eff;border-radius:50%;box-shadow:0 0 20px #4a9eff,0 0 40px rgba(74,158,255,0.3)}
+.env-struct-glow2{position:absolute;top:50px;left:50%;transform:translateX(-50%);width:4px;height:4px;background:#4a9eff;border-radius:50%;box-shadow:0 0 12px #4a9eff}
+/* Prop */
+.prop{background:#0a0e16;display:flex;align-items:center;justify-content:center}
+.weapon{position:relative;width:140px;height:20px}
+.weapon-blade{width:80px;height:16px;background:linear-gradient(90deg,#2a3a5a,#4a6a9a,#2a3a5a);clip-path:polygon(0 50%,20% 0,100% 20%,100% 80%,20% 100%);position:absolute;right:0;top:2px}
+.weapon-handle{width:40px;height:12px;background:linear-gradient(90deg,#1a1a2a,#2a2a3a);border-radius:2px;position:absolute;left:10px;top:4px}
+.weapon-guard{width:4px;height:28px;background:#4a9eff;border-radius:1px;position:absolute;left:48px;top:-4px;box-shadow:0 0 8px rgba(74,158,255,0.4)}
+.weapon-glow{position:absolute;right:20px;top:50%;transform:translateY(-50%);width:40px;height:40px;background:radial-gradient(circle,rgba(74,158,255,0.15),transparent);border-radius:50%}
+/* UI element */
+.ui-el{background:#0a0e16;padding:24px;display:flex;flex-direction:column;justify-content:space-between}
+.ui-bar{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.ui-bar-fill{height:6px;border-radius:3px;background:linear-gradient(90deg,#4a9eff,#2a6acc);width:70%}
+.ui-bar-track{flex:1;height:6px;background:#1a1e28;border-radius:3px;overflow:hidden}
+.ui-stat{display:flex;justify-content:space-between;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:8px}
+.ui-stat span:last-child{color:#4a9eff}
+.ui-minimap{width:80px;height:60px;border:1px solid rgba(74,158,255,0.15);border-radius:4px;background:#080c14;position:relative}
+.ui-minimap-dot{width:4px;height:4px;background:#4a9eff;border-radius:50%;position:absolute;top:30px;left:40px;box-shadow:0 0 6px #4a9eff}
+/* Poster */
+.poster{background:linear-gradient(135deg,#0a1020,#0c1428,#080c18);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px}
+.poster-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:28px;letter-spacing:4px;margin-bottom:8px}
+.poster-sub{font-weight:100;font-size:11px;letter-spacing:6px;color:rgba(74,158,255,0.5);text-transform:uppercase;margin-bottom:20px}
+.poster-line{width:60px;height:1px;background:#4a9eff;margin-bottom:20px;opacity:0.4}
+.poster-tagline{font-weight:300;font-size:13px;letter-spacing:1px;color:rgba(255,255,255,0.5);line-height:1.6}
+/* Color palette bar */
+.palette{display:flex;height:4px;border-radius:2px;overflow:hidden;margin-top:24px;width:200px}
+.pal div{flex:1}
+.p1{background:#4a9eff}.p2{background:#1a2a44}.p3{background:#0a0e16}.p4{background:#8ab4ff}.p5{background:#2a3a52}
+/* Footer */
+.footer{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-top:1px solid rgba(74,158,255,0.08);margin-top:40px}
+.footer-left{font-size:9px;letter-spacing:3px;color:rgba(255,255,255,0.2);text-transform:uppercase}
+.footer-right{display:flex;gap:16px}
+.footer-right span{font-size:9px;letter-spacing:2px;color:rgba(74,158,255,0.3);text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="world">
+    <h1>Multi-Asset World Family</h1>
+    <h2><span>VOID</span> WANDERER</h2>
+    <div class="grid">
+        <!-- 1. Character Portrait -->
+        <div class="asset char">
+            <div class="asset-label">Character</div>
+            <div class="char-body">
+                <div class="char-head">
+                    <div class="char-eye l"></div>
+                    <div class="char-eye r"></div>
+                </div>
+                <div class="char-torso">
+                    <div class="char-line"></div>
+                    <div class="char-line"></div>
+                    <div class="char-line"></div>
+                </div>
+                <div class="char-badge">Pilot Class</div>
+            </div>
+        </div>
+        <!-- 2. Environment -->
+        <div class="asset env" style="position:relative">
+            <div class="asset-label">Environment</div>
+            <div class="env-stars">
+                <div class="star" style="top:15%;left:20%"></div>
+                <div class="star" style="top:25%;left:60%"></div>
+                <div class="star" style="top:10%;left:80%"></div>
+                <div class="star" style="top:35%;left:40%"></div>
+                <div class="star" style="top:20%;left:90%"></div>
+                <div class="star" style="top:8%;left:45%"></div>
+            </div>
+            <div class="env-ground"></div>
+            <div class="env-structure" style="position:relative;z-index:1">
+                <div class="env-struct-glow"></div>
+                <div class="env-struct-glow2"></div>
+            </div>
+        </div>
+        <!-- 3. Prop/Weapon -->
+        <div class="asset prop">
+            <div class="asset-label">Prop — Void Blade</div>
+            <div class="weapon">
+                <div class="weapon-blade"></div>
+                <div class="weapon-guard"></div>
+                <div class="weapon-handle"></div>
+                <div class="weapon-glow"></div>
+            </div>
+        </div>
+        <!-- 4. UI Element -->
+        <div class="asset ui-el" style="grid-column:span 1">
+            <div class="asset-label">UI — Status HUD</div>
+            <div>
+                <div class="ui-stat"><span>Shield</span><span>72%</span></div>
+                <div class="ui-bar"><div class="ui-bar-track"><div class="ui-bar-fill"></div></div></div>
+                <div class="ui-stat"><span>Energy</span><span>89%</span></div>
+                <div class="ui-bar"><div class="ui-bar-track"><div class="ui-bar-fill" style="width:89%;background:linear-gradient(90deg,#4aff8a,#2aaa6a)"></div></div></div>
+                <div class="ui-stat"><span>Void Level</span><span>III</span></div>
+            </div>
+            <div class="ui-minimap">
+                <div class="ui-minimap-dot"></div>
+            </div>
+        </div>
+        <!-- 5. Promotional Poster -->
+        <div class="asset poster" style="grid-column:span 2">
+            <div class="asset-label">Promotional</div>
+            <div class="poster-title">VOID WANDERER</div>
+            <div class="poster-sub">Navigate the Unnamed Dark</div>
+            <div class="poster-line"></div>
+            <div class="poster-tagline">
+                Beyond the rim of known space, where light forgets its purpose,<br>
+                one pilot charts a course through the void.
+            </div>
+            <div class="palette">
+                <div class="p1"></div><div class="p2"></div><div class="p3"></div><div class="p4"></div><div class="p5"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-left">11vatedTech Foundry — Creative Intelligence Atlas</div>
+        <div class="footer-right">
+            <span>Character</span><span>Environment</span><span>Prop</span><span>UI</span><span>Poster</span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

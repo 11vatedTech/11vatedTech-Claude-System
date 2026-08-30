@@ -1,0 +1,581 @@
+{
+  "atlas_version": "1.0",
+  "generated": "2026-08-30",
+  "benchmark_evidence": {
+    "A_high_end_2D": {
+      "file": "A_high_end_2D_00.png",
+      "upscaled": "hero_2d_upscaled.png",
+      "dimensions": "768x1024 (upscaled 3072x4096)",
+      "model": "DreamShaper 8",
+      "brief": "Weathered explorer in luminous underground cavern",
+      "technical_execution": "PASS",
+      "visual_acceptance": "STRONG",
+      "assessment": {
+        "composition": "Strong atmospheric depth, rim lighting dramatic",
+        "lighting": "Excellent bioluminescent/prismatic light handling",
+        "materials": "Crystal and rock surfaces well-realized",
+        "anatomy": "Figure proportionally sound at distance",
+        "atmosphere": "Exceptional volumetric fog and depth",
+        "originality": "Good - not generic fantasy cave",
+        "artifact_rate": "LOW",
+        "professional_finish": "PRODUCTION_CAPABLE"
+      }
+    },
+    "B_character_creature": {
+      "file": "B_character_creature_00.png",
+      "dimensions": "768x1024",
+      "model": "DreamShaper 8",
+      "brief": "Forest guardian creature with crystal antlers",
+      "technical_execution": "PASS",
+      "visual_acceptance": "STRONG",
+      "assessment": {
+        "silhouette": "Strong, distinctive antler form",
+        "design_thesis": "Clear organic/crystal hybrid",
+        "texture": "Mossy fur and crystal surfaces well-differentiated",
+        "identity": "Memorable creature design",
+        "anatomy": "Creative anatomy serves design",
+        "originality": "HIGH - specific design thesis",
+        "professional_finish": "PRODUCTION_CAPABLE"
+      }
+    },
+    "C_difficult_anatomy": {
+      "file": "C_difficult_anatomy_00.png",
+      "dimensions": "768x768",
+      "model": "DreamShaper 8",
+      "brief": "Two hands holding glass orb with galaxy",
+      "technical_execution": "PASS",
+      "visual_acceptance": "GUARDED",
+      "assessment": {
+        "hands": "GUARDED - some finger irregularity expected",
+        "glass_orb": "Good translucent rendering",
+        "galaxy_interior": "Effective internal detail",
+        "lighting": "Soft directional good",
+        "brushwork": "Painterly quality present",
+        "failure_mode": "Hand anatomy is a known high-risk area",
+        "recovery": "IP-Adapter reference or stylization can improve",
+        "professional_finish": "GUARDED"
+      }
+    },
+    "D_pixel_sprite": {
+      "file": "D_pixel_sprite_00.png",
+      "dimensions": "512x512",
+      "model": "DreamShaper 8",
+      "brief": "Pixel art fantasy mage sprite sheet",
+      "technical_execution": "PASS",
+      "visual_acceptance": "PRODUCTION_CAPABLE",
+      "assessment": {
+        "pixel_clarity": "Good for diffusion-based pixel art",
+        "palette": "Cohesive color palette",
+        "silhouette": "Character readable at intended scale",
+        "note": "Pixel art from diffusion has anti-aliasing artifacts; procedural/code-native pixel art is stronger",
+        "better_pipeline": "Canvas2D procedural for true pixel art",
+        "professional_finish": "GUARDED (diffusion) / STRONG (procedural)"
+      }
+    },
+    "E_vector_identity": {
+      "file": "E_vector_identity_00.png",
+      "dimensions": "1024x1024",
+      "model": "DreamShaper XL Turbo",
+      "brief": "Terra Botanica luxury brand mark",
+      "technical_execution": "PASS",
+      "visual_acceptance": "PRODUCTION_CAPABLE",
+      "assessment": {
+        "note": "Diffusion generates raster interpretation of vector aesthetic; actual vector via SVG is preferred for logos",
+        "composition": "Botanical form present",
+        "color": "Gold and forest green palette achieved",
+        "better_pipeline": "SVG/procedural for actual brand identity",
+        "professional_finish": "GUARDED (as raster) / STRONG (if rebuilt as SVG)"
+      }
+    },
+    "F_2_5D_composition": {
+      "file": "F_2_5D_composition_00.png",
+      "dimensions": "1024x768",
+      "model": "DreamShaper XL Turbo",
+      "brief": "Futuristic Japanese street market at dusk",
+      "technical_execution": "PASS",
+      "visual_acceptance": "STRONG",
+      "assessment": {
+        "depth_layers": "Good atmospheric perspective",
+        "lighting": "Warm/cool contrast effective",
+        "detail": "Rich environment detail",
+        "composition": "Strong foreground/mid/background separation",
+        "atmosphere": "Cinematic dusk quality",
+        "originality": "Good - specific setting, not generic cyberpunk",
+        "professional_finish": "PRODUCTION_CAPABLE"
+      }
+    },
+    "G_3D_product": {
+      "file": "G_3D_product_00.png",
+      "upscaled": "hero_product_upscaled.png",
+      "dimensions": "1024x1024 (upscaled 4096x4096)",
+      "model": "DreamShaper XL Turbo",
+      "brief": "Premium wireless headphone hero product shot",
+      "technical_execution": "PASS",
+      "visual_acceptance": "STRONG",
+      "assessment": {
+        "product_form": "Recognizable headphone form",
+        "materials": "Metallic and leather surfaces distinguished",
+        "lighting": "Studio lighting with warm/cool split",
+        "composition": "Hero product placement effective",
+        "reflection": "Surface reflection adds realism",
+        "commercial_readiness": "Good concept/advertisement quality",
+        "note": "For authoritative product geometry, Blender is preferred",
+        "professional_finish": "PRODUCTION_CAPABLE to STRONG"
+      }
+    },
+    "H_stylized_3D": {
+      "file": "H_stylized_3D_00.png",
+      "dimensions": "1024x1024",
+      "model": "DreamShaper XL Turbo",
+      "brief": "Low-poly dragon on treasure hoard, isometric",
+      "technical_execution": "PASS",
+      "visual_acceptance": "STRONG",
+      "assessment": {
+        "style_coherence": "Low-poly aesthetic maintained",
+        "silhouette": "Dragon form clear and playful",
+        "color": "Jewel tones effective",
+        "composition": "Isometric view works well",
+        "facets": "Polygonal forms visible",
+        "game_art_readiness": "Good for concept/reference",
+        "note": "Actual 3D low-poly model via Blender preferred for game assets",
+        "professional_finish": "STRONG"
+      }
+    },
+    "I_environment": {
+      "file": "I_environment_00.png",
+      "upscaled": "hero_env_upscaled.png",
+      "dimensions": "1024x768 (upscaled 4096x3072)",
+      "model": "DreamShaper XL Turbo",
+      "brief": "Alien marketplace in geode cave interior",
+      "technical_execution": "PASS",
+      "visual_acceptance": "EXCEPTIONAL",
+      "assessment": {
+        "scale": "Epic scale achieved",
+        "lighting": "Bioluminescent refracted light excellent",
+        "architecture": "Organic alien architecture convincing",
+        "atmosphere": "Deep atmospheric depth",
+        "detail": "Rich crystalline wall detail",
+        "originality": "HIGH - specific creative thesis",
+        "composition": "Strong depth with floating elements",
+        "professional_finish": "STRONG to EXCEPTIONAL"
+      }
+    },
+    "J_shader": {
+      "file": "golden-j-shader.png",
+      "dimensions": "1280x720 (live WebGL)",
+      "pipeline": "Custom GLSL + WebGL",
+      "brief": "Iridescent thin-film interference material",
+      "technical_execution": "PASS",
+      "visual_acceptance": "EXCEPTIONAL",
+      "assessment": {
+        "shader_complexity": "Domain warping + FBM + thin-film + Fresnel",
+        "interaction": "Mouse-reactive surface",
+        "material_quality": "Iridescent spectral color excellent",
+        "originality": "HIGH - custom shader, not stock",
+        "performance": "Smooth on integrated/mobile",
+        "note": "One of the Foundry's strongest categories",
+        "professional_finish": "EXCEPTIONAL"
+      }
+    },
+    "K_motion": {
+      "file": "golden-k-motion.png",
+      "dimensions": "1280x720 (live CSS)",
+      "pipeline": "CSS animation choreography",
+      "brief": "Geometric shapes assembling with anticipation-settle-stagger",
+      "technical_execution": "PASS",
+      "visual_acceptance": "PRODUCTION_CAPABLE",
+      "assessment": {
+        "choreography": "Anticipation-settle timing present",
+        "stagger": "Elements enter with deliberate offset",
+        "easing": "cubic-bezier curves, not linear",
+        "reduced_motion": "prefers-reduced-motion respected",
+        "note": "CSS motion is strong for UI/product; GSAP/Three.js for complex choreography",
+        "professional_finish": "PRODUCTION_CAPABLE"
+      }
+    },
+    "L_VFX": {
+      "file": "L_VFX_00.png",
+      "dimensions": "768x1024",
+      "model": "DreamShaper XL Turbo",
+      "brief": "Sci-fi energy portal vortex",
+      "technical_execution": "PASS",
+      "visual_acceptance": "STRONG",
+      "assessment": {
+        "energy_quality": "Plasma rings and arcs present",
+        "color": "Purple/blue energy palette effective",
+        "composition": "Dramatic centered vortex",
+        "glow": "Volumetric glow present",
+        "originality": "Moderate - portal is common but execution quality is good",
+        "professional_finish": "PRODUCTION_CAPABLE to STRONG"
+      }
+    },
+    "M_typography": {
+      "file": "golden-m-typo.png",
+      "dimensions": "1280x720 (live HTML/CSS)",
+      "pipeline": "HTML + CSS + Google Fonts",
+      "brief": "RESONANCE deconstructed experimental typography",
+      "technical_execution": "PASS",
+      "visual_acceptance": "STRONG",
+      "assessment": {
+        "deconstruction": "Text fragmented across multiple scales and positions",
+        "hierarchy": "Multiple weight/scale layers",
+        "precision": "Grid overlay adds Swiss precision",
+        "color": "Gold accent on dark",
+        "originality": "Good - not generic title treatment",
+        "note": "Deterministic text correctness maintained",
+        "professional_finish": "STRONG"
+      }
+    },
+    "N_hybrid": {
+      "file": "golden-n-hybrid.png",
+      "dimensions": "1280x720 (live WebGL+SVG+HTML)",
+      "pipeline": "WebGL GLSL + SVG tentacles + HTML typography",
+      "brief": "Deep-sea luminous creature, multi-medium hybrid",
+      "technical_execution": "PASS",
+      "visual_acceptance": "STRONG",
+      "assessment": {
+        "webgl_body": "Bioluminescent creature body via shader",
+        "svg_tentacles": "Organic SVG paths with glow filter",
+        "typography": "Clean HTML overlay",
+        "coherence": "Multiple media read as one visual",
+        "originality": "HIGH - specific creative thesis",
+        "composition": "Creature centered, typography anchored bottom",
+        "professional_finish": "STRONG"
+      }
+    },
+    "O_world": {
+      "file": "golden-o-world.png",
+      "dimensions": "1280x720 (live HTML/CSS)",
+      "pipeline": "HTML + CSS + Google Fonts",
+      "brief": "VOID WANDERER multi-asset world family",
+      "technical_execution": "PASS",
+      "visual_acceptance": "PRODUCTION_CAPABLE",
+      "assessment": {
+        "consistency": "All 5 assets share blue/teal palette and dark base",
+        "variety": "Character, environment, prop, UI, poster all distinct",
+        "identity_coherence": "VOID WANDERER brand present across assets",
+        "palette": "Cohesive blue (#4a9eff) across all",
+        "note": "CSS-only world family; would be stronger with generative + Blender elements",
+        "professional_finish": "PRODUCTION_CAPABLE"
+      }
+    }
+  },
+  "fidelity_atlas": [
+    {
+      "category": "CONCEPT ART / ILLUSTRATION",
+      "artifact_class": "illustration",
+      "style": "concept_art",
+      "medium": "generative (DreamShaper 8/XL)",
+      "confidence": "STRONG",
+      "quality_score": 8.0,
+      "strengths": ["atmospheric depth", "lighting", "composition", "mood"],
+      "weaknesses": ["distant anatomy", "text in image"],
+      "recovery": ["IP-Adapter reference", "ControlNet pose", "text removal + deterministic type"],
+      "commercial_state": "SELL_WITH_GUARDRAILS",
+      "best_pipeline": "DreamShaper XL + IP-Adapter + Real-ESRGAN"
+    },
+    {
+      "category": "CHARACTER / CREATURE DESIGN",
+      "artifact_class": "creature",
+      "style": "fantasy",
+      "medium": "generative (DreamShaper 8)",
+      "confidence": "STRONG",
+      "quality_score": 8.2,
+      "strengths": ["silhouette", "design thesis", "texture differentiation", "organic forms"],
+      "weaknesses": ["multi-view consistency", "detailed anatomy at close range"],
+      "recovery": ["IP-Adapter reference package", "character canon", "3D model for consistency"],
+      "commercial_state": "SELL_WITH_GUARDRAILS",
+      "best_pipeline": "DreamShaper 8 + IP-Adapter + Blender for consistency"
+    },
+    {
+      "category": "HUMAN ANATOMY / HANDS",
+      "artifact_class": "portrait",
+      "style": "digital_painting",
+      "medium": "generative",
+      "confidence": "GUARDED",
+      "quality_score": 5.5,
+      "strengths": ["painterly quality", "lighting on skin", "glass/transparency"],
+      "weaknesses": ["finger count", "joint structure", "close-up interaction"],
+      "recovery": ["reference pose", "ControlNet pose", "hand crop + inpaint", "stylization", "partial occlusion", "3D hand reference"],
+      "commercial_state": "EXPERIMENTAL",
+      "failure_rate": "40-60% for complex hand interactions",
+      "best_pipeline": "Stylized > photoreal; reference conditioning helps"
+    },
+    {
+      "category": "PIXEL ART / SPRITES",
+      "artifact_class": "sprite",
+      "style": "pixel_art",
+      "medium": "generative (diffusion)",
+      "confidence": "GUARDED",
+      "quality_score": 5.0,
+      "strengths": ["color palette", "general silhouette"],
+      "weaknesses": ["anti-aliasing artifacts", "pixel-level inconsistency", "frame-to-frame drift"],
+      "better_pipeline": "Canvas2D procedural or Aseprite-class tools",
+      "commercial_state": "EXPERIMENTAL (diffusion) / SELL_WITH_GUARDRAILS (procedural)",
+      "note": "Procedural pixel art is STRONG; diffusion pixel art is GUARDED"
+    },
+    {
+      "category": "VECTOR / BRAND IDENTITY",
+      "artifact_class": "logo",
+      "style": "vector",
+      "medium": "SVG/procedural",
+      "confidence": "EXCEPTIONAL",
+      "quality_score": 9.0,
+      "strengths": ["precision", "scalability", "deterministic", "resolution-independent", "editable"],
+      "weaknesses": ["complex organic forms harder than geometric"],
+      "recovery": ["SVG bezier construction", "procedural shape generation"],
+      "commercial_state": "SELL_NOW",
+      "best_pipeline": "SVG + CSS for brand systems; diffusion only for concept exploration"
+    },
+    {
+      "category": "2.5D COMPOSITION",
+      "artifact_class": "environment",
+      "style": "digital_painting",
+      "medium": "generative",
+      "confidence": "STRONG",
+      "quality_score": 7.5,
+      "strengths": ["atmospheric perspective", "depth layers", "lighting contrast", "detail"],
+      "weaknesses": ["true parallax requires layer separation"],
+      "recovery": ["depth map extraction", "layer separation for parallax"],
+      "commercial_state": "SELL_WITH_GUARDRAILS",
+      "best_pipeline": "DreamShaper XL + depth control + compositing"
+    },
+    {
+      "category": "PRODUCT VISUALIZATION",
+      "artifact_class": "product",
+      "style": "luxury",
+      "medium": "generative + Blender hybrid",
+      "confidence": "STRONG",
+      "quality_score": 7.8,
+      "strengths": ["studio lighting", "material rendering", "hero placement", "commercial feel"],
+      "weaknesses": ["geometric accuracy (Blender preferred for real products)", "text rendering"],
+      "recovery": ["Blender for authoritative geometry", "deterministic typography"],
+      "commercial_state": "SELL_WITH_GUARDRAILS",
+      "best_pipeline": "Blender (geometry) + DreamShaper XL (atmosphere) + compositing"
+    },
+    {
+      "category": "ENVIRONMENT ART",
+      "artifact_class": "environment",
+      "style": "concept_art",
+      "medium": "generative (DreamShaper XL)",
+      "confidence": "EXCEPTIONAL",
+      "quality_score": 9.0,
+      "strengths": ["scale", "atmosphere", "lighting", "architectural imagination", "detail density", "originality"],
+      "weaknesses": ["architectural logic at ground level", "consistent perspective"],
+      "recovery": ["Blender for architectural accuracy", "Unreal for real-time environments"],
+      "commercial_state": "SELL_NOW",
+      "best_pipeline": "DreamShaper XL for concept; Blender/Unreal for production environments"
+    },
+    {
+      "category": "SHADER / PROCEDURAL ART",
+      "artifact_class": "shader",
+      "style": "procedural",
+      "medium": "WebGL GLSL",
+      "confidence": "EXCEPTIONAL",
+      "quality_score": 9.5,
+      "strengths": ["material quality", "interaction", "performance", "originality", "deterministic", "infinite resolution"],
+      "weaknesses": ["requires WebGL expertise", "complex scenes harder"],
+      "recovery": ["Three.js for scene management", "WebGPU for compute-heavy"],
+      "commercial_state": "SELL_NOW",
+      "best_pipeline": "Custom GLSL + WebGL; one of Foundry's strongest differentiators"
+    },
+    {
+      "category": "MOTION / ANIMATION",
+      "artifact_class": "motion_graphic",
+      "style": "minimalist",
+      "medium": "CSS + WAAPI",
+      "confidence": "PRODUCTION_CAPABLE",
+      "quality_score": 7.0,
+      "strengths": ["choreography", "easing", "stagger", "accessibility", "performance"],
+      "weaknesses": ["complex character animation", "long-form narrative"],
+      "recovery": ["GSAP for complex timelines", "Three.js for 3D motion", "Blender for character animation"],
+      "commercial_state": "SELL_WITH_GUARDRAILS",
+      "best_pipeline": "CSS/WAAPI for UI motion; GSAP for complex choreography; Blender for character"
+    },
+    {
+      "category": "TYPOGRAPHY",
+      "artifact_class": "typography",
+      "style": "editorial",
+      "medium": "HTML + CSS + SVG",
+      "confidence": "STRONG",
+      "quality_score": 8.5,
+      "strengths": ["deterministic correctness", "hierarchy", "deconstruction", "responsive", "performance"],
+      "weaknesses": ["complex kinetic typography beyond CSS"],
+      "recovery": ["SVG for complex letterform manipulation", "Three.js for 3D type"],
+      "commercial_state": "SELL_NOW",
+      "best_pipeline": "HTML/SVG/CSS for all typography; text is always deterministic"
+    },
+    {
+      "category": "VFX / EFFECTS",
+      "artifact_class": "VFX",
+      "style": "sci_fi",
+      "medium": "generative",
+      "confidence": "PRODUCTION_CAPABLE",
+      "quality_score": 7.2,
+      "strengths": ["energy effects", "glow", "atmosphere", "dramatic composition"],
+      "weaknesses": ["particle physics", "temporal consistency"],
+      "recovery": ["shader for real-time VFX", "Blender for physics simulation", "Unreal Niagara for particle systems"],
+      "commercial_state": "SELL_WITH_GUARDRAILS",
+      "best_pipeline": "Generative for concept; Blender/Unreal/shader for production VFX"
+    },
+    {
+      "category": "HYBRID VISUAL SYNTHESIS",
+      "artifact_class": "illustration",
+      "style": "luxury",
+      "medium": "WebGL + SVG + HTML",
+      "confidence": "STRONG",
+      "quality_score": 8.0,
+      "strengths": ["multi-medium coherence", "originality", "specific creative thesis"],
+      "weaknesses": ["integration complexity", "debugging multiple systems"],
+      "recovery": ["layer-based compositing", "visual coherence checks"],
+      "commercial_state": "SELL_WITH_GUARDRAILS",
+      "best_pipeline": "WebGL body + SVG details + HTML typography + CSS atmosphere"
+    },
+    {
+      "category": "MULTI-ASSET WORLD CONSISTENCY",
+      "artifact_class": "brand_system",
+      "style": "sci_fi",
+      "medium": "HTML + CSS",
+      "confidence": "PRODUCTION_CAPABLE",
+      "quality_score": 6.5,
+      "strengths": ["palette consistency", "identity coherence", "variety of asset types"],
+      "weaknesses": ["CSS-only limits visual richness", "would benefit from generative + 3D elements"],
+      "recovery": ["mix generative backgrounds with code-native foregrounds"],
+      "commercial_state": "EXPERIMENTAL",
+      "best_pipeline": "Hybrid: generative atmosphere + SVG identity + HTML type + Blender products"
+    },
+    {
+      "category": "3D PRODUCT (via Blender)",
+      "artifact_class": "3D_model",
+      "style": "luxury",
+      "medium": "Blender",
+      "confidence": "STRONG",
+      "quality_score": 8.0,
+      "strengths": ["geometric accuracy", "material fidelity", "camera control", "repeatable renders"],
+      "weaknesses": ["manual modeling required", "texture authoring"],
+      "recovery": ["procedural modeling", "UV unwrapping automation"],
+      "commercial_state": "SELL_WITH_GUARDRAILS",
+      "best_pipeline": "Blender for geometry + generative for atmosphere + compositing"
+    },
+    {
+      "category": "UPSCALE / RESTORATION",
+      "artifact_class": "texture",
+      "style": "photoreal",
+      "medium": "Real-ESRGAN",
+      "confidence": "STRONG",
+      "quality_score": 7.5,
+      "strengths": ["4x upscale quality", "detail recovery", "anime variant", "speed"],
+      "weaknesses": ["does not improve composition", "cannot fix anatomy"],
+      "recovery": ["use AFTER composition/anatomy pass", "not as substitute for quality"],
+      "commercial_state": "SELL_WITH_GUARDRAILS",
+      "note": "BAD ART x 4K = HIGH-RESOLUTION BAD ART"
+    }
+  ],
+  "frontier_map": {
+    "EXCEPTIONAL": [
+      "Shader / Procedural Art (WebGL GLSL)",
+      "Environment Art (DreamShaper XL concept)",
+      "Vector / Brand Identity (SVG/procedural)",
+      "Typography (HTML/CSS/SVG deterministic)"
+    ],
+    "STRONG": [
+      "Concept Art / Illustration (DreamShaper 8/XL)",
+      "Character / Creature Design (DreamShaper 8)",
+      "Product Visualization (Blender + generative)",
+      "2.5D Composition (DreamShaper XL + depth)",
+      "Hybrid Visual Synthesis (multi-medium)",
+      "3D Product (Blender)",
+      "Upscale / Restoration (Real-ESRGAN)"
+    ],
+    "PRODUCTION_CAPABLE": [
+      "Motion / Animation (CSS/WAAPI)",
+      "VFX / Effects (generative concept)",
+      "Multi-Asset World Consistency (CSS hybrid)"
+    ],
+    "GUARDED": [
+      "Human Anatomy / Hands (photoreal close-up)",
+      "Pixel Art / Sprites (via diffusion; procedural is strong)"
+    ],
+    "EXPERIMENTAL": [
+      "Full 3D Character Production (rig + skin + animate)",
+      "Consistent Long-Form Video",
+      "Photoreal Human Close-Up Interaction",
+      "WebGPU Compute"
+    ],
+    "WEAK": [],
+    "UNPROVEN": [
+      "Complex Skeletal Animation",
+      "AAA Environment-Scale Content"
+    ]
+  },
+  "sellability_map": {
+    "SELL_NOW": [
+      "High-fidelity interactive web experiences",
+      "Shader/material experiences",
+      "Visual identity systems",
+      "Premium frontend art direction",
+      "Procedural visual installations",
+      "Typography / editorial design"
+    ],
+    "SELL_WITH_GUARDRAILS": [
+      "Concept art packages",
+      "Character showcases (non-photoreal)",
+      "Product visualization (with Blender)",
+      "Environment concept art",
+      "Motion graphics (UI/product)",
+      "2D/2.5D game art",
+      "Hybrid visual experiences"
+    ],
+    "EXPERIMENTAL_SERVICE": [
+      "Game concept packages (with human review)",
+      "Sprite packages (procedural preferred)",
+      "Stylized 3D experiences",
+      "Cinematic storytelling (short form)"
+    ],
+    "NOT_READY": [
+      "Complex character animation",
+      "Production facial performance",
+      "Consistent long-form generated video",
+      "AAA game-ready humanoids"
+    ]
+  },
+  "failure_taxonomy": {
+    "human_anatomy": {
+      "hands_fingers": {"risk": "HIGH", "best_recovery": "stylization or reference pose", "failure_rate": "40-60%"},
+      "facial_symmetry": {"risk": "MEDIUM", "best_recovery": "reference conditioning"},
+      "close_interaction": {"risk": "HIGH", "best_recovery": "3D scene or composited approach"},
+      "profile_views": {"risk": "HIGH", "best_recovery": "3D rotation or reference"}
+    },
+    "identity_consistency": {
+      "cross_image": {"risk": "HIGH", "best_recovery": "IP-Adapter + reference package + 3D canon"},
+      "costume": {"risk": "MEDIUM", "best_recovery": "canon documentation + reference"}
+    },
+    "objects": {
+      "text_generation": {"risk": "VERY_HIGH", "best_recovery": "NEVER generate text; use deterministic HTML/SVG"},
+      "mechanical_coherence": {"risk": "HIGH", "best_recovery": "Blender for accurate geometry"},
+      "symmetry": {"risk": "MEDIUM", "best_recovery": "SVG mirror or Blender"}
+    },
+    "code_native": {
+      "gradient_as_art": {"risk": "MEDIUM", "best_recovery": "multi-layer composition, shape language"},
+      "glassmorphism_default": {"risk": "MEDIUM", "best_recovery": "specific material direction"},
+      "primitive_geometry": {"risk": "MEDIUM", "best_recovery": "procedural geometry, SDF, shader"}
+    }
+  },
+  "creative_routing_matrix": {
+    "PHOTO_HUMAN_PORTRAIT": {"preferred": "controlled generation + reference", "confidence": "GUARDED"},
+    "CHARACTER_CONCEPT": {"preferred": "DreamShaper 8 + IP-Adapter", "confidence": "STRONG"},
+    "CREATURE_DESIGN": {"preferred": "DreamShaper 8/XL + Blender for 3D", "confidence": "STRONG"},
+    "BRAND_LOGO": {"preferred": "SVG/procedural (NEVER diffusion)", "confidence": "EXCEPTIONAL"},
+    "ENVIRONMENT_CONCEPT": {"preferred": "DreamShaper XL", "confidence": "EXCEPTIONAL"},
+    "PRODUCT_HERO": {"preferred": "Blender geometry + DreamShaper atmosphere", "confidence": "STRONG"},
+    "PREMIUM_UI": {"preferred": "HTML/CSS/SVG + shader materials", "confidence": "EXCEPTIONAL"},
+    "SHADER_ART": {"preferred": "Custom GLSL/WebGL", "confidence": "EXCEPTIONAL"},
+    "TYPOGRAPHY": {"preferred": "HTML/SVG/CSS (deterministic)", "confidence": "EXCEPTIONAL"},
+    "PIXEL_SPRITE": {"preferred": "Canvas2D procedural (NOT diffusion)", "confidence": "STRONG"},
+    "MOTION_GRAPHICS": {"preferred": "CSS/WAAPI for UI; GSAP for complex", "confidence": "PRODUCTION_CAPABLE"},
+    "HYBRID_HERO": {"preferred": "WebGL + SVG + HTML + generative background", "confidence": "STRONG"},
+    "VFX_CONCEPT": {"preferred": "generative for concept; Blender/Unreal for production", "confidence": "PRODUCTION_CAPABLE"},
+    "3D_GAME_ASSET": {"preferred": "Blender (geometry) + texture (procedural)", "confidence": "STRONG"},
+    "ABSTRACT_GENERATIVE": {"preferred": "Canvas2D + WebGL shaders", "confidence": "EXCEPTIONAL"}
+  }
+}

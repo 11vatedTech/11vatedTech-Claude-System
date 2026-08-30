@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J — Iridescent Material Shader</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #000; overflow: hidden; width: 100vw; height: 100vh; }
+canvas { display: block; width: 100%; height: 100%; }
+.info {
+    position: fixed; bottom: 20px; left: 20px;
+    font: 12px 'SF Mono', 'Consolas', monospace;
+    color: rgba(255,255,255,0.4); z-index: 10;
+    pointer-events: none;
+}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div class="info">J — IRIDESCENT MATERIAL // WebGL GLSL</div>
+<script>
+const c = document.getElementById('c');
+const gl = c.getContext('webgl') || c.getContext('experimental-webgl');
+if (!gl) { document.body.innerHTML = '<p style="color:white;padding:40px">WebGL not available</p>'; throw 'no webgl'; }
+
+function resize() { c.width = window.innerWidth * devicePixelRatio; c.height = window.innerHeight * devicePixelRatio; }
+resize();
+window.addEventListener('resize', resize);
+
+const vsrc = `attribute vec2 p; void main(){gl_Position=vec4(p,0,1);}`;
+const fsrc = `
+precision highp float;
+uniform float T;
+uniform vec2 R;
+uniform vec2 M;
+
+// Simplex noise helpers
+vec3 mod289(vec3 x){return x-floor(x*(1.0/289.0))*289.0;}
+vec2 mod289(vec2 x){return x-floor(x*(1.0/289.0))*289.0;}
+vec3 permute(vec3 x){return mod289(((x*34.0)+1.0)*x);}
+
+float snoise(vec2 v){
+    const vec4 C=vec4(0.211324865405187,0.366025403784439,-0.577350269189626,0.024390243902439);
+    vec2 i=floor(v+dot(v,C.yy));vec2 x0=v-i+dot(i,C.xx);
+    vec2 i1=(x0.x>x0.y)?vec2(1.0,0.0):vec2(0.0,1.0);
+    vec4 x12=x0.xyxy+C.xxzz;x12.xy-=i1;
+    i=mod289(i);vec3 p=permute(permute(i.y+vec3(0.0,i1.y,1.0))+i.x+vec3(0.0,i1.x,1.0));
+    vec3 m=max(0.5-vec3(dot(x0,x0),dot(x12.xy,x12.xy),dot(x12.zw,x12.zw)),0.0);
+    m=m*m;m=m*m;
+    vec3 x=2.0*fract(p*C.www)-1.0;vec3 h=abs(x)-0.5;vec3 ox=floor(x+0.5);vec3 a0=x-ox;
+    m*=1.79284291400159-0.85373472095314*(a0*a0+h*h);
+    vec3 g;g.x=a0.x*x0.x+h.x*x0.y;g.yz=a0.yz*x12.xz+h.yz*x12.yw;
+    return 130.0*dot(m,g);
+}
+
+float fbm(vec2 p){
+    float f=0.0,a=0.5;
+    for(int i=0;i<5;i++){f+=a*snoise(p);p*=2.1;a*=0.49;}
+    return f;
+}
+
+vec3 iridescent(float t){
+    vec3 a=vec3(0.5,0.5,0.5);
+    vec3 b=vec3(0.5,0.5,0.5);
+    vec3 c=vec3(1.0,1.0,1.0);
+    vec3 d=vec3(0.00,0.33,0.67);
+    return a+b*cos(6.28318*(c*t+d));
+}
+
+void main(){
+    vec2 uv=gl_FragCoord.xy/R;
+    vec2 m=M/R;
+    
+    // Domain warping for fluid distortion
+    float t=T*0.15;
+    vec2 q=vec2(fbm(uv*3.0+vec2(0.0,t)),fbm(uv*3.0+vec2(5.2,t*0.7)));
+    float f=fbm(uv*3.0+q*2.0);
+    
+    // Thin-film interference
+    float film=f*3.0+length(uv-m)*2.0;
+    vec3 base=iridescent(film);
+    
+    // Fresnel rim
+    float edge=smoothstep(0.0,0.6,abs(uv.x-0.5)*2.0)*smoothstep(0.0,0.6,abs(uv.y-0.5)*2.0);
+    float fresnel=pow(1.0-edge,3.0);
+    
+    // Specular highlights
+    float spec=pow(max(0.0,snoise(uv*8.0+vec2(t*0.3))),12.0)*1.5;
+    
+    // Combine
+    vec3 col=base*(0.6+fresnel*0.8)+vec3(spec)*0.5;
+    
+    // Dark base with luminous center
+    float vig=smoothstep(0.8,0.2,length(uv-0.5));
+    col*=vig*1.3;
+    
+    // Tone mapping
+    col=col/(1.0+col);
+    col=pow(col,vec3(0.85));
+    
+    gl_FragColor=vec4(col,1.0);
+}`;
+
+function mk(t,s){const sh=gl.createShader(t);gl.shaderSource(sh,s);gl.compileShader(sh);return sh;}
+const prog=gl.createProgram();
+gl.attachShader(prog,mk(gl.VERTEX_SHADER,vsrc));
+gl.attachShader(prog,mk(gl.FRAGMENT_SHADER,fsrc));
+gl.linkProgram(prog);gl.useProgram(prog);
+
+const buf=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buf);
+gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+const p=gl.getAttribLocation(prog,'p');gl.enableVertexAttribArray(p);gl.vertexAttribPointer(p,2,gl.FLOAT,false,0,0);
+
+const uT=gl.getUniformLocation(prog,'T');
+const uR=gl.getUniformLocation(prog,'R');
+const uM=gl.getUniformLocation(prog,'M');
+
+let mx=0.5,my=0.5;
+c.addEventListener('mousemove',e=>{mx=e.clientX/window.innerWidth;my=1-e.clientY/window.innerHeight;});
+c.addEventListener('touchmove',e=>{e.preventDefault();mx=e.touches[0].clientX/window.innerWidth;my=1-e.touches[0].clientY/window.innerHeight;},{passive:false});
+
+function loop(t){
+    gl.viewport(0,0,c.width,c.height);
+    gl.uniform1f(uT,t*0.001);
+    gl.uniform2f(uR,c.width,c.height);
+    gl.uniform2f(uM,mx*c.width,my*c.height);
+    gl.drawArrays(gl.TRIANGLE_STRIP,0,4);
+    requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>

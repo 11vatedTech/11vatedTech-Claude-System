@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>N — Hybrid Masterpiece: Deep-Sea Luminous</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#020208;overflow:hidden;width:100vw;height:100vh}
+canvas#shader{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+svg.tentacles{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.overlay{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:40px;
+    background:linear-gradient(0deg,rgba(2,2,8,0.8) 0%,transparent 50%)}
+.title{font-family:'Inter','Helvetica Neue',sans-serif;font-weight:200;font-size:clamp(24px,5vw,56px);color:rgba(255,255,255,0.9);letter-spacing:-0.02em;line-height:1.1}
+.title em{font-style:normal;color:#7bf0ff;text-shadow:0 0 30px rgba(123,240,255,0.3)}
+.sub{font-family:'Inter',sans-serif;font-weight:300;font-size:clamp(10px,1.5vw,14px);color:rgba(255,255,255,0.25);letter-spacing:4px;text-transform:uppercase;margin-top:12px}
+.grain{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0.04;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
+@media(prefers-reduced-motion:reduce){canvas{animation:none!important}}
+</style>
+</head>
+<body>
+<canvas id="shader"></canvas>
+<svg class="tentacles" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid slice">
+    <defs>
+        <linearGradient id="tg1" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="rgba(123,240,255,0.4)"/>
+            <stop offset="100%" stop-color="rgba(123,240,255,0)"/>
+        </linearGradient>
+        <linearGradient id="tg2" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="rgba(100,180,255,0.3)"/>
+            <stop offset="100%" stop-color="rgba(100,180,255,0)"/>
+        </linearGradient>
+        <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <!-- Tentacle paths — organic curves -->
+    <path d="M500,350 C480,400 440,480 420,560 C410,600 430,650 450,700" stroke="url(#tg1)" stroke-width="2" fill="none" filter="url(#glow)" opacity="0.6"/>
+    <path d="M500,350 C520,410 560,490 580,570 C590,610 570,660 550,700" stroke="url(#tg1)" stroke-width="2" fill="none" filter="url(#glow)" opacity="0.6"/>
+    <path d="M500,350 C470,420 420,500 380,580 C360,620 370,670 400,700" stroke="url(#tg2)" stroke-width="1.5" fill="none" filter="url(#glow)" opacity="0.4"/>
+    <path d="M500,350 C530,430 580,510 620,590 C640,630 630,680 600,700" stroke="url(#tg2)" stroke-width="1.5" fill="none" filter="url(#glow)" opacity="0.4"/>
+    <path d="M500,350 C490,440 460,530 440,620 C430,660 440,690 455,700" stroke="url(#tg1)" stroke-width="1" fill="none" filter="url(#glow)" opacity="0.3"/>
+    <path d="M500,350 C510,440 540,530 560,620 C570,660 560,690 545,700" stroke="url(#tg1)" stroke-width="1" fill="none" filter="url(#glow)" opacity="0.3"/>
+    <!-- Bioluminescent spots on tentacles -->
+    <circle cx="430" cy="450" r="4" fill="#7bf0ff" opacity="0.7" filter="url(#glow)"/>
+    <circle cx="570" cy="460" r="3" fill="#7bf0ff" opacity="0.6" filter="url(#glow)"/>
+    <circle cx="400" cy="530" r="3" fill="#5ad0ff" opacity="0.5" filter="url(#glow)"/>
+    <circle cx="600" cy="540" r="2.5" fill="#5ad0ff" opacity="0.5" filter="url(#glow)"/>
+    <circle cx="445" cy="600" r="2" fill="#7bf0ff" opacity="0.4" filter="url(#glow)"/>
+    <circle cx="555" cy="610" r="2" fill="#7bf0ff" opacity="0.4" filter="url(#glow)"/>
+</svg>
+<div class="overlay">
+    <div class="title">The <em>Luminous</em> Deep</div>
+    <div class="sub">Hybrid Visual Synthesis — Shader + SVG + Typography</div>
+</div>
+<div class="grain"></div>
+<script>
+const c=document.getElementById('shader');
+const gl=c.getContext('webgl')||c.getContext('experimental-webgl');
+if(!gl){throw'no webgl'}
+function resize(){c.width=innerWidth*devicePixelRatio;c.height=innerHeight*devicePixelRatio}
+resize();addEventListener('resize',resize);
+const v=`attribute vec2 p;void main(){gl_Position=vec4(p,0,1);}`;
+const f=`precision highp float;
+uniform float T;uniform vec2 R;
+vec3 mod289(vec3 x){return x-floor(x*(1./289.))*289.;}
+vec2 mod289(vec2 x){return x-floor(x*(1./289.))*289.;}
+vec3 permute(vec3 x){return mod289(((x*34.)+1.)*x);}
+float snoise(vec2 v){
+    const vec4 C=vec4(.211324865,.366025404,-.577350269,.024390244);
+    vec2 i=floor(v+dot(v,C.yy));vec2 x0=v-i+dot(i,C.xx);
+    vec2 i1=(x0.x>x0.y)?vec2(1,0):vec2(0,1);
+    vec4 x12=x0.xyxy+C.xxzz;x12.xy-=i1;
+    i=mod289(i);vec3 p=permute(permute(i.y+vec3(0,i1.y,1))+i.x+vec3(0,i1.x,1));
+    vec3 m=max(.5-vec3(dot(x0,x0),dot(x12.xy,x12.xy),dot(x12.zw,x12.zw)),0.);
+    m=m*m;m=m*m;
+    vec3 x=2.*fract(p*C.www)-1.;vec3 h=abs(x)-.5;vec3 ox=floor(x+.5);vec3 a0=x-ox;
+    m*=1.79284291400159-.85373472095314*(a0*a0+h*h);
+    vec3 g;g.x=a0.x*x0.x+h.x*x0.y;g.yz=a0.yz*x12.xz+h.yz*x12.yw;
+    return 130.*dot(m,g);
+}
+float fbm(vec2 p){float f=0.,a=.5;for(int i=0;i<6;i++){f+=a*snoise(p);p*=2.1;a*=.49;}return f;}
+void main(){
+    vec2 uv=gl_FragCoord.xy/R;float t=T*.1;
+    float d=length(uv-vec2(.5,.45));
+    // Deep ocean gradient
+    vec3 deep=vec3(.01,.02,.06);
+    vec3 mid=vec3(.02,.04,.12);
+    vec3 col=mix(deep,mid,smoothstep(.8,.2,d));
+    // Creature body — bioluminescent sphere
+    float body=smoothstep(.18,.05,d);
+    vec3 bioColor=vec3(.2,.7,1.)*(.6+.4*snoise(uv*8.+t));
+    col=mix(col,bioColor*.3,body);
+    // Surface distortion
+    float surf=fbm(uv*4.+vec2(t*.3,t*.2));
+    col+=vec3(.1,.3,.5)*smoothstep(.4,.6,surf)*body*.5;
+    // Rim light (Fresnel)
+    float rim=pow(1.-smoothstep(.05,.25,d),3.);
+    col+=vec3(.3,.6,1.)*rim*.4;
+    // Floating particles
+    for(int i=0;i<20;i++){
+        float fi=float(i);
+        vec2 pp=vec2(.5+.3*cos(t*.5+fi*1.3),.45+.3*sin(t*.3+fi*.9));
+        float pd=length(uv-pp);
+        col+=vec3(.2,.5,.8)*smoothstep(.015,0.,pd)*.3;
+    }
+    // Atmospheric depth
+    float atmo=smoothstep(.1,.9,d);
+    col=mix(col,deep,pow(atmo,1.5)*.5);
+    // Tone map
+    col=col/(1.+col);col=pow(col,vec3(.85));
+    gl_FragColor=vec4(col,1.);
+}`;
+function mk(t,s){const sh=gl.createShader(t);gl.shaderSource(sh,s);gl.compileShader(sh);return sh;}
+const pg=gl.createProgram();gl.attachShader(pg,mk(gl.VERTEX_SHADER,v));gl.attachShader(pg,mk(gl.FRAGMENT_SHADER,f));
+gl.linkProgram(pg);gl.useProgram(pg);
+const b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);
+gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+const p=gl.getAttribLocation(pg,'p');gl.enableVertexAttribArray(p);gl.vertexAttribPointer(p,2,gl.FLOAT,false,0,0);
+const uT=gl.getUniformLocation(pg,'T');const uR=gl.getUniformLocation(pg,'R');
+(function loop(t){gl.viewport(0,0,c.width,c.height);gl.uniform1f(uT,t*.001);gl.uniform2f(uR,c.width,c.height);
+gl.drawArrays(gl.TRIANGLE_STRIP,0,4);requestAnimationFrame(loop)})(0);
+</script>
+</body>
+</html>

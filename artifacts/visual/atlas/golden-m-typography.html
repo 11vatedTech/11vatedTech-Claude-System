@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M — Typography as Form</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0f;width:100vw;height:100vh;overflow:hidden;font-family:'Inter',sans-serif;display:flex;align-items:center;justify-content:center}
+.poster{position:relative;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center}
+/* Main deconstructed title */
+.hero{position:absolute;font-weight:900;font-size:clamp(60px,12vw,180px);color:transparent;
+    -webkit-text-stroke:1px rgba(255,255,255,0.08);letter-spacing:-0.04em;line-height:0.85}
+.hero-frag{position:absolute;font-weight:900;line-height:0.85}
+.f1{font-size:clamp(80px,16vw,240px);color:#fff;top:10%;left:5%;opacity:0.95;clip-path:polygon(0 0,100% 0,100% 55%,0 55%)}
+.f2{font-size:clamp(60px,12vw,180px);color:#c9a84c;top:18%;right:8%;opacity:0.7;transform:rotate(-3deg);letter-spacing:0.1em}
+.f3{font-size:clamp(40px,8vw,120px);color:rgba(255,255,255,0.15);bottom:35%;left:15%;font-weight:100;letter-spacing:0.3em}
+.f4{font-size:clamp(30px,5vw,70px);color:#c9a84c;bottom:20%;right:12%;opacity:0.6;font-weight:300;letter-spacing:0.08em}
+.f5{font-size:clamp(20px,3vw,45px);color:rgba(255,255,255,0.06);top:60%;left:3%;font-weight:100;letter-spacing:0.5em;writing-mode:vertical-rl}
+/* Echo fragments — kinetic energy captured in static form */
+.echo{position:absolute;font-weight:100;letter-spacing:0.2em;color:rgba(255,255,255,0.03);font-size:clamp(100px,20vw,300px)}
+.e1{top:5%;left:-5%;transform:rotate(-8deg)}
+.e2{bottom:10%;right:-5%;transform:rotate(5deg)}
+/* Accent lines — typographic rhythm */
+.accent{position:absolute;height:1px;background:linear-gradient(90deg,transparent,#c9a84c,transparent)}
+.a1{width:200px;top:30%;left:10%;opacity:0.3}
+.a2{width:150px;bottom:25%;right:15%;opacity:0.2;transform:rotate(-2deg)}
+.a3{width:1px;height:120px;top:15%;left:35%;background:linear-gradient(180deg,transparent,rgba(201,168,76,0.2),transparent)}
+/* Grid overlay — Swiss precision */
+.grid{position:absolute;inset:0;background:
+    linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px),
+    linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px);
+    background-size:60px 60px;pointer-events:none}
+/* Bottom info */
+.info{position:absolute;bottom:30px;left:40px;right:40px;display:flex;justify-content:space-between;align-items:flex-end}
+.info-left{font-size:9px;letter-spacing:3px;color:rgba(255,255,255,0.2);text-transform:uppercase;line-height:1.8}
+.info-right{font-size:9px;letter-spacing:2px;color:rgba(201,168,76,0.4);text-align:right}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="poster">
+    <div class="grid"></div>
+    <div class="echo e1">RESONANCE</div>
+    <div class="echo e2">RESONANCE</div>
+    <div class="hero">RESONANCE</div>
+    <div class="hero-frag f1">RES</div>
+    <div class="hero-frag f2">ONANCE</div>
+    <div class="hero-frag f3">RESONANCE</div>
+    <div class="hero-frag f4">re sonance</div>
+    <div class="hero-frag f5">RESONANCE</div>
+    <div class="accent a1"></div>
+    <div class="accent a2"></div>
+    <div class="accent a3"></div>
+    <div class="info">
+        <div class="info-left">
+            Type as Form<br>
+            Kinetic Typography Study<br>
+            Experimental Deconstruction
+        </div>
+        <div class="info-right">
+            11vatedTech Foundry<br>
+            Code-Native Visual Intelligence
+        </div>
+    </div>
+</div>
+</body>
+</html>
