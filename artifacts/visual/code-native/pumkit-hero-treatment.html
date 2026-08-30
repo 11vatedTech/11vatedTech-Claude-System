@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pumkit — Character Hero Treatment</title>
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  :root {
+    --bg: #0a0808;
+    --pumpkin: #d4763a;
+    --pumpkin-light: #e8a060;
+    --pumpkin-dark: #8a4a20;
+    --stem: #4a6b3a;
+    --warm: #f5e6d0;
+    --cream: #f0e0c8;
+  }
+  body {
+    background: var(--bg);
+    color: var(--warm);
+    font-family: 'Georgia', serif;
+    overflow: hidden;
+    height: 100vh;
+  }
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+  /* Left: SVG character form */
+  .char-side {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at 60% 50%, rgba(212,118,58,0.08) 0%, transparent 70%);
+  }
+  .char-side svg {
+    width: 70%;
+    max-width: 400px;
+    filter: drop-shadow(0 0 60px rgba(212,118,58,0.15));
+  }
+  /* Right: type treatment */
+  .type-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 5rem;
+    position: relative;
+  }
+  .overline {
+    font-size: 0.6rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--pumpkin);
+    opacity: 0.6;
+    margin-bottom: 2rem;
+  }
+  .hero-name {
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: 100;
+    line-height: 0.85;
+    letter-spacing: -0.03em;
+    color: var(--cream);
+    margin-bottom: 1rem;
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--pumpkin);
+    font-weight: 300;
+  }
+  .rule {
+    width: 50px;
+    height: 2px;
+    background: var(--pumpkin);
+    margin: 2rem 0;
+    opacity: 0.5;
+  }
+  .tagline {
+    font-size: 1.1rem;
+    color: var(--warm);
+    opacity: 0.7;
+    line-height: 1.7;
+    max-width: 380px;
+    font-weight: 300;
+  }
+  .meta {
+    margin-top: 3rem;
+    display: flex;
+    gap: 2rem;
+  }
+  .meta span {
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--pumpkin);
+    opacity: 0.35;
+  }
+  /* Corner marks */
+  .corner { position: fixed; z-index: 10; pointer-events: none; }
+  .corner svg { width: 24px; height: 24px; opacity: 0.12; }
+  .c-tl { top: 1.5rem; left: 1.5rem; }
+  .c-tr { top: 1.5rem; right: 1.5rem; transform: scaleX(-1); }
+  .c-bl { bottom: 1.5rem; left: 1.5rem; transform: scaleY(-1); }
+  .c-br { bottom: 1.5rem; right: 1.5rem; transform: scale(-1); }
+  /* Grain */
+  .grain {
+    position: fixed; inset: 0; z-index: 5; pointer-events: none; opacity: 0.03;
+    mix-blend-mode: overlay;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px;
+  }
+  @media (max-width: 800px) {
+    .hero { grid-template-columns: 1fr; }
+    .char-side { min-height: 45vh; }
+    .type-side { padding: 2rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .breath { animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="corner c-tl"><svg viewBox="0 0 24 24"><path d="M0 12 L0 0 L12 0" fill="none" stroke="#d4763a" stroke-width="0.5"/></svg></div>
+<div class="corner c-tr"><svg viewBox="0 0 24 24"><path d="M0 12 L0 0 L12 0" fill="none" stroke="#d4763a" stroke-width="0.5"/></svg></div>
+<div class="corner c-bl"><svg viewBox="0 0 24 24"><path d="M0 12 L0 0 L12 0" fill="none" stroke="#d4763a" stroke-width="0.5"/></svg></div>
+<div class="corner c-br"><svg viewBox="0 0 24 24"><path d="M0 12 L0 0 L12 0" fill="none" stroke="#d4763a" stroke-width="0.5"/></svg></div>
+
+<section class="hero">
+  <div class="char-side">
+    <svg viewBox="0 0 300 350" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="pg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#8a4a20"/>
+          <stop offset="40%" stop-color="#d4763a"/>
+          <stop offset="100%" stop-color="#e8a060"/>
+        </linearGradient>
+        <radialGradient id="pglow" cx="50%" cy="45%" r="50%">
+          <stop offset="0%" stop-color="#d4763a" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#d4763a" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="soft">
+          <feGaussianBlur stdDeviation="1.5" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <!-- Background glow -->
+      <ellipse cx="150" cy="180" rx="120" ry="130" fill="url(#pglow)"/>
+      <!-- Organic pumpkin body — compound bezier -->
+      <path d="M150 80 C200 80, 250 130, 255 180 C260 230, 230 280, 200 300 
+               C180 312, 120 312, 100 300 C70 280, 40 230, 45 180 
+               C50 130, 100 80, 150 80Z" 
+            fill="none" stroke="url(#pg)" stroke-width="1.5" filter="url(#soft)"/>
+      <!-- Ribs — organic curvature lines -->
+      <path d="M150 85 C150 85, 155 180, 150 295" fill="none" stroke="#d4763a" stroke-width="0.5" opacity="0.3"/>
+      <path d="M110 95 C95 160, 90 230, 110 295" fill="none" stroke="#d4763a" stroke-width="0.4" opacity="0.2"/>
+      <path d="M190 95 C205 160, 210 230, 190 295" fill="none" stroke="#d4763a" stroke-width="0.4" opacity="0.2"/>
+      <path d="M75 130 C60 180, 65 240, 90 285" fill="none" stroke="#d4763a" stroke-width="0.3" opacity="0.15"/>
+      <path d="M225 130 C240 180, 235 240, 210 285" fill="none" stroke="#d4763a" stroke-width="0.3" opacity="0.15"/>
+      <!-- Stem — organic growth -->
+      <path d="M150 80 C148 65, 155 45, 160 30 C162 25, 158 20, 155 25 C150 35, 145 55, 150 80Z" 
+            fill="url(#pg)" opacity="0.4"/>
+      <!-- Small leaf -->
+      <path d="M158 35 C165 28, 175 30, 170 38 C168 42, 160 40, 158 35Z" 
+            fill="#4a6b3a" opacity="0.3"/>
+      <!-- Eyes — character personality -->
+      <ellipse cx="125" cy="180" rx="8" ry="10" fill="none" stroke="#e8a060" stroke-width="0.8" opacity="0.5"/>
+      <ellipse cx="175" cy="180" rx="8" ry="10" fill="none" stroke="#e8a060" stroke-width="0.8" opacity="0.5"/>
+      <circle cx="125" cy="182" r="3" fill="#e8a060" opacity="0.4"/>
+      <circle cx="175" cy="182" r="3" fill="#e8a060" opacity="0.4"/>
+      <!-- Smile -->
+      <path d="M130 210 Q150 225, 170 210" fill="none" stroke="#e8a060" stroke-width="0.6" opacity="0.35"/>
+      <!-- Construction marks -->
+      <line x1="150" y1="20" x2="150" y2="310" stroke="#d4763a" stroke-width="0.2" opacity="0.06"/>
+      <line x1="40" y1="180" x2="260" y2="180" stroke="#d4763a" stroke-width="0.2" opacity="0.06"/>
+      <!-- Annotation -->
+      <text x="150" y="340" text-anchor="middle" font-family="Georgia, serif" font-size="5" fill="#d4763a" opacity="0.2" letter-spacing="0.15em">PUMKIT — CHARACTER CANON NO. 001</text>
+    </svg>
+  </div>
+  <div class="type-side">
+    <p class="overline">Character Identity — 11vatedTech</p>
+    <h1 class="hero-name">Pum<em>kit</em></h1>
+    <div class="rule"></div>
+    <p class="tagline">An organic character born from pumpkin form language. Every curve intentional. Every feature expressive. Designed to be remembered.</p>
+    <div class="meta">
+      <span>Character IP</span>
+      <span>Organic Form</span>
+      <span>Visual Treatment</span>
+    </div>
+  </div>
+</section>
+</body>
+</html>

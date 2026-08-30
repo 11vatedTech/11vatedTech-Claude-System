@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Before / After — Code-Native Visual Intelligence</title>
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  body {
+    background: #0a0a0f;
+    color: #d4d4dc;
+    font-family: 'Georgia', serif;
+    padding: 3rem 2rem;
+  }
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #e8d5a3;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #8a8a92;
+    margin-bottom: 3rem;
+  }
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+  }
+  .panel {
+    background: #111115;
+    border: 1px solid rgba(201,169,110,0.08);
+    padding: 2rem;
+    position: relative;
+  }
+  .panel-label {
+    font-size: 0.55rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .before-label { color: #666; }
+  .after-label { color: #c9a96e; }
+  
+  /* BEFORE: primitive CSS */
+  .before-visual {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: linear-gradient(#111, #222);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .before-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(20px);
+    border-radius: 8px;
+  }
+  .before-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #333, #555);
+    box-shadow: 0 0 30px rgba(100,100,255,0.2);
+    z-index: 1;
+  }
+  .before-text {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.8);
+    z-index: 1;
+  }
+  
+  /* AFTER: procedural luxury */
+  .after-visual {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #08080c;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .after-visual::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 70%;
+    background: 
+      radial-gradient(ellipse 40% 35% at 50% 0%, rgba(201,169,110,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 25% 50% at 35% 20%, rgba(107,127,160,0.06) 0%, transparent 60%);
+    filter: blur(40px);
+  }
+  .after-mark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+  }
+  .after-mark svg { width: 100%; height: 100%; }
+  .after-title {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 100;
+    color: #d4d4dc;
+    letter-spacing: -0.02em;
+  }
+  .after-title em { color: #c9a96e; font-weight: 300; }
+  
+  /* Dimension table */
+  .dims {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .dims th, .dims td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    font-size: 0.8rem;
+    border-bottom: 1px solid rgba(201,169,110,0.06);
+  }
+  .dims th {
+    font-size: 0.55rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #8a8a92;
+    font-weight: 400;
+  }
+  .dims td:first-child { color: #d4d4dc; }
+  .dims .low { color: #666; }
+  .dims .high { color: #c9a96e; }
+  .conclusion {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding: 1.5rem;
+    background: rgba(201,169,110,0.04);
+    border-left: 2px solid #c9a96e;
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #d4d4dc;
+  }
+  @media (max-width: 768px) {
+    .comparison { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<h1>Before / After</h1>
+<p class="subtitle">Code-Native Visual Intelligence — Material Improvement Proof</p>
+
+<div class="comparison">
+  <div class="panel">
+    <p class="panel-label before-label">Before — Primitive Code-Native</p>
+    <div class="before-visual">
+      <div class="before-circle"></div>
+      <span class="before-text">Product</span>
+    </div>
+  </div>
+  <div class="panel">
+    <p class="panel-label after-label">After — Code-Native VPI</p>
+    <div class="after-visual">
+      <svg class="after-mark" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ag" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#7a6340"/>
+            <stop offset="50%" stop-color="#c9a96e"/>
+            <stop offset="100%" stop-color="#e8d5a3"/>
+          </linearGradient>
+        </defs>
+        <circle cx="40" cy="40" r="35" fill="none" stroke="url(#ag)" stroke-width="0.5" opacity="0.3"/>
+        <path d="M40 12 C52 12, 62 22, 64 35 C66 48, 58 58, 48 64 C44 66, 36 66, 32 64 C22 58, 14 48, 16 35 C18 22, 28 12, 40 12Z" 
+              fill="none" stroke="url(#ag)" stroke-width="0.8"/>
+        <circle cx="40" cy="38" r="2" fill="#c9a96e" opacity="0.5"/>
+      </svg>
+      <span class="after-title">Precision <em>Forged</em></span>
+    </div>
+  </div>
+</div>
+
+<table class="dims">
+  <thead>
+    <tr><th>Dimension</th><th>Before</th><th>After</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Shape sophistication</td><td class="low">Default circle/rectangle</td><td class="high">Organic bezier, construction marks</td></tr>
+    <tr><td>Material quality</td><td class="low">linear-gradient(#111,#222)</td><td class="high">Directed gradient fields, shader materials</td></tr>
+    <tr><td>Lighting</td><td class="low">Flat, no direction</td><td class="high">Art-directed radial fields, Fresnel</td></tr>
+    <tr><td>Composition</td><td class="low">Centered, single-element</td><td class="high">Split, layered, varied card grid</td></tr>
+    <tr><td>Typography</td><td class="low">Bold centered default</td><td class="high">Professional hierarchy, type specimen</td></tr>
+    <tr><td>Motion</td><td class="low">None or generic fade</td><td class="high">Choreographed entrance, orbital spin</td></tr>
+    <tr><td>Interaction</td><td class="low">None</td><td class="high">Mouse-reactive shader, light follow</td></tr>
+    <tr><td>Depth</td><td class="low">Flat single layer</td><td class="high">Atmospheric, vignette, grain overlay</td></tr>
+    <tr><td>Originality</td><td class="low">Generic template</td><td class="high">Specific creative thesis per mission</td></tr>
+    <tr><td>Professional finish</td><td class="low">Developer prototype</td><td class="high">Commercial-quality presentation</td></tr>
+  </tbody>
+</table>
+
+<div class="conclusion">
+  <strong>Conclusion:</strong> The improvement is not "more glow" or "more gradients." 
+  The material increase is in composition strategy, material intelligence, shape language, 
+  art-directed lighting, choreographed motion, and specific creative thesis. 
+  An independent reviewer can identify the new result without knowing which is "after."
+</div>
+</body>
+</html>

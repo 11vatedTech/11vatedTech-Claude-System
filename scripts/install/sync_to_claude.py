@@ -166,6 +166,10 @@ CAPSYS_MAP: dict[str, str] = {
     "scripts/kapif/write_packs.py": "scripts/kapif/write_packs.py",
     "config/model-role-registry-vision.json": "config/model-role-registry-vision.json",
     "config/product-portfolio-registry.json": "config/product-portfolio-registry.json",
+    "scripts/visual/__init__.py": "scripts/visual/__init__.py",
+    "scripts/visual/code_native_engine.py": "scripts/visual/code_native_engine.py",
+    "scripts/visual/comfyui_runner.py": "scripts/visual/comfyui_runner.py",
+    "scripts/visual/vpi_engine.py": "scripts/visual/vpi_engine.py",
     "docs/product-repository-boundary.md": "docs/product-repository-boundary.md",
 }
 
