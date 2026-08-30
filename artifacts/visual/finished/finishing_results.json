@@ -1,0 +1,50 @@
+[
+  {
+    "input": "char_concept_b.png",
+    "output": "creature_finished.png",
+    "size_kb": 1095,
+    "status": "OK"
+  },
+  {
+    "input": "char_concept_a.png",
+    "output": "warrior_finished.png",
+    "size_kb": 883,
+    "status": "OK"
+  },
+  {
+    "input": "vfx_energy.png",
+    "output": "vfx_energy_finished.png",
+    "size_kb": 1048,
+    "status": "OK"
+  },
+  {
+    "input": "vfx_organic.png",
+    "output": "vfx_phoenix_finished.png",
+    "size_kb": 1080,
+    "status": "OK"
+  },
+  {
+    "input": "env_natural.png",
+    "output": "mushroom_forest_finished.png",
+    "size_kb": 1120,
+    "status": "OK"
+  },
+  {
+    "input": "env_fantasy.png",
+    "output": "sky_city_finished.png",
+    "size_kb": 1156,
+    "status": "OK"
+  },
+  {
+    "input": "product_tech.png",
+    "output": "smartwatch_finished.png",
+    "size_kb": 1308,
+    "status": "OK"
+  },
+  {
+    "input": "product_food.png",
+    "output": "dessert_finished.png",
+    "size_kb": 1625,
+    "status": "OK"
+  }
+]
