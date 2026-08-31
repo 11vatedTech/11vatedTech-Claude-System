@@ -1,0 +1,54 @@
+{
+  "assets": [
+    {
+      "name": "hero_2d",
+      "src": "artifacts/visual/atlas/hero_2d_upscaled.png",
+      "repairs": [
+        "saturation",
+        "unsharp",
+        "contrast",
+        "warmth"
+      ],
+      "path": "artifacts/visual/finished_v2\\hero_2d_professional.png"
+    },
+    {
+      "name": "shader_volumetric",
+      "src": "artifacts/visual/calibration/shader_volumetric.png",
+      "repairs": [
+        "anti-banding",
+        "sharpen",
+        "contrast"
+      ],
+      "path": "artifacts/visual/finished_v2\\shader_volumetric_professional.png"
+    },
+    {
+      "name": "golem_3d",
+      "src": "artifacts/visual/3d-character/golem_front.png",
+      "repairs": [
+        "AA",
+        "contrast",
+        "vignette",
+        "color"
+      ],
+      "path": "artifacts/visual/finished_v2\\golem_front_professional.png"
+    },
+    {
+      "name": "typography",
+      "src": "artifacts/visual/calibration/typo_editorial.png",
+      "repairs": [
+        "crispness",
+        "contrast"
+      ],
+      "path": "artifacts/visual/finished_v2\\typo_editorial_professional.png"
+    },
+    {
+      "name": "vector",
+      "src": "artifacts/visual/calibration/vec_brand_mark.png",
+      "repairs": [
+        "edge-sharpen"
+      ],
+      "path": "artifacts/visual/finished_v2\\vec_brand_professional.png"
+    }
+  ],
+  "status": "COMPLETE"
+}

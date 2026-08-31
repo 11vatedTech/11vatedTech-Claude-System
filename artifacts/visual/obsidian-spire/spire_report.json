@@ -1,0 +1,49 @@
+{
+  "name": "THE OBSIDIAN SPIRE",
+  "type": "Integrated Production Slice",
+  "disciplines": {
+    "3D_character": {
+      "status": "COMPLETE",
+      "mesh": "9044 verts",
+      "bones": 20,
+      "animation_clips": 3,
+      "deformation_tests": 6
+    },
+    "video_generation": {
+      "status": "COMPLETE",
+      "model": "Wan2.1 T2V 1.3B",
+      "resolution": "832x480",
+      "fps": 16,
+      "frames": 49
+    },
+    "ai_music": {
+      "status": "COMPLETE",
+      "model": "ACE-Step 1.5 (MIT)",
+      "cues": 3,
+      "duration": "30s each"
+    },
+    "shader_vfx": {
+      "status": "COMPLETE",
+      "type": "WebGL GLSL volumetric"
+    },
+    "typography": {
+      "status": "COMPLETE",
+      "type": "HTML/CSS/SVG deterministic"
+    },
+    "vector": {
+      "status": "COMPLETE",
+      "type": "SVG brand mark"
+    },
+    "2D_illustration": {
+      "status": "COMPLETE",
+      "type": "Generative + professional finish"
+    },
+    "professional_finishing": {
+      "status": "COMPLETE",
+      "assets": 5,
+      "repairs": "defect-specific"
+    }
+  },
+  "file": "obsidian_spire.html",
+  "size_kb": 29151
+}

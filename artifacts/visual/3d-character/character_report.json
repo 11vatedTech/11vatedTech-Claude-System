@@ -1,0 +1,79 @@
+{
+  "mesh_parts_joined": 20,
+  "mesh_verts_raw": 766,
+  "bone_count": 20,
+  "skinning": "ARMATURE_AUTO (automatic weights)",
+  "vg_count": 20,
+  "deformation": {
+    "neutral": {
+      "verts": 9044,
+      "z_min": 0.0002403450052952394,
+      "z_max": 3.0989859104156494,
+      "x_spread": 1.997971773147583
+    },
+    "arms_raised": {
+      "verts": 9044,
+      "z_min": 0.0002403450052952394,
+      "z_max": 3.0989859104156494,
+      "x_spread": 1.7948814630508423
+    },
+    "elbow_bend": {
+      "verts": 9044,
+      "z_min": 0.0002403450052952394,
+      "z_max": 3.0989859104156494,
+      "x_spread": 1.7948814630508423
+    },
+    "knee_bend": {
+      "verts": 9044,
+      "z_min": 0.0471663773059845,
+      "z_max": 3.0989859104156494,
+      "x_spread": 1.7948814630508423
+    },
+    "torso_twist": {
+      "verts": 9044,
+      "z_min": 0.0471663773059845,
+      "z_max": 3.1117444038391113,
+      "x_spread": 2.084586203098297
+    },
+    "walk_stride": {
+      "verts": 9044,
+      "z_min": 0.014151841402053833,
+      "z_max": 3.1117444038391113,
+      "x_spread": 2.2268492579460144
+    }
+  },
+  "animation": {
+    "action": "GolemPerformance",
+    "frames": "1-144",
+    "clips": [
+      "idle(1-48)",
+      "walk(60-84)",
+      "power_surge(96-144)"
+    ]
+  },
+  "final_mesh": {
+    "verts": 9044,
+    "faces": 9004,
+    "tris": 18008
+  },
+  "renders": [
+    "deform_arms_raised.png",
+    "deform_knee_bend.png",
+    "deform_walk_stride.png",
+    "golem_front.png",
+    "golem_idle_frame_001.png",
+    "golem_idle_frame_009.png",
+    "golem_idle_frame_017.png",
+    "golem_idle_frame_025.png",
+    "golem_idle_frame_048.png",
+    "golem_power_frame_096.png",
+    "golem_power_frame_104.png",
+    "golem_power_frame_112.png",
+    "golem_power_frame_120.png",
+    "golem_power_frame_144.png",
+    "golem_power_surge.png",
+    "golem_side.png",
+    "golem_threequarter.png",
+    "obsidian_golem.glb"
+  ]
+}
