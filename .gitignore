@@ -101,3 +101,8 @@ scripts/visual/run_wan.bat
 scripts/visual/run_wan_diffusers.bat
 scripts/visual/shader_masterpiece.py
 scripts/visual/wan_video_generation.py
+
+# Hero artifacts (evidence, not source)
+artifacts/visual/final-craft/heroes/
+scripts/visual/capture_webgl.py
+scripts/visual/capture_webgl_v2.py
