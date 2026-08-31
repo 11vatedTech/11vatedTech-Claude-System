@@ -1,0 +1,28 @@
+{
+  "html_artifacts": [
+    {
+      "name": "Obsidian Depths Digital Painting",
+      "file": "obsidian_depths_painting.html",
+      "level": "L7-L8",
+      "technique": "Canvas layered brushwork, 14 layers, grain, vignette"
+    },
+    {
+      "name": "Crystalline Consciousness Shader",
+      "file": "crystalline_shader.html",
+      "level": "L8",
+      "technique": "WebGL SDF raymarching, 5 crystal arms, AO, soft shadows"
+    },
+    {
+      "name": "Resonance Pulse Motion",
+      "file": "resonance_motion.html",
+      "level": "L6",
+      "technique": "CSS animation: anticipation, follow-through, stagger, weight"
+    },
+    {
+      "name": "Obsidian Spire UI",
+      "file": "obsidian_spire_ui.html",
+      "level": "L7",
+      "technique": "Grid layout, hierarchy, typography, interaction states, material"
+    }
+  ]
+}

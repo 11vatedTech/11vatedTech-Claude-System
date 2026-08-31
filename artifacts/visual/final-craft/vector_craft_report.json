@@ -1,0 +1,72 @@
+{
+  "artifacts": [
+    {
+      "name": "Obsidian Warden Character",
+      "file": "warden_character.svg",
+      "level": "L7",
+      "techniques": [
+        "B\u00e9zier curves",
+        "compound paths",
+        "SVG filters",
+        "gradients",
+        "clip paths"
+      ]
+    },
+    {
+      "name": "Abyssal Lure Creature",
+      "file": "abyssal_creature.svg",
+      "level": "L6",
+      "techniques": [
+        "functional anatomy",
+        "bioluminescence",
+        "SVG filters",
+        "turbulence displacement"
+      ]
+    },
+    {
+      "name": "Obsidian Spires Environment",
+      "file": "obsidian_spires_env.svg",
+      "level": "L7",
+      "techniques": [
+        "atmospheric perspective",
+        "layered depth",
+        "custom terrain",
+        "lava effects"
+      ]
+    },
+    {
+      "name": "Resonance Core Prop",
+      "file": "resonance_core_prop.svg",
+      "level": "L7",
+      "techniques": [
+        "material depth",
+        "construction logic",
+        "energy effects",
+        "wear detail"
+      ]
+    },
+    {
+      "name": "Resonance Poster",
+      "file": "resonance_poster.svg",
+      "level": "L7",
+      "techniques": [
+        "grid composition",
+        "typography",
+        "shape hierarchy",
+        "pattern fills"
+      ]
+    },
+    {
+      "name": "Basalt Meridian Cross-Medium",
+      "file": "cross-medium/basalt_*.svg",
+      "level": "L6",
+      "techniques": [
+        "consistent Style DNA",
+        "4 media",
+        "angular-geometric erosion",
+        "copper/teal palette"
+      ]
+    }
+  ],
+  "no_primitives_as_final": true
+}

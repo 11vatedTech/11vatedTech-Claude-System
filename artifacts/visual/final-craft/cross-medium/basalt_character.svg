@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-100 -150 200 350" width="400" height="700">
+  <defs>
+    <linearGradient id="ba" x1="0" y1="0" x2="0.2" y2="1"><stop offset="0%" stop-color="#3a3a3a"/><stop offset="50%" stop-color="#2a2a2a"/><stop offset="100%" stop-color="#1a1a1a"/></linearGradient>
+    <linearGradient id="co" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#b87333"/><stop offset="50%" stop-color="#8b5a2b"/><stop offset="100%" stop-color="#6b4423"/></linearGradient>
+    <linearGradient id="te" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2a8a7a"/><stop offset="100%" stop-color="#1a5a4a"/></linearGradient>
+  </defs>
+  <rect x="-100" y="-150" width="200" height="350" fill="#0f0f0f"/>
+  <path d="M -30 -40 L -20 -80 L 0 -95 L 20 -80 L 30 -40 L 28 30 L 0 45 L -28 30 Z" fill="url(#ba)" stroke="#4a4a4a" stroke-width="0.8"/>
+  <path d="M -15 -70 L -10 -50 L -18 -30" stroke="#4a4a4a" stroke-width="0.5" fill="none" opacity="0.4"/>
+  <path d="M 10 -60 L 15 -40 L 8 -20" stroke="#4a4a4a" stroke-width="0.5" fill="none" opacity="0.4"/>
+  <path d="M -15 -95 L -10 -120 L 0 -135 L 10 -120 L 15 -95 Z" fill="url(#ba)" stroke="#4a4a4a" stroke-width="0.8"/>
+  <circle cx="0" cy="-115" r="3" fill="url(#te)"/>
+  <path d="M -30 -40 L -55 -25 L -70 -10 L -75 10" stroke="url(#ba)" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <circle cx="-55" cy="-25" r="4" fill="url(#co)"/>
+  <circle cx="-70" cy="-10" r="3" fill="url(#co)"/>
+  <path d="M 30 -40 L 55 -25 L 70 -10 L 75 10" stroke="url(#ba)" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <circle cx="55" cy="-25" r="4" fill="url(#co)"/>
+  <circle cx="70" cy="-10" r="3" fill="url(#co)"/>
+  <path d="M -15 45 L -20 80 L -25 120 L -22 150" stroke="url(#ba)" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <path d="M 15 45 L 20 80 L 25 120 L 22 150" stroke="url(#ba)" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <circle cx="-20" cy="80" r="3.5" fill="url(#co)"/>
+  <circle cx="20" cy="80" r="3.5" fill="url(#co)"/>
+  <path d="M -20 -60 L 20 -60" stroke="#4a4a4a" stroke-width="0.4" fill="none"/>
+  <path d="M -18 -30 L 18 -30" stroke="#4a4a4a" stroke-width="0.4" fill="none"/>
+  <path d="M 0 -95 L 0 -40 L -5 20 L 0 45" stroke="url(#te)" stroke-width="0.8" fill="none" opacity="0.5"/>
+</svg>

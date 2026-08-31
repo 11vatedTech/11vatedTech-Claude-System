@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs><linearGradient id="bs" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a1a1a"/><stop offset="100%" stop-color="#2a2a2a"/></linearGradient></defs>
+  <rect width="800" height="450" fill="url(#bs)"/>
+  <path d="M 100 450 L 110 250 L 115 280 L 125 200 L 130 240 L 140 450 Z" fill="#2a2a2a" stroke="#3a3a3a" stroke-width="0.5"/>
+  <path d="M 180 450 L 195 180 L 200 220 L 210 150 L 215 190 L 225 450 Z" fill="#252525" stroke="#3a3a3a" stroke-width="0.5"/>
+  <path d="M 300 450 L 320 120 L 330 170 L 340 90 L 350 140 L 360 450 Z" fill="#2a2a2a" stroke="#3a3a3a" stroke-width="0.5"/>
+  <path d="M 450 450 L 465 200 L 470 240 L 480 160 L 485 200 L 495 450 Z" fill="#222" stroke="#3a3a3a" stroke-width="0.5"/>
+  <path d="M 550 450 L 560 220 L 570 260 L 580 180 L 590 230 L 600 450 Z" fill="#2a2a2a" stroke="#3a3a3a" stroke-width="0.5"/>
+  <path d="M 650 450 L 670 160 L 680 200 L 690 130 L 700 170 L 710 450 Z" fill="#252525" stroke="#3a3a3a" stroke-width="0.5"/>
+  <path d="M 325 120 L 330 170 L 335 200" stroke="#b87333" stroke-width="1" fill="none" opacity="0.5"/>
+  <path d="M 575 180 L 580 230 L 578 280" stroke="#b87333" stroke-width="0.8" fill="none" opacity="0.4"/>
+  <ellipse cx="340" cy="440" rx="30" ry="5" fill="#2a8a7a" opacity="0.3"/>
+  <rect x="0" y="420" width="800" height="30" fill="#1a1a1a"/>
+</svg>

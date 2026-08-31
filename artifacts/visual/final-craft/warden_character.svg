@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-200 -320 400 780" width="800" height="1560">
+  <defs>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="42"/><feColorMatrix type="saturate" values="0"/><feBlend in="SourceGraphic" mode="multiply"/></filter>
+    <filter id="crystal"><feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="7"/><feDisplacementMap in="SourceGraphic" scale="3" xChannelSelector="R" yChannelSelector="G"/></filter>
+    <filter id="glow"><feGaussianBlur stdDeviation="4" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter>
+    <filter id="depth"><feGaussianBlur stdDeviation="8" result="blur"/><feOffset dx="3" dy="5" result="offset"/><feComposite in="SourceGraphic" in2="offset" operator="over"/></filter>
+    <linearGradient id="obsidian" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/><stop offset="30%" stop-color="#16213e"/><stop offset="60%" stop-color="#0f3460"/><stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="crystal_hl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e94560" stop-opacity="0.8"/><stop offset="50%" stop-color="#533483" stop-opacity="0.4"/><stop offset="100%" stop-color="#0f3460" stop-opacity="0.6"/>
+    </linearGradient>
+    <radialGradient id="core_glow" cx="0.5" cy="0.3" r="0.6">
+      <stop offset="0%" stop-color="#e94560" stop-opacity="0.9"/><stop offset="40%" stop-color="#533483" stop-opacity="0.5"/><stop offset="100%" stop-color="#0f3460" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="limb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#16213e"/><stop offset="100%" stop-color="#0a0a15"/>
+    </linearGradient>
+    <linearGradient id="vein" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e94560" stop-opacity="0"/><stop offset="30%" stop-color="#e94560" stop-opacity="0.7"/><stop offset="70%" stop-color="#c23152" stop-opacity="0.5"/><stop offset="100%" stop-color="#e94560" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  
+  <rect x="-200" y="-320" width="400" height="780" fill="#0a0a12"/>
+  <ellipse cx="0" cy="-100" rx="180" ry="200" fill="#1a1a2e" opacity="0.3"/>
+  <ellipse cx="0" cy="420" rx="160" ry="30" fill="#0f0f1a" opacity="0.8"/>
+  
+  <!-- BODY: organic crystalline form -->
+  <g filter="url(#depth)">
+    <path d="M -35 180 C -42 150 -55 120 -65 90 C -72 60 -78 30 -80 0 C -75 -30 -68 -60 -58 -90 C -48 -115 -40 -135 -35 -155 C -30 -175 -22 -195 -15 -210
+    L 15 -210 C 25 -200 35 -185 42 -165 C 50 -140 58 -115 68 -85 C 75 -55 80 -25 82 5 C 78 35 70 65 60 95 C 48 125 38 155 35 180
+    L 55 180 C 60 215 62 250 60 285 C 58 315 55 345 48 370 C 38 390 25 405 15 415
+    L -15 415 C -25 410 -38 395 -48 375 C -55 350 -58 320 -55 290 C -50 255 -42 220 -35 180 Z"
+    fill="url(#obsidian)" stroke="#0a0a15" stroke-width="1"/>
+  </g>
+  
+  <!-- Left arm: branching crystal -->
+  <path d="M -78 -30 C -95 -45 -115 -55 -135 -50 C -155 -38 -170 -20 -178 5 C -175 25 -165 40 -150 48 C -130 45 -110 35 -90 20 C -82 12 -78 5 -78 -30 Z"
+    fill="url(#limb)" stroke="#0f3460" stroke-width="0.5"/>
+  
+  <!-- Right arm: angular crystalline -->
+  <path d="M 82 -25 C 100 -40 120 -52 142 -48 C 160 -35 172 -15 178 8 C 175 30 162 45 145 50 C 125 42 105 28 88 12 L 82 -25 Z"
+    fill="url(#limb)" stroke="#0f3460" stroke-width="0.5"/>
+  
+  <!-- Crystal veins -->
+  <g opacity="0.6">
+    <line x1="-40" y1="-150" x2="-50" y2="100" stroke="url(#vein)" stroke-width="1.5"/>
+    <line x1="10" y1="-180" x2="20" y2="120" stroke="url(#vein)" stroke-width="1"/>
+    <line x1="40" y1="-100" x2="55" y2="80" stroke="url(#vein)" stroke-width="0.8"/>
+    <line x1="-60" y1="-50" x2="-70" y2="60" stroke="url(#vein)" stroke-width="0.6"/>
+    <line x1="-65" y1="0" x2="65" y2="-20" stroke="url(#vein)" stroke-width="0.5"/>
+    <line x1="-50" y1="60" x2="50" y2="40" stroke="url(#vein)" stroke-width="0.4"/>
+  </g>
+  
+  <!-- Form lighting -->
+  <g opacity="0.3">
+    <ellipse cx="-30" cy="-50" rx="60" ry="200" fill="#533483" opacity="0.4"/>
+    <ellipse cx="-50" cy="0" rx="40" ry="150" fill="#e94560" opacity="0.2"/>
+  </g>
+  
+  <!-- HEAD: crystalline form -->
+  <path d="M -15 -210 C -25 -225 -30 -245 -22 -265 C -10 -280 5 -290 18 -285 C 28 -270 32 -250 28 -230 C 20 -215 15 -210 15 -210 Z"
+    fill="url(#crystal_hl)" stroke="#e94560" stroke-width="0.8" filter="url(#crystal)"/>
+  <ellipse cx="5" cy="-255" rx="12" ry="15" fill="url(#core_glow)" filter="url(#glow)"/>
+  <path d="M -8 -258 L 0 -268 L 8 -258 L 0 -250 Z" fill="#e94560" opacity="0.9"/>
+  <circle cx="0" cy="-258" r="2" fill="#fff" opacity="0.8"/>
+  
+  <!-- Shoulder protrusions -->
+  <path d="M -70 -60 L -90 -80 L -85 -55 L -75 -45 Z" fill="#533483" stroke="#e94560" stroke-width="0.5" opacity="0.8"/>
+  <path d="M 72 -55 L 92 -75 L 87 -50 L 77 -40 Z" fill="#533483" stroke="#e94560" stroke-width="0.5" opacity="0.8"/>
+  
+  <!-- Hand details -->
+  <path d="M -175 5 L -185 -5 M -170 12 L -180 8 M -162 18 L -172 15" stroke="#0f3460" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M 175 8 L 185 -2 M 170 15 L 180 11 M 162 20 L 172 17" stroke="#0f3460" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Knee articulation -->
+  <path d="M -52 310 Q -48 315 -44 310" stroke="#533483" stroke-width="1" fill="none"/>
+  <path d="M 56 315 Q 60 320 64 315" stroke="#533483" stroke-width="1" fill="none"/>
+  
+  <!-- Ground reflection -->
+  <ellipse cx="0" cy="430" rx="100" ry="12" fill="#e94560" opacity="0.08" filter="url(#glow)"/>
+  
+  <!-- Ambient particles -->
+  <circle cx="-80" cy="-200" r="1" fill="#e94560" opacity="0.6"/>
+  <circle cx="65" cy="-180" r="0.8" fill="#533483" opacity="0.5"/>
+  <circle cx="-45" cy="100" r="1.2" fill="#e94560" opacity="0.4"/>
+  <circle cx="80" cy="50" r="0.7" fill="#533483" opacity="0.5"/>
+</svg>

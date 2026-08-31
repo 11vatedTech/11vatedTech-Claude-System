@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1100" width="800" height="1100">
+  <defs>
+    <linearGradient id="pbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0520"/><stop offset="50%" stop-color="#1a0a35"/><stop offset="100%" stop-color="#0d0520"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e94560"/><stop offset="100%" stop-color="#533483"/>
+    </linearGradient>
+    <clipPath id="pc"><rect width="800" height="1100"/></clipPath>
+    <filter id="gf"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" seed="3"/><feColorMatrix type="saturate" values="0"/><feBlend in="SourceGraphic" mode="multiply"/></filter>
+    <pattern id="dp" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1" fill="#e94560" opacity="0.1"/></pattern>
+  </defs>
+  
+  <rect width="800" height="1100" fill="url(#pbg)"/>
+  <g opacity="0.05" stroke="#fff" stroke-width="0.5">
+    <line x1="0" y1="275" x2="800" y2="275"/><line x1="0" y1="550" x2="800" y2="550"/><line x1="0" y1="825" x2="800" y2="825"/>
+    <line x1="200" y1="0" x2="200" y2="1100"/><line x1="400" y1="0" x2="400" y2="1100"/><line x1="600" y1="0" x2="600" y2="1100"/>
+  </g>
+  
+  <g clip-path="url(#pc)">
+    <path d="M 50 200 L 200 150 L 350 220 L 400 180 L 500 250 L 550 200 L 650 280 L 700 240 L 750 320 L 750 700 L 50 700 Z" fill="#1a0a2e" opacity="0.8"/>
+    <path d="M 100 400 L 250 350 L 350 420 L 450 380 L 550 450 L 600 410 L 700 480 L 700 700 L 100 700 Z" fill="#0d0520" opacity="0.6"/>
+    <path d="M 300 250 L 380 200 L 420 280 L 350 320 Z" fill="url(#acc)" opacity="0.7"/>
+  </g>
+  
+  <text x="80" y="160" font-family="Georgia,serif" font-size="72" font-weight="bold" fill="#e94560" letter-spacing="4">RESONANCE</text>
+  <text x="80" y="220" font-family="Georgia,serif" font-size="28" fill="#8a8a9a" letter-spacing="12">CRYSTALLINE FORMS</text>
+  <line x1="80" y1="240" x2="350" y2="240" stroke="#e94560" stroke-width="1" opacity="0.6"/>
+  
+  <text x="80" y="780" font-family="Georgia,serif" font-size="14" fill="#6a6a7a" letter-spacing="1">
+    <tspan x="80" dy="0">Where geological time meets crystalline precision.</tspan>
+    <tspan x="80" dy="22">A study in material language, form evolution,</tspan>
+    <tspan x="80" dy="22">and the architecture of accumulated pressure.</tspan>
+  </text>
+  
+  <rect width="800" height="1100" fill="url(#dp)" opacity="0.3"/>
+  <line x1="80" y1="1050" x2="720" y2="1050" stroke="#e94560" stroke-width="0.5" opacity="0.4"/>
+  <text x="80" y="1070" font-family="monospace" font-size="10" fill="#4a4a5a" letter-spacing="3">EDITION 001 / OBSIDIAN SPIRE COLLECTION</text>
+  
+  <path d="M 40 40 L 40 60 M 40 40 L 60 40" stroke="#e94560" stroke-width="0.5" fill="none" opacity="0.4"/>
+  <path d="M 760 40 L 760 60 M 760 40 L 740 40" stroke="#e94560" stroke-width="0.5" fill="none" opacity="0.4"/>
+  <path d="M 40 1060 L 40 1040 M 40 1060 L 60 1060" stroke="#e94560" stroke-width="0.5" fill="none" opacity="0.4"/>
+  <path d="M 760 1060 L 760 1040 M 760 1060 L 740 1060" stroke="#e94560" stroke-width="0.5" fill="none" opacity="0.4"/>
+</svg>

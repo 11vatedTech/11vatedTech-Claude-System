@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Resonance Pulse — Motion Craft</title>
+<style>
+body{margin:0;background:#0a0520;display:flex;justify-content:center;align-items:center;min-height:100vh;overflow:hidden}
+.scene{position:relative;width:800px;height:600px}
+
+/* Central crystal form */
+.crystal{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:80px;height:120px}
+.crystal-body{
+  width:100%;height:100%;
+  background:linear-gradient(135deg,#1a0a2e,#533483,#1a0a2e);
+  clip-path:polygon(50% 0%,85% 25%,85% 75%,50% 100%,15% 75%,15% 25%);
+  animation:crystalPulse 3s ease-in-out infinite;
+  box-shadow:0 0 40px rgba(233,69,96,0.3);
+}
+
+/* Energy ring */
+.ring{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  border:1px solid rgba(233,69,96,0.3);border-radius:50%;
+  animation:ringExpand 3s ease-out infinite;
+}
+.ring:nth-child(2){animation-delay:1s}
+.ring:nth-child(3){animation-delay:2s}
+
+/* Orbiting particles */
+.particle{
+  position:absolute;left:50%;top:50%;width:6px;height:6px;
+  background:#e94560;border-radius:50%;
+  box-shadow:0 0 10px #e94560;
+  animation:orbit 4s linear infinite;
+}
+.particle:nth-child(4){animation-delay:0s;--orbit-r:120px;--orbit-speed:4s}
+.particle:nth-child(5){animation-delay:-1.33s;--orbit-r:140px;--orbit-speed:5s}
+.particle:nth-child(6){animation-delay:-2.66s;--orbit-r:100px;--orbit-speed:3.5s}
+
+/* Secondary motion: trailing arms */
+.arm{
+  position:absolute;left:50%;top:50%;width:2px;height:60px;
+  background:linear-gradient(to bottom,rgba(83,52,131,0.6),transparent);
+  transform-origin:top center;
+  animation:armSway 3s ease-in-out infinite;
+}
+.arm:nth-child(7){transform:rotate(-30deg);animation-delay:-0.5s}
+.arm:nth-child(8){transform:rotate(30deg);animation-delay:-1.5s}
+.arm:nth-child(9){transform:rotate(-60deg);animation-delay:-1s}
+.arm:nth-child(10){transform:rotate(60deg);animation-delay:-2s}
+
+/* Ground reflection */
+.reflection{
+  position:absolute;bottom:80px;left:50%;transform:translateX(-50%);
+  width:200px;height:30px;
+  background:radial-gradient(ellipse,rgba(233,69,96,0.15),transparent);
+  animation:reflectionPulse 3s ease-in-out infinite;
+}
+
+/* Staggered energy bursts */
+.burst{
+  position:absolute;left:50%;top:50%;width:4px;height:4px;
+  background:#e94560;border-radius:50%;
+  animation:burst 3s ease-out infinite;
+}
+.burst:nth-child(12){animation-delay:0s;--bx:-80px;--by:-60px}
+.burst:nth-child(13){animation-delay:0.75s;--bx:70px;--by:-80px}
+.burst:nth-child(14){animation-delay:1.5s;--bx:-60px;--by:70px}
+.burst:nth-child(15){animation-delay:2.25s;--bx:80px;--by:50px}
+
+/* Ambient floating geometry */
+.geo{
+  position:absolute;width:20px;height:20px;
+  border:1px solid rgba(83,52,131,0.3);
+  animation:float 8s ease-in-out infinite;
+}
+.geo:nth-child(16){left:100px;top:100px;animation-delay:0s;transform:rotate(45deg)}
+.geo:nth-child(17){left:650px;top:150px;animation-delay:-2s;transform:rotate(30deg)}
+.geo:nth-child(18){left:150px;top:450px;animation-delay:-4s;transform:rotate(60deg)}
+.geo:nth-child(19){left:600px;top:400px;animation-delay:-6s;transform:rotate(15deg)}
+
+@keyframes crystalPulse{
+  0%,100%{transform:scale(1);filter:brightness(1)}
+  50%{transform:scale(1.05);filter:brightness(1.2)}
+}
+
+@keyframes ringExpand{
+  0%{width:20px;height:20px;opacity:0.8;border-color:rgba(233,69,96,0.6)}
+  100%{width:300px;height:300px;opacity:0;border-color:rgba(233,69,96,0)}
+}
+
+@keyframes orbit{
+  0%{transform:translate(calc(-50% + var(--orbit-r)),calc(-50%)) rotate(0deg) translateX(var(--orbit-r)) rotate(0deg)}
+  100%{transform:translate(-50%,-50%) rotate(360deg) translateX(var(--orbit-r)) rotate(-360deg)}
+}
+
+@keyframes armSway{
+  0%,100%{transform:rotate(var(--arm-angle,0deg)) scaleY(1)}
+  25%{transform:rotate(calc(var(--arm-angle,0deg) + 5deg)) scaleY(1.1)}
+  75%{transform:rotate(calc(var(--arm-angle,0deg) - 5deg)) scaleY(0.95)}
+}
+
+@keyframes reflectionPulse{
+  0%,100%{opacity:0.6;transform:translateX(-50%) scaleX(1)}
+  50%{opacity:1;transform:translateX(-50%) scaleX(1.2)}
+}
+
+@keyframes burst{
+  0%{transform:translate(-50%,-50%);opacity:0}
+  20%{opacity:1}
+  100%{transform:translate(calc(-50% + var(--bx)),calc(-50% + var(--by)));opacity:0}
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0) rotate(var(--rot,45deg));opacity:0.2}
+  50%{transform:translateY(-20px) rotate(calc(var(--rot,45deg) + 10deg));opacity:0.4}
+}
+</style>
+</head><body>
+<div class="scene">
+  <div class="crystal"><div class="crystal-body"></div></div>
+  <div class="ring"></div><div class="ring"></div><div class="ring"></div>
+  <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+  <div class="arm"></div><div class="arm"></div><div class="arm"></div><div class="arm"></div>
+  <div class="reflection"></div>
+  <div class="burst"></div><div class="burst"></div><div class="burst"></div><div class="burst"></div>
+  <div class="geo"></div><div class="geo"></div><div class="geo"></div><div class="geo"></div>
+</div>
+<script>console.log('Motion craft: anticipation, follow-through, overlap, stagger, weight')]</script>
+</body></html>

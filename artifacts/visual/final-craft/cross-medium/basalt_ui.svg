@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs><linearGradient id="ub" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a1a1a"/><stop offset="100%" stop-color="#0f0f0f"/></linearGradient></defs>
+  <rect width="400" height="300" fill="url(#ub)"/>
+  <path d="M 10 10 L 390 10 L 395 15 L 395 290 L 390 295 L 10 295 L 5 290 L 5 15 Z" fill="none" stroke="#3a3a3a" stroke-width="0.8"/>
+  <path d="M 10 10 L 30 10 M 10 10 L 10 30" stroke="#b87333" stroke-width="1.5" fill="none"/>
+  <path d="M 390 10 L 370 10 M 390 10 L 390 30" stroke="#b87333" stroke-width="1.5" fill="none"/>
+  <path d="M 10 290 L 30 290 M 10 290 L 10 270" stroke="#b87333" stroke-width="1.5" fill="none"/>
+  <path d="M 390 290 L 370 290 M 390 290 L 390 270" stroke="#b87333" stroke-width="1.5" fill="none"/>
+  <text x="30" y="50" font-family="monospace" font-size="14" fill="#b87333" letter-spacing="4">RESONANCE MONITOR</text>
+  <rect x="30" y="80" width="200" height="3" fill="#3a3a3a"/><rect x="30" y="80" width="140" height="3" fill="#2a8a7a"/>
+  <text x="30" y="75" font-family="monospace" font-size="9" fill="#6a6a6a">FREQUENCY</text>
+  <rect x="30" y="110" width="200" height="3" fill="#3a3a3a"/><rect x="30" y="110" width="170" height="3" fill="#b87333"/>
+  <text x="30" y="105" font-family="monospace" font-size="9" fill="#6a6a6a">AMPLITUDE</text>
+  <rect x="30" y="140" width="200" height="3" fill="#3a3a3a"/><rect x="30" y="140" width="90" height="3" fill="#e94560"/>
+  <text x="30" y="135" font-family="monospace" font-size="9" fill="#6a6a6a">HARMONICS</text>
+  <circle cx="350" cy="45" r="4" fill="#2a8a7a"/><text x="340" y="60" font-family="monospace" font-size="8" fill="#6a6a6a">ACTIVE</text>
+  <rect x="5" y="280" width="390" height="15" fill="#0a0a0a"/>
+  <text x="15" y="291" font-family="monospace" font-size="8" fill="#4a4a4a">SYS:NOMINAL | CORE:87% | TEMP:42C | CYCLE:00847</text>
+</svg>

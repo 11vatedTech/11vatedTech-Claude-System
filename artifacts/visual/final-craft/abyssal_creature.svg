@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-250 -200 500 500" width="1000" height="1000">
+  <defs>
+    <filter id="bio"><feGaussianBlur stdDeviation="6" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter>
+    <filter id="bio_s"><feGaussianBlur stdDeviation="12" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter>
+    <filter id="turb"><feTurbulence type="turbulence" baseFrequency="0.015" numOctaves="4" seed="13"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter>
+    <radialGradient id="body_g" cx="0.5" cy="0.4" r="0.6">
+      <stop offset="0%" stop-color="#1a0a2e"/><stop offset="60%" stop-color="#0d0520"/><stop offset="100%" stop-color="#050210"/>
+    </radialGradient>
+    <radialGradient id="lure_g" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00ff88"/><stop offset="40%" stop-color="#00cc66"/><stop offset="100%" stop-color="#004422" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="eye_g" cx="0.4" cy="0.4" r="0.5">
+      <stop offset="0%" stop-color="#ff3366"/><stop offset="100%" stop-color="#881133"/>
+    </radialGradient>
+  </defs>
+  
+  <rect x="-250" y="-200" width="500" height="500" fill="#020108"/>
+  <circle cx="-180" cy="-150" r="1.5" fill="#00ff88" opacity="0.3" filter="url(#bio)"/>
+  <circle cx="200" cy="-120" r="1" fill="#00ccff" opacity="0.2" filter="url(#bio)"/>
+  <circle cx="-150" cy="180" r="0.8" fill="#ff6699" opacity="0.25" filter="url(#bio)"/>
+  <circle cx="170" cy="150" r="1.2" fill="#00ff88" opacity="0.2" filter="url(#bio)"/>
+  
+  <!-- Tentacles -->
+  <path d="M -20 -30 C -60 -80 -120 -140 -180 -160 C -190 -162 -195 -155 -185 -148" stroke="#1a0a2e" stroke-width="12" fill="none" stroke-linecap="round" filter="url(#turb)"/>
+  <path d="M -180 -160 C -185 -170 -195 -175 -200 -168" stroke="#00ff88" stroke-width="3" fill="none" stroke-linecap="round" filter="url(#bio)" opacity="0.7"/>
+  <circle cx="-140" cy="-130" r="3" fill="#00ff88" opacity="0.5" filter="url(#bio)"/>
+  
+  <path d="M 20 -30 C 50 -90 100 -150 160 -170 C 170 -173 178 -165 168 -158" stroke="#1a0a2e" stroke-width="10" fill="none" stroke-linecap="round" filter="url(#turb)"/>
+  <path d="M 160 -170 C 165 -180 175 -182 178 -172" stroke="#00ff88" stroke-width="2.5" fill="none" stroke-linecap="round" filter="url(#bio)" opacity="0.6"/>
+  
+  <path d="M -25 10 C -90 0 -160 -20 -210 10 C -218 15 -215 28 -205 25" stroke="#1a0a2e" stroke-width="9" fill="none" stroke-linecap="round" filter="url(#turb)"/>
+  <circle cx="-180" cy="5" r="2" fill="#00ccff" opacity="0.4" filter="url(#bio)"/>
+  
+  <path d="M 25 10 C 80 -15 150 -40 200 -10 C 208 0 205 15 195 12" stroke="#1a0a2e" stroke-width="9" fill="none" stroke-linecap="round" filter="url(#turb)"/>
+  <circle cx="170" cy="-15" r="2" fill="#00ccff" opacity="0.4" filter="url(#bio)"/>
+  
+  <path d="M -15 35 C -50 80 -80 130 -120 170 C -125 178 -118 185 -112 178" stroke="#1a0a2e" stroke-width="7" fill="none" stroke-linecap="round" filter="url(#turb)"/>
+  <circle cx="-90" cy="130" r="1.8" fill="#ff6699" opacity="0.3" filter="url(#bio)"/>
+  
+  <path d="M 15 35 C 45 75 75 125 110 165 C 115 173 122 178 118 168" stroke="#1a0a2e" stroke-width="7" fill="none" stroke-linecap="round" filter="url(#turb)"/>
+  <circle cx="85" cy="125" r="1.8" fill="#ff6699" opacity="0.3" filter="url(#bio)"/>
+  
+  <!-- Body -->
+  <ellipse cx="0" cy="0" rx="35" ry="40" fill="url(#body_g)" stroke="#1a0a2e" stroke-width="1"/>
+  <path d="M -25 -20 Q 0 -30 25 -20" stroke="#2a1540" stroke-width="0.8" fill="none"/>
+  <path d="M -28 -5 Q 0 -12 28 -5" stroke="#2a1540" stroke-width="0.6" fill="none"/>
+  <path d="M -25 10 Q 0 3 25 10" stroke="#2a1540" stroke-width="0.5" fill="none"/>
+  <ellipse cx="-10" cy="-15" rx="8" ry="5" fill="#00ff88" opacity="0.15" filter="url(#bio)"/>
+  <ellipse cx="12" cy="5" rx="6" ry="4" fill="#00ccff" opacity="0.12" filter="url(#bio)"/>
+  
+  <!-- Eyes -->
+  <ellipse cx="-12" cy="-18" rx="6" ry="5" fill="url(#eye_g)" filter="url(#bio_s)"/>
+  <ellipse cx="-12" cy="-18" rx="2.5" ry="3" fill="#110022"/>
+  <circle cx="-11" cy="-19" r="1" fill="#ff6699" opacity="0.8"/>
+  <ellipse cx="-8" cy="-8" rx="4" ry="3.5" fill="url(#eye_g)" filter="url(#bio_s)" opacity="0.8"/>
+  <ellipse cx="-8" cy="-8" rx="1.5" ry="2" fill="#110022"/>
+  <ellipse cx="12" cy="-15" rx="5" ry="4.5" fill="url(#eye_g)" filter="url(#bio_s)"/>
+  <ellipse cx="12" cy="-15" rx="2" ry="2.5" fill="#110022"/>
+  <circle cx="13" cy="-16" r="0.8" fill="#ff6699" opacity="0.8"/>
+  <ellipse cx="10" cy="-5" rx="3.5" ry="3" fill="url(#eye_g)" filter="url(#bio_s)" opacity="0.7"/>
+  <ellipse cx="10" cy="-5" rx="1.2" ry="1.8" fill="#110022"/>
+  
+  <!-- Mouth -->
+  <ellipse cx="0" cy="15" rx="10" ry="7" fill="#0a0318" stroke="#2a1540" stroke-width="0.8"/>
+  <ellipse cx="0" cy="15" rx="7" ry="5" fill="#050210"/>
+  
+  <!-- Lure -->
+  <path d="M 0 -40 C 5 -60 8 -90 3 -115 C 0 -125 -5 -130 -8 -125" stroke="#0d3020" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 0 -40 C 5 -60 8 -90 3 -115 C 0 -125 -5 -130 -8 -125" stroke="#00ff88" stroke-width="1" fill="none" stroke-linecap="round" filter="url(#bio)" opacity="0.4"/>
+  <circle cx="-5" cy="-128" r="8" fill="url(#lure_g)" filter="url(#bio_s)"/>
+  <circle cx="-5" cy="-128" r="3" fill="#aaffcc" opacity="0.8"/>
+  <circle cx="-4" cy="-130" r="1" fill="#ffffff" opacity="0.6"/>
+</svg>

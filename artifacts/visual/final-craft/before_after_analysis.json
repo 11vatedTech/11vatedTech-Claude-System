@@ -1,0 +1,246 @@
+{
+  "before_after_pairs": [
+    {
+      "subject": "Character",
+      "before": {
+        "file": "style-dna/lithic_character.png",
+        "level": "L1-L2",
+        "defects": [
+          "circle head primitive",
+          "rectangle torso",
+          "line arms",
+          "flat fills only",
+          "no material system",
+          "no lighting",
+          "no edge hierarchy",
+          "no texture",
+          "no articulation"
+        ],
+        "root_cause": "Used primitive geometry as final form, not as blockout"
+      },
+      "after": {
+        "file": "final-craft/warden_character.svg",
+        "level": "L7",
+        "improvements": [
+          "B\u00e9zier curve body contours (no circle/rect/line anatomy)",
+          "Compound paths for organic crystalline form",
+          "SVG filters for material (crystal, glow, depth)",
+          "Multi-stop gradients for lighting",
+          "Crystal vein detail system",
+          "Articulated joints with copper joints",
+          "Ground reflection and ambient particles",
+          "Clip paths for internal detail containment"
+        ],
+        "craft_techniques": [
+          "B\u00e9zier curves",
+          "compound paths",
+          "SVG filters",
+          "gradient materials",
+          "clip paths"
+        ]
+      }
+    },
+    {
+      "subject": "Environment",
+      "before": {
+        "file": "style-dna/lithic_environment.png",
+        "level": "L1-L2",
+        "defects": [
+          "repeating triangular crystals",
+          "flat background",
+          "no atmospheric perspective",
+          "no depth layers",
+          "no material system",
+          "no lighting",
+          "no foreground detail"
+        ],
+        "root_cause": "Repetitive geometric primitives as environment language"
+      },
+      "after": {
+        "file": "final-craft/obsidian_spires_env.svg",
+        "level": "L7",
+        "improvements": [
+          "5 depth layers (stars, distant, mid, lava, foreground)",
+          "Atmospheric perspective with blur filters",
+          "Custom terrain contours (not repeating shapes)",
+          "Lava flow with glow effects",
+          "Crystal formations with energy veins",
+          "Bioluminescent ground plants",
+          "Nebula atmosphere",
+          "Foreground rock detail"
+        ],
+        "craft_techniques": [
+          "atmospheric perspective",
+          "layered depth",
+          "custom terrain",
+          "SVG filters",
+          "glow effects"
+        ]
+      }
+    },
+    {
+      "subject": "Prop",
+      "before": {
+        "file": "style-dna/lithic_prop.png",
+        "level": "L1-L2",
+        "defects": [
+          "simple geometric shape",
+          "no construction logic",
+          "no material response",
+          "no functional design",
+          "no surface detail",
+          "no lighting"
+        ],
+        "root_cause": "Generic shape without design reasoning"
+      },
+      "after": {
+        "file": "final-craft/resonance_core_prop.svg",
+        "level": "L7",
+        "improvements": [
+          "Functional design: energy storage device",
+          "Construction logic: base, column, core, arms",
+          "Material depth: metal with patina, crystal energy",
+          "Surface detail: engraved runes, wear marks",
+          "Energy tendrils with glow",
+          "Multi-light response (gradient materials)",
+          "Supporting arm structures with joints"
+        ],
+        "craft_techniques": [
+          "material gradients",
+          "construction logic",
+          "energy effects",
+          "wear detail"
+        ]
+      }
+    },
+    {
+      "subject": "UI",
+      "before": {
+        "file": "style-dna/lithic_ui.png",
+        "level": "L1-L2",
+        "defects": [
+          "simple progress bar",
+          "no information hierarchy",
+          "no typography system",
+          "no interaction states",
+          "no material language",
+          "no micro-detail"
+        ],
+        "root_cause": "Decorated widget, not a designed interface"
+      },
+      "after": {
+        "file": "final-craft/obsidian_spire_ui.html",
+        "level": "L7",
+        "improvements": [
+          "Grid layout with 3-column structure",
+          "Clear information hierarchy (header/nav/main/panel/footer)",
+          "Typography system (JetBrains Mono, size hierarchy)",
+          "Data cards with trend indicators",
+          "Live waveform chart with dual traces",
+          "Event log with categorization",
+          "Status bar with progress indicators",
+          "Material language consistent with visual world"
+        ],
+        "craft_techniques": [
+          "grid layout",
+          "typography hierarchy",
+          "data visualization",
+          "interaction states",
+          "material consistency"
+        ]
+      }
+    },
+    {
+      "subject": "Motion",
+      "before": {
+        "file": "style-dna/lithic_motion.png",
+        "level": "L1-L2",
+        "defects": [
+          "repeated triangle geometry",
+          "no animation principles",
+          "no weight",
+          "no anticipation",
+          "no follow-through",
+          "no stagger"
+        ],
+        "root_cause": "Repeating geometry, not choreographed motion"
+      },
+      "after": {
+        "file": "final-craft/resonance_motion.html",
+        "level": "L6",
+        "improvements": [
+          "Crystal pulse with scale and brightness animation",
+          "Expanding energy rings with staggered timing",
+          "Orbiting particles with varied speeds",
+          "Swaying arms with anticipation/follow-through",
+          "Burst particles with offset timing (stagger)",
+          "Floating ambient geometry with drift",
+          "Ground reflection pulse"
+        ],
+        "craft_techniques": [
+          "anticipation",
+          "follow-through",
+          "stagger",
+          "overlap",
+          "weight"
+        ]
+      }
+    }
+  ],
+  "negative_evidence_registry": [
+    {
+      "id": "CODE_NATIVE_CRAFT_FAILURE_001",
+      "artifact": "lithic_character",
+      "failure": "primitive_as_final_form",
+      "level": "L1"
+    },
+    {
+      "id": "CODE_NATIVE_CRAFT_FAILURE_002",
+      "artifact": "lithic_environment",
+      "failure": "repetitive_geometry_as_environment",
+      "level": "L1"
+    },
+    {
+      "id": "CODE_NATIVE_CRAFT_FAILURE_003",
+      "artifact": "lithic_prop",
+      "failure": "generic_shape_without_design",
+      "level": "L1"
+    },
+    {
+      "id": "CODE_NATIVE_CRAFT_FAILURE_004",
+      "artifact": "lithic_ui",
+      "failure": "decorated_widget_not_interface",
+      "level": "L1"
+    },
+    {
+      "id": "CODE_NATIVE_CRAFT_FAILURE_005",
+      "artifact": "lithic_motion",
+      "failure": "repeating_geometry_not_choreography",
+      "level": "L1"
+    },
+    {
+      "id": "CODE_NATIVE_CRAFT_FAILURE_006",
+      "artifact": "aetherweave_character",
+      "failure": "insufficient_path_complexity",
+      "level": "L2"
+    },
+    {
+      "id": "CODE_NATIVE_CRAFT_FAILURE_007",
+      "artifact": "graphite_dusk_character",
+      "failure": "flat_fill_as_material",
+      "level": "L2"
+    }
+  ],
+  "improvement_summary": {
+    "average_before_level": "L1-L2",
+    "average_after_level": "L6-L7",
+    "key_breakthroughs": [
+      "B\u00e9zier curves replace primitive geometry as construction vocabulary",
+      "SVG filters create material depth without diffusion",
+      "Layered compositing builds atmospheric depth",
+      "Animation principles replace repeating geometry",
+      "Grid systems create information hierarchy",
+      "Style DNA maintains consistency across media"
+    ]
+  }
+}

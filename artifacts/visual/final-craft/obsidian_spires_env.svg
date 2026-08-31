@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0520"/><stop offset="40%" stop-color="#1a0a35"/><stop offset="70%" stop-color="#2a1540"/><stop offset="100%" stop-color="#3a2050"/>
+    </linearGradient>
+    <linearGradient id="spire" x1="0" y1="0" x2="0.2" y2="1">
+      <stop offset="0%" stop-color="#2a1540"/><stop offset="50%" stop-color="#1a0a2e"/><stop offset="100%" stop-color="#0d0520"/>
+    </linearGradient>
+    <linearGradient id="spire_hl" x1="0" y1="0" x2="1" y2="0.3">
+      <stop offset="0%" stop-color="#4a2570" stop-opacity="0.6"/><stop offset="100%" stop-color="#1a0a2e" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d0520"/><stop offset="100%" stop-color="#050210"/>
+    </linearGradient>
+    <linearGradient id="lava" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff4400" stop-opacity="0.6"/><stop offset="100%" stop-color="#ff2200" stop-opacity="0.1"/>
+    </linearGradient>
+    <filter id="ab"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="db"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="gs"><feGaussianBlur stdDeviation="4" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter>
+  </defs>
+  
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <g opacity="0.6">
+    <circle cx="120" cy="50" r="1" fill="#fff"/><circle cx="350" cy="80" r="0.7" fill="#dda0ff"/>
+    <circle cx="580" cy="30" r="1.2" fill="#fff"/><circle cx="800" cy="60" r="0.8" fill="#aaccff"/>
+    <circle cx="1050" cy="45" r="1" fill="#fff"/><circle cx="1300" cy="70" r="0.6" fill="#dda0ff"/>
+    <circle cx="1480" cy="35" r="0.9" fill="#fff"/><circle cx="200" cy="120" r="0.5" fill="#aaccff"/>
+  </g>
+  <ellipse cx="400" cy="150" rx="200" ry="80" fill="#3a1560" opacity="0.15" filter="url(#db)"/>
+  <ellipse cx="1200" cy="120" rx="150" ry="60" fill="#2a1050" opacity="0.1" filter="url(#db)"/>
+  
+  <!-- Distant range -->
+  <g filter="url(#db)" opacity="0.5">
+    <path d="M 0 500 L 100 380 L 180 420 L 280 350 L 350 400 L 450 320 L 520 370 L 600 300 L 680 340 L 750 280 L 830 320 L 900 260 L 980 310 L 1050 290 L 1120 330 L 1200 270 L 1280 310 L 1350 350 L 1420 300 L 1500 340 L 1600 380 L 1600 500 Z" fill="#1a0a2e"/>
+  </g>
+  
+  <!-- Mid spires -->
+  <g filter="url(#ab)" opacity="0.7">
+    <path d="M 200 500 L 220 300 L 235 350 L 250 280 L 260 320 L 270 500 Z" fill="url(#spire)"/>
+    <path d="M 200 500 L 220 300 L 235 350 L 250 280 L 260 320 L 270 500 Z" fill="url(#spire_hl)"/>
+    <path d="M 500 500 L 530 250 L 545 300 L 560 220 L 575 280 L 590 500 Z" fill="url(#spire)"/>
+    <path d="M 500 500 L 530 250 L 545 300 L 560 220 L 575 280 L 590 500 Z" fill="url(#spire_hl)"/>
+    <path d="M 800 500 L 840 200 L 860 260 L 880 180 L 900 240 L 920 500 Z" fill="url(#spire)"/>
+    <path d="M 800 500 L 840 200 L 860 260 L 880 180 L 900 240 L 920 500 Z" fill="url(#spire_hl)"/>
+    <path d="M 1100 500 L 1130 280 L 1145 330 L 1160 260 L 1175 310 L 1190 500 Z" fill="url(#spire)"/>
+    <path d="M 1100 500 L 1130 280 L 1145 330 L 1160 260 L 1175 310 L 1190 500 Z" fill="url(#spire_hl)"/>
+    <path d="M 1350 500 L 1370 320 L 1385 360 L 1400 300 L 1415 340 L 1430 500 Z" fill="url(#spire)"/>
+  </g>
+  
+  <!-- Lava -->
+  <path d="M 300 520 Q 400 510 500 525 Q 600 515 700 530 Q 800 520 900 535 Q 1000 525 1100 540 Q 1200 530 1300 545 L 1300 560 Q 1200 550 1100 555 Q 1000 545 900 560 Q 800 550 700 565 Q 600 555 500 570 Q 400 560 300 575 Z" fill="url(#lava)" filter="url(#gs)"/>
+  
+  <!-- Foreground -->
+  <path d="M 0 550 Q 100 530 200 545 Q 350 520 500 540 Q 650 515 800 535 Q 950 510 1100 530 Q 1250 505 1400 525 Q 1500 515 1600 530 L 1600 900 L 0 900 Z" fill="url(#ground)"/>
+  <path d="M 150 580 L 165 530 L 175 550 L 185 510 L 195 540 L 200 580 Z" fill="#1a0a2e" stroke="#3a2060" stroke-width="0.8"/>
+  <path d="M 1380 560 L 1395 515 L 1405 535 L 1415 495 L 1425 525 L 1430 560 Z" fill="#1a0a2e" stroke="#3a2060" stroke-width="0.8"/>
+  
+  <g filter="url(#gs)" opacity="0.6">
+    <circle cx="300" cy="545" r="3" fill="#00ff88"/><circle cx="700" cy="535" r="2.5" fill="#00ff88"/>
+    <circle cx="1000" cy="530" r="2" fill="#00ff88"/><circle cx="1200" cy="525" r="2.8" fill="#00ccff"/>
+  </g>
+  <rect x="0" y="400" width="1600" height="100" fill="#3a2050" opacity="0.15"/>
+  <rect x="0" y="550" width="1600" height="350" fill="#050210" opacity="0.3"/>
+</svg>
