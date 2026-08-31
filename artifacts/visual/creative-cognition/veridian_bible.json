@@ -1,0 +1,52 @@
+{
+  "world": {
+    "name": "Veridian Depths",
+    "concept": "An underwater civilization where bioluminescent organisms serve as writing, architecture, and social hierarchy.",
+    "culture": "Communal, slow-paced, deeply interconnected. Communication is visual/emotional through light patterns.",
+    "environment": "Deep ocean trenches, bioluminescent coral cities, thermal vent power sources.",
+    "materials": "Living coral, chitin, bioluminescent fluid, pressure-adapted glass, deep-sea minerals.",
+    "shape_language": "Organic curves, branching structures, radial symmetry, flowing forms.",
+    "color": "Deep blues, teals, bioluminescent greens, occasional warm bioluminescent orange.",
+    "light": "Internal bioluminescence, thermal vent glow, filtered surface light.",
+    "technology": "Bio-integrated, grown rather than built, symbiotic machinery."
+  },
+  "visual_principles": {
+    "architecture": "Organic branching structures, no straight lines, bioluminescent navigation markers",
+    "characters": "Flowing forms, bioluminescent patterns as identity, webbed extremities, large light-sensitive eyes",
+    "objects": "Grown from living material, no sharp edges, functional beauty, symbiotic design",
+    "typography": "Light patterns, not written symbols. Communication through bioluminescent sequences.",
+    "motion": "Fluid, weighted by water pressure, graceful but deliberate."
+  },
+  "palette": {
+    "deep_ocean": [
+      10,
+      25,
+      45
+    ],
+    "biolum_green": [
+      40,
+      200,
+      120
+    ],
+    "biolum_teal": [
+      30,
+      180,
+      180
+    ],
+    "coral_warm": [
+      180,
+      100,
+      60
+    ],
+    "thermal_orange": [
+      220,
+      140,
+      40
+    ],
+    "surface_blue": [
+      40,
+      80,
+      140
+    ]
+  }
+}

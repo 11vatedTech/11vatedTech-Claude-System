@@ -1,0 +1,94 @@
+{
+  "studies": [
+    {
+      "name": "Rule of Thirds",
+      "file": "artifacts/visual/fundamentals\\composition_thirds.png",
+      "principle": "Focal mass at intersection, secondary balance, accent hierarchy"
+    },
+    {
+      "name": "Dynamic Diagonal",
+      "file": "artifacts/visual/fundamentals\\composition_diagonal.png",
+      "principle": "Diagonal energy creates movement, masses build rhythm along the line"
+    },
+    {
+      "name": "Balance Study",
+      "file": "artifacts/visual/fundamentals\\composition_balance.png",
+      "principle": "One heavy mass can balance multiple lighter ones through visual weight distribution"
+    },
+    {
+      "name": "5-Value Scale",
+      "file": "artifacts/visual/fundamentals\\value_scale.png",
+      "principle": "All visual information compresses to 5 values. Master value before color."
+    },
+    {
+      "name": "Notan Design",
+      "file": "artifacts/visual/fundamentals\\value_notan.png",
+      "principle": "Strong compositions work as pure light/dark interlocking shapes"
+    },
+    {
+      "name": "Value Hierarchy",
+      "file": "artifacts/visual/fundamentals\\value_hierarchy.png",
+      "principle": "Darkest darks and lightest lights near focal point. Background lighter, foreground darker."
+    },
+    {
+      "name": "Color Temperature",
+      "file": "artifacts/visual/fundamentals\\color_temperature.png",
+      "principle": "Warm advances, cool recedes. Temperature contrast creates depth without value change."
+    },
+    {
+      "name": "Complementary Harmony",
+      "file": "artifacts/visual/fundamentals\\color_complementary.png",
+      "principle": "Complementary pairs create maximum chromatic contrast. Use one as dominant, one as accent."
+    },
+    {
+      "name": "Limited Palette",
+      "file": "artifacts/visual/fundamentals\\color_limited.png",
+      "principle": "3 colors force intentional choices. Limitation breeds coherence and sophistication."
+    },
+    {
+      "name": "Geometric vs Organic",
+      "file": "artifacts/visual/fundamentals\\shape_geometric_vs_organic.png",
+      "principle": "Shape language defines character personality before detail. Angular = mechanical/fierce. Rounded = natural/friendly."
+    },
+    {
+      "name": "Shape Personality",
+      "file": "artifacts/visual/fundamentals\\shape_personality.png",
+      "principle": "Silhouette alone communicates personality. Proportions carry emotional weight."
+    },
+    {
+      "name": "Shape Rhythm",
+      "file": "artifacts/visual/fundamentals\\shape_rhythm.png",
+      "principle": "Repetition with variation creates visual rhythm. Size, spacing, and position variation prevent monotony."
+    },
+    {
+      "name": "Edge Hierarchy",
+      "file": "artifacts/visual/fundamentals\\edge_hierarchy.png",
+      "principle": "Hard edges attract attention. Soft edges recede. Lost edges merge. Control edge sharpness to direct the eye."
+    },
+    {
+      "name": "Edge Types",
+      "file": "artifacts/visual/fundamentals\\edge_types.png",
+      "principle": "Edge quality is a design choice. Hard = defined, Soft = atmospheric, Lost = mystery/depth."
+    },
+    {
+      "name": "Edge for Focal Control",
+      "file": "artifacts/visual/fundamentals\\edge_focal.png",
+      "principle": "One hard edge among soft edges instantly draws the eye. The sharpest edge wins attention."
+    },
+    {
+      "name": "Material Value Patterns",
+      "file": "artifacts/visual/fundamentals\\material_patterns.png",
+      "principle": "Each material has a characteristic value pattern: metal=high contrast, fabric=soft, wood=directional, glass=transparent"
+    },
+    {
+      "name": "Material through Marks",
+      "file": "artifacts/visual/fundamentals\\material_marks.png",
+      "principle": "Mark-making defines material: brush=painterly, geometric=vector, noise=procedural"
+    },
+    {
+      "name": "Material Light Response",
+      "file": "artifacts/visual/fundamentals\\material_light.png",
+      "principle": "Material is defined by how it responds to light: chrome=reflective, matte=diffuse, emissive=self-lit, transparent=transmissive"
+    }
+  ]
+}

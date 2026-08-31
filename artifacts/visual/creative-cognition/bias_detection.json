@@ -1,0 +1,49 @@
+{
+  "biases": {
+    "DreamShaper_8": {
+      "signature": "Fantasy\u503e\u5411, soft glow, centered composition, dramatic lighting, generic beauty",
+      "strengths": "Character concept, fantasy atmosphere, painterly quality",
+      "weaknesses": "Generic faces, over-glow, center-weighted composition, lack of specificity",
+      "detection": "Check for: centered subject, dramatic backlight, soft glow halo, generic fantasy elements",
+      "counter_strategy": "Specify exact composition, reject center-weighting, demand specific\u800c\u4e0d\u662fgeneric elements"
+    },
+    "DreamShaper_XL": {
+      "signature": "Higher detail, more photographic tendency, stronger material rendering",
+      "strengths": "Material quality, detail density, environment atmosphere",
+      "weaknesses": "Can become over-detailed, photorealism bias, less stylized control",
+      "detection": "Check for: over-rendering, photorealism creep, loss of intentional style",
+      "counter_strategy": "Specify style DNA explicitly, reject photorealism when not intended"
+    },
+    "SVG": {
+      "signature": "Flat construction, geometric shapes, clean edges, limited gradients",
+      "strengths": "Precision, scalability, identity, technical graphics",
+      "weaknesses": "Can look flat/childlike if not designed, limited material suggestion",
+      "detection": "Check for: over-simplification, loss of depth, generic icon aesthetic",
+      "counter_strategy": "Use layering, gradient economy, sophisticated shape language"
+    },
+    "CSS": {
+      "signature": "Box model thinking, gradient-heavy, shadow-dependent, responsive grid",
+      "strengths": "Layout precision, typography, interactive states",
+      "weaknesses": "Generic SaaS aesthetic, gradient overuse, shadow dependency",
+      "detection": "Check for: gradient backgrounds, box shadows, generic card layouts",
+      "counter_strategy": "Subvert grid expectations, use unconventional layouts, limit gradients"
+    },
+    "WebGL_Shader": {
+      "signature": "Mathematical patterns, noise-based, infinite detail, procedural aesthetic",
+      "strengths": "Originality, material exploration, motion, infinite resolution",
+      "weaknesses": "Can become demo-quality, lack of compositional intent, noise-as-fidelity",
+      "detection": "Check for: random noise patterns, demo aesthetic, lack of focal hierarchy",
+      "counter_strategy": "Apply compositional rules, create focal hierarchy, intentional color"
+    },
+    "Blender": {
+      "signature": "Physical accuracy, realistic materials, studio lighting, product render aesthetic",
+      "strengths": "Geometry accuracy, material quality, lighting control",
+      "weaknesses": "Can become generic 3D render, lack of artistic voice, over-physical",
+      "detection": "Check for: generic studio lighting, perfect materials, lack of stylization",
+      "counter_strategy": "Stylize materials, use unconventional lighting, add artistic imperfection"
+    }
+  },
+  "detection_method": "Compare output against known tool signatures. If output matches signature, tool is dictating aesthetic.",
+  "counter_strategy": "Specify art direction BEFORE tool selection. Reject outputs that match tool signature without artistic intent.",
+  "quality_gate": "If output could be produced by a generic prompt without art direction, reject."
+}

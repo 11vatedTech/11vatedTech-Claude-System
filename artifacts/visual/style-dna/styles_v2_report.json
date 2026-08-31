@@ -1,0 +1,31 @@
+{
+  "original_style_2": {
+    "name": "Aetherweave",
+    "concept": "Sound is tangible. Music weaves physical structures. Resonance creates architecture.",
+    "thesis": "All forms emerge from wave interference patterns. Material is frozen sound.",
+    "mediums_created": [
+      "character"
+    ],
+    "coherence": "Wave-derived forms, luminous materials, harmonic motion, warm amber + cool teal palette"
+  },
+  "original_style_3": {
+    "name": "Graphite Dusk",
+    "concept": "The moment between day and night, rendered as if drawn by hand with graphite and charcoal.",
+    "thesis": "All forms emerge from hand-drawn mark-making. Digital meets traditional draftsmanship.",
+    "mediums_created": [
+      "character"
+    ],
+    "coherence": "Hand-drawn quality, visible hatching, lost-and-found edges, monochrome with warm undertones"
+  },
+  "generator_restricted": {
+    "title": "CONVERGENCE",
+    "method": "Canvas2D procedural + compositing",
+    "diffusion_used": false,
+    "components": [
+      "starfield",
+      "wave systems",
+      "central glow",
+      "geometric overlay"
+    ]
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "schema": {
+    "form": [
+      "geometric",
+      "organic",
+      "mixed"
+    ],
+    "curvature": [
+      "angular",
+      "flowing",
+      "mixed"
+    ],
+    "proportion": [
+      "natural",
+      "exaggerated_tall",
+      "exaggerated_wide",
+      "compact"
+    ],
+    "line": [
+      "absent",
+      "uniform",
+      "variable",
+      "broken",
+      "engraved",
+      "gestural"
+    ],
+    "value": [
+      "compressed",
+      "graphic",
+      "naturalistic",
+      "dramatic"
+    ],
+    "color": [
+      "limited",
+      "muted",
+      "saturated",
+      "spectral",
+      "complementary",
+      "analogous"
+    ],
+    "edge": [
+      "hard",
+      "soft",
+      "lost_and_found",
+      "pixel_defined"
+    ],
+    "material": [
+      "graphic",
+      "painterly",
+      "tactile",
+      "physical",
+      "synthetic"
+    ],
+    "mark": [
+      "brush",
+      "hatch",
+      "stipple",
+      "vector",
+      "pixel",
+      "procedural"
+    ],
+    "light": [
+      "flat",
+      "natural",
+      "theatrical",
+      "volumetric",
+      "internal"
+    ],
+    "space": [
+      "flattened",
+      "orthographic",
+      "perspective",
+      "layered",
+      "impossible"
+    ],
+    "detail": [
+      "sparse",
+      "focal",
+      "distributed",
+      "ornamental"
+    ],
+    "abstraction": [
+      "representational",
+      "semi_abstract",
+      "abstract"
+    ],
+    "motion": [
+      "snappy",
+      "heavy",
+      "elastic",
+      "drifting",
+      "mechanical",
+      "organic"
+    ],
+    "mood": [
+      "serene",
+      "tense",
+      "mysterious",
+      "joyful",
+      "melancholic",
+      "aggressive",
+      "ethereal"
+    ],
+    "era_influence": [
+      "none",
+      "ancient",
+      "medieval",
+      "industrial",
+      "modern",
+      "futuristic",
+      "timeless"
+    ]
+  },
+  "description": "Style DNA is a multi-dimensional representation for describing and generating visual languages without requiring named existing styles.",
+  "dimensions": 16,
+  "example": {
+    "name": "Lithic Dreams",
+    "concept": "Memory is geological. Forms crystallize from compressed time. Thought has weight and erosion.",
+    "thesis": "All visual elements suggest geological processes: stratification, crystallization, erosion, compression.",
+    "dna": {
+      "form": "mixed \u2014 organic masses with crystalline fractures",
+      "curvature": "angular with eroded edges",
+      "proportion": "exaggerated_tall \u2014 forms reach upward like stalagmites",
+      "line": "variable \u2014 thick stratification lines, thin crack lines",
+      "value": "dramatic \u2014 deep shadows in crevices, bright highlights on facets",
+      "color": "limited \u2014 slate blues, warm ochres, crystalline whites, deep blacks",
+      "edge": "lost_and_found \u2014 faces dissolve into shadow, edges catch light",
+      "material": "tactile \u2014 rough stone, smooth crystal, powdery sediment",
+      "mark": "hatch \u2014 parallel strata lines, cross-hatch in shadows",
+      "light": "theatrical \u2014 single directional light creating deep shadow",
+      "space": "layered \u2014 foreground/midground/background as geological layers",
+      "detail": "focal \u2014 detail concentrated at crystal faces and erosion points",
+      "abstraction": "semi_abstract \u2014 recognizable forms emerge from abstract strata",
+      "motion": "heavy \u2014 slow, weighted, gravitational",
+      "mood": "mysterious \u2014 ancient, contemplative, slightly unsettling",
+      "era_influence": "ancient \u2014 geological time, pre-human landscapes"
+    },
+    "palette": {
+      "dominant": [
+        65,
+        75,
+        90
+      ],
+      "secondary": [
+        160,
+        130,
+        80
+      ],
+      "accent": [
+        200,
+        210,
+        220
+      ],
+      "deep": [
+        25,
+        28,
+        35
+      ],
+      "highlight": [
+        230,
+        225,
+        215
+      ]
+    },
+    "shape_language": {
+      "primary": "triangular/crystalline \u2014 upward-pointing forms",
+      "secondary": "horizontal strata \u2014 layered masses",
+      "tertiary": "fracture lines \u2014 angular subdivisions within masses"
+    }
+  },
+  "usage": "Select values for each dimension. The combination defines a unique visual language. Cross-medium transfer preserves DNA values while adapting execution to each medium."
+}

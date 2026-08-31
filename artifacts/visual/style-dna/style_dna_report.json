@@ -1,0 +1,19 @@
+{
+  "style_dna": {
+    "dimensions": 16,
+    "schema_created": true
+  },
+  "original_style_1": {
+    "name": "Lithic Dreams",
+    "concept": "Memory is geological. Forms crystallize from compressed time. Thought has weight and erosion.",
+    "thesis": "All visual elements suggest geological processes: stratification, crystallization, erosion, compression.",
+    "mediums_created": [
+      "character",
+      "environment",
+      "prop",
+      "UI",
+      "motion"
+    ],
+    "coherence": "All share slate blue/ochre/white palette, crystalline/strata shapes, geological texture, theatrical light"
+  }
+}
