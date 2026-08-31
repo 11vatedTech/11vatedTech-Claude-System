@@ -85,3 +85,19 @@ artifacts/**/*.glb
 artifacts/**/*.blend
 artifacts/**/*.uasset
 artifacts/**/*.umap
+
+# Generated visual artifacts (large PNGs, MP3s, MP4s — not source)
+artifacts/visual/3d-character/*.png
+artifacts/visual/atlas/*.png
+artifacts/visual/audio/
+artifacts/visual/calibration/*.png
+artifacts/visual/calibration/*.html
+artifacts/visual/final-craft/*.png
+artifacts/visual/finished_v2/*.png
+artifacts/visual/obsidian-spire/*.html
+artifacts/visual/video/
+scripts/visual/craft_mastery.py
+scripts/visual/run_wan.bat
+scripts/visual/run_wan_diffusers.bat
+scripts/visual/shader_masterpiece.py
+scripts/visual/wan_video_generation.py

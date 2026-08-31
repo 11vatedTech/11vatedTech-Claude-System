@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <filter id="glow"><feGaussianBlur stdDeviation="4" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter>
+    <filter id="glow_s"><feGaussianBlur stdDeviation="8" result="blur"/><feComposite in="SourceGraphic" in2="blur" operator="over"/></filter>
+    <filter id="turb"><feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="3" seed="5"/><feDisplacementMap in="SourceGraphic" scale="2"/></filter>
+    <radialGradient id="body_g" cx="0.4" cy="0.4" r="0.6">
+      <stop offset="0%" stop-color="#1a0a2e"/><stop offset="60%" stop-color="#0d0520"/><stop offset="100%" stop-color="#050210"/>
+    </radialGradient>
+    <radialGradient id="lure_g" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00ff88"/><stop offset="50%" stop-color="#00cc66"/><stop offset="100%" stop-color="#004422" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="eye_g" cx="0.4" cy="0.4" r="0.5">
+      <stop offset="0%" stop-color="#ff3366"/><stop offset="100%" stop-color="#881133"/>
+    </radialGradient>
+  </defs>
+  
+  <rect width="800" height="600" fill="#020108"/>
+  
+  <!-- Ambient particles -->
+  <circle cx="50" cy="80" r="1" fill="#00ff88" opacity="0.3" filter="url(#glow)"/>
+  <circle cx="700" cy="120" r="0.8" fill="#00ccff" opacity="0.2" filter="url(#glow)"/>
+  <circle cx="600" cy="500" r="1.2" fill="#ff6699" opacity="0.2" filter="url(#glow)"/>
+  
+  <!-- Tail fin -->
+  <path d="M 230.0 300.0 C 254.0 275.0 286.0 287.5 150.0 300.0 C 286.0 312.5 254.0 325.0 230.0 300.0 Z" fill="#0d0520" stroke="#1a0a2e" stroke-width="0.5"/>
+  
+  <!-- Dorsal/pectoral fins -->
+  <path d="M 270.0 280.0 C 273.7 292.5 304.9 317.6 251.5 337.1 C 319.1 322.3 302.3 301.8 270.0 280.0 Z" fill="#0d0520" stroke="#1a0a2e" stroke-width="0.5" opacity="0.8"/><path d="M 270.0 300.0 C 275.8 308.1 311.4 336.6 232.6 359.2 C 326.6 346.2 306.2 327.4 270.0 300.0 Z" fill="#0d0520" stroke="#1a0a2e" stroke-width="0.5" opacity="0.8"/><path d="M 270.0 320.0 C 279.6 321.2 318.8 350.8 211.8 374.9 C 333.2 366.1 308.4 351.7 270.0 320.0 Z" fill="#0d0520" stroke="#1a0a2e" stroke-width="0.5" opacity="0.8"/><path d="M 270.0 340.0 C 285.4 332.1 327.2 360.1 191.3 383.7 C 338.8 381.1 308.6 374.1 270.0 340.0 Z" fill="#0d0520" stroke="#1a0a2e" stroke-width="0.5" opacity="0.8"/>
+  
+  <!-- Body -->
+  <path d="M 425.2 300.0 C 425.1 336.0 457.0 392.2 456.8 428.2 C 440.3 460.2 366.6 413.0 350.0 445.0 C 315.7 434.0 322.2 385.4 287.9 374.5 C 260.9 350.7 212.2 323.8 185.2 300.0 C 185.0 264.0 287.3 260.6 287.1 224.6 C 314.3 201.0 322.8 180.6 350.0 157.0 C 384.3 146.1 423.3 181.6 457.6 170.8 C 474.4 202.7 408.5 268.1 425.2 300.0 Z" fill="url(#body_g)" stroke="#1a0a2e" stroke-width="1" filter="url(#turb)"/>
+  
+  <!-- Body texture lines -->
+  <path d="M 270 260 Q 350 250 430 260" stroke="#2a1540" stroke-width="0.6" fill="none"/>
+  <path d="M 260 300 Q 350 290 440 300" stroke="#2a1540" stroke-width="0.5" fill="none"/>
+  <path d="M 265 340 Q 350 330 435 340" stroke="#2a1540" stroke-width="0.4" fill="none"/>
+  
+  <!-- Head -->
+  <path d="M 485.4 270.0 C 484.9 288.0 485.1 323.8 484.5 341.8 C 470.3 352.8 443.4 302.4 429.1 313.4 C 413.7 304.1 380.8 279.3 365.4 270.0 C 364.5 252.0 425.4 235.1 424.5 217.1 C 439.6 207.2 474.1 198.6 489.1 188.7 C 502.7 200.5 471.8 258.2 485.4 270.0 Z" fill="url(#body_g)" stroke="#1a0a2e" stroke-width="0.8"/>
+  
+  <!-- Jaw -->
+  <path d="M 500.9 320.0 C 501.1 332.0 486.1 368.5 486.4 380.5 C 475.2 384.9 455.4 338.0 444.3 342.4 C 438.4 332.0 440.4 299.4 434.4 289.0 C 440.1 278.4 478.4 278.7 484.1 268.1 C 494.9 273.2 490.0 314.9 500.9 320.0 Z" fill="#0a0318" stroke="#1a0a2e" stroke-width="0.5"/>
+  
+  <!-- Teeth -->
+  <path d="M 450 325 L 453 335 L 456 325 Z" fill="#4a3060" opacity="0.7"/><path d="M 462 328 L 465 338 L 468 328 Z" fill="#4a3060" opacity="0.7"/><path d="M 474 331 L 477 341 L 480 331 Z" fill="#4a3060" opacity="0.7"/><path d="M 486 334 L 489 344 L 492 334 Z" fill="#4a3060" opacity="0.7"/><path d="M 498 337 L 501 347 L 504 337 Z" fill="#4a3060" opacity="0.7"/>
+  
+  <!-- Eye -->
+  <circle cx="460" cy="250" r="8" fill="url(#eye_g)" filter="url(#glow)"/>
+  <circle cx="460" cy="250" r="3.5" fill="#110022"/>
+  <circle cx="461" cy="249" r="1.2" fill="#ff6699" opacity="0.8"/>
+  
+  <!-- Lure stalk -->
+  <path d="M 450 220 C 440 150 480 100 500 80" stroke="#0d3020" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 450 220 C 440 150 480 100 500 80" stroke="#00ff88" stroke-width="0.8" fill="none" stroke-linecap="round" filter="url(#glow)" opacity="0.4"/>
+  
+  <!-- Lure bulb -->
+  <path d="M 519.7 75.0 C 519.5 79.5 506.1 82.7 505.9 87.2 C 502.0 89.5 495.9 89.2 492.1 91.5 C 488.5 88.8 493.3 77.7 489.7 75.0 C 489.6 70.5 491.0 60.5 490.9 56.0 C 494.3 53.1 503.6 63.2 507.1 60.3 C 510.8 62.8 516.0 72.5 519.7 75.0 Z" fill="url(#lure_g)" filter="url(#glow_s)"/>
+  <circle cx="500" cy="75" r="4" fill="#aaffcc" opacity="0.8"/>
+  <circle cx="499" cy="73" r="1.5" fill="#ffffff" opacity="0.6"/>
+  
+  <!-- Bioluminescent patches -->
+  <path d="M 423.2 300.0 C 423.1 302.4 416.5 306.5 416.4 308.9 C 414.2 309.9 406.9 307.1 404.7 308.1 C 403.5 306.0 409.6 297.2 408.4 295.1 C 409.7 293.1 416.0 289.9 417.3 287.9 C 419.6 288.6 420.9 299.2 423.2 300.0 Z" fill="#00ff88" opacity="0.15" filter="url(#glow)"/><path d="M 405.5 355.0 C 405.4 358.0 395.0 361.4 394.9 364.4 C 392.1 365.6 383.9 363.7 381.1 364.9 C 379.5 362.3 386.2 350.8 384.6 348.2 C 386.2 345.7 394.1 345.1 395.7 342.6 C 398.6 343.5 402.7 354.1 405.5 355.0 Z" fill="#00ff88" opacity="0.15" filter="url(#glow)"/><path d="M 344.4 328.0 C 344.4 331.6 331.3 334.9 331.3 338.5 C 327.9 339.8 320.5 336.6 317.1 337.9 C 315.1 334.9 319.9 321.8 317.9 318.8 C 319.9 315.8 329.5 319.7 331.5 316.8 C 334.9 317.9 341.0 326.8 344.4 328.0 Z" fill="#00ff88" opacity="0.15" filter="url(#glow)"/><path d="M 302.2 300.0 C 302.4 304.2 289.0 309.1 289.2 313.3 C 285.2 314.6 279.9 307.2 275.9 308.5 C 273.5 305.0 274.7 291.9 272.3 288.4 C 274.7 284.9 286.0 293.3 288.4 289.8 C 292.3 291.3 298.3 298.5 302.2 300.0 Z" fill="#00ff88" opacity="0.15" filter="url(#glow)"/><path d="M 322.9 245.1 C 323.2 249.9 312.3 258.0 312.5 262.8 C 307.9 264.2 304.4 250.7 299.8 252.1 C 297.2 248.0 295.2 236.0 292.6 231.9 C 295.1 227.8 308.4 237.7 310.9 233.6 C 315.3 235.5 318.5 243.2 322.9 245.1 Z" fill="#00ff88" opacity="0.15" filter="url(#glow)"/><path d="M 384.5 272.1 C 384.7 277.5 377.4 289.7 377.7 295.1 C 372.5 296.8 368.5 277.5 363.4 279.2 C 360.6 274.6 358.6 263.2 355.8 258.5 C 358.4 253.8 373.3 260.5 375.9 255.8 C 380.8 258.1 379.6 269.8 384.5 272.1 Z" fill="#00ff88" opacity="0.15" filter="url(#glow)"/>
+  
+  <!-- Belly glow -->
+  <ellipse cx="350" cy="360" rx="60" ry="15" fill="#00ff88" opacity="0.06" filter="url(#glow)"/>
+</svg>
