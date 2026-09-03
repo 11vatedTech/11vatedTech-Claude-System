@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts" / "validate"))
 sys.path.insert(0, str(ROOT / "scripts" / "ascension"))
 sys.path.insert(0, str(ROOT / "scripts" / "repo"))
+sys.path.insert(0, str(ROOT / "scripts" / "assets"))
 from capability_truth_audit import classify  # type: ignore
 from mission_value_gate import evaluate as evaluate_mission  # type: ignore
 from model_router import choose  # type: ignore
@@ -19,6 +20,8 @@ from multilang_semantic_intelligence import index_tree as index_multilang  # typ
 from creative_micro_lab import evaluate as evaluate_lab  # type: ignore
 from frontend_quality_contract import evaluate as evaluate_frontend  # type: ignore
 from mission_compiler import compile_intent  # type: ignore
+from creative_studio_gates import evaluate_concept, evaluate_craft_plan, evaluate_quality_bundle, route_stamp  # type: ignore
+from resource_intelligence import classify_license, classify_security, decide, itch_discover, release_gate  # type: ignore
 
 
 def test_truth_does_not_inflate_skill():
@@ -123,6 +126,75 @@ def test_model_router_uses_evidence():
     return result["selection"]["model"] == "model-b"
 
 
+def test_creative_route_triggers_high_fidelity_but_not_typo():
+    ambitious = route_stamp("Build a high-fidelity playable browser game with cinematic WebGL cards, motion, assets, and visual QA")
+    typo = route_stamp("Fix a README typo in the project title")
+    return ambitious["decision"] == "CREATIVE_STUDIO_REQUIRED" and "concept_gate" in ambitious["fail_closed_if_missing"] and typo["decision"] == "STANDARD_ROUTE"
+
+
+def test_mission_compiler_emits_four_layer_creative_contract():
+    result = compile_intent("Create a cinematic shader-native frontend with typography, resource strategy, and high-fidelity motion")
+    layers = result.get("four_layer_architecture", {})
+    return result["creative_studio_required"] is True and len(layers) == 4 and "resource-intelligence" in result["required_disciplines"] and "first visible proof" in result["production_stages"]
+
+
+def test_concept_gate_blocks_generic_thesis():
+    result = evaluate_concept({
+        "product_intent": "make app premium",
+        "audience": "users",
+        "emotional_objective": "wow",
+        "creative_thesis": "premium cinematic neon",
+        "anti_generic_risk": ["generic neon"],
+        "style_world_dna": {"palette": "blue"},
+        "reference_principles": ["nice websites"],
+        "signature_moments": ["glow"],
+        "medium_candidates": ["css"],
+        "resource_strategy": {"assets": "none"},
+        "evidence_plan": ["screenshot"],
+    })
+    return result["decision"] == "FAIL_CLOSED" and "generic_thesis_only" in result["blockers"]
+
+
+def test_craft_gate_rejects_blockout_claimed_final():
+    result = evaluate_craft_plan({"mediums": [{"name": "Three.js", "mechanisms": ["PBR"], "stages": ["BLOCKOUT"], "maturity_claim": "FINAL"}]})
+    return result["decision"] == "FAIL_CLOSED" and "medium_0_blockout_claimed_final" in result["blockers"]
+
+
+def test_quality_gate_requires_blocking_independent_review():
+    result = evaluate_quality_bundle({
+        "first_pixel_review": {"artifact": "frame.png", "classification": "GENERIC"},
+        "perceptual_qa": {"rendered_evidence": ["frame.png"]},
+        "independent_review": {"can_block": False},
+        "professional_finish": {"artifact_specific_corrections": ["tighten type rhythm"]},
+    })
+    return result["decision"] == "FAIL_CLOSED" and "weak_first_pixel_not_repaired" in result["blockers"] and "independent_review_not_blocking" in result["blockers"]
+
+
+def test_resource_intelligence_itch_unreal_ui_kit_is_discovery_not_download():
+    result = itch_discover("Unreal Engine UI kit")
+    return result["provider"] == "ITCH_IO" and "unreal-engine" in result["dimensions_detected"] and "user-interface" in result["dimensions_detected"] and result["license_default"] == "LICENSE_UNCLEAR until per-asset terms captured."
+
+
+def test_license_intelligence_fails_closed_on_unclear_terms():
+    result = classify_license("free download", need_modify=True)
+    return "LICENSE_UNCLEAR" in result["classifications"] and result["shipping_allowed"] is False and "commercial_use_not_verified" in result["blockers"]
+
+
+def test_resource_security_separates_art_asset_from_code():
+    result = classify_security(["sprites/player.png", "tools/importer.py", "plugin/game.uplugin"])
+    return result["risk"] in {"HIGH", "CRITICAL"} and result["requires_manual_review"] is True and ".py" in result["code_or_tool_indicators"]
+
+
+def test_source_adapt_create_identity_critical_prefers_original():
+    result = decide({"name": "main mascot", "importance": "IDENTITY_CRITICAL", "license_state": "COMMERCIAL_ALLOWED", "commercial_allowed": True, "modification_allowed": True, "style_fit": "STRONG"})
+    return result["decision"] == "CREATE_ORIGINAL" and result["asset_flip_risk"] == "BLOCKED_BY_CREATE_ORIGINAL"
+
+
+def test_release_gate_blocks_prototype_asset_shipping():
+    result = release_gate({"assets": [{"name": "prototype ui kit", "asset_state": "PROTOTYPE_ASSET", "license_state": "COMMERCIAL_ALLOWED"}]})
+    return result["decision"] == "FAIL_CLOSED" and "asset_0_prototype_asset_must_not_ship" in result["blockers"]
+
+
 def main() -> int:
     tests = [
         ("truth_skill_not_inflated", test_truth_does_not_inflate_skill),
@@ -137,6 +209,16 @@ def main() -> int:
         ("frontend_contract_accepts_complete_evidence", test_frontend_contract_accepts_complete_evidence),
         ("frontend_contract_rejects_score_only", test_frontend_contract_rejects_score_only),
         ("mission_compiler_discovers_disciplines", test_mission_compiler_discovers_frontend_and_game_disciplines),
+        ("creative_route_triggers_high_fidelity_but_not_typo", test_creative_route_triggers_high_fidelity_but_not_typo),
+        ("mission_compiler_emits_four_layer_creative_contract", test_mission_compiler_emits_four_layer_creative_contract),
+        ("concept_gate_blocks_generic_thesis", test_concept_gate_blocks_generic_thesis),
+        ("craft_gate_rejects_blockout_claimed_final", test_craft_gate_rejects_blockout_claimed_final),
+        ("quality_gate_requires_blocking_independent_review", test_quality_gate_requires_blocking_independent_review),
+        ("resource_intelligence_itch_unreal_ui_kit_is_discovery_not_download", test_resource_intelligence_itch_unreal_ui_kit_is_discovery_not_download),
+        ("license_intelligence_fails_closed_on_unclear_terms", test_license_intelligence_fails_closed_on_unclear_terms),
+        ("resource_security_separates_art_asset_from_code", test_resource_security_separates_art_asset_from_code),
+        ("source_adapt_create_identity_critical_prefers_original", test_source_adapt_create_identity_critical_prefers_original),
+        ("release_gate_blocks_prototype_asset_shipping", test_release_gate_blocks_prototype_asset_shipping),
     ]
     failures = []
     for name, test in tests:

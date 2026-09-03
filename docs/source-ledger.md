@@ -20,6 +20,10 @@ Observed license: MIT
 | 9router-stt | https://github.com/decolua/9router | `699edac3273e13d4744bc46f6082618f08560702` | MIT | Speech-to-text | user/global | none | Sends audio to configured provider; no models at discovery time | installed, STT category empty |
 | 9router-video | https://github.com/decolua/9router | `699edac3273e13d4744bc46f6082618f08560702` | MIT | Async video generation | user/global | none | May require connected xAI account/provider; output download only when requested | installed, endpoint not job-tested |
 
+## Foundry upgrade plan
+
+- `docs/foundry-upgrade-vision-2026-09-01.md` — PRECURSOR / PARTIAL enforcement-first plan (Founder-selected), grounded in four parallel research tracks on 2026-09-01. Preserved as historical failure evidence and enforcement backbone design; superseded by the broader Ultimate Creative Ceiling + Resource Intelligence architecture for final operational implementation.
+
 ## Reviewed but not adopted wholesale
 
 | Source | Status | Reason |

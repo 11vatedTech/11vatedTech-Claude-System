@@ -25,8 +25,8 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_INDEX = ROOT / "artifacts" / "asset-vault" / "index.json"
-DEFAULT_BLOBS = ROOT / "artifacts" / "asset-vault" / "blobs"
+DEFAULT_INDEX = Path.home() / ".claude" / "11vatedtech" / "asset-vault" / "index.json"
+DEFAULT_BLOBS = DEFAULT_INDEX.parent / "blobs"
 
 LICENSES_KNOWN = {"cc0", "cc-by", "cc-by-sa", "cc-by-nc", "mit", "apache-2.0",
                   "unlicense", "proprietary", "generated-local", "unknown"}

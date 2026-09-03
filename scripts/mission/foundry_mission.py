@@ -189,7 +189,7 @@ def execute_mission(mission: dict[str, Any]) -> dict[str, Any]:
         errors.append({"code": "REQUIRED_OUTPUT_MISSING", "outputs": missing_outputs})
     experience = {"experience_id": f"EXP-{uuid.uuid4().hex}", "mission_id": mission["mission_id"], "product": product.get("product_id") if product else None, "objective": intent, "evidence": evidence, "result": result, "limitations": errors, "models": mission.get("models", {}), "tools": mission.get("tools", []), "transferable_principle": "Discovery facts do not establish objective completion; bounded registry reports require objective output plus validated evidence."}
     EXPERIENCE_DIR.mkdir(parents=True, exist_ok=True)
-    (EXPERIENCE_DIR / f"{experience["experience_id"]}.json").write_text(json.dumps(experience, indent=2), encoding="utf-8")
+    (EXPERIENCE_DIR / f"{experience['experience_id']}.json").write_text(json.dumps(experience, indent=2), encoding="utf-8")
     return {"mission_id": mission["mission_id"], "intent": intent,
             "resolved_product": product.get("product_id") if product else None,
             "resolved_target": str(target) if target else None,

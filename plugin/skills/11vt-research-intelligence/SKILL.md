@@ -35,6 +35,31 @@ For non-trivial research, report:
 - Architecture impact
 - Validation experiments
 
+## Evidence route contract
+
+Every non-trivial or current claim must name one or more routes:
+
+- `LIVE_WEB`
+- `OFFICIAL_DOCS`
+- `REPOSITORY`
+- `KAPIF_CANON`
+- `LOCAL_EVIDENCE`
+- `DOMAIN_KNOWLEDGE_ONLY`
+- `UNAVAILABLE`
+
+Fail closed:
+
+- If live/current research route fails, state `LIVE_RESEARCH_UNAVAILABLE`.
+- If answer relies on memory or domain knowledge without source evidence, state `UNVERIFIED_DOMAIN_KNOWLEDGE`.
+- Do not convert memory, prior session notes, or model knowledge into "researched" claims.
+- Unknown means unknown; do not fabricate license rights, platform behavior, current counts, model capability, or trend evidence.
+
+Operational check when capability-system is available:
+
+```bash
+python ~/.claude/11vatedtech/capability-system/scripts/assets/resource_intelligence.py evidence-route "<claim>" LIVE_WEB OFFICIAL_DOCS
+```
+
 ## Technology comparison checklist
 
 Compare:

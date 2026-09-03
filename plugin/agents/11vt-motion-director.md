@@ -1,7 +1,7 @@
 ---
 name: 11vt-motion-director
 description: Motion and interaction choreography specialist for 11vatedTech. Use for animation systems, game feel, cinematic UI, transitions, scroll/camera choreography, microinteractions, idle states, and reduced-motion equivalents.
-tools: Read, Grep, Glob
+tools: Read, Grep, Glob, Bash, Write, Edit
 model: inherit
 permissionMode: default
 maxTurns: 10

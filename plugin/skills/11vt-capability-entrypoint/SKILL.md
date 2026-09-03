@@ -41,13 +41,28 @@ Do not list selected capabilities unless asked.
 
 ## Creative-production routing ladder
 
-Use only as much machinery as intent requires:
+Use only as much machinery as intent requires, but create a durable routing stamp for substantial creative work before broad implementation:
 
-- Ordinary settings/admin screen: `11vt-design-director` only if visual work matters.
+- Ordinary settings/admin screen or README typo: standard route; do not invoke full creative stack.
 - Distinctive UI/product identity: `11vt-creative-production` → `11vt-design-director` → rendered QA.
 - Cinematic/game/high-fidelity visual product: Creative Director → Art Director → Experience Designer → Motion Director/Technical Artist/Asset Director as needed → implementation → Visual QA Director.
 - 3D/shader/rendering: Creative Director → Technical Artist → rendering/performance validation → Visual QA.
 - Visual handoff/release: independent reviewer checks rendered visual evidence.
+
+Operational route check when capability-system is available:
+
+```bash
+python ~/.claude/11vatedtech/capability-system/scripts/validate/creative_studio_gates.py route "<Founder intent>" --out artifacts/ascension/routing-stamp.json
+```
+
+If result is `CREATIVE_STUDIO_REQUIRED`, no broad component/product build may begin until concept, reference/resource, craft, and first-visible-artifact gates have evidence.
+
+Fail closed:
+
+- high-fidelity game/frontend/visual/asset-heavy work without routing stamp
+- creative task whose concept could fit 100 unrelated products
+- rendered-product claim without visual evidence
+- live-research claim when route actually returned `LIVE_RESEARCH_UNAVAILABLE` or `UNVERIFIED_DOMAIN_KNOWLEDGE`
 
 ## Canonical sources
 

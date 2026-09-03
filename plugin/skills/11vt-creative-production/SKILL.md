@@ -52,18 +52,35 @@ Activate only roles needed for scope. One person may execute several roles in sm
 
 Before execution, declare the disciplines required, the professional knowledge/tool mastery available, the evidence needed, and the stop condition. Run the value-of-work gate for substantial work. `Ashwake — The Last Reliquary` is frozen as `CALIBRATION_FIXTURE_001`; do not use it as an open-ended art roadmap.
 
-1. Understand intended experience and constraints.
-2. Research references when current or non-obvious visual language matters. Study adjacent fields; extract principles, do not clone.
-3. Write or update project visual canon when identity matters.
-4. Define concept, narrative, composition, hierarchy, material language, motion, lighting, depth, asset needs, and 2–5 signature moments.
-5. Choose implementation media deliberately.
-6. Build vertical slice or full implementation.
-7. Run app, inspect rendered desktop/tablet/mobile when previewable.
-8. Interact with important states and transitions.
-9. Compare screenshots/snapshots against canon.
-10. Run Visual QA critique. If weak, escalate concept/layout/assets/motion, not only padding/colors/shadows. Run `scripts/validate/visual_evidence_evaluator.py` over preserved image evidence; diagnostic pass is not artistic approval.
+Operational studio path:
 
-11. Repeat until acceptance gates pass or report remaining limitation honestly.
+1. Route Founder intent and persist routing stamp.
+2. Understand intended experience and constraints.
+3. Research references when current or non-obvious visual language matters. Study adjacent fields; extract principles, do not clone. If live research fails, label `LIVE_RESEARCH_UNAVAILABLE` or `UNVERIFIED_DOMAIN_KNOWLEDGE`; do not silently use memory as cited research.
+4. Pass concept gate: product intent, audience, emotional objective, creative thesis, anti-generic risks, style/world DNA, reference principles, signature moments, medium candidates, resource strategy, evidence plan.
+5. Pass reference/resource gate: provenance, license uncertainty, security risk, source/adapt/create strategy, originality firewall.
+6. Pass craft mechanism gate: selected media, construction mechanisms, stages, and maturity boundary. Blockout cannot be claimed final.
+7. Build first visible artifact, then critique it before full production.
+8. Build vertical slice or full implementation only after gates pass.
+9. Run app, inspect rendered desktop/tablet/mobile when previewable.
+10. Interact with important states and transitions.
+11. Compare screenshots/snapshots against canon.
+12. Run Visual QA critique. If weak, escalate concept/layout/assets/motion, not only padding/colors/shadows. Run `scripts/validate/visual_evidence_evaluator.py` over preserved image evidence; diagnostic pass is not artistic approval.
+13. Record professional finish corrections and repeat until acceptance gates pass or report remaining limitation honestly.
+
+Operational gates when capability-system is available:
+
+```bash
+python ~/.claude/11vatedtech/capability-system/scripts/validate/creative_studio_gates.py concept artifacts/ascension/concept.json
+```
+
+```bash
+python ~/.claude/11vatedtech/capability-system/scripts/validate/creative_studio_gates.py craft artifacts/ascension/craft-plan.json
+```
+
+```bash
+python ~/.claude/11vatedtech/capability-system/scripts/validate/creative_studio_gates.py quality artifacts/ascension/quality-bundle.json
+```
 
 ## Project visual canon
 

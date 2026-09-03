@@ -53,6 +53,8 @@ def main():
         Gate("truth_generator", "python scripts/validate/canonical_truth_generator.py", 30),
         Gate("capability_truth_audit", "python scripts/validate/capability_truth_audit.py --out artifacts/foundry-validation.json", 30),
         Gate("env_doctor", "python scripts/doctor/foundry_doctor.py", 30),
+        Gate("creative_studio_route", "python scripts/validate/creative_studio_gates.py route \"Build a high-fidelity playable browser game with cinematic WebGL motion, real assets, and visual QA\" --out artifacts/ascension/final/routing-stamp.json", 30),
+        Gate("creative_ascension_tests", "python scripts/validate/foundry_ascension_tests.py", 60),
     ]
 
     print("11VATEDTECH FOUNDRY VALIDATE")
