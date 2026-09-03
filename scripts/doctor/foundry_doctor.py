@@ -75,21 +75,15 @@ def check_kapif():
 def check_9router():
     c = Check("9ROUTER")
     try:
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.settimeout(3)
-        result = s.connect_ex(("127.0.0.1", 20128))
-        s.close()
-        if result != 0:
-            return c.fail("port 20128 closed")
-        # Try API endpoint
-        import urllib.request
-        try:
-            r = urllib.request.urlopen("http://127.0.0.1:20128/v1/models", timeout=5)
-            data = json.loads(r.read())
-            models = data.get("data", [])
-            return c.ok(f"{len(models)} models via API")
-        except:
-            return c.warn("port open but /v1/models not responding (may be web UI)")
+        sys.path.insert(0, str(ROOT / "scripts" / "validate"))
+        from router_health import probe
+        result = probe(timeout=2.0)
+        summary = result.get("summary", "")
+        if result.get("core_status") == "PASS":
+            return c.ok(summary)
+        if result.get("router", {}).get("status") == "ROUTER_DOWN":
+            return c.fail(summary or result.get("router", {}).get("error", "router down"))
+        return c.warn(summary or "router degraded")
     except Exception as e:
         return c.fail(str(e)[:80])
 

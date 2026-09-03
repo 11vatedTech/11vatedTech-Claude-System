@@ -60,19 +60,35 @@ def test_mission_gate_allows_bounded_regression():
     return result["decision"] == "ALLOW"
 
 
+def _write_test_png(path: Path, *, dark: bool = False) -> None:
+    from PIL import Image, ImageDraw
+
+    image = Image.new("RGB", (320, 200), (18, 18, 22) if dark else (218, 206, 176))
+    draw = ImageDraw.Draw(image)
+    if dark:
+        draw.rectangle((122, 60, 198, 144), fill=(232, 88, 35))
+        draw.rectangle((146, 82, 174, 120), fill=(255, 218, 92))
+    else:
+        draw.rectangle((34, 34, 286, 166), fill=(70, 94, 106))
+        draw.ellipse((120, 52, 202, 134), fill=(232, 205, 132))
+        draw.line((48, 154, 272, 154), fill=(26, 36, 42), width=5)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    image.save(path)
+
+
 def test_visual_evaluator_rejects_known_bad_context():
-    image = ROOT / "artifacts/flagship/qa/live/frame-01.png"
-    if not image.exists():
-        return False
-    result = evaluate_visual([image], "black void, emissive core substitutes for lighting, primitive debug HUD")
+    with tempfile.TemporaryDirectory() as td:
+        image = Path(td) / "known-bad-context.png"
+        _write_test_png(image, dark=True)
+        result = evaluate_visual([image], "black void, emissive core substitutes for lighting, primitive debug HUD")
     return result["maximum_supported_stage"] == "COHERENT" and "major_black_crush_in_player_critical_regions" in result["blockers"]
 
 
 def test_visual_evaluator_separates_artistic_claim():
-    image = ROOT / "artifacts/flagship/emberveil-canonical/preview/preview-frame-0048.png"
-    if not image.exists():
-        return False
-    result = evaluate_visual([image], "")
+    with tempfile.TemporaryDirectory() as td:
+        image = Path(td) / "coherent-diagnostic.png"
+        _write_test_png(image)
+        result = evaluate_visual([image], "")
     return result["artistic_quality"] == "REQUIRES_INDEPENDENT_REVIEW" and result["functional_validity"] == "UNASSESSED"
 
 
